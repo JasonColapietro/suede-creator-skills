@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Suede Graph Flo XR</title>
-    <meta name="description" content="Make the plans compete, not the patches. Compare implementation plans, challenge the finalists, and build only the winner. Choose Light, Standard, or Deep.">
+    <meta name="description" content="Compare designs, build one, and prove the result with independent QA. Choose Light, Standard, or Deep.">
     <meta name="keywords" content="graph flo xr, multi-agent plan search, competing implementation plans, adversarial verification, Suede Skills">
     <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -12,12 +12,12 @@
     <link rel="icon" href="../assets/favicon-64.png" type="image/png">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Suede Graph Flo XR">
-    <meta property="og:description" content="Make the plans compete, not the patches. Compare implementation plans, challenge the finalists, and build only the winner. Choose Light, Standard, or Deep.">
+    <meta property="og:description" content="Compare designs, build one, and prove the result with independent QA. Choose Light, Standard, or Deep.">
     <meta property="og:url" content="https://skills.suedeai.ai/skills/suede-graph-flo-xr.html">
     <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Suede Graph Flo XR">
-    <meta name="twitter:description" content="Make the plans compete, not the patches. Compare implementation plans, challenge the finalists, and build only the winner. Choose Light, Standard, or Deep.">
+    <meta name="twitter:description" content="Compare designs, build one, and prove the result with independent QA. Choose Light, Standard, or Deep.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <script type="application/ld+json">
 {
@@ -124,8 +124,8 @@
     </header>
     <main id="main" tabindex="-1" class="shell">
       <div class="eyebrow">/suede-graph-flo-xr &middot; Suede Thought Graph shipping search</div>
-      <h1><span class="h1-task">Suede Graph Flo XR</span> Make the plans compete, not the patches.</h1>
-      <p class="lead">A booking form creates two appointments from one double-click. Does the fix belong in the button, the API, or both? Graph Flo weighs the options against your code, challenges the finalists, and builds only the selected plan. You get the diff, why competing plans lost, and what still needs proof.</p>
+      <h1><span class="h1-task">Suede Graph Flo XR</span> Throw compute at what could break. Prove what works.</h1>
+      <p class="lead">A booking form creates two appointments from one double-click. Does the fix belong in the button, the API, or both? Graph Flo compares designs, builds one, and gives separate agents the job of testing it and trying to break it. Get the diff, what passed on the final revision, and what still needs proof.</p>
       <p><a class="button" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-graph-flo-xr">View skill folder</a> <a class="button secondary" href="../plugins.html">Install options</a></p>
 
       <div class="plain-ask" aria-label="Example request that routes to this skill">
@@ -151,12 +151,13 @@
       </div>
 
       <section class="panel" aria-labelledby="graph-depth">
-        <h2 id="graph-depth">Choose how deep to search</h2>
+        <h2 id="graph-depth">Choose how much to test</h2>
         <ul>
-          <li><strong>Light:</strong> starts with 3 plans, up to 55 worker calls. Pick it for a focused change across a few files.</li>
-          <li><strong>Standard:</strong> starts with 5 plans, up to 110 worker calls. Pick it for changes with multiple seams, such as a UI and API contract.</li>
-          <li><strong>Deep:</strong> starts with 8 plans, up to 200 worker calls. Pick it when approaches differ substantially or touch multiple subsystems.</li>
+          <li><strong>Light:</strong> up to 55 worker calls. Baseline, focused regression, independent QA replay, and smoke test.</li>
+          <li><strong>Standard:</strong> up to 110 worker calls. Competing designs, independent integration tests, adversarial review, and a final rerun.</li>
+          <li><strong>Deep:</strong> up to 200 worker calls. Realistic fixtures, edge cases, and independent reproduction after the last edit.</li>
         </ul>
+        <p>These are native-run targets. The bundled Claude runner retains its separate plan-search workflow shown above. Native runs reserve at least 25% of calls for QA and retesting. Slop Police checks each deliverable for filler copy, misleading visuals, needless code, and claims the test evidence does not support.</p>
       </section>
 
       <section class="panel">
@@ -211,7 +212,7 @@ cp /tmp/suede-creator-skills/skills/suede-graph-flo-xr/agents/suede-graph-flo-xr
 
       <section class="panel">
         <h2>Best prompt</h2>
-        <pre><code>Use $suede-graph-flo-xr on /absolute/path/to/my-app to stop duplicate bookings from double-clicks. Scope: preserve the existing auth contract and unrelated WIP. Budget: standard. Search competing plans and mutate only the selected winner. Read production if needed, but do not deploy.</code></pre>
+        <pre><code>Use $suede-graph-flo-xr on /absolute/path/to/my-app to stop duplicate bookings from double-clicks. Scope: preserve the existing auth contract and unrelated WIP. Budget: standard. Compare designs and build only one. Have a separate QA agent set the expected result before the build. Run adversarial and Slop Police reviews, then retest the final diff. Do not deploy.</code></pre>
       </section>
 
       <section class="panel">

@@ -1,33 +1,140 @@
 ---
 name: suede-graph-flo-xr
-description: "Use when a multi-file repo change has more than one plausible fix. Suede Graph Flo XR compares plans in the repo, challenges the strongest options, and builds only the winner in an isolated worktree. Choose Light (55), Standard (110), or Deep (200) worker calls max. Try “Compare competing fixes for a duplicate booking.” Get the diff and test notes. NOT FOR: bulk worker work, existing-diff review (suede-code), CI setup (suede-ci-gate), or copy-only work (suede-ship-copy)."
+description: "Use when a consequential multi-file task needs serious compute and independent testing. Run competing design, adversarial review, and QA lanes against one implementation; use Light, Standard, or Deep and return reproducible evidence. Compare designs when there is more than one plausible fix; build only one in an isolated worktree. NOT FOR: bulk worker work, existing-diff review, CI setup, or copy-only work."
 metadata:
   display-name: "Suede Graph Flo XR"
 ---
 
 # Suede Graph Flo XR
 
-**Make the plans compete, not the patches.**
+**Throw compute at what could break. Prove what works.**
 
-A booking form creates two appointments from one double-click. Does the fix
-belong in the button, the API, or both? Graph Flo weighs those approaches
-against the code, challenges the strongest options, and builds only the
-selected plan in an isolated worktree. The handoff shows what changed, why
-other plans lost, and what still needs proof.
+Use Graph Flo XR when a plausible patch is not enough. Compare designs, build
+one, then put independent QA and adversarial reviewers on the actual result.
+Spend the deepest pass trying to falsify the result, not polishing the plan.
 
-## Choose a search depth
+## Choose a compute tier
 
-| Option | Initial plans | Max worker calls | Pick it for |
-| --- | ---: | ---: | --- |
-| **Light** (`light`) | 3 | 55 | One focused fix that spans a few files. |
-| **Standard** (`standard`) | 5 | 110 | Changes with multiple seams, such as a UI and API contract. |
-| **Deep** (`deep`) | 8 | 200 | A cross-cutting change with more credible approaches or harder tradeoffs. |
+| Option | Worker-call ceiling | Native verification before handoff |
+| --- | ---: | --- |
+| **Light** (`light`) | 55 | Baseline, focused regression, separate QA replay, final smoke check. |
+| **Standard** (`standard`) | 110 | Light plus competing design proposals, independent integration/negative cases, adversarial review and a final rerun. |
+| **Deep** (`deep`) | 200 | Standard plus distinct designs where viable, a separate adversarial lane, realistic fixtures, state/edge coverage, and independent reproduction of the critical path after the last change. |
 
-These are ceilings, not minimums. Pick one before launch; the workflow never
-upgrades the budget on its own.
+These are ceilings, not quotas. Use the strongest authorized worker model on
+high-judgment lanes when the host supports it. Use extra compute to reduce
+distinct uncertainties, not to collect more opinions on the same test.
+Keep the user's limits on spend, time and side effects. Never raise a tier
+or start paid infrastructure on your own.
 
-Try it on duplicate bookings: give it the failing replay test and ask whether
-the fix belongs at a submit button, the request handler, or both before applying any patch.
+### Native compute-first run
+
+Use this contract directly on hosts with native worker delegation. Do not say
+the bundled Claude workflow executed when you used native workers.
+
+1. **Set the acceptance contract.** Record the requested outcome, scope, protected
+   paths, allowed side effects, exact baseline revision and starting diff, and
+   observable success and failure conditions. Record and preserve pre-existing
+   changes. Do not expand scope or weaken requirements to make a check pass.
+   Run the smallest trustworthy baseline before editing. For a bug, capture the
+   failure when reproducible. For a feature, record relevant passing invariants.
+   Record a blocked baseline rather than manufacture one.
+2. **QA reserve: 25%.** Round up a quarter of the effective cap (the lower of the
+   tier ceiling and any user-set maximum). Before launching workers, price the
+   required lanes, including retests. Reserve one call for final independent QA
+   and enough calls for the other mandatory lanes, even if that exceeds 25%.
+   Reserve execution time too. Design, implementation, and optional polish
+   cannot borrow final QA capacity. Keep one shared ledger of every dispatch,
+   including failed, cancelled, retried, and nested calls and follow-up turns.
+   Reserve all calls atomically before dispatching a parallel batch. Prohibit unmetered
+   subdelegation. If the required lanes do not fit, do not silently downgrade;
+   report a partial run or a hold without exceeding the cap.
+3. **Independent Design.** In Light use one design. In Standard and Deep, when
+   choices exist, brief separate workers with the same
+   task and evidence but no other proposal. Compare alternatives against the
+   acceptance contract, side effects, migration impact, and testability. Keep
+   only one writable implementation; design workers are read-only.
+4. **Independent QA.** Before implementation, give QA a clean brief with the
+   original acceptance contract but no solution or promised test result. Save
+   QA's expected results and fixtures before sharing the implementation; the
+   builder may not edit the oracle. Contract corrections require a recorded reason
+   and a fresh QA baseline. Have QA execute against the candidate, not merely
+   read build logs. The author cannot verify their own changes. Include one
+   realistic end-to-end workflow where applicable.
+5. **Adversarial review.** In Standard and Deep give another worker, when available, the candidate
+   and the job of disproving it. Check relevant boundary inputs, state changes,
+   retries, degraded dependencies, and contradictory assumptions. For UI, include
+   mobile, keyboard navigation, and empty/error states where applicable. Use
+   isolated fixtures and authorized resources; no offensive workflows, live
+   load, production mutations, or outbound actions. If reviewers disagree, run
+   their competing predictions against an independently derived oracle on the
+   same candidate. Do not settle by vote; hold unresolved critical disagreements.
+6. **Fix and retest.** Keep write ownership disjoint. Confirm each material
+   failure, fix its cause, and add the smallest regression that fails on the
+   old behavior. Rerun affected checks after every material change. A patched
+   finding stays open until its regression passes on the candidate.
+7. **Fresh final rerun.** Finish QA, adversarial review, Slop Police and any fixes
+   before freezing the candidate. Identify the baseline revision and hash the
+   tracked and untracked candidate changes, including tests. Rerun the critical
+   suite against that exact content in a clean isolated context. If it changes,
+   invalidate any affected receipt and repeat the affected checks before a verdict.
+   Missing required independent QA is a hold, including missing independent
+   critical-path reproduction in Deep. Stop at the authorized cap without
+   claiming a pass on incomplete work. Mark any other missing tier-mandatory
+   lane incomplete, even if local functional checks passed.
+
+Keep a compact evidence table: requirement, command or scenario, revision,
+environment, fixture or seed, expected vs. actual, status, and artifact. Use
+distinct statuses: planned, not run, failed, claimed, passed, independently
+reproduced. A worker attestation without matching execution evidence stays
+claimed and cannot satisfy a critical check.
+For every critical pass, read the raw result tied to the candidate identity,
+including execution status and expected versus actual behavior. A summary,
+asserted run, or green exit code alone is not a receipt.
+A flaky check is unresolved until reproduced or explained. Local and simulated
+runs never establish production behavior.
+
+Example: a weighted graph returns the right result on a cold cache but returns
+that same stale result after a weight changes. Have QA compute the new expected
+total independently and run the warm check on the same cache instance after the mutation and use a fresh cold instance as a control.
+Repeated runs on unchanged input do not cover the failure.
+
+## Slop Police: check the whole deliverable
+
+Run one Slop Police pass on every native Graph Flo deliverable, even when no
+copy changed. In Standard and Deep, assign an independent reviewer when
+available and count that call against the selected tier and verification reserve.
+In Light or when the reserve affords no independent call, do the pass directly
+and label it self-review. Do not skip critical testing to fund an editorial pass.
+
+Review the actual candidate and use only the checks that match the deliverable:
+
+| Surface | What to flag |
+| --- | --- |
+| Copy | Filler, repeated hooks, empty promises, invented proof, unclear calls to action. |
+| Design and UI | Generic choices that make the task harder, fake polish, low contrast, confusing hierarchy, or wrong mobile and empty states. Use a real render when possible. |
+| Code and workflows | Unused dependencies, duplicates, speculative abstractions, dead paths, or complexity with no user-facing benefit. Point to a smaller change within scope. |
+| Tests, reports and handoff | Tests that pass with broken behavior, cherry-picked screenshots, unsupported metrics, and conclusions that aren't backed by the recorded evidence. |
+
+For each finding, give the exact location, observed symptom, why it matters,
+and a concrete rewrite, deletion, simpler alternative, or missing check. Link
+a matching source or artifact for material product claims; narrow or remove
+unsupported claims. Mark applicable but unobserved surfaces not reviewed and
+irrelevant surfaces not applicable; do not invent observations. Preserve the
+author's voice, approved brand and SEO terms, verified claims, and intentional
+design choices. A stylistic preference or a lint score alone is not a finding.
+
+Send proven correctness, accessibility, or evidence defects to QA; use the existing
+acceptance contract to decide whether they block. Taste and polish are advisory.
+The owner of each edit applies accepted changes. Rerun any affected evidence
+after a material edit, then recheck the final candidate. No new scope,
+publication, or deployment authority.
+
+Example: replace “Unlock seamless scheduling” with “See open times and book a
+30-minute call” only when the linked page actually offers that. For a dashboard,
+flag a beautiful chart only if it obscures the user's task or misstates the
+data. For a test, demonstrate the check also passes on the broken version
+before calling it ineffective.
 
 ## Intake and budget gate
 
@@ -39,12 +146,15 @@ Before launch, require all three inputs:
 - **Budget**: a user-selected `light`, `standard`, or `deep`. If missing, show the three choices with their ceilings and ask for one; do not launch.
 
 Pass known optional context: boolean `deploys`, public read-only `liveUrl`,
-and the decision-context path `vault`. Pass a chosen `workerModel` (`sonnet`,
+and the decision-context path `vault`. For the bundled Claude workflow, pass a chosen `workerModel` (`sonnet`,
 `opus`, `haiku`, or `fable`) to every worker. Otherwise workers inherit the
-session model; surface a costly inherited model before spending calls.
+session model; surface a costly inherited model before spending calls. Native
+hosts use their own authorized model equivalents.
 
 If repo or scope is missing, ask for it. Route a one-file edit to direct
-implementation. State the chosen tier and maximum calls before launching.
+implementation. State the chosen tier and maximum calls before launching. If the bundled Claude
+runner cannot enforce a lower numeric cap, do not launch a tier above that cap.
+If running an outer review as well, its calls plus the runner ceiling must fit.
 
 ## Runtime prerequisites
 
@@ -82,9 +192,15 @@ decoding, so a mistyped chunk fails fast with a retry instruction instead of
 producing a corrupt patch.
 
 A skill-folder-only install, a generic skills-CLI install, and the Codex plugin do
-not by themselves register or execute Claude Workflow agent profiles. In those
-environments, treat this file as the orchestration contract and route the change
-to direct implementation; do not claim the bundled workflow ran. To enable it in
+not by themselves register or execute Claude Workflow agent profiles. On a native
+worker host, use the compute-first contract above. The bundled Claude runtime
+still uses its existing plan-search graph and call accounting; do not represent
+the native QA reserve, separate lanes, or Slop Police as enforced by that script.
+If reviewing a returned Claude deliverable, run Slop Police as a separate
+read-only pass within the authorized budget; label it separately from the runner.
+If no worker calls remain, use authorized local self-review or report not run.
+Read existing artifacts; refer any new negative control to authorized isolated QA.
+Do not bypass the runner sandbox or imply a proposed check ran. To enable it in
 Claude Code after a manual single-skill copy, also copy the skill's bundled
 `agents/suede-graph-flo-xr-*.md` files into `~/.claude/agents` and restart Claude Code.
 
@@ -95,7 +211,7 @@ Scout evidence is still a model attestation, not a host execution receipt. Gate
 also holds on any later reported sandbox rejection. Never retry an acceptance
 command outside the sandbox to turn that hold into a pass.
 
-## Run the graph search
+## Run the bundled Claude graph search
 
 Invoke:
 
@@ -154,7 +270,7 @@ halt output now names which happened, and `haltDetail` carries the counts behind
 
 | Reason | What it means |
 |---|---|
-| `every candidate lost its score to an agent failure` | No thought in the run was ever scored. Infrastructure, not evidence: rerun. |
+| `every candidate lost its score to an agent failure` | No thought in the run was ever scored. Infrastructure, not evidence: offer an authorized rerun. |
 | `no candidate reached Select` | The search emptied upstream for some other reason; read `graph.dropped`. |
 | `every finalist lost its score before Select` | Finalists existed and were pruned as unscored. |
 | `every finalist was pruned before Select` | Finalists were pruned for a non-score reason. |
@@ -232,7 +348,10 @@ user, not authority to perform an external action.
 
 ## Handoff and completion
 
-Read the workflow's returned `runKey`, the validated unique `ship-<UUID>` leaf
+For a native run, report the final revision or diff, changed files, test
+evidence, and unresolved findings. No Claude run key is required or invented.
+
+For the bundled Claude workflow, read its returned `runKey`, the validated unique `ship-<UUID>` leaf
 from its isolated worktree. On a completed run, use the returned handoff
 markdown. On a post-Scout halt, write a factual halt handoff from the structured
 result and graph trace without spending another agent call; include any Build
@@ -262,8 +381,7 @@ source or binary redistribution of the workflow.
 - CI, required checks, or branch-protection wiring → `suede-ci-gate`.
 - Copy-only search and publication readiness → `suede-ship-copy`.
 - From `suede-code`, `suede-ci-gate`, or `suede-ship-copy`: route a
-  multi-file implementation-plan search with one
-  selected mutating winner back to `suede-graph-flo-xr`.
+  multi-file change that needs competing designs and independent verification back to `suede-graph-flo-xr`.
 
 ## Worked contract
 
