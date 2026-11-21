@@ -172,5 +172,5 @@ test('guides link drafts to their source and published pages to the site; servic
     }
   }
   const plain = generateCatalog({ ...structuredClone(inputs), guides: { pages: [] }, ctas: { campaigns: [], lead_by_category: {} } }).get('README.md');
-  assert.doesNotMatch(plain, /## Guides|## Work with Suede AI|suedeai\.agency/);
+  assert.doesNotMatch(plain, /## Guides|## Work with Suede|suedeai\.agency/);
 });

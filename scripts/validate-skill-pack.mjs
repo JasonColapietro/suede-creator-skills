@@ -595,8 +595,8 @@ if (!codexMarketplaceJson) {
   if (codexMarketplaceJson.name !== "suede-codex") {
     fail.push('Codex marketplace name must be "suede-codex"');
   }
-  if (codexMarketplaceJson.interface?.displayName !== "Suede AI Skills") {
-    fail.push('Codex marketplace interface.displayName must be "Suede AI Skills"');
+  if (codexMarketplaceJson.interface?.displayName !== "Suede Skills") {
+    fail.push('Codex marketplace interface.displayName must be "Suede Skills"');
   }
   if (
     !Array.isArray(codexMarketplaceJson.plugins) ||
@@ -892,7 +892,7 @@ for (const file of publicSkillFiles) {
     if (disclosed) return;
     for (const privateName of knownPrivateSkills) {
       if (new RegExp(`(?<![a-z0-9-])${privateName}(?![a-z0-9-])`).test(line)) {
-        fail.push(`${rel}:${index + 2} routes to private skill '${privateName}' without marking it unavailable — add "(private Suede AI companion, not in this pack: ${privateName})"`);
+        fail.push(`${rel}:${index + 2} routes to private skill '${privateName}' without marking it unavailable — add "(private Suede companion, not in this pack: ${privateName})"`);
       }
     }
   });

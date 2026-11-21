@@ -8,9 +8,9 @@ Skills for making and editing media: video production, image generation and edit
 
 **235 accepted skills · 39 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
-**Compare on the 0–99 quality scale:** this category’s verified scores span **56–93 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=media-creative&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
+**Compare on the 0–99 quality scale:** this category’s verified scores span **56–93 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=media-creative&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
-[Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede AI listing.
+[Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede listing.
 
 <details>
 <summary>Browse publishers in this category</summary>
@@ -61,7 +61,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## AgriciDaniel/claude-seo
 
-[Repository](https://github.com/AgriciDaniel/claude-seo) · Publisher: [AgriciDaniel](https://github.com/AgriciDaniel) · [Suede AI listing](https://skills.suedeai.ai/directory/agricidaniel/claude-seo/)
+[Repository](https://github.com/AgriciDaniel/claude-seo) · Publisher: [AgriciDaniel](https://github.com/AgriciDaniel) · [Suede listing](https://skills.suedeai.ai/directory/agricidaniel/claude-seo/)
 
 - **88/100 · B** · [seo-image-gen](https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-image-gen/SKILL.md): Generates AI images for SEO assets such as social preview images, blog hero images, product photos, and infographics, using Gemini through the nanobanana server. [Suede](https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-image-gen/)
 
@@ -69,7 +69,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## Alisa0808/vibe-creating-skill
 
-[Repository](https://github.com/Alisa0808/vibe-creating-skill) · Publisher: [Alisa0808](https://github.com/Alisa0808) · [Suede AI listing](https://skills.suedeai.ai/directory/alisa0808/vibe-creating-skill/vibe-creating-prompt/)
+[Repository](https://github.com/Alisa0808/vibe-creating-skill) · Publisher: [Alisa0808](https://github.com/Alisa0808) · [Suede listing](https://skills.suedeai.ai/directory/alisa0808/vibe-creating-skill/vibe-creating-prompt/)
 
 - **80/100 · B** · [vibe-creating-prompt](https://github.com/Alisa0808/vibe-creating-skill/blob/main/skills/vibe-creating-prompt/SKILL.md): Rewrites ideas or rough prompts into clearer text-to-video prompts in the Vibe Creating style, preserving user-specified dialogue, voiceover, music, and sound effects. [Suede](https://skills.suedeai.ai/directory/alisa0808/vibe-creating-skill/vibe-creating-prompt/)
 
@@ -77,7 +77,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## Alisa0808/vox-director
 
-[Repository](https://github.com/Alisa0808/vox-director) · Publisher: [Alisa0808](https://github.com/Alisa0808) · [Suede AI listing](https://skills.suedeai.ai/directory/alisa0808/vox-director/vox-director/)
+[Repository](https://github.com/Alisa0808/vox-director) · Publisher: [Alisa0808](https://github.com/Alisa0808) · [Suede listing](https://skills.suedeai.ai/directory/alisa0808/vox-director/vox-director/)
 
 - **85/100 · B** · [vox-director](https://github.com/Alisa0808/vox-director/blob/main/SKILL.md): Turns one topic into a Vox-style paper-collage explainer or ad video, automating script, motion, voice-over, music, and captions via Atlas Cloud and ffmpeg. [Suede](https://skills.suedeai.ai/directory/alisa0808/vox-director/vox-director/)
 
@@ -85,7 +85,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## alonw0/web-asset-generator
 
-[Repository](https://github.com/alonw0/web-asset-generator) · Publisher: [alonw0](https://github.com/alonw0) · [Suede AI listing](https://skills.suedeai.ai/directory/alonw0/web-asset-generator/)
+[Repository](https://github.com/alonw0/web-asset-generator) · Publisher: [alonw0](https://github.com/alonw0) · [Suede listing](https://skills.suedeai.ai/directory/alonw0/web-asset-generator/)
 
 - **66/100 · D** · [web-asset-generator](https://github.com/alonw0/web-asset-generator/blob/main/skills/web-asset-generator/SKILL.md): Generate web assets including favicons, app icons (PWA), and social media meta images (Open Graph) for Facebook, Twitter, WhatsApp, and LinkedIn. [Suede](https://skills.suedeai.ai/directory/alonw0/web-asset-generator/#web-asset-generator)
 
@@ -93,7 +93,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## anthropics/skills
 
-[Repository](https://github.com/anthropics/skills) · Publisher: [anthropics](https://github.com/anthropics) · [Suede AI listing](https://skills.suedeai.ai/directory/anthropics/skills/)
+[Repository](https://github.com/anthropics/skills) · Publisher: [anthropics](https://github.com/anthropics) · [Suede listing](https://skills.suedeai.ai/directory/anthropics/skills/)
 
 - **87/100 · B** · [slack-gif-creator](https://github.com/anthropics/skills/blob/main/skills/slack-gif-creator/SKILL.md): Provides constraints, validation tools, and animation concepts for creating animated GIFs sized and optimized for Slack. [Suede](https://skills.suedeai.ai/directory/anthropics/skills/slack-gif-creator/)
 - **84/100 · B** · [algorithmic-art](https://github.com/anthropics/skills/blob/main/skills/algorithmic-art/SKILL.md): Creates original generative art with p5.js using seeded randomness and interactive parameter exploration, such as flow fields and particle systems. [Suede](https://skills.suedeai.ai/directory/anthropics/skills/algorithmic-art/)
@@ -103,7 +103,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## aws/agent-toolkit-for-aws
 
-[Repository](https://github.com/aws/agent-toolkit-for-aws) · Publisher: [aws](https://github.com/aws) · [Suede AI listing](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/)
+[Repository](https://github.com/aws/agent-toolkit-for-aws) · Publisher: [aws](https://github.com/aws) · [Suede listing](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/)
 
 - **82/100 · B** · [amazon-ec2-image-builder](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/ec2-skills/amazon-ec2-image-builder/SKILL.md): Creates and automates custom image builds with EC2 Image Builder - Linux, Windows, and macOS AMIs, and container images to ECR. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#amazon-ec2-image-builder)
 - **68/100 · D** · [aws-compute](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/core-skills/aws-compute/SKILL.md): Provisions, scales, and operates Amazon EC2 virtual-machine workloads: instance-type selection (Graviton/Arm64, burstable T credits, GPU, instance store vs EBS), launch templates, Auto Scaling groups (scaling policies, instance refresh,… [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#aws-compute)
@@ -112,7 +112,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## bitwize-music-studio/claude-ai-music-skills
 
-[Repository](https://github.com/bitwize-music-studio/claude-ai-music-skills) · Publisher: [bitwize-music-studio](https://github.com/bitwize-music-studio) · [Suede AI listing](https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/)
+[Repository](https://github.com/bitwize-music-studio/claude-ai-music-skills) · Publisher: [bitwize-music-studio](https://github.com/bitwize-music-studio) · [Suede listing](https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/)
 
 - **85/100 · B** · [genre-creator](https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/genre-creator/SKILL.md): Create new genre documentation files for the bitwize-music genre library. [Suede](https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/#genre-creator)
 - **85/100 · B** · [new-album](https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/new-album/SKILL.md): Creates a new album with the correct directory structure and templates. [Suede](https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/#new-album)
@@ -153,7 +153,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## Bria-AI/bria-skill
 
-[Repository](https://github.com/Bria-AI/bria-skill) · Publisher: [Bria-AI](https://github.com/Bria-AI) · [Suede AI listing](https://skills.suedeai.ai/directory/bria-ai/bria-skill/)
+[Repository](https://github.com/Bria-AI/bria-skill) · Publisher: [Bria-AI](https://github.com/Bria-AI) · [Suede listing](https://skills.suedeai.ai/directory/bria-ai/bria-skill/)
 
 - **86/100 · B** · [ad-delayer](https://github.com/Bria-AI/bria-skill/blob/dev/skills/ad-delayer/SKILL.md): Turns a flat ad image back into editable layers, returning background, product shot, logo, headline, body copy, and CTA as separate assets. [Suede](https://skills.suedeai.ai/directory/bria-ai/bria-skill/ad-delayer/)
 - **86/100 · B** · [ad-resize](https://github.com/Bria-AI/bria-skill/blob/dev/skills/ad-resize/SKILL.md): Resizes a flat ad image into feed, story, and banner sizes, redoing the layout for each shape rather than cropping or stretching. [Suede](https://skills.suedeai.ai/directory/bria-ai/bria-skill/ad-resize/)
@@ -169,7 +169,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## coreyhaines31/marketingskills
 
-[Repository](https://github.com/coreyhaines31/marketingskills) · Publisher: [coreyhaines31](https://github.com/coreyhaines31) · [Suede AI listing](https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/)
+[Repository](https://github.com/coreyhaines31/marketingskills) · Publisher: [coreyhaines31](https://github.com/coreyhaines31) · [Suede listing](https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/)
 
 - **88/100 · B** · [image](https://github.com/coreyhaines31/marketingskills/blob/main/skills/image/SKILL.md): When the user wants to create, generate, edit, or optimize images for marketing — blog heroes, social graphics, product mockups, profile banners, listing visuals, or brand assets. [Suede](https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/#image)
 - **88/100 · B** · [video](https://github.com/coreyhaines31/marketingskills/blob/main/skills/video/SKILL.md): When the user wants to create, generate, or produce video content using AI tools or programmatic frameworks. [Suede](https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/#video)
@@ -178,7 +178,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## csthink/dashmotion
 
-[Repository](https://github.com/csthink/dashmotion) · Publisher: [csthink](https://github.com/csthink) · [Suede AI listing](https://skills.suedeai.ai/directory/csthink/dashmotion/dashmotion/)
+[Repository](https://github.com/csthink/dashmotion) · Publisher: [csthink](https://github.com/csthink) · [Suede listing](https://skills.suedeai.ai/directory/csthink/dashmotion/dashmotion/)
 
 - **80/100 · B** · [dashmotion](https://github.com/csthink/dashmotion/blob/main/skills/dashmotion/SKILL.md): Creates dark-themed animated technical diagrams as self-contained HTML and SVG files, including flowcharts with flowing connectors and architecture diagrams with traveling light dots. [Suede](https://skills.suedeai.ai/directory/csthink/dashmotion/dashmotion/)
 
@@ -186,7 +186,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## fal-ai-community/skills
 
-[Repository](https://github.com/fal-ai-community/skills) · Publisher: [fal-ai-community](https://github.com/fal-ai-community) · [Suede AI listing](https://skills.suedeai.ai/directory/fal-ai-community/skills/)
+[Repository](https://github.com/fal-ai-community/skills) · Publisher: [fal-ai-community](https://github.com/fal-ai-community) · [Suede listing](https://skills.suedeai.ai/directory/fal-ai-community/skills/)
 
 - **75/100 · C** · [cinematography](https://github.com/fal-ai-community/skills/blob/main/skills/cinematography/SKILL.md): Design cinematic image and video prompts for genmedia. [Suede](https://skills.suedeai.ai/directory/fal-ai-community/skills/#cinematography)
 - **75/100 · C** · [commercial](https://github.com/fal-ai-community/skills/blob/main/skills/commercial/SKILL.md): Plan and run commercial image or video production with genmedia. [Suede](https://skills.suedeai.ai/directory/fal-ai-community/skills/#commercial)
@@ -201,7 +201,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## garrytan/gstack
 
-[Repository](https://github.com/garrytan/gstack) · Publisher: [garrytan](https://github.com/garrytan) · [Suede AI listing](https://skills.suedeai.ai/directory/garrytan/gstack/)
+[Repository](https://github.com/garrytan/gstack) · Publisher: [garrytan](https://github.com/garrytan) · [Suede listing](https://skills.suedeai.ai/directory/garrytan/gstack/)
 
 - **74/100 · C** · [diagram](https://github.com/garrytan/gstack/blob/main/diagram/SKILL.md): Turn an English description (or mermaid source) into a diagram triplet: the source, an editable .excalidraw file you can open on excalidraw.com, and rendered SVG + PNG. (gstack) [Suede](https://skills.suedeai.ai/directory/garrytan/gstack/#diagram)
 
@@ -209,7 +209,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## github/awesome-copilot
 
-[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede AI listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
+[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
 
 - **84/100 · B** · [efcore-d2-db-diagram](https://github.com/github/awesome-copilot/blob/main/skills/efcore-d2-db-diagram/SKILL.md): Generate D2 database diagrams from Entity Framework Core models. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#efcore-d2-db-diagram)
 - **82/100 · B** · [draw-io-diagram-generator](https://github.com/github/awesome-copilot/blob/main/skills/draw-io-diagram-generator/SKILL.md): Use when creating, editing, or generating draw.io diagram files (.drawio, .drawio.svg, .drawio.png). [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#draw-io-diagram-generator)
@@ -232,7 +232,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## google-labs-code/stitch-skills
 
-[Repository](https://github.com/google-labs-code/stitch-skills) · Publisher: [google-labs-code](https://github.com/google-labs-code) · [Suede AI listing](https://skills.suedeai.ai/directory/google-labs-code/stitch-skills/)
+[Repository](https://github.com/google-labs-code/stitch-skills) · Publisher: [google-labs-code](https://github.com/google-labs-code) · [Suede listing](https://skills.suedeai.ai/directory/google-labs-code/stitch-skills/)
 
 - **69/100 · D** · [remotion](https://github.com/google-labs-code/stitch-skills/blob/main/plugins/stitch-build/skills/remotion/SKILL.md): Generate walkthrough videos from Stitch projects using Remotion with smooth transitions, zooming, and text overlays [Suede](https://skills.suedeai.ai/directory/google-labs-code/stitch-skills/#remotion)
 
@@ -240,7 +240,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## gooseworks-ai/goose-skills
 
-[Repository](https://github.com/gooseworks-ai/goose-skills) · Publisher: [gooseworks-ai](https://github.com/gooseworks-ai) · [Suede AI listing](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/)
+[Repository](https://github.com/gooseworks-ai/goose-skills) · Publisher: [gooseworks-ai](https://github.com/gooseworks-ai) · [Suede listing](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/)
 
 - **89/100 · B** · [render-proof-points-overlay](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/capabilities/render-proof-points-overlay/SKILL.md): Builds proof-point pill overlays for a perfect-score UGC video ad and composites them onto a base clip, then adds the music bed. [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/render-proof-points-overlay/)
 - **86/100 · B** · [create-image-fal](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/capabilities/create-image-fal/SKILL.md): Generates or edits images with FAL image models such as nano-banana edit, gpt-image and flux, billed through the fal-proxy. [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/create-image-fal/)
@@ -326,7 +326,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## heygen-com/hyperframes
 
-[Repository](https://github.com/heygen-com/hyperframes) · Publisher: [heygen-com](https://github.com/heygen-com) · [Suede AI listing](https://skills.suedeai.ai/directory/heygen-com/hyperframes/)
+[Repository](https://github.com/heygen-com/hyperframes) · Publisher: [heygen-com](https://github.com/heygen-com) · [Suede listing](https://skills.suedeai.ai/directory/heygen-com/hyperframes/)
 
 - **83/100 · B** · [general-video](https://github.com/heygen-com/hyperframes/blob/main/skills/general-video/SKILL.md): Author or edit a custom HyperFrames composition when no specialized workflow fits, or when BRIEF.md sets flow: companion. [Suede](https://skills.suedeai.ai/directory/heygen-com/hyperframes/#general-video)
 - **81/100 · B** · [hyperframes-audio](https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-audio/SKILL.md): Use when audio already placed in a HyperFrames composition needs to be mixed: fade-in/fade-out, crossfade, track gain or volume, volume automation, ducking, a music bed that fights a voiceover (voiceover carve), effects on a track (EQ,… [Suede](https://skills.suedeai.ai/directory/heygen-com/hyperframes/#hyperframes-audio)
@@ -342,7 +342,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## HUANGCHIHHUNGLeo/claude-real-video
 
-[Repository](https://github.com/HUANGCHIHHUNGLeo/claude-real-video) · Publisher: [HUANGCHIHHUNGLeo](https://github.com/HUANGCHIHHUNGLeo) · [Suede AI listing](https://skills.suedeai.ai/directory/huangchihhungleo/claude-real-video/)
+[Repository](https://github.com/HUANGCHIHHUNGLeo/claude-real-video) · Publisher: [HUANGCHIHHUNGLeo](https://github.com/HUANGCHIHHUNGLeo) · [Suede listing](https://skills.suedeai.ai/directory/huangchihhungleo/claude-real-video/)
 
 - **80/100 · B** · [claude-real-video-for-agents](https://github.com/HUANGCHIHHUNGLeo/claude-real-video/blob/master/skills/claude-real-video-for-agents/SKILL.md): Installs and uses the crv tool so an AI agent can watch videos by extracting deduplicated scene-aware keyframes and transcribing audio. [Suede](https://skills.suedeai.ai/directory/huangchihhungleo/claude-real-video/claude-real-video-for-agents/)
 - **77/100 · C** · [claude-real-video](https://github.com/HUANGCHIHHUNGLeo/claude-real-video/blob/master/skills/claude-real-video/SKILL.md): Lets Claude watch a video from a URL or local file by extracting scene-aware keyframes and a transcript, then summarizing or discussing the content. [Suede](https://skills.suedeai.ai/directory/huangchihhungleo/claude-real-video/claude-real-video/)
@@ -351,7 +351,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## infrasity-labs/dev-gtm-claude-skills
 
-[Repository](https://github.com/infrasity-labs/dev-gtm-claude-skills) · Publisher: [infrasity-labs](https://github.com/infrasity-labs) · [Suede AI listing](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/)
+[Repository](https://github.com/infrasity-labs/dev-gtm-claude-skills) · Publisher: [infrasity-labs](https://github.com/infrasity-labs) · [Suede listing](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/)
 
 - **82/100 · B** · [blog-audio](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/writing-skills/blog-audio/SKILL.md): Generates MP3 audio narration of blog posts with Google Gemini text-to-speech, including summaries, full read-alouds, and two-speaker podcast mode, with HTML5 embed code. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/blog-audio/)
 - **80/100 · B** · [blog-image](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/writing-skills/blog-image/SKILL.md): Generates and edits blog images such as hero images, inline illustrations, social preview cards, and OG images using Gemini through MCP with structured prompts. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/blog-image/)
@@ -362,18 +362,18 @@ Skills for making and editing media: video production, image generation and edit
 
 ## JasonColapietro/suede-creator-skills
 
-[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede AI listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
+[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
 
-- **93/100 · A** · [Suede AI Clip to Guide Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-clip-to-guide/SKILL.md): Suede AI Clip to Guide Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-clip-to-guide)
-- **93/100 · A** · [Suede AI Release Linter Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-release-linter/SKILL.md): Find missing files, malformed metadata, artwork and stem issues, split gaps, AI involvement, and delivery blockers in local music or media release folders. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-release-linter)
-- **91/100 · A** · [Suede AI Image Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-image/SKILL.md): Use when asked "create an Open Graph image" or to produce marketing heroes, banners, social graphics, mockups or image workflows. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-image)
-- **91/100 · A** · [Suede AI Video Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-video/SKILL.md): Plan or produce marketing video with scripts, storyboards, shot and asset lists, consent-aware AI or avatar choices, programmatic rendering, edit decisions, pacing, export specs, and video-search metadata. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-video)
+- **93/100 · A** · [Suede Clip to Guide Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-clip-to-guide/SKILL.md): Suede Clip to Guide Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-clip-to-guide)
+- **93/100 · A** · [Suede Release Linter Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-release-linter/SKILL.md): Find missing files, malformed metadata, artwork and stem issues, split gaps, AI involvement, and delivery blockers in local music or media release folders. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-release-linter)
+- **91/100 · A** · [Suede Image Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-image/SKILL.md): Use when asked "create an Open Graph image" or to produce marketing heroes, banners, social graphics, mockups or image workflows. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-image)
+- **91/100 · A** · [Suede Video Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-video/SKILL.md): Plan or produce marketing video with scripts, storyboards, shot and asset lists, consent-aware AI or avatar choices, programmatic rendering, edit decisions, pacing, export specs, and video-search metadata. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-video)
 
 <a id="k-dense-ai--claude-scientific-skills"></a>
 
 ## K-Dense-AI/claude-scientific-skills
 
-[Repository](https://github.com/K-Dense-AI/claude-scientific-skills) · Publisher: [K-Dense-AI](https://github.com/K-Dense-AI) · [Suede AI listing](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/)
+[Repository](https://github.com/K-Dense-AI/claude-scientific-skills) · Publisher: [K-Dense-AI](https://github.com/K-Dense-AI) · [Suede listing](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/)
 
 - **93/100 · A** · [generate-image](https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/skills/generate-image/SKILL.md): Generates or edits images with AI models through the OpenRouter Image API (Gemini, Seedream, Recraft, GPT-Image, Riverflow). [Suede](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/#generate-image)
 - **89/100 · B** · [infographics](https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/skills/infographics/SKILL.md): Creates and reviews infographics with Nano Banana 2 via OpenRouter. [Suede](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/#infographics)
@@ -383,7 +383,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## Leonxlnx/taste-skill
 
-[Repository](https://github.com/Leonxlnx/taste-skill) · Publisher: [Leonxlnx](https://github.com/Leonxlnx) · [Suede AI listing](https://skills.suedeai.ai/directory/leonxlnx/taste-skill/)
+[Repository](https://github.com/Leonxlnx/taste-skill) · Publisher: [Leonxlnx](https://github.com/Leonxlnx) · [Suede listing](https://skills.suedeai.ai/directory/leonxlnx/taste-skill/)
 
 - **61/100 · D** · [brandkit](https://github.com/Leonxlnx/taste-skill/blob/main/skills/brandkit/SKILL.md): Moved to github.com/Leonxlnx/imagegen-skills. [Suede](https://skills.suedeai.ai/directory/leonxlnx/taste-skill/#brandkit)
 
@@ -391,7 +391,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## mcollina/skills
 
-[Repository](https://github.com/mcollina/skills) · Publisher: [mcollina](https://github.com/mcollina) · [Suede AI listing](https://skills.suedeai.ai/directory/mcollina/skills/)
+[Repository](https://github.com/mcollina/skills) · Publisher: [mcollina](https://github.com/mcollina) · [Suede listing](https://skills.suedeai.ai/directory/mcollina/skills/)
 
 - **77/100 · C** · [snipgrapher](https://github.com/mcollina/skills/blob/main/skills/snipgrapher/SKILL.md): Configures snipgrapher to generate syntax-highlighted code snippet images as PNG, SVG, or WebP, with custom themes, reusable profiles, and batch jobs. [Suede](https://skills.suedeai.ai/directory/mcollina/skills/snipgrapher/)
 
@@ -399,7 +399,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## MelMayssonOwen/agent-skills
 
-[Repository](https://github.com/MelMayssonOwen/agent-skills) · Publisher: [MelMayssonOwen](https://github.com/MelMayssonOwen) · [Suede AI listing](https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/)
+[Repository](https://github.com/MelMayssonOwen/agent-skills) · Publisher: [MelMayssonOwen](https://github.com/MelMayssonOwen) · [Suede listing](https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/)
 
 - **76/100 · C** · [clef-music-tools](https://github.com/MelMayssonOwen/agent-skills/blob/main/skills/clef-music-tools/SKILL.md): Transpose chord symbols locally or use Clef MCP tools for piano chords, guitar-tab notes, and music practice. [Suede](https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/clef-music-tools/)
 
@@ -407,7 +407,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## mhattingpete/claude-skills-marketplace
 
-[Repository](https://github.com/mhattingpete/claude-skills-marketplace) · Publisher: [mhattingpete](https://github.com/mhattingpete) · [Suede AI listing](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/)
+[Repository](https://github.com/mhattingpete/claude-skills-marketplace) · Publisher: [mhattingpete](https://github.com/mhattingpete) · [Suede listing](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/)
 
 - **78/100 · C** · [architecture-diagram-creator](https://github.com/mhattingpete/claude-skills-marketplace/blob/main/visual-documentation-plugin/skills/architecture-diagram-creator/SKILL.md): Creates HTML architecture diagrams showing data flows, business objectives, features, technical architecture, and deployment for system documentation and high-level overviews. [Suede](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/architecture-diagram-creator/)
 - **75/100 · C** · [flowchart-creator](https://github.com/mhattingpete/claude-skills-marketplace/blob/main/visual-documentation-plugin/skills/flowchart-creator/SKILL.md): Creates HTML flowcharts and process diagrams with decision trees, color-coded stages, arrows, and swimlanes. [Suede](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/flowchart-creator/)
@@ -416,7 +416,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## MiniMax-AI/skills
 
-[Repository](https://github.com/MiniMax-AI/skills) · Publisher: [MiniMax-AI](https://github.com/MiniMax-AI) · [Suede AI listing](https://skills.suedeai.ai/directory/minimax-ai/skills/)
+[Repository](https://github.com/MiniMax-AI/skills) · Publisher: [MiniMax-AI](https://github.com/MiniMax-AI) · [Suede listing](https://skills.suedeai.ai/directory/minimax-ai/skills/)
 
 - **77/100 · C** · [minimax-music-gen](https://github.com/MiniMax-AI/skills/blob/main/skills/minimax-music-gen/SKILL.md): Generates music, songs, and audio tracks, including lyrics generation, covers, turning supplied lyrics into a song, and background music for a described mood. [Suede](https://skills.suedeai.ai/directory/minimax-ai/skills/minimax-music-gen/)
 - **75/100 · C** · [gif-sticker-maker](https://github.com/MiniMax-AI/skills/blob/main/skills/gif-sticker-maker/SKILL.md): Converts photos of people, pets, objects, or logos into four animated GIF stickers with captions, including cartoon and Funko Pop styles. [Suede](https://skills.suedeai.ai/directory/minimax-ai/skills/gif-sticker-maker/)
@@ -430,7 +430,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## muthuishere/hand-drawn-diagrams
 
-[Repository](https://github.com/muthuishere/hand-drawn-diagrams) · Publisher: [muthuishere](https://github.com/muthuishere) · [Suede AI listing](https://skills.suedeai.ai/directory/muthuishere/hand-drawn-diagrams/hand-drawn-diagrams/)
+[Repository](https://github.com/muthuishere/hand-drawn-diagrams) · Publisher: [muthuishere](https://github.com/muthuishere) · [Suede listing](https://skills.suedeai.ai/directory/muthuishere/hand-drawn-diagrams/hand-drawn-diagrams/)
 
 - **79/100 · C** · [hand-drawn-diagrams](https://github.com/muthuishere/hand-drawn-diagrams/blob/main/SKILL.md): Creates hand-drawn Excalidraw diagrams, flows, explainers, wireframes, and page mockups, defaulting to monochrome sketch output. [Suede](https://skills.suedeai.ai/directory/muthuishere/hand-drawn-diagrams/hand-drawn-diagrams/)
 
@@ -438,7 +438,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## NVIDIA/skills
 
-[Repository](https://github.com/NVIDIA/skills) · Publisher: [NVIDIA](https://github.com/NVIDIA) · [Suede AI listing](https://skills.suedeai.ai/directory/nvidia/skills/)
+[Repository](https://github.com/NVIDIA/skills) · Publisher: [NVIDIA](https://github.com/NVIDIA) · [Suede listing](https://skills.suedeai.ai/directory/nvidia/skills/)
 
 - **87/100 · B** · [physical-ai-neural-reconstruction](https://github.com/NVIDIA/skills/blob/main/skills/physical-ai-neural-reconstruction/SKILL.md): Router for NVIDIA NuRec/NRE: USDZ rendering, NCore conversion, 3DGS, gRPC sensor sim, carline adaptation, PhysicalAI HF datasets. [Suede](https://skills.suedeai.ai/directory/nvidia/skills/#physical-ai-neural-reconstruction)
 - **85/100 · B** · [omniverse-cad-to-simready](https://github.com/NVIDIA/skills/blob/main/skills/omniverse-cad-to-simready/SKILL.md): Coordinate the end-to-end CAD/source-asset to SimReady workflow. [Suede](https://skills.suedeai.ai/directory/nvidia/skills/#omniverse-cad-to-simready)
@@ -451,7 +451,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## ohad6k/emulo
 
-[Repository](https://github.com/ohad6k/emulo) · Publisher: [ohad6k](https://github.com/ohad6k) · [Suede AI listing](https://skills.suedeai.ai/directory/ohad6k/emulo/)
+[Repository](https://github.com/ohad6k/emulo) · Publisher: [ohad6k](https://github.com/ohad6k) · [Suede listing](https://skills.suedeai.ai/directory/ohad6k/emulo/)
 
 - **70/100 · C** · [video](https://github.com/ohad6k/emulo/blob/main/skills/video/SKILL.md): Use when a brief has to become a film. [Suede](https://skills.suedeai.ai/directory/ohad6k/emulo/#video)
 
@@ -459,7 +459,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## openai/skills
 
-[Repository](https://github.com/openai/skills) · Publisher: [openai](https://github.com/openai) · [Suede AI listing](https://skills.suedeai.ai/directory/openai/skills/)
+[Repository](https://github.com/openai/skills) · Publisher: [openai](https://github.com/openai) · [Suede listing](https://skills.suedeai.ai/directory/openai/skills/)
 
 - **79/100 · C** · [speech](https://github.com/openai/skills/blob/main/skills/.curated/speech/SKILL.md): Use when the user asks for text-to-speech narration or voiceover, accessibility reads, audio prompts, or batch speech generation via the OpenAI Audio API; run the bundled CLI (\`scripts/text\_to\_speech.py\`) with built-in voices and… [Suede](https://skills.suedeai.ai/directory/openai/skills/#speech)
 - **76/100 · C** · [transcribe](https://github.com/openai/skills/blob/main/skills/.curated/transcribe/SKILL.md): Transcribe audio files to text with optional diarization and known-speaker hints. [Suede](https://skills.suedeai.ai/directory/openai/skills/#transcribe)
@@ -468,7 +468,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## Orchestra-Research/AI-Research-SKILLs
 
-[Repository](https://github.com/Orchestra-Research/AI-Research-SKILLs) · Publisher: [Orchestra-Research](https://github.com/Orchestra-Research) · [Suede AI listing](https://skills.suedeai.ai/directory/orchestra-research/ai-research-skills/)
+[Repository](https://github.com/Orchestra-Research/AI-Research-SKILLs) · Publisher: [Orchestra-Research](https://github.com/Orchestra-Research) · [Suede listing](https://skills.suedeai.ai/directory/orchestra-research/ai-research-skills/)
 
 - **77/100 · C** · [whisper](https://github.com/Orchestra-Research/AI-Research-SKILLs/blob/main/18-multimodal/whisper/SKILL.md): OpenAI's general-purpose speech recognition model. [Suede](https://skills.suedeai.ai/directory/orchestra-research/ai-research-skills/#whisper)
 
@@ -476,7 +476,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## Orkas-AI/Orkas-VideoStudio
 
-[Repository](https://github.com/Orkas-AI/Orkas-VideoStudio) · Publisher: [Orkas-AI](https://github.com/Orkas-AI) · [Suede AI listing](https://skills.suedeai.ai/directory/orkas-ai/orkas-videostudio/)
+[Repository](https://github.com/Orkas-AI/Orkas-VideoStudio) · Publisher: [Orkas-AI](https://github.com/Orkas-AI) · [Suede listing](https://skills.suedeai.ai/directory/orkas-ai/orkas-videostudio/)
 
 - **87/100 · B** · [gate-control](https://github.com/Orkas-AI/Orkas-VideoStudio/blob/main/packages/skills/gate-control/SKILL.md): Maps explicit user authority and durable artifact state to one next action after any VideoStudio review gate decision, using the ovs gate transition command. [Suede](https://skills.suedeai.ai/directory/orkas-ai/orkas-videostudio/gate-control/)
 - **83/100 · B** · [stage-decide](https://github.com/Orkas-AI/Orkas-VideoStudio/blob/main/packages/skills/stage-decide/SKILL.md): Produces an evidence-bearing rough cut from real footage by finding, selecting, or reducing material, such as removing dead air or fillers and picking highlights. [Suede](https://skills.suedeai.ai/directory/orkas-ai/orkas-videostudio/stage-decide/)
@@ -495,7 +495,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## product-on-purpose/pm-skills
 
-[Repository](https://github.com/product-on-purpose/pm-skills) · Publisher: [product-on-purpose](https://github.com/product-on-purpose) · [Suede AI listing](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/)
+[Repository](https://github.com/product-on-purpose/pm-skills) · Publisher: [product-on-purpose](https://github.com/product-on-purpose) · [Suede listing](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/)
 
 - **75/100 · C** · [utility-mermaid-diagrams](https://github.com/product-on-purpose/pm-skills/blob/main/skills/utility-mermaid-diagrams/SKILL.md): Teaches PMs to create syntactically valid mermaid diagrams by selecting the right diagram type for their communication need, following syntax validity rules, and validating before shipping. [Suede](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/#utility-mermaid-diagrams)
 
@@ -503,7 +503,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## renezander030/capcut-cli
 
-[Repository](https://github.com/renezander030/capcut-cli) · Publisher: [renezander030](https://github.com/renezander030) · [Suede AI listing](https://skills.suedeai.ai/directory/renezander030/capcut-cli/capcut-edit/)
+[Repository](https://github.com/renezander030/capcut-cli) · Publisher: [renezander030](https://github.com/renezander030) · [Suede listing](https://skills.suedeai.ai/directory/renezander030/capcut-cli/capcut-edit/)
 
 - **85/100 · B** · [capcut-edit](https://github.com/renezander030/capcut-cli/blob/master/skills/capcut-edit/SKILL.md): Edits CapCut and JianYing video projects, including subtitles, timing, speed, volume, templates, animations, and cutting long-form video into shorts. [Suede](https://skills.suedeai.ai/directory/renezander030/capcut-cli/capcut-edit/)
 
@@ -511,7 +511,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## replicate/skills
 
-[Repository](https://github.com/replicate/skills) · Publisher: [replicate](https://github.com/replicate) · [Suede AI listing](https://skills.suedeai.ai/directory/replicate/skills/)
+[Repository](https://github.com/replicate/skills) · Publisher: [replicate](https://github.com/replicate) · [Suede listing](https://skills.suedeai.ai/directory/replicate/skills/)
 
 - **72/100 · C** · [prompt-images](https://github.com/replicate/skills/blob/main/skills/prompt-images/SKILL.md): Teaches prompting techniques for AI image generation and editing models on Replicate, for writing prompts or building image generation features. [Suede](https://skills.suedeai.ai/directory/replicate/skills/prompt-images/)
 - **70/100 · C** · [prompt-videos](https://github.com/replicate/skills/blob/main/skills/prompt-videos/SKILL.md): Teaches prompting techniques for AI video generation models on Replicate, for writing prompts or building video generation features. [Suede](https://skills.suedeai.ai/directory/replicate/skills/prompt-videos/)
@@ -520,7 +520,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## sanjay3290/ai-skills
 
-[Repository](https://github.com/sanjay3290/ai-skills) · Publisher: [sanjay3290](https://github.com/sanjay3290) · [Suede AI listing](https://skills.suedeai.ai/directory/sanjay3290/ai-skills/)
+[Repository](https://github.com/sanjay3290/ai-skills) · Publisher: [sanjay3290](https://github.com/sanjay3290) · [Suede listing](https://skills.suedeai.ai/directory/sanjay3290/ai-skills/)
 
 - **83/100 · B** · [google-tts](https://github.com/sanjay3290/ai-skills/blob/main/skills/google-tts/SKILL.md): Convert documents and text to audio using Google Cloud Text-to-Speech. [Suede](https://skills.suedeai.ai/directory/sanjay3290/ai-skills/#google-tts)
 - **80/100 · B** · [elevenlabs](https://github.com/sanjay3290/ai-skills/blob/main/skills/elevenlabs/SKILL.md): Convert documents and text to audio using ElevenLabs text-to-speech. [Suede](https://skills.suedeai.ai/directory/sanjay3290/ai-skills/#elevenlabs)
@@ -530,7 +530,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## smixs/creative-director-skill
 
-[Repository](https://github.com/smixs/creative-director-skill) · Publisher: [smixs](https://github.com/smixs) · [Suede AI listing](https://skills.suedeai.ai/directory/smixs/creative-director-skill/creative-director/)
+[Repository](https://github.com/smixs/creative-director-skill) · Publisher: [smixs](https://github.com/smixs) · [Suede listing](https://skills.suedeai.ai/directory/smixs/creative-director-skill/creative-director/)
 
 - **81/100 · B** · [creative-director](https://github.com/smixs/creative-director-skill/blob/main/creative-director/SKILL.md): Generates creative concepts using SIT, TRIZ, and lateral thinking, scores them against 6 weighted criteria, and refines them recursively to a 9+ threshold. [Suede](https://skills.suedeai.ai/directory/smixs/creative-director-skill/creative-director/)
 
@@ -538,7 +538,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## swarmclawai/swarmclaw
 
-[Repository](https://github.com/swarmclawai/swarmclaw) · Publisher: [swarmclawai](https://github.com/swarmclawai) · [Suede AI listing](https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/)
+[Repository](https://github.com/swarmclawai/swarmclaw) · Publisher: [swarmclawai](https://github.com/swarmclawai) · [Suede listing](https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/)
 
 - **73/100 · C** · [openai-image-gen](https://github.com/swarmclawai/swarmclaw/blob/main/skills/openai-image-gen/SKILL.md): Generates images through the OpenAI Images API with GPT Image, DALL-E 3, or DALL-E 2, supporting batch generation and HTML gallery output. [Suede](https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/openai-image-gen/)
 - **70/100 · C** · [nano-banana-pro](https://github.com/swarmclawai/swarmclaw/blob/main/skills/nano-banana-pro/SKILL.md): Generates or edits images with Gemini 3 Pro Image, supporting text-to-image generation, single-image editing, and composition of up to 14 images. [Suede](https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/nano-banana-pro/)
@@ -547,7 +547,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## tt-a1i/archify
 
-[Repository](https://github.com/tt-a1i/archify) · Publisher: [tt-a1i](https://github.com/tt-a1i) · [Suede AI listing](https://skills.suedeai.ai/directory/tt-a1i/archify/archify/)
+[Repository](https://github.com/tt-a1i/archify) · Publisher: [tt-a1i](https://github.com/tt-a1i) · [Suede listing](https://skills.suedeai.ai/directory/tt-a1i/archify/archify/)
 
 - **87/100 · B** · [archify](https://github.com/tt-a1i/archify/blob/main/archify/SKILL.md): Creates validated architecture, workflow, sequence, data-flow, state, and class diagrams as standalone HTML with inline SVG and image, SVG, or WebM export. [Suede](https://skills.suedeai.ai/directory/tt-a1i/archify/archify/)
 
@@ -555,7 +555,7 @@ Skills for making and editing media: video production, image generation and edit
 
 ## veniceai/skills
 
-[Repository](https://github.com/veniceai/skills) · Publisher: [veniceai](https://github.com/veniceai) · [Suede AI listing](https://skills.suedeai.ai/directory/veniceai/skills/)
+[Repository](https://github.com/veniceai/skills) · Publisher: [veniceai](https://github.com/veniceai) · [Suede listing](https://skills.suedeai.ai/directory/veniceai/skills/)
 
 - **70/100 · C** · [venice-audio-music](https://github.com/veniceai/skills/blob/main/skills/venice-audio-music/SKILL.md): Async music, sound-effect and long-form voice generation via Venice. [Suede](https://skills.suedeai.ai/directory/veniceai/skills/#venice-audio-music)
 - **70/100 · C** · [venice-audio-speech](https://github.com/veniceai/skills/blob/main/skills/venice-audio-speech/SKILL.md): Generate speech from text via POST /audio/speech, and clone a voice via POST /audio/voices. [Suede](https://skills.suedeai.ai/directory/veniceai/skills/#venice-audio-speech)
@@ -567,6 +567,6 @@ Skills for making and editing media: video production, image generation and edit
 
 ---
 
-**Get your product cited in AI answers.** Suede AI's AEO, GEO and SEO team helps companies get found in Google and named by ChatGPT, Perplexity and Claude. [suedeai.agency](https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agency) Listed here? [Add your badge](../README.md#add-your-badge).
+**Get your product cited in AI answers.** Suede's AEO, GEO and SEO team helps companies get found in Google and named by ChatGPT, Perplexity and Claude. [suedeai.agency](https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agency) Listed here? [Add your badge](../README.md#add-your-badge).
 
 [Awesome Everything](../README.md) · [Compare scores](../README.md#compare-099-quality-scores) · [Publishers](../publishers.md) · [Featured projects](../featured.md) · [Guides](../README.md#guides) · [Contribute](../CONTRIBUTING.md) · [Search by score](https://skills.suedeai.ai/directory/?sort=score)

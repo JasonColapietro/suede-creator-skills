@@ -29,7 +29,7 @@ const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, 
 export function renderStub(slug, { target, reason }) {
   const url = target ? `${BASE_URL}/skills/${target}.html` : `${BASE_URL}/skills/`;
   const label = target ?? "the skill catalog";
-  const title = target ? `${slug} moved to ${target}` : `${slug} left the Suede AI skill pack`;
+  const title = target ? `${slug} moved to ${target}` : `${slug} left the Suede skill pack`;
   const sentence = target
     ? `The ${slug} skill ${reason} ${target}.`
     : `The ${slug} skill ${reason}.`;

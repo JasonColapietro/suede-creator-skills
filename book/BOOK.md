@@ -2,7 +2,7 @@
 
 ### The Builder's Book Behind the Suede Skills
 
-By Jason Colapietro, Suede AI
+By Jason Colapietro, Suede
 
 Companion to [suede-creator-skills](https://github.com/JasonColapietro/suede-creator-skills),
 a 67-skill open-source pack for Claude Code and OpenAI Codex.
@@ -185,7 +185,7 @@ frontmatter carrying a `name` and a `description`. Everything after the closing
 ```yaml
 ---
 name: suede-deslop
-description: "Suede Slop Stop: the Suede AI context-aware anti-slop pass for finished prose. Finds or removes generic filler ... without flattening the author's voice. ..."
+description: "Suede Slop Stop: the Suede context-aware anti-slop pass for finished prose. Finds or removes generic filler ... without flattening the author's voice. ..."
 ---
 ```
 
@@ -206,11 +206,11 @@ Tuesday afternoon as it does at midnight.
 ## Progressive disclosure, or why 67 skills fit
 
 Here is the objection that arrives immediately. The 67 `SKILL.md` files in this
-repo total 949,907 bytes. Loading all of them into every conversation would
+repo total 949,215 bytes. Loading all of them into every conversation would
 crowd out the thing you actually came to do.
 
 They are not all loaded. Only the frontmatter descriptions stay resident, and
-all 67 descriptions together come to 29,730 bytes. That is roughly a
+all 67 descriptions together come to 29,586 bytes. That is roughly a
 thirty-second of the corpus. The agent holds a catalog of what exists and reads
 a body only when a description matches the task in front of it.
 
@@ -323,7 +323,7 @@ Every `SKILL.md` in this repo opens the same way:
 ```yaml
 ---
 name: suede-code
-description: "Suede AI code review and A-F ship grade for a diff, PR, branch, or commit range: findings ranked P0-P3 with file:line evidence and a fix path, an A-F grade across seven lanes with Instant-F security triggers and surface grade caps, OWASP 2025 checks, a deploy-safety gate, a commit-dirt scan, and fix briefs. Three modes: full review and grade in one pass (default), findings only with no grade, and grade only with no findings list. Use when asked to review this, grade this, find the bugs before merge, security-check this, is this safe to ship, give it a letter, or should this merge. Runs only when explicitly invoked; never auto-fires on a diff, save, or commit. NOT FOR: making CI enforce the verdict on every merge (use suede-ci-gate); LLM, RAG, or agent behavior coverage (use suede-ai-eval); searching competing plans and building a multi-file change (use suede-graph-flo-xr); fixes that need coordinated parallel lanes (use suede-agent-teams)."
+description: "Suede code review and A-F ship grade for a diff, PR, branch, or commit range: findings ranked P0-P3 with file:line evidence and a fix path, an A-F grade across seven lanes with Instant-F security triggers and surface grade caps, OWASP 2025 checks, a deploy-safety gate, a commit-dirt scan, and fix briefs. Three modes: full review and grade in one pass (default), findings only with no grade, and grade only with no findings list. Use when asked to review this, grade this, find the bugs before merge, security-check this, is this safe to ship, give it a letter, or should this merge. Runs only when explicitly invoked; never auto-fires on a diff, save, or commit. NOT FOR: making CI enforce the verdict on every merge (use suede-ci-gate); LLM, RAG, or agent behavior coverage (use suede-ai-eval); searching competing plans and building a multi-file change (use suede-graph-flo-xr); fixes that need coordinated parallel lanes (use suede-agent-teams)."
 ---
 ```
 
@@ -342,15 +342,15 @@ you.
 ## The description carries the routing burden
 
 The description is the only part of a skill that stays in the agent's context
-when the skill is not running. In this repo the 67 files total 949,907 bytes;
-the 67 descriptions together are 29,730. The agent holds the small number and
+when the skill is not running. In this repo the 67 files total 949,215 bytes;
+the 67 descriptions together are 29,586. The agent holds the small number and
 reaches for the large one only when a description matches.
 
 That makes the description a router, not a summary. It has to answer two
 questions well enough that an agent mid-task can decide in one pass: what does
 this produce, and when should it fire.
 
-Look at what `suede-code` does with 490 characters. "Suede AI code review and
+Look at what `suede-code` does with 487 characters. "Suede code review and
 A-F ship grade for a diff, PR, branch, or commit range" states the artifact. The
 next clauses name what comes back and the three modes, so a caller who only
 wants the letter knows it can ask for one. The trigger list catches the request
@@ -360,13 +360,13 @@ FOR: making CI enforce the verdict on every merge (use suede-ci-gate)." That
 clause exists because `suede-ci-gate` lives next door and produces something
 different, and without it an agent would pick between them by coin flip.
 
-`suede-deslop` does the same job in 436 characters:
+`suede-deslop` does the same job in 433 characters:
 
 ```text
-description: "Suede Slop Stop: the Suede AI context-aware anti-slop pass for
+description: "Suede Slop Stop: the Suede context-aware anti-slop pass for
 finished prose. Finds or removes generic filler, manufactured emphasis, false
 agency, formulaic structure, chat and draft residue, formatting applied by rule,
-and the Suede AI house bans (em dashes, moreover, delve, game-changer, unlock,
+and the Suede house bans (em dashes, moreover, delve, game-changer, unlock,
 elevate, seamless, landscape, tapestry, rule-of-three rhythm) without flattening
 the author's voice. Returns cleaned prose with a 50-point score, or a
 findings-only audit that leaves the text untouched. Use before copy, a README,

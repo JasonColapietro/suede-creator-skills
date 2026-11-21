@@ -91,7 +91,7 @@ function directoryWithPendingIndex(fetch = () => new Promise(() => {})) {
 }
 
 test('directory search still finds stable machine slugs after public names change', async () => {
-  const item = { name: 'Suede AI Paid Ads Skills', slug: 'suede-ads', repo: 'JasonColapietro/suede-creator-skills',
+  const item = { name: 'Suede Paid Ads Skills', slug: 'suede-ads', repo: 'JasonColapietro/suede-creator-skills',
     description: 'Plan paid media campaigns', category: 'marketing-seo', label: 'Marketing',
     grade: 'A', score: 91, license: 'MIT', href: '/directory/jasoncolapietro/suede-creator-skills/#suede-ads' };
   const { controls, results } = directoryWithPendingIndex(async () => ({ ok: true, json: async () => [item] }));

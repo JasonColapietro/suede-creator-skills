@@ -42,7 +42,7 @@ test('every maintained first-party package has an actual directory score above 9
     if (skill.slug === 'suede-graph-flo-xr' && updated.has(skill.slug)) {
       assert.equal(skill.display_name, 'Suede Graph Flo XR');
     } else {
-      assert.match(skill.display_name, /^Suede AI(?: .+)? Skills$/);
+      assert.match(skill.display_name, /^Suede(?! AI\b| Labs\b)(?: .+)? Skills$/);
     }
   }
 });
@@ -51,7 +51,7 @@ test('first-party reports and retained source inventories describe the exact rev
   assert.ok(own.length > 0, 'first-party reports require actual listings');
   // This is dated evidence, not a manifest that gets rehashed against HEAD.
   // Its detached source commit may not be retained in ordinary CI checkouts.
-  assert.equal(sha256(receiptText), 'f413c78fb72275b972542c1e9def2c073469fb617e1243f3e176d1694d171bce');
+  assert.equal(sha256(receiptText), '6083c907b8c72c9f609e5938c28d7fb2672ba29d226e20a14fcd05347b18107f');
   assert.equal(receipt.source_revision, data.repos[repo].commit_sha);
   assert.equal(receipt.assessment_date, data.repos[repo].assessment_date);
   assert.equal(updated.size, updates.length, 'each accepted listing may have only one active update');
@@ -74,6 +74,18 @@ test('first-party reports and retained source inventories describe the exact rev
       if (covered.has(relative)) assert.equal(digest, covered.get(relative), relative);
       covered.set(relative, digest);
       assert.equal(sha256(git(['show', `${revision}:${relative}`])), digest, `updated pinned source ${relative}`);
+      expected[relative] = digest;
+    }
+    // These two files combine the pinned Graph work and the independent Suede
+    // brand refresh. Keep both historical receipts intact; verify their merged
+    // bytes separately. The remaining Graph files must be byte-exact to the pin.
+    const integrated = {
+      'README.md': '8bd8a7e858d4737023004c4f831f14fd66ab2d9d5a37f1bc49f9dfba7702d927',
+      'skills/suede-graph-flo-xr/CARD.md': 'e32ce4ae7c6f6b06c19a5dc9a1d6910a263e9234ecce6edb98b12b2f92757c3e',
+    };
+    for (const [relative, digest] of Object.entries(integrated)) {
+      if (!Object.hasOwn(files, relative)) continue;
+      assert.ok(receipt.source_file_refreshes?.[relative], 'branding refresh must be recorded: ' + relative);
       expected[relative] = digest;
     }
     const skillSource = read(`${listing.dir}/SKILL.md`).match(/^---\r?\n([\s\S]+?)\r?\n---(?:\r?\n|$)/);
@@ -127,8 +139,8 @@ test('Graph Flo XR source reassessment replaces the stable catalog row without a
 
 test('the first-party collection uses its public name and useful category search terms', () => {
   const html = read('docs/directory/jasoncolapietro/suede-creator-skills/index.html');
-  assert.match(html, /<h1>Suede AI Skills\b/);
-  assert.match(html, /<title>Suede AI Skills:/);
+  assert.match(html, /<h1>Suede Skills\b/);
+  assert.match(html, /<title>Suede Skills:/);
   const keywords = html.match(/<meta name="keywords" content="([^"]+)"/)[1].split(', ');
   assert.ok(!/suede/i.test(keywords[0]));
   assert.equal(keywords.filter(k => /suede/i.test(k)).length, 1);

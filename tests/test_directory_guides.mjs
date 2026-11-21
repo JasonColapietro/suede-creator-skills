@@ -87,7 +87,7 @@ test("every guide page has a unique title, a self canonical and Article JSON-LD 
     assert.equal(article.author["@id"], manifest.author["@id"]);
     assert.equal(article.publisher["@type"], "Organization");
     assert.equal(article.publisher["@id"], "https://suedeai.ai/#organization");
-    assert.equal(article.publisher.name, "Suede AI");
+    assert.equal(article.publisher.name, "Suede");
     assert.equal(article.headline, g.h1);
     assert.equal(article.datePublished, g.date_published);
     assert.equal(article.dateModified, g.date_modified);
@@ -223,7 +223,7 @@ test("the directory display brand is Suede Skills Directory", () => {
       ? visibleCopy.replaceAll('<p class="featured-kind">Suede Directory Member</p>', '')
       : visibleCopy;
     assert.match(html, /<meta property="og:site_name" content="Suede Skills Directory">/, rel);
-    assert.doesNotMatch(brandCopy, /Suede AI Skills Directory|Suede Directory\b|Suede Labs/, rel);
+    assert.doesNotMatch(brandCopy, /Suede AI\b|Suede Directory\b|Suede Labs/, rel);
   }
   assert.match(fs.readFileSync(path.join(docs, "directory/badge.svg"), "utf8"), /Suede Skills Directory: listed/);
 });
@@ -247,7 +247,7 @@ async function runSkillCheck(query) {
     ['[data-check-results]', results], ['[data-check-cta="listed"]', new Element()],
     ['[data-check-cta="missing"]', new Element()],
   ]);
-  const first = { name: "Suede AI Ads Skills", slug: "suede-ads", repo: "JasonColapietro/suede-creator-skills", report: "/directory/suede-ads/report.json", href: "/directory/suede-ads/", label: "Marketing", license: "MIT" };
+  const first = { name: "Suede Ads Skills", slug: "suede-ads", repo: "JasonColapietro/suede-creator-skills", report: "/directory/suede-ads/report.json", href: "/directory/suede-ads/", label: "Marketing", license: "MIT" };
   const legacy = { name: "external-skill", repo: "publisher/skills", report: "/directory/external/report.json", href: "/directory/external/", label: "Writing", license: "MIT" };
   const requested = [];
   const context = {
@@ -259,7 +259,7 @@ async function runSkillCheck(query) {
     fetch: async (url) => {
       requested.push(url);
       return { ok: true, json: async () => url.endsWith("search-index.json")
-        ? [first, { ...first, name: "Suede AI Analytics Skills", slug: "suede-analytics", report: "/directory/suede-analytics/report.json" }, legacy]
+        ? [first, { ...first, name: "Suede Analytics Skills", slug: "suede-analytics", report: "/directory/suede-analytics/report.json" }, legacy]
         : { quality: { score: 91, grade: "A", components: [] }, snapshot: { date: "2026-10-26" }, methodology: { version: "graded-v2" } } };
     },
   };
@@ -269,10 +269,10 @@ async function runSkillCheck(query) {
 }
 
 test("skill check resolves a public display name, stable slug and exact GitHub skill URL", async () => {
-  for (const query of ["suede-ads", "Suede AI Ads Skills", "https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-ads"]) {
+  for (const query of ["suede-ads", "Suede Ads Skills", "https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-ads"]) {
     const output = await runSkillCheck(query);
     assert.deepEqual(output.requested, ["../search-index.json", "../suede-ads/report.json"], query);
-    assert.equal(output.status, "Suede AI Ads Skills scores 91/100.", query);
+    assert.equal(output.status, "Suede Ads Skills scores 91/100.", query);
   }
 });
 

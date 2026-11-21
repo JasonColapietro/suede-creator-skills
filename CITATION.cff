@@ -1,6 +1,6 @@
 cff-version: 1.2.0
-message: "If you use Suede AI Skills, please cite it as below."
-title: "Suede AI Skills"
+message: "If you use Suede Skills, please cite it as below."
+title: "Suede Skills"
 abstract: >-
   A public, open-source pack of installable Agent Skills for Claude Code and
   OpenAI Codex, plus an optional Model Context Protocol (MCP) server. Original
@@ -14,7 +14,7 @@ version: 0.19.4
 authors:
   - family-names: Colapietro
     given-names: Jason
-    affiliation: "Suede AI"
+    affiliation: "Suede"
     website: "https://suedeai.ai/founder"
 repository-code: "https://github.com/JasonColapietro/suede-creator-skills"
 url: "https://skills.suedeai.ai/"

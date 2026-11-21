@@ -1,6 +1,6 @@
 # How to Get Your Agent Skill Found in Search and Cited by AI Assistants
 
-By [Jason Colapietro](https://suedeai.ai/founder), Founder and CEO of Suede AI. Author of *Stake Your Claim*, *Proof as Infrastructure* and *The Human Authenticity Layer*, holder of the VoicePrint patent, and a builder of companies for two decades.
+By [Jason Colapietro](https://suedeai.ai/founder), Founder and CEO of Suede. Author of *Stake Your Claim*, *Proof as Infrastructure* and *The Human Authenticity Layer*, holder of the VoicePrint patent, and a builder of companies for two decades.
 
 Reviewed October 23, 2026. Figures come from the Agent Skills Directory snapshot of October 19, 2026.
 
@@ -59,7 +59,7 @@ That last item closes a loop: your README links to an independent listing, the l
 
 ## Is there a quick way to check my skill's visibility?
 
-Yes. The **Skill AI-visibility check** looks up your skill in the directory and shows its listing status, its score, the points it is missing, and a short checklist for the page where people will find it. It runs in your browser and sends nothing to Suede AI.
+Yes. The **Skill AI-visibility check** looks up your skill in the directory and shows its listing status, its score, the points it is missing, and a short checklist for the page where people will find it. It runs in your browser and sends nothing to Suede.
 
 Run the [Skill AI-visibility check](https://skills.suedeai.ai/directory/check/).
 
@@ -67,7 +67,7 @@ Run the [Skill AI-visibility check](https://skills.suedeai.ai/directory/check/).
 
 When the skill is part of a product, and the product needs to show up when buyers ask ChatGPT, Perplexity, Claude or Google for a recommendation. That goes past one README: it is your docs, your comparison pages, your entity consistency across the web, and measurement of which answers cite you.
 
-Suede AI's [AEO, GEO and SEO team](https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=guide&utm_campaign=skill-ai-visibility&utm_content=help-section) does that work for companies. [Talk to Suede AI about AI visibility](https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=guide&utm_campaign=skill-ai-visibility&utm_content=help-section-cta).
+Suede's [AEO, GEO and SEO team](https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=guide&utm_campaign=skill-ai-visibility&utm_content=help-section) does that work for companies. [Talk to Suede about AI visibility](https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=guide&utm_campaign=skill-ai-visibility&utm_content=help-section-cta).
 
 ## FAQ
 
