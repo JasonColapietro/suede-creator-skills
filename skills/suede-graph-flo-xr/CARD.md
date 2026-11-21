@@ -23,7 +23,7 @@ Pack license: MIT ([LICENSE](../../LICENSE)). This skill additionally bundles th
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when a consequential multi-file task needs serious compute and independent testing. Run competing design, adversarial review, and QA lanes against one implementation; use Light, Standard, or Deep and return reproducible evidence. Compare designs when there is more than one plausible fix; build only one in an isolated worktree.
+Use when a consequential multi-file task needs serious compute and independent testing. Run competing design, adversarial review, and QA lanes against one implementation; use Light, Standard, or Deep and return reproducible evidence. Try “Pressure-test two fixes for duplicate bookings.” Compare designs when there is more than one plausible fix; build only one in an isolated worktree.
 
 Out of scope — bulk worker work, existing-diff review, CI setup, or copy-only work.
 
