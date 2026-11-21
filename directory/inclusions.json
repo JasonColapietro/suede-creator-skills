@@ -32,7 +32,10 @@
   "OakcoderX/awesome-agent-skills",
   "korey2028-prog/resume-claim-guard",
   "inhotel-io/govisit-toolkit",
-  "rnthking/redya-skills"
+  "rnthking/redya-skills",
+  "StalkC/stalkchain-plugin",
+  "kochetkov-ma/brewpage-publish-plugins",
+  "skillsforbots/grok-bot-skills"
  ],
  "skills": {
   "appierun/appie-mcp": [
@@ -1016,6 +1019,18 @@
   ],
   "rnthking/redya-skills": [
    "redya-xiaohongshu"
+  ],
+  "StalkC/stalkchain-plugin": [
+   "trader-check",
+   "token-check",
+   "smart-money-radar"
+  ],
+  "kochetkov-ma/brewpage-publish-plugins": [
+   "brewpage-publish"
+  ],
+  "skillsforbots/grok-bot-skills": [
+   "bot-safety-rules-starter",
+   "reminder-basics"
   ]
  },
  "skill_roots": {
@@ -1198,6 +1213,18 @@
   ],
   "rnthking/redya-skills": [
    "skill/redya-xiaohongshu"
+  ],
+  "StalkC/stalkchain-plugin": [
+   "skills/trader-check",
+   "skills/token-check",
+   "skills/smart-money-radar"
+  ],
+  "kochetkov-ma/brewpage-publish-plugins": [
+   "skills/brewpage-publish"
+  ],
+  "skillsforbots/grok-bot-skills": [
+   "skills/bot-safety-rules-starter",
+   "skills/reminder-basics"
   ]
  }
 }
