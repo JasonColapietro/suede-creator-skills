@@ -79,10 +79,10 @@ test('first-party reports and retained source inventories describe the exact rev
     // These two files combine the pinned Graph work and the independent Suede
     // brand refresh. Keep both historical receipts intact; verify their merged
     // bytes separately. The remaining Graph files must be byte-exact to the pin.
-    const integrated = {
+    const integrated = revision === '7ed35b1c61bd86f0ec7490ff976000e9ddf7d24d' ? {
       'README.md': '8bd8a7e858d4737023004c4f831f14fd66ab2d9d5a37f1bc49f9dfba7702d927',
       'skills/suede-graph-flo-xr/CARD.md': 'e32ce4ae7c6f6b06c19a5dc9a1d6910a263e9234ecce6edb98b12b2f92757c3e',
-    };
+    } : {};
     for (const [relative, digest] of Object.entries(integrated)) {
       if (!Object.hasOwn(files, relative)) continue;
       assert.ok(receipt.source_file_refreshes?.[relative], 'branding refresh must be recorded: ' + relative);

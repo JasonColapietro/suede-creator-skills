@@ -7,7 +7,7 @@ Release record for the `suede-graph-flo-xr` skill, following the NVIDIA skill-ca
 
 ## Description
 
-Use when a multi-file repo change has more than one plausible fix.
+Use when a consequential multi-file task needs serious compute and independent testing.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.4; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ Pack license: MIT ([LICENSE](../../LICENSE)). This skill additionally bundles th
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when a multi-file repo change has more than one plausible fix. Suede Graph Flo XR compares plans in the repo, challenges the strongest options, and builds only the winner in an isolated worktree. Choose Light (55), Standard (110), or Deep (200) worker calls max. Try “Compare competing fixes for a duplicate booking.” Get the diff and test notes.
+Use when a consequential multi-file task needs serious compute and independent testing. Run competing design, adversarial review, and QA lanes against one implementation; use Light, Standard, or Deep and return reproducible evidence. Try “Pressure-test two fixes for duplicate bookings.” Compare designs when there is more than one plausible fix; build only one in an isolated worktree.
 
-Out of scope — bulk worker work, existing-diff review (suede-code), CI setup (suede-ci-gate), or copy-only work (suede-ship-copy).
+Out of scope — bulk worker work, existing-diff review, CI setup, or copy-only work.
 
 ## Deployment Geography
 

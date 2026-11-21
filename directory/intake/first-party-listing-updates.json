@@ -2,31 +2,31 @@
   {
     "schema_version": 1,
     "repository": "JasonColapietro/suede-creator-skills",
-    "source_revision": "7ed35b1c61bd86f0ec7490ff976000e9ddf7d24d",
+    "source_revision": "323547f6bf0253069e2a846d74d8fa07d523780e",
     "previous_source_revision": "99f96251190f3678d7762373854c8251faa1b8d6",
     "assessment_date": "2026-11-21",
-    "source_commit_date": "2026-11-20",
+    "source_commit_date": "2026-11-21",
     "source_branch": "main",
-    "reviewed_source_branch": "dot/graph-flo-xr-evidence-rebuild",
+    "reviewed_source_branch": "dot/graph-flo-xr-testing-first",
     "scope": [
       "suede-graph-flo-xr"
     ],
     "external_snapshot_date": "2026-10-22",
     "source_files": {
-      "README.md": "3d285f4acf715060fdca52d3ee27e429c57889ad1444f9939fdcad3239c633fb",
+      "README.md": "8bd8a7e858d4737023004c4f831f14fd66ab2d9d5a37f1bc49f9dfba7702d927",
       "package-lock.json": "5c0f42cba9d5974c4c51e0874858ddd196ac4a7c18f30938b508b5fe25078dfd",
       "package.json": "582869c9ae79d92c6845b658053dbd29974ae57cdbdc2ca4dcb221ee73f7a8ce",
-      "skills/suede-graph-flo-xr/CARD.md": "7b82a8e4602ac702ee07b365050ffa24de7e835f970afc6f003508a9f832b746",
+      "skills/suede-graph-flo-xr/CARD.md": "b84afb0794602906383ee54acbf11d1028a864c09ce72dd8a34f6047b584a27d",
       "skills/suede-graph-flo-xr/LICENSE.graph-of-thoughts-BSD.txt": "5080658c0064dfbfee3e2baab373b39975b2741f4e06a23717895e6ac0dc2da4",
-      "skills/suede-graph-flo-xr/SKILL.md": "62d7088083e9e78e249ea587d00dfa8f32c56b55b5baa76842aaf0b94329b7d6",
-      "skills/suede-graph-flo-xr/agents/openai.yaml": "a95f73a98a66f4da6e5d21e53024fd3b5715330b4466ae6a078d7579e097c760",
+      "skills/suede-graph-flo-xr/SKILL.md": "2d81433cf63e11bc18266e3201cf81aceff265148843bee920b5f39376025f3b",
+      "skills/suede-graph-flo-xr/agents/openai.yaml": "f8b623d8a0db484e7c9504b7bdf0e46d7f42e42220ded40fa59ff336ed2c8a82",
       "skills/suede-graph-flo-xr/agents/suede-graph-flo-xr-applier.md": "114d6f6f173e771a57774a66d93eda2ea33bf79e67731d014c5f93af13750154",
       "skills/suede-graph-flo-xr/agents/suede-graph-flo-xr-code-reader.md": "d156ab6d555d522a92373c620cdf444802501f0db6387f06fa4796aab2619d89",
       "skills/suede-graph-flo-xr/agents/suede-graph-flo-xr-patch-author.md": "bcd1f9226f78243524e5d0fcaf2e91b3dc8dc1c3b6521f5979972dd711b241fb",
       "skills/suede-graph-flo-xr/agents/suede-graph-flo-xr-scout.md": "3a203b569f5a444899d58ceec2754d36386372a4079791e3fe558ed29370ee4d",
       "skills/suede-graph-flo-xr/agents/suede-graph-flo-xr-verifier.md": "1020b28cdb5d0f17efc964a036bbb1c9e5a41f71c5702010c7169207f58172ac",
       "skills/suede-graph-flo-xr/agents/suede-graph-flo-xr-web-reader.md": "96dc7f639166c816976a9bd38f0c93f395aebdeb11281f4e06043078a3bf56ae",
-      "skills/suede-graph-flo-xr/references/usage-contract.md": "e5c884c056cdf4633fd510cc73767de4cc6548ab61c31057e68b53713adb49fa",
+      "skills/suede-graph-flo-xr/references/usage-contract.md": "da8fede8fea087420974f754784b294a1fee9fed0bcb4f799f5c0a3fdb115ade",
       "skills/suede-graph-flo-xr/workflows/helpers/apply-patch.cjs": "dad0bf64d85a64418d0cc857da645a2b0e8dee0b32a03ab43831fa3d836ce9c7",
       "skills/suede-graph-flo-xr/workflows/helpers/candidate-audit.cjs": "522f9057a59b0aa4df37875472b26f00935c90d7340fab770c4e2595962b5761",
       "skills/suede-graph-flo-xr/workflows/helpers/diff-digest.cjs": "dcdc9971f19116c2fe6abe8cd90892a9651bb88d1c2177cd7ae4145a6cdd4fff",
@@ -84,7 +84,7 @@
       "repo": "JasonColapietro/suede-creator-skills",
       "slug": "suede-graph-flo-xr",
       "name": "suede-graph-flo-xr",
-      "description": "Use when a multi-file repo change has more than one plausible fix. Suede Graph Flo XR compares plans in the repo, challenges the strongest options, and builds only the winner in an isolated worktree. Choose Light (55), Standard (110), or Deep (200) worker calls max. Try “Compare competing fixes for a duplicate booking.” Get the diff and test notes. NOT FOR: bulk worker work, existing-diff review (suede-code), CI setup (suede-ci-gate), or copy-only work (suede-ship-copy).",
+      "description": "Use when a consequential multi-file task needs serious compute and independent testing. Run competing design, adversarial review, and QA lanes against one implementation; use Light, Standard, or Deep and return reproducible evidence. Try “Pressure-test two fixes for duplicate bookings.” Compare designs when there is more than one plausible fix; build only one in an isolated worktree. NOT FOR: bulk worker work, existing-diff review, CI setup, or copy-only work.",
       "category": "ai-agents-llm",
       "grade": "A",
       "score": 91,
@@ -101,12 +101,13 @@
         }
       ],
       "size": [
-        263,
-        2200,
+        307,
+        2741,
         22
       ],
       "kinds": "r",
       "display_name": "Suede Graph Flo XR"
-    }
+    },
+    "prior_scoped_source_revision": "7ed35b1c61bd86f0ec7490ff976000e9ddf7d24d"
   }
 ]
