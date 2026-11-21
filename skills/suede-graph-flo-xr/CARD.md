@@ -23,7 +23,7 @@ Pack license: MIT ([LICENSE](../../LICENSE)). This skill additionally bundles th
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when a multi-file repo change has more than one plausible fix. Suede Graph Flo XR compares plans against code, challenges the strongest options, and builds only the winner in an isolated worktree. Choose Light (55), Standard (110), or Deep (200) worker calls max. See the selected diff, why alternatives lost, and what needs independent verification.
+Use when a multi-file repo change has more than one plausible fix. Suede Graph Flo XR compares plans in the repo, challenges the strongest options, and builds only the winner in an isolated worktree. Choose Light (55), Standard (110), or Deep (200) worker calls max. Try “Compare competing fixes for a duplicate booking.” Get the diff and test notes.
 
 Out of scope — bulk worker work, existing-diff review (suede-code), CI setup (suede-ci-gate), or copy-only work (suede-ship-copy).
 
