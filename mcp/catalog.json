@@ -540,9 +540,9 @@
       "area": "workflow",
       "specialty": "ship",
       "lane": "Orchestration & routing",
-      "description": "Use when asked \"compare implementation plans before building\" for one multi-file repository change. Suede runs Suede Thought Graph shipping search: it searches, scores, prunes and refutes plans, selects one winner, then builds in an isolated worktree with a sandboxed gate and handoff. Halts on hazards, collisions or exhausted budget. NOT FOR: bulk worker tasks, existing-diff review (use suede-code), CI wiring (use suede-ci-gate), or copy-only work (use suede-ship-copy).",
+      "description": "Use when a multi-file repo change has more than one plausible fix. Suede Graph Flo XR compares plans in the repo, challenges the strongest options, and builds only the winner in an isolated worktree. Choose Light (55), Standard (110), or Deep (200) worker calls max. Try “Compare competing fixes for a duplicate booking.” Get the diff and test notes. NOT FOR: bulk worker work, existing-diff review (suede-code), CI setup (suede-ci-gate), or copy-only work (suede-ship-copy).",
       "useWhen": "Use the evidence-gated orchestration contract for a multi-file repo change; run the Suede Thought Graph workflow only in its supported Claude Code/macOS environment.",
-      "displayName": "Suede Graph Flo XR Skills"
+      "displayName": "Suede Graph Flo XR"
     },
     {
       "name": "suede-image",

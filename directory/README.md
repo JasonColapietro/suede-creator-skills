@@ -335,6 +335,22 @@ Only actual indexed-list citations earn adoption points. Full third-party
 README copies remain local intake inputs; the public receipt retains revisions,
 document hashes and target links rather than copying their text.
 
+### Replace one reviewed listing in place
+
+For a one-skill source update, run the parser and curator on the pinned source
+in a disposable checkout and retain the matching row in
+`intake/first-party-listing-updates.json`. Keep the original dataset and review
+receipt intact. Record the old and new revisions, assessed date, source
+inventory and unchanged row identity. The builder applies the reviewed row in
+place and binds that row's report to a separate digest. The catalog ID, listing
+URL, original listing date, and all other source pins stay unchanged.
+
+Keep a scoped update active while its predecessor is still the publisher
+snapshot. When a full refresh incorporates the same revision or a later
+reviewed version, reconcile and retire the active update in that refresh;
+retain its commit and receipt in history. Do not turn a single-source review
+into an unverified new publication or security grade.
+
 A scoped review preserves the global external snapshot date and every external
 skill record and repository metadata value. Its dated receipt identifies the
 new first-party assessment, exact proposed source revision, complete tracked

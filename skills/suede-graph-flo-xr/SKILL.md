@@ -1,19 +1,33 @@
 ---
 name: suede-graph-flo-xr
-description: "Use when asked \"compare implementation plans before building\" for one multi-file repository change. Suede runs Suede Thought Graph shipping search: it searches, scores, prunes and refutes plans, selects one winner, then builds in an isolated worktree with a sandboxed gate and handoff. Halts on hazards, collisions or exhausted budget. NOT FOR: bulk worker tasks, existing-diff review (use suede-code), CI wiring (use suede-ci-gate), or copy-only work (use suede-ship-copy)."
+description: "Use when a multi-file repo change has more than one plausible fix. Suede Graph Flo XR compares plans in the repo, challenges the strongest options, and builds only the winner in an isolated worktree. Choose Light (55), Standard (110), or Deep (200) worker calls max. Try “Compare competing fixes for a duplicate booking.” Get the diff and test notes. NOT FOR: bulk worker work, existing-diff review (suede-code), CI setup (suede-ci-gate), or copy-only work (suede-ship-copy)."
 metadata:
-  display-name: "Suede Graph Flo XR Skills"
+  display-name: "Suede Graph Flo XR"
 ---
 
-# Suede Graph Flo XR Skills
+# Suede Graph Flo XR
 
-Use the bundled `workflows/suede-graph-flo-xr.js` workflow to search competing plans for
-one multi-file repository change. It makes an evidence-backed selection before
-any implementation lane mutates the worktree.
+**Make the plans compete, not the patches.**
 
-## Compatibility
+A booking form creates two appointments from one double-click. Does the fix
+belong in the button, the API, or both? Graph Flo weighs those approaches
+against the code, challenges the strongest options, and builds only the
+selected plan in an isolated worktree. The handoff shows what changed, why
+other plans lost, and what still needs proof.
 
-Bundled execution requires Claude Code Workflow on macOS, sandbox-exec, Node.js, Git and the six registered agent profiles. Other hosts can read the orchestration contract but must use direct implementation rather than claim Workflow execution.
+## Choose a search depth
+
+| Option | Initial plans | Max worker calls | Pick it for |
+| --- | ---: | ---: | --- |
+| **Light** (`light`) | 3 | 55 | One focused fix that spans a few files. |
+| **Standard** (`standard`) | 5 | 110 | Changes with multiple seams, such as a UI and API contract. |
+| **Deep** (`deep`) | 8 | 200 | A cross-cutting change with more credible approaches or harder tradeoffs. |
+
+These are ceilings, not minimums. Pick one before launch; the workflow never
+upgrades the budget on its own.
+
+Try it on duplicate bookings: give it the failing replay test and ask whether
+the fix belongs at a submit button, the request handler, or both before applying any patch.
 
 ## Intake and budget gate
 
@@ -22,34 +36,20 @@ Before launch, require all three inputs:
 - **Repo**: an absolute repository path. Relative paths and `~` fail closed.
 - **Scope**: the requested multi-file change, including any protected paths or
   constraints.
-- **Budget**: `light`, `standard`, or `deep`.
+- **Budget**: a user-selected `light`, `standard`, or `deep`. If missing, show the three choices with their ceilings and ask for one; do not launch.
 
-Also detect and pass optional context when available: `deploys` (whether the
-repo has a deploy surface), `liveUrl` (the read-only production surface), and
-`vault` (the external decision/handoff context path). Their absence does not
-block a non-deploying repository, but do not silently discard known values.
+Pass known optional context: boolean `deploys`, public read-only `liveUrl`,
+and the decision-context path `vault`. Pass a chosen `workerModel` (`sonnet`,
+`opus`, `haiku`, or `fable`) to every worker. Otherwise workers inherit the
+session model; surface a costly inherited model before spending calls.
 
-When the user names a model for the workers (`workerModel`: `sonnet`, `opus`,
-`haiku`, or `fable`), pass it: every worker call then runs on that model while
-orchestration stays on the session model. Omitted, workers inherit the session
-model silently; if the session sits on an expensive model and the user did not
-choose it for workers, say so before launch instead of letting the default
-decide. A run can spend up to 200 worker calls, so an unchosen inherited model
-is a cost decision nobody made.
-
-If repo or scope is missing, halt. Report the missing input in one line, offer
-to provide the repo path, describe the desired change, or route a one-file edit
-to direct implementation, then wait for the user's choice.
-
-State the selected range and projected worst-case calls before launching:
-`light` projects and permits **55**, `standard` projects and permits **110**, and
-`deep` projects and permits **200** total agent calls. Do not infer a budget from
-scope or silently raise a ceiling. If the user has not chosen one, ask and wait.
+If repo or scope is missing, ask for it. Route a one-file edit to direct
+implementation. State the chosen tier and maximum calls before launching.
 
 ## Runtime prerequisites
 
-The bundled JavaScript workflow is a Claude Code workflow for macOS. It requires
-`sandbox-exec` and the six registered `suede-graph-flo-xr-*` agent profiles. Install the
+The bundled JavaScript workflow is a Claude Code workflow for macOS. It requires Git, Node.js,
+`sandbox-exec`, and the six registered `suede-graph-flo-xr-*` agent profiles. Install the
 full `suede-skills` plugin, the `suede-agent-workflows` plugin, or use this
 repository's `install.sh`, which copies the profiles into `~/.claude/agents`.
 
@@ -201,6 +201,10 @@ Gate removes credential-like and interpreter-injection environment variables,
 then redirects home, temporary, and cache paths before an acceptance command
 starts. If a check depends on removed credentials, report it as unverified;
 never rerun it outside the sandbox merely to obtain a pass.
+
+A transport failure with no required Research, Gaps, Review, Gate, or Release
+report halts instead of counting as clean evidence. An explicit empty findings
+array from a responding reviewer is a valid report.
 
 A successfully applied blocker patch is not treated as semantically cleared.
 The original blocker remains in `fixedBlockersPendingVerification`. The Gate

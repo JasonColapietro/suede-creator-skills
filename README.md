@@ -170,7 +170,7 @@ Use suede-seo-audit to audit this page for search visibility and return prioriti
 For a nontrivial multi-file change, run the ship DAG:
 
 ```text
-Use suede-graph-flo-xr to take this change through the canonical Suede DAG: research it, build it in disjoint lanes, refute the review findings, and hand back evidence.
+Use suede-graph-flo-xr on /absolute/path/to/my-app to stop duplicate bookings without changing the API contract. Budget: light. Compare a UI fix, an API fix, and a combined fix. Build only the winner and show what proved the fix.
 ```
 
 If the pack saves you an hour, [star the repo](https://github.com/JasonColapietro/suede-creator-skills/stargazers) — stars are how other builders find it.
@@ -179,7 +179,7 @@ If the pack saves you an hour, [star the repo](https://github.com/JasonColapietr
 
 Tell your agent "max effort, spare no compute, fix everything" and most of the time you get enthusiasm, not engineering. The orchestration lane turns that intent into structure:
 
-- [`suede-graph-flo-xr`](skills/suede-graph-flo-xr) runs a Suede Thought Graph shipping search on a repo: generate competing plans, score and prune them, adversarially refute and improve survivors, aggregate compatible lanes, then build, review, and gate only the selected plan. Light/standard/deep are capped at 55/110/200 calls. Production reads only; it never deploys.
+- [`suede-graph-flo-xr`](skills/suede-graph-flo-xr): **Make the plans compete, not the patches.** Challenge competing fixes against the repo, build only the winner in an isolated worktree, and hand back the diff and evidence. Pick **Light** (3 plans, 55 calls max), **Standard** (5, 110), or **Deep** (8, 200). The bundled runner is for Claude Code on macOS.
 - [`suede-agent-teams`](skills/suede-agent-teams) wires complex changes into coordinated agent lanes with WIP collision detection, RFC mode, feature-flag strategy, rollback trees, and a handoff checklist that won't close without evidence. Its public-contribution mode adds scored issue queues, atomic leases, isolated worktrees, and authority-gated contribution packets.
 - [`suede-ship-copy`](skills/suede-ship-copy) is a separate copy-only orchestration DAG for one high-stakes piece of writing: five blind research lenses, a claim audit that closes the set of assertable facts, disjoint section writers, adversarial refutation, a deslop pass, and a publish-readiness gate.
 

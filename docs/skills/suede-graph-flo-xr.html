@@ -3,29 +3,29 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Suede Graph Flo XR Skills</title>
-    <meta name="description" content="Multi-agent plan search in Claude Code on macOS: compare competing plans and build only the selected one, with 55/110/200-call caps. It never deploys.">
+    <title>Suede Graph Flo XR</title>
+    <meta name="description" content="Make the plans compete, not the patches. Compare implementation plans, challenge the finalists, and build only the winner. Choose Light, Standard, or Deep.">
     <meta name="keywords" content="graph flo xr, multi-agent plan search, competing implementation plans, adversarial verification, Suede Skills">
     <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://skills.suedeai.ai/skills/suede-graph-flo-xr.html">
     <link rel="icon" href="../assets/favicon-64.png" type="image/png">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Suede Graph Flo XR Skills">
-    <meta property="og:description" content="Multi-agent plan search in Claude Code on macOS: compare competing plans and build only the selected one, with 55/110/200-call caps. It never deploys.">
+    <meta property="og:title" content="Suede Graph Flo XR">
+    <meta property="og:description" content="Make the plans compete, not the patches. Compare implementation plans, challenge the finalists, and build only the winner. Choose Light, Standard, or Deep.">
     <meta property="og:url" content="https://skills.suedeai.ai/skills/suede-graph-flo-xr.html">
     <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Suede Graph Flo XR Skills">
-    <meta name="twitter:description" content="Multi-agent plan search in Claude Code on macOS: compare competing plans and build only the selected one, with 55/110/200-call caps. It never deploys.">
+    <meta name="twitter:title" content="Suede Graph Flo XR">
+    <meta name="twitter:description" content="Make the plans compete, not the patches. Compare implementation plans, challenge the finalists, and build only the winner. Choose Light, Standard, or Deep.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "@id": "https://skills.suedeai.ai/skills/suede-graph-flo-xr.html#article",
-  "headline": "Suede Graph Flo XR Skills",
-  "description": "Claude Code/macOS Suede Thought Graph repo search: compare competing plans, build only the selected plan, and hold behind clamped patch and Gate attestations. Light, standard, and deep runs are capped at 55, 110, and 200 calls. Production access is read-only; it never deploys.",
+  "headline": "Suede Graph Flo XR",
+  "description": "Suede Graph Flo XR compares implementation plans against your repository, challenges the finalists, and builds only the selected plan. Choose Light, Standard, or Deep.",
   "url": "https://skills.suedeai.ai/skills/suede-graph-flo-xr.html",
   "author": {
     "@type": "Person",
@@ -124,12 +124,12 @@
     </header>
     <main id="main" tabindex="-1" class="shell">
       <div class="eyebrow">/suede-graph-flo-xr &middot; Suede Thought Graph shipping search</div>
-      <h1><span class="h1-task">Suede Graph Flo XR Skills</span> Competing plans. One selected build.</h1>
-      <p class="lead">Suede Graph Flo XR generates competing implementation plans, scores and prunes them, adversarially refutes and improves the survivors, aggregates compatible lanes, then builds, reviews, and gates only the selected plan. Light, standard, and deep runs are capped at 55, 110, and 200 total agent calls. The bundled runner requires Claude Code on macOS, registered Suede Graph Flo XR agent profiles, and <code>sandbox-exec</code>. It never deploys.</p>
+      <h1><span class="h1-task">Suede Graph Flo XR</span> Make the plans compete, not the patches.</h1>
+      <p class="lead">A booking form creates two appointments from one double-click. Does the fix belong in the button, the API, or both? Graph Flo weighs the options against your code, challenges the finalists, and builds only the selected plan. You get the diff, why competing plans lost, and what still needs proof.</p>
       <p><a class="button" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-graph-flo-xr">View skill folder</a> <a class="button secondary" href="../plugins.html">Install options</a></p>
 
       <div class="plain-ask" aria-label="Example request that routes to this skill">
-        <span class="plain-ask-quote">&quot;ship this change across the whole surface&quot;</span>
+        <span class="plain-ask-quote">&quot;compare ways to stop duplicate bookings, then build the winner&quot;</span>
         <span class="plain-ask-arrow" aria-hidden="true">-&gt;</span>
         <code class="plain-ask-cmd">/suede-graph-flo-xr</code>
         <span class="plain-ask-note">Ask in plain words. The <a href="suede-workflow-skills.html">router</a> reads the request and loads this lane; MCP agents find it with <code>list_suede_skills</code>.</span>
@@ -141,24 +141,34 @@
           <span class="skill-term-title">claude code &middot; sample session</span>
         </div>
         <div class="skill-term-body">
-          <span class="t-line"><span class="t-warn">$ </span><span class="t-cmd">/suede-graph-flo-xr repo=/absolute/path/to/api budget=standard scope="add per-account rate limiting"</span></span>
-          <span class="t-line">generate: 4 plans &middot; score + prune: 2 survive</span>
+          <span class="t-line"><span class="t-warn">$ </span><span class="t-cmd">/suede-graph-flo-xr repo=/absolute/path/to/api budget=standard scope="stop duplicate bookings"</span></span>
+          <span class="t-line">generate: 5 initial plans &middot; score + prune: 2 survive</span>
           <span class="t-line">refute + improve &middot; aggregate compatible lanes &middot; select: plan-3</span>
-          <span class="t-line">build selected plan only &middot; 83/110 calls</span>
-          <span class="t-line"><span class="term-grade">GATE: TYPECHECK + BUILD + TESTS PASS</span></span>
-          <span class="t-line">handoff written &middot; not deployed<span class="term-cursor" aria-hidden="true"></span></span>
+          <span class="t-line">build selected plan only &middot; cap: 110 worker calls</span>
+          <span class="t-line"><span class="term-grade">GATE: HELD FOR INDEPENDENT VERIFICATION</span></span>
+          <span class="t-line">handoff: diff, plan decisions, checks and next action<span class="term-cursor" aria-hidden="true"></span></span>
         </div>
       </div>
 
+      <section class="panel" aria-labelledby="graph-depth">
+        <h2 id="graph-depth">Choose how deep to search</h2>
+        <ul>
+          <li><strong>Light:</strong> starts with 3 plans, up to 55 worker calls. Pick it for a focused change across a few files.</li>
+          <li><strong>Standard:</strong> starts with 5 plans, up to 110 worker calls. Pick it for changes with multiple seams, such as a UI and API contract.</li>
+          <li><strong>Deep:</strong> starts with 8 plans, up to 200 worker calls. Pick it when approaches differ substantially or touch multiple subsystems.</li>
+        </ul>
+      </section>
+
       <section class="panel">
         <h2>Copy just this skill</h2>
+        <p>The bundled runner uses Claude Code on macOS with Git, Node.js, <code>sandbox-exec</code>, and the six bundled profiles below.</p>
         <p><strong>Claude Code project-level copy</strong></p>
         <pre><code>git clone https://github.com/JasonColapietro/suede-creator-skills.git /tmp/suede-creator-skills
 mkdir -p .claude/skills
 mkdir -p ~/.claude/agents
 cp -R /tmp/suede-creator-skills/skills/suede-graph-flo-xr .claude/skills/
 cp /tmp/suede-creator-skills/skills/suede-graph-flo-xr/agents/suede-graph-flo-xr-*.md ~/.claude/agents/</code></pre>
-        <p>For this manual copy, pass an empty <code>agentNamespace</code> string in the workflow args. The caller must pass <code>agentNamespace: "suede-skills"</code> for the full plugin or <code>agentNamespace: "suede-agent-workflows"</code> for the focused plugin. Missing and unknown values fail before the first agent call.</p>
+        <p>For this manual copy, pass an empty <code>agentNamespace</code> string in the workflow args and point <code>helperDir</code> at the absolute path of the copied <code>workflows/helpers</code> directory. The caller must pass <code>agentNamespace: "suede-skills"</code> for the full plugin or <code>agentNamespace: "suede-agent-workflows"</code> for the focused plugin. Missing and unknown values fail before the first agent call.</p>
         <p><strong>Codex contract only</strong></p>
         <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
@@ -186,7 +196,6 @@ cp /tmp/suede-creator-skills/skills/suede-graph-flo-xr/agents/suede-graph-flo-xr
             <li>Any multi-file change where competing implementation plans should be compared before the worktree changes.</li>
             <li>Work in a repo where several sessions run at once and a lane collision would otherwise clobber a sibling branch.</li>
             <li>Changes where you want the findings refuted before you read them, not after you ship them.</li>
-            <li>Choose the budget before launch: light permits 55, standard 110, and deep 200 total agent calls.</li>
             <li>Not for: high-volume, well-specified work that splits into independent worker-sized tasks (run those as a separate private worker-fleet pass).</li>
             <li>Not for: reviewing or grading an existing diff (use suede-code).</li>
             <li>Not for: wiring CI and branch protection (use suede-ci-gate).</li>
@@ -202,7 +211,7 @@ cp /tmp/suede-creator-skills/skills/suede-graph-flo-xr/agents/suede-graph-flo-xr
 
       <section class="panel">
         <h2>Best prompt</h2>
-        <pre><code>Use $suede-graph-flo-xr on /absolute/path/to/my-app to add per-account rate limiting to every API route. Scope: preserve the existing auth contract and unrelated WIP. Budget: standard. Search competing plans and mutate only the selected winner. Read production if needed, but do not deploy.</code></pre>
+        <pre><code>Use $suede-graph-flo-xr on /absolute/path/to/my-app to stop duplicate bookings from double-clicks. Scope: preserve the existing auth contract and unrelated WIP. Budget: standard. Search competing plans and mutate only the selected winner. Read production if needed, but do not deploy.</code></pre>
       </section>
 
       <section class="panel">

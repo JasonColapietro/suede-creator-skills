@@ -606,13 +606,13 @@
 
 <div class="procmon" aria-hidden="true">
   <div class="procmon-track">
-    <span><b>PID 01</b> suede-graph-flo-xr :: 35..150 agents :: research -&gt; lanes -&gt; refute -&gt; gate</span>
+    <span><b>PID 01</b> suede-graph-flo-xr :: 55 / 110 / 200-call caps :: research -&gt; lanes -&gt; refute -&gt; gate</span>
     <span><b>PID 02</b> suede-agent-teams :: collision detection :: signed handoff</span>
     <span><b>PID 03</b> suede-workflow-skills :: umbrella router :: next move scored :: runnable prompt</span>
     <span><i>IR</i> one continuous pass :: no check-ins</span>
     <span><i>XR</i> the momentum loop :: never idles</span>
     <span>adversarial review inside the run :: evidence at the close</span>
-    <span><b>PID 01</b> suede-graph-flo-xr :: 35..150 agents :: research -&gt; lanes -&gt; refute -&gt; gate</span>
+    <span><b>PID 01</b> suede-graph-flo-xr :: 55 / 110 / 200-call caps :: research -&gt; lanes -&gt; refute -&gt; gate</span>
     <span><b>PID 02</b> suede-agent-teams :: collision detection :: signed handoff</span>
     <span><b>PID 03</b> suede-workflow-skills :: umbrella router :: next move scored :: runnable prompt</span>
     <span><i>IR</i> one continuous pass :: no check-ins</span>
@@ -651,7 +651,7 @@
 
   <section class="shell" aria-labelledby="instant-release">
     <h2 id="instant-release">Instant release. One controller, every lane hot at once.</h2>
-    <p class="section-sub">The IR formulation runs the whole stack as one continuous subagent-driven pass. A single controller fans out every useful non-colliding lane at once, keeps every worker hot until the finish line, turns adversarial review on its own output mid-run, and lands with evidence. You paste one prompt. It comes back shipped.</p>
+    <p class="section-sub">The IR formulation runs the whole stack as one continuous subagent-driven pass. A single controller fans out every useful non-colliding lane at once, keeps every worker hot until the finish line, turns adversarial review on its own output mid-run, and lands with evidence. You paste one prompt. It comes back with the selected diff and the evidence to review it.</p>
 
     <div class="terminal">
       <div class="terminal-bar">
@@ -659,11 +659,10 @@
         <span class="terminal-title">adderall-ir &middot; one dose</span>
       </div>
       <div class="terminal-body">
-        <pre>/suede-graph-flo-xr &lt;your outcome&gt; &mdash; instant release: run this as one
-continuous subagent-driven pass. Fan out every useful non-colliding
-lane at once and keep every worker busy until the finish. No pauses,
-no check-ins, no intervals. Adversarial review inside the run.
-Evidence at the end.</pre>
+        <pre>Use /suede-graph-flo-xr on &lt;absolute repo path&gt; for &lt;multi-file change&gt;.
+Budget: standard (up to 110 worker calls). Compare competing plans,
+challenge the finalists, and build only the winner in an isolated
+worktree. Return the diff and verification evidence. Do not deploy.</pre>
         <button class="copy-btn" type="button" data-copy-prev aria-label="Copy the instant release prompt">Copy</button>
       </div>
     </div>

@@ -4,7 +4,7 @@
 // rows, buttons and sections on skill, category and hub pages. Unit tests
 // cover scripts/directory/topics.mjs, facets.mjs and listed-since.mjs; page
 // tests read the committed output in docs/directory/ and derive every
-// expectation from directory/skills.json the way scripts/build-directory.mjs
+// expectation from the accepted snapshot and scoped reviews, as the directory builder
 // does. Joined to `npm run test:directory` through an import in
 // tests/test_directory_seo.mjs, since package.json is pinned by the
 // first-party intake receipt.
@@ -302,8 +302,13 @@ test("isNewListing excludes the floor date and anything older than 30 days", () 
 // ------------------------------------------------------------ the dataset, expanded like the build
 
 const data = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "skills.json"), "utf8"));
+const updatesPath = path.join(repoRoot, "directory", "intake", "first-party-listing-updates.json");
+const updates = new Map((fs.existsSync(updatesPath) ? JSON.parse(fs.readFileSync(updatesPath, "utf8")) : [])
+  .map(update => [`${update.repository}/${update.listing.slug}`, update]));
 const categories = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "categories.json"), "utf8"));
-const skills = data.skills.map((c) => {
+const skills = data.skills.map((baseline) => {
+  const update = updates.get(`${baseline.repo}/${baseline.slug}`);
+  const c = update?.listing || baseline;
   const meta = data.repos[c.repo];
   const [owner, name] = c.repo.split("/");
   const repoSlug = `${slugify(owner)}/${slugify(name)}`;
@@ -315,8 +320,8 @@ const skills = data.skills.map((c) => {
     featured: Boolean(c.featured),
     lists: meta.lists,
     official: meta.official,
-    commit_date: meta.commit_date,
-    assessment_date: meta.assessment_date || null,
+    commit_date: update?.source_commit_date || update?.assessment_date || meta.commit_date,
+    assessment_date: update?.assessment_date || meta.assessment_date || null,
     file_count: c.size[2],
     has_references: c.kinds.includes("r"),
     has_scripts: c.kinds.includes("s"),

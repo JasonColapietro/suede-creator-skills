@@ -54,7 +54,10 @@ export function syncFirstPartyPublic(root = ROOT, { check = false } = {}) {
     const fm = load(block[1]);
     const displayName = fm.metadata?.['display-name'];
     if (fm.name !== skill.name) throw new Error(`Source/catalog identity mismatch: ${skill.name}`);
-    if (typeof displayName !== 'string' || !/^Suede(?! AI\b| Labs\b)(?: .+)? Skills$/.test(displayName)) throw new Error(`Invalid first-party display name: ${skill.name}`);
+    const validDisplayName = skill.name === 'suede-graph-flo-xr'
+      ? displayName === 'Suede Graph Flo XR'
+      : typeof displayName === 'string' && /^Suede(?! AI\b| Labs\b)(?: .+)? Skills$/.test(displayName);
+    if (!validDisplayName) throw new Error(`Invalid first-party display name: ${skill.name}`);
     if (typeof fm.description !== 'string' || !fm.description.trim()) throw new Error(`Missing description: ${skill.name}`);
     const heading = source.slice(block[0].length).match(/^# (.+)$/m)?.[1];
     if (heading !== displayName) throw new Error(`Source H1/display name mismatch: ${skill.name}`);
