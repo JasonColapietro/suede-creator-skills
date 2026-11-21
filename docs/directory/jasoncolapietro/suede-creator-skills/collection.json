@@ -3299,19 +3299,21 @@
     },
     {
       "id": "jasoncolapietro/suede-creator-skills/suede-graph-flo-xr",
-      "name": "Suede AI Graph Flo XR Skills",
-      "description": "Use when asked \"compare implementation plans before building\" for one multi-file repository change. Suede AI runs Suede Thought Graph shipping search: it searches, scores, prunes and refutes plans, selects one winner, then builds in an isolated worktree with a sandboxed gate and handoff. Halts on hazards, collisions or exhausted budget. NOT FOR: bulk worker tasks, existing-diff review (use suede-code), CI wiring (use suede-ci-gate), or copy-only work (use suede-ship-copy).",
+      "name": "Suede Graph Flo XR",
+      "description": "Use when a multi-file repo change has more than one plausible fix. Suede Graph Flo XR compares plans in the repo, challenges the strongest options, and builds only the winner in an isolated worktree. Choose Light (55), Standard (110), or Deep (200) worker calls max. Try “Compare competing fixes for a duplicate booking.” Get the diff and test notes. NOT FOR: bulk worker work, existing-diff review (suede-code), CI setup (suede-ci-gate), or copy-only work (suede-ship-copy).",
       "category": "ai-agents-llm",
       "license": "MIT",
-      "license_url": "https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/LICENSE",
+      "license_url": "https://github.com/JasonColapietro/suede-creator-skills/blob/7ed35b1c61bd86f0ec7490ff976000e9ddf7d24d/LICENSE",
       "license_kind": "open",
       "source": {
-        "branch": "fix/security-suede-creator-skills-20261114",
-        "revision": "99f96251190f3678d7762373854c8251faa1b8d6",
+        "branch": "main",
+        "revision": "7ed35b1c61bd86f0ec7490ff976000e9ddf7d24d",
         "revision_status": "recorded",
-        "repository_commit_date": "2026-11-14",
-        "assessment_date": "2026-11-14",
-        "skill_md_url": "https://github.com/JasonColapietro/suede-creator-skills/blob/99f96251190f3678d7762373854c8251faa1b8d6/skills/suede-graph-flo-xr/SKILL.md"
+        "repository_commit_date": "2026-11-20",
+        "assessment_date": "2026-11-21",
+        "previous_revision": "99f96251190f3678d7762373854c8251faa1b8d6",
+        "listing_update_sha256": "7e026f464923c6b0b8ee82a41019e1711f0f1b8908493b78b61c0d1ccba039de",
+        "skill_md_url": "https://github.com/JasonColapietro/suede-creator-skills/blob/7ed35b1c61bd86f0ec7490ff976000e9ddf7d24d/skills/suede-graph-flo-xr/SKILL.md"
       },
       "quality": {
         "score": 91,
@@ -3397,10 +3399,10 @@
       },
       "report_url": "https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/suede-graph-flo-xr/report.json",
       "review_url": null,
-      "source_folder_url": "https://github.com/JasonColapietro/suede-creator-skills/tree/fix/security-suede-creator-skills-20261114/skills/suede-graph-flo-xr",
+      "source_folder_url": "https://github.com/JasonColapietro/suede-creator-skills/tree/7ed35b1c61bd86f0ec7490ff976000e9ddf7d24d/skills/suede-graph-flo-xr",
       "install": {
-        "skills_cli": "npx skills add https://github.com/JasonColapietro/suede-creator-skills/tree/fix/security-suede-creator-skills-20261114/skills/suede-graph-flo-xr",
-        "publisher_setup_url": "https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-graph-flo-xr/SKILL.md"
+        "skills_cli": "npx skills add https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-graph-flo-xr",
+        "publisher_setup_url": "https://github.com/JasonColapietro/suede-creator-skills/blob/7ed35b1c61bd86f0ec7490ff976000e9ddf7d24d/skills/suede-graph-flo-xr/SKILL.md"
       }
     },
     {

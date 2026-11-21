@@ -46,6 +46,47 @@ const datasetBytes = fs.readFileSync(path.join(repoRoot, "directory", "skills.js
 const data = JSON.parse(datasetBytes.toString("utf8"));
 const snapshot = { date: data.generated, sha256: createHash("sha256").update(datasetBytes).digest("hex") };
 if (!/^[a-f0-9]{32}$/.test(data.snapshot_id || "")) throw new Error("skills.json: missing refresh snapshot_id");
+// A scoped reassessment replaces one accepted listing in memory. Keep the
+// original dataset, repository-wide facts and dated review receipts intact.
+const listingUpdates = new Map();
+const listingUpdatesPath = path.join(repoRoot, "directory", "intake", "first-party-listing-updates.json");
+if (fs.existsSync(listingUpdatesPath)) {
+  const updates = JSON.parse(fs.readFileSync(listingUpdatesPath, "utf8"));
+  if (!Array.isArray(updates)) throw new Error("first-party-listing-updates.json: expected an array");
+  const isObject = (v) => v && typeof v === "object" && !Array.isArray(v);
+  const isoDate = (v) => typeof v === "string" && /^\d{4}-\d{2}-\d{2}$/.test(v) &&
+    Number.isFinite(Date.parse(v)) && new Date(v).toISOString().slice(0, 10) === v;
+  const sha = (v) => typeof v === "string" && /^[a-f0-9]{40}$/.test(v);
+  for (const update of updates) {
+    const { listing, repository, source_revision, previous_source_revision, source_files, assessment_date,
+      source_branch = "main", source_commit_date = assessment_date } = update || {};
+    const id = listing && `${repository}/${listing.slug}`;
+    const reject = (why) => { throw new Error(`first-party-listing-updates.json: ${id || "update"}: ${why}`); };
+    if (!isObject(update) || update.schema_version !== 1 || !isObject(listing) || repository !== "JasonColapietro/suede-creator-skills") reject("expected a canonical first-party review record");
+    const previous = data.skills.filter((row) => `${row.repo}/${row.slug}` === id);
+    if (previous.length !== 1 || listingUpdates.has(id)) reject("update must replace exactly one accepted listing");
+    for (const field of ["repo", "name", "slug", "dir", "featured"]) {
+      if (previous[0][field] !== listing[field]) reject(`cannot change listing identity or route: ${field}`);
+    }
+    const meta = data.repos[repository];
+    if (!sha(source_revision) || previous_source_revision !== meta.commit_sha || source_revision === previous_source_revision) reject("new and previous source revisions must be pinned");
+    if (!isoDate(assessment_date) || !isoDate(source_commit_date) || source_commit_date > assessment_date || assessment_date < meta.assessment_date) reject("invalid source or assessment date");
+    if (typeof source_branch !== "string" || !/^[a-zA-Z0-9][a-zA-Z0-9._/-]*$/.test(source_branch) ||
+      source_branch.split("/").some((segment) => !segment || segment.startsWith(".") || segment.endsWith(".") || segment.endsWith(".lock") || segment.includes(".."))) reject("invalid install branch");
+    if (!isObject(source_files) || !Object.hasOwn(source_files, `${listing.dir}/SKILL.md`)) reject("missing source inventory");
+    for (const [file, digest] of Object.entries(source_files)) {
+      if (!/^(?:[a-zA-Z0-9._-]+\/)*[a-zA-Z0-9._-]+$/.test(file) ||
+        file.split("/").some((part) => part === "." || part === "..") ||
+        (file.includes("/") && !file.startsWith(`${listing.dir}/`)) || typeof digest !== "string" ||
+        !/^[a-f0-9]{64}$/.test(digest)) reject("invalid or out-of-scope source inventory");
+    }
+    listingUpdates.set(id, {
+      listing, revision: source_revision, previousRevision: previous_source_revision, branch: source_branch,
+      commitDate: source_commit_date, assessmentDate: assessment_date,
+      digest: createHash("sha256").update(JSON.stringify(update)).digest("hex"),
+    });
+  }
+}
 const categories = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "categories.json"), "utf8"));
 const GROWTH_FILE = path.join(repoRoot, 'directory/growth/full-pages.json');
 const GROWTH = fs.existsSync(GROWTH_FILE) ? JSON.parse(fs.readFileSync(GROWTH_FILE, 'utf8')) : null;
@@ -248,7 +289,11 @@ function scoreParts(c, repo, generated) {
 // record with its repository facts, slugs and GitHub URLs. slugify matches the
 // Python one that keyed directory/labels.json.
 const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "skill";
-data.skills = data.skills.map((c) => {
+data.skills = data.skills.map((base) => {
+  const sourceReview = listingUpdates.get(`${base.repo}/${base.slug}`);
+  const c = sourceReview?.listing || base;
+  // Score against the unchanged publisher facts and catalog snapshot, not a
+  // newer commit date or a fabricated adoption signal.
   const meta = data.repos[c.repo];
   if (!meta) throw new Error(`skills.json: no repos entry for ${c.repo}`);
   if (!listed(c) || c.score !== qualityScore(c, meta, data.generated) || letterGrade(c.score) !== c.grade) throw new Error(`skills.json: inconsistent score or eligibility for ${c.repo}/${c.slug}`);
@@ -258,7 +303,9 @@ data.skills = data.skills.map((c) => {
   const [owner, name] = c.repo.split("/");
   const repoSlug = `${slugify(owner)}/${slugify(name)}`;
   const tree = c.dir === "." ? "" : `${c.dir}/`;
-  const blob = (p) => `https://github.com/${c.repo}/blob/${meta.branch}/${p}`;
+  const branch = sourceReview?.branch || meta.branch;
+  const sourceRef = sourceReview?.revision || meta.branch;
+  const blob = (p) => `https://github.com/${c.repo}/blob/${sourceRef}/${p}`;
   return {
     ...c,
     id: `${repoSlug}/${c.slug}`,
@@ -268,12 +315,13 @@ data.skills = data.skills.map((c) => {
     featured: Boolean(c.featured),
     full_page: FULL_PAGES.has(`${c.repo}/${c.slug}`.toLowerCase()),
     checks: Object.fromEntries(CHECKS.map((k, i) => [k.id, c.checks[i] === "1"])),
-    folder_url: c.dir === "." ? `https://github.com/${c.repo}` : `https://github.com/${c.repo}/tree/${meta.branch}/${c.dir}`,
+    folder_url: c.dir === "." ? `https://github.com/${c.repo}` : `https://github.com/${c.repo}/tree/${sourceRef}/${c.dir}`,
     skill_md_url: blob(`${tree}SKILL.md`),
-    license_url: c.license_evidence?.length > 1 ? `https://github.com/${c.repo}/tree/${meta.branch}/${c.license_file}` : c.license_file ? blob(c.license_file) : blob(`${tree}SKILL.md`),
-    branch: meta.branch,
-    commit_date: meta.commit_date,
-    assessment_date: meta.assessment_date || null,
+    license_url: c.license_evidence?.length > 1 ? `https://github.com/${c.repo}/tree/${sourceRef}/${c.license_file}` : c.license_file ? blob(c.license_file) : blob(`${tree}SKILL.md`),
+    branch,
+    source_ref: sourceRef,
+    commit_date: sourceReview?.commitDate || meta.commit_date,
+    assessment_date: sourceReview?.assessmentDate || meta.assessment_date || null,
     lists: meta.lists,
     official: meta.official,
     repo_withheld: meta.withheld || 0,
@@ -401,7 +449,7 @@ for (const r of repos.values()) {
   r.lists = [...new Set(r.skills.flatMap((s) => s.lists))].sort();
   r.official = r.skills.some((s) => s.official);
   r.licenses = [...new Set(r.skills.map((s) => s.license))];
-  r.commit = r.skills.reduce((m, s) => (s.commit_date > m ? s.commit_date : m), "");
+  r.commit = data.repos[r.repo].commit_date;
   const counts = new Map();
   for (const s of r.skills) counts.set(s.category, (counts.get(s.category) || 0) + 1);
   r.categories = [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([c]) => c);
@@ -537,7 +585,11 @@ const LISTED_FILE = path.join(repoRoot, "directory", "listed-since.json");
 const LISTED_NEXT = applyListedSince(loadListedSince(LISTED_FILE), data.skills, data.generated).next;
 const LISTED_FLOOR = Object.values(LISTED_NEXT.dates).reduce((m, d) => (d < m ? d : m), data.generated);
 const byScore = (a, b) => b.score - a.score || b.lists.length - a.lists.length || a.id.localeCompare(b.id);
-const BROWSE_DATE = data.skills.reduce((latest, s) => s.assessment_date && s.assessment_date > latest ? s.assessment_date : latest, data.generated);
+// One source reassessment must not move the browsing clock for the entire catalog.
+const BROWSE_DATE = data.skills.reduce((latest, s) => {
+  const assessed = data.repos[s.repo].assessment_date;
+  return assessed && assessed > latest ? assessed : latest;
+}, data.generated);
 const NEW_LISTINGS = data.skills.filter((s) => !isFirstParty(s) && isNewListing(s, BROWSE_DATE, LISTED_FLOOR)).sort((a, b) => b.listed_since.localeCompare(a.listed_since) || byScore(a, b));
 const RECENTLY_UPDATED = data.skills.filter((s) => !isFirstParty(s) && isRecentlyUpdated(s, BROWSE_DATE)).sort((a, b) => b.commit_date.localeCompare(a.commit_date) || byScore(a, b));
 const TOP_SKILLS = data.skills.filter((s) => !isFirstParty(s)).sort(byScore).slice(0, TOP_MAX);
@@ -1180,14 +1232,16 @@ ${rows
 
 // Portable evidence describes the saved snapshot, never a fresh scan of upstream.
 function skillReport(s) {
-  const revision = data.repos[s.repo].commit_sha || null;
+  const sourceReview = listingUpdates.get(`${s.repo}/${s.slug}`);
+  const revision = sourceReview?.revision || data.repos[s.repo].commit_sha || null;
   if (revision !== null && !/^[a-f0-9]{40}$/.test(revision)) throw new Error(`Invalid source revision for ${s.repo}`);
   const report = {
     schema_version: 1, skill: { name: s.name, ...(s.display_name ? { display_name: s.display_name } : {}), repository: s.repo, path: s.dir, license: s.license },
     listing_url: listingTarget(s),
     snapshot: { date: snapshot.date, id: data.snapshot_id, dataset_sha256: snapshot.sha256 },
     source: { branch: s.branch, revision, revision_status: revision ? "recorded" : "not_recorded_in_snapshot", repository_commit_date: s.commit_date,
-      ...(data.repos[s.repo].assessment_date ? { assessment_date: data.repos[s.repo].assessment_date } : {}),
+      ...(s.assessment_date ? { assessment_date: s.assessment_date } : {}),
+      ...(sourceReview ? { previous_revision: sourceReview.previousRevision, listing_update_sha256: sourceReview.digest } : {}),
       skill_md_url: revision ? `https://github.com/${s.repo}/blob/${revision}/${s.dir === "." ? "" : s.dir + "/"}SKILL.md` : s.skill_md_url },
     methodology: { version: SCORE_METHOD, url: `${DIR_URL}methodology/#score`, rubric_total: RUBRIC_MAX, published_cap: SCORE_CAP },
     quality: { score: s.score, grade: s.grade, components: s.score_parts, checks: s.checks },
@@ -1583,7 +1637,7 @@ function renderSkill(s) {
     ["Topics", (TOPICS_BY_SKILL.get(s.id) || []).slice(0, 6).map((t) => `<a href="${rel(here, topicPath(t))}">${esc(t.topic.name)}</a>`).join(", ")],
     ["Cost", `<a href="${rel(here, lanePath(s.lane))}">${esc(laneById.get(s.lane).label)}</a>`],
     ["Capabilities", s.flags.filter((f) => f !== "full-page").map((f) => `<a href="${rel(here, flagPath(f))}">${esc(flagById.get(f).label)}</a>`).join(", ")],
-    ["License", `<a href="${esc(s.license_url)}" target="_blank" rel="noopener">${esc(s.license)}</a>${s.license_evidence?.length > 1 ? "<ul>" + s.license_evidence.map(e => `<li><a href="https://github.com/${esc(s.repo)}/blob/${esc(s.branch)}/${esc(e.file)}" target="_blank" rel="noopener">${esc(e.label)} (${esc(e.file)})</a></li>`).join("") + "</ul>" : ""}`],
+    ["License", `<a href="${esc(s.license_url)}" target="_blank" rel="noopener">${esc(s.license)}</a>${s.license_evidence?.length > 1 ? "<ul>" + s.license_evidence.map(e => `<li><a href="https://github.com/${esc(s.repo)}/blob/${esc(s.source_ref)}/${esc(e.file)}" target="_blank" rel="noopener">${esc(e.label)} (${esc(e.file)})</a></li>`).join("") + "</ul>" : ""}`],
     ["Last commit", `${longDate(s.commit_date)} (repository)`],
     ["Source assessed", s.assessment_date ? longDate(s.assessment_date) : ""],
     ["Listed since", s.listed_since === LISTED_FLOOR ? `${longDate(s.listed_since)} or earlier` : longDate(s.listed_since)],
@@ -1869,7 +1923,7 @@ function renderRepo(r) {
     ["Publisher", `<a href="https://github.com/${esc(r.owner)}" target="_blank" rel="noopener">${esc(r.publisher)}</a>${officialTag(r.official)}`],
     ["Repository", `<a href="https://github.com/${esc(r.repo)}" target="_blank" rel="noopener">github.com/${esc(r.repo)}</a>`],
     ["Listed skills", fmt(r.skills.length)],
-    ["Source assessed", r.skills[0].assessment_date ? longDate(r.skills[0].assessment_date) : ""],
+    ["Source assessed", data.repos[r.repo].assessment_date ? longDate(data.repos[r.repo].assessment_date) : ""],
     ["Security scan", "Not scanned"],
     ["Categories", catLinks.join(", ")],
     ["License", esc(licenseText)],
