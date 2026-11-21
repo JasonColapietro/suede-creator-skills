@@ -164,6 +164,7 @@ export function build(out) {
     fs.writeFileSync(listing, html.replaceAll(previous, `Report version <code>${report_version.slice(0, 12)}</code>`));
   }
   fs.mkdirSync(path.join(out, "assets"), { recursive: true });
+  fs.copyFileSync(path.join(docs, "favicon.ico"), path.join(out, "favicon.ico"));
   copyTree(path.join(docs, "assets"), path.join(out, "assets"), null);
 
   const notFound = path.join(docs, "404.html");
