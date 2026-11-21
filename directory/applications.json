@@ -1,7 +1,32 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-19",
+  "updated": "2026-11-21",
   "applications": [
+    {
+      "issue": 430,
+      "applicant": "skillsforbots",
+      "repo": "skillsforbots/grok-bot-skills",
+      "scope_version": "a47b09cbf12be5c990d5641f6c22d6c23ff85fed7b17071f6d784ea598ef6ca1",
+      "kind": "skill",
+      "scope": [
+        "bot-safety-rules-starter",
+        "reminder-basics"
+      ],
+      "applied_at": "2026-11-20T16:16:55Z",
+      "issue_state": "open"
+    },
+    {
+      "issue": 428,
+      "applicant": "kochetkov-ma",
+      "repo": "kochetkov-ma/brewpage-publish-plugins",
+      "scope_version": "f41742bc4a026eb52c3a738934783a25179cb7a422f6a1bf688998b03154cc24",
+      "kind": "skill",
+      "scope": [
+        "brewpage-publish"
+      ],
+      "applied_at": "2026-11-20T09:06:26Z",
+      "issue_state": "open"
+    },
     {
       "issue": 414,
       "applicant": "jangtrinh",
