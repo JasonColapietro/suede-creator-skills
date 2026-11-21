@@ -99,7 +99,7 @@ Each page type owns one graphic, all generated from the dataset at build time:
 - Best of tiles (`directory/editorial/best-of.json` picks the topics and their
   order): group and count in a mono head, the topic name in the pixel face,
   the tile matrix in a black field, and the top pick with its grade chip
-  (Suede AI's own skills are never the pick). On hover or focus the corner
+  (Suede's own skills are never the pick). On hover or focus the corner
   brackets turn white and step out, the dots brighten, the name gains the
   cursor and a white scan line sweeps the field; reduced motion removes the
   scan. Two up on phones. The wall sits under Top 100 on the home page and

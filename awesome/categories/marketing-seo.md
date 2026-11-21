@@ -8,9 +8,9 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 
 **341 accepted skills · 26 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
-**Compare on the 0–99 quality scale:** this category’s verified scores span **62–94 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=marketing-seo&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
+**Compare on the 0–99 quality scale:** this category’s verified scores span **62–94 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=marketing-seo&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
-[Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede AI listing.
+[Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede listing.
 
 **Guide:** [Best SEO, AEO and GEO skills for Claude Code and Codex](https://skills.suedeai.ai/directory/guides/best-seo-skills/)
 
@@ -50,7 +50,7 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 
 ## AgriciDaniel/claude-seo
 
-[Repository](https://github.com/AgriciDaniel/claude-seo) · Publisher: [AgriciDaniel](https://github.com/AgriciDaniel) · [Suede AI listing](https://skills.suedeai.ai/directory/agricidaniel/claude-seo/)
+[Repository](https://github.com/AgriciDaniel/claude-seo) · Publisher: [AgriciDaniel](https://github.com/AgriciDaniel) · [Suede listing](https://skills.suedeai.ai/directory/agricidaniel/claude-seo/)
 
 - **88/100 · B** · [seo-dataforseo](https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-dataforseo/SKILL.md): Pulls live SEO data through the DataForSEO server, including SERP analysis, keyword research, backlink profiles, on-page and competitor analysis, and AI visibility tracking. [Suede](https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-dataforseo/)
 - **86/100 · B** · [seo-content-brief](https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-content-brief/SKILL.md): Generates competitive SEO content briefs with per-section word counts, competitor scoring, keyword density guidance, and page-type templates, for new pages or improving existing ones. [Suede](https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-content-brief/)
@@ -89,7 +89,7 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 
 ## appierun/appie-mcp
 
-[Repository](https://github.com/appierun/appie-mcp) · Publisher: [appierun](https://github.com/appierun) · [Suede AI listing](https://skills.suedeai.ai/directory/appierun/appie-mcp/)
+[Repository](https://github.com/appierun/appie-mcp) · Publisher: [appierun](https://github.com/appierun) · [Suede listing](https://skills.suedeai.ai/directory/appierun/appie-mcp/)
 
 - **77/100 · C** · [appie-url-shortener](https://github.com/appierun/appie-mcp/blob/master/skills/appie-url-shortener/SKILL.md): Create short links and read click analytics through Appie.run’s hosted MCP service with your own project API key; each new link uses 1 credit and statistics are free. [Suede](https://skills.suedeai.ai/directory/appierun/appie-mcp/appie-url-shortener/)
 
@@ -97,7 +97,7 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 
 ## avelikiy/great\_cto
 
-[Repository](https://github.com/avelikiy/great_cto) · Publisher: [avelikiy](https://github.com/avelikiy) · [Suede AI listing](https://skills.suedeai.ai/directory/avelikiy/great-cto/)
+[Repository](https://github.com/avelikiy/great_cto) · Publisher: [avelikiy](https://github.com/avelikiy) · [Suede listing](https://skills.suedeai.ai/directory/avelikiy/great-cto/)
 
 - **74/100 · C** · [lifecycle-messaging](https://github.com/avelikiy/great_cto/blob/main/skills/lifecycle-messaging/SKILL.md): Email/SMS lifecycle and deliverability framework for SMB Product-Builder products that send transactional or lifecycle messages (booking reminders, CRM sequences, receipts, win-back). [Suede](https://skills.suedeai.ai/directory/avelikiy/great-cto/#lifecycle-messaging)
 
@@ -105,7 +105,7 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 
 ## bitwize-music-studio/claude-ai-music-skills
 
-[Repository](https://github.com/bitwize-music-studio/claude-ai-music-skills) · Publisher: [bitwize-music-studio](https://github.com/bitwize-music-studio) · [Suede AI listing](https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/)
+[Repository](https://github.com/bitwize-music-studio/claude-ai-music-skills) · Publisher: [bitwize-music-studio](https://github.com/bitwize-music-studio) · [Suede listing](https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/)
 
 - **82/100 · B** · [promo-writer](https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/promo-writer/SKILL.md): Generates platform-specific social media copy from album themes, track concepts, and lyrics. [Suede](https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/#promo-writer)
 - **74/100 · C** · [promo-reviewer](https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/promo-reviewer/SKILL.md): Reviews and iterates on social media copy in album promo/ files. [Suede](https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/#promo-reviewer)
@@ -114,7 +114,7 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 
 ## coreyhaines31/marketingskills
 
-[Repository](https://github.com/coreyhaines31/marketingskills) · Publisher: [coreyhaines31](https://github.com/coreyhaines31) · [Suede AI listing](https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/)
+[Repository](https://github.com/coreyhaines31/marketingskills) · Publisher: [coreyhaines31](https://github.com/coreyhaines31) · [Suede listing](https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/)
 
 - **92/100 · A** · [site-architecture](https://github.com/coreyhaines31/marketingskills/blob/main/skills/site-architecture/SKILL.md): When the user wants to plan, map, or restructure their website's page hierarchy, navigation, URL structure, or internal linking. [Suede](https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/#site-architecture)
 - **90/100 · A** · [aso](https://github.com/coreyhaines31/marketingskills/blob/main/skills/aso/SKILL.md): Audits and optimizes App Store and Google Play listings to improve app visibility and store ranking. [Suede](https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/aso/)
@@ -161,7 +161,7 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 
 ## fal-ai-community/skills
 
-[Repository](https://github.com/fal-ai-community/skills) · Publisher: [fal-ai-community](https://github.com/fal-ai-community) · [Suede AI listing](https://skills.suedeai.ai/directory/fal-ai-community/skills/)
+[Repository](https://github.com/fal-ai-community/skills) · Publisher: [fal-ai-community](https://github.com/fal-ai-community) · [Suede listing](https://skills.suedeai.ai/directory/fal-ai-community/skills/)
 
 - **75/100 · C** · [marketing](https://github.com/fal-ai-community/skills/blob/main/skills/marketing/SKILL.md): Plan and run campaign-level marketing asset production with genmedia. [Suede](https://skills.suedeai.ai/directory/fal-ai-community/skills/#marketing)
 - **75/100 · C** · [ugc](https://github.com/fal-ai-community/skills/blob/main/skills/ugc/SKILL.md): Plan and run UGC-style creator ads and social proof videos with genmedia. [Suede](https://skills.suedeai.ai/directory/fal-ai-community/skills/#ugc)
@@ -170,7 +170,7 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 
 ## firecrawl/skills
 
-[Repository](https://github.com/firecrawl/skills) · Publisher: [firecrawl](https://github.com/firecrawl) · [Suede AI listing](https://skills.suedeai.ai/directory/firecrawl/skills/)
+[Repository](https://github.com/firecrawl/skills) · Publisher: [firecrawl](https://github.com/firecrawl) · [Suede listing](https://skills.suedeai.ai/directory/firecrawl/skills/)
 
 - **77/100 · C** · [firecrawl-seo-audit](https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-seo-audit/SKILL.md): Inspect a website's titles, meta descriptions, headings, canonicals, structured data and internal links for on-page and technical SEO issues. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/#firecrawl-seo-audit)
 
@@ -178,7 +178,7 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 
 ## github/awesome-copilot
 
-[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede AI listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
+[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
 
 - **82/100 · B** · [ad-campaign-analyzer](https://github.com/github/awesome-copilot/blob/main/skills/ad-campaign-analyzer/SKILL.md): Use this skill when the user shares ad campaign performance data and asks what to cut, scale, or test. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#ad-campaign-analyzer)
 - **82/100 · B** · [competitor-ad-intelligence](https://github.com/github/awesome-copilot/blob/main/skills/competitor-ad-intelligence/SKILL.md): Use this skill when the user asks to analyze, tear down, or reverse-engineer a competitor's paid ads. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#competitor-ad-intelligence)
@@ -193,7 +193,7 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 
 ## glacierphonk/naming
 
-[Repository](https://github.com/glacierphonk/naming) · Publisher: [glacierphonk](https://github.com/glacierphonk) · [Suede AI listing](https://skills.suedeai.ai/directory/glacierphonk/naming/naming/)
+[Repository](https://github.com/glacierphonk/naming) · Publisher: [glacierphonk](https://github.com/glacierphonk) · [Suede listing](https://skills.suedeai.ai/directory/glacierphonk/naming/naming/)
 
 - **77/100 · C** · [naming](https://github.com/glacierphonk/naming/blob/main/SKILL.md): Names products, SaaS, brands, open source projects, bots, and apps using a metaphor-driven process that produces memorable, meaningful names and avoids AI slop. [Suede](https://skills.suedeai.ai/directory/glacierphonk/naming/naming/)
 
@@ -201,7 +201,7 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 
 ## google/skills
 
-[Repository](https://github.com/google/skills) · Publisher: [google](https://github.com/google) · [Suede AI listing](https://skills.suedeai.ai/directory/google/skills/)
+[Repository](https://github.com/google/skills) · Publisher: [google](https://github.com/google) · [Suede listing](https://skills.suedeai.ai/directory/google/skills/)
 
 - **87/100 · B** · [data-manager-api-audience-ingestion](https://github.com/google/skills/blob/main/skills/ads/data-manager-api-audience-ingestion/SKILL.md): Guides developers through managing (adding, removing, and clearing) audience members for Google products using the Data Manager API and its associated client libraries. [Suede](https://skills.suedeai.ai/directory/google/skills/#data-manager-api-audience-ingestion)
 - **86/100 · B** · [google-ads-api-quickstart](https://github.com/google/skills/blob/main/skills/ads/google-ads-api-quickstart/SKILL.md): Guides developers through Google Ads API quickstart: credential setup, choosing from 6 client libraries/REST, configuring environments, and running a "retrieve campaigns" script. [Suede](https://skills.suedeai.ai/directory/google/skills/#google-ads-api-quickstart)
@@ -212,7 +212,7 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 
 ## gooseworks-ai/goose-skills
 
-[Repository](https://github.com/gooseworks-ai/goose-skills) · Publisher: [gooseworks-ai](https://github.com/gooseworks-ai) · [Suede AI listing](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/)
+[Repository](https://github.com/gooseworks-ai/goose-skills) · Publisher: [gooseworks-ai](https://github.com/gooseworks-ai) · [Suede listing](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/)
 
 - **84/100 · B** · [ad-management-intake](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/composites/ad-management-intake/SKILL.md): Researches a brand, asks only the questions it cannot infer, and records brand facts and a campaign brief for Meta ads. [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/ad-management-intake/)
 - **84/100 · B** · [answer-ads-questions](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/capabilities/answer-ads-questions/SKILL.md): Answers questions about a brand's Meta ads, such as spend, results and paused status, using only data read in the same turn. [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/answer-ads-questions/)
@@ -284,7 +284,7 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 
 ## infrasity-labs/dev-gtm-claude-skills
 
-[Repository](https://github.com/infrasity-labs/dev-gtm-claude-skills) · Publisher: [infrasity-labs](https://github.com/infrasity-labs) · [Suede AI listing](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/)
+[Repository](https://github.com/infrasity-labs/dev-gtm-claude-skills) · Publisher: [infrasity-labs](https://github.com/infrasity-labs) · [Suede listing](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/)
 
 - **82/100 · B** · [blog-flow](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/writing-skills/blog-flow/SKILL.md): FLOW framework integration for bloggers. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#blog-flow)
 - **82/100 · B** · [seo-ecommerce](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/seo-skills/seo-ecommerce/SKILL.md): E-commerce SEO analysis: Google Shopping visibility, Amazon marketplace intelligence, product schema validation, competitor pricing analysis, and marketplace keyword gaps. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#seo-ecommerce)
@@ -341,7 +341,7 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 
 ## inhouseseo/superseo-skills
 
-[Repository](https://github.com/inhouseseo/superseo-skills) · Publisher: [inhouseseo](https://github.com/inhouseseo) · [Suede AI listing](https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/)
+[Repository](https://github.com/inhouseseo/superseo-skills) · Publisher: [inhouseseo](https://github.com/inhouseseo) · [Suede listing](https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/)
 
 - **81/100 · B** · [content-brief](https://github.com/inhouseseo/superseo-skills/blob/main/skills/content-brief/SKILL.md): Produces a writer-ready content brief by researching a keyword's top 10 Google results, classifying intent, and mapping content gaps, with no keyword tool required. [Suede](https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/content-brief/)
 - **81/100 · B** · [eeat-audit](https://github.com/inhouseseo/superseo-skills/blob/main/skills/eeat-audit/SKILL.md): Audits a page for E-E-A-T signals by scoring Experience, Expertise, Authoritativeness, and Trustworthiness, then recommends what to add for each dimension. [Suede](https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/eeat-audit/)
@@ -358,44 +358,44 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 
 ## JasonColapietro/suede-creator-skills
 
-[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede AI listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
+[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
 
-- **93/100 · A** · [Suede AI App Store Optimization Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-aso/SKILL.md): Suede AI App Store Optimization Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-aso)
-- **93/100 · A** · [Suede AI Competitor Profiling Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-competitor-profiling/SKILL.md): Use when asked "research these competitors" or to refresh named competitor profiles. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-competitor-profiling)
-- **93/100 · A** · [Suede AI Reverse Engineer Anyone Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-reverse-engineer-anyone/SKILL.md): Use when asked "how did X grow", "reverse engineer their marketing", "what made this artist blow up", or "map their funnel". [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-reverse-engineer-anyone)
-- **93/100 · A** · [Suede AI SEO Audit Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-seo-audit/SKILL.md): Audit technical access, intent, metadata, links, schema, generative search, copy, E-E-A-T, and topic architecture with A-F lanes and exact fixes. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-seo-audit)
-- **91/100 · A** · [Suede AI Ad Creative Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-ad-creative/SKILL.md): Suede AI Ad Creative Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ad-creative)
-- **91/100 · A** · [Suede AI Ads Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-ads/SKILL.md): Suede AI Ads Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ads)
-- **91/100 · A** · [Suede AI Attribution Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-attribution/SKILL.md): Suede AI Attribution Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-attribution)
-- **91/100 · A** · [Suede AI Campaign in a Box Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-campaign-in-a-box/SKILL.md): Suede AI Campaign in a Box Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-campaign-in-a-box)
-- **91/100 · A** · [Suede AI Churn Prevention Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-churn-prevention/SKILL.md): Suede AI Churn Prevention Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-churn-prevention)
-- **91/100 · A** · [Suede AI Co-Marketing Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-co-marketing/SKILL.md): Suede AI Co-Marketing Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-co-marketing)
-- **91/100 · A** · [Suede AI Community Marketing Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-community-marketing/SKILL.md): Use when asked "plan our community launch" or to audit or drive product community growth. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-community-marketing)
-- **91/100 · A** · [Suede AI Competitor Comparison Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-competitors/SKILL.md): Use when asked "write a comparison page" or to plan an alternative or versus page from verified competitor evidence. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-competitors)
-- **91/100 · A** · [Suede AI Content Strategy Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-content-strategy/SKILL.md): Use when asked "plan our content strategy" or to decide what to publish, refresh or stop. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-content-strategy)
-- **91/100 · A** · [Suede AI Directory Submissions Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-directory-submissions/SKILL.md): Use when asked "plan our directory submissions" or to select and sequence startup, SaaS, AI, MCP, marketplace or review listings. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-directory-submissions)
-- **91/100 · A** · [Suede AI Free Tools Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-free-tools/SKILL.md): Use when asked "scope a free calculator" or to choose a lead, link, education or adoption tool tied to a paid product. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-free-tools)
-- **91/100 · A** · [Suede AI Launch Packaging Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-launch-packaging/SKILL.md): Suede AI Launch Packaging Skills: software release packaging, handoff notes, and clean-install verification. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-launch-packaging)
-- **91/100 · A** · [Suede AI Lead Magnet Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-lead-magnets/SKILL.md): Suede AI Lead Magnet Skills. lead-magnet strategy for useful downloads, gated resources, delivery, and qualified capture. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-lead-magnets)
-- **91/100 · A** · [Suede AI Marketing Council Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-marketing-council/SKILL.md): Suede AI Marketing Council Skills: simulated advisors pressure-test one contested marketing decision. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-marketing-council)
-- **91/100 · A** · [Suede AI Marketing Loop Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-marketing-loops/SKILL.md): Suede AI Marketing Loop Skills. recurring marketing workflow design with cadence, action conditions, durable state, dedupe, checkpoints, and stop rules. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-marketing-loops)
-- **91/100 · A** · [Suede AI Marketing Planning Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-marketing-plan/SKILL.md): Suede AI Marketing Planning Skills: a scored tactic shortlist or a full AARRR operating plan with a 90-day plan, 12-month roadmap, and measurement. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-marketing-plan)
-- **91/100 · A** · [Suede AI Paywall Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-paywalls/SKILL.md): Suede AI Paywall Skills: paywalls, entitlement gates, usage limits, trial expiry, screen copy, trigger rules, experiment plans, and mobile subscription-app paywalls. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-paywalls)
-- **91/100 · A** · [Suede AI Product Marketing Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-product-marketing/SKILL.md): Suede AI Product Marketing Skills: versioned audience, ICP, positioning, alternatives, objections, verbatim customer language, proof, goals, and entity facts. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-product-marketing)
-- **91/100 · A** · [Suede AI Programmatic SEO Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-programmatic-seo/SKILL.md): Suede AI Programmatic SEO Skills: playbook, source model, templates, unique value, internal links, sitemaps, phased rollout, and KPIs. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-programmatic-seo)
-- **91/100 · A** · [Suede AI Public Relations Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-public-relations/SKILL.md): Build earned-media angles, sourced media lists, journalist and podcast pitches, reporter replies, and press kits with consistent entity facts. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-public-relations)
-- **91/100 · A** · [Suede AI Referral Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-referrals/SKILL.md): Design a referral and affiliate program with incentives, commission and payout rules, fraud controls, disclosure, attribution, and cohort measurement. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-referrals)
-- **91/100 · A** · [Suede AI Site Alchemy Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-site-alchemy/SKILL.md): Turn landing, launch, campaign, and product pages into measured conversion paths: funnel stage, friction, hero, proof, CTAs, pricing, mobile QA, and pre-registered experiments. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-site-alchemy)
-- **91/100 · A** · [Suede AI SMS Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-sms/SKILL.md): Design consent-aware SMS/MMS programs: channel fit, welcome, cart recovery, post-purchase and win-back flows, exact copy, segment counts, cadence, quiet hours, platform selection, and measurement. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-sms)
-- **91/100 · A** · [Suede AI Social Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-social/SKILL.md): Plan, audit, and draft organic social for founder/brand accounts: platform mix, 30-post audits, calendars, Instagram, LinkedIn/X, short-video scripts, social search, and listening. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-social)
-- **91/100 · A** · [Suede AI Sync Packaging Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-sync-packaging/SKILL.md): Prepare a song for sync review: scene fit, supervisor one-sheet, asset checklist, lyric flags, mood tags, AI disclosure, and open clearance questions. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-sync-packaging)
-- **91/100 · A** · [Suede AI Visibility Grader Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-visibility-grader/SKILL.md): Grade one public page A-F across findability, first-screen clarity, CTA pull, proof and trust, AI citation readiness, and design signal, with up to five ranked fixes. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-visibility-grader)
+- **93/100 · A** · [Suede App Store Optimization Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-aso/SKILL.md): Suede App Store Optimization Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-aso)
+- **93/100 · A** · [Suede Competitor Profiling Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-competitor-profiling/SKILL.md): Use when asked "research these competitors" or to refresh named competitor profiles. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-competitor-profiling)
+- **93/100 · A** · [Suede Reverse Engineer Anyone Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-reverse-engineer-anyone/SKILL.md): Use when asked "how did X grow", "reverse engineer their marketing", "what made this artist blow up", or "map their funnel". [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-reverse-engineer-anyone)
+- **93/100 · A** · [Suede SEO Audit Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-seo-audit/SKILL.md): Audit technical access, intent, metadata, links, schema, generative search, copy, E-E-A-T, and topic architecture with A-F lanes and exact fixes. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-seo-audit)
+- **91/100 · A** · [Suede Ad Creative Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-ad-creative/SKILL.md): Suede Ad Creative Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ad-creative)
+- **91/100 · A** · [Suede Ads Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-ads/SKILL.md): Suede Ads Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ads)
+- **91/100 · A** · [Suede Attribution Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-attribution/SKILL.md): Suede Attribution Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-attribution)
+- **91/100 · A** · [Suede Campaign in a Box Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-campaign-in-a-box/SKILL.md): Suede Campaign in a Box Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-campaign-in-a-box)
+- **91/100 · A** · [Suede Churn Prevention Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-churn-prevention/SKILL.md): Suede Churn Prevention Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-churn-prevention)
+- **91/100 · A** · [Suede Co-Marketing Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-co-marketing/SKILL.md): Suede Co-Marketing Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-co-marketing)
+- **91/100 · A** · [Suede Community Marketing Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-community-marketing/SKILL.md): Use when asked "plan our community launch" or to audit or drive product community growth. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-community-marketing)
+- **91/100 · A** · [Suede Competitor Comparison Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-competitors/SKILL.md): Use when asked "write a comparison page" or to plan an alternative or versus page from verified competitor evidence. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-competitors)
+- **91/100 · A** · [Suede Content Strategy Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-content-strategy/SKILL.md): Use when asked "plan our content strategy" or to decide what to publish, refresh or stop. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-content-strategy)
+- **91/100 · A** · [Suede Directory Submissions Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-directory-submissions/SKILL.md): Use when asked "plan our directory submissions" or to select and sequence startup, SaaS, AI, MCP, marketplace or review listings. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-directory-submissions)
+- **91/100 · A** · [Suede Free Tools Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-free-tools/SKILL.md): Use when asked "scope a free calculator" or to choose a lead, link, education or adoption tool tied to a paid product. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-free-tools)
+- **91/100 · A** · [Suede Launch Packaging Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-launch-packaging/SKILL.md): Suede Launch Packaging Skills: software release packaging, handoff notes, and clean-install verification. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-launch-packaging)
+- **91/100 · A** · [Suede Lead Magnet Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-lead-magnets/SKILL.md): Suede Lead Magnet Skills. lead-magnet strategy for useful downloads, gated resources, delivery, and qualified capture. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-lead-magnets)
+- **91/100 · A** · [Suede Marketing Council Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-marketing-council/SKILL.md): Suede Marketing Council Skills: simulated advisors pressure-test one contested marketing decision. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-marketing-council)
+- **91/100 · A** · [Suede Marketing Loop Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-marketing-loops/SKILL.md): Suede Marketing Loop Skills. recurring marketing workflow design with cadence, action conditions, durable state, dedupe, checkpoints, and stop rules. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-marketing-loops)
+- **91/100 · A** · [Suede Marketing Planning Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-marketing-plan/SKILL.md): Suede Marketing Planning Skills: a scored tactic shortlist or a full AARRR operating plan with a 90-day plan, 12-month roadmap, and measurement. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-marketing-plan)
+- **91/100 · A** · [Suede Paywall Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-paywalls/SKILL.md): Suede Paywall Skills: paywalls, entitlement gates, usage limits, trial expiry, screen copy, trigger rules, experiment plans, and mobile subscription-app paywalls. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-paywalls)
+- **91/100 · A** · [Suede Product Marketing Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-product-marketing/SKILL.md): Suede Product Marketing Skills: versioned audience, ICP, positioning, alternatives, objections, verbatim customer language, proof, goals, and entity facts. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-product-marketing)
+- **91/100 · A** · [Suede Programmatic SEO Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-programmatic-seo/SKILL.md): Suede Programmatic SEO Skills: playbook, source model, templates, unique value, internal links, sitemaps, phased rollout, and KPIs. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-programmatic-seo)
+- **91/100 · A** · [Suede Public Relations Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-public-relations/SKILL.md): Build earned-media angles, sourced media lists, journalist and podcast pitches, reporter replies, and press kits with consistent entity facts. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-public-relations)
+- **91/100 · A** · [Suede Referral Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-referrals/SKILL.md): Design a referral and affiliate program with incentives, commission and payout rules, fraud controls, disclosure, attribution, and cohort measurement. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-referrals)
+- **91/100 · A** · [Suede Site Alchemy Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-site-alchemy/SKILL.md): Turn landing, launch, campaign, and product pages into measured conversion paths: funnel stage, friction, hero, proof, CTAs, pricing, mobile QA, and pre-registered experiments. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-site-alchemy)
+- **91/100 · A** · [Suede SMS Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-sms/SKILL.md): Design consent-aware SMS/MMS programs: channel fit, welcome, cart recovery, post-purchase and win-back flows, exact copy, segment counts, cadence, quiet hours, platform selection, and measurement. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-sms)
+- **91/100 · A** · [Suede Social Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-social/SKILL.md): Plan, audit, and draft organic social for founder/brand accounts: platform mix, 30-post audits, calendars, Instagram, LinkedIn/X, short-video scripts, social search, and listening. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-social)
+- **91/100 · A** · [Suede Sync Packaging Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-sync-packaging/SKILL.md): Prepare a song for sync review: scene fit, supervisor one-sheet, asset checklist, lyric flags, mood tags, AI disclosure, and open clearance questions. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-sync-packaging)
+- **91/100 · A** · [Suede Visibility Grader Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-visibility-grader/SKILL.md): Grade one public page A-F across findability, first-screen clarity, CTA pull, proof and trust, AI citation readiness, and design signal, with up to five ranked fixes. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-visibility-grader)
 
 <a id="mailtrap--mailtrap-skills"></a>
 
 ## mailtrap/mailtrap-skills
 
-[Repository](https://github.com/mailtrap/mailtrap-skills) · Publisher: [mailtrap](https://github.com/mailtrap) · [Suede AI listing](https://skills.suedeai.ai/directory/mailtrap/mailtrap-skills/)
+[Repository](https://github.com/mailtrap/mailtrap-skills) · Publisher: [mailtrap](https://github.com/mailtrap) · [Suede listing](https://skills.suedeai.ai/directory/mailtrap/mailtrap-skills/)
 
 - **80/100 · B** · [managing-contacts](https://github.com/mailtrap/mailtrap-skills/blob/main/skills/managing-contacts/SKILL.md): Manages Mailtrap marketing contacts through its Contacts API or UI, including bulk import, segments, custom fields, custom events, and syncing from a CRM. [Suede](https://skills.suedeai.ai/directory/mailtrap/mailtrap-skills/managing-contacts/)
 
@@ -403,7 +403,7 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 
 ## mblode/agent-skills
 
-[Repository](https://github.com/mblode/agent-skills) · Publisher: [mblode](https://github.com/mblode) · [Suede AI listing](https://skills.suedeai.ai/directory/mblode/agent-skills/)
+[Repository](https://github.com/mblode/agent-skills) · Publisher: [mblode](https://github.com/mblode) · [Suede listing](https://skills.suedeai.ai/directory/mblode/agent-skills/)
 
 - **87/100 · B** · [seo](https://github.com/mblode/agent-skills/blob/main/skills/seo/SKILL.md): Audits and fixes technical SEO, researches search demand, creates content briefs, and measures SEO, AEO and GEO performance. [Suede](https://skills.suedeai.ai/directory/mblode/agent-skills/#seo)
 
@@ -411,7 +411,7 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 
 ## MelMayssonOwen/agent-skills
 
-[Repository](https://github.com/MelMayssonOwen/agent-skills) · Publisher: [MelMayssonOwen](https://github.com/MelMayssonOwen) · [Suede AI listing](https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/)
+[Repository](https://github.com/MelMayssonOwen/agent-skills) · Publisher: [MelMayssonOwen](https://github.com/MelMayssonOwen) · [Suede listing](https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/)
 
 - **79/100 · C** · [timetopost-social-scheduler](https://github.com/MelMayssonOwen/agent-skills/blob/main/skills/timetopost-social-scheduler/SKILL.md): Draft distinct social posts, review account timing, and approve the exact content and schedule before publication. [Suede](https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/timetopost-social-scheduler/)
 - **77/100 · C** · [timetopost-autoseo-blog](https://github.com/MelMayssonOwen/agent-skills/blob/main/skills/timetopost-autoseo-blog/SKILL.md): Connect a publishing destination, explore article topics, and prepare blog drafts for human review. [Suede](https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/timetopost-autoseo-blog/)
@@ -422,7 +422,7 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 
 ## nextlevelbuilder/ui-ux-pro-max-skill
 
-[Repository](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) · Publisher: [nextlevelbuilder](https://github.com/nextlevelbuilder) · [Suede AI listing](https://skills.suedeai.ai/directory/nextlevelbuilder/ui-ux-pro-max-skill/)
+[Repository](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) · Publisher: [nextlevelbuilder](https://github.com/nextlevelbuilder) · [Suede listing](https://skills.suedeai.ai/directory/nextlevelbuilder/ui-ux-pro-max-skill/)
 
 - **72/100 · C** · [brand](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/brand/SKILL.md): Brand voice, visual identity, messaging frameworks, asset management, brand consistency. [Suede](https://skills.suedeai.ai/directory/nextlevelbuilder/ui-ux-pro-max-skill/#brand)
 
@@ -430,7 +430,7 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 
 ## nowork-studio/NotFair
 
-[Repository](https://github.com/nowork-studio/NotFair) · Publisher: [nowork-studio](https://github.com/nowork-studio) · [Suede AI listing](https://skills.suedeai.ai/directory/nowork-studio/notfair/)
+[Repository](https://github.com/nowork-studio/NotFair) · Publisher: [nowork-studio](https://github.com/nowork-studio) · [Suede listing](https://skills.suedeai.ai/directory/nowork-studio/notfair/)
 
 - **80/100 · B** · [keyword-research](https://github.com/nowork-studio/NotFair/blob/main/skills/keyword-research/SKILL.md): Discovers, analyzes, and prioritizes keywords from a seed keyword or niche for SEO and GEO content strategies, and generates topic clusters. [Suede](https://skills.suedeai.ai/directory/nowork-studio/notfair/keyword-research/)
 - **76/100 · C** · [broken-link-checker](https://github.com/nowork-studio/NotFair/blob/main/skills/broken-link-checker/SKILL.md): Scans a website to find broken links (404s, 500s). [Suede](https://skills.suedeai.ai/directory/nowork-studio/notfair/#broken-link-checker)
@@ -480,7 +480,7 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 
 ## ohad6k/emulo
 
-[Repository](https://github.com/ohad6k/emulo) · Publisher: [ohad6k](https://github.com/ohad6k) · [Suede AI listing](https://skills.suedeai.ai/directory/ohad6k/emulo/)
+[Repository](https://github.com/ohad6k/emulo) · Publisher: [ohad6k](https://github.com/ohad6k) · [Suede listing](https://skills.suedeai.ai/directory/ohad6k/emulo/)
 
 - **81/100 · B** · [write](https://github.com/ohad6k/emulo/blob/main/skills/write/SKILL.md): Guides marketing, social, replies, product copy, launch copy, and writing in the user's voice using their Emulo writing profile. [Suede](https://skills.suedeai.ai/directory/ohad6k/emulo/write/)
 
@@ -488,7 +488,7 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 
 ## phuryn/pm-skills
 
-[Repository](https://github.com/phuryn/pm-skills) · Publisher: [phuryn](https://github.com/phuryn) · [Suede AI listing](https://skills.suedeai.ai/directory/phuryn/pm-skills/)
+[Repository](https://github.com/phuryn/pm-skills) · Publisher: [phuryn](https://github.com/phuryn) · [Suede listing](https://skills.suedeai.ai/directory/phuryn/pm-skills/)
 
 - **81/100 · B** · [growth-loops](https://github.com/phuryn/pm-skills/blob/main/pm-go-to-market/skills/growth-loops/SKILL.md): Identifies growth loops for sustainable traction, evaluating five loop types, viral, usage, collaboration, user-generated, and referral. [Suede](https://skills.suedeai.ai/directory/phuryn/pm-skills/growth-loops/)
 - **81/100 · B** · [gtm-motions](https://github.com/phuryn/pm-skills/blob/main/pm-go-to-market/skills/gtm-motions/SKILL.md): Identifies the best go-to-market motions and tools across seven types, inbound, outbound, paid digital, community, partners, ABM, and PLG. [Suede](https://skills.suedeai.ai/directory/phuryn/pm-skills/gtm-motions/)
@@ -502,7 +502,7 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 
 ## realkimbarrett/advertising-skills
 
-[Repository](https://github.com/realkimbarrett/advertising-skills) · Publisher: [realkimbarrett](https://github.com/realkimbarrett) · [Suede AI listing](https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/)
+[Repository](https://github.com/realkimbarrett/advertising-skills) · Publisher: [realkimbarrett](https://github.com/realkimbarrett) · [Suede listing](https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/)
 
 - **70/100 · C** · [schwartz-awareness-mapper](https://github.com/realkimbarrett/advertising-skills/blob/main/skills/copy-chief/schwartz-awareness-mapper/SKILL.md): Determines audience awareness level and the correct messaging approach, including cold versus warm audiences and message to market match. [Suede](https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/schwartz-awareness-mapper/)
 - **69/100 · D** · [mechanism-builder](https://github.com/realkimbarrett/advertising-skills/blob/main/skills/copy-chief/mechanism-builder/SKILL.md): Explains why a solution works and why others failed, supporting unique mechanism and positioning work. [Suede](https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/mechanism-builder/)
@@ -520,7 +520,7 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 
 ## rnthking/redya-skills
 
-[Repository](https://github.com/rnthking/redya-skills) · Publisher: [rnthking](https://github.com/rnthking) · [Suede AI listing](https://skills.suedeai.ai/directory/rnthking/redya-skills/)
+[Repository](https://github.com/rnthking/redya-skills) · Publisher: [rnthking](https://github.com/rnthking) · [Suede listing](https://skills.suedeai.ai/directory/rnthking/redya-skills/)
 
 - **65/100 · D** · [redya-xiaohongshu](https://github.com/rnthking/redya-skills/blob/main/skill/redya-xiaohongshu/SKILL.md): 使用红鸦 API 创作小红书图文、制作 Live 实况图片，或检测和修改文案敏感词；支持商品档案及个人词库。 [Suede](https://skills.suedeai.ai/directory/rnthking/redya-skills/#redya-xiaohongshu)
 
@@ -528,7 +528,7 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 
 ## sanity-io/agent-toolkit
 
-[Repository](https://github.com/sanity-io/agent-toolkit) · Publisher: [sanity-io](https://github.com/sanity-io) · [Suede AI listing](https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/)
+[Repository](https://github.com/sanity-io/agent-toolkit) · Publisher: [sanity-io](https://github.com/sanity-io) · [Suede listing](https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/)
 
 - **75/100 · C** · [portable-text-conversion](https://github.com/sanity-io/agent-toolkit/blob/main/skills/portable-text-conversion/SKILL.md): Convert HTML and Markdown content into Portable Text blocks for Sanity. [Suede](https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/#portable-text-conversion)
 - **75/100 · C** · [seo-aeo-best-practices](https://github.com/sanity-io/agent-toolkit/blob/main/skills/seo-aeo-best-practices/SKILL.md): SEO and AEO best practices for metadata, Open Graph, sitemaps, robots.txt, hreflang, JSON-LD structured data, EEAT, and content optimized for search engines and AI answer surfaces. [Suede](https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/#seo-aeo-best-practices)
@@ -537,7 +537,7 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 
 ## sergebulaev/linkedin-skills
 
-[Repository](https://github.com/sergebulaev/linkedin-skills) · Publisher: [sergebulaev](https://github.com/sergebulaev) · [Suede AI listing](https://skills.suedeai.ai/directory/sergebulaev/linkedin-skills/)
+[Repository](https://github.com/sergebulaev/linkedin-skills) · Publisher: [sergebulaev](https://github.com/sergebulaev) · [Suede listing](https://skills.suedeai.ai/directory/sergebulaev/linkedin-skills/)
 
 - **94/100 · A** · [linkedin-employee-advocacy](https://github.com/sergebulaev/linkedin-skills/blob/main/skills/linkedin-employee-advocacy/SKILL.md): Guides setting up a LinkedIn employee advocacy program for marketing or sales teams, covering a 14-day launch playbook, brand governance, cadence benchmarks, and ROI. [Suede](https://skills.suedeai.ai/directory/sergebulaev/linkedin-skills/linkedin-employee-advocacy/)
 - **94/100 · A** · [linkedin-profile-optimizer](https://github.com/sergebulaev/linkedin-skills/blob/main/skills/linkedin-profile-optimizer/SKILL.md): Audits and rewrites a LinkedIn profile end-to-end, covering headline, About section, Featured, banner, photo, Experience metrics, skills, custom URL, and recommendations. [Suede](https://skills.suedeai.ai/directory/sergebulaev/linkedin-skills/linkedin-profile-optimizer/)
@@ -552,7 +552,7 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 
 ## wondelai/skills
 
-[Repository](https://github.com/wondelai/skills) · Publisher: [wondelai](https://github.com/wondelai) · [Suede AI listing](https://skills.suedeai.ai/directory/wondelai/skills/)
+[Repository](https://github.com/wondelai/skills) · Publisher: [wondelai](https://github.com/wondelai) · [Suede listing](https://skills.suedeai.ai/directory/wondelai/skills/)
 
 - **83/100 · B** · [scorecard-marketing](https://github.com/wondelai/skills/blob/main/scorecard-marketing/SKILL.md): Build quiz and assessment funnels that generate qualified leads at 30-50% conversion. [Suede](https://skills.suedeai.ai/directory/wondelai/skills/#scorecard-marketing)
 - **83/100 · B** · [storybrand-messaging](https://github.com/wondelai/skills/blob/main/storybrand-messaging/SKILL.md): Clarify brand messaging using narrative structure that positions the customer as hero. [Suede](https://skills.suedeai.ai/directory/wondelai/skills/#storybrand-messaging)
@@ -571,6 +571,6 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 
 ---
 
-**Get your product cited in AI answers.** Suede AI's AEO, GEO and SEO team helps companies get found in Google and named by ChatGPT, Perplexity and Claude. [suedeai.agency](https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agency) Listed here? [Add your badge](../README.md#add-your-badge).
+**Get your product cited in AI answers.** Suede's AEO, GEO and SEO team helps companies get found in Google and named by ChatGPT, Perplexity and Claude. [suedeai.agency](https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agency) Listed here? [Add your badge](../README.md#add-your-badge).
 
 [Awesome Everything](../README.md) · [Compare scores](../README.md#compare-099-quality-scores) · [Publishers](../publishers.md) · [Featured projects](../featured.md) · [Guides](../README.md#guides) · [Contribute](../CONTRIBUTING.md) · [Search by score](https://skills.suedeai.ai/directory/?sort=score)

@@ -34,9 +34,9 @@
   "keywords": "ai agent procedure, prompting vs procedure, S-Tier builder's book",
   "url": "https://skills.suedeai.ai/book/the-competence-gap.html",
   "position": 2,
-  "wordCount": 1701,
+  "wordCount": 1700,
   "datePublished": "2026-08-10",
-  "dateModified": "2026-11-12",
+  "dateModified": "2026-11-21",
   "inLanguage": "en",
   "isPartOf": {
     "@type": "Book",
@@ -52,7 +52,7 @@
     "alternateName": [
       "Suede Labs AI",
       "Suede Labs",
-      "Suede"
+      "Suede AI"
     ],
     "parentOrganization": {
       "@type": "Organization",
@@ -80,7 +80,7 @@
     },
     "@type": "Organization",
     "@id": "https://suedeai.ai/#organization",
-    "name": "Suede AI",
+    "name": "Suede",
     "url": "https://suedeai.ai"
   },
   "mainEntityOfPage": "https://skills.suedeai.ai/book/the-competence-gap.html"
@@ -92,8 +92,8 @@
 
     <header class="nav">
       <nav class="nav-inner" aria-label="Main navigation">
-        <a href="../" class="nav-logo" aria-label="Suede AI Skills home">
-          <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+        <a href="../" class="nav-logo" aria-label="Suede Skills home">
+          <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede" width="28" height="28" onerror="this.style.display='none'">
           <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
         </a>
         <details class="nav-disclosure" open>
@@ -120,7 +120,7 @@
       <p class="eyebrow">Part I &middot; Chapter 1</p>
       <h1>The Competence Gap</h1>
       <p class="post-meta">A capable model plus a vague prompt produces confident mediocrity. The gap is not intelligence, it is procedure, and procedure is now a file you own.</p>
-      <div class="book-meta"><span>1,701 words</span><span>7 min read</span><span><a href="./">S-Tier: contents</a></span></div>
+      <div class="book-meta"><span>1,700 words</span><span>7 min read</span><span><a href="./">S-Tier: contents</a></span></div>
 
       <p>You paste a diff into Claude Code and type "review my diff." Thirty seconds later you get a tidy response. Two naming suggestions, one note about extracting a helper, a closing line that the change looks solid. You merge it.</p>
       <p>The diff added a <code>role</code> check to an API route. The agent never opened the middleware that route sits behind. It never checked whether the role came from the session or from a request parameter. It never ran your test suite, and it never said it hadn't. It read the changed lines, pattern-matched them against a general sense of what good code looks like, and reported back with the tone of someone who checked.</p>
@@ -142,13 +142,13 @@
       <p>It is a folder with a <code>SKILL.md</code> file inside. In this repo they live at <code>skills/&lt;name&gt;/SKILL.md</code>, 67 of them, under documented open-source licenses. The file opens with YAML frontmatter carrying a <code>name</code> and a <code>description</code>. Everything after the closing <code>---</code> is the body: the procedure the agent reads when the skill fires.</p>
       <pre><code>---
 name: suede-deslop
-description: "Suede Slop Stop: the Suede AI context-aware anti-slop pass for finished prose. Finds or removes generic filler ... without flattening the author's voice. ..."
+description: "Suede Slop Stop: the Suede context-aware anti-slop pass for finished prose. Finds or removes generic filler ... without flattening the author's voice. ..."
 ---</code></pre>
       <p>That is the whole mechanism. No plugin API, no compilation step, no runtime. A skill is a document, and it works because the agent reading it is a competent reader who follows written instructions.</p>
       <p>The body is where the specialist lives. <code>skills/suede-code/SKILL.md</code> is 378 lines. It contains a list of instant-F triggers checked before any lane is scored, seven grading lanes, grade caps that hold auth and payment changes at C without tested bypass and error paths, and a fixed output block ending in a ship gate. <code>skills/suede-deslop/SKILL.md</code> carries a 25-row kill list of filler phrases with replacements, ten formulaic structures with their fixes, and a 50-point score with a threshold below which the text does not ship. None of that is clever. All of it is written down, which means it runs the same way on a Tuesday afternoon as it does at midnight.</p>
       <h2 id="progressive-disclosure-or-why-67-skills-fit">Progressive disclosure, or why 67 skills fit</h2>
-      <p>Here is the objection that arrives immediately. The 67 <code>SKILL.md</code> files in this repo total 949,907 bytes. Loading all of them into every conversation would crowd out the thing you actually came to do.</p>
-      <p>They are not all loaded. Only the frontmatter descriptions stay resident, and all 67 descriptions together come to 29,730 bytes. That is roughly a thirty-second of the corpus. The agent holds a catalog of what exists and reads a body only when a description matches the task in front of it.</p>
+      <p>Here is the objection that arrives immediately. The 67 <code>SKILL.md</code> files in this repo total 953,080 bytes. Loading all of them into every conversation would crowd out the thing you actually came to do.</p>
+      <p>They are not all loaded. Only the frontmatter descriptions stay resident, and all 67 descriptions together come to 29,575 bytes. That is roughly a thirty-second of the corpus. The agent holds a catalog of what exists and reads a body only when a description matches the task in front of it.</p>
       <p>This is progressive disclosure, and it changes what a description is for. The description is not marketing copy for the skill. It is the router. It carries the entire burden of deciding whether 400 lines of procedure load or stay on disk. Chapter 2 takes that apart in detail, including the <code>NOT FOR:</code> convention that 67 of the 67 descriptions in this repo use to push work toward a better match.</p>
       <p>The consequence for you is direct: a skill you install and never trigger costs you almost nothing, and a skill with a sloppy description is invisible no matter how good its body is.</p>
       <h2 id="the-before-and-after">The before and after</h2>
@@ -192,18 +192,18 @@ Ship gate: ship | ship-with-caveats | hold</code></pre>
     </section>
     <footer>
       <div class="footer-shell">
-        <p class="footer-note">Suede AI Skills is a 67-skill, open-source pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep. Original work is MIT licensed; adapted components retain their upstream notices.</p>
+        <p class="footer-note">Suede Skills is a 67-skill, open-source pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep. Original work is MIT licensed; adapted components retain their upstream notices.</p>
         <div class="footer-inner">
           <div class="footer-brand">
-            <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">
-            <span>Built by <strong>Jason Colapietro</strong> / Suede AI</span>
+            <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede" width="24" height="24" onerror="this.style.display='none'">
+            <span>Built by <strong>Jason Colapietro</strong> / Suede</span>
           </div>
           <div class="footer-links">
             <a href="https://x.com/johnnysuede" target="_blank" rel="noopener">@johnnysuede</a>
             <span class="footer-divider" aria-hidden="true">|</span>
             <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
             <span class="footer-divider" aria-hidden="true">|</span>
-            <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">★ Star Suede AI Skills on GitHub</a>
+            <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">★ Star Suede Skills on GitHub</a>
             <span class="footer-divider" aria-hidden="true">|</span>
             <a href="https://suedeai.ai/privacy" target="_blank" rel="noopener">Privacy</a>
             <span class="footer-divider" aria-hidden="true">|</span>
@@ -211,7 +211,7 @@ Ship gate: ship | ship-with-caveats | hold</code></pre>
           </div>
         </div>
       </div>
-    <div class="trendshift-recognition" style="width:250px;max-width:100%;margin:24px auto;text-align:center"><p style="margin:0 0 8px;font-size:13px">Suede AI Skills on Trendshift</p><a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55" loading="lazy" style="display:block;max-width:100%;height:auto"/></a></div>
+    <div class="trendshift-recognition" style="width:250px;max-width:100%;margin:24px auto;text-align:center"><p style="margin:0 0 8px;font-size:13px">Suede Skills on Trendshift</p><a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55" loading="lazy" style="display:block;max-width:100%;height:auto"/></a></div>
 </footer>
     <script>
       // Mobile nav disclosure. The markup ships <details open> so a no-JS

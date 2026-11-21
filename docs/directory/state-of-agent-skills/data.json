@@ -1,7 +1,7 @@
 {
   "snapshot": "2026-10-22",
   "install_snapshot": "2026-11-15",
-  "scope": "Third-party listed skills; Suede AI excluded",
+  "scope": "Third-party listed skills; Suede excluded",
   "total": 3839,
   "grades": {
     "A": 120,

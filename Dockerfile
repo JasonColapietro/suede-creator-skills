@@ -1,4 +1,4 @@
-# Suede AI Skills MCP: a dependency-free stdio MCP server.
+# Suede Skills MCP: a dependency-free stdio MCP server.
 # Build:  docker build -t suede-skills-mcp .
 # Run:    docker run -i --rm suede-skills-mcp
 # Set SUEDE_MCP_OFFLINE=1 to turn off the live page audit, the only tool that

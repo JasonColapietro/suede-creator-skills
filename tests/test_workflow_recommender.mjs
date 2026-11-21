@@ -657,7 +657,7 @@ test('only Jason’s published articles on approved paths can be recommended', (
   assert.ok(articleData.every(isPublishableArticle), 'every published article passes');
 });
 
-test('Suede AI skills lead the recommendations when they match the goal', () => {
+test('Suede skills lead the recommendations when they match the goal', () => {
   for (const prompt of ['seo', 'I’m a musician releasing a new single', 'write a cold email to investors', 'trying to get my app into the App Store', 'I want better analytics on my website']) {
     const skills = recommendSkills(prompt, catalog);
     assert.ok(isFirstParty(skills[0]), `${prompt}: ${skills[0]?.id}`);
@@ -679,7 +679,7 @@ test('display-named listings match on their slug, and a NOT FOR clause is never 
   assert.equal(recommendSkills('triage my email inbox', [negative]).length, 0);
 });
 
-test('Suede AI skills lead the workflow steps they cover, with the earlier picks kept as alternatives', () => {
+test('Suede skills lead the workflow steps they cover, with the earlier picks kept as alternatives', () => {
   const cases = [
     ['Launch a SaaS landing page', 'Write the offer and call to action', 'suede-copy', 'coreyhaines31/marketingskills/copywriting'],
     ['Launch a SaaS landing page', 'Polish hierarchy and accessibility', 'suede-design', 'pbakaus/impeccable/impeccable'],

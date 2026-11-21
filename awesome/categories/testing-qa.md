@@ -8,9 +8,9 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 **192 accepted skills · 35 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
-**Compare on the 0–99 quality scale:** this category’s verified scores span **56–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=testing-qa&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
+**Compare on the 0–99 quality scale:** this category’s verified scores span **56–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=testing-qa&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
-[Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede AI listing.
+[Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede listing.
 
 <details>
 <summary>Browse publishers in this category</summary>
@@ -57,7 +57,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## anthropics/skills
 
-[Repository](https://github.com/anthropics/skills) · Publisher: [anthropics](https://github.com/anthropics) · [Suede AI listing](https://skills.suedeai.ai/directory/anthropics/skills/)
+[Repository](https://github.com/anthropics/skills) · Publisher: [anthropics](https://github.com/anthropics) · [Suede listing](https://skills.suedeai.ai/directory/anthropics/skills/)
 
 - **75/100 · C** · [webapp-testing](https://github.com/anthropics/skills/blob/main/skills/webapp-testing/SKILL.md): Toolkit for interacting with and testing local web applications using Playwright. [Suede](https://skills.suedeai.ai/directory/anthropics/skills/#webapp-testing)
 
@@ -65,7 +65,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## apify/agent-skills
 
-[Repository](https://github.com/apify/agent-skills) · Publisher: [apify](https://github.com/apify) · [Suede AI listing](https://skills.suedeai.ai/directory/apify/agent-skills/)
+[Repository](https://github.com/apify/agent-skills) · Publisher: [apify](https://github.com/apify) · [Suede listing](https://skills.suedeai.ai/directory/apify/agent-skills/)
 
 - **84/100 · B** · [apify-actor-development](https://github.com/apify/agent-skills/blob/main/skills/apify-actor-development/SKILL.md): Create, modify, debug, and deploy Apify Actors, and write their input and output schemas. [Suede](https://skills.suedeai.ai/directory/apify/agent-skills/#apify-actor-development)
 
@@ -73,7 +73,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## avelikiy/great\_cto
 
-[Repository](https://github.com/avelikiy/great_cto) · Publisher: [avelikiy](https://github.com/avelikiy) · [Suede AI listing](https://skills.suedeai.ai/directory/avelikiy/great-cto/)
+[Repository](https://github.com/avelikiy/great_cto) · Publisher: [avelikiy](https://github.com/avelikiy) · [Suede listing](https://skills.suedeai.ai/directory/avelikiy/great-cto/)
 
 - **77/100 · C** · [test-strategy](https://github.com/avelikiy/great_cto/blob/main/skills/test-strategy/SKILL.md): Coverage-design method for qa-engineer — pyramid ratios per archetype, equivalence/boundary/property case selection, mutation score as the real coverage signal, and a flake-quarantine policy. [Suede](https://skills.suedeai.ai/directory/avelikiy/great-cto/#test-strategy)
 
@@ -81,7 +81,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## aws/agent-toolkit-for-aws
 
-[Repository](https://github.com/aws/agent-toolkit-for-aws) · Publisher: [aws](https://github.com/aws) · [Suede AI listing](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/)
+[Repository](https://github.com/aws/agent-toolkit-for-aws) · Publisher: [aws](https://github.com/aws) · [Suede listing](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/)
 
 - **83/100 · B** · [aws-step-functions](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/serverless-skills/aws-step-functions/SKILL.md): Authors and edits AWS Step Functions state machines: writes Amazon States Language (ASL) in JSONata, and chooses and structures state types (Task, Choice, Map, Parallel, Pass, Wait, Succeed, Fail). [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#aws-step-functions)
 - **78/100 · C** · [debugging-mwaa-workflow](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/analytics-skills/debugging-mwaa-workflow/SKILL.md): Diagnoses and root-causes Amazon MWAA workflow failures across Provisioned (Python DAG) and Serverless (YAML workflow) environments. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#debugging-mwaa-workflow)
@@ -95,7 +95,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## browser-use/browser-use
 
-[Repository](https://github.com/browser-use/browser-use) · Publisher: [browser-use](https://github.com/browser-use) · [Suede AI listing](https://skills.suedeai.ai/directory/browser-use/browser-use/)
+[Repository](https://github.com/browser-use/browser-use) · Publisher: [browser-use](https://github.com/browser-use) · [Suede listing](https://skills.suedeai.ai/directory/browser-use/browser-use/)
 
 - **85/100 · B** · [qa](https://github.com/browser-use/browser-use/blob/main/skills/qa/SKILL.md): QA-test a website or web app and return a 1-5 quality score (5 = flawless, 1 = broken) with evidence. [Suede](https://skills.suedeai.ai/directory/browser-use/browser-use/#qa)
 - **69/100 · D** · [browser-use](https://github.com/browser-use/browser-use/blob/main/skills/browser-use/SKILL.md): Direct browser control via CDP for web interaction: automation, scraping, testing, screenshots, and site/app work. [Suede](https://skills.suedeai.ai/directory/browser-use/browser-use/#browser-use)
@@ -104,7 +104,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## browserbase/skills
 
-[Repository](https://github.com/browserbase/skills) · Publisher: [browserbase](https://github.com/browserbase) · [Suede AI listing](https://skills.suedeai.ai/directory/browserbase/skills/)
+[Repository](https://github.com/browserbase/skills) · Publisher: [browserbase](https://github.com/browserbase) · [Suede listing](https://skills.suedeai.ai/directory/browserbase/skills/)
 
 - **80/100 · B** · [browser-trace](https://github.com/browserbase/skills/blob/main/skills/browser-trace/SKILL.md): Captures a DevTools-protocol trace of browser automation, including CDP events, screenshots, and DOM dumps, and splits it into per-page searchable buckets for debugging. [Suede](https://skills.suedeai.ai/directory/browserbase/skills/browser-trace/)
 - **70/100 · C** · [ui-test](https://github.com/browserbase/skills/blob/main/skills/ui-test/SKILL.md): AI-powered adversarial UI testing via the browse CLI. [Suede](https://skills.suedeai.ai/directory/browserbase/skills/#ui-test)
@@ -113,7 +113,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## conorluddy/ios-simulator-skill
 
-[Repository](https://github.com/conorluddy/ios-simulator-skill) · Publisher: [conorluddy](https://github.com/conorluddy) · [Suede AI listing](https://skills.suedeai.ai/directory/conorluddy/ios-simulator-skill/)
+[Repository](https://github.com/conorluddy/ios-simulator-skill) · Publisher: [conorluddy](https://github.com/conorluddy) · [Suede listing](https://skills.suedeai.ai/directory/conorluddy/ios-simulator-skill/)
 
 - **83/100 · B** · [ios-simulator-skill](https://github.com/conorluddy/ios-simulator-skill/blob/main/ios-simulator-skill/skills/ios-simulator-skill/SKILL.md): Build, test, and drive iOS apps in the Simulator with 30 token-efficient scripts. [Suede](https://skills.suedeai.ai/directory/conorluddy/ios-simulator-skill/#ios-simulator-skill)
 
@@ -121,7 +121,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## cypress-io/ai-toolkit
 
-[Repository](https://github.com/cypress-io/ai-toolkit) · Publisher: [cypress-io](https://github.com/cypress-io) · [Suede AI listing](https://skills.suedeai.ai/directory/cypress-io/ai-toolkit/)
+[Repository](https://github.com/cypress-io/ai-toolkit) · Publisher: [cypress-io](https://github.com/cypress-io) · [Suede listing](https://skills.suedeai.ai/directory/cypress-io/ai-toolkit/)
 
 - **85/100 · B** · [cypress-tap](https://github.com/cypress-io/ai-toolkit/blob/main/skills/cypress-tap/SKILL.md): Drives a running Cypress open-mode session to run and rerun specs, wait for results, inspect logs, and query or rewind the app under test. [Suede](https://skills.suedeai.ai/directory/cypress-io/ai-toolkit/cypress-tap/)
 - **83/100 · B** · [cypress-author](https://github.com/cypress-io/ai-toolkit/blob/main/skills/cypress-author/SKILL.md): Creates, updates, and fixes Cypress end-to-end and component tests, including writing new specs and repairing failing or flaky tests. [Suede](https://skills.suedeai.ai/directory/cypress-io/ai-toolkit/cypress-author/)
@@ -133,7 +133,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## eduardo-sl/go-agent-skills
 
-[Repository](https://github.com/eduardo-sl/go-agent-skills) · Publisher: [eduardo-sl](https://github.com/eduardo-sl) · [Suede AI listing](https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/)
+[Repository](https://github.com/eduardo-sl/go-agent-skills) · Publisher: [eduardo-sl](https://github.com/eduardo-sl) · [Suede listing](https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/)
 
 - **95/100 · A** · [go-troubleshooting](https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(safety)/go-troubleshooting/SKILL.md): Diagnoses runtime problems in Go programs: panics, stack traces, deadlocks, goroutine leaks, memory leaks, OOM kills, and race reports, using delve and pprof. [Suede](https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-troubleshooting/)
 - **93/100 · A** · [go-test-quality](https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(testing)/go-test-quality/SKILL.md): Guides Go testing for production code, including subtests, helpers, fixtures, golden files, httptest, testcontainers, fuzz testing, testing/synctest, mocking strategies, test isolation, and coverage analysis. [Suede](https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-test-quality/)
@@ -143,7 +143,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## firecrawl/skills
 
-[Repository](https://github.com/firecrawl/skills) · Publisher: [firecrawl](https://github.com/firecrawl) · [Suede AI listing](https://skills.suedeai.ai/directory/firecrawl/skills/)
+[Repository](https://github.com/firecrawl/skills) · Publisher: [firecrawl](https://github.com/firecrawl) · [Suede listing](https://skills.suedeai.ai/directory/firecrawl/skills/)
 
 - **74/100 · C** · [firecrawl-qa](https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-qa/SKILL.md): Test a live website with Firecrawl browser and write up what's broken: links, forms, mobile layout, performance and console errors. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/#firecrawl-qa)
 
@@ -151,7 +151,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## flutter/skills
 
-[Repository](https://github.com/flutter/skills) · Publisher: [flutter](https://github.com/flutter) · [Suede AI listing](https://skills.suedeai.ai/directory/flutter/skills/)
+[Repository](https://github.com/flutter/skills) · Publisher: [flutter](https://github.com/flutter) · [Suede listing](https://skills.suedeai.ai/directory/flutter/skills/)
 
 - **77/100 · C** · [dart-add-unit-test](https://github.com/flutter/skills/blob/main/skills/dart-add-unit-test/SKILL.md): Write and organize unit tests for functions, methods, and classes using \`package:test\`. [Suede](https://skills.suedeai.ai/directory/flutter/skills/#dart-add-unit-test)
 - **77/100 · C** · [dart-generate-test-mocks](https://github.com/flutter/skills/blob/main/skills/dart-generate-test-mocks/SKILL.md): Defines and generates mock objects for external dependencies using package:mockito and build\_runner, for unit testing classes that depend on services like APIs or databases. [Suede](https://skills.suedeai.ai/directory/flutter/skills/dart-generate-test-mocks/)
@@ -164,7 +164,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## garrytan/gstack
 
-[Repository](https://github.com/garrytan/gstack) · Publisher: [garrytan](https://github.com/garrytan) · [Suede AI listing](https://skills.suedeai.ai/directory/garrytan/gstack/)
+[Repository](https://github.com/garrytan/gstack) · Publisher: [garrytan](https://github.com/garrytan) · [Suede listing](https://skills.suedeai.ai/directory/garrytan/gstack/)
 
 - **80/100 · B** · [gstack-openclaw-investigate](https://github.com/garrytan/gstack/blob/main/openclaw/skills/gstack-openclaw-investigate/SKILL.md): Debugs errors, fixes bugs, and performs root cause analysis when users report errors, stack traces, unexpected behavior, or something that stopped working. [Suede](https://skills.suedeai.ai/directory/garrytan/gstack/gstack-openclaw-investigate/)
 - **68/100 · D** · [browse](https://github.com/garrytan/gstack/blob/main/browse/SKILL.md): Drive a real browser through Aside: open a page, read it, click through a flow, take screenshots, check console errors. (gstack) [Suede](https://skills.suedeai.ai/directory/garrytan/gstack/#browse)
@@ -174,7 +174,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## github/awesome-copilot
 
-[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede AI listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
+[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
 
 - **85/100 · B** · [cypress-flake-fixer](https://github.com/github/awesome-copilot/blob/main/skills/cypress-flake-fixer/SKILL.md): Find and fix flake-prone anti-patterns in an existing Cypress suite, and APIs removed in Cypress 12 to 16. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#cypress-flake-fixer)
 - **83/100 · B** · [minecraft-plugin-development](https://github.com/github/awesome-copilot/blob/main/skills/minecraft-plugin-development/SKILL.md): Use this skill when building or modifying Minecraft server plugins for Paper, Spigot, or Bukkit, including plugin.yml setup, commands, listeners, schedulers, player state, team or arena systems, persistent progression, economy or… [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#minecraft-plugin-development)
@@ -223,7 +223,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## gooseworks-ai/goose-skills
 
-[Repository](https://github.com/gooseworks-ai/goose-skills) · Publisher: [gooseworks-ai](https://github.com/gooseworks-ai) · [Suede AI listing](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/)
+[Repository](https://github.com/gooseworks-ai/goose-skills) · Publisher: [gooseworks-ai](https://github.com/gooseworks-ai) · [Suede listing](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/)
 
 - **66/100 · D** · [api-tester](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/research-tools/capabilities/api-tester/SKILL.md): Test and document API endpoints - validate responses, check status, generate examples [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#api-tester)
 
@@ -231,7 +231,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## hashicorp/agent-skills
 
-[Repository](https://github.com/hashicorp/agent-skills) · Publisher: [hashicorp](https://github.com/hashicorp) · [Suede AI listing](https://skills.suedeai.ai/directory/hashicorp/agent-skills/)
+[Repository](https://github.com/hashicorp/agent-skills) · Publisher: [hashicorp](https://github.com/hashicorp) · [Suede listing](https://skills.suedeai.ai/directory/hashicorp/agent-skills/)
 
 - **83/100 · B** · [terraform-test](https://github.com/hashicorp/agent-skills/blob/main/plugins/terraform/skills/terraform-test/SKILL.md): Guides writing and running Terraform tests, including .tftest.hcl files, run blocks, assertions, provider mocking, and troubleshooting test syntax and execution. [Suede](https://skills.suedeai.ai/directory/hashicorp/agent-skills/terraform-test/)
 - **81/100 · B** · [provider-test-patterns](https://github.com/hashicorp/agent-skills/blob/main/plugins/terraform/skills/provider-test-patterns/SKILL.md): Guides writing, reviewing, and debugging Terraform provider acceptance tests with terraform-plugin-testing, covering state checks, plan checks, import testing, sweepers, and common scenario patterns. [Suede](https://skills.suedeai.ai/directory/hashicorp/agent-skills/provider-test-patterns/)
@@ -241,7 +241,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## infrasity-labs/dev-gtm-claude-skills
 
-[Repository](https://github.com/infrasity-labs/dev-gtm-claude-skills) · Publisher: [infrasity-labs](https://github.com/infrasity-labs) · [Suede AI listing](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/)
+[Repository](https://github.com/infrasity-labs/dev-gtm-claude-skills) · Publisher: [infrasity-labs](https://github.com/infrasity-labs) · [Suede listing](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/)
 
 - **56/100 · D** · [accessibility-test-plan](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/product-designers/accessibility-test-plan/SKILL.md): Create accessibility testing plans covering assistive technologies and WCAG criteria. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#accessibility-test-plan)
 
@@ -249,16 +249,16 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## JasonColapietro/suede-creator-skills
 
-[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede AI listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
+[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
 
-- **91/100 · A** · [Suede AI A/B Testing Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-ab-testing/SKILL.md): Suede AI A/B Testing Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ab-testing)
-- **91/100 · A** · [Suede AI Eval Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-ai-eval/SKILL.md): Suede AI Eval Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ai-eval)
+- **91/100 · A** · [Suede A/B Testing Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-ab-testing/SKILL.md): Suede A/B Testing Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ab-testing)
+- **91/100 · A** · [Suede Eval Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-ai-eval/SKILL.md): Suede Eval Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ai-eval)
 
 <a id="jeffallan--claude-skills"></a>
 
 ## jeffallan/claude-skills
 
-[Repository](https://github.com/jeffallan/claude-skills) · Publisher: [jeffallan](https://github.com/jeffallan) · [Suede AI listing](https://skills.suedeai.ai/directory/jeffallan/claude-skills/)
+[Repository](https://github.com/jeffallan/claude-skills) · Publisher: [jeffallan](https://github.com/jeffallan) · [Suede listing](https://skills.suedeai.ai/directory/jeffallan/claude-skills/)
 
 - **84/100 · B** · [playwright-expert](https://github.com/jeffallan/claude-skills/blob/main/skills/playwright-expert/SKILL.md): Use when writing E2E tests with Playwright, setting up test infrastructure, or debugging flaky browser tests. [Suede](https://skills.suedeai.ai/directory/jeffallan/claude-skills/#playwright-expert)
 - **84/100 · B** · [test-master](https://github.com/jeffallan/claude-skills/blob/main/skills/test-master/SKILL.md): Generates test files, creates mocking strategies, analyzes code coverage, designs test architectures, and produces test plans and defect reports across functional, performance, and security testing disciplines. [Suede](https://skills.suedeai.ai/directory/jeffallan/claude-skills/#test-master)
@@ -268,7 +268,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## lackeyjb/playwright-skill
 
-[Repository](https://github.com/lackeyjb/playwright-skill) · Publisher: [lackeyjb](https://github.com/lackeyjb) · [Suede AI listing](https://skills.suedeai.ai/directory/lackeyjb/playwright-skill/playwright-skill/)
+[Repository](https://github.com/lackeyjb/playwright-skill) · Publisher: [lackeyjb](https://github.com/lackeyjb) · [Suede listing](https://skills.suedeai.ai/directory/lackeyjb/playwright-skill/playwright-skill/)
 
 - **85/100 · B** · [playwright-skill](https://github.com/lackeyjb/playwright-skill/blob/main/skills/playwright-skill/SKILL.md): Automates browsers with Playwright, auto-detecting dev servers and writing reusable test scripts for screenshots, responsive checks, UX validation, login flows, and link checks. [Suede](https://skills.suedeai.ai/directory/lackeyjb/playwright-skill/playwright-skill/)
 
@@ -276,7 +276,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## LambdaTest/agent-skills
 
-[Repository](https://github.com/LambdaTest/agent-skills) · Publisher: [LambdaTest](https://github.com/LambdaTest) · [Suede AI listing](https://skills.suedeai.ai/directory/lambdatest/agent-skills/)
+[Repository](https://github.com/LambdaTest/agent-skills) · Publisher: [LambdaTest](https://github.com/LambdaTest) · [Suede listing](https://skills.suedeai.ai/directory/lambdatest/agent-skills/)
 
 - **86/100 · B** · [cypress-skill](https://github.com/LambdaTest/agent-skills/blob/main/cypress-skill/SKILL.md): Generates Cypress end-to-end and component tests in JavaScript or TypeScript, supporting local execution and the TestMu AI cloud. [Suede](https://skills.suedeai.ai/directory/lambdatest/agent-skills/cypress-skill/)
 - **86/100 · B** · [playwright-skill](https://github.com/LambdaTest/agent-skills/blob/main/playwright-skill/SKILL.md): Generates Playwright automation scripts and end-to-end tests in TypeScript, JavaScript, Python, Java, or C#, run locally or on TestMu AI cloud. [Suede](https://skills.suedeai.ai/directory/lambdatest/agent-skills/playwright-skill/)
@@ -336,7 +336,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## mailtrap/mailtrap-skills
 
-[Repository](https://github.com/mailtrap/mailtrap-skills) · Publisher: [mailtrap](https://github.com/mailtrap) · [Suede AI listing](https://skills.suedeai.ai/directory/mailtrap/mailtrap-skills/)
+[Repository](https://github.com/mailtrap/mailtrap-skills) · Publisher: [mailtrap](https://github.com/mailtrap) · [Suede listing](https://skills.suedeai.ai/directory/mailtrap/mailtrap-skills/)
 
 - **80/100 · B** · [testing-with-sandbox](https://github.com/mailtrap/mailtrap-skills/blob/main/skills/testing-with-sandbox/SKILL.md): Captures outbound email in development or staging without reaching real recipients, using Mailtrap Email Sandbox to inspect HTML and headers and automate tests. [Suede](https://skills.suedeai.ai/directory/mailtrap/mailtrap-skills/testing-with-sandbox/)
 
@@ -344,7 +344,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## mattpocock/skills
 
-[Repository](https://github.com/mattpocock/skills) · Publisher: [mattpocock](https://github.com/mattpocock) · [Suede AI listing](https://skills.suedeai.ai/directory/mattpocock/skills/)
+[Repository](https://github.com/mattpocock/skills) · Publisher: [mattpocock](https://github.com/mattpocock) · [Suede listing](https://skills.suedeai.ai/directory/mattpocock/skills/)
 
 - **83/100 · B** · [diagnosing-bugs](https://github.com/mattpocock/skills/blob/main/skills/engineering/diagnosing-bugs/SKILL.md): Diagnosis loop for hard bugs and performance regressions. [Suede](https://skills.suedeai.ai/directory/mattpocock/skills/#diagnosing-bugs)
 - **79/100 · C** · [tdd](https://github.com/mattpocock/skills/blob/main/skills/engineering/tdd/SKILL.md): Test-driven development. [Suede](https://skills.suedeai.ai/directory/mattpocock/skills/#tdd)
@@ -356,7 +356,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## mblode/agent-skills
 
-[Repository](https://github.com/mblode/agent-skills) · Publisher: [mblode](https://github.com/mblode) · [Suede AI listing](https://skills.suedeai.ai/directory/mblode/agent-skills/)
+[Repository](https://github.com/mblode/agent-skills) · Publisher: [mblode](https://github.com/mblode) · [Suede listing](https://skills.suedeai.ai/directory/mblode/agent-skills/)
 
 - **89/100 · B** · [app-verification](https://github.com/mblode/agent-skills/blob/main/skills/app-verification/SKILL.md): Builds and maintains a repo's own verification harness (verify CLI, doctor, worktree isolation, feature map, seed data) and a reproduce-first bug handoff. [Suede](https://skills.suedeai.ai/directory/mblode/agent-skills/#app-verification)
 - **89/100 · B** · [test-audit](https://github.com/mblode/agent-skills/blob/main/skills/test-audit/SKILL.md): Prunes low-value tests across a whole suite to a measured target while holding coverage. [Suede](https://skills.suedeai.ai/directory/mblode/agent-skills/test-audit/)
@@ -366,7 +366,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## metalbear-co/skills
 
-[Repository](https://github.com/metalbear-co/skills) · Publisher: [metalbear-co](https://github.com/metalbear-co) · [Suede AI listing](https://skills.suedeai.ai/directory/metalbear-co/skills/)
+[Repository](https://github.com/metalbear-co/skills) · Publisher: [metalbear-co](https://github.com/metalbear-co) · [Suede listing](https://skills.suedeai.ai/directory/metalbear-co/skills/)
 
 - **84/100 · B** · [mirrord-chaos](https://github.com/metalbear-co/skills/blob/main/skills/mirrord-chaos/SKILL.md): Helps chaos test apps with mirrord by injecting artificial latency or connection errors into a session's outgoing traffic using per-session chaos rules. [Suede](https://skills.suedeai.ai/directory/metalbear-co/skills/mirrord-chaos/)
 
@@ -374,7 +374,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## mhattingpete/claude-skills-marketplace
 
-[Repository](https://github.com/mhattingpete/claude-skills-marketplace) · Publisher: [mhattingpete](https://github.com/mhattingpete) · [Suede AI listing](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/)
+[Repository](https://github.com/mhattingpete/claude-skills-marketplace) · Publisher: [mhattingpete](https://github.com/mhattingpete) · [Suede listing](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/)
 
 - **75/100 · C** · [test-fixing](https://github.com/mhattingpete/claude-skills-marketplace/blob/main/engineering-workflow-plugin/skills/test-fixing/SKILL.md): Run tests and systematically fix all failing tests using smart error grouping. [Suede](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/#test-fixing)
 
@@ -382,7 +382,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## NeoLabHQ/context-engineering-kit
 
-[Repository](https://github.com/NeoLabHQ/context-engineering-kit) · Publisher: [NeoLabHQ](https://github.com/NeoLabHQ) · [Suede AI listing](https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/)
+[Repository](https://github.com/NeoLabHQ/context-engineering-kit) · Publisher: [NeoLabHQ](https://github.com/NeoLabHQ) · [Suede listing](https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/)
 
 - **78/100 · C** · [root-cause-tracing](https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/root-cause-tracing/SKILL.md): Traces bugs backward through the call stack, adding instrumentation when needed, to find the original source of invalid data or incorrect behavior. [Suede](https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/root-cause-tracing/)
 - **78/100 · C** · [write-tests](https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/write-tests/SKILL.md): Generates new test files to cover uncommitted and untracked local changes, or the latest commit if everything is committed. [Suede](https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/write-tests/)
@@ -393,7 +393,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## neondatabase/agent-skills
 
-[Repository](https://github.com/neondatabase/agent-skills) · Publisher: [neondatabase](https://github.com/neondatabase) · [Suede AI listing](https://skills.suedeai.ai/directory/neondatabase/agent-skills/)
+[Repository](https://github.com/neondatabase/agent-skills) · Publisher: [neondatabase](https://github.com/neondatabase) · [Suede listing](https://skills.suedeai.ai/directory/neondatabase/agent-skills/)
 
 - **81/100 · B** · [neon-postgres-branches](https://github.com/neondatabase/agent-skills/blob/main/skills/neon-postgres-branches/SKILL.md): Choose and create the right Neon branch type for testing and development. [Suede](https://skills.suedeai.ai/directory/neondatabase/agent-skills/#neon-postgres-branches)
 
@@ -401,7 +401,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## NVIDIA/skills
 
-[Repository](https://github.com/NVIDIA/skills) · Publisher: [NVIDIA](https://github.com/NVIDIA) · [Suede AI listing](https://skills.suedeai.ai/directory/nvidia/skills/)
+[Repository](https://github.com/NVIDIA/skills) · Publisher: [NVIDIA](https://github.com/NVIDIA) · [Suede listing](https://skills.suedeai.ai/directory/nvidia/skills/)
 
 - **87/100 · B** · [tao-run-deft-od-aoi](https://github.com/NVIDIA/skills/blob/main/skills/tao-run-deft-od-aoi/SKILL.md): Run a binary industrial-inspection DEFT loop with TAO RT-DETR: measure on frozen KPI/test roles, mine gap-similar real and clean images with SigLIP, accumulate admitted COCO data, retrain from one base checkpoint, and select by KPI AP50. [Suede](https://skills.suedeai.ai/directory/nvidia/skills/#tao-run-deft-od-aoi)
 - **86/100 · B** · [warp-debug-gradients](https://github.com/NVIDIA/skills/blob/main/skills/warp-debug-gradients/SKILL.md): Use to diagnose and fix incorrect gradients in differentiable Warp programs. [Suede](https://skills.suedeai.ai/directory/nvidia/skills/#warp-debug-gradients)
@@ -414,7 +414,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## obra/superpowers
 
-[Repository](https://github.com/obra/superpowers) · Publisher: [obra](https://github.com/obra) · [Suede AI listing](https://skills.suedeai.ai/directory/obra/superpowers/)
+[Repository](https://github.com/obra/superpowers) · Publisher: [obra](https://github.com/obra) · [Suede listing](https://skills.suedeai.ai/directory/obra/superpowers/)
 
 - **80/100 · B** · [systematic-debugging](https://github.com/obra/superpowers/blob/main/skills/systematic-debugging/SKILL.md): Guides a systematic approach to any bug, test failure, or unexpected behavior, before proposing fixes. [Suede](https://skills.suedeai.ai/directory/obra/superpowers/systematic-debugging/)
 - **80/100 · B** · [test-driven-development](https://github.com/obra/superpowers/blob/main/skills/test-driven-development/SKILL.md): Guides test-driven development when implementing any feature or bugfix, applied before writing implementation code. [Suede](https://skills.suedeai.ai/directory/obra/superpowers/test-driven-development/)
@@ -423,7 +423,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## openai/skills
 
-[Repository](https://github.com/openai/skills) · Publisher: [openai](https://github.com/openai) · [Suede AI listing](https://skills.suedeai.ai/directory/openai/skills/)
+[Repository](https://github.com/openai/skills) · Publisher: [openai](https://github.com/openai) · [Suede listing](https://skills.suedeai.ai/directory/openai/skills/)
 
 - **77/100 · C** · [aspnet-core](https://github.com/openai/skills/blob/main/skills/.curated/aspnet-core/SKILL.md): Build, review, refactor, or architect ASP.NET Core web applications using current official guidance for .NET web development. [Suede](https://skills.suedeai.ai/directory/openai/skills/#aspnet-core)
 - **76/100 · C** · [playwright](https://github.com/openai/skills/blob/main/skills/.curated/playwright/SKILL.md): Use when the task requires automating a real browser from the terminal (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging) via \`playwright-cli\` or the bundled wrapper script. [Suede](https://skills.suedeai.ai/directory/openai/skills/#playwright)
@@ -434,7 +434,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## phuryn/pm-skills
 
-[Repository](https://github.com/phuryn/pm-skills) · Publisher: [phuryn](https://github.com/phuryn) · [Suede AI listing](https://skills.suedeai.ai/directory/phuryn/pm-skills/)
+[Repository](https://github.com/phuryn/pm-skills) · Publisher: [phuryn](https://github.com/phuryn) · [Suede listing](https://skills.suedeai.ai/directory/phuryn/pm-skills/)
 
 - **78/100 · C** · [test-scenarios](https://github.com/phuryn/pm-skills/blob/main/pm-execution/skills/test-scenarios/SKILL.md): Create comprehensive test scenarios from user stories with test objectives, starting conditions, user roles, step-by-step actions, and expected outcomes. [Suede](https://skills.suedeai.ai/directory/phuryn/pm-skills/#test-scenarios)
 
@@ -442,7 +442,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## testdino-hq/playwright-skill
 
-[Repository](https://github.com/testdino-hq/playwright-skill) · Publisher: [testdino-hq](https://github.com/testdino-hq) · [Suede AI listing](https://skills.suedeai.ai/directory/testdino-hq/playwright-skill/)
+[Repository](https://github.com/testdino-hq/playwright-skill) · Publisher: [testdino-hq](https://github.com/testdino-hq) · [Suede listing](https://skills.suedeai.ai/directory/testdino-hq/playwright-skill/)
 
 - **80/100 · B** · [playwright-cli](https://github.com/testdino-hq/playwright-skill/blob/main/playwright-cli/SKILL.md): Automates browser interactions with playwright-cli to test web applications you own, including navigation, form filling, screenshots, tracing, debugging, and generating Playwright test code. [Suede](https://skills.suedeai.ai/directory/testdino-hq/playwright-skill/playwright-cli/)
 - **72/100 · C** · [playwright-core](https://github.com/testdino-hq/playwright-skill/blob/main/core/SKILL.md): Battle-tested Playwright patterns for writing and debugging reliable E2E, API, component, visual, accessibility, and security tests. [Suede](https://skills.suedeai.ai/directory/testdino-hq/playwright-skill/#playwright-core)
@@ -453,7 +453,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## trailofbits/skills
 
-[Repository](https://github.com/trailofbits/skills) · Publisher: [trailofbits](https://github.com/trailofbits) · [Suede AI listing](https://skills.suedeai.ai/directory/trailofbits/skills/)
+[Repository](https://github.com/trailofbits/skills) · Publisher: [trailofbits](https://github.com/trailofbits) · [Suede listing](https://skills.suedeai.ai/directory/trailofbits/skills/)
 
 - **89/100 · B** · [mutation-testing](https://github.com/trailofbits/skills/blob/main/plugins/mutation-testing/skills/mutation-testing/SKILL.md): Configures mewt or muton campaigns, analyzes surviving mutants, and investigates bugs exposed by testing gaps. [Suede](https://skills.suedeai.ai/directory/trailofbits/skills/#mutation-testing)
 - **89/100 · B** · [property-based-testing](https://github.com/trailofbits/skills/blob/main/plugins/property-based-testing/skills/property-based-testing/SKILL.md): Writes, reviews, and debugs property-based tests — Hypothesis, fast-check, proptest, jqwik, rapid, and Echidna or Medusa for Solidity invariants. [Suede](https://skills.suedeai.ai/directory/trailofbits/skills/#property-based-testing)
@@ -476,7 +476,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## tronghieu/agent-skills
 
-[Repository](https://github.com/tronghieu/agent-skills) · Publisher: [tronghieu](https://github.com/tronghieu) · [Suede AI listing](https://skills.suedeai.ai/directory/tronghieu/agent-skills/)
+[Repository](https://github.com/tronghieu/agent-skills) · Publisher: [tronghieu](https://github.com/tronghieu) · [Suede listing](https://skills.suedeai.ai/directory/tronghieu/agent-skills/)
 
 - **92/100 · A** · [manual-tester](https://github.com/tronghieu/agent-skills/blob/main/skills/manual-tester/SKILL.md): Plans and runs manual test sessions of the running app in five modes, including exploratory, smoke, and assessment, and writes manual test plans. [Suede](https://skills.suedeai.ai/directory/tronghieu/agent-skills/manual-tester/)
 
@@ -484,7 +484,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ## vostride/agent-qa
 
-[Repository](https://github.com/vostride/agent-qa) · Publisher: [vostride](https://github.com/vostride) · [Suede AI listing](https://skills.suedeai.ai/directory/vostride/agent-qa/)
+[Repository](https://github.com/vostride/agent-qa) · Publisher: [vostride](https://github.com/vostride) · [Suede listing](https://skills.suedeai.ai/directory/vostride/agent-qa/)
 
 - **74/100 · C** · [agent-qa-authoring](https://github.com/vostride/agent-qa/blob/main/skills/agent-qa-authoring/SKILL.md): Guides creating, editing, validating, and running agent-qa tests, suites, and hooks, preferring agent-qa MCP tools, canonical IDs, and the bundled schema reference. [Suede](https://skills.suedeai.ai/directory/vostride/agent-qa/agent-qa-authoring/)
 - **74/100 · C** · [agent-qa-result-triage](https://github.com/vostride/agent-qa/blob/main/skills/agent-qa-result-triage/SKILL.md): Investigates failed agent-qa runs by inspecting artifacts, classifying failures, and comparing recent runs, using agent-qa MCP tools to produce evidence-backed triage. [Suede](https://skills.suedeai.ai/directory/vostride/agent-qa/agent-qa-result-triage/)
@@ -492,6 +492,6 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 ---
 
-**Run a team of agents.** Suede AI Agent Studio builds multi-agent automation for businesses. [suedeai.app](https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agent-studio) Listed here? [Add your badge](../README.md#add-your-badge).
+**Run a team of agents.** Suede Agent Studio builds multi-agent automation for businesses. [suedeai.app](https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agent-studio) Listed here? [Add your badge](../README.md#add-your-badge).
 
 [Awesome Everything](../README.md) · [Compare scores](../README.md#compare-099-quality-scores) · [Publishers](../publishers.md) · [Featured projects](../featured.md) · [Guides](../README.md#guides) · [Contribute](../CONTRIBUTING.md) · [Search by score](https://skills.suedeai.ai/directory/?sort=score)

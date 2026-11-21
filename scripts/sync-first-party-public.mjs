@@ -9,7 +9,7 @@ import { createRequire } from 'node:module';
 const { load } = createRequire(import.meta.url)('js-yaml');
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const esc = value => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
-const packBrand = value => value.replaceAll('Suede Creator Skills', 'Suede AI Skills').replaceAll('Suede Workflow Skills', 'Suede AI Workflow Skills');
+const packBrand = value => value.replaceAll('Suede Creator Skills', 'Suede Skills');
 const pattern = value => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 function skillPage(html, displayName) {
@@ -35,7 +35,7 @@ function skillPage(html, displayName) {
   });
   html = packBrand(html);
   // The split wordmark is HTML, so it is not covered by the literal brand above.
-  return html.replaceAll('Suede <span>Creator Skills</span>', 'Suede <span>AI Skills</span>');
+  return html.replaceAll('Suede <span>Creator Skills</span>', 'Suede <span>Skills</span>');
 }
 
 export function syncFirstPartyPublic(root = ROOT, { check = false } = {}) {
@@ -54,18 +54,21 @@ export function syncFirstPartyPublic(root = ROOT, { check = false } = {}) {
     const fm = load(block[1]);
     const displayName = fm.metadata?.['display-name'];
     if (fm.name !== skill.name) throw new Error(`Source/catalog identity mismatch: ${skill.name}`);
-    if (typeof displayName !== 'string' || !/^Suede AI(?: .+)? Skills$/.test(displayName)) throw new Error(`Invalid first-party display name: ${skill.name}`);
+    const validDisplayName = skill.name === 'suede-graph-flo-xr'
+      ? displayName === 'Suede Graph Flo XR'
+      : typeof displayName === 'string' && /^Suede(?! AI\b| Labs\b)(?: .+)? Skills$/.test(displayName);
+    if (!validDisplayName) throw new Error(`Invalid first-party display name: ${skill.name}`);
     if (typeof fm.description !== 'string' || !fm.description.trim()) throw new Error(`Missing description: ${skill.name}`);
     const heading = source.slice(block[0].length).match(/^# (.+)$/m)?.[1];
     if (heading !== displayName) throw new Error(`Source H1/display name mismatch: ${skill.name}`);
     sources.set(skill.name, { displayName, description: fm.description });
   }
   // Validate every source before queuing any writes.
-  catalog.name = 'Suede AI Skills';
+  catalog.name = 'Suede Skills';
   for (const plugin of catalog.plugins) {
-    if (plugin.name === 'suede-workflow-skills') plugin.displayName = 'Suede AI Workflow Skills';
-    if (plugin.name === 'suede-creator-skills') plugin.displayName = 'Suede AI Skills';
-    if (plugin.name === 'suede-marketing') plugin.displayName = 'Suede AI Marketing Skills';
+    if (plugin.name === 'suede-workflow-skills') plugin.displayName = 'Suede Workflow Skills';
+    if (plugin.name === 'suede-creator-skills') plugin.displayName = 'Suede Skills';
+    if (plugin.name === 'suede-marketing') plugin.displayName = 'Suede Marketing Skills';
   }
   for (const skill of catalog.skills) Object.assign(skill, sources.get(skill.name));
   changes.set('mcp/catalog.json', packBrand(JSON.stringify(catalog, null, 2) + '\n'));
@@ -82,7 +85,7 @@ export function syncFirstPartyPublic(root = ROOT, { check = false } = {}) {
       changes.set(relative, config.replace(/^([ \t]+display_name:)[^\r\n]*/m, (_, key) => key + ' ' + JSON.stringify(displayName)));
     }
   }
-  let index = packBrand(read('docs/skills/index.html')).replaceAll('Suede <span>Creator Skills</span>', 'Suede <span>AI Skills</span>');
+  let index = packBrand(read('docs/skills/index.html')).replaceAll('Suede <span>Creator Skills</span>', 'Suede <span>Skills</span>');
   for (const [name, { displayName }] of sources) {
     const re = new RegExp(`(<a\\b[^>]*href="(?:\\./)?${pattern(name)}\\.html"[^>]*>)([\\s\\S]*?)(<\\/a>)`, 'g');
     index = index.replace(re, (_, open, contents, close) => {

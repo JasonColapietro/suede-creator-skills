@@ -1,7 +1,7 @@
 {
-  "_comment": "The one source for every Suede AI call to action in the Agent Skills Directory and the Awesome catalog. scripts/build-directory.mjs and scripts/build-awesome-directory.mjs read this file; edit copy, URLs, placement and routing here, then rebuild. offers is the plain two-card services module, shown on the page kinds switched on in placements. campaigns holds placement-specific variants: each URL already carries utm_source, utm_medium, utm_campaign (the campaign id) and utm_content (the variant id), so keep them intact. Where a campaign has several variants for the same route, the build picks one per page from a stable hash of the page path, so variants rotate across pages and clicks can be compared by utm_content. A variant with a confirm_offer note names an offer suedeai.agency has not confirmed: the build never renders it and uses the plain services offer instead. Copy follows the CLAUDE.md sales-copy standard: no em dashes, no invented proof, results, prices or guarantees. CTAs never appear inside third-party descriptions, install commands, publisher credit or correction flows.",
+  "_comment": "The one source for every Suede call to action in the Agent Skills Directory and the Awesome catalog. scripts/build-directory.mjs and scripts/build-awesome-directory.mjs read this file; edit copy, URLs, placement and routing here, then rebuild. offers is the plain two-card services module, shown on the page kinds switched on in placements. campaigns holds placement-specific variants: each URL already carries utm_source, utm_medium, utm_campaign (the campaign id) and utm_content (the variant id), so keep them intact. Where a campaign has several variants for the same route, the build picks one per page from a stable hash of the page path, so variants rotate across pages and clicks can be compared by utm_content. A variant with a confirm_offer note names an offer suedeai.agency has not confirmed: the build never renders it and uses the plain services offer instead. Copy follows the CLAUDE.md sales-copy standard: no em dashes, no invented proof, results, prices or guarantees. CTAs never appear inside third-party descriptions, install commands, publisher credit or correction flows.",
   "enabled": true,
-  "kicker": "From Suede AI, the publisher of this directory",
+  "kicker": "From Suede, the publisher of this directory",
   "utm": {
     "utm_source": "skills.suedeai.ai",
     "utm_medium": "directory",
@@ -10,13 +10,13 @@
   "offers": {
     "search": {
       "heading": "Get your business cited in AI answers and ranked in Google",
-      "body": "Suede AI runs AEO, GEO and SEO programs for businesses: technical audits, structured data, entity work and content built to be quoted by ChatGPT, Claude, Perplexity and Google AI Overviews.",
+      "body": "Suede runs AEO, GEO and SEO programs for businesses: technical audits, structured data, entity work and content built to be quoted by ChatGPT, Claude, Perplexity and Google AI Overviews.",
       "cta": "See AEO and SEO services",
       "url": "https://suedeai.agency/"
     },
     "agents": {
       "heading": "Put a team of agents on your recurring work",
-      "body": "Agent Studio from Suede AI builds multi-agent automation for businesses. Bring a workflow your team repeats every week and we design the agents that run it.",
+      "body": "Agent Studio from Suede builds multi-agent automation for businesses. Bring a workflow your team repeats every week and we design the agents that run it.",
       "cta": "Explore Agent Studio",
       "url": "https://suedeai.app/"
     }
@@ -77,18 +77,18 @@
       "variants": [
         {
           "id": "a-ai-answers",
-          "eyebrow": "From Suede AI",
+          "eyebrow": "From Suede",
           "headline": "Want your product named when buyers ask ChatGPT?",
-          "body": "Suede AI's AEO, GEO and SEO team gets companies found in search and cited in AI answers.",
-          "button": "Talk to Suede AI",
+          "body": "Suede's AEO, GEO and SEO team gets companies found in search and cited in AI answers.",
+          "button": "Talk to Suede",
           "url": "https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=directory&utm_campaign=home-hero-secondary&utm_content=a-ai-answers"
         },
         {
           "id": "b-skills-to-strategy",
-          "eyebrow": "From Suede AI",
+          "eyebrow": "From Suede",
           "headline": "The skills run the checks. We run the strategy.",
-          "body": "Suede AI builds AEO, GEO and SEO programs measured against leads and revenue.",
-          "button": "See Suede AI services",
+          "body": "Suede builds AEO, GEO and SEO programs measured against leads and revenue.",
+          "button": "See Suede services",
           "url": "https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=directory&utm_campaign=home-hero-secondary&utm_content=b-skills-to-strategy"
         }
       ]
@@ -102,14 +102,14 @@
         {
           "id": "a-done-for-you",
           "headline": "Rather have it done for you?",
-          "body": "These skills give your agent a method. Suede AI's team pairs that method with a strategy tied to revenue, implementation on your site and ongoing measurement in Search Console and AI answers.",
-          "button": "Talk to Suede AI",
+          "body": "These skills give your agent a method. Suede's team pairs that method with a strategy tied to revenue, implementation on your site and ongoing measurement in Search Console and AI answers.",
+          "button": "Talk to Suede",
           "url": "https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=directory&utm_campaign=category-agency&utm_content=a-done-for-you"
         },
         {
           "id": "b-ai-visibility",
           "headline": "Show up in AI answers, not just search results",
-          "body": "Suede AI optimizes sites for Google, AI Overviews, ChatGPT, Perplexity and Claude with direct answers, clean entities and valid structured data.",
+          "body": "Suede optimizes sites for Google, AI Overviews, ChatGPT, Perplexity and Claude with direct answers, clean entities and valid structured data.",
           "button": "Get AI visibility help",
           "url": "https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=directory&utm_campaign=category-agency&utm_content=b-ai-visibility"
         }
@@ -124,14 +124,14 @@
         {
           "id": "a-team-of-agents",
           "headline": "Ready for a team of agents, not one?",
-          "body": "Suede AI Agent Studio builds multi-agent automation for businesses, with handoffs between agents and approvals where your team wants them.",
+          "body": "Suede Agent Studio builds multi-agent automation for businesses, with handoffs between agents and approvals where your team wants them.",
           "button": "Explore Agent Studio",
           "url": "https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=directory&utm_campaign=category-agent-studio&utm_content=a-team-of-agents"
         },
         {
           "id": "b-from-skills-to-workflows",
           "headline": "Turn these skills into a running workflow",
-          "body": "Agent Studio from Suede AI connects agents across your business systems so work moves from intake to delivery.",
+          "body": "Agent Studio from Suede connects agents across your business systems so work moves from intake to delivery.",
           "button": "See Agent Studio",
           "url": "https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=directory&utm_campaign=category-agent-studio&utm_content=b-from-skills-to-workflows"
         }
@@ -146,15 +146,15 @@
           "id": "agency-a",
           "routes": "search",
           "headline": "Want this work done for your site?",
-          "body": "Suede AI's AEO, GEO and SEO team runs this kind of work as a managed program.",
-          "button": "Talk to Suede AI",
+          "body": "Suede's AEO, GEO and SEO team runs this kind of work as a managed program.",
+          "button": "Talk to Suede",
           "url": "https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=directory&utm_campaign=skill-page-aside&utm_content=agency-a"
         },
         {
           "id": "agency-b",
           "routes": "search",
           "headline": "Get cited in AI answers",
-          "body": "Suede AI helps companies get found in Google and named by ChatGPT, Perplexity and Claude.",
+          "body": "Suede helps companies get found in Google and named by ChatGPT, Perplexity and Claude.",
           "button": "See how",
           "url": "https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=directory&utm_campaign=skill-page-aside&utm_content=agency-b"
         },
@@ -162,7 +162,7 @@
           "id": "studio-a",
           "routes": "agents",
           "headline": "Running this across a team?",
-          "body": "Suede AI Agent Studio builds multi-agent automation for businesses.",
+          "body": "Suede Agent Studio builds multi-agent automation for businesses.",
           "button": "Explore Agent Studio",
           "url": "https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=directory&utm_campaign=skill-page-aside&utm_content=studio-a"
         },
@@ -170,7 +170,7 @@
           "id": "studio-b",
           "routes": "agents",
           "headline": "One agent is a start",
-          "body": "Agent Studio from Suede AI coordinates several agents across your business systems.",
+          "body": "Agent Studio from Suede coordinates several agents across your business systems.",
           "button": "See Agent Studio",
           "url": "https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=directory&utm_campaign=skill-page-aside&utm_content=studio-b"
         }
@@ -206,15 +206,15 @@
           "id": "agency",
           "routes": "search",
           "headline": "Want to be the answer AI assistants give?",
-          "body": "Suede AI's AEO, GEO and SEO team works on the pages, entities and structured data that search engines and AI assistants rely on, and measures what changes.",
-          "button": "Talk to Suede AI",
+          "body": "Suede's AEO, GEO and SEO team works on the pages, entities and structured data that search engines and AI assistants rely on, and measures what changes.",
+          "button": "Talk to Suede",
           "url": "https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=guide&utm_campaign=guide-footer&utm_content=agency"
         },
         {
           "id": "agent-studio",
           "routes": "agents",
           "headline": "Put a team of agents to work",
-          "body": "Suede AI Agent Studio builds multi-agent automation for businesses, from intake to delivery.",
+          "body": "Suede Agent Studio builds multi-agent automation for businesses, from intake to delivery.",
           "button": "Explore Agent Studio",
           "url": "https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=guide&utm_campaign=guide-footer&utm_content=agent-studio"
         },
@@ -236,9 +236,9 @@
         {
           "id": "a-listed",
           "headline": "Your skill is listed. Is your product page ready for AI answers?",
-          "body": "The check covers your skill. Suede AI's team audits the site behind it: indexability, answer-first pages, entity consistency and structured data, then tracks which AI answers cite you.",
+          "body": "The check covers your skill. Suede's team audits the site behind it: indexability, answer-first pages, entity consistency and structured data, then tracks which AI answers cite you.",
           "button": "Get a full AI visibility audit",
-          "confirm_offer": "Use this label only once suedeai.agency confirms it sells or offers a full AI visibility audit; otherwise use \"Talk to Suede AI\".",
+          "confirm_offer": "Use this label only once suedeai.agency confirms it sells or offers a full AI visibility audit; otherwise use \"Talk to Suede\".",
           "url": "https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=tool&utm_campaign=check-result&utm_content=a-listed"
         },
         {
@@ -272,14 +272,14 @@
         {
           "id": "agency",
           "headline": "Get your product cited in AI answers",
-          "body": "Suede AI's AEO, GEO and SEO team helps companies get found in Google and named by ChatGPT, Perplexity and Claude.",
+          "body": "Suede's AEO, GEO and SEO team helps companies get found in Google and named by ChatGPT, Perplexity and Claude.",
           "button": "suedeai.agency",
           "url": "https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agency"
         },
         {
           "id": "agent-studio",
           "headline": "Run a team of agents",
-          "body": "Suede AI Agent Studio builds multi-agent automation for businesses.",
+          "body": "Suede Agent Studio builds multi-agent automation for businesses.",
           "button": "suedeai.app",
           "url": "https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agent-studio"
         }

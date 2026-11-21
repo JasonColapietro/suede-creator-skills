@@ -46,6 +46,47 @@ const datasetBytes = fs.readFileSync(path.join(repoRoot, "directory", "skills.js
 const data = JSON.parse(datasetBytes.toString("utf8"));
 const snapshot = { date: data.generated, sha256: createHash("sha256").update(datasetBytes).digest("hex") };
 if (!/^[a-f0-9]{32}$/.test(data.snapshot_id || "")) throw new Error("skills.json: missing refresh snapshot_id");
+// A scoped reassessment replaces one accepted listing in memory. Keep the
+// original dataset, repository-wide facts and dated review receipts intact.
+const listingUpdates = new Map();
+const listingUpdatesPath = path.join(repoRoot, "directory", "intake", "first-party-listing-updates.json");
+if (fs.existsSync(listingUpdatesPath)) {
+  const updates = JSON.parse(fs.readFileSync(listingUpdatesPath, "utf8"));
+  if (!Array.isArray(updates)) throw new Error("first-party-listing-updates.json: expected an array");
+  const isObject = (v) => v && typeof v === "object" && !Array.isArray(v);
+  const isoDate = (v) => typeof v === "string" && /^\d{4}-\d{2}-\d{2}$/.test(v) &&
+    Number.isFinite(Date.parse(v)) && new Date(v).toISOString().slice(0, 10) === v;
+  const sha = (v) => typeof v === "string" && /^[a-f0-9]{40}$/.test(v);
+  for (const update of updates) {
+    const { listing, repository, source_revision, previous_source_revision, source_files, assessment_date,
+      source_branch = "main", source_commit_date = assessment_date } = update || {};
+    const id = listing && `${repository}/${listing.slug}`;
+    const reject = (why) => { throw new Error(`first-party-listing-updates.json: ${id || "update"}: ${why}`); };
+    if (!isObject(update) || update.schema_version !== 1 || !isObject(listing) || repository !== "JasonColapietro/suede-creator-skills") reject("expected a canonical first-party review record");
+    const previous = data.skills.filter((row) => `${row.repo}/${row.slug}` === id);
+    if (previous.length !== 1 || listingUpdates.has(id)) reject("update must replace exactly one accepted listing");
+    for (const field of ["repo", "name", "slug", "dir", "featured"]) {
+      if (previous[0][field] !== listing[field]) reject(`cannot change listing identity or route: ${field}`);
+    }
+    const meta = data.repos[repository];
+    if (!sha(source_revision) || previous_source_revision !== meta.commit_sha || source_revision === previous_source_revision) reject("new and previous source revisions must be pinned");
+    if (!isoDate(assessment_date) || !isoDate(source_commit_date) || source_commit_date > assessment_date || assessment_date < meta.assessment_date) reject("invalid source or assessment date");
+    if (typeof source_branch !== "string" || !/^[a-zA-Z0-9][a-zA-Z0-9._/-]*$/.test(source_branch) ||
+      source_branch.split("/").some((segment) => !segment || segment.startsWith(".") || segment.endsWith(".") || segment.endsWith(".lock") || segment.includes(".."))) reject("invalid install branch");
+    if (!isObject(source_files) || !Object.hasOwn(source_files, `${listing.dir}/SKILL.md`)) reject("missing source inventory");
+    for (const [file, digest] of Object.entries(source_files)) {
+      if (!/^(?:[a-zA-Z0-9._-]+\/)*[a-zA-Z0-9._-]+$/.test(file) ||
+        file.split("/").some((part) => part === "." || part === "..") ||
+        (file.includes("/") && !file.startsWith(`${listing.dir}/`)) || typeof digest !== "string" ||
+        !/^[a-f0-9]{64}$/.test(digest)) reject("invalid or out-of-scope source inventory");
+    }
+    listingUpdates.set(id, {
+      listing, revision: source_revision, previousRevision: previous_source_revision, branch: source_branch,
+      commitDate: source_commit_date, assessmentDate: assessment_date,
+      digest: createHash("sha256").update(JSON.stringify(update)).digest("hex"),
+    });
+  }
+}
 const categories = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "categories.json"), "utf8"));
 const GROWTH_FILE = path.join(repoRoot, 'directory/growth/full-pages.json');
 const GROWTH = fs.existsSync(GROWTH_FILE) ? JSON.parse(fs.readFileSync(GROWTH_FILE, 'utf8')) : null;
@@ -63,7 +104,7 @@ if (typeof PROMOTION.enabled !== "boolean" || !PROMOTION.verifications || typeof
 // falls back to the same facts in plain words.
 PROMOTION.copy = {
   offer_long: "Display either quality badge in your repository or skill README, linked to your listing, then request verification. Eligible skills scoring 80–99 with a verified badge can receive a featured placement while the offer is open.",
-  partners_intro: "Publishers who show their quality badge in their README, verified by Suede AI against the rendered page. Scores follow the published rubric.",
+  partners_intro: "Publishers who show their quality badge in their README, verified by Suede against the rendered page. Scores follow the published rubric.",
   button: "Request badge verification",
   ...(PROMOTION.copy || {}),
 };
@@ -108,7 +149,7 @@ const CTA = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "service
     for (const v of c.variants) {
       for (const k of ["headline", "body", "button", "url"]) if (typeof v[k] !== "string" || !v[k].trim()) throw new Error(`services-cta.json: ${c.id}:${v.id} needs ${k}`);
       if (v.routes && !CTA.offers[v.routes]) throw new Error(`services-cta.json: ${c.id}:${v.id} routes to unknown offer ${v.routes}`);
-      if (!/^https:\/\/(suedeai\.agency|suedeai\.app|skills\.suedeai\.ai)\//.test(v.url)) throw new Error(`services-cta.json: ${c.id}:${v.id} links outside Suede AI`);
+      if (!/^https:\/\/(suedeai\.agency|suedeai\.app|skills\.suedeai\.ai)\//.test(v.url)) throw new Error(`services-cta.json: ${c.id}:${v.id} links outside Suede`);
       if (/—/.test(`${v.eyebrow || ""}${v.headline}${v.body}${v.button}`)) throw new Error(`services-cta.json: ${c.id}:${v.id} contains an em dash`);
     }
   }
@@ -139,14 +180,14 @@ const GUIDES = EDITORIAL_PAGES ? EDITORIAL_PAGES.pages.filter((g) => g.status ==
 const ORG_ID = "https://suedeai.ai/#organization";
 const PERSON_ID = "https://suedeai.ai/founder#person";
 const ORGANIZATION = {
-  "alternateName": ["Suede Labs AI","Suede Labs","Suede"],
+  "alternateName": ["Suede Labs AI","Suede Labs","Suede AI"],
   "parentOrganization": {"@type":"Organization","@id":"https://jcinvestmentgroup.ventures/#organization","name":"JC Investment Group LLC","url":"https://jcinvestmentgroup.ventures/"},
   "address": {"@type":"PostalAddress","streetAddress":"138 Victorian Lane","addressLocality":"Jupiter","addressRegion":"FL","postalCode":"33458","addressCountry":"US"},
   "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","@id":"https://suedeai.ai/terms#money-back-policy","name":"90-day money-back policy","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":90,"returnFees":"https://schema.org/FreeReturn","refundType":"https://schema.org/FullRefund","merchantReturnLink":"https://suedeai.ai/terms#money-back-policy"},
 
   "@type": "Organization",
   "@id": ORG_ID,
-  name: "Suede AI",
+  name: "Suede",
   url: "https://suedeai.ai",
   logo: `${BASE}/assets/suede-ai-logo-transparent.webp`,
   founder: { "@id": PERSON_ID },
@@ -167,7 +208,7 @@ const RELATED_ENTITIES = [
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "@id": "https://agents.suedeai.ai/#app",
-    name: "Suede AI Agent Studio",
+    name: "Suede Agent Studio",
     url: "https://agents.suedeai.ai",
     sameAs: ["https://suedeai.app/"],
     applicationCategory: "DeveloperApplication",
@@ -182,7 +223,7 @@ const RELATED_ENTITIES = [
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "@id": "https://seo.suedeai.ai/#organization",
-    name: "Suede AI SEO",
+    name: "Suede SEO",
     url: "https://seo.suedeai.ai/",
     sameAs: ["https://suedeai.agency/"],
     parentOrganization: { "@id": ORG_ID },
@@ -193,7 +234,7 @@ const PERSON = {
   "@id": PERSON_ID,
   name: "Jason Colapietro",
   url: "https://suedeai.ai/founder",
-  jobTitle: "Founder and CEO, Suede AI",
+  jobTitle: "Founder and CEO, Suede",
   worksFor: { "@id": ORG_ID },
   sameAs: [
     "https://jasoncolapietro.com/",
@@ -206,11 +247,11 @@ const PERSON = {
   ],
 };
 const PUBLISHER_REF = {
-  "alternateName": ["Suede Labs AI","Suede Labs","Suede"],
+  "alternateName": ["Suede Labs AI","Suede Labs","Suede AI"],
   "parentOrganization": {"@type":"Organization","@id":"https://jcinvestmentgroup.ventures/#organization","name":"JC Investment Group LLC","url":"https://jcinvestmentgroup.ventures/"},
   "address": {"@type":"PostalAddress","streetAddress":"138 Victorian Lane","addressLocality":"Jupiter","addressRegion":"FL","postalCode":"33458","addressCountry":"US"},
   "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","@id":"https://suedeai.ai/terms#money-back-policy","name":"90-day money-back policy","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":90,"returnFees":"https://schema.org/FreeReturn","refundType":"https://schema.org/FullRefund","merchantReturnLink":"https://suedeai.ai/terms#money-back-policy"},
- "@type": "Organization", "@id": ORG_ID, name: "Suede AI", url: "https://suedeai.ai" };
+ "@type": "Organization", "@id": ORG_ID, name: "Suede", url: "https://suedeai.ai" };
 // Pages other than the hub describe the directory they belong to in full, so
 // the reference never dangles on a page that does not define it.
 const DIRECTORY_REF = { "@type": "CollectionPage", "@id": `${DIR_URL}#directory`, name: SITE_NAME, url: DIR_URL };
@@ -248,7 +289,11 @@ function scoreParts(c, repo, generated) {
 // record with its repository facts, slugs and GitHub URLs. slugify matches the
 // Python one that keyed directory/labels.json.
 const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "skill";
-data.skills = data.skills.map((c) => {
+data.skills = data.skills.map((base) => {
+  const sourceReview = listingUpdates.get(`${base.repo}/${base.slug}`);
+  const c = sourceReview?.listing || base;
+  // Score against the unchanged publisher facts and catalog snapshot, not a
+  // newer commit date or a fabricated adoption signal.
   const meta = data.repos[c.repo];
   if (!meta) throw new Error(`skills.json: no repos entry for ${c.repo}`);
   if (!listed(c) || c.score !== qualityScore(c, meta, data.generated) || letterGrade(c.score) !== c.grade) throw new Error(`skills.json: inconsistent score or eligibility for ${c.repo}/${c.slug}`);
@@ -258,7 +303,9 @@ data.skills = data.skills.map((c) => {
   const [owner, name] = c.repo.split("/");
   const repoSlug = `${slugify(owner)}/${slugify(name)}`;
   const tree = c.dir === "." ? "" : `${c.dir}/`;
-  const blob = (p) => `https://github.com/${c.repo}/blob/${meta.branch}/${p}`;
+  const branch = sourceReview?.branch || meta.branch;
+  const sourceRef = sourceReview?.revision || meta.branch;
+  const blob = (p) => `https://github.com/${c.repo}/blob/${sourceRef}/${p}`;
   return {
     ...c,
     id: `${repoSlug}/${c.slug}`,
@@ -268,12 +315,13 @@ data.skills = data.skills.map((c) => {
     featured: Boolean(c.featured),
     full_page: FULL_PAGES.has(`${c.repo}/${c.slug}`.toLowerCase()),
     checks: Object.fromEntries(CHECKS.map((k, i) => [k.id, c.checks[i] === "1"])),
-    folder_url: c.dir === "." ? `https://github.com/${c.repo}` : `https://github.com/${c.repo}/tree/${meta.branch}/${c.dir}`,
+    folder_url: c.dir === "." ? `https://github.com/${c.repo}` : `https://github.com/${c.repo}/tree/${sourceRef}/${c.dir}`,
     skill_md_url: blob(`${tree}SKILL.md`),
-    license_url: c.license_evidence?.length > 1 ? `https://github.com/${c.repo}/tree/${meta.branch}/${c.license_file}` : c.license_file ? blob(c.license_file) : blob(`${tree}SKILL.md`),
-    branch: meta.branch,
-    commit_date: meta.commit_date,
-    assessment_date: meta.assessment_date || null,
+    license_url: c.license_evidence?.length > 1 ? `https://github.com/${c.repo}/tree/${sourceRef}/${c.license_file}` : c.license_file ? blob(c.license_file) : blob(`${tree}SKILL.md`),
+    branch,
+    source_ref: sourceRef,
+    commit_date: sourceReview?.commitDate || meta.commit_date,
+    assessment_date: sourceReview?.assessmentDate || meta.assessment_date || null,
     lists: meta.lists,
     official: meta.official,
     repo_withheld: meta.withheld || 0,
@@ -401,7 +449,7 @@ for (const r of repos.values()) {
   r.lists = [...new Set(r.skills.flatMap((s) => s.lists))].sort();
   r.official = r.skills.some((s) => s.official);
   r.licenses = [...new Set(r.skills.map((s) => s.license))];
-  r.commit = r.skills.reduce((m, s) => (s.commit_date > m ? s.commit_date : m), "");
+  r.commit = data.repos[r.repo].commit_date;
   const counts = new Map();
   for (const s of r.skills) counts.set(s.category, (counts.get(s.category) || 0) + 1);
   r.categories = [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([c]) => c);
@@ -473,14 +521,14 @@ const sharedName = (s) => ownerNameCount.get(`${s.owner}/${s.name}`.toLowerCase(
 // Task pages ("What are the best Claude Code skills for <topic>?") and
 // "<skill> alternatives" pages. directory/task-pages.json holds the keyword
 // map; scripts/directory/task-pages.mjs applies the publishing gate and keeps
-// Suede AI's own skills out of every ranking.
+// Suede's own skills out of every ranking.
 const TASKS_PATH = "directory/for/";
 const TASK_CONFIG = loadTaskConfig(path.join(repoRoot, "directory", "task-pages.json"), new Set(categories.map((c) => c.slug)));
 const TASK_PLAN = planTasks(TASK_CONFIG, data.skills);
 const TASKS = TASK_PLAN.filter((t) => t.published);
 const ALTERNATIVES = planAlternatives(TASK_PLAN);
-for (const t of TASKS) if (t.rows.some(isFirstParty)) throw new Error(`task ${t.job.id}: a Suede AI skill reached a ranking`);
-for (const a of ALTERNATIVES) if (isFirstParty(a.s) || a.peers.some(isFirstParty)) throw new Error(`alternatives for ${a.s.id}: a Suede AI skill reached a ranking`);
+for (const t of TASKS) if (t.rows.some(isFirstParty)) throw new Error(`task ${t.job.id}: a Suede skill reached a ranking`);
+for (const a of ALTERNATIVES) if (isFirstParty(a.s) || a.peers.some(isFirstParty)) throw new Error(`alternatives for ${a.s.id}: a Suede skill reached a ranking`);
 const taskPath = (t) => `${TASKS_PATH}${t.job.id}/`;
 const altPath = (s) => `${skillPath(s)}alternatives/`;
 // The task pages whose table lists a skill, and the alternatives page for it.
@@ -537,7 +585,11 @@ const LISTED_FILE = path.join(repoRoot, "directory", "listed-since.json");
 const LISTED_NEXT = applyListedSince(loadListedSince(LISTED_FILE), data.skills, data.generated).next;
 const LISTED_FLOOR = Object.values(LISTED_NEXT.dates).reduce((m, d) => (d < m ? d : m), data.generated);
 const byScore = (a, b) => b.score - a.score || b.lists.length - a.lists.length || a.id.localeCompare(b.id);
-const BROWSE_DATE = data.skills.reduce((latest, s) => s.assessment_date && s.assessment_date > latest ? s.assessment_date : latest, data.generated);
+// One source reassessment must not move the browsing clock for the entire catalog.
+const BROWSE_DATE = data.skills.reduce((latest, s) => {
+  const assessed = data.repos[s.repo].assessment_date;
+  return assessed && assessed > latest ? assessed : latest;
+}, data.generated);
 const NEW_LISTINGS = data.skills.filter((s) => !isFirstParty(s) && isNewListing(s, BROWSE_DATE, LISTED_FLOOR)).sort((a, b) => b.listed_since.localeCompare(a.listed_since) || byScore(a, b));
 const RECENTLY_UPDATED = data.skills.filter((s) => !isFirstParty(s) && isRecentlyUpdated(s, BROWSE_DATE)).sort((a, b) => b.commit_date.localeCompare(a.commit_date) || byScore(a, b));
 const TOP_SKILLS = data.skills.filter((s) => !isFirstParty(s)).sort(byScore).slice(0, TOP_MAX);
@@ -599,7 +651,7 @@ const kindEntries = (k) => k.sections.flatMap((sec) => sec.entries);
 
 // ------------------------------------------------------------------ stacks (directory/editorial/stacks.json)
 
-// Jason's recommended stacks: one article per task. Each names one Suede AI
+// Jason's recommended stacks: one article per task. Each names one Suede
 // skill above the article; the article body itself recommends third-party
 // skills only, and the build refuses a body that names a Suede skill.
 const STACKS_FILE = path.join(repoRoot, "directory", "editorial", "stacks.json");
@@ -676,10 +728,10 @@ const STAR_COUNT = (() => {
 const STAR_ICON = `<svg class="gh-star-icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg>`;
 function starButton(variant = "") {
   const count = Number.isInteger(STAR_COUNT) ? STAR_COUNT.toLocaleString("en-US") : null;
-  return `<a class="gh-star${variant ? ` gh-star--${variant}` : ""}" href="${STAR_URL}" target="_blank" rel="noopener" data-gh-star aria-label="Star Suede AI Skills on GitHub${count ? `, ${count} stars` : ""}">${STAR_ICON}<span>Star</span>${count ? `<span class="gh-star-count">${count}</span>` : ""}</a>`;
+  return `<a class="gh-star${variant ? ` gh-star--${variant}` : ""}" href="${STAR_URL}" target="_blank" rel="noopener" data-gh-star aria-label="Star Suede Skills on GitHub${count ? `, ${count} stars` : ""}">${STAR_ICON}<span>Star</span>${count ? `<span class="gh-star-count">${count}</span>` : ""}</a>`;
 }
 const STAR_PAGES = new Set(["directory/", "directory/finder/", "directory/badges/", "directory/rising/", "directory/state-of-agent-skills/", "directory/submit/", "directory/featured/", "directory/check/"]);
-const starPanel = () => `<section class="panel star-panel" aria-labelledby="star-title"><div><h2 id="star-title">Star Suede AI Skills on GitHub</h2><p>Free, graded agent skills for Claude Code, Codex and Cursor. Every star puts them in front of more builders.</p></div>${starButton("lg")}</section>`;
+const starPanel = () => `<section class="panel star-panel" aria-labelledby="star-title"><div><h2 id="star-title">Star Suede Skills on GitHub</h2><p>Free, graded agent skills for Claude Code, Codex and Cursor. Every star puts them in front of more builders.</p></div>${starButton("lg")}</section>`;
 
 function nav(here, absolute = false) {
   const rel = (h, p) => link(h, p, absolute);
@@ -688,7 +740,7 @@ function nav(here, absolute = false) {
   return `    <header class="nav">
       <nav class="shell nav-inner" aria-label="Main navigation">
         <a href="${rel(here, "directory/")}" class="nav-logo" aria-label="Suede Skills Directory home">
-          <img src="${rel(here, "assets/")}suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <img src="${rel(here, "assets/")}suede-ai-logo-transparent.webp" alt="Suede" width="28" height="28" onerror="this.style.display='none'">
           <span class="nav-logo-wordmark">SuedeAI<span>.directory</span></span>
         </a>
         ${starButton("nav")}
@@ -748,7 +800,7 @@ const FOOTER_LINKS = [
   ["directory/featured/", "Featured projects"], ...(HAS_AGENTS ? [["directory/agents/", "AI agents"]] : []),
   ["directory/mcp-servers/", "MCP servers"], ["directory/plugins/", "Plugins and mods"], ["directory/grok/", "Grok bots"],
   ["directory/stacks/", "Stacks"], ["directory/security/", "Security"], ["directory/publishers/", "Publishers"], ["directory/compare/", "Compare"], ["directory/api/", "API and data"],
-  ["directory/methodology/", "How skills are listed"], ["directory/submit/", "List your skill"], ["directory/feed.xml", "RSS feed"], ["skills/", "Suede AI skills pack"],
+  ["directory/methodology/", "How skills are listed"], ["directory/submit/", "List your skill"], ["directory/feed.xml", "RSS feed"], ["skills/", "Suede skills pack"],
 ];
 function footer(here, note, absolute = false) {
   const rel = (h, p) => link(h, p, absolute);
@@ -756,11 +808,11 @@ function footer(here, note, absolute = false) {
   return `    <footer>
       <div class="shell">
         <p class="footer-note">${note}</p>
-        <div class="footer-star"><p>Star Suede AI Skills on GitHub so more builders find graded skills.</p>${starButton("lg")}</div>
+        <div class="footer-star"><p>Star Suede Skills on GitHub so more builders find graded skills.</p>${starButton("lg")}</div>
         <div class="footer-inner">
           <div class="footer-brand">
-            <img src="${a}suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">
-            <span>Built by <strong>Jason Colapietro</strong> / Suede AI</span>
+            <img src="${a}suede-ai-logo-transparent.webp" alt="Suede" width="24" height="24" onerror="this.style.display='none'">
+            <span>Built by <strong>Jason Colapietro</strong> / Suede</span>
           </div>
           <div class="footer-links">
 ${FOOTER_LINKS.map(([p, label]) => `            <a href="${rel(here, p)}">${label}</a>`).join(`\n            <span class="footer-divider" aria-hidden="true">|</span>\n`)}
@@ -775,7 +827,7 @@ ${FOOTER_LINKS.map(([p, label]) => `            <a href="${rel(here, p)}">${labe
           </div>
         </div>
       </div>
-    <div class="trendshift-recognition" style="width:250px;max-width:100%;margin:24px auto;text-align:center"><p style="margin:0 0 8px;font-size:13px">Suede AI Skills on Trendshift</p><a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55" loading="lazy" style="display:block;max-width:100%;height:auto"/></a></div>
+    <div class="trendshift-recognition" style="width:250px;max-width:100%;margin:24px auto;text-align:center"><p style="margin:0 0 8px;font-size:13px">Suede Skills on Trendshift</p><a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55" loading="lazy" style="display:block;max-width:100%;height:auto"/></a></div>
 </footer>`;
 }
 
@@ -957,7 +1009,7 @@ function qualityBadgeContent(s, suffix = "") {
   if (!s.shielded) throw new Error(`${s.id} has no quality shields: only listed skills scoring 80–99 get them`);
   const id = `badge${suffix}`;
   return `<div class="shield-pair">${badgePair(s).map((b) => `<a href="${listingTarget(s)}"><img src="${b.src.replace(BASE, "")}" alt="${esc(b.alt)}" width="160" height="175" loading="lazy"></a>`).join("")}</div>
-        <p>Choose the numeric badge, the letter badge, or both. Each links to this skill’s Suede AI listing; either valid linked badge can qualify for the feature offer.</p>
+        <p>Choose the numeric badge, the letter badge, or both. Each links to this skill’s Suede listing; either valid linked badge can qualify for the feature offer.</p>
         <div class="snippet"><div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="${id}-md">Copy both badges</button></div><pre><code id="${id}-md">${esc(badgeMarkdown(s))}</code></pre></div>
         <div class="snippet"><div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="${id}-html">Copy both badges</button></div><pre><code id="${id}-html">${esc(badgeHtml(s))}</code></pre></div>`;
 }
@@ -977,7 +1029,7 @@ function improveBlock(here, s) {
     value: "listed",
     target: listingTarget(s),
     heading: `Show the listing and raise the score`,
-    lede: `${esc(displayName(s))} is listed with ${s.score}/100 · ${s.grade}. This badge links to its Suede AI listing. Skills scoring 80–99 add a numeric and a letter quality shield${open.length ? `; the largest open points for ${esc(displayName(s))} are ${listPhrase(open.map((p) => `${esc(p.label.toLowerCase())} (${p.max - p.points})`))}` : ""}. <a href="${rel(here, "directory/submit/")}#improve">Send your repository and the points you want to raise</a>, then request a fresh review after updating the skill.${publisherGuideLine(here)}`,
+    lede: `${esc(displayName(s))} is listed with ${s.score}/100 · ${s.grade}. This badge links to its Suede listing. Skills scoring 80–99 add a numeric and a letter quality shield${open.length ? `; the largest open points for ${esc(displayName(s))} are ${listPhrase(open.map((p) => `${esc(p.label.toLowerCase())} (${p.max - p.points})`))}` : ""}. <a href="${rel(here, "directory/submit/")}#improve">Send your repository and the points you want to raise</a>, then request a fresh review after updating the skill.${publisherGuideLine(here)}`,
   });
 }
 function qualityBadgeBlock(here, s) {
@@ -1029,7 +1081,7 @@ function campaignVariant(campaignId, here, { routes = null, id = null } = {}) {
   return pool.length ? { campaign: c, variant: pool[stableHash(here) % pool.length] } : null;
 }
 
-// A Suede AI URL as this page should print it. Internal destinations become
+// A Suede URL as this page should print it. Internal destinations become
 // relative links without UTM tags (the site runs no analytics, and tagged
 // internal URLs only split one page into several); outbound ones keep theirs.
 function ctaHref(here, href) {
@@ -1066,7 +1118,7 @@ const LEAD_CAMPAIGN = {
 };
 // compact (skill pages): the lead card keeps its short routed copy, the second
 // card shows its heading and button, and `publisher` (a campaign variant) adds
-// a one-line note for the skill's author, so every Suede AI call to action on
+// a one-line note for the skill's author, so every Suede call to action on
 // the page sits in this one aside below the listing's own content.
 function servicesCta(kind, category = null, here = "", { compact = false, publisher = null } = {}) {
   if (!CTA.enabled || !CTA.placements?.[kind]) return "";
@@ -1180,14 +1232,16 @@ ${rows
 
 // Portable evidence describes the saved snapshot, never a fresh scan of upstream.
 function skillReport(s) {
-  const revision = data.repos[s.repo].commit_sha || null;
+  const sourceReview = listingUpdates.get(`${s.repo}/${s.slug}`);
+  const revision = sourceReview?.revision || data.repos[s.repo].commit_sha || null;
   if (revision !== null && !/^[a-f0-9]{40}$/.test(revision)) throw new Error(`Invalid source revision for ${s.repo}`);
   const report = {
     schema_version: 1, skill: { name: s.name, ...(s.display_name ? { display_name: s.display_name } : {}), repository: s.repo, path: s.dir, license: s.license },
     listing_url: listingTarget(s),
     snapshot: { date: snapshot.date, id: data.snapshot_id, dataset_sha256: snapshot.sha256 },
     source: { branch: s.branch, revision, revision_status: revision ? "recorded" : "not_recorded_in_snapshot", repository_commit_date: s.commit_date,
-      ...(data.repos[s.repo].assessment_date ? { assessment_date: data.repos[s.repo].assessment_date } : {}),
+      ...(s.assessment_date ? { assessment_date: s.assessment_date } : {}),
+      ...(sourceReview ? { previous_revision: sourceReview.previousRevision, listing_update_sha256: sourceReview.digest } : {}),
       skill_md_url: revision ? `https://github.com/${s.repo}/blob/${revision}/${s.dir === "." ? "" : s.dir + "/"}SKILL.md` : s.skill_md_url },
     methodology: { version: SCORE_METHOD, url: `${DIR_URL}methodology/#score`, rubric_total: RUBRIC_MAX, published_cap: SCORE_CAP },
     quality: { score: s.score, grade: s.grade, components: s.score_parts, checks: s.checks },
@@ -1583,7 +1637,7 @@ function renderSkill(s) {
     ["Topics", (TOPICS_BY_SKILL.get(s.id) || []).slice(0, 6).map((t) => `<a href="${rel(here, topicPath(t))}">${esc(t.topic.name)}</a>`).join(", ")],
     ["Cost", `<a href="${rel(here, lanePath(s.lane))}">${esc(laneById.get(s.lane).label)}</a>`],
     ["Capabilities", s.flags.filter((f) => f !== "full-page").map((f) => `<a href="${rel(here, flagPath(f))}">${esc(flagById.get(f).label)}</a>`).join(", ")],
-    ["License", `<a href="${esc(s.license_url)}" target="_blank" rel="noopener">${esc(s.license)}</a>${s.license_evidence?.length > 1 ? "<ul>" + s.license_evidence.map(e => `<li><a href="https://github.com/${esc(s.repo)}/blob/${esc(s.branch)}/${esc(e.file)}" target="_blank" rel="noopener">${esc(e.label)} (${esc(e.file)})</a></li>`).join("") + "</ul>" : ""}`],
+    ["License", `<a href="${esc(s.license_url)}" target="_blank" rel="noopener">${esc(s.license)}</a>${s.license_evidence?.length > 1 ? "<ul>" + s.license_evidence.map(e => `<li><a href="https://github.com/${esc(s.repo)}/blob/${esc(s.source_ref)}/${esc(e.file)}" target="_blank" rel="noopener">${esc(e.label)} (${esc(e.file)})</a></li>`).join("") + "</ul>" : ""}`],
     ["Last commit", `${longDate(s.commit_date)} (repository)`],
     ["Source assessed", s.assessment_date ? longDate(s.assessment_date) : ""],
     ["Listed since", s.listed_since === LISTED_FLOOR ? `${longDate(s.listed_since)} or earlier` : longDate(s.listed_since)],
@@ -1869,7 +1923,7 @@ function renderRepo(r) {
     ["Publisher", `<a href="https://github.com/${esc(r.owner)}" target="_blank" rel="noopener">${esc(r.publisher)}</a>${officialTag(r.official)}`],
     ["Repository", `<a href="https://github.com/${esc(r.repo)}" target="_blank" rel="noopener">github.com/${esc(r.repo)}</a>`],
     ["Listed skills", fmt(r.skills.length)],
-    ["Source assessed", r.skills[0].assessment_date ? longDate(r.skills[0].assessment_date) : ""],
+    ["Source assessed", data.repos[r.repo].assessment_date ? longDate(data.repos[r.repo].assessment_date) : ""],
     ["Security scan", "Not scanned"],
     ["Categories", catLinks.join(", ")],
     ["License", esc(licenseText)],
@@ -1926,7 +1980,7 @@ ${relatedRepos.map((o) => `          <a class="link-row" href="${rel(here, o.tar
         </div>
       </section>` : ""}`;
   const ownCollection = r.repo.toLowerCase() === "jasoncolapietro/suede-creator-skills";
-  const title = ownCollection ? `Suede AI Skills: ${r.skills.length} Agent Skills` : [`${r.repo} Agent Skills (${r.skills.length}) | Suede AI`, `${r.repo} Agent Skills (${r.skills.length})`, `${r.name} Agent Skills by ${r.owner}`, `${trimTo(r.repo, 46)} Agent Skills`].find((t) => t.length <= 60);
+  const title = ownCollection ? `Suede Skills: ${r.skills.length} Agent Skills` : [`${r.repo} Agent Skills (${r.skills.length}) | Suede`, `${r.repo} Agent Skills (${r.skills.length})`, `${r.name} Agent Skills by ${r.owner}`, `${trimTo(r.repo, 46)} Agent Skills`].find((t) => t.length <= 60);
   const top = r.skills.slice(0, 3).map((s) => displayName(s)).join(", ");
   // Name as many top skills as fit, so the description stays a whole sentence.
   const repoLead = `${plural(r.skills.length, "agent skill")} from ${r.repo}`;
@@ -1934,7 +1988,7 @@ ${relatedRepos.map((o) => `          <a class="link-row" href="${rel(here, o.tar
   const description = [3, 2, 1].map((k) => `${repoLead}, including ${r.skills.slice(0, k).map((s) => displayName(s)).join(", ")}. ${repoTail}`)
     .concat(`${repoLead}. ${repoTail}`)
     .find((d) => d.length <= META_MAX) || trimTo(`${repoLead}, including ${top}. ${repoTail}`, META_MAX);
-  const keywords = r.indexable ? setKeywords(here, ownCollection ? ["marketing and workflow agent skills", "code review agent skills", "creator tools", "agent skills directory", "Suede AI Skills"] : [`${r.repo} skills`, `${r.name} skills`, `${r.owner} agent skills`, `${r.name} claude skills`, `${primary.short} agent skills`, "agent skills directory"]) : null;
+  const keywords = r.indexable ? setKeywords(here, ownCollection ? ["marketing and workflow agent skills", "code review agent skills", "creator tools", "agent skills directory", "Suede Skills"] : [`${r.repo} skills`, `${r.name} skills`, `${r.owner} agent skills`, `${r.name} claude skills`, `${primary.short} agent skills`, "agent skills directory"]) : null;
   const collection = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -1959,7 +2013,7 @@ ${relatedRepos.map((o) => `          <a class="link-row" href="${rel(here, o.tar
     description,
     keywords,
     h1Html: `      <div class="eyebrow">Skill collection &middot; ${esc(r.owner)}</div>
-      <h1>${esc(ownCollection ? "Suede AI Skills" : r.repo)} <span class="h1-sub">${plural(r.skills.length, "graded agent skill")} from ${esc(r.official && r.publisher ? r.publisher : r.owner)}</span></h1>`,
+      <h1>${esc(ownCollection ? "Suede Skills" : r.repo)} <span class="h1-sub">${plural(r.skills.length, "graded agent skill")} from ${esc(r.official && r.publisher ? r.publisher : r.owner)}</span></h1>`,
     body,
     jsonld: [collection, bc.ld],
     robots: r.indexable ? undefined : "noindex, follow",
@@ -2144,7 +2198,7 @@ ${topRepos.map(([slug, n]) => `          <a class="link-row" href="${rel(here, r
 // ------------------------------------------------------------------ task and alternatives pages
 
 const wordCount = (t) => String(t).trim().split(/\s+/).filter(Boolean).length;
-const DIRECTORY_SITE = { "@type": "WebSite", "@id": `${BASE}/#website`, name: "Suede AI Skills", url: `${BASE}/`, publisher: { "@id": ORG_ID } };
+const DIRECTORY_SITE = { "@type": "WebSite", "@id": `${BASE}/#website`, name: "Suede Skills", url: `${BASE}/`, publisher: { "@id": ORG_ID } };
 const SITE_LABEL = "SuedeAI.directory";
 
 // The rubric components a skill earns in full, largest first, for sentences
@@ -2377,7 +2431,7 @@ ${TASKS.map((t) => `          <a class="link-row" href="${rel(here, taskPath(t))
       </section>
       <section class="panel" aria-labelledby="gate-title">
         <h2 id="gate-title">How a task gets a page</h2>
-        <p>A task gets its own page when at least ${TASK_GATE.minListed} listed skills match it and at least ${TASK_GATE.minStrongPages} of them have full directory pages scoring ${TASK_GATE.strongScore} or more. Suede AI's own skills are never ranked here. <a href="${rel(here, "directory/methodology/")}">How skills are scored</a>.</p>
+        <p>A task gets its own page when at least ${TASK_GATE.minListed} listed skills match it and at least ${TASK_GATE.minStrongPages} of them have full directory pages scoring ${TASK_GATE.strongScore} or more. Suede's own skills are never ranked here. <a href="${rel(here, "directory/methodology/")}">How skills are scored</a>.</p>
       </section>`;
   const keywords = setKeywords(here, ["claude code skills by task", "best claude code skills for every task", "agent skills by use case", "claude skills shortlist"]);
   files.set(`${here}index.html`, page({
@@ -2627,7 +2681,7 @@ function renderHub() {
     RECENTLY_UPDATED.length ? { id: "recently-updated", label: "Updated", rows: RECENTLY_UPDATED, metric: (s) => `Commit ${longDate(s.commit_date)}`, note: `Listed skills whose repository changed in the ${NEW_DAYS} days through ${longDate(BROWSE_DATE)}.`, foot: `<a href="${rel(here, NEW_PATH)}#updated-title">All recently updated skills</a>` } : null,
   ].filter(Boolean);
   const boardHtml = `      <section class="board-section" aria-labelledby="board-title">
-        <div class="board-head"><h2 id="board-title">Top 100</h2><p class="muted">${INSTALLS ? "Ranked by installs recorded by skills.sh, by Suede Skill Check score, and by what is new. Suede AI's own skills are not ranked." : "Ranked by Suede Skill Check score and by what is new. Suede AI's own skills are not ranked."}</p></div>
+        <div class="board-head"><h2 id="board-title">Top 100</h2><p class="muted">${INSTALLS ? "Ranked by installs recorded by skills.sh, by Suede Skill Check score, and by what is new. Suede's own skills are not ranked." : "Ranked by Suede Skill Check score and by what is new. Suede's own skills are not ranked."}</p></div>
         <nav class="tabs" data-tabs aria-label="Rankings">${panes.map((p, i) => `<a class="tab" href="#${p.id}"${i === 0 ? ' aria-current="true"' : ""}>${esc(p.label)}</a>`).join("")}</nav>
 ${panes.map((p) => `        <section class="board-pane" id="${p.id}" data-pane aria-labelledby="${p.id}-title">
           <h3 id="${p.id}-title">${esc(p.label)}</h3>
@@ -2647,7 +2701,7 @@ ${featuredNewest.map((p) => `          <a class="dir-card" href="featured/#${p.i
 
   const stacksHtml = STACKS.length ? `      <section class="panel" aria-labelledby="stacks-strip-title">
         <div class="board-head"><h2 id="stacks-strip-title">Recommended stacks by task</h2><a href="${rel(here, STACKS_PATH)}">All ${plural(STACKS.length, "stack")}</a></div>
-        <p class="muted">Jason Colapietro's picks: the third-party skills to combine for one job, with the install commands, and the Suede AI skill that covers the task named up front.</p>
+        <p class="muted">Jason Colapietro's picks: the third-party skills to combine for one job, with the install commands, and the Suede skill that covers the task named up front.</p>
         <div class="stack-grid">
 ${STACKS.slice(0, 6).map((st) => `          <a class="stack-card" href="${rel(here, stackPath(st))}">${pixelIcon("stacks", { size: 24 })}<b>${esc(st.h1)}</b><span>${esc(st.summary)}</span><span class="suede-pick">Suede pick: <code>${esc(st.suede.skill)}</code></span></a>`).join("\n")}
         </div>
@@ -2742,7 +2796,7 @@ ${stacksHtml}
 ${kindsHtml}
 ${securityHtml}
 ${browseWaysPanel(here)}
-      <aside class="directory-scoring" aria-label="Suede AI quality grades"><p><b>Structure. Description. Depth. Maintenance.</b> Every skill has a published quality score from 0–99.</p><a href="methodology/">What the scores measure →</a></aside>
+      <aside class="directory-scoring" aria-label="Suede quality grades"><p><b>Structure. Description. Depth. Maintenance.</b> Every skill has a published quality score from 0–99.</p><a href="methodology/">What the scores measure →</a></aside>
 ${campaignPanel(here, campaignVariant("home-hero-secondary", here), { quiet: true })}
 ${tasksPanel(here, TASKS, "Best Claude Code skills by task")}
 ${guideLinksPanel(here, GUIDES, "Guides")}${GUIDES.length ? `\n      <p><a href="${rel(here, GUIDES_PATH)}">All agent skills guides</a></p>` : ""}
@@ -2768,7 +2822,7 @@ ${servicesCta("hub", null, here)}
       <a class="florida-recognition" href="https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida">
         <strong>#1 in Palm Beach County</strong>
         <span class="florida-category">#25 in Florida · AI deployment</span>
-        <span class="florida-detail">Suede AI SEO · The Manifest · October 30, 2026</span>
+        <span class="florida-detail">Suede SEO · The Manifest · October 30, 2026</span>
         <span class="florida-detail">County position derived from listed locations in The Manifest’s Florida AI Deployment directory.</span>
         <span class="florida-source">View ranking <span aria-hidden="true">↗</span></span>
       </a>
@@ -2777,7 +2831,7 @@ ${badgeBlock(here, {
   value: "listed",
   target: DIR_URL,
   heading: "For skill authors: show your listing",
-  lede: `Every skill scoring 80–99 has two README shields: its numeric quality score and its A/B grade. Both link to its Suede AI listing. Find <b>Get badges</b> on a repository page or <b>README badge</b> on a full skill page. <a href="${rel(here, "directory/submit/")}">Request a listing</a> if your skill is not here yet, or <a href="${rel(here, CHECK_PATH)}">run the free Skill AI-visibility check</a> to see the points your skill can still earn.`,
+  lede: `Every skill scoring 80–99 has two README shields: its numeric quality score and its A/B grade. Both link to its Suede listing. Find <b>Get badges</b> on a repository page or <b>README badge</b> on a full skill page. <a href="${rel(here, "directory/submit/")}">Request a listing</a> if your skill is not here yet, or <a href="${rel(here, CHECK_PATH)}">run the free Skill AI-visibility check</a> to see the points your skill can still earn.`,
 })}
 ${promotionOffer(here)}
 ${promotionSection(here, promoted)}
@@ -2786,8 +2840,8 @@ ${promotionSection(here, promoted)}
         <p class="repo-index">${allRepos.map((r) => `<a href="${rel(here, r.target)}">${esc(r.repo)}</a>`).join(" &middot; ")}</p>
       </section>
       <section class="panel" aria-labelledby="pack-title">
-        <h2 id="pack-title">Suede AI's own skills</h2>
-        <p>The <a href="${rel(here, "skills/")}">Suede AI Skills</a> pack offers a page per skill and a one-command install for the whole pack. Its accepted directory entries use the same published scoring method.</p>
+        <h2 id="pack-title">Suede's own skills</h2>
+        <p>The <a href="${rel(here, "skills/")}">Suede Skills</a> pack offers a page per skill and a one-command install for the whole pack. Its accepted directory entries use the same published scoring method.</p>
       </section>
       <section class="panel faq" aria-labelledby="faq-title">
         <h2 id="faq-title">Questions</h2>
@@ -2805,7 +2859,7 @@ ${FAQ.map(([q, a]) => `        <h3>${esc(q)}</h3>\n        <p>${esc(a)}${q === "
     keywords,
     h1Html: `      <header class="directory-hero">
         <div>
-          <p class="eyebrow">SuedeAI.directory, by Suede AI</p>
+          <p class="eyebrow">SuedeAI.directory, by Suede</p>
           <h1>Claude Code skills, graded and ready to install</h1>
           <p class="lead">${fmt(data.skills.length)} skills for Claude Code, Codex, Cursor and other agents, scored 0 to 99 from their published files and linked to source, with the install command for each.</p>
           <p class="directory-snapshot"><span><b>${fmt(repos.size)}</b> repositories</span><span><b>${categories.length}</b> categories</span><span><b>${openPct}%</b> openly licensed</span><span>Snapshot <b>${longDate(data.generated)}</b></span></p>
@@ -2827,7 +2881,7 @@ ${FAQ.map(([q, a]) => `        <h3>${esc(q)}</h3>\n        <p>${esc(a)}${q === "
         url: DIR_URL,
         dateModified: PAGE_DATE,
         inLanguage: "en",
-        isPartOf: { "@type": "WebSite", "@id": `${BASE}/#website`, name: "Suede AI Skills", url: `${BASE}/`, publisher: { "@id": ORG_ID } },
+        isPartOf: { "@type": "WebSite", "@id": `${BASE}/#website`, name: "Suede Skills", url: `${BASE}/`, publisher: { "@id": ORG_ID } },
         publisher: ORGANIZATION,
         breadcrumb: { "@id": `${DIR_URL}#breadcrumb` },
         mainEntity: {
@@ -2845,7 +2899,7 @@ ${FAQ.map(([q, a]) => `        <h3>${esc(q)}</h3>\n        <p>${esc(a)}${q === "
         mainEntity: FAQ.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
       },
     ],
-    footerNote: "The Suede Skills Directory is a curated index of public Agent Skills. Every listing links to the author's repository; Suede AI hosts no third-party code.",
+    footerNote: "The Suede Skills Directory is a curated index of public Agent Skills. Every listing links to the author's repository; Suede hosts no third-party code.",
   }));
 }
 
@@ -2855,7 +2909,7 @@ function renderFeaturedProjects() {
   const here = "directory/featured/";
   const copy = EDITORIAL.page || {};
   const bc = crumbs(here, [["directory/", "Directory"], [null, "Featured projects"]]);
-  const title = copy.title || "Featured Agent Skill Projects | Suede AI";
+  const title = copy.title || "Featured Agent Skill Projects | Suede";
   const projects = newestPublishedFirst(PROJECTS);
   const members = newestPublishedFirst(MEMBERS);
   const entries = [...projects, ...members];
@@ -2921,7 +2975,7 @@ function renderMethodology() {
   const rows = CHECKS.map((c) => `            <tr><td><code>${esc(c.id)}</code></td><td>${esc(c.label)}</td><td>${fmt(data.skills.filter((s) => s.checks[c.id]).length)} of ${fmt(total)}</td></tr>`).join("\n");
   const body = `${bc.html}
       <p class="lead">The directory lists public Agent Skills that pass a published, mechanical check. This page is the whole method: where skills come from, what is checked, what gets a page of its own, and how to change a listing.</p>
-      <p class="byline muted">Method written and maintained by <a href="https://suedeai.ai/founder" rel="author">Jason Colapietro</a>, Founder and CEO of <a href="https://suedeai.ai">Suede AI</a>. Figures on this page come from the <time datetime="${data.generated}">${longDate(data.generated)}</time> snapshot.</p>
+      <p class="byline muted">Method written and maintained by <a href="https://suedeai.ai/founder" rel="author">Jason Colapietro</a>, Founder and CEO of <a href="https://suedeai.ai">Suede</a>. Figures on this page come from the <time datetime="${data.generated}">${longDate(data.generated)}</time> snapshot.</p>
       <section class="panel" aria-labelledby="sources-title">
         <h2 id="sources-title">Where the skills come from</h2>
         <p>The directory reads the repositories cited by at least two of these ${plural(data.sources.length, "curated list")}: ${data.sources.map(listLink).join(", ")}. It adds the official collections those lists name and repositories accepted through <a href="${rel(here, "directory/submit/")}">listing requests</a>. Every SKILL.md in those repositories is read from the default branch, except in hidden folders and dependency or build folders (node_modules, vendor, dist, build), and nothing in them is executed. Accepted requests may name exact canonical skill folders, including a publisher’s hidden distribution folder; only those reviewed roots and skill names are included. System skills, unreviewed mirrors and fixtures remain excluded. This snapshot was taken on ${longDate(data.generated)}.</p>
@@ -2961,12 +3015,12 @@ ${gradeRows}
         <p>Across ${fmt(total)} listed skills, the highest score is ${dist.max} and the median is ${dist.median}. ${dist.top ? `${plural(dist.top, "listed skill")} ${dist.top === 1 ? "scores" : "score"} 96–${SCORE_CAP}` : `No listed skill scores 96–${SCORE_CAP}`}, and ${fmt(dist.shielded)} score 80–${SCORE_CAP} and carry the quality shields. Failed required frontmatter receives grade F and is not listed.</p>
         <p>The score measures the recorded SKILL.md structure and description, instruction depth, bundled files, license declaration, maintenance and citation evidence. It does not measure runtime performance. Frontmatter is a separate required gate; a declared license and all listing-policy rules still apply.</p>
         <h3>Security scan status is separate</h3>
-        <p>External directory skills are marked <b>not scanned</b>. The HOL/Cisco CI scanners run on Suede AI’s own repository; their results do not certify the external repositories listed here. The shields’ “Suede Certified” label refers to the published structural quality check. A security result needs its own per-skill scan evidence.</p>
+        <p>External directory skills are marked <b>not scanned</b>. The HOL/Cisco CI scanners run on Suede’s own repository; their results do not certify the external repositories listed here. The shields’ “Suede Certified” label refers to the published structural quality check. A security result needs its own per-skill scan evidence.</p>
       </section>
       <section class="panel" aria-labelledby="authors-title">
         <h2 id="authors-title">Two README badges and a limited-time feature offer</h2>
-        <p>Skills scoring 80–${SCORE_CAP} receive separate numeric and A/B shields, each linking to their actual Suede AI listing. Scores from 90–${SCORE_CAP} and grade A use gold; scores from 80–89 and grade B use cool metallic styling. The Suede S remains the main mark on both shields. Every listed skill, at any score, keeps its listing badge, and its existing <code>badge.svg</code> and <code>score.svg</code> links keep working.</p>
-        <p>Display either the numeric or letter badge in your repository or skill README, linked to your Suede AI listing, then request verification. Displaying both also qualifies. Suede AI checks the rendered README at a recorded commit before a feature placement is activated. An unverified request, no valid linked badge or failed fetch cannot activate promotion. Verification is checked again after a dataset refresh. Existing editorial full pages keep their separate rules.</p>
+        <p>Skills scoring 80–${SCORE_CAP} receive separate numeric and A/B shields, each linking to their actual Suede listing. Scores from 90–${SCORE_CAP} and grade A use gold; scores from 80–89 and grade B use cool metallic styling. The Suede S remains the main mark on both shields. Every listed skill, at any score, keeps its listing badge, and its existing <code>badge.svg</code> and <code>score.svg</code> links keep working.</p>
+        <p>Display either the numeric or letter badge in your repository or skill README, linked to your Suede listing, then request verification. Displaying both also qualifies. Suede checks the rendered README at a recorded commit before a feature placement is activated. An unverified request, no valid linked badge or failed fetch cannot activate promotion. Verification is checked again after a dataset refresh. Existing editorial full pages keep their separate rules.</p>
         ${promotionOffer(here)}
         <p><b>Scored below 80?</b> We welcome authors who want help improving their skills. Each full skill page lists its points by component. <a href="${rel(here, "directory/submit/")}#improve">Send your repository and the points you want to raise</a>, then request a new review after updating the skill.</p>
       </section>
@@ -2985,7 +3039,7 @@ ${POLICY_RULES.map((r) => `              <li>${esc(r)}</li>`).join("\n")}
             A vendor's skills for its own service are listed under the second and third rules. A repository whose product is one of these behaviors is left out as a whole.
           </li>
           <li>Skills are also left out when their name or description trips the site's content filters: adult content, malware terms, jailbreaks outside a defensive context, the short list of terms the site's own public-copy guard rejects, and listing text that fails the site's public-privacy check (an email address, a phone number or a home-directory path). The exact terms are in <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/scripts/directory/curate.py" target="_blank" rel="noopener">curate.py</a>. Removals at an author's request, and skills whose text matches the pack's reserved-text guard, are recorded with their reason in <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/directory/exclusions.json" target="_blank" rel="noopener">exclusions.json</a>.</li>
-          <li>Suede AI's own skills are catalogued separately on this site and pass the same rules; a test in the repository checks every one of them against the policy.</li>
+          <li>Suede's own skills are catalogued separately on this site and pass the same rules; a test in the repository checks every one of them against the policy.</li>
         </ul>
       </section>
       <section class="panel" aria-labelledby="pages-title">
@@ -3002,7 +3056,7 @@ ${POLICY_RULES.map((r) => `              <li>${esc(r)}</li>`).join("\n")}
       </section>
 ${guideLinksPanel(here, pageGuides(here), "Guides for publishers and installers")}
 ${servicesCta("methodology", null, here)}`;
-  const title = "How Agent Skills Are Scored and Listed | Suede AI";
+  const title = "How Agent Skills Are Scored and Listed | Suede";
   const description = "How the Suede Skills Directory grades agent skills: source lists, the Suede Skill Check, the 0–99 quality score, letter grades and listing rules.";
   const keywords = setKeywords(here, ["agent skill quality check", "SKILL.md best practices", "agent skills specification", "skill grading", "Suede Skill Check"]);
   files.set(`${here}index.html`, page({
@@ -3060,7 +3114,7 @@ function renderSubmit() {
           <li><b>Publish the skill</b> in a public GitHub repository as a folder with a SKILL.md, a license and a description that says when to use it.</li>
           <li><b>Open a listing request</b> with the repository URL. One request can cover the repository or specific named skills; a request naming selected skills covers only those accepted names.</li>
           <li><b>The request is reviewed by hand.</b> An accepted repository is read at the next directory refresh and runs through the <a href="${rel(here, "directory/methodology/")}">Suede Skill Check</a> and the listing rules. Skills that pass the frontmatter check, declare a license and pass at least six of seven graded checks are listed with their quality score and grade.</li>
-          <li><b>Add either badge.</b> Listed skills scoring 80–99 get two shields: a numeric score and an A/B grade, each linking to their Suede AI listing. Choose either badge or both from the listing${GROWTH ? ` (<a href="${rel(here, "directory/badges/")}">how badges work</a>)` : ""} and request README verification for the limited-time feature offer.</li>
+          <li><b>Add either badge.</b> Listed skills scoring 80–99 get two shields: a numeric score and an A/B grade, each linking to their Suede listing. Choose either badge or both from the listing${GROWTH ? ` (<a href="${rel(here, "directory/badges/")}">how badges work</a>)` : ""} and request README verification for the limited-time feature offer.</li>
         </ol>
       </section>
       <section class="panel" id="improve" aria-labelledby="pass-title">
@@ -3077,7 +3131,7 @@ function renderSubmit() {
         </ul>
         <p>The <a href="${rel(here, "directory/methodology/")}#score">scoring rubric</a> lists every component and its points.</p>
         <h3>Updated your skill?</h3>
-        <p>Choose <b>Request a fresh review</b> on the skill’s report or repository listing. The form carries the exact skill name and previous snapshot. Add the changed commit or pull request and the points you improved. Suede AI reviews requests by hand and rechecks accepted changes at a directory refresh.</p>
+        <p>Choose <b>Request a fresh review</b> on the skill’s report or repository listing. The form carries the exact skill name and previous snapshot. Add the changed commit or pull request and the points you improved. Suede reviews requests by hand and rechecks accepted changes at a directory refresh.</p>
         <p>Each listing offers a downloadable JSON report with its snapshot date, report version, score breakdown and methodology. Source commit IDs appear when recorded by the refresh; older snapshots say when the revision was not recorded. External skills remain marked <b>not scanned</b>.</p>
       </section>
 ${badgeBlock(here, {
@@ -3130,7 +3184,7 @@ function guideByline(g) {
       <p class="dateline muted">Reviewed <time datetime="${g.date_modified}">${longDate(g.date_modified)}</time>.${snap}</p>`;
 }
 
-// Links in a guide body: Suede AI's own pages become relative links and are
+// Links in a guide body: Suede's own pages become relative links and are
 // checked against the generated site; everything else opens in a new tab.
 function guideHref(here, target) {
   if (!/^https:\/\//.test(target)) throw new Error(`${here}: guide links must be absolute https URLs (${target})`);
@@ -3155,11 +3209,11 @@ function guideFooterCta(here, g) {
 }
 
 const ORGANIZATION_PUBLISHER = {
-  "alternateName": ["Suede Labs AI","Suede Labs","Suede"],
+  "alternateName": ["Suede Labs AI","Suede Labs","Suede AI"],
   "parentOrganization": {"@type":"Organization","@id":"https://jcinvestmentgroup.ventures/#organization","name":"JC Investment Group LLC","url":"https://jcinvestmentgroup.ventures/"},
   "address": {"@type":"PostalAddress","streetAddress":"138 Victorian Lane","addressLocality":"Jupiter","addressRegion":"FL","postalCode":"33458","addressCountry":"US"},
   "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","@id":"https://suedeai.ai/terms#money-back-policy","name":"90-day money-back policy","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":90,"returnFees":"https://schema.org/FreeReturn","refundType":"https://schema.org/FullRefund","merchantReturnLink":"https://suedeai.ai/terms#money-back-policy"},
- "@type": "Organization", "@id": ORG_ID, name: "Suede AI", url: "https://suedeai.ai", logo: { "@type": "ImageObject", url: ORGANIZATION.logo } };
+ "@type": "Organization", "@id": ORG_ID, name: "Suede", url: "https://suedeai.ai", logo: { "@type": "ImageObject", url: ORGANIZATION.logo } };
 
 function renderGuide(g) {
   const here = g.path;
@@ -3295,7 +3349,7 @@ function renderCheck() {
       <form class="check-form panel" data-skill-check data-directory="${rel(here, "directory/")}" hidden>
         <label for="check-q">GitHub URL of the repository or skill folder, or the skill name</label>
         <div class="search-line"><input id="check-q" name="q" type="search" placeholder="https://github.com/owner/repo/tree/main/skills/my-skill" autocomplete="off" required><button type="submit">Check my skill</button></div>
-        <p class="muted">The check runs in your browser and reads only this directory’s published files. Nothing you type is sent to Suede AI or anyone else.</p>
+        <p class="muted">The check runs in your browser and reads only this directory’s published files. Nothing you type is sent to Suede or anyone else.</p>
       </form>
       <noscript><p class="panel">The check needs JavaScript. Without it, <a href="${rel(here, "directory/")}">search the directory</a> for your skill: every listing shows its score by component.</p></noscript>
       <p role="status" aria-live="polite" data-check-status></p>
@@ -3381,19 +3435,19 @@ function render404() {
     canonical: false,
     robots: "noindex",
     extraStyle: "@media (max-width: 768px) { .nav-disclosure > summary.nav-hamburger { width: 44px; height: 44px; } }",
-    title: "Page not found | Suede AI Skills",
-    description: "This page is not on skills.suedeai.ai. Browse the Suede Skills Directory or the Suede AI Skills pack instead.",
+    title: "Page not found | Suede Skills",
+    description: "This page is not on skills.suedeai.ai. Browse the Suede Skills Directory or the Suede Skills pack instead.",
     keywords: null,
     h1Html: `      <div class="eyebrow">404</div>
       <h1>This page is not here</h1>`,
     body: `      <p class="lead">The address may be mistyped, or the listing may have left the directory at a refresh. Everything still listed is one click away.</p>
-      <p><a class="button" href="/directory/">Browse the Agent Skills Directory</a> <a class="button secondary" href="/skills/">Suede AI Skills</a></p>
+      <p><a class="button" href="/directory/">Browse the Agent Skills Directory</a> <a class="button secondary" href="/skills/">Suede Skills</a></p>
       <section class="panel" aria-labelledby="cats-title">
         <h2 id="cats-title">Skill directories</h2>
         <p class="cat-links">${categories.map((c) => `<a href="/directory/${c.slug}/">${esc(c.title)}</a>`).join(" &middot; ")}</p>
       </section>`,
     jsonld: [],
-    footerNote: "Suede AI Skills and the Agent Skills Directory are published at skills.suedeai.ai.",
+    footerNote: "Suede Skills and the Agent Skills Directory are published at skills.suedeai.ai.",
   }));
 }
 
@@ -3614,7 +3668,7 @@ function bestOfSection(here) {
   const onHub = here === TOPICS_PATH;
   return `      <section class="panel best-of" aria-labelledby="best-of-title">
         <div class="board-head"><h2 id="best-of-title">Best of</h2>${onHub ? "" : `<a href="${rel(here, TOPICS_PATH)}">All ${fmt(TOPICS.length)} topics</a>`}</div>
-        <p class="muted">Each tile charts its topic: one dot per listed skill, best score first, colored by grade, with the top pick named. Suede AI's own skills are not ranked.</p>
+        <p class="muted">Each tile charts its topic: one dot per listed skill, best score first, colored by grade, with the top pick named. Suede's own skills are not ranked.</p>
         <div class="tile-grid">
 ${BEST_OF.map((t) => topicTile(here, t)).join("\n")}
         </div>
@@ -3735,7 +3789,7 @@ ${servicesCta("browse", catCounts[0][0], here)}`;
   browsePage({
     here,
     trail: [["directory/", "Directory"], [TOPICS_PATH, "Topics"], [null, name]],
-    title: pickTitle([`${name} Skills for Claude Code and Codex`, `${name} Agent Skills for Claude Code`, `${name} Agent Skills`, `${name} Skills | Suede AI`], `topic ${t.topic.id}`),
+    title: pickTitle([`${name} Skills for Claude Code and Codex`, `${name} Agent Skills for Claude Code`, `${name} Agent Skills`, `${name} Skills | Suede`], `topic ${t.topic.id}`),
     description: fitMeta([
       `Browse ${fmt(n)} ${noun} skills for Claude Code and Codex from ${plural(repoCount, "repository", "repositories")}, graded 0 to 99 and linked to source.${top ? ` ${displayName(top)} leads at ${top.score}/100.` : ""}`,
       `Browse ${fmt(n)} ${noun} skills for Claude Code and Codex from ${plural(repoCount, "repository", "repositories")}, graded 0 to 99 and linked to source.`,
@@ -3851,7 +3905,7 @@ ${best.length ? `      <p class="answer"><b>Highest-scoring</b> in this lane: ${
       </section>
       <section class="panel" aria-labelledby="all-title">
         <h2 id="all-title">${shown.ranked ? `The ${TOP_MAX} highest-scoring of ${fmt(rows.length)}` : `All ${fmt(rows.length)}`} ${esc(lane.short)} skills</h2>
-${shown.ranked ? `        <p class="muted">Ranked by Suede Skill Check score; Suede AI's own skills are not ranked. Open a category above for the full list, filtered to this lane.</p>\n` : ""}${allTable(here, "lane-skills", shown.rows, `${lane.short} skills`)}
+${shown.ranked ? `        <p class="muted">Ranked by Suede Skill Check score; Suede's own skills are not ranked. Open a category above for the full list, filtered to this lane.</p>\n` : ""}${allTable(here, "lane-skills", shown.rows, `${lane.short} skills`)}
       </section>
       <p><a href="${rel(here, PRICING_PATH)}">All cost and license lanes</a></p>
 ${servicesCta("browse", null, here)}`,
@@ -3891,7 +3945,7 @@ function renderFlag({ flag, rows, universe }) {
   browsePage({
     here,
     trail: [["directory/", "Directory"], [FEATURES_PATH, "Capabilities"], [null, flag.label]],
-    title: pickTitle([`${flag.label}: Agent Skills for Claude Code`, `${flag.label}: Agent Skills`, `${flag.label} | Suede AI`], `flag ${flag.id}`),
+    title: pickTitle([`${flag.label}: Agent Skills for Claude Code`, `${flag.label}: Agent Skills`, `${flag.label} | Suede`], `flag ${flag.id}`),
     description: fitMeta([`${fmt(rows.length)} agent skills for Claude Code and Codex. ${flag.lede}`, `${fmt(rows.length)} agent skills for Claude Code and Codex: ${flag.label.toLowerCase()}, graded 0 to 99 and linked to source.`], `flag ${flag.id}`),
     keywords: [`${flag.label.toLowerCase()} agent skills`, `claude code skills ${flag.label.toLowerCase()}`, `${flag.label.toLowerCase()} skills for codex`],
     eyebrow: "Capability",
@@ -3905,7 +3959,7 @@ ${best.length ? `      <p class="answer"><b>Highest-scoring</b> with this capabi
       </section>
       <section class="panel" aria-labelledby="all-title">
         <h2 id="all-title">${shown.ranked ? `The ${TOP_MAX} highest-scoring of ${fmt(rows.length)}` : `All ${fmt(rows.length)}`} skills</h2>
-${shown.ranked ? `        <p class="muted">Ranked by Suede Skill Check score; Suede AI's own skills are not ranked. Open a category above for the full list with this filter on.</p>\n` : ""}${allTable(here, "flag-skills", shown.rows, "skills")}
+${shown.ranked ? `        <p class="muted">Ranked by Suede Skill Check score; Suede's own skills are not ranked. Open a category above for the full list with this filter on.</p>\n` : ""}${allTable(here, "flag-skills", shown.rows, "skills")}
       </section>
       <p><a href="${rel(here, FEATURES_PATH)}">All capabilities</a></p>
 ${servicesCta("browse", null, here)}`,
@@ -3944,7 +3998,7 @@ ${NEW_LISTINGS.length ? datedTable(here, "new-skills", NEW_LISTINGS, "listed_sin
       </section>
       <section class="panel" aria-labelledby="updated-title">
         <h2 id="updated-title">Recently updated</h2>
-        <p class="muted">${fmt(RECENTLY_UPDATED.length)} listed skills sit in a repository with a commit in the ${NEW_DAYS} days through ${longDate(BROWSE_DATE)}${RECENTLY_UPDATED.length > TOP_MAX ? `; the ${TOP_MAX} most recent are shown` : ""}. Suede AI's own skills are listed in <a href="${rel(here, "skills/")}">their own section</a>.</p>
+        <p class="muted">${fmt(RECENTLY_UPDATED.length)} listed skills sit in a repository with a commit in the ${NEW_DAYS} days through ${longDate(BROWSE_DATE)}${RECENTLY_UPDATED.length > TOP_MAX ? `; the ${TOP_MAX} most recent are shown` : ""}. Suede's own skills are listed in <a href="${rel(here, "skills/")}">their own section</a>.</p>
 ${datedTable(here, "updated-skills", updated, "commit_date", "Last commit")}
       </section>
 ${servicesCta("browse-hub", null, here)}`,
@@ -3987,7 +4041,7 @@ ${board(here, RISING, (s) => `${sparkline(installsFor(s).weekly)}<b>${compact(la
     keywords: ["top claude code skills", "top 100 agent skills", "most installed agent skills", "best agent skills ranked", "highest rated claude skills"],
     eyebrow: "Suede Skills Directory &middot; Top 100",
     h1: "Top 100 agent skills",
-    body: `      <p class="answer">${mostInstalled ? `${esc(displayName(mostInstalled))} from ${esc(mostInstalled.repo)} is the most installed listed skill, with ${fmt(installsFor(mostInstalled).installs)} installs recorded by skills.sh as of ${longDate(INSTALLS.fetched)}. ` : ""}${esc(displayName(top))} from ${esc(top.repo)} has the highest Suede Skill Check score among third-party skills in the ${longDate(data.generated)} snapshot, at ${top.score}/100. Suede AI's own skills are not ranked.</p>
+    body: `      <p class="answer">${mostInstalled ? `${esc(displayName(mostInstalled))} from ${esc(mostInstalled.repo)} is the most installed listed skill, with ${fmt(installsFor(mostInstalled).installs)} installs recorded by skills.sh as of ${longDate(INSTALLS.fetched)}. ` : ""}${esc(displayName(top))} from ${esc(top.repo)} has the highest Suede Skill Check score among third-party skills in the ${longDate(data.generated)} snapshot, at ${top.score}/100. Suede's own skills are not ranked.</p>
 ${tabs}
 ${installed}
       <section class="board-pane panel" id="highest-scores" data-pane aria-labelledby="top-title">
@@ -4025,7 +4079,7 @@ function renderSaved() {
     body: `${bc.html}
       <section class="panel" data-saved-page aria-labelledby="saved-title">
         <h2 id="saved-title">Your list</h2>
-        <p class="muted">Press Save on any skill page to add it here. The list is kept in this browser only; nothing is sent to Suede AI.</p>
+        <p class="muted">Press Save on any skill page to add it here. The list is kept in this browser only; nothing is sent to Suede.</p>
         <div data-saved-empty><p>No saved skills yet. <a href="${rel(here, "directory/")}">Browse the directory</a> or start from the <a href="${rel(here, TOP_PATH)}">top 100</a>.</p></div>
         <div class="table-wrap"><table class="skill-table" data-saved-table><thead><tr><th scope="col">Skill</th><th scope="col">Score</th><th scope="col">Grade</th><th scope="col">Category</th><th scope="col">License</th><th scope="col">Repository</th><th scope="col"><span class="visually-hidden">Remove</span></th></tr></thead><tbody></tbody></table></div>
         <p><button type="button" class="button secondary" data-saved-clear>Clear all</button></p>
@@ -4107,7 +4161,7 @@ function renderSecurity() {
     ["Does the directory scan skills for malware?", `No. Every listing is marked "Security scan: not scanned". The directory reads each skill's published files to check structure, license and maintenance, and on full pages it lists what those files touch, but it runs no malware scanner over third-party code and executes nothing from any repository.`],
     ["What does the Before you install panel show?", `For the ${fmt(featured.length)} skills with full pages, the refresh reads every file in the skill folder and records bundled scripts by language, commands its SKILL.md runs, environment variables its scripts read, credential names it mentions, outside hosts and HTTP clients, MCP tools, and the tool permissions its frontmatter requests. The panel on each page prints that record as of the snapshot date.`],
     ["Which skills are the safest to start with?", `Start with the ${n("no-setup")} full-page skills marked No setup required: their files read no credential, call no outside host, connect to no MCP server and run no command. They are still third-party text that an agent will follow, so read the SKILL.md first.`],
-    ["How do I report a skill?", "Open a listing request on GitHub and choose a correction or removal; describe what you found and link the file. Reports about Suede AI's own skills go through the repository's security policy."],
+    ["How do I report a skill?", "Open a listing request on GitHub and choose a correction or removal; describe what you found and link the file. Reports about Suede's own skills go through the repository's security policy."],
   ]);
   const hero = pageHero(`          <div class="eyebrow">Suede Skills Directory &middot; Security</div>
           <div class="hero-row">${pixelIcon("trust", { size: 56, className: "pix page-icon" })}<div><h1>Security: what the directory checks, and what you should</h1></div></div>
@@ -4137,7 +4191,7 @@ ${bc.html}
         <ul>
           <li><b>No malware scan.</b> The directory does not run a pattern scanner, a dependency audit or a sandbox over third-party skills. A listing says what the files touch, never that they are safe.</li>
           <li><b>No runtime test.</b> Scores measure structural evidence in the published files. They say nothing about what a skill does once an agent follows it.</li>
-          <li><b>No certification.</b> The Suede S shields are quality badges for scores of 80 to 99 on that structural rubric. They are not a security result, and the HOL and Cisco scanners that run on Suede AI's own repository in CI do not run on the listings.</li>
+          <li><b>No certification.</b> The Suede S shields are quality badges for scores of 80 to 99 on that structural rubric. They are not a security result, and the HOL and Cisco scanners that run on Suede's own repository in CI do not run on the listings.</li>
         </ul>
         ${tracked ? `<p>skills.sh, which tracks ${tracked} of the listed skills, publishes audit results from several scanning partners for the skills it indexes. Each full page here links to its skills.sh page when the skill is tracked there, so you can read those results beside the directory's own record. They are third-party results and the directory does not repeat them as its own.</p>` : ""}
       </section>
@@ -4166,12 +4220,12 @@ ${checklist.map(([k, v]) => `          <tr><td>${esc(k)}</td><td>${esc(v)}</td><
         <ul>
 ${cisco ? `          <li><a href="${rel(here, "directory/featured/")}#${cisco.id}">${esc(cisco.name)}</a>, a featured project: ${esc(cisco.headline)}</li>` : ""}
 ${scanners.map((x) => `          <li><a href="${rel(here, skillPath(x))}">${esc(displayName(x))}</a> from ${esc(x.repo)} (${x.score}/100): ${esc(ensureSentence(x.summary))}</li>`).join("\n")}
-          <li>The <a href="https://github.com/hashgraph-online/ai-plugin-scanner-action" target="_blank" rel="noopener">HOL plugin scanner</a>, which runs on Suede AI's own repository in CI with the Cisco skill scanner pinned alongside it.</li>
+          <li>The <a href="https://github.com/hashgraph-online/ai-plugin-scanner-action" target="_blank" rel="noopener">HOL plugin scanner</a>, which runs on Suede's own repository in CI with the Cisco skill scanner pinned alongside it.</li>
         </ul>
       </section>
       <section class="panel" aria-labelledby="report-title">
         <h2 id="report-title">Found a problem?</h2>
-        <p><a href="${ISSUE_URL}" target="_blank" rel="noopener">Open a listing request</a> and choose a correction or a removal. Describe what you found and link the file; removals take effect at the next build. For Suede AI's own skills, follow the <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/SECURITY.md" target="_blank" rel="noopener">repository security policy</a>.</p>
+        <p><a href="${ISSUE_URL}" target="_blank" rel="noopener">Open a listing request</a> and choose a correction or a removal. Describe what you found and link the file; removals take effect at the next build. For Suede's own skills, follow the <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/SECURITY.md" target="_blank" rel="noopener">repository security policy</a>.</p>
       </section>
 ${faq.html}`;
   const title = "Agent Skill Security: What the Directory Checks";
@@ -4192,7 +4246,7 @@ ${faq.html}`;
 
 // ------------------------------------------------------------------ stacks
 
-// The Suede AI skill that covers a stack's task, named above the article.
+// The Suede skill that covers a stack's task, named above the article.
 function suedePick(here, st) {
   const own = data.skills.find((x) => isFirstParty(x) && x.name === st.suede.skill);
   const pagePath = `skills/${st.suede.skill}.html`;
@@ -4202,11 +4256,11 @@ function suedePick(here, st) {
     own ? `<a href="${listingHref(here, own)}">Directory listing${own.score ? ` (${own.score}/100)` : ""}</a>` : "",
     `<a href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/${esc(st.suede.skill)}" target="_blank" rel="noopener">Source</a>`,
   ].filter(Boolean);
-  return `      <aside class="suede-first" aria-label="Suede AI's skill for this task">
+  return `      <aside class="suede-first" aria-label="Suede's skill for this task">
         <img src="${rel(here, "assets/")}suede-ai-logo-transparent.webp" alt="" width="40" height="40">
-        <p class="kicker">The Suede AI skill that covers this task</p>
+        <p class="kicker">The Suede skill that covers this task</p>
         <b>${esc(st.suede.skill)}</b>
-        <p>${esc(st.suede.pitch)} The article below leaves Suede AI's own skills out and recommends third-party skills only.</p>
+        <p>${esc(st.suede.pitch)} The article below leaves Suede's own skills out and recommends third-party skills only.</p>
         <p class="suede-first-links">${links.join("")}</p>
       </aside>`;
 }
@@ -4378,7 +4432,7 @@ function renderCompare() {
         <h2 id="compare-how-title">What the comparison shows</h2>
         <p>Each column reads the skill's record from the ${longDate(data.generated)} snapshot: the Suede Skill Check score and the points behind it, the letter grade, the license and cost lane, the capability flags, the topics it is listed under, its repository and the dates it was listed and last changed. Ranked task pages do the same for a whole job: <a href="${rel(here, TASKS_PATH)}">skills by task</a>.</p>
       </section>${GROWTH ? staticComparisonsPanel(here) : ""}${versusPanel(here)}`;
-  const title = "Compare Agent Skills Side by Side | Suede AI";
+  const title = "Compare Agent Skills Side by Side | Suede";
   const description = "Compare two or three listed agent skills side by side: Suede Skill Check scores by component, licenses, cost lanes, capabilities and topics.";
   files.set(`${here}index.html`, page({
     here, title, description, keywords: setKeywords(here, ["compare agent skills", "compare claude code skills", "skill comparison"]),
@@ -4412,12 +4466,12 @@ function versusValues(c) {
   };
 }
 
-// The Suede AI column of every comparison table, from the live dataset.
+// The Suede column of every comparison table, from the live dataset.
 function suedeFacts() {
   const KIND_NOUNS = { plugins: "Claude Code plugins", "mcp-servers": "MCP servers", grok: "Grok bots", rules: "rules files" };
   const catalogs = [...KINDS.map((k) => KIND_NOUNS[k.id] || k.short), ...(HAS_AGENTS ? ["AI agents"] : [])];
   return {
-    operator: "Suede AI, edited by Jason Colapietro",
+    operator: "Suede, edited by Jason Colapietro",
     lists: `${fmt(data.skills.length)} agent skills from ${fmt(repos.size)} GitHub repositories in ${categories.length} categories${catalogs.length ? `, plus catalogs of ${listPhrase(catalogs)}` : ""}`,
     ranking: `Suede Skill Check score from 0 to 99 on a published 100-point rubric, with ${plural(TASKS.length, "task shortlist")}`,
     signals: `A structural listing gate, the license on every listing, a verifiable report per skill, and the scripts, credentials and network calls summarized on ${fmt(featured.length)} full pages`,
@@ -4483,7 +4537,7 @@ function renderVersus(c) {
   const here = versusPath(c);
   const v = versusValues(c);
   const f = (s) => fillVersus(s, v);
-  const label = `Suede AI vs ${c.name}`;
+  const label = `Suede vs ${c.name}`;
   const bc = crumbs(here, [["directory/", "Directory"], [COMPARE_PATH, "Compare"], [null, label]]);
   const answer = answerWithin([f(c.vs_answer)], `versus ${c.id}`);
   const faq = faqBlock(here, [...c.faq.map(([q, a]) => [f(q), f(a)]), SCORE_QA, FREE_QA]);
@@ -4513,12 +4567,12 @@ ${suedeReasons(here)}
 ${faq.html}
 ${versusSources(here, [c])}
 ${versusMoreLinks(here, c, { onAlternatives: false })}`;
-  const title = fitTitle([`Suede Skills Directory vs ${c.name}: Compared`, `Suede Skills Directory vs ${c.name}`, `Suede AI Directory vs ${c.name}`], `versus ${c.id}`);
+  const title = fitTitle([`Suede Skills Directory vs ${c.name}: Compared`, `Suede Skills Directory vs ${c.name}`, `Suede Directory vs ${c.name}`], `versus ${c.id}`);
   const description = fitMeta([f(c.vs_meta)], `versus ${c.id}`);
   const h1 = `How does the Suede Skills Directory compare with ${c.name}?`;
   files.set(`${here}index.html`, page({
     here, title, description,
-    keywords: setKeywords(here, [`${c.name} comparison`, `${c.name} vs suede ai skills directory`, `${c.name} features`, "agent skill directory comparison", "graded agent skills directory"]),
+    keywords: setKeywords(here, [`${c.name} comparison`, `${c.name} vs suede skills directory`, `${c.name} features`, "agent skill directory comparison", "graded agent skills directory"]),
     h1Html: `      <div class="eyebrow">Compare &middot; Suede Skills Directory vs ${esc(c.name)}</div>
       <h1>${esc(h1)}</h1>`,
     body,
@@ -4655,8 +4709,8 @@ function renderApi() {
     INSTALLS ? ["Install snapshot", `${host}/installs.json`, `Install counts for ${fmt(INSTALLS_MATCHED)} listed skills as published by skills.sh, with the fetch date and the method. The directory measures no installs of its own.`] : null,
     ["Kinds", `${host}/kinds.json`, "The plugins, Grok, MCP server and rules listings as one JSON document."],
     GROWTH ? ["Finder skill", `${host}/finder/`, "Install the read-only directory search skill for Claude Code, Codex or Cursor."] : null,
-    GROWTH ? ["Weekly feed", `${host}/weekly.json`, "Rising and climbing skills, topic growth, new listings and repository stars for the latest snapshots; read by the finder’s weekly briefing. Suede AI excluded."] : null,
-    GROWTH ? ["State of Agent Skills", `${host}/state-of-agent-skills/data.json`, "Snapshot-based grade distribution, category and license counts, and score-component gaps; Suede AI excluded."] : null,
+    GROWTH ? ["Weekly feed", `${host}/weekly.json`, "Rising and climbing skills, topic growth, new listings and repository stars for the latest snapshots; read by the finder’s weekly briefing. Suede excluded."] : null,
+    GROWTH ? ["State of Agent Skills", `${host}/state-of-agent-skills/data.json`, "Snapshot-based grade distribution, category and license counts, and score-component gaps; Suede excluded."] : null,
     ["RSS feed", `${host}/feed.xml`, "New listings and guides, RSS 2.0."],
     ["llms.txt", `${host}/llms.txt`, "The directory described for answer engines, with every browse page."],
     ["Sitemap", `${host}/sitemap.xml`, "Every indexable page with its last-modified date."],
@@ -4829,16 +4883,16 @@ verifyInternalLinks();
 
 // llms.txt carries one line about the directory, with live counts.
 const llmsPath = path.join(docsRoot, "llms.txt");
-const llmsLine = `- [Agent Skills Directory](${DIR_URL}): A curated index of ${fmt(data.skills.length)} public Agent Skills (${openPct}% under an open-source or open-content license) from ${repos.size} other GitHub repositories, in ${categories.length} category directories. Every listing links to the author's repository, passes the Suede Skill Check's structural listing gate, shows a 0–99 quality score and letter grade, and states its license; the ${fmt(dist.shielded)} skills scoring 80–99 offer numeric and letter README badges (either valid linked badge can qualify for verified promotion); security scan status is separately marked not scanned; full skill pages summarize the scripts, credentials and network calls found in the skill's files; [how skills are listed](${DIR_URL}methodology/). Edited by Jason Colapietro, Suede AI. Category directories:`;
+const llmsLine = `- [Agent Skills Directory](${DIR_URL}): A curated index of ${fmt(data.skills.length)} public Agent Skills (${openPct}% under an open-source or open-content license) from ${repos.size} other GitHub repositories, in ${categories.length} category directories. Every listing links to the author's repository, passes the Suede Skill Check's structural listing gate, shows a 0–99 quality score and letter grade, and states its license; the ${fmt(dist.shielded)} skills scoring 80–99 offer numeric and letter README badges (either valid linked badge can qualify for verified promotion); security scan status is separately marked not scanned; full skill pages summarize the scripts, credentials and network calls found in the skill's files; [how skills are listed](${DIR_URL}methodology/). Edited by Jason Colapietro, Suede. Category directories:`;
 // Under it, one indented line per category hub, so an answer engine can cite
 // the page that matches a query ("SEO skills for Claude") instead of the hub.
 const llmsCategoryLines = categories.map((c) => `  - [${c.seo_title}](${url(catPath(c.slug))}): ${fmt(skillsByCat.get(c.slug).length)} listed ${c.short} skills.`);
 // Then the guides and the check, so answer engines can cite the page that
 // answers a how-to or comparison question directly.
 const llmsGuideLines = GUIDES.length
-  ? [`- [Agent skills guides](${url(GUIDES_PATH)}): Guides by Jason Colapietro, Suede AI, built on the directory's published data:`, ...GUIDES.map((g) => `  - [${g.h1}](${url(g.path)}): ${g.meta_description}`)]
+  ? [`- [Agent skills guides](${url(GUIDES_PATH)}): Guides by Jason Colapietro, Suede, built on the directory's published data:`, ...GUIDES.map((g) => `  - [${g.h1}](${url(g.path)}): ${g.meta_description}`)]
   : [];
-const llmsCheckLine = `- [Skill AI-visibility check](${url(CHECK_PATH)}): A free, in-browser check for skill publishers that shows a listed skill's 0–99 score by component and its largest open points. It sends nothing to Suede AI.`;
+const llmsCheckLine = `- [Skill AI-visibility check](${url(CHECK_PATH)}): A free, in-browser check for skill publishers that shows a listed skill's 0–99 score by component and its largest open points. It sends nothing to Suede.`;
 const llmsAgents = fs.existsSync(path.join(repoRoot, "directory/agents.json")) ? [`- [AI Agents](${DIR_URL}agents/): ${agentCounts.products} products and ${agentCounts.editions} runnable repository and hosted editions, with separate documentation, repository evidence and hosted disclosure ratings /10.${agentCounts.ungraded ? ` Browse [${agentCounts.ungraded} ungraded agents](${DIR_URL}agents/ungraded/) with official sources.` : ""}`] : [];
 // Then the task pages, so "best Claude Code skills for <task>" has a page to cite.
 const llmsTaskLines = TASKS.length
@@ -4846,7 +4900,7 @@ const llmsTaskLines = TASKS.length
   : [];
 const llmsMoreLines = [
   `- [Security](${url(SECURITY_PATH)}): What the directory checks before listing a skill (structure, license, policy, what the files touch on ${fmt(featured.length)} full pages), three documented registry attacks with sources, and a review checklist.`,
-  ...(STACKS.length ? [`- [Recommended stacks by task](${url(STACKS_PATH)}): ${plural(STACKS.length, "stack")} by Jason Colapietro, each naming the Suede AI skill for the task and recommending third-party skills only:`, ...STACKS.map((st) => `  - [${st.h1}](${url(stackPath(st))}): ${st.meta_description}`)] : []),
+  ...(STACKS.length ? [`- [Recommended stacks by task](${url(STACKS_PATH)}): ${plural(STACKS.length, "stack")} by Jason Colapietro, each naming the Suede skill for the task and recommending third-party skills only:`, ...STACKS.map((st) => `  - [${st.h1}](${url(stackPath(st))}): ${st.meta_description}`)] : []),
   ...KINDS.map((k) => `- [${k.name}](${url(kindPath(k))}): ${k.meta} ${fmt(kindEntries(k).length)} ${kindEntries(k).some((entry) => !entry.repo) ? "projects" : "repositories"}, listed and not graded.`),
   `- [Publishers](${url(PUBLISHERS_PATH)}): ${fmt(repos.size)} repositories with skill counts, best scores and official status.`,
   ...(COMPETITORS.length ? [`- [Compare](${url(COMPARE_PATH)}): compare listed skills side by side, and the Suede Skills Directory compared with other agent skill directories:`, ...COMPETITORS.flatMap((c) => [`  - [Suede Skills Directory vs ${c.name}](${url(versusPath(c))}): ${fillVersus(c.vs_meta, versusValues(c))}`, `  - [${c.name} alternatives](${url(altBrandPath(c))}): ${fillVersus(c.alt_meta, versusValues(c))}`])] : []),

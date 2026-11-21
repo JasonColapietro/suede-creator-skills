@@ -8,7 +8,7 @@
 
 Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
-| Repository | Publisher / team | Skills | Browse categories | Suede AI |
+| Repository | Publisher / team | Skills | Browse categories | Suede |
 | --- | --- | ---: | --- | --- |
 | [1NickPappas/move-code-quality-skill](https://github.com/1NickPappas/move-code-quality-skill) | [1NickPappas](https://github.com/1NickPappas) | 1 | [Code quality](categories/code-review-quality.md#1nickpappas--move-code-quality-skill) | [Listing](https://skills.suedeai.ai/directory/1nickpappas/move-code-quality-skill/) |
 | [activeloopai/hivemind](https://github.com/activeloopai/hivemind) | [activeloopai](https://github.com/activeloopai) | 3 | [AI agents](categories/ai-agents-llm.md#activeloopai--hivemind) · [Dev tools](categories/developer-tools.md#activeloopai--hivemind) · [Productivity](categories/productivity-knowledge.md#activeloopai--hivemind) | [Listing](https://skills.suedeai.ai/directory/activeloopai/hivemind/) |

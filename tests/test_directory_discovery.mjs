@@ -8,6 +8,9 @@ import vm from 'node:vm';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = (name) => fs.readFileSync(path.join(root, name), 'utf8');
 const data = JSON.parse(read('directory/skills.json'));
+const updatesPath = 'directory/intake/first-party-listing-updates.json';
+const updates = new Map((fs.existsSync(path.join(root, updatesPath)) ? JSON.parse(read(updatesPath)) : [])
+  .map(update => [`${update.repository}/${update.listing.slug}`, update]));
 const index = JSON.parse(read('docs/directory/search-index.json'));
 const fullPages = new Set(JSON.parse(read('directory/growth/full-pages.json')).skills);
 const hasPage = skill => Boolean(skill.featured || fullPages.has(`${skill.repo}/${skill.slug}`.toLowerCase()));
@@ -15,12 +18,13 @@ const hasPage = skill => Boolean(skill.featured || fullPages.has(`${skill.repo}/
 test('search covers every eligible skill exactly once with unchanged score, category and license', () => {
   assert.equal(index.length, data.skills.length);
   assert.equal(new Set(index.map((skill) => skill.href)).size, data.skills.length);
-  for (const skill of data.skills) {
-    const found = index.find((entry) => entry.repo === skill.repo && (entry.slug || entry.name) === skill.name && entry.href.endsWith(hasPage(skill) ? '/' + skill.slug + '/' : '#' + skill.slug));
+  for (const baseline of data.skills) {
+    const skill = updates.get(`${baseline.repo}/${baseline.slug}`)?.listing || baseline;
+    const found = index.find((entry) => entry.repo === baseline.repo && (entry.slug || entry.name) === baseline.name && entry.href.endsWith(hasPage(baseline) ? '/' + baseline.slug + '/' : '#' + baseline.slug));
     assert.ok(found, `missing ${skill.repo}/${skill.slug}`);
     assert.equal(found.name, skill.display_name || skill.name);
     for (const field of ['grade', 'score', 'category', 'license']) assert.equal(found[field], skill[field]);
-    assert.equal(found.full, hasPage(skill));
+    assert.equal(found.full, hasPage(baseline));
   }
 });
 
@@ -87,7 +91,7 @@ function directoryWithPendingIndex(fetch = () => new Promise(() => {})) {
 }
 
 test('directory search still finds stable machine slugs after public names change', async () => {
-  const item = { name: 'Suede AI Paid Ads Skills', slug: 'suede-ads', repo: 'JasonColapietro/suede-creator-skills',
+  const item = { name: 'Suede Paid Ads Skills', slug: 'suede-ads', repo: 'JasonColapietro/suede-creator-skills',
     description: 'Plan paid media campaigns', category: 'marketing-seo', label: 'Marketing',
     grade: 'A', score: 91, license: 'MIT', href: '/directory/jasoncolapietro/suede-creator-skills/#suede-ads' };
   const { controls, results } = directoryWithPendingIndex(async () => ({ ok: true, json: async () => [item] }));

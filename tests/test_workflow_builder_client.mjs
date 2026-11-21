@@ -157,7 +157,7 @@ test('a goal outside the authored workflows still gets graded skills, workflow c
   assert.equal(c.elements['[data-workflow-suggest-reading]'].hidden, false);
   assert.ok(links(c.elements['[data-workflow-suggest-reading]']).length >= 1);
   assert.match(c.status.textContent, /Pick a goal/);
-  assert.match(c.elements['[data-workflow-suggestions-summary]'].textContent, /Suede AI’s own skills first/);
+  assert.match(c.elements['[data-workflow-suggestions-summary]'].textContent, /Suede’s own skills first/);
   assert.match(links(c.elements['[data-workflow-skill-list]'])[0], /\/jasoncolapietro\/suede-creator-skills\//);
   c.brief.value = 'something else'; c.brief.dispatchEvent(new Event('input'));
   assert.equal(c.elements['[data-workflow-suggestions]'].hidden, true, 'editing clears stale suggestions');
@@ -172,7 +172,7 @@ test('a ready workflow adds extra matching skills that are not already steps or 
   assert.ok(more.length >= 1 && more.length <= 3);
   assert.ok(more.every(href => !steps.includes(href)));
   assert.match(c.elements['[data-workflow-export]'].value, /Recommended skills for this goal/);
-  assert.match(more[0], /\/jasoncolapietro\/suede-creator-skills\//, 'a matching Suede AI skill leads');
+  assert.match(more[0], /\/jasoncolapietro\/suede-creator-skills\//, 'a matching Suede skill leads');
   assert.match(c.elements['[data-workflow-export]'].value, /Read next: /);
 });
 
@@ -186,9 +186,9 @@ test('only first-party recommendations and steps display the supplied Suede S ma
     assert.equal(marks.length, firstParty ? 1 : 0);
     if (firstParty) {
       assert.equal(marks[0].src, '/assets/suede-ai-logo-transparent.png');
-      assert.equal(marks[0].alt, '', 'the adjacent Suede AI label names the decorative mark');
+      assert.equal(marks[0].alt, '', 'the adjacent Suede label names the decorative mark');
       assert.equal(marks[0].width, marks[0].height, 'the mark keeps its proportions');
-      assert.ok(walk(card).some(node => node.textContent === 'Suede AI pick'));
+      assert.ok(walk(card).some(node => node.textContent === 'Suede pick'));
     }
   }
   const plan = client(); await plan.build('Build a landing page');

@@ -11,6 +11,8 @@ const data = JSON.parse(bytes);
 const index = JSON.parse(read('docs/directory/search-index.json'));
 const digest = (text) => createHash('sha256').update(text).digest('hex');
 const datasetDigest = digest(bytes);
+const reviewUpdates = new Map(JSON.parse(read('directory/intake/first-party-listing-updates.json'))
+  .map(update => [`${update.repository}/${update.listing.name}`, update]));
 
 test('every listed skill exports a verifiable report tied to the saved evidence and existing badges', () => {
   for (const entry of index) {
@@ -33,9 +35,15 @@ test('every listed skill exports a verifiable report tied to the saved evidence 
     assert.equal(report.listing_url, 'https://skills.suedeai.ai' + entry.href);
     assert.equal(report.security_scan_status, 'not_scanned');
     const repo = data.repos[entry.repo];
-    assert.equal(report.source.revision, repo.commit_sha || null);
-    assert.equal(report.source.revision_status, repo.commit_sha ? 'recorded' : 'not_recorded_in_snapshot');
-    if (repo.commit_sha) assert.ok(report.source.skill_md_url.includes('/blob/' + repo.commit_sha + '/'));
+    const update = reviewUpdates.get(`${entry.repo}/${entry.slug}`);
+    const revision = update?.source_revision || repo.commit_sha || null;
+    assert.equal(report.source.revision, revision);
+    assert.equal(report.source.revision_status, revision ? 'recorded' : 'not_recorded_in_snapshot');
+    if (revision) assert.ok(report.source.skill_md_url.includes('/blob/' + revision + '/'));
+    if (update) {
+      assert.equal(report.source.listing_update_sha256, digest(JSON.stringify(update)));
+      assert.equal(report.source.previous_revision, repo.commit_sha);
+    }
     for (const badge of report.badges) {
       const svg = read('docs' + new URL(badge.src).pathname);
       if (badge.kind === 'score') assert.ok(svg.includes(entry.score + ' / 100'));

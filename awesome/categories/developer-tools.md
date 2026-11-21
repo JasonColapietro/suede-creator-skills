@@ -8,9 +8,9 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 **549 accepted skills · 67 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
-**Compare on the 0–99 quality scale:** this category’s verified scores span **54–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=developer-tools&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
+**Compare on the 0–99 quality scale:** this category’s verified scores span **54–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=developer-tools&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
-[Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede AI listing.
+[Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede listing.
 
 <details>
 <summary>Browse publishers in this category</summary>
@@ -89,7 +89,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## activeloopai/hivemind
 
-[Repository](https://github.com/activeloopai/hivemind) · Publisher: [activeloopai](https://github.com/activeloopai) · [Suede AI listing](https://skills.suedeai.ai/directory/activeloopai/hivemind/)
+[Repository](https://github.com/activeloopai/hivemind) · Publisher: [activeloopai](https://github.com/activeloopai) · [Suede listing](https://skills.suedeai.ai/directory/activeloopai/hivemind/)
 
 - **85/100 · B** · [hivemind-graph](https://github.com/activeloopai/hivemind/blob/main/harnesses/claude-code/skills/hivemind-graph/SKILL.md): Answers structural codebase questions, such as what calls a function or where something is defined, by querying a local code graph exposed as files. [Suede](https://skills.suedeai.ai/directory/activeloopai/hivemind/hivemind-graph/)
 
@@ -97,7 +97,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## agentrhq/authsome
 
-[Repository](https://github.com/agentrhq/authsome) · Publisher: [agentrhq](https://github.com/agentrhq) · [Suede AI listing](https://skills.suedeai.ai/directory/agentrhq/authsome/authsome/)
+[Repository](https://github.com/agentrhq/authsome) · Publisher: [agentrhq](https://github.com/agentrhq) · [Suede listing](https://skills.suedeai.ai/directory/agentrhq/authsome/authsome/)
 
 - **77/100 · C** · [authsome](https://github.com/agentrhq/authsome/blob/main/skills/authsome/SKILL.md): Lets an agent call external services such as Gmail, GitHub, and Stripe with plain HTTP requests while a gateway injects the credentials automatically. [Suede](https://skills.suedeai.ai/directory/agentrhq/authsome/authsome/)
 
@@ -105,7 +105,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## anthropics/claude-plugins-official
 
-[Repository](https://github.com/anthropics/claude-plugins-official) · Publisher: [anthropics](https://github.com/anthropics) · [Suede AI listing](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/)
+[Repository](https://github.com/anthropics/claude-plugins-official) · Publisher: [anthropics](https://github.com/anthropics) · [Suede listing](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/)
 
 - **84/100 · B** · [claude-md-improver](https://github.com/anthropics/claude-plugins-official/blob/main/plugins/claude-md-management/skills/claude-md-improver/SKILL.md): Audit and improve CLAUDE.md files in repositories. [Suede](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/#claude-md-improver)
 - **81/100 · B** · [receipts](https://github.com/anthropics/claude-plugins-official/blob/main/plugins/receipts/skills/receipts/SKILL.md): Generate a personal Claude Code usage &amp; impact report ("receipts") from this machine's local session transcripts — for justifying Claude Code usage/spend to a manager, self-review, or "what have I been using this for" check-ins. [Suede](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/#receipts)
@@ -117,7 +117,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## apify/agent-skills
 
-[Repository](https://github.com/apify/agent-skills) · Publisher: [apify](https://github.com/apify) · [Suede AI listing](https://skills.suedeai.ai/directory/apify/agent-skills/)
+[Repository](https://github.com/apify/agent-skills) · Publisher: [apify](https://github.com/apify) · [Suede listing](https://skills.suedeai.ai/directory/apify/agent-skills/)
 
 - **61/100 · D** · [apify-generate-output-schema](https://github.com/apify/agent-skills/blob/main/skills/apify-generate-output-schema/SKILL.md): Deprecated. [Suede](https://skills.suedeai.ai/directory/apify/agent-skills/#apify-generate-output-schema)
 
@@ -125,7 +125,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## apitube/news-api-skills
 
-[Repository](https://github.com/apitube/news-api-skills) · Publisher: [apitube](https://github.com/apitube) · [Suede AI listing](https://skills.suedeai.ai/directory/apitube/news-api-skills/apitube-news-api/)
+[Repository](https://github.com/apitube/news-api-skills) · Publisher: [apitube](https://github.com/apitube) · [Suede listing](https://skills.suedeai.ai/directory/apitube/news-api-skills/apitube-news-api/)
 
 - **77/100 · C** · [apitube-news-api](https://github.com/apitube/news-api-skills/blob/main/skills/apitube-news-api/SKILL.md): Queries the APITube News API to search and filter worldwide news by keyword, entity, sentiment, source, country, and date, and parse the JSON response. [Suede](https://skills.suedeai.ai/directory/apitube/news-api-skills/apitube-news-api/)
 
@@ -133,7 +133,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## apollographql/skills
 
-[Repository](https://github.com/apollographql/skills) · Publisher: [apollographql](https://github.com/apollographql) · [Suede AI listing](https://skills.suedeai.ai/directory/apollographql/skills/)
+[Repository](https://github.com/apollographql/skills) · Publisher: [apollographql](https://github.com/apollographql) · [Suede listing](https://skills.suedeai.ai/directory/apollographql/skills/)
 
 - **86/100 · B** · [apollo-ios](https://github.com/apollographql/skills/blob/main/skills/apollo-ios/SKILL.md): Guides building Apple-platform apps with Apollo iOS, covering project setup, code generation, ApolloClient configuration, GraphQL operations from SwiftUI, and tests with generated mocks. [Suede](https://skills.suedeai.ai/directory/apollographql/skills/apollo-ios/)
 - **85/100 · B** · [apollo-connectors](https://github.com/apollographql/skills/blob/main/skills/apollo-connectors/SKILL.md): Guides integrating REST APIs into GraphQL supergraphs using Apollo Connectors with @source and @connect directives; marked deprecated in favor of the graphos-factory skill. [Suede](https://skills.suedeai.ai/directory/apollographql/skills/apollo-connectors/)
@@ -153,7 +153,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## avelikiy/great\_cto
 
-[Repository](https://github.com/avelikiy/great_cto) · Publisher: [avelikiy](https://github.com/avelikiy) · [Suede AI listing](https://skills.suedeai.ai/directory/avelikiy/great-cto/)
+[Repository](https://github.com/avelikiy/great_cto) · Publisher: [avelikiy](https://github.com/avelikiy) · [Suede listing](https://skills.suedeai.ai/directory/avelikiy/great-cto/)
 
 - **74/100 · C** · [signing-preflight](https://github.com/avelikiy/great_cto/blob/main/skills/signing-preflight/SKILL.md): Before the first commit of a session, check that commit signing will work — the key is loaded and unlocked — and ask the operator to unlock it once, up front, instead of discovering it after a hundred unsigned commits. [Suede](https://skills.suedeai.ai/directory/avelikiy/great-cto/#signing-preflight)
 - **74/100 · C** · [stack-baseline](https://github.com/avelikiy/great_cto/blob/main/skills/stack-baseline/SKILL.md): The pinned default technology stack for SMB Product-Builder products. [Suede](https://skills.suedeai.ai/directory/avelikiy/great-cto/#stack-baseline)
@@ -162,7 +162,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## aws/agent-toolkit-for-aws
 
-[Repository](https://github.com/aws/agent-toolkit-for-aws) · Publisher: [aws](https://github.com/aws) · [Suede AI listing](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/)
+[Repository](https://github.com/aws/agent-toolkit-for-aws) · Publisher: [aws](https://github.com/aws) · [Suede listing](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/)
 
 - **80/100 · B** · [aws-sdk-python-usage](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/core-skills/aws-sdk-python-usage/SKILL.md): AWS SDK for Python (boto3/botocore) development patterns. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#aws-sdk-python-usage)
 - **77/100 · C** · [analyzing-release-readiness](https://github.com/aws/agent-toolkit-for-aws/blob/main/plugins/aws-agents-for-devsecops/skills/analyzing-release-readiness/SKILL.md): Trigger a pre-merge release readiness review on a GitHub PR, GitLab MR, or local branch. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#analyzing-release-readiness)
@@ -183,7 +183,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## bitwize-music-studio/claude-ai-music-skills
 
-[Repository](https://github.com/bitwize-music-studio/claude-ai-music-skills) · Publisher: [bitwize-music-studio](https://github.com/bitwize-music-studio) · [Suede AI listing](https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/)
+[Repository](https://github.com/bitwize-music-studio/claude-ai-music-skills) · Publisher: [bitwize-music-studio](https://github.com/bitwize-music-studio) · [Suede listing](https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/)
 
 - **82/100 · B** · [configure](https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/configure/SKILL.md): Sets up or edits the plugin configuration file interactively. [Suede](https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/#configure)
 - **80/100 · B** · [setup](https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/setup/SKILL.md): Detects your Python environment and guides you through installing plugin dependencies. [Suede](https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/#setup)
@@ -193,7 +193,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## bluzername/claude-code-terminal-title
 
-[Repository](https://github.com/bluzername/claude-code-terminal-title) · Publisher: [bluzername](https://github.com/bluzername) · [Suede AI listing](https://skills.suedeai.ai/directory/bluzername/claude-code-terminal-title/terminal-title/)
+[Repository](https://github.com/bluzername/claude-code-terminal-title) · Publisher: [bluzername](https://github.com/bluzername) · [Suede listing](https://skills.suedeai.ai/directory/bluzername/claude-code-terminal-title/terminal-title/)
 
 - **82/100 · B** · [terminal-title](https://github.com/bluzername/claude-code-terminal-title/blob/main/skill/terminal-title/SKILL.md): Updates the terminal window title to reflect the current high-level task, at session start and whenever the user switches to a new task. [Suede](https://skills.suedeai.ai/directory/bluzername/claude-code-terminal-title/terminal-title/)
 
@@ -201,7 +201,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## browser-use/browser-use
 
-[Repository](https://github.com/browser-use/browser-use) · Publisher: [browser-use](https://github.com/browser-use) · [Suede AI listing](https://skills.suedeai.ai/directory/browser-use/browser-use/)
+[Repository](https://github.com/browser-use/browser-use) · Publisher: [browser-use](https://github.com/browser-use) · [Suede listing](https://skills.suedeai.ai/directory/browser-use/browser-use/)
 
 - **84/100 · B** · [x402](https://github.com/browser-use/browser-use/blob/main/skills/x402/SKILL.md): Set up Browser Use Cloud payments with x402 — pay per request from a crypto wallet (USDC on Base mainnet), no signup or API key. [Suede](https://skills.suedeai.ai/directory/browser-use/browser-use/#x402)
 - **81/100 · B** · [cloud](https://github.com/browser-use/browser-use/blob/main/skills/cloud/SKILL.md): Documentation reference for using Browser Use Cloud — the hosted API and SDK for browser automation. [Suede](https://skills.suedeai.ai/directory/browser-use/browser-use/#cloud)
@@ -212,7 +212,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## browserbase/skills
 
-[Repository](https://github.com/browserbase/skills) · Publisher: [browserbase](https://github.com/browserbase) · [Suede AI listing](https://skills.suedeai.ai/directory/browserbase/skills/)
+[Repository](https://github.com/browserbase/skills) · Publisher: [browserbase](https://github.com/browserbase) · [Suede listing](https://skills.suedeai.ai/directory/browserbase/skills/)
 
 - **84/100 · B** · [browser-use-to-stagehand](https://github.com/browserbase/skills/blob/main/skills/browser-use-to-stagehand/SKILL.md): Migrates browser-use Python automation scripts to Stagehand v3 TypeScript on Browserbase, mapping browser-use features and APIs to Stagehand primitives. [Suede](https://skills.suedeai.ai/directory/browserbase/skills/browser-use-to-stagehand/)
 - **80/100 · B** · [browser-to-api](https://github.com/browserbase/skills/blob/main/skills/browser-to-api/SKILL.md): Turns a website's observable HTTP traffic into a best-effort OpenAPI 3.1 spec by analyzing a browser-trace capture, to discover endpoints from a browser session. [Suede](https://skills.suedeai.ai/directory/browserbase/skills/browser-to-api/)
@@ -224,7 +224,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## BuildShipGrowRepeat/nextjs-sanity-blog-skill
 
-[Repository](https://github.com/BuildShipGrowRepeat/nextjs-sanity-blog-skill) · Publisher: [BuildShipGrowRepeat](https://github.com/BuildShipGrowRepeat) · [Suede AI listing](https://skills.suedeai.ai/directory/buildshipgrowrepeat/nextjs-sanity-blog-skill/building-blog/)
+[Repository](https://github.com/BuildShipGrowRepeat/nextjs-sanity-blog-skill) · Publisher: [BuildShipGrowRepeat](https://github.com/BuildShipGrowRepeat) · [Suede listing](https://skills.suedeai.ai/directory/buildshipgrowrepeat/nextjs-sanity-blog-skill/building-blog/)
 
 - **77/100 · C** · [building-blog](https://github.com/BuildShipGrowRepeat/nextjs-sanity-blog-skill/blob/main/skills/building-blog/SKILL.md): Guides adding an SEO-optimized blog to a Next.js and Sanity site, including building the blog section from scratch and integrating Sanity CMS. [Suede](https://skills.suedeai.ai/directory/buildshipgrowrepeat/nextjs-sanity-blog-skill/building-blog/)
 
@@ -232,7 +232,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## eduardo-sl/go-agent-skills
 
-[Repository](https://github.com/eduardo-sl/go-agent-skills) · Publisher: [eduardo-sl](https://github.com/eduardo-sl) · [Suede AI listing](https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/)
+[Repository](https://github.com/eduardo-sl/go-agent-skills) · Publisher: [eduardo-sl](https://github.com/eduardo-sl) · [Suede listing](https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/)
 
 - **95/100 · A** · [go-api-design](https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(architecture)/go-api-design/SKILL.md): HTTP/REST API design for Go services: handlers, ServeMux routing, middleware, request validation, pagination, idempotency, health checks, error responses, and graceful shutdown. [Suede](https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/#go-api-design)
 - **95/100 · A** · [go-cli](https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(architecture)/go-cli/SKILL.md): Build command-line tools in Go: flag handling, subcommands, stdin/stdout discipline, exit codes, signal handling, and when Cobra/Viper earn their weight over the standard library. [Suede](https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/#go-cli)
@@ -258,7 +258,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## EmblemCompany/Agent-skills
 
-[Repository](https://github.com/EmblemCompany/Agent-skills) · Publisher: [EmblemCompany](https://github.com/EmblemCompany) · [Suede AI listing](https://skills.suedeai.ai/directory/emblemcompany/agent-skills/)
+[Repository](https://github.com/EmblemCompany/Agent-skills) · Publisher: [EmblemCompany](https://github.com/EmblemCompany) · [Suede listing](https://skills.suedeai.ai/directory/emblemcompany/agent-skills/)
 
 - **81/100 · B** · [emblem-ai](https://github.com/EmblemCompany/Agent-skills/blob/main/skills/emblem-ai/SKILL.md): Adds user management with multi-chain wallet authentication, AI assistant chat surfaces, and observability to apps, using React components, TypeScript SDKs, and session-based authentication. [Suede](https://skills.suedeai.ai/directory/emblemcompany/agent-skills/emblem-ai/)
 - **78/100 · C** · [emblem-ai-react](https://github.com/EmblemCompany/Agent-skills/blob/main/skills/emblem-ai-react/SKILL.md): Adds website authentication and wallet-enabled users to a React app using EmblemAuthProvider, ConnectButton, social, email, and wallet login, chat components, and React auth hooks. [Suede](https://skills.suedeai.ai/directory/emblemcompany/agent-skills/emblem-ai-react/)
@@ -267,7 +267,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## expo/skills
 
-[Repository](https://github.com/expo/skills) · Publisher: [expo](https://github.com/expo) · [Suede AI listing](https://skills.suedeai.ai/directory/expo/skills/)
+[Repository](https://github.com/expo/skills) · Publisher: [expo](https://github.com/expo) · [Suede listing](https://skills.suedeai.ai/directory/expo/skills/)
 
 - **87/100 · B** · [expo-migrate-module](https://github.com/expo/skills/blob/main/plugins/expo-experiments/skills/expo-migrate-module/SKILL.md): Migrates a Swift Expo native module from the Expo Modules API 1.0 DSL to the 2.0 macro API, preserving its JavaScript and TypeScript contract. [Suede](https://skills.suedeai.ai/directory/expo/skills/expo-migrate-module/)
 - **87/100 · B** · [expo-module](https://github.com/expo/skills/blob/main/plugins/expo/skills/expo-module/SKILL.md): Guides creating Expo native modules and views in Swift, Kotlin, and TypeScript, covering the module definition DSL, shared objects, config plugins, and autolinking. [Suede](https://skills.suedeai.ai/directory/expo/skills/expo-module/)
@@ -289,7 +289,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## fal-ai-community/skills
 
-[Repository](https://github.com/fal-ai-community/skills) · Publisher: [fal-ai-community](https://github.com/fal-ai-community) · [Suede AI listing](https://skills.suedeai.ai/directory/fal-ai-community/skills/)
+[Repository](https://github.com/fal-ai-community/skills) · Publisher: [fal-ai-community](https://github.com/fal-ai-community) · [Suede listing](https://skills.suedeai.ai/directory/fal-ai-community/skills/)
 
 - **78/100 · C** · [genmedia](https://github.com/fal-ai-community/skills/blob/main/skills/genmedia/SKILL.md): Use the genmedia CLI to search, inspect, run, and manage 1200+ fal.ai model endpoints. [Suede](https://skills.suedeai.ai/directory/fal-ai-community/skills/#genmedia)
 
@@ -297,7 +297,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## firebase/skills
 
-[Repository](https://github.com/firebase/skills) · Publisher: [firebase](https://github.com/firebase) · [Suede AI listing](https://skills.suedeai.ai/directory/firebase/skills/)
+[Repository](https://github.com/firebase/skills) · Publisher: [firebase](https://github.com/firebase) · [Suede listing](https://skills.suedeai.ai/directory/firebase/skills/)
 
 - **86/100 · B** · [firebase-remote-config-basics](https://github.com/firebase/skills/blob/main/skills/firebase-remote-config-basics/SKILL.md): Manages Firebase Remote Config templates, feature flags, loading strategies, version history, in-app defaults, real-time listeners, and SDK setup for Android and iOS. [Suede](https://skills.suedeai.ai/directory/firebase/skills/firebase-remote-config-basics/)
 - **82/100 · B** · [firebase-auth-basics](https://github.com/firebase/skills/blob/main/skills/firebase-auth-basics/SKILL.md): Guides setting up and using Firebase Authentication for apps that need user sign-in, user management, or secure data access through auth rules. [Suede](https://skills.suedeai.ai/directory/firebase/skills/firebase-auth-basics/)
@@ -308,7 +308,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## firecrawl/skills
 
-[Repository](https://github.com/firecrawl/skills) · Publisher: [firecrawl](https://github.com/firecrawl) · [Suede AI listing](https://skills.suedeai.ai/directory/firecrawl/skills/)
+[Repository](https://github.com/firecrawl/skills) · Publisher: [firecrawl](https://github.com/firecrawl) · [Suede listing](https://skills.suedeai.ai/directory/firecrawl/skills/)
 
 - **82/100 · B** · [firecrawl-developer-index](https://github.com/firecrawl/skills/blob/main/skills/core/firecrawl-developer-index/SKILL.md): Searches current documentation, release notes, API references and public repository issues for libraries, frameworks, SDKs, APIs and CLI tools with \`firecrawl developer\`. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/#firecrawl-developer-index)
 - **76/100 · C** · [firecrawl-interact](https://github.com/firecrawl/skills/blob/main/skills/core/firecrawl-interact/SKILL.md): Drive a live browser on a scraped page: click, fill forms, log in, paginate, infinite-scroll. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/#firecrawl-interact)
@@ -318,7 +318,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## flutter/skills
 
-[Repository](https://github.com/flutter/skills) · Publisher: [flutter](https://github.com/flutter) · [Suede AI listing](https://skills.suedeai.ai/directory/flutter/skills/)
+[Repository](https://github.com/flutter/skills) · Publisher: [flutter](https://github.com/flutter) · [Suede listing](https://skills.suedeai.ai/directory/flutter/skills/)
 
 - **84/100 · B** · [dart-build-cli-app](https://github.com/flutter/skills/blob/main/skills/dart-build-cli-app/SKILL.md): Guides building Dart command-line applications, covering architecture patterns, entrypoint structure, exit codes, stream routing, subprocess spawning, and argument parsing with package:args. [Suede](https://skills.suedeai.ai/directory/flutter/skills/dart-build-cli-app/)
 - **84/100 · B** · [dart-use-path-package](https://github.com/flutter/skills/blob/main/skills/dart-use-path-package/SKILL.md): Handles cross-platform file and directory path manipulation in Dart with package:path and package:file, including joining, splitting, extension extraction, and replacing raw string path operations. [Suede](https://skills.suedeai.ai/directory/flutter/skills/dart-use-path-package/)
@@ -337,7 +337,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## garrytan/gstack
 
-[Repository](https://github.com/garrytan/gstack) · Publisher: [garrytan](https://github.com/garrytan) · [Suede AI listing](https://skills.suedeai.ai/directory/garrytan/gstack/)
+[Repository](https://github.com/garrytan/gstack) · Publisher: [garrytan](https://github.com/garrytan) · [Suede listing](https://skills.suedeai.ai/directory/garrytan/gstack/)
 
 - **74/100 · C** · [gstack](https://github.com/garrytan/gstack/blob/main/capy/skill/gstack/SKILL.md): Install and use gstack in Capy and Claude Code. [Suede](https://skills.suedeai.ai/directory/garrytan/gstack/#gstack)
 - **70/100 · C** · [careful](https://github.com/garrytan/gstack/blob/main/careful/SKILL.md): Safety guardrails for destructive commands. (gstack) [Suede](https://skills.suedeai.ai/directory/garrytan/gstack/#careful)
@@ -353,7 +353,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## geekflare/geekflare-skills
 
-[Repository](https://github.com/geekflare/geekflare-skills) · Publisher: [geekflare](https://github.com/geekflare) · [Suede AI listing](https://skills.suedeai.ai/directory/geekflare/geekflare-skills/geekflare/)
+[Repository](https://github.com/geekflare/geekflare-skills) · Publisher: [geekflare](https://github.com/geekflare) · [Suede listing](https://skills.suedeai.ai/directory/geekflare/geekflare-skills/geekflare/)
 
 - **80/100 · B** · [geekflare](https://github.com/geekflare/geekflare-skills/blob/main/skills/geekflare/SKILL.md): Search the live web, extract public page data, capture screenshots and PDFs, and check website health through Geekflare MCP or its REST API. [Suede](https://skills.suedeai.ai/directory/geekflare/geekflare-skills/geekflare/)
 
@@ -361,7 +361,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## getsentry/skills
 
-[Repository](https://github.com/getsentry/skills) · Publisher: [getsentry](https://github.com/getsentry) · [Suede AI listing](https://skills.suedeai.ai/directory/getsentry/skills/)
+[Repository](https://github.com/getsentry/skills) · Publisher: [getsentry](https://github.com/getsentry) · [Suede listing](https://skills.suedeai.ai/directory/getsentry/skills/)
 
 - **86/100 · B** · [triage-frontend-issues](https://github.com/getsentry/skills/blob/main/skills/triage-frontend-issues/SKILL.md): Triages new issues in the Sentry javascript project by archiving non-actionable noise, always archiving with untilEscalating and never resolving. [Suede](https://skills.suedeai.ai/directory/getsentry/skills/triage-frontend-issues/)
 - **79/100 · C** · [document-api-endpoint](https://github.com/getsentry/skills/blob/main/skills/document-api-endpoint/SKILL.md): Document and type a Sentry API endpoint. [Suede](https://skills.suedeai.ai/directory/getsentry/skills/#document-api-endpoint)
@@ -375,7 +375,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## github/awesome-copilot
 
-[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede AI listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
+[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
 
 - **86/100 · B** · [python-mcp-server-generator](https://github.com/github/awesome-copilot/blob/main/skills/python-mcp-server-generator/SKILL.md): Use this skill when the user wants to create a new Model Context Protocol (MCP) server in Python. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#python-mcp-server-generator)
 - **84/100 · B** · [system-commandline-cli](https://github.com/github/awesome-copilot/blob/main/skills/system-commandline-cli/SKILL.md): Use this skill when adding, modifying, or reviewing CLI commands in a .NET project built with System.CommandLine. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#system-commandline-cli)
@@ -485,7 +485,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## google-labs-code/stitch-skills
 
-[Repository](https://github.com/google-labs-code/stitch-skills) · Publisher: [google-labs-code](https://github.com/google-labs-code) · [Suede AI listing](https://skills.suedeai.ai/directory/google-labs-code/stitch-skills/)
+[Repository](https://github.com/google-labs-code/stitch-skills) · Publisher: [google-labs-code](https://github.com/google-labs-code) · [Suede listing](https://skills.suedeai.ai/directory/google-labs-code/stitch-skills/)
 
 - **64/100 · D** · [site-md](https://github.com/google-labs-code/stitch-skills/blob/main/plugins/stitch-utilities/skills/site-md/SKILL.md): Analyze a project description or site requirements and synthesize a project constitution into SITE.md for the Stitch Build Loop [Suede](https://skills.suedeai.ai/directory/google-labs-code/stitch-skills/#site-md)
 
@@ -493,7 +493,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## google/skills
 
-[Repository](https://github.com/google/skills) · Publisher: [google](https://github.com/google) · [Suede AI listing](https://skills.suedeai.ai/directory/google/skills/)
+[Repository](https://github.com/google/skills) · Publisher: [google](https://github.com/google) · [Suede listing](https://skills.suedeai.ai/directory/google/skills/)
 
 - **89/100 · B** · [developer-device-platform-basics](https://github.com/google/skills/blob/main/skills/cloud/developer-device-platform-basics/SKILL.md): Provides guidance and instructions on managing remote devices on Developer Device Platform (DDP). [Suede](https://skills.suedeai.ai/directory/google/skills/#developer-device-platform-basics)
 - **87/100 · B** · [firebase-basics](https://github.com/google/skills/blob/main/skills/cloud/firebase-basics/SKILL.md): Provides foundational Firebase CLI setup, CLI installation, version checks (\`firebase-tools@latest --version\`), CLI login (including --no-localhost), project creation, project selection (\`firebase use\`), and app config file downloads… [Suede](https://skills.suedeai.ai/directory/google/skills/#firebase-basics)
@@ -515,7 +515,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## googleworkspace/cli
 
-[Repository](https://github.com/googleworkspace/cli) · Publisher: [googleworkspace](https://github.com/googleworkspace) · [Suede AI listing](https://skills.suedeai.ai/directory/googleworkspace/cli/)
+[Repository](https://github.com/googleworkspace/cli) · Publisher: [googleworkspace](https://github.com/googleworkspace) · [Suede listing](https://skills.suedeai.ai/directory/googleworkspace/cli/)
 
 - **57/100 · D** · [gws-shared](https://github.com/googleworkspace/cli/blob/main/skills/gws-shared/SKILL.md): gws CLI: Shared patterns for authentication, global flags, and output formatting. [Suede](https://skills.suedeai.ai/directory/googleworkspace/cli/#gws-shared)
 - **54/100 · D** · [gws-script-push](https://github.com/googleworkspace/cli/blob/main/skills/gws-script-push/SKILL.md): Google Apps Script: Upload local files to an Apps Script project. [Suede](https://skills.suedeai.ai/directory/googleworkspace/cli/#gws-script-push)
@@ -524,7 +524,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## gooseworks-ai/goose-skills
 
-[Repository](https://github.com/gooseworks-ai/goose-skills) · Publisher: [gooseworks-ai](https://github.com/gooseworks-ai) · [Suede AI listing](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/)
+[Repository](https://github.com/gooseworks-ai/goose-skills) · Publisher: [gooseworks-ai](https://github.com/gooseworks-ai) · [Suede listing](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/)
 
 - **81/100 · B** · [terminal-gif-recordings](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/design/capabilities/terminal-gif-recordings/SKILL.md): Create polished terminal GIF recordings using VHS (Video Hardware Software) by Charmbracelet. [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#terminal-gif-recordings)
 - **76/100 · C** · [website-screenshot-notte](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/research-tools/capabilities/website-screenshot-notte/SKILL.md): Take screenshots of any website using Notte browser automation. [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#website-screenshot-notte)
@@ -534,7 +534,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## hashicorp/agent-skills
 
-[Repository](https://github.com/hashicorp/agent-skills) · Publisher: [hashicorp](https://github.com/hashicorp) · [Suede AI listing](https://skills.suedeai.ai/directory/hashicorp/agent-skills/)
+[Repository](https://github.com/hashicorp/agent-skills) · Publisher: [hashicorp](https://github.com/hashicorp) · [Suede listing](https://skills.suedeai.ai/directory/hashicorp/agent-skills/)
 
 - **84/100 · B** · [provider-configuration](https://github.com/hashicorp/agent-skills/blob/main/plugins/terraform/skills/provider-configuration/SKILL.md): Implements Terraform provider configuration and authentication with the Plugin Framework, including credential schema, environment variable fallbacks, credential chains, secret redaction, and validation. [Suede](https://skills.suedeai.ai/directory/hashicorp/agent-skills/provider-configuration/)
 - **81/100 · B** · [provider-framework-migration](https://github.com/hashicorp/agent-skills/blob/main/plugins/terraform/skills/provider-framework-migration/SKILL.md): Migrates Terraform provider resources and data sources from Plugin SDKv2 to the Plugin Framework, including muxing, schema mapping, and state-compatibility checks. [Suede](https://skills.suedeai.ai/directory/hashicorp/agent-skills/provider-framework-migration/)
@@ -547,7 +547,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## heygen-com/hyperframes
 
-[Repository](https://github.com/heygen-com/hyperframes) · Publisher: [heygen-com](https://github.com/heygen-com) · [Suede AI listing](https://skills.suedeai.ai/directory/heygen-com/hyperframes/)
+[Repository](https://github.com/heygen-com/hyperframes) · Publisher: [heygen-com](https://github.com/heygen-com) · [Suede listing](https://skills.suedeai.ai/directory/heygen-com/hyperframes/)
 
 - **77/100 · C** · [hyperframes-cli](https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-cli/SKILL.md): Use the HyperFrames CLI development loop: init, add, catalog, capture, lint, check, snapshot, compare, grade-compare, preview, play, present, beats, keyframes, single or batch render, publish, cloud, cloudrun, feedback, lambda, doctor,… [Suede](https://skills.suedeai.ai/directory/heygen-com/hyperframes/#hyperframes-cli)
 
@@ -555,7 +555,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## huggingface/skills
 
-[Repository](https://github.com/huggingface/skills) · Publisher: [huggingface](https://github.com/huggingface) · [Suede AI listing](https://skills.suedeai.ai/directory/huggingface/skills/)
+[Repository](https://github.com/huggingface/skills) · Publisher: [huggingface](https://github.com/huggingface) · [Suede listing](https://skills.suedeai.ai/directory/huggingface/skills/)
 
 - **83/100 · B** · [huggingface-tool-builder](https://github.com/huggingface/skills/blob/main/skills/huggingface-tool-builder/SKILL.md): Builds reusable scripts that fetch, enrich, or process data from the Hugging Face API, especially when chaining API calls or automating repeated tasks. [Suede](https://skills.suedeai.ai/directory/huggingface/skills/huggingface-tool-builder/)
 
@@ -563,7 +563,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## infrasity-labs/dev-gtm-claude-skills
 
-[Repository](https://github.com/infrasity-labs/dev-gtm-claude-skills) · Publisher: [infrasity-labs](https://github.com/infrasity-labs) · [Suede AI listing](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/)
+[Repository](https://github.com/infrasity-labs/dev-gtm-claude-skills) · Publisher: [infrasity-labs](https://github.com/infrasity-labs) · [Suede listing](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/)
 
 - **82/100 · B** · [senior-architect](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/coding-skills/senior-architect/SKILL.md): This skill should be used when the user asks to "design system architecture", "evaluate microservices vs monolith", "create architecture diagrams", "analyze dependencies", "choose a database", "plan for scalability", "make technical… [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#senior-architect)
 - **71/100 · C** · [karpathy-guidelines](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/coding-skills/karpathy-guidelines/SKILL.md): Behavioral guidelines to reduce common LLM coding mistakes. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#karpathy-guidelines)
@@ -572,7 +572,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## inhotel-io/govisit-toolkit
 
-[Repository](https://github.com/inhotel-io/govisit-toolkit) · Publisher: [GoVisit.ai / inHotel Sàrl](https://github.com/inhotel-io) · [Suede AI listing](https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/)
+[Repository](https://github.com/inhotel-io/govisit-toolkit) · Publisher: [GoVisit.ai / inHotel Sàrl](https://github.com/inhotel-io) · [Suede listing](https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/)
 
 - **80/100 · B** · [govisit-get-documentation-page](https://github.com/inhotel-io/govisit-toolkit/blob/main/skills/govisit-get-documentation-page/SKILL.md): Read bounded structured content from the selected published article. [Suede](https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/#govisit-get-documentation-page) GoVisit.ai by inHotel Sàrl (inhotel-io). MIT skill files; hosted API access and returned data have separate GoVisit terms. [Service and data terms](https://govisit.ai/en/docs/general/data-use-license).
 - **80/100 · B** · [govisit-search-documentation](https://github.com/inhotel-io/govisit-toolkit/blob/main/skills/govisit-search-documentation/SKILL.md): Search links rendered on a documentation index; no corpus-wide full-text search. [Suede](https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-search-documentation/) GoVisit.ai by inHotel Sàrl (inhotel-io). MIT skill files; hosted API access and returned data have separate GoVisit terms. [Service and data terms](https://govisit.ai/en/docs/general/data-use-license).
@@ -581,18 +581,18 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## JasonColapietro/suede-creator-skills
 
-[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede AI listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
+[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
 
-- **93/100 · A** · [Suede AI Google Play Release Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-play-release/SKILL.md): Suede AI Google Play Release Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-play-release)
-- **91/100 · A** · [Suede AI Android App Factory Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/android-app-factory/SKILL.md): Suede AI Android App Factory Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#android-app-factory)
-- **91/100 · A** · [Suede AI Site to iOS App Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/site-to-ios-app/SKILL.md): Suede AI Site to iOS App Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#site-to-ios-app)
-- **91/100 · A** · [Suede AI Parity Contract Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-parity-contract/SKILL.md): Suede AI Parity Contract Skills. cross-surface parity contracts generated from live reference constants and asserted through follower behavior. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-parity-contract)
+- **93/100 · A** · [Suede Google Play Release Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-play-release/SKILL.md): Suede Google Play Release Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-play-release)
+- **91/100 · A** · [Suede Android App Factory Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/android-app-factory/SKILL.md): Suede Android App Factory Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#android-app-factory)
+- **91/100 · A** · [Suede Site to iOS App Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/site-to-ios-app/SKILL.md): Suede Site to iOS App Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#site-to-ios-app)
+- **91/100 · A** · [Suede Parity Contract Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-parity-contract/SKILL.md): Suede Parity Contract Skills. cross-surface parity contracts generated from live reference constants and asserted through follower behavior. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-parity-contract)
 
 <a id="jeffallan--claude-skills"></a>
 
 ## jeffallan/claude-skills
 
-[Repository](https://github.com/jeffallan/claude-skills) · Publisher: [jeffallan](https://github.com/jeffallan) · [Suede AI listing](https://skills.suedeai.ai/directory/jeffallan/claude-skills/)
+[Repository](https://github.com/jeffallan/claude-skills) · Publisher: [jeffallan](https://github.com/jeffallan) · [Suede listing](https://skills.suedeai.ai/directory/jeffallan/claude-skills/)
 
 - **84/100 · B** · [api-designer](https://github.com/jeffallan/claude-skills/blob/main/skills/api-designer/SKILL.md): Use when designing REST or GraphQL APIs, creating OpenAPI specifications, or planning API architecture. [Suede](https://skills.suedeai.ai/directory/jeffallan/claude-skills/#api-designer)
 - **84/100 · B** · [cli-developer](https://github.com/jeffallan/claude-skills/blob/main/skills/cli-developer/SKILL.md): Use when building CLI tools, implementing argument parsing, or adding interactive prompts. [Suede](https://skills.suedeai.ai/directory/jeffallan/claude-skills/#cli-developer)
@@ -633,7 +633,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## K-Dense-AI/claude-scientific-skills
 
-[Repository](https://github.com/K-Dense-AI/claude-scientific-skills) · Publisher: [K-Dense-AI](https://github.com/K-Dense-AI) · [Suede AI listing](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/)
+[Repository](https://github.com/K-Dense-AI/claude-scientific-skills) · Publisher: [K-Dense-AI](https://github.com/K-Dense-AI) · [Suede listing](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/)
 
 - **89/100 · B** · [matlab](https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/skills/matlab/SKILL.md): Builds, reviews, migrates, and plans MATLAB or GNU Octave numerical workflows. [Suede](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/#matlab)
 - **87/100 · B** · [get-available-resources](https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/skills/get-available-resources/SKILL.md): Detects host inventory and effective CPU, memory, disk, scheduler, container, and accelerator limits when a user asks for resource-aware planning or before a clearly resource-sensitive local workload. [Suede](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/#get-available-resources)
@@ -643,7 +643,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## LambdaTest/agent-skills
 
-[Repository](https://github.com/LambdaTest/agent-skills) · Publisher: [LambdaTest](https://github.com/LambdaTest) · [Suede AI listing](https://skills.suedeai.ai/directory/lambdatest/agent-skills/)
+[Repository](https://github.com/LambdaTest/agent-skills) · Publisher: [LambdaTest](https://github.com/LambdaTest) · [Suede listing](https://skills.suedeai.ai/directory/lambdatest/agent-skills/)
 
 - **82/100 · B** · [openapi-spec-generator](https://github.com/LambdaTest/agent-skills/blob/main/api-skill/openapi-spec-generator/SKILL.md): Generates OpenAPI 3.x and Swagger 2.0 specifications from natural language descriptions, code, or partial specs, as lintable YAML or JSON with schemas and examples. [Suede](https://skills.suedeai.ai/directory/lambdatest/agent-skills/openapi-spec-generator/)
 - **81/100 · B** · [api-analyzer](https://github.com/LambdaTest/agent-skills/blob/main/api-skill/api-analyzer/SKILL.md): Validates whether an API request is correct based on provided inputs (method, URL, headers, body, auth, query params). [Suede](https://skills.suedeai.ai/directory/lambdatest/agent-skills/#api-analyzer)
@@ -663,7 +663,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## langchain-ai/langchain-skills
 
-[Repository](https://github.com/langchain-ai/langchain-skills) · Publisher: [langchain-ai](https://github.com/langchain-ai) · [Suede AI listing](https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/)
+[Repository](https://github.com/langchain-ai/langchain-skills) · Publisher: [langchain-ai](https://github.com/langchain-ai) · [Suede listing](https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/)
 
 - **77/100 · C** · [langchain-dependencies](https://github.com/langchain-ai/langchain-skills/blob/main/config/skills/langchain-dependencies/SKILL.md): INVOKE THIS SKILL when setting up a new project or when asked about package versions, installation, or dependency management for LangChain, LangGraph, LangSmith, or Deep Agents. [Suede](https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/#langchain-dependencies)
 - **77/100 · C** · [langchain-middleware](https://github.com/langchain-ai/langchain-skills/blob/main/config/skills/langchain-middleware/SKILL.md): INVOKE THIS SKILL when you need human-in-the-loop approval, custom middleware, or structured output. [Suede](https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/#langchain-middleware)
@@ -673,7 +673,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## mailtrap/mailtrap-skills
 
-[Repository](https://github.com/mailtrap/mailtrap-skills) · Publisher: [mailtrap](https://github.com/mailtrap) · [Suede AI listing](https://skills.suedeai.ai/directory/mailtrap/mailtrap-skills/)
+[Repository](https://github.com/mailtrap/mailtrap-skills) · Publisher: [mailtrap](https://github.com/mailtrap) · [Suede listing](https://skills.suedeai.ai/directory/mailtrap/mailtrap-skills/)
 
 - **85/100 · B** · [converting-email-templates](https://github.com/mailtrap/mailtrap-skills/blob/main/skills/converting-email-templates/SKILL.md): Converts email templates from providers such as SendGrid, Mailgun, Postmark, and Amazon SES into Mailtrap-compatible Handlebars syntax, singly or in bulk. [Suede](https://skills.suedeai.ai/directory/mailtrap/mailtrap-skills/converting-email-templates/)
 - **80/100 · B** · [authorizing-api-requests](https://github.com/mailtrap/mailtrap-skills/blob/main/skills/authorizing-api-requests/SKILL.md): Guides authenticating and authorizing requests to Mailtrap APIs, including picking the auth header, choosing token scope, storing tokens safely, and resolving the account ID. [Suede](https://skills.suedeai.ai/directory/mailtrap/mailtrap-skills/authorizing-api-requests/)
@@ -685,7 +685,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## makenotion/notion-cookbook
 
-[Repository](https://github.com/makenotion/notion-cookbook) · Publisher: [makenotion](https://github.com/makenotion) · [Suede AI listing](https://skills.suedeai.ai/directory/makenotion/notion-cookbook/)
+[Repository](https://github.com/makenotion/notion-cookbook) · Publisher: [makenotion](https://github.com/makenotion) · [Suede listing](https://skills.suedeai.ai/directory/makenotion/notion-cookbook/)
 
 - **82/100 · B** · [auth-guide](https://github.com/makenotion/notion-cookbook/blob/main/workers/agents/skills/auth-guide/SKILL.md): Guides setting up third-party authentication for a Notion Worker, covering brokered credentials for API keys and tokens, OAuth, and plaintext environment secrets. [Suede](https://skills.suedeai.ai/directory/makenotion/notion-cookbook/auth-guide/)
 - **72/100 · C** · [sync-validate](https://github.com/makenotion/notion-cookbook/blob/main/workers/agents/skills/sync-validate/SKILL.md): Review a sync capability for common bugs — cursor advancement, pagination termination, state persistence, bi-modal correctness, consistency buffers, and deletion handling [Suede](https://skills.suedeai.ai/directory/makenotion/notion-cookbook/#sync-validate)
@@ -703,7 +703,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## makenotion/skills
 
-[Repository](https://github.com/makenotion/skills) · Publisher: [makenotion](https://github.com/makenotion) · [Suede AI listing](https://skills.suedeai.ai/directory/makenotion/skills/)
+[Repository](https://github.com/makenotion/skills) · Publisher: [makenotion](https://github.com/makenotion) · [Suede listing](https://skills.suedeai.ai/directory/makenotion/skills/)
 
 - **78/100 · C** · [notion-cli](https://github.com/makenotion/skills/blob/main/skills/notion-cli/SKILL.md): Uses the Notion CLI (ntn) to call the Notion API, manage workers, upload files, create pages, and query databases. [Suede](https://skills.suedeai.ai/directory/makenotion/skills/notion-cli/)
 - **70/100 · C** · [notion-apps](https://github.com/makenotion/skills/blob/main/skills/notion-apps/SKILL.md): Sets up and scaffolds Notion Apps using the Notion Apps SDK and the ntn CLI when starting a new Notion App project. [Suede](https://skills.suedeai.ai/directory/makenotion/skills/notion-apps/)
@@ -712,7 +712,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## mattpocock/skills
 
-[Repository](https://github.com/mattpocock/skills) · Publisher: [mattpocock](https://github.com/mattpocock) · [Suede AI listing](https://skills.suedeai.ai/directory/mattpocock/skills/)
+[Repository](https://github.com/mattpocock/skills) · Publisher: [mattpocock](https://github.com/mattpocock) · [Suede listing](https://skills.suedeai.ai/directory/mattpocock/skills/)
 
 - **77/100 · C** · [git-guardrails-claude-code](https://github.com/mattpocock/skills/blob/main/skills/misc/git-guardrails-claude-code/SKILL.md): Set up Claude Code hooks to block dangerous git commands (push, reset --hard, clean, branch -D, etc.) before they execute. [Suede](https://skills.suedeai.ai/directory/mattpocock/skills/#git-guardrails-claude-code)
 - **70/100 · C** · [to-tickets](https://github.com/mattpocock/skills/blob/main/skills/engineering/to-tickets/SKILL.md): Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published to the configured tracker (edges as text in one file per ticket locally, or native blocking links on a… [Suede](https://skills.suedeai.ai/directory/mattpocock/skills/#to-tickets)
@@ -729,7 +729,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## mblode/agent-skills
 
-[Repository](https://github.com/mblode/agent-skills) · Publisher: [mblode](https://github.com/mblode) · [Suede AI listing](https://skills.suedeai.ai/directory/mblode/agent-skills/)
+[Repository](https://github.com/mblode/agent-skills) · Publisher: [mblode](https://github.com/mblode) · [Suede listing](https://skills.suedeai.ai/directory/mblode/agent-skills/)
 
 - **89/100 · B** · [pr-creator](https://github.com/mblode/agent-skills/blob/main/skills/pr-creator/SKILL.md): Creates or updates GitHub PRs with house-style titles and bodies, issue linking, repository templates, and draft state. [Suede](https://skills.suedeai.ai/directory/mblode/agent-skills/#pr-creator)
 - **89/100 · B** · [scaffold-cli](https://github.com/mblode/agent-skills/blob/main/skills/scaffold-cli/SKILL.md): Scaffolds a TypeScript CLI and npm package with the house toolchain, dual tsdown outputs, CLI contracts, changesets, and publishing templates. [Suede](https://skills.suedeai.ai/directory/mblode/agent-skills/#scaffold-cli)
@@ -739,7 +739,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## mcollina/skills
 
-[Repository](https://github.com/mcollina/skills) · Publisher: [mcollina](https://github.com/mcollina) · [Suede AI listing](https://skills.suedeai.ai/directory/mcollina/skills/)
+[Repository](https://github.com/mcollina/skills) · Publisher: [mcollina](https://github.com/mcollina) · [Suede listing](https://skills.suedeai.ai/directory/mcollina/skills/)
 
 - **81/100 · B** · [node](https://github.com/mcollina/skills/blob/main/skills/node/SKILL.md): Provides Node.js and TypeScript best practices covering type stripping, async patterns, error handling, streams, modules, testing, performance, caching, and logging. [Suede](https://skills.suedeai.ai/directory/mcollina/skills/node/)
 - **80/100 · B** · [nodejs-core](https://github.com/mcollina/skills/blob/main/skills/nodejs-core/SKILL.md): Supports contributing to and debugging Node.js core, including commit and PR tone, native crashes, V8 performance, node-gyp builds, N-API bindings, and libuv issues. [Suede](https://skills.suedeai.ai/directory/mcollina/skills/nodejs-core/)
@@ -751,7 +751,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## mhattingpete/claude-skills-marketplace
 
-[Repository](https://github.com/mhattingpete/claude-skills-marketplace) · Publisher: [mhattingpete](https://github.com/mhattingpete) · [Suede AI listing](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/)
+[Repository](https://github.com/mhattingpete/claude-skills-marketplace) · Publisher: [mhattingpete](https://github.com/mhattingpete) · [Suede listing](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/)
 
 - **78/100 · C** · [project-bootstrapper](https://github.com/mhattingpete/claude-skills-marketplace/blob/main/productivity-skills-plugin/skills/project-bootstrapper/SKILL.md): Sets up new projects or improves existing projects with development best practices, tooling, documentation, and workflow automation. [Suede](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/#project-bootstrapper)
 - **77/100 · C** · [code-transfer](https://github.com/mhattingpete/claude-skills-marketplace/blob/main/code-operations-plugin/skills/code-transfer/SKILL.md): Copies or moves code between files with line-based precision, including moving functions or classes, extracting code blocks, and inserting code at specific line numbers. [Suede](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/code-transfer/)
@@ -762,7 +762,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## microsoft/azure-skills
 
-[Repository](https://github.com/microsoft/azure-skills) · Publisher: [microsoft](https://github.com/microsoft) · [Suede AI listing](https://skills.suedeai.ai/directory/microsoft/azure-skills/)
+[Repository](https://github.com/microsoft/azure-skills) · Publisher: [microsoft](https://github.com/microsoft) · [Suede listing](https://skills.suedeai.ai/directory/microsoft/azure-skills/)
 
 - **71/100 · C** · [appinsights-instrumentation](https://github.com/microsoft/azure-skills/blob/main/skills/appinsights-instrumentation/SKILL.md): Guidance for instrumenting webapps with Azure Application Insights. [Suede](https://skills.suedeai.ai/directory/microsoft/azure-skills/#appinsights-instrumentation)
 - **62/100 · D** · [azure-messaging](https://github.com/microsoft/azure-skills/blob/main/skills/azure-messaging/SKILL.md): Troubleshoot and resolve issues with Azure Messaging SDKs for Event Hubs and Service Bus. [Suede](https://skills.suedeai.ai/directory/microsoft/azure-skills/#azure-messaging)
@@ -771,7 +771,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## MiniMax-AI/skills
 
-[Repository](https://github.com/MiniMax-AI/skills) · Publisher: [MiniMax-AI](https://github.com/MiniMax-AI) · [Suede AI listing](https://skills.suedeai.ai/directory/minimax-ai/skills/)
+[Repository](https://github.com/MiniMax-AI/skills) · Publisher: [MiniMax-AI](https://github.com/MiniMax-AI) · [Suede listing](https://skills.suedeai.ai/directory/minimax-ai/skills/)
 
 - **73/100 · C** · [flutter-dev](https://github.com/MiniMax-AI/skills/blob/main/skills/flutter-dev/SKILL.md): Guides Flutter cross-platform development, covering widget patterns, Riverpod and Bloc state management, GoRouter navigation, performance optimization, responsive layouts, widget tests, and DevTools profiling. [Suede](https://skills.suedeai.ai/directory/minimax-ai/skills/flutter-dev/)
 - **73/100 · C** · [ios-application-dev](https://github.com/MiniMax-AI/skills/blob/main/skills/ios-application-dev/SKILL.md): Guides iOS application development with UIKit, SnapKit, and SwiftUI, covering safe areas, navigation patterns, Dynamic Type, Dark Mode, accessibility, and common UI components. [Suede](https://skills.suedeai.ai/directory/minimax-ai/skills/ios-application-dev/)
@@ -782,7 +782,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## Necmttn/ax
 
-[Repository](https://github.com/Necmttn/ax) · Publisher: [Necmttn](https://github.com/Necmttn) · [Suede AI listing](https://skills.suedeai.ai/directory/necmttn/ax/)
+[Repository](https://github.com/Necmttn/ax) · Publisher: [Necmttn](https://github.com/Necmttn) · [Suede listing](https://skills.suedeai.ai/directory/necmttn/ax/)
 
 - **84/100 · B** · [setup](https://github.com/Necmttn/ax/blob/main/skills/setup/SKILL.md): Installs and verifies ax, the agent experience layer, walking through install.sh, skills.sh, and the first ingest, validating with ax doctor. [Suede](https://skills.suedeai.ai/directory/necmttn/ax/setup/)
 - **84/100 · B** · [ship-checklist](https://github.com/Necmttn/ax/blob/main/skills/ship-checklist/SKILL.md): Provides a definition-of-done checklist for shipping a new write, signal, table, edge, or query to the ax graph, covering reads, docs, and distribution. [Suede](https://skills.suedeai.ai/directory/necmttn/ax/ship-checklist/)
@@ -792,7 +792,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## NeoLabHQ/context-engineering-kit
 
-[Repository](https://github.com/NeoLabHQ/context-engineering-kit) · Publisher: [NeoLabHQ](https://github.com/NeoLabHQ) · [Suede AI listing](https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/)
+[Repository](https://github.com/NeoLabHQ/context-engineering-kit) · Publisher: [NeoLabHQ](https://github.com/NeoLabHQ) · [Suede listing](https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/)
 
 - **78/100 · C** · [git-notes](https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/git-notes/SKILL.md): Explains git notes commands and patterns for attaching metadata such as review status, test results, and annotations to commits without changing history. [Suede](https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/git-notes/)
 - **66/100 · D** · [commit](https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/commit/SKILL.md): Create well-formatted commits with conventional commit messages and emoji [Suede](https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/#commit)
@@ -806,7 +806,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## nowork-studio/NotFair
 
-[Repository](https://github.com/nowork-studio/NotFair) · Publisher: [nowork-studio](https://github.com/nowork-studio) · [Suede AI listing](https://skills.suedeai.ai/directory/nowork-studio/notfair/)
+[Repository](https://github.com/nowork-studio/NotFair) · Publisher: [nowork-studio](https://github.com/nowork-studio) · [Suede listing](https://skills.suedeai.ai/directory/nowork-studio/notfair/)
 
 - **76/100 · C** · [upgrade](https://github.com/nowork-studio/NotFair/blob/main/skills/upgrade/SKILL.md): Upgrade the NotFair plugin to the latest version. [Suede](https://skills.suedeai.ai/directory/nowork-studio/notfair/#upgrade)
 - **73/100 · C** · [wordpress](https://github.com/nowork-studio/NotFair/blob/main/skills/wordpress/SKILL.md): Operate connected WordPress sites through the NotFair MCP. [Suede](https://skills.suedeai.ai/directory/nowork-studio/notfair/#wordpress)
@@ -815,7 +815,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## NVIDIA/skills
 
-[Repository](https://github.com/NVIDIA/skills) · Publisher: [NVIDIA](https://github.com/NVIDIA) · [Suede AI listing](https://skills.suedeai.ai/directory/nvidia/skills/)
+[Repository](https://github.com/NVIDIA/skills) · Publisher: [NVIDIA](https://github.com/NVIDIA) · [Suede listing](https://skills.suedeai.ai/directory/nvidia/skills/)
 
 - **91/100 · A** · [warp-compile-time-optimizer](https://github.com/NVIDIA/skills/blob/main/skills/warp-compile-time-optimizer/SKILL.md): Use when compile time or startup time is the problem in code that uses Warp: a request to improve, optimize, or cut compile times; an app that is slow to start or stalls at the first wp.launch; seconds of compiling before real work… [Suede](https://skills.suedeai.ai/directory/nvidia/skills/#warp-compile-time-optimizer)
 - **90/100 · A** · [tao-token-efficient-execution](https://github.com/NVIDIA/skills/blob/main/skills/tao-token-efficient-execution/SKILL.md): Token-efficient execution kit for repeated TAO agentic workflows. [Suede](https://skills.suedeai.ai/directory/nvidia/skills/#tao-token-efficient-execution)
@@ -947,7 +947,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## obra/superpowers
 
-[Repository](https://github.com/obra/superpowers) · Publisher: [obra](https://github.com/obra) · [Suede AI listing](https://skills.suedeai.ai/directory/obra/superpowers/)
+[Repository](https://github.com/obra/superpowers) · Publisher: [obra](https://github.com/obra) · [Suede listing](https://skills.suedeai.ai/directory/obra/superpowers/)
 
 - **84/100 · B** · [using-git-worktrees](https://github.com/obra/superpowers/blob/main/skills/using-git-worktrees/SKILL.md): Ensures feature work or plan execution happens in an isolated workspace, using native tools or a git worktree fallback. [Suede](https://skills.suedeai.ai/directory/obra/superpowers/using-git-worktrees/)
 - **82/100 · B** · [finishing-a-development-branch](https://github.com/obra/superpowers/blob/main/skills/finishing-a-development-branch/SKILL.md): Guides deciding how to integrate completed work once implementation is finished and all tests pass. [Suede](https://skills.suedeai.ai/directory/obra/superpowers/finishing-a-development-branch/)
@@ -956,7 +956,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## obra/superpowers-lab
 
-[Repository](https://github.com/obra/superpowers-lab) · Publisher: [obra](https://github.com/obra) · [Suede AI listing](https://skills.suedeai.ai/directory/obra/superpowers-lab/)
+[Repository](https://github.com/obra/superpowers-lab) · Publisher: [obra](https://github.com/obra) · [Suede listing](https://skills.suedeai.ai/directory/obra/superpowers-lab/)
 
 - **74/100 · C** · [using-tmux-for-interactive-commands](https://github.com/obra/superpowers-lab/blob/main/skills/using-tmux-for-interactive-commands/SKILL.md): Guides running interactive CLI tools such as vim, git rebase -i, and Python REPLs by controlling detached tmux sessions with send-keys. [Suede](https://skills.suedeai.ai/directory/obra/superpowers-lab/using-tmux-for-interactive-commands/)
 
@@ -964,7 +964,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## openai/skills
 
-[Repository](https://github.com/openai/skills) · Publisher: [openai](https://github.com/openai) · [Suede AI listing](https://skills.suedeai.ai/directory/openai/skills/)
+[Repository](https://github.com/openai/skills) · Publisher: [openai](https://github.com/openai) · [Suede listing](https://skills.suedeai.ai/directory/openai/skills/)
 
 - **77/100 · C** · [cli-creator](https://github.com/openai/skills/blob/main/skills/.curated/cli-creator/SKILL.md): Build a composable CLI for Codex from API docs, an OpenAPI spec, existing curl examples, an SDK, a web app, an admin tool, or a local script. [Suede](https://skills.suedeai.ai/directory/openai/skills/#cli-creator)
 - **76/100 · C** · [jupyter-notebook](https://github.com/openai/skills/blob/main/skills/.curated/jupyter-notebook/SKILL.md): Use when the user asks to create, scaffold, or edit Jupyter notebooks (\`.ipynb\`) for experiments, explorations, or tutorials; prefer the bundled templates and run the helper script \`new\_notebook.py\` to generate a clean starting notebook. [Suede](https://skills.suedeai.ai/directory/openai/skills/#jupyter-notebook)
@@ -976,7 +976,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## product-on-purpose/pm-skills
 
-[Repository](https://github.com/product-on-purpose/pm-skills) · Publisher: [product-on-purpose](https://github.com/product-on-purpose) · [Suede AI listing](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/)
+[Repository](https://github.com/product-on-purpose/pm-skills) · Publisher: [product-on-purpose](https://github.com/product-on-purpose) · [Suede listing](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/)
 
 - **83/100 · B** · [develop-adr](https://github.com/product-on-purpose/pm-skills/blob/main/skills/develop-adr/SKILL.md): Creates an Architecture Decision Record following the Nygard format to document significant technical decisions, their context, and consequences. [Suede](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/#develop-adr)
 - **80/100 · B** · [utility-pm-changelog-curator](https://github.com/product-on-purpose/pm-skills/blob/main/skills/utility-pm-changelog-curator/SKILL.md): Draft CHANGELOG entries from git log via the pm-changelog-curator sub-agent, applying the repo hygiene rules (describe what changed, public paths only, no attribution trailers). [Suede](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/#utility-pm-changelog-curator)
@@ -985,7 +985,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## resend/resend-skills
 
-[Repository](https://github.com/resend/resend-skills) · Publisher: [resend](https://github.com/resend) · [Suede AI listing](https://skills.suedeai.ai/directory/resend/resend-skills/)
+[Repository](https://github.com/resend/resend-skills) · Publisher: [resend](https://github.com/resend) · [Suede listing](https://skills.suedeai.ai/directory/resend/resend-skills/)
 
 - **84/100 · B** · [resend](https://github.com/resend/resend-skills/blob/main/skills/resend/SKILL.md): Guides work with the Resend email API, including sending transactional emails, inbound webhooks, templates, delivery tracking, domains, contacts, broadcasts, and API keys. [Suede](https://skills.suedeai.ai/directory/resend/resend-skills/resend/)
 - **83/100 · B** · [react-email](https://github.com/resend/resend-skills/blob/main/skills/react-email/SKILL.md): Guides building HTML email templates with React components, rendering them to HTML, adding the visual email editor, and sending with Resend. [Suede](https://skills.suedeai.ai/directory/resend/resend-skills/react-email/)
@@ -996,7 +996,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## sanity-io/agent-toolkit
 
-[Repository](https://github.com/sanity-io/agent-toolkit) · Publisher: [sanity-io](https://github.com/sanity-io) · [Suede AI listing](https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/)
+[Repository](https://github.com/sanity-io/agent-toolkit) · Publisher: [sanity-io](https://github.com/sanity-io) · [Suede listing](https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/)
 
 - **81/100 · B** · [sanity-singletons](https://github.com/sanity-io/agent-toolkit/blob/main/skills/sanity-singletons/SKILL.md): Configure singleton documents in a Sanity Studio using the document.singletons registry. [Suede](https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/#sanity-singletons)
 - **79/100 · C** · [sanity-studio-upgrade](https://github.com/sanity-io/agent-toolkit/blob/main/skills/sanity-studio-upgrade/SKILL.md): Produces a tailored Sanity Studio upgrade plan by inspecting the repository's installed versions, config, and source, then reporting only the breaking changes that actually apply. [Suede](https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/#sanity-studio-upgrade)
@@ -1005,7 +1005,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## SawyerHood/dev-browser
 
-[Repository](https://github.com/SawyerHood/dev-browser) · Publisher: [SawyerHood](https://github.com/SawyerHood) · [Suede AI listing](https://skills.suedeai.ai/directory/sawyerhood/dev-browser/dev-browser/)
+[Repository](https://github.com/SawyerHood/dev-browser) · Publisher: [SawyerHood](https://github.com/SawyerHood) · [Suede listing](https://skills.suedeai.ai/directory/sawyerhood/dev-browser/dev-browser/)
 
 - **77/100 · C** · [dev-browser](https://github.com/SawyerHood/dev-browser/blob/main/skills/dev-browser/SKILL.md): Automates browser tasks through the dev-browser CLI with persistent named pages, such as navigating sites, filling forms, taking screenshots, and extracting web data. [Suede](https://skills.suedeai.ai/directory/sawyerhood/dev-browser/dev-browser/)
 
@@ -1013,7 +1013,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## stripe/ai
 
-[Repository](https://github.com/stripe/ai) · Publisher: [stripe](https://github.com/stripe) · [Suede AI listing](https://skills.suedeai.ai/directory/stripe/ai/)
+[Repository](https://github.com/stripe/ai) · Publisher: [stripe](https://github.com/stripe) · [Suede listing](https://skills.suedeai.ai/directory/stripe/ai/)
 
 - **68/100 · D** · [upgrade-stripe](https://github.com/stripe/ai/blob/main/skills/upgrade-stripe/SKILL.md): Guide for upgrading Stripe API versions, webhook endpoints, server-side SDKs, Stripe.js, and mobile SDKs [Suede](https://skills.suedeai.ai/directory/stripe/ai/#upgrade-stripe)
 
@@ -1021,7 +1021,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## swarmclawai/swarmclaw
 
-[Repository](https://github.com/swarmclawai/swarmclaw) · Publisher: [swarmclawai](https://github.com/swarmclawai) · [Suede AI listing](https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/)
+[Repository](https://github.com/swarmclawai/swarmclaw) · Publisher: [swarmclawai](https://github.com/swarmclawai) · [Suede listing](https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/)
 
 - **75/100 · C** · [github](https://github.com/swarmclawai/swarmclaw/blob/main/skills/github/SKILL.md): Performs GitHub operations with the gh CLI, including checking PR status and CI, creating and commenting on issues, listing PRs, and viewing run logs. [Suede](https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/github/)
 
@@ -1029,7 +1029,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## trailofbits/skills
 
-[Repository](https://github.com/trailofbits/skills) · Publisher: [trailofbits](https://github.com/trailofbits) · [Suede AI listing](https://skills.suedeai.ai/directory/trailofbits/skills/)
+[Repository](https://github.com/trailofbits/skills) · Publisher: [trailofbits](https://github.com/trailofbits) · [Suede listing](https://skills.suedeai.ai/directory/trailofbits/skills/)
 
 - **92/100 · A** · [open-sourcing](https://github.com/trailofbits/skills/blob/main/plugins/open-sourcing/skills/open-sourcing/SKILL.md): This skill should be used when the user asks to "open source this project", "prepare this repository for public release", "make this repo public", "check open-source readiness", "choose a license for this project", or "set up release… [Suede](https://skills.suedeai.ai/directory/trailofbits/skills/#open-sourcing)
 - **89/100 · B** · [diagramming-code](https://github.com/trailofbits/skills/blob/main/plugins/trailmark/skills/diagramming-code/SKILL.md): Generates Mermaid diagrams from Trailmark code graphs, including call graphs, class hierarchies, module dependency maps, complexity heatmaps, and attack surface data flow visualizations. [Suede](https://skills.suedeai.ai/directory/trailofbits/skills/diagramming-code/)
@@ -1045,7 +1045,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## trycourier/courier-skills
 
-[Repository](https://github.com/trycourier/courier-skills) · Publisher: [trycourier](https://github.com/trycourier) · [Suede AI listing](https://skills.suedeai.ai/directory/trycourier/courier-skills/courier/)
+[Repository](https://github.com/trycourier/courier-skills) · Publisher: [trycourier](https://github.com/trycourier) · [Suede listing](https://skills.suedeai.ai/directory/trycourier/courier-skills/courier/)
 
 - **83/100 · B** · [courier](https://github.com/trycourier/courier-skills/blob/main/skills/courier/SKILL.md): Guides building notifications with Courier across email, SMS, push, in-app inbox, Slack, Teams, and WhatsApp, including templates, translations, journeys, routing, and MCP. [Suede](https://skills.suedeai.ai/directory/trycourier/courier-skills/courier/)
 
@@ -1053,7 +1053,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## veniceai/skills
 
-[Repository](https://github.com/veniceai/skills) · Publisher: [veniceai](https://github.com/veniceai) · [Suede AI listing](https://skills.suedeai.ai/directory/veniceai/skills/)
+[Repository](https://github.com/veniceai/skills) · Publisher: [veniceai](https://github.com/veniceai) · [Suede listing](https://skills.suedeai.ai/directory/veniceai/skills/)
 
 - **70/100 · C** · [venice-api-keys](https://github.com/veniceai/skills/blob/main/skills/venice-api-keys/SKILL.md): Manage Venice API keys. [Suede](https://skills.suedeai.ai/directory/veniceai/skills/#venice-api-keys)
 - **70/100 · C** · [venice-api-overview](https://github.com/veniceai/skills/blob/main/skills/venice-api-overview/SKILL.md): High-level map of the Venice.ai API - base URL, which auth mode each endpoint accepts (API key, x402 wallet, or none), endpoint categories (including decisions, voice changer, and retired routes), response headers (rate limit, balance,… [Suede](https://skills.suedeai.ai/directory/veniceai/skills/#venice-api-overview)
@@ -1068,7 +1068,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## vercel/ai
 
-[Repository](https://github.com/vercel/ai) · Publisher: [vercel](https://github.com/vercel) · [Suede AI listing](https://skills.suedeai.ai/directory/vercel/ai/)
+[Repository](https://github.com/vercel/ai) · Publisher: [vercel](https://github.com/vercel) · [Suede listing](https://skills.suedeai.ai/directory/vercel/ai/)
 
 - **77/100 · C** · [migrate-ai-sdk-v6-to-v7](https://github.com/vercel/ai/blob/main/skills/migrate-ai-sdk-v6-to-v7/SKILL.md): Migrate applications from AI SDK 6.x to AI SDK 7.0. [Suede](https://skills.suedeai.ai/directory/vercel/ai/#migrate-ai-sdk-v6-to-v7)
 - **70/100 · C** · [ai-sdk](https://github.com/vercel/ai/blob/main/skills/use-ai-sdk/SKILL.md): Answer questions about the AI SDK and help build AI-powered features. [Suede](https://skills.suedeai.ai/directory/vercel/ai/#ai-sdk)
@@ -1077,7 +1077,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## waynehamadi/datacircle
 
-[Repository](https://github.com/waynehamadi/datacircle) · Publisher: [waynehamadi](https://github.com/waynehamadi) · [Suede AI listing](https://skills.suedeai.ai/directory/waynehamadi/datacircle/)
+[Repository](https://github.com/waynehamadi/datacircle) · Publisher: [waynehamadi](https://github.com/waynehamadi) · [Suede listing](https://skills.suedeai.ai/directory/waynehamadi/datacircle/)
 
 - **63/100 · D** · [datacircle](https://github.com/waynehamadi/datacircle/blob/main/skills/datacircle/SKILL.md): Every plan of every GTM API on datacircle.dev, as one file you download and query. [Suede](https://skills.suedeai.ai/directory/waynehamadi/datacircle/#datacircle)
 
@@ -1085,7 +1085,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## wondelai/skills
 
-[Repository](https://github.com/wondelai/skills) · Publisher: [wondelai](https://github.com/wondelai) · [Suede AI listing](https://skills.suedeai.ai/directory/wondelai/skills/)
+[Repository](https://github.com/wondelai/skills) · Publisher: [wondelai](https://github.com/wondelai) · [Suede listing](https://skills.suedeai.ai/directory/wondelai/skills/)
 
 - **81/100 · B** · [clean-architecture](https://github.com/wondelai/skills/blob/main/clean-architecture/SKILL.md): Structures software around the Dependency Rule, with source code dependencies pointing inward from frameworks to use cases to entities. [Suede](https://skills.suedeai.ai/directory/wondelai/skills/clean-architecture/)
 - **81/100 · B** · [domain-driven-design](https://github.com/wondelai/skills/blob/main/domain-driven-design/SKILL.md): Model software around the business domain using bounded contexts, aggregates, and ubiquitous language. [Suede](https://skills.suedeai.ai/directory/wondelai/skills/#domain-driven-design)
@@ -1098,13 +1098,13 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 ## ykdojo/claude-code-tips
 
-[Repository](https://github.com/ykdojo/claude-code-tips) · Publisher: [ykdojo](https://github.com/ykdojo) · [Suede AI listing](https://skills.suedeai.ai/directory/ykdojo/claude-code-tips/)
+[Repository](https://github.com/ykdojo/claude-code-tips) · Publisher: [ykdojo](https://github.com/ykdojo) · [Suede listing](https://skills.suedeai.ai/directory/ykdojo/claude-code-tips/)
 
 - **80/100 · B** · [version-check](https://github.com/ykdojo/claude-code-tips/blob/main/skills/version-check/SKILL.md): Recommends which Claude Code version to run or whether to update, and what changed since the installed version. [Suede](https://skills.suedeai.ai/directory/ykdojo/claude-code-tips/version-check/) · License: All rights reserved (review terms)
 - **77/100 · C** · [private-github-search](https://github.com/ykdojo/claude-code-tips/blob/main/skills/private-github-search/SKILL.md): Searches the full text of all the user's GitHub repos, including private ones, using a local mirror and ripgrep. [Suede](https://skills.suedeai.ai/directory/ykdojo/claude-code-tips/private-github-search/) · License: All rights reserved (review terms)
 
 ---
 
-**Run a team of agents.** Suede AI Agent Studio builds multi-agent automation for businesses. [suedeai.app](https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agent-studio) Listed here? [Add your badge](../README.md#add-your-badge).
+**Run a team of agents.** Suede Agent Studio builds multi-agent automation for businesses. [suedeai.app](https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agent-studio) Listed here? [Add your badge](../README.md#add-your-badge).
 
 [Awesome Everything](../README.md) · [Compare scores](../README.md#compare-099-quality-scores) · [Publishers](../publishers.md) · [Featured projects](../featured.md) · [Guides](../README.md#guides) · [Contribute](../CONTRIBUTING.md) · [Search by score](https://skills.suedeai.ai/directory/?sort=score)

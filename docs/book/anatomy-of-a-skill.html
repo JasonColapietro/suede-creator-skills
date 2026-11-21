@@ -34,9 +34,9 @@
   "keywords": "SKILL.md anatomy, skill frontmatter, skill description field, S-Tier builder's book",
   "url": "https://skills.suedeai.ai/book/anatomy-of-a-skill.html",
   "position": 3,
-  "wordCount": 2334,
+  "wordCount": 2330,
   "datePublished": "2026-08-10",
-  "dateModified": "2026-11-12",
+  "dateModified": "2026-11-21",
   "inLanguage": "en",
   "isPartOf": {
     "@type": "Book",
@@ -52,7 +52,7 @@
     "alternateName": [
       "Suede Labs AI",
       "Suede Labs",
-      "Suede"
+      "Suede AI"
     ],
     "parentOrganization": {
       "@type": "Organization",
@@ -80,7 +80,7 @@
     },
     "@type": "Organization",
     "@id": "https://suedeai.ai/#organization",
-    "name": "Suede AI",
+    "name": "Suede",
     "url": "https://suedeai.ai"
   },
   "mainEntityOfPage": "https://skills.suedeai.ai/book/anatomy-of-a-skill.html"
@@ -92,8 +92,8 @@
 
     <header class="nav">
       <nav class="nav-inner" aria-label="Main navigation">
-        <a href="../" class="nav-logo" aria-label="Suede AI Skills home">
-          <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+        <a href="../" class="nav-logo" aria-label="Suede Skills home">
+          <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede" width="28" height="28" onerror="this.style.display='none'">
           <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
         </a>
         <details class="nav-disclosure" open>
@@ -120,7 +120,7 @@
       <p class="eyebrow">Part I &middot; Chapter 2</p>
       <h1>Anatomy of a Skill</h1>
       <p class="post-meta">A real SKILL.md taken apart: frontmatter, routing description, body, bundled references and scripts, and the advisory-gate policy that keeps a grader from blocking you.</p>
-      <div class="book-meta"><span>2,334 words</span><span>10 min read</span><span><a href="./">S-Tier: contents</a></span></div>
+      <div class="book-meta"><span>2,330 words</span><span>10 min read</span><span><a href="./">S-Tier: contents</a></span></div>
 
       <p>Open <code>skills/suede-code/SKILL.md</code> and read it top to bottom. It takes about ten minutes. At the end of those six minutes you will know exactly what the agent will do to your diff, which parts it will refuse to do, and what the output will look like before you run it once.</p>
       <p>That property is the point of the format. A skill is a document you can audit before you trust it. This chapter takes one apart.</p>
@@ -128,19 +128,19 @@
       <p>Every <code>SKILL.md</code> in this repo opens the same way:</p>
       <pre><code>---
 name: suede-code
-description: "Suede AI code review and A-F ship grade for a diff, PR, branch, or commit range: findings ranked P0-P3 with file:line evidence and a fix path, an A-F grade across seven lanes with Instant-F security triggers and surface grade caps, OWASP 2025 checks, a deploy-safety gate, a commit-dirt scan, and fix briefs. Three modes: full review and grade in one pass (default), findings only with no grade, and grade only with no findings list. Use when asked to review this, grade this, find the bugs before merge, security-check this, is this safe to ship, give it a letter, or should this merge. Runs only when explicitly invoked; never auto-fires on a diff, save, or commit. NOT FOR: making CI enforce the verdict on every merge (use suede-ci-gate); LLM, RAG, or agent behavior coverage (use suede-ai-eval); searching competing plans and building a multi-file change (use suede-graph-flo-xr); fixes that need coordinated parallel lanes (use suede-agent-teams)."
+description: "Suede code review and A-F ship grade for a diff, PR, branch, or commit range: findings ranked P0-P3 with file:line evidence and a fix path, an A-F grade across seven lanes with Instant-F security triggers and surface grade caps, OWASP 2025 checks, a deploy-safety gate, a commit-dirt scan, and fix briefs. Three modes: full review and grade in one pass (default), findings only with no grade, and grade only with no findings list. Use when asked to review this, grade this, find the bugs before merge, security-check this, is this safe to ship, give it a letter, or should this merge. Runs only when explicitly invoked; never auto-fires on a diff, save, or commit. NOT FOR: making CI enforce the verdict on every merge (use suede-ci-gate); LLM, RAG, or agent behavior coverage (use suede-ai-eval); searching competing plans and building a multi-file change (use suede-graph-flo-xr); fixes that need coordinated parallel lanes (use suede-agent-teams)."
 ---</code></pre>
       <p>Across all 67 skills, the frontmatter carries <code>name</code> 67 times and <code>description</code> 67 times. Sixty-seven of them add a <code>metadata</code> block with a version string, a convention the marketing and growth skills brought with them. Nothing else appears. The schema is small on purpose, because everything the frontmatter does happens before the body is read.</p>
       <p><code>name</code> matches the folder and is the handle. It is what you type when you invoke the skill directly, and what other skills reference when they route work elsewhere. Keep it stable. A rename breaks every routing line in every other skill that points at it, and those lines are plain text, so nothing will tell you.</p>
       <h2 id="the-description-carries-the-routing-burden">The description carries the routing burden</h2>
-      <p>The description is the only part of a skill that stays in the agent's context when the skill is not running. In this repo the 67 files total 949,907 bytes; the 67 descriptions together are 29,730. The agent holds the small number and reaches for the large one only when a description matches.</p>
+      <p>The description is the only part of a skill that stays in the agent's context when the skill is not running. In this repo the 67 files total 953,080 bytes; the 67 descriptions together are 29,575. The agent holds the small number and reaches for the large one only when a description matches.</p>
       <p>That makes the description a router, not a summary. It has to answer two questions well enough that an agent mid-task can decide in one pass: what does this produce, and when should it fire.</p>
-      <p>Look at what <code>suede-code</code> does with 490 characters. "Suede AI code review and A-F ship grade for a diff, PR, branch, or commit range" states the artifact. The next clauses name what comes back and the three modes, so a caller who only wants the letter knows it can ask for one. The trigger list catches the request in the words a caller actually types: "find the bugs before merge", "give it a letter", "should this merge". Then the last sentence does the real work: "NOT FOR: making CI enforce the verdict on every merge (use suede-ci-gate)." That clause exists because <code>suede-ci-gate</code> lives next door and produces something different, and without it an agent would pick between them by coin flip.</p>
-      <p><code>suede-deslop</code> does the same job in 436 characters:</p>
-      <pre><code>description: "Suede Slop Stop: the Suede AI context-aware anti-slop pass for
+      <p>Look at what <code>suede-code</code> does with 487 characters. "Suede code review and A-F ship grade for a diff, PR, branch, or commit range" states the artifact. The next clauses name what comes back and the three modes, so a caller who only wants the letter knows it can ask for one. The trigger list catches the request in the words a caller actually types: "find the bugs before merge", "give it a letter", "should this merge". Then the last sentence does the real work: "NOT FOR: making CI enforce the verdict on every merge (use suede-ci-gate)." That clause exists because <code>suede-ci-gate</code> lives next door and produces something different, and without it an agent would pick between them by coin flip.</p>
+      <p><code>suede-deslop</code> does the same job in 433 characters:</p>
+      <pre><code>description: "Suede Slop Stop: the Suede context-aware anti-slop pass for
 finished prose. Finds or removes generic filler, manufactured emphasis, false
 agency, formulaic structure, chat and draft residue, formatting applied by rule,
-and the Suede AI house bans (em dashes, moreover, delve, game-changer, unlock,
+and the Suede house bans (em dashes, moreover, delve, game-changer, unlock,
 elevate, seamless, landscape, tapestry, rule-of-three rhythm) without flattening
 the author's voice. Returns cleaned prose with a 50-point score, or a
 findings-only audit that leaves the text untouched. Use before copy, a README,
@@ -225,18 +225,18 @@ policy:
     </section>
     <footer>
       <div class="footer-shell">
-        <p class="footer-note">Suede AI Skills is a 67-skill, open-source pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep. Original work is MIT licensed; adapted components retain their upstream notices.</p>
+        <p class="footer-note">Suede Skills is a 67-skill, open-source pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep. Original work is MIT licensed; adapted components retain their upstream notices.</p>
         <div class="footer-inner">
           <div class="footer-brand">
-            <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">
-            <span>Built by <strong>Jason Colapietro</strong> / Suede AI</span>
+            <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede" width="24" height="24" onerror="this.style.display='none'">
+            <span>Built by <strong>Jason Colapietro</strong> / Suede</span>
           </div>
           <div class="footer-links">
             <a href="https://x.com/johnnysuede" target="_blank" rel="noopener">@johnnysuede</a>
             <span class="footer-divider" aria-hidden="true">|</span>
             <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
             <span class="footer-divider" aria-hidden="true">|</span>
-            <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">★ Star Suede AI Skills on GitHub</a>
+            <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">★ Star Suede Skills on GitHub</a>
             <span class="footer-divider" aria-hidden="true">|</span>
             <a href="https://suedeai.ai/privacy" target="_blank" rel="noopener">Privacy</a>
             <span class="footer-divider" aria-hidden="true">|</span>
@@ -244,7 +244,7 @@ policy:
           </div>
         </div>
       </div>
-    <div class="trendshift-recognition" style="width:250px;max-width:100%;margin:24px auto;text-align:center"><p style="margin:0 0 8px;font-size:13px">Suede AI Skills on Trendshift</p><a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55" loading="lazy" style="display:block;max-width:100%;height:auto"/></a></div>
+    <div class="trendshift-recognition" style="width:250px;max-width:100%;margin:24px auto;text-align:center"><p style="margin:0 0 8px;font-size:13px">Suede Skills on Trendshift</p><a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55" loading="lazy" style="display:block;max-width:100%;height:auto"/></a></div>
 </footer>
     <script>
       // Mobile nav disclosure. The markup ships <details open> so a no-JS

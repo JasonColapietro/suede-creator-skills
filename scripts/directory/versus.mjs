@@ -5,7 +5,7 @@
 // scripts/build-directory.mjs renders the pages under directory/compare/.
 //
 // Competitor facts are editorial and sourced: every entry names the URLs it
-// was checked against and the date. Suede AI's own figures are never typed
+// was checked against and the date. Suede's own figures are never typed
 // into the file; tokens such as {skills} are filled from the live dataset.
 
 import fs from "node:fs";
