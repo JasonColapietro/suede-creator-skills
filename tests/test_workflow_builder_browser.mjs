@@ -158,7 +158,7 @@ async function verifyCrackedDevs(page, base, output) {
   const link = page.getByRole('link', { name: 'Cracked Devs', exact: true });
   const menu = page.locator('.nav-hamburger');
   const submit = page.getByRole('link', { name: 'List your skill', exact: true }).first();
-  const quip = 'Don’t push this. They’re already insufferable.';
+  const quip = 'Don’t click. They’re already insufferable.';
   for (const width of [1440, 1024, 769, 768, 390, 320]) {
     await page.setViewportSize({ width, height: 844 });
     await page.goto(base + '/', { waitUntil: 'domcontentloaded' });

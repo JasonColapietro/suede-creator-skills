@@ -123,7 +123,7 @@ export function rewriteText(text, ext, pageUrl, { assetExists = shippedAsset } =
 // Keep the editorial CTA on the standalone homepage, not on every generated
 // directory page or on the linked feature itself.
 function addCrackedDevs(home) {
-  const note = 'Don’t push this. They’re already insufferable.';
+  const note = 'Don’t click. They’re already insufferable.';
   const cta = (layout) => {
     const id = `cracked-devs-${layout}-note`;
     return `<a class="cracked-devs-link" href="${OLD}/cracked.html" aria-describedby="${id}">

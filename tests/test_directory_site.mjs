@@ -69,7 +69,7 @@ test("the built site has no old directory URLs and no broken internal links", ()
     const crackedLink = /<a class="cracked-devs-link" href="https:\/\/skills\.suedeai\.ai\/cracked\.html" aria-describedby="(cracked-devs-(?:desktop|mobile)-note)">/g;
     assert.deepEqual([...home.matchAll(crackedLink)].map(match => match[1]), ['cracked-devs-desktop-note', 'cracked-devs-mobile-note']);
     for (const id of ['cracked-devs-desktop-note', 'cracked-devs-mobile-note']) {
-      assert.match(home, new RegExp(`id="${id}">Don’t push this\\. They’re already insufferable\\.<`));
+      assert.match(home, new RegExp(`id="${id}">Don’t click\\. They’re already insufferable\\.<`));
     }
     assert.match(home, /<nav class="kind-bar"[\s\S]*?<\/nav>\s*<div class="shell cracked-devs-mobile"/);
     const sharedHome = fs.readFileSync(new URL('../docs/directory/index.html', import.meta.url), 'utf8');
