@@ -67,7 +67,7 @@ test('Gate removes credentials and interpreter injection without dropping toolch
 const LANES = 8
 const FINDINGS_PER_LENS = 10
 
-function runShip ({ agentBudget = 'standard', omitAgentBudget = false, inheritedAgentBudget = false, agentNamespace = 'suede-skills', omitAgentNamespace = false, omitHelperDir = false, helperDir = HELPER_DIR, repo = '/tmp/repo', scope = 'change the thing', liveUrl, deploys = true, releaseResults = {}, lanes = LANES, aggregateLanes, aggregateFiles, aggregateSingleLaneFiles, aggregateCollision = false, malformedAggregate = false, malformedPlans = false, malformedPlanIndex, rejectEveryPlan = false, findingsPerLens = FINDINGS_PER_LENS, reviewSeverity = 'blocker', researchEvidence = false, constraintAuditMode = 'complete', scoreMode, planMode, eligibilityMode, eligibilityCommand, eligibilityAcceptance, scopeMapLaneAlias, includeUnsafePlan = false, unsafeFile = 'src/shared.ts', scoutCandidateFiles, additionalCandidateFiles = [], scoutWorktreePath, scoutLiveCwds = [], scoutSiblingClaims = [], scoutManifestOverflow = false, worktreeAttested = true, worktreeClean = worktreeAttested, headMatchesOriginMain = worktreeAttested, attestedCommonDir, unsafeCandidateFiles = [], trackedCandidateFiles = [], refuteTarget, refuteEvidenceTarget, refuteMode, delayedBranch, delayPhase, delayLabel, blockingHazard, selectedPlanCollision = false, buildState = 'done', buildNotes = '', buildChangedPath, buildChangedEmpty = false, swapBuildPatches = false, buildPatchModeHeader = '', buildPatchOmitGitHeader = false, buildPatchGitHeaderFile, buildApplied = true, reviewFindingPath, reviewFindingPaths, reviewFindingLine, reviewClaims, refuteWhy = 'reproduced with a concrete input', fixState = 'done', fixNotes = '', fixChangedPath, fixChangedEmpty = false, swapFixPatches = false, fixPatchModeHeader = '', fixApplied = true, mutationChangedFiles, mutationUnsafeFiles = [], mutationReportedPathsMatch = true, mutationBaseShaMatches = true, mutationDiffDigest = DIFF_DIGEST, gateMutationChangedFiles, gateMutationUnsafeFiles = [], gateMutationReportedPathsMatch = true, gateMutationBaseShaMatches = true, gateMutationDiffDigest = mutationDiffDigest, gatePassed = true, gateOutput = 'ok', reportedGateCommands, forceAgentCeiling, agentErrorPhase, agentErrorLabel, agentErrorPoint } = {}) {
+function runShip ({ agentBudget = 'standard', omitAgentBudget = false, inheritedAgentBudget = false, agentNamespace = 'suede-skills', omitAgentNamespace = false, omitHelperDir = false, helperDir = HELPER_DIR, repo = '/tmp/repo', scope = 'change the thing', liveUrl, deploys = true, omitDeploys = false, releaseResults = {}, lanes = LANES, aggregateLanes, aggregateFiles, aggregateSingleLaneFiles, aggregateCollision = false, malformedAggregate = false, malformedPlans = false, malformedPlanIndex, rejectEveryPlan = false, findingsPerLens = FINDINGS_PER_LENS, reviewSeverity = 'blocker', researchEvidence = false, criticGaps = [], constraintAuditMode = 'complete', scoreMode, planMode, eligibilityMode, eligibilityCommand, eligibilityAcceptance, scopeMapLaneAlias, includeUnsafePlan = false, unsafeFile = 'src/shared.ts', scoutCandidateFiles, additionalCandidateFiles = [], scoutWorktreePath, scoutLiveCwds = [], scoutSiblingClaims = [], scoutManifestOverflow = false, worktreeAttested = true, worktreeClean = worktreeAttested, headMatchesOriginMain = worktreeAttested, attestedCommonDir, unsafeCandidateFiles = [], trackedCandidateFiles = [], refuteTarget, refuteEvidenceTarget, refuteMode, delayedBranch, delayPhase, delayLabel, blockingHazard, selectedPlanCollision = false, buildState = 'done', buildNotes = '', buildChangedPath, buildChangedEmpty = false, swapBuildPatches = false, buildPatchModeHeader = '', buildPatchOmitGitHeader = false, buildPatchGitHeaderFile, buildApplied = true, reviewFindingPath, reviewFindingPaths, reviewFindingLine, reviewClaims, refuteWhy = 'reproduced with a concrete input', fixState = 'done', fixNotes = '', fixChangedPath, fixChangedEmpty = false, swapFixPatches = false, fixPatchModeHeader = '', fixApplied = true, mutationChangedFiles, mutationUnsafeFiles = [], mutationReportedPathsMatch = true, mutationBaseShaMatches = true, mutationDiffDigest = DIFF_DIGEST, gateMutationChangedFiles, gateMutationUnsafeFiles = [], gateMutationReportedPathsMatch = true, gateMutationBaseShaMatches = true, gateMutationDiffDigest = mutationDiffDigest, gatePassed = true, gateOutput = 'ok', reportedGateCommands, forceAgentCeiling, phaseCallback, agentNullPhase, agentNullLabel, agentErrorPhase, agentErrorLabel, agentErrorPoint } = {}) {
   const calls = []
   const completedCalls = []
   const logs = []
@@ -192,7 +192,7 @@ function runShip ({ agentBudget = 'standard', omitAgentBudget = false, inherited
           if (constraintAuditMode === 'duplicate') return { audited: complete.length ? [...complete, complete[0]] : [] }
           return { audited: complete }
         }
-        return { gaps: [] }
+        return { gaps: criticGaps }
       case 'Plan':
         if (label === 'redteam:plan') return { objections: [] }
         return {
@@ -439,7 +439,8 @@ function runShip ({ agentBudget = 'standard', omitAgentBudget = false, inherited
       prompt.includes(delayedBranch)) {
       await new Promise(resolve => setTimeout(resolve, 15))
     }
-    const value = fixture(opts, prompt)
+    const value = opts.phase === agentNullPhase && (agentNullLabel === undefined || opts.label === agentNullLabel)
+      ? null : fixture(opts, prompt)
     completedCalls.push({ prompt, ...opts })
     return value
   }
@@ -460,6 +461,7 @@ function runShip ({ agentBudget = 'standard', omitAgentBudget = false, inherited
   if (liveUrl !== undefined) workflowArgs.liveUrl = liveUrl
   if (omitAgentNamespace) delete workflowArgs.agentNamespace
   if (omitHelperDir) delete workflowArgs.helperDir
+  if (omitDeploys) delete workflowArgs.deploys
   if (omitAgentBudget) delete workflowArgs.agentBudget
   if (inheritedAgentBudget) {
     delete workflowArgs.agentBudget
@@ -470,7 +472,7 @@ function runShip ({ agentBudget = 'standard', omitAgentBudget = false, inherited
     agent,
     parallel,
     pipeline,
-    () => {},
+    phaseCallback || (() => {}),
     (m) => logs.push(m),
     workflowArgs,
     { total: forceAgentCeiling ?? null, spent: () => 0, remaining: () => Infinity },
@@ -1362,14 +1364,63 @@ test('constraint provenance audit requires exact one-to-one coverage before Plan
 
 test('missing or invalid public budget choices fail before the first agent call', async () => {
   // Catches silent fallback to the 110-call standard range when intake was skipped or mistyped.
-  for (const invalidBudget of [undefined, 'deep ', 'constructor', '__proto__', 'toString', ['light'], ['deep']]) {
+  const rejectedBeforeScout = error => {
+    assert.match(error.message, /args\.agentBudget must be one of light, standard, deep/)
+    assert.deepEqual(error.calls, [], 'an invalid selection must not start any worker')
+    return true
+  }
+  for (const invalidBudget of [undefined, null, '', 'auto', '1', 'Light', 'deep ', 'constructor', '__proto__', 'toString', ['light'], ['deep']]) {
     await assert.rejects(
       runShip(invalidBudget === undefined ? { omitAgentBudget: true } : { agentBudget: invalidBudget }),
-      /args\.agentBudget must be one of light, standard, deep/)
+      rejectedBeforeScout)
   }
   await assert.rejects(
     runShip({ agentBudget: 'deep', inheritedAgentBudget: true }),
-    /args\.agentBudget must be one of light, standard, deep/)
+    rejectedBeforeScout)
+})
+
+test('non-boolean deploys flags fail before Scout instead of selecting a release route by truthiness', async () => {
+  for (const deploys of [null, 'false', 'true', '', 0, 1, [], {}, ['false']]) {
+    await assert.rejects(runShip({ deploys }), error => {
+      assert.match(error.message, /args\.deploys.*boolean/i)
+      assert.deepEqual(error.calls, [])
+      return true
+    }, `invalid deploys: ${JSON.stringify(deploys)}`)
+  }
+  for (const deploys of [undefined, false, true]) {
+    const { calls } = await runShip({ deploys, omitDeploys: deploys === undefined, lanes: 1, aggregateLanes: 1, findingsPerLens: 0 })
+    assert.ok(countPhase(calls, 'Scout') > 0)
+    assert.equal(countPhase(calls, 'Release') > 0, deploys === true)
+  }
+})
+
+test('Light, Standard and Deep exercise their original search breadth and return a held handoff', async () => {
+  const tiers = [
+    { name: 'light', ceiling: 55, plans: 3, beam: 1, rounds: 1 },
+    { name: 'standard', ceiling: 110, plans: 5, beam: 2, rounds: 1 },
+    { name: 'deep', ceiling: 200, plans: 8, beam: 3, rounds: 2 },
+  ]
+  // Give every tier identical input. Differences must come from the selection, not the fixture.
+  for (const { name, ceiling, plans, beam, rounds } of tiers) {
+    const { result, calls } = await runShip({
+      agentBudget: name, lanes: 1, aggregateLanes: 1, findingsPerLens: 0, scoreMode: 'all-valid',
+    })
+    assert.equal(result.agentBudget, name)
+    assert.deepEqual(result.graph.budget, {
+      name, projected: ceiling, ceiling, used: calls.length, remaining: ceiling - calls.length,
+    })
+    assert.ok(calls.length <= ceiling)
+    assert.equal(countPhase(calls, 'Generate'), plans)
+    assert.equal(result.graph.thoughts.filter(t => t.operationId === 'keep-generated' && t.status === 'kept').length, beam)
+    assert.equal(countPhase(calls, 'Improve'), beam * rounds)
+    assert.equal(result.graph.operations.filter(op => op.type === 'Improve').length, rounds)
+    assert.ok(result.selectedPlan)
+    assert.notEqual(result.halted, true)
+    assert.ok(result.handoff)
+    assert.equal(result.shipVerdict, 'hold')
+    assert.equal(result.gateVerified, false)
+    assert.deepEqual(auditGraphFloRun(JSON.parse(JSON.stringify(result))), { ok: true, errors: [] })
+  }
 })
 
 test('injected budget totals reject invalid values and clamp only above the public range', async () => {
@@ -2014,6 +2065,26 @@ test('a positive Gate report remains held without trusted runner execution recei
   assert.match(exact.result.gate.output, /^UNVERIFIED:/)
 })
 
+for (const [agentNullPhase, laterPhases] of [
+  ['Review', ['Fix', 'Gate', 'Release']],
+  ['Gate', ['Release']],
+  ['Release', []],
+]) {
+  test(`null ${agentNullPhase} worker results halt held instead of completing as reviewed`, async () => {
+    const { result, calls } = await runShip({ deploys: true, agentNullPhase, findingsPerLens: 0, lanes: 1, aggregateLanes: 1 })
+    assert.ok(countPhase(calls, agentNullPhase) > 0)
+    assert.ok(result.builds.length > 0 && result.builds.every(b => b.state === 'done'))
+    assert.equal(result.halted, true)
+    assert.equal(result.shipVerdict, 'hold')
+    assert.equal(result.gateVerified, false)
+    assert.equal(calls.some(call => laterPhases.includes(call.phase)), false)
+    // A lost Gate response cannot establish that the command never ran. Still check for source drift.
+    if (agentNullPhase === 'Gate') assert.equal(countPhase(calls, 'GateVerify'), 1)
+    assert.ok(result.graph.callLedger.some(call => call.phase === agentNullPhase && ['empty', 'failed'].includes(call.status)))
+    assert.deepEqual(auditGraphFloRun(JSON.parse(JSON.stringify(result))), { ok: true, errors: [] })
+  })
+}
+
 test('a Gate agent failure returns the completed mutation evidence and halts cleanly', async () => {
   const { result, calls } = await runShip({ findingsPerLens: 0, agentErrorPhase: 'Gate' })
   assert.equal(result.halted, true)
@@ -2191,10 +2262,35 @@ test('late budget exhaustion preserves accumulated evidence at Gate and Release'
   }
 })
 
+test('missing research, critic or requested gap-fill evidence halts before plan selection', async () => {
+  const gap = { missing: 'local contract', whyItMatters: 'scope depends on it', howToClose: 'inspect src/a.ts' }
+  for (const [options, reason, expectedFacts] of [
+    [{ agentNullPhase: 'Research' }, 'research agent failure', 0],
+    [{ agentNullPhase: 'Gaps' }, 'gap critic failure', 5],
+    [{ agentNullPhase: 'Gaps', agentNullLabel: 'gap:local contract', criticGaps: [gap] }, 'gap fill agent failure', 5],
+  ]) {
+    const { result, calls } = await runShip({ ...options, researchEvidence: true })
+    assert.equal(result.halted, true, reason)
+    assert.equal(result.reason, reason)
+    assert.equal(result.selectedPlan, null)
+    assert.equal(result.researchFacts.length, expectedFacts)
+    if (options.criticGaps) assert.deepEqual(result.researchGaps, [gap])
+    assert.ok(result.graph.callLedger.some(call => call.phase === options.agentNullPhase && call.status === 'empty'))
+    assert.ok(result.graph.dropped.some(entry => entry.reason === reason))
+    assert.equal(calls.some(call => ['Generate', 'Build', 'Gate', 'Release'].includes(call.phase)), false)
+    assert.deepEqual(auditGraphFloRun(JSON.parse(JSON.stringify(result))), { ok: true, errors: [] })
+  }
+})
+
 test('the budget boundary rethrows non-budget programming errors', async () => {
-  await assert.rejects(
-    runShip({ agentErrorPhase: 'Research' }),
-    /programming error at Research/)
+  const phaseFailure = new RangeError('orchestrator failed before starting the research sweep')
+  await assert.rejects(runShip({ phaseCallback: name => { if (name === 'Research') throw phaseFailure } }), error => {
+    assert.equal(error, phaseFailure)
+    assert.notEqual(error.code, 'AGENT_BUDGET_EXHAUSTED')
+    assert.ok(error.calls.some(call => call.phase === 'Scout'))
+    assert.equal(error.calls.some(call => call.phase === 'Research'), false)
+    return true
+  })
 })
 
 test('refutation fan-out stays bounded when every review lens returns a full findings array', async () => {

@@ -84,7 +84,8 @@ test('all active first-party sources, catalog entries, and public titles share t
     const source = read(path.join(ROOT, 'skills', skill.name, 'SKILL.md'));
     const fm = load(source.match(/^---\n([\s\S]*?)\n---/)[1]);
     assert.equal(fm.name, skill.name);
-    assert.match(fm.metadata['display-name'], /^Suede AI(?: .+)? Skills$/);
+    if (skill.name === 'suede-graph-flo-xr') assert.equal(fm.metadata['display-name'], 'Suede Graph Flo XR');
+    else assert.match(fm.metadata['display-name'], /^Suede AI(?: .+)? Skills$/);
     assert.equal(skill.displayName, fm.metadata['display-name']);
     assert.equal(skill.description, fm.description);
     const agentConfig = path.join(ROOT, 'skills', skill.name, 'agents/openai.yaml');

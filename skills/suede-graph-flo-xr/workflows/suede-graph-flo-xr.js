@@ -7,7 +7,7 @@
 export const meta = {
   name: 'suede-graph-flo-xr',
   description: 'Bounded Suede Thought Graph shipping search: Generate -> Score -> KeepBestN -> paired Refute -> Improve -> Aggregate -> Select -> winner-only Build -> Gate -> Handoff',
-  whenToUse: 'Any nontrivial change to a Suede repo that touches more than one file or surface. The bundled runner requires Claude Code on macOS, registered Suede Graph Flo XR agents, and sandbox-exec. Pass args: { repo, scope, agentBudget, agentNamespace, workerModel?, deploys?, liveUrl?, vault? }',
+  whenToUse: 'Any nontrivial change to a Suede repo that touches more than one file or surface. The bundled runner requires Claude Code on macOS, registered Suede Graph Flo XR agents, and sandbox-exec. Pass args: { repo, scope, agentBudget, agentNamespace, helperDir, workerModel?, deploys?, liveUrl?, vault? }',
   phases: [
     { title: 'Scout', detail: 'fetch origin, dirty files, worktree, Vercel api/ landmines — manifest only' },
     { title: 'Research', detail: 'multi-modal sweep: code path, contracts, history, prior decisions, external docs' },
@@ -21,7 +21,7 @@ export const meta = {
   ],
 }
 
-// Workflow({ name: 'suede-graph-flo-xr', args: { repo: '/absolute/path/to/my-app', scope: '...', agentBudget: 'standard', agentNamespace: 'suede-skills', workerModel: 'sonnet', deploys: true, liveUrl: 'https://example.com', vault: '/path/to/context' } })
+// Workflow({ name: 'suede-graph-flo-xr', args: { repo: '/absolute/path/to/my-app', scope: '...', agentBudget: 'standard', agentNamespace: 'suede-skills', helperDir: '/absolute/path/to/skill/workflows/helpers', workerModel: 'sonnet', deploys: true, liveUrl: 'https://example.com', vault: '/path/to/context' } })
 // Falls back to: Workflow({ scriptPath: '~/.claude/workflows/suede-graph-flo-xr.js', args: {...} })
 
 // args can arrive as an object or as a JSON-encoded string depending on how the
@@ -92,7 +92,9 @@ const canonicalHttpUrl = raw => {
 }
 const REPO = canonicalAbsolutePath(ownArg('repo'))
 const SCOPE = ownArg('scope') || null
-const DEPLOYS = !!ownArg('deploys')
+const rawDeploys = ownArg('deploys')
+if (rawDeploys !== undefined && typeof rawDeploys !== 'boolean') throw new Error('args.deploys must be a boolean when provided')
+const DEPLOYS = rawDeploys === true
 // Total agent budget. The caller is required to ask the user which range they want
 // before launching (see SKILL.md); missing or malformed choices fail closed.
 const BUDGETS = {
@@ -1101,13 +1103,14 @@ not invent work.`,
 ]
 
 reserveBatch(LENSES.length, 'Research', LENSES.map(lens => `research:${lens.key}`))
-const sweep = (await settledParallel(LENSES.map(l => () => callAgent(
+const researchBatch = await evidenceParallel(LENSES.map(l => () => callAgent(
   `${BASE}\n\n${l.prompt}`,
   {
-    label: `research:${l.key}`, phase: 'Research', schema: RESEARCH, effort: l.effort, authority: 'read-only',
+    label: `research:${l.key}`, phase: 'Research', schema: RESEARCH, effort: l.effort, authority: 'read-only', requireResult: true,
     agentType: l.key === 'external' || l.key === 'history' ? WEB_READER_AGENT : CODE_READER_AGENT,
   }
-)))).filter(Boolean)
+)))
+const sweep = researchBatch.values.map(item => item.value)
 const snapshotResearchEvidence = items => {
   const rawConstraints = items.flatMap(item => item.constraints || [])
   evidence.researchFacts = items.flatMap(item => item.facts || [])
@@ -1119,11 +1122,19 @@ const snapshotResearchEvidence = items => {
   evidence.unread = [...new Set(items.flatMap(item => item.unread || []))]
 }
 snapshotResearchEvidence(sweep)
+if (researchBatch.budgetFailure) throw researchBatch.budgetFailure
+if (researchBatch.failures.length) {
+  evidence.researchFailures = researchBatch.failures.map(({ index, error }) => ({ lens: LENSES[index].key, error }))
+  for (const failure of evidence.researchFailures) {
+    graph.dropped.push({ operation: 'Research', inputs: { lens: failure.lens }, reason: 'research agent failure', error: failure.error })
+  }
+  return { halted: true, reason: 'research agent failure', graph, ...evidence }
+}
 
 // -------------------------------------------------------------- 2. gap fill
 // What a sweep misses is invisible to the sweep. One critic, one bounded round.
 phase('Gaps')
-const critic = await callAgent(
+const criticBatch = await evidenceParallel([() => callAgent(
   `Scope: ${SCOPE}
 Research so far: ${JSON.stringify(sweep)}
 Everything the lenses flagged as unread: ${JSON.stringify([...new Set(sweep.flatMap(r => r.unread))])}
@@ -1134,26 +1145,42 @@ listed as unread but is central to the scope? Where do two lenses contradict eac
 Return at most 4 gaps, each with the specific file, command, or search that closes it.
 An unresolved contradiction between two lenses is always a gap. If coverage is genuinely
 sufficient, return an empty array — padding this list costs a round of agents.`,
-  { schema: GAPS, phase: 'Gaps', effort: 'high', authority: 'read-only', agentType: CODE_READER_AGENT }
-)
-evidence.researchGaps = critic && Array.isArray(critic.gaps) ? critic.gaps : []
+  { schema: GAPS, phase: 'Gaps', effort: 'high', authority: 'read-only', agentType: CODE_READER_AGENT, requireResult: true }
+)])
+if (criticBatch.budgetFailure) throw criticBatch.budgetFailure
+if (criticBatch.failures.length) {
+  const { error } = criticBatch.failures[0]
+  graph.dropped.push({ operation: 'Gaps', inputs: { lens: 'completeness' }, reason: 'gap critic failure', error })
+  return { halted: true, reason: 'gap critic failure', graph, ...evidence }
+}
+const critic = criticBatch.values[0].value
+evidence.researchGaps = critic.gaps
 
-const gapsToFill = critic && critic.gaps.length ? critic.gaps.slice(0, BUDGET.gapFills) : []
+const gapsToFill = critic.gaps.slice(0, BUDGET.gapFills)
 reserveBatch(gapsToFill.length, 'Gaps', gapsToFill.map(gap => `gap:${gap.missing.slice(0, 30)}`))
-const gapFills = gapsToFill.length
-  ? (await settledParallel(gapsToFill.map(g => () => callAgent(
+const gapBatch = await evidenceParallel(gapsToFill.map(g => () => callAgent(
       `${BASE}\n\nLens: GAP FILL. Close exactly this gap and nothing else.
 Missing: ${g.missing}
 Why it matters: ${g.whyItMatters}
 How to close it: ${g.howToClose}`,
-      { label: `gap:${g.missing.slice(0, 30)}`, phase: 'Gaps', schema: RESEARCH, effort: 'medium', authority: 'read-only', agentType: CODE_READER_AGENT }
-    )))).filter(Boolean)
-  : []
-
+      { label: `gap:${g.missing.slice(0, 30)}`, phase: 'Gaps', schema: RESEARCH, effort: 'medium', authority: 'read-only', agentType: CODE_READER_AGENT, requireResult: true }
+    )))
+const gapFills = gapBatch.values.map(item => item.value)
 const research = [...sweep, ...gapFills]
 snapshotResearchEvidence(research)
+const unattemptedGaps = critic.gaps.slice(gapsToFill.length).map(g => g.missing)
+evidence.unread = [...new Set([...evidence.unread, ...unattemptedGaps])]
+if (gapBatch.budgetFailure) throw gapBatch.budgetFailure
+if (gapBatch.failures.length) {
+  evidence.researchFailures = gapBatch.failures.map(({ index, error }) => ({ gap: gapsToFill[index].missing, error }))
+  for (const failure of evidence.researchFailures) {
+    graph.dropped.push({ operation: 'Gaps', inputs: { gap: failure.gap }, reason: 'gap fill agent failure', error: failure.error })
+  }
+  evidence.unread.push(...evidence.researchFailures.map(failure => failure.gap))
+  return { halted: true, reason: 'gap fill agent failure', graph, ...evidence }
+}
 const claimed = research.flatMap(r => r.constraints)
-const stillUnread = [...new Set(research.flatMap(r => r.unread))]
+const stillUnread = evidence.unread
 
 // SKEPTIC #1 — provenance audit on constraints only (not every fact; constraints
 // are what the planner is actually bound by). A hallucinated constraint is the
@@ -1249,7 +1276,7 @@ evidence.droppedConstraints = rejected
 evidence.unread = stillUnread
 evidence.constraintAuditComplete = constraintAuditComplete
 if (rejected.length) log(`skeptic dropped ${rejected.length} constraint(s): ${rejected.map(a => `${a.verdict} — ${a.rule}`).join(' | ')}`)
-log(`research: ${research.length} lenses · ${research.flatMap(r => r.facts).length} sourced facts · ${constraints.length}/${claimed.length} constraints survived audit · ${critic ? critic.gaps.length : 0} gaps filled · ${stillUnread.length} still unread`)
+log(`research: ${research.length} lenses · ${research.flatMap(r => r.facts).length} sourced facts · ${constraints.length}/${claimed.length} constraints survived audit · ${gapFills.length}/${critic.gaps.length} gap-fill reports · ${stillUnread.length} still unread`)
 
 // ---------------------------------------------------------------- 3. plan
 phase('Plan')
@@ -2503,7 +2530,7 @@ Lens — ${lens}
 
 Report only defects you can point at a specific line for. No style preferences,
 no "consider extracting". If the code is clean, return an empty findings array.`,
-      { label: `review:${lane.name}`, phase: 'Review', schema: FINDINGS, effort: 'medium', authority: 'read-only', agentType: CODE_READER_AGENT, allowedFiles: selectedAllowlists.get(lane.name) }
+      { label: `review:${lane.name}`, phase: 'Review', schema: FINDINGS, requireResult: true, effort: 'medium', authority: 'read-only', agentType: CODE_READER_AGENT, allowedFiles: selectedAllowlists.get(lane.name) }
     )))
     const reviews = reviewBatch.values.map(item => item.value).filter(Boolean)
     const reported = reviews.filter(Boolean).flatMap(r => r.findings)
@@ -2865,7 +2892,7 @@ ${DEPLOYS ? `This repo deploys. Scout's blocking deploy-surface verdicts were al
 Report exit codes and the real failure text. Do not claim a check passed that you
 did not run, and do not describe a failure as "minor" — quote it.`,
   {
-    schema: GATE, phase: 'Gate', effort: 'medium', authority: 'read-only', agentType: VERIFIER_AGENT, allowedCommands: gateCommands,
+    schema: GATE, phase: 'Gate', requireResult: true, effort: 'medium', authority: 'read-only', agentType: VERIFIER_AGENT, allowedCommands: gateCommands,
     allowedWriteRoots: gateModuleBuildRoots,
     bashCommandClamp: gateExecutionCommands.map(command => `Bash(${command})`),
   }
@@ -2904,8 +2931,9 @@ gate = gate && {
     ? `UNVERIFIED: the restricted Gate attempt has no trusted runner execution receipts. Agent report: ${gate.output}`
     : `UNVERIFIED: the Gate command report is incomplete or contains unexpected commands. Agent report: ${gate.output || ''}`,
 }
-evidence.gate = gate
-evidence.gatePassed = false
+evidence.gate = gate ?? null
+evidence.gatePassed = gate ? false : null
+evidence.shipVerdict = 'hold'
 evidence.gateVerified = false
 
 // Gate commands may create ignored build artifacts, but they must not alter the source
@@ -3006,7 +3034,7 @@ even when you find zero risks.`,
   ]
   const releaseBatch = await evidenceParallel(releaseLenses.map(lens => () => callAgent(
     `${RELEASE_BASE}\n\n${lens.prompt}`,
-    { label: `release:${lens.key}`, phase: 'Release', schema: RELEASE, effort: 'high', authority: 'read-only-production', agentType: WEB_READER_AGENT }
+    { label: `release:${lens.key}`, phase: 'Release', schema: RELEASE, requireResult: true, effort: 'high', authority: 'read-only-production', agentType: WEB_READER_AGENT }
   )))
   release = releaseBatch.values.map(item => item.value).filter(Boolean)
   evidence.release = release

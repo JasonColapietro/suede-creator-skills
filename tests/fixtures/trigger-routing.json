@@ -1154,6 +1154,7 @@
           "positive": [
             "shipping dag",
             "suede thought graph shipping search",
+            "compare competing fixes",
             "score and prune",
             "aggregate the best lanes",
             "multi-file repository change",
@@ -1170,7 +1171,8 @@
             "stems"
           ],
           "metadataMustContain": [
-            "suede thought graph shipping search"
+            "more than one plausible fix",
+            "isolated worktree"
           ]
         },
         {
@@ -1259,6 +1261,12 @@
           "id": "suede-graph-flo-xr-multifile-positive",
           "mode": "positive",
           "prompt": "Use a Suede Thought Graph shipping search for this multi-file repository change, then select one implementation plan to build.",
+          "expected": "suede-graph-flo-xr"
+        },
+        {
+          "id": "suede-graph-flo-xr-duplicate-bookings-positive",
+          "mode": "positive",
+          "prompt": "Compare competing fixes for duplicate bookings, then build only the winner. Budget: light.",
           "expected": "suede-graph-flo-xr"
         },
         {
