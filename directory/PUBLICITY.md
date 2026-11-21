@@ -2,17 +2,17 @@
 
 Ready-to-send copy for getting the Agent Skills Directory (https://suedeai.directory) into roundups, awesome lists, launch sites and press. Targets and status are in [DISTRIBUTION.md](DISTRIBUTION.md). Nothing here is sent, posted or submitted without owner approval.
 
-Facts used below come from the 2026-10-22 snapshot: 3,868 scored skills, 161 repositories, 16 categories, 1,765 skills at 80–99, scores 53–95 with a median of 79, 97.3% under an open license. Every listing shows its score, publisher, license and source link; 739 skills have a full page of their own, and only those pages carry the "before you install" panel (scripts, credentials, outside hosts, MCP use). Word every claim about that panel as "full skill pages", never "every skill". The frontmatter percentages (about 14% declare `allowed-tools`, 14% declare `compatibility`, 13% state a boundary, 17% bundle scripts) are from the October 19, 2026 snapshot of 3,798 skills as published in the [AI-visibility guide](editorial/skill-ai-visibility.md); recompute them with the data report before quoting them to press. Where a count appears, the count-free variant beside it is the one to use after the next refresh if this file has not been updated. Author credit on everything public: Jason Colapietro, founder of Suede AI. The @johnnysuede handle is for X only.
+Facts used below come from the 2026-10-22 snapshot: 3,868 scored skills, 161 repositories, 16 categories, 1,765 skills at 80–99, scores 53–95 with a median of 79, 97.3% under an open license. Every listing shows its score, publisher, license and source link; 739 skills have a full page of their own, and only those pages carry the "before you install" panel (scripts, credentials, outside hosts, MCP use). Word every claim about that panel as "full skill pages", never "every skill". The frontmatter percentages (about 14% declare `allowed-tools`, 14% declare `compatibility`, 13% state a boundary, 17% bundle scripts) are from the October 19, 2026 snapshot of 3,798 skills as published in the [AI-visibility guide](editorial/skill-ai-visibility.md); recompute them with the data report before quoting them to press. Where a count appears, the count-free variant beside it is the one to use after the next refresh if this file has not been updated. Author credit on everything public: Jason Colapietro, founder of Suede. The @johnnysuede handle is for X only.
 
 ## One-liners
 
 Count-free (safe forever):
 
-> Agent Skills Directory by Suede AI: Claude Code, Codex and OpenClaw skills scored 0–99 on a published rubric, with a "before you install" panel on every full skill page. https://suedeai.directory
+> Agent Skills Directory by Suede: Claude Code, Codex and OpenClaw skills scored 0–99 on a published rubric, with a "before you install" panel on every full skill page. https://suedeai.directory
 
 Dated count:
 
-> Agent Skills Directory by Suede AI: 3,868 agent skills from 161 repositories, each scored 0–99 on a published, recomputable rubric, with 739 full skill pages that list scripts, credentials and outside hosts before you install. https://suedeai.directory
+> Agent Skills Directory by Suede: 3,868 agent skills from 161 repositories, each scored 0–99 on a published, recomputable rubric, with 739 full skill pages that list scripts, credentials and outside hosts before you install. https://suedeai.directory
 
 Ten words, for form fields with a tight limit:
 
@@ -20,17 +20,17 @@ Ten words, for form fields with a tight limit:
 
 ## Short description (about 100 words)
 
-> The Agent Skills Directory scores every listed agent skill from 0 to 99 on a published rubric and shows the evidence behind the number. Full skill pages list what the skill bundles, what it would run, which credentials and outside hosts it touches, and whether it uses MCP, so you can judge it before it lands in Claude Code, Codex or OpenClaw. Listings credit the publisher, link to the source and name the license. Publishers can add a badge to their README, run a free AI-visibility check and request a featured placement. Built and maintained by Jason Colapietro at Suede AI. Free, no account.
+> The Agent Skills Directory scores every listed agent skill from 0 to 99 on a published rubric and shows the evidence behind the number. Full skill pages list what the skill bundles, what it would run, which credentials and outside hosts it touches, and whether it uses MCP, so you can judge it before it lands in Claude Code, Codex or OpenClaw. Listings credit the publisher, link to the source and name the license. Publishers can add a badge to their README, run a free AI-visibility check and request a featured placement. Built and maintained by Jason Colapietro at Suede. Free, no account.
 
 ## Long description (about 250 words)
 
-> Most skill directories rank by install counts or star counts, which tell you what is popular, not what is well built. The Agent Skills Directory from Suede AI takes a different route: every listed skill gets a 0–99 score computed from a published rubric, and every component of that score is shown on the listing. The rubric reads the skill's structure, description clarity, instruction depth, bundled resources, maintenance signals, curated-list citations and declared tool and compatibility fields. Anyone can recompute a score from the saved evidence, and the method page documents every point.
+> Most skill directories rank by install counts or star counts, which tell you what is popular, not what is well built. The Agent Skills Directory from Suede takes a different route: every listed skill gets a 0–99 score computed from a published rubric, and every component of that score is shown on the listing. The rubric reads the skill's structure, description clarity, instruction depth, bundled resources, maintenance signals, curated-list citations and declared tool and compatibility fields. Anyone can recompute a score from the saved evidence, and the method page documents every point.
 >
 > Full skill pages also answer the question people actually have before installing: what will this do to my machine? Their "before you install" panel lists bundled scripts, required credentials, outside hosts the skill calls and any MCP use, read straight from the source. Every other listing shows its score, publisher, license and a link to the source. Scores measure structural quality, not safety, and the directory says so on every page.
 >
 > The directory covers skills for Claude Code, OpenAI Codex, OpenClaw and other agents that read the SKILL.md format, drawn from eight community-curated lists plus publisher requests. Listings credit the author, link to the source commit and name the license. Publishers get a badge for their README, a free Skill AI-visibility check that shows which rubric points are still open, and a featured placement offer for verified badges on skills scoring 80 or above. There are also guides on installing skills, skills versus MCP servers, and getting a skill cited by AI assistants.
 >
-> It is free, needs no account, and the data behind it is public on GitHub as a Markdown catalog. Built by Jason Colapietro, founder of Suede AI.
+> It is free, needs no account, and the data behind it is public on GitHub as a Markdown catalog. Built by Jason Colapietro, founder of Suede.
 
 ## Awesome-list entry line
 
@@ -42,7 +42,7 @@ For a "Directories", "Resources" or "Where to browse" section. Count-free so it 
 
 PR title: `Add Agent Skills Directory`. PR body, two lines:
 
-> Adds the Agent Skills Directory (Suede AI) to the resources section. It scores skills on a published, recomputable rubric and lists install evidence on full skill pages; this list is one of its eight sources and every listing links back to the source repository.
+> Adds the Agent Skills Directory (Suede) to the resources section. It scores skills on a published, recomputable rubric and lists install evidence on full skill pages; this list is one of its eight sources and every listing links back to the source repository.
 
 ## Roundup author email (Tier 1)
 
@@ -66,7 +66,7 @@ Subject: `Add a scored skills directory to your "{post title}" roundup?`
 > Thanks for maintaining the list.
 >
 > Jason Colapietro
-> Founder, Suede AI
+> Founder, Suede
 > https://suedeai.ai
 
 ## Show HN
@@ -99,13 +99,13 @@ Tagline (60 characters max): `Agent skills scored 0–99, with install evidence`
 
 Description (260 characters max):
 
-> Compare Claude Code, Codex and OpenClaw skills by a published 0–99 quality score instead of install counts. Every listing shows its scoring evidence; full skill pages add scripts, credentials and outside hosts before you install. Free, no account, from Suede AI.
+> Compare Claude Code, Codex and OpenClaw skills by a published 0–99 quality score instead of install counts. Every listing shows its scoring evidence; full skill pages add scripts, credentials and outside hosts before you install. Free, no account, from Suede.
 
 Topics: Developer Tools, Artificial Intelligence, Open Source, Productivity.
 
 Maker's first comment:
 
-> Hi Product Hunt. I am Jason, founder of Suede AI.
+> Hi Product Hunt. I am Jason, founder of Suede.
 >
 > Skill directories rank by installs or stars. That tells you what is popular, not what is well built or what it will run. The Agent Skills Directory scores every skill 0–99 on a rubric that is fully published, shows every point on the listing, and full skill pages list bundled scripts, credentials, outside hosts and MCP use before you install.
 >
@@ -143,7 +143,7 @@ Subject: `Data: only 14% of AI agent skills declare what tools they use`
 
 > Hi {first name},
 >
-> I am Jason Colapietro, founder of Suede AI and author of *Stake Your Claim*, *Proof as Infrastructure* and *The Human Authenticity Layer*. I also hold the VoicePrint patent.
+> I am Jason Colapietro, founder of Suede and author of *Stake Your Claim*, *Proof as Infrastructure* and *The Human Authenticity Layer*. I also hold the VoicePrint patent.
 >
 > I scored 3,868 agent skills (the SKILL.md files that extend Claude Code, Codex and OpenClaw) from 161 repositories on a published rubric. The results say something about how fast this ecosystem is moving relative to how carefully it is being built:
 >
@@ -156,7 +156,7 @@ Subject: `Data: only 14% of AI agent skills declare what tools they use`
 > If the "install before you look" problem in agent tooling is on your radar, I am glad to walk through the data or share the raw snapshot.
 >
 > Jason Colapietro
-> Founder, Suede AI
+> Founder, Suede
 > https://suedeai.ai/founder
 
 ## Social drafts for Buffer (approval required)

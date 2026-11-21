@@ -8,9 +8,9 @@ Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Pr
 
 **239 accepted skills · 17 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
-**Compare on the 0–99 quality scale:** this category’s verified scores span **56–93 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=product-management&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
+**Compare on the 0–99 quality scale:** this category’s verified scores span **56–93 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=product-management&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
-[Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede AI listing.
+[Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede listing.
 
 <details>
 <summary>Browse publishers in this category</summary>
@@ -39,7 +39,7 @@ Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Pr
 
 ## avelikiy/great\_cto
 
-[Repository](https://github.com/avelikiy/great_cto) · Publisher: [avelikiy](https://github.com/avelikiy) · [Suede AI listing](https://skills.suedeai.ai/directory/avelikiy/great-cto/)
+[Repository](https://github.com/avelikiy/great_cto) · Publisher: [avelikiy](https://github.com/avelikiy) · [Suede listing](https://skills.suedeai.ai/directory/avelikiy/great-cto/)
 
 - **86/100 · B** · [outcome-roadmap](https://github.com/avelikiy/great_cto/blob/main/skills/outcome-roadmap/SKILL.md): Rewrites an output-focused feature roadmap as outcome statements reflecting user and business impact, making the roadmap more strategic and clearer about success. [Suede](https://skills.suedeai.ai/directory/avelikiy/great-cto/outcome-roadmap/)
 - **82/100 · B** · [opportunity-solution-tree](https://github.com/avelikiy/great_cto/blob/main/skills/opportunity-solution-tree/SKILL.md): Builds an Opportunity Solution Tree that maps a desired outcome to customer opportunities, possible solutions, and experiments, following Teresa Torres' Continuous Discovery Habits. [Suede](https://skills.suedeai.ai/directory/avelikiy/great-cto/opportunity-solution-tree/)
@@ -54,7 +54,7 @@ Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Pr
 
 ## coreyhaines31/marketingskills
 
-[Repository](https://github.com/coreyhaines31/marketingskills) · Publisher: [coreyhaines31](https://github.com/coreyhaines31) · [Suede AI listing](https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/)
+[Repository](https://github.com/coreyhaines31/marketingskills) · Publisher: [coreyhaines31](https://github.com/coreyhaines31) · [Suede listing](https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/)
 
 - **92/100 · A** · [onboarding](https://github.com/coreyhaines31/marketingskills/blob/main/skills/onboarding/SKILL.md): When the user wants to optimize post-signup onboarding, user activation, first-run experience, or time-to-value. [Suede](https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/#onboarding)
 - **86/100 · B** · [customer-research](https://github.com/coreyhaines31/marketingskills/blob/main/skills/customer-research/SKILL.md): When the user wants to conduct, analyze, or synthesize customer research. [Suede](https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/#customer-research)
@@ -63,7 +63,7 @@ Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Pr
 
 ## deanpeters/Product-Manager-Skills
 
-[Repository](https://github.com/deanpeters/Product-Manager-Skills) · Publisher: [deanpeters](https://github.com/deanpeters) · [Suede AI listing](https://skills.suedeai.ai/directory/deanpeters/product-manager-skills/)
+[Repository](https://github.com/deanpeters/Product-Manager-Skills) · Publisher: [deanpeters](https://github.com/deanpeters) · [Suede listing](https://skills.suedeai.ai/directory/deanpeters/product-manager-skills/)
 
 - **83/100 · B** · [tam-sam-som-calculator](https://github.com/deanpeters/Product-Manager-Skills/blob/main/skills/tam-sam-som-calculator/SKILL.md): Calculates TAM, SAM, and SOM with explicit assumptions, methods, and caveats for sizing a market for a product idea, business case, or executive review. [Suede](https://skills.suedeai.ai/directory/deanpeters/product-manager-skills/tam-sam-som-calculator/) · License: CC-BY-NC-SA-4.0 (review terms)
 - **83/100 · B** · [user-story](https://github.com/deanpeters/Product-Manager-Skills/blob/main/skills/user-story/SKILL.md): Creates user stories in Mike Cohn format with Gherkin acceptance criteria, turning user needs into development-ready work with clear outcomes and testable conditions. [Suede](https://skills.suedeai.ai/directory/deanpeters/product-manager-skills/user-story/) · License: CC-BY-NC-SA-4.0 (review terms)
@@ -136,7 +136,7 @@ Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Pr
 
 ## Digidai/product-manager-skills
 
-[Repository](https://github.com/Digidai/product-manager-skills) · Publisher: [Digidai](https://github.com/Digidai) · [Suede AI listing](https://skills.suedeai.ai/directory/digidai/product-manager-skills/)
+[Repository](https://github.com/Digidai/product-manager-skills) · Publisher: [Digidai](https://github.com/Digidai) · [Suede listing](https://skills.suedeai.ai/directory/digidai/product-manager-skills/)
 
 - **68/100 · D** · [product-manager-skills](https://github.com/Digidai/product-manager-skills/blob/main/SKILL.md): PM skill for Claude Code, Codex, Cursor, and Windsurf. [Suede](https://skills.suedeai.ai/directory/digidai/product-manager-skills/#product-manager-skills) · License: CC-BY-NC-SA-4.0 (review terms)
 
@@ -144,7 +144,7 @@ Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Pr
 
 ## firecrawl/skills
 
-[Repository](https://github.com/firecrawl/skills) · Publisher: [firecrawl](https://github.com/firecrawl) · [Suede AI listing](https://skills.suedeai.ai/directory/firecrawl/skills/)
+[Repository](https://github.com/firecrawl/skills) · Publisher: [firecrawl](https://github.com/firecrawl) · [Suede listing](https://skills.suedeai.ai/directory/firecrawl/skills/)
 
 - **71/100 · C** · [firecrawl-competitive-intel](https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-competitive-intel/SKILL.md): Monitors competitor pricing, features, changelogs, dashboards, and product changes with Firecrawl, including pricing tier extraction, feature change tracking, and structured competitor alerts. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-competitive-intel/)
 - **71/100 · C** · [firecrawl-demo-walkthrough](https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-demo-walkthrough/SKILL.md): Walk through a product's key flows with Firecrawl browser and produce a structured UX/product walkthrough. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/#firecrawl-demo-walkthrough)
@@ -153,7 +153,7 @@ Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Pr
 
 ## garrytan/gstack
 
-[Repository](https://github.com/garrytan/gstack) · Publisher: [garrytan](https://github.com/garrytan) · [Suede AI listing](https://skills.suedeai.ai/directory/garrytan/gstack/)
+[Repository](https://github.com/garrytan/gstack) · Publisher: [garrytan](https://github.com/garrytan) · [Suede listing](https://skills.suedeai.ai/directory/garrytan/gstack/)
 
 - **80/100 · B** · [gstack-openclaw-ceo-review](https://github.com/garrytan/gstack/blob/main/openclaw/skills/gstack-openclaw-ceo-review/SKILL.md): Reviews a plan or proposal CEO-style by poking holes in the approach, thinking bigger about scope, and deciding whether to expand or reduce it. [Suede](https://skills.suedeai.ai/directory/garrytan/gstack/gstack-openclaw-ceo-review/)
 - **80/100 · B** · [gstack-openclaw-office-hours](https://github.com/garrytan/gstack/blob/main/openclaw/skills/gstack-openclaw-office-hours/SKILL.md): Brainstorms and evaluates whether a new product idea is worth building, and thinks through design direction before any code is written. [Suede](https://skills.suedeai.ai/directory/garrytan/gstack/gstack-openclaw-office-hours/)
@@ -162,7 +162,7 @@ Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Pr
 
 ## github/awesome-copilot
 
-[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede AI listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
+[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
 
 - **78/100 · C** · [impediment-prioritization](https://github.com/github/awesome-copilot/blob/main/skills/impediment-prioritization/SKILL.md): Ranks any list of impediments and their countermeasures using a value-stream scoring model (ROI, Cost to Implement, Ease of Deployment, Risk Factor) and a fixed prioritization formula. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#impediment-prioritization)
 - **74/100 · C** · [breakdown-epic-pm](https://github.com/github/awesome-copilot/blob/main/skills/breakdown-epic-pm/SKILL.md): Prompt for creating an Epic Product Requirements Document (PRD) for a new epic. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#breakdown-epic-pm)
@@ -173,7 +173,7 @@ Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Pr
 
 ## gooseworks-ai/goose-skills
 
-[Repository](https://github.com/gooseworks-ai/goose-skills) · Publisher: [gooseworks-ai](https://github.com/gooseworks-ai) · [Suede AI listing](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/)
+[Repository](https://github.com/gooseworks-ai/goose-skills) · Publisher: [gooseworks-ai](https://github.com/gooseworks-ai) · [Suede listing](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/)
 
 - **73/100 · C** · [voice-of-customer-synthesizer](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/research/composites/voice-of-customer-synthesizer/SKILL.md): Aggregate customer feedback from multiple sources — support tickets, NPS comments, Slack messages, G2 reviews, call transcripts, survey responses — into a unified VoC report with theme clustering, sentiment analysis, trend detection,… [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#voice-of-customer-synthesizer)
 - **70/100 · C** · [product-demand-research](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/research/composites/product-demand-research/SKILL.md): Test product-demand hypotheses using public customer language, search and social signals, competitor offers, reviews, comments, creator content, and social-commerce evidence before committing to a product, launch, offer, or campaign. [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#product-demand-research)
@@ -182,7 +182,7 @@ Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Pr
 
 ## infrasity-labs/dev-gtm-claude-skills
 
-[Repository](https://github.com/infrasity-labs/dev-gtm-claude-skills) · Publisher: [infrasity-labs](https://github.com/infrasity-labs) · [Suede AI listing](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/)
+[Repository](https://github.com/infrasity-labs/dev-gtm-claude-skills) · Publisher: [infrasity-labs](https://github.com/infrasity-labs) · [Suede listing](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/)
 
 - **79/100 · C** · [agile-product-owner](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/product-management-skills/agile-product-owner/SKILL.md): Supports agile product ownership by writing user stories and acceptance criteria, planning sprints, estimating story points, breaking down epics, and prioritizing the backlog. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/agile-product-owner/)
 - **79/100 · C** · [product-manager-toolkit](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/product-management-skills/product-manager-toolkit/SKILL.md): Supports product managers with RICE prioritization, customer interview analysis, PRD templates, discovery frameworks, and go-to-market strategy. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/product-manager-toolkit/)
@@ -218,16 +218,16 @@ Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Pr
 
 ## JasonColapietro/suede-creator-skills
 
-[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede AI listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
+[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
 
-- **93/100 · A** · [Suede AI Customer Research Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-customer-research/SKILL.md): Use when asked "synthesize these interviews" or to discover what a defined customer segment says, needs and resists. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-customer-research)
-- **91/100 · A** · [Suede AI Onboarding Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-onboarding/SKILL.md): Suede AI Onboarding Skills: time to value, ranked friction audits, first-value flows, empty states, checklists, and measurement. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-onboarding)
+- **93/100 · A** · [Suede Customer Research Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-customer-research/SKILL.md): Use when asked "synthesize these interviews" or to discover what a defined customer segment says, needs and resists. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-customer-research)
+- **91/100 · A** · [Suede Onboarding Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-onboarding/SKILL.md): Suede Onboarding Skills: time to value, ranked friction audits, first-value flows, empty states, checklists, and measurement. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-onboarding)
 
 <a id="jeffallan--claude-skills"></a>
 
 ## jeffallan/claude-skills
 
-[Repository](https://github.com/jeffallan/claude-skills) · Publisher: [jeffallan](https://github.com/jeffallan) · [Suede AI listing](https://skills.suedeai.ai/directory/jeffallan/claude-skills/)
+[Repository](https://github.com/jeffallan/claude-skills) · Publisher: [jeffallan](https://github.com/jeffallan) · [Suede listing](https://skills.suedeai.ai/directory/jeffallan/claude-skills/)
 
 - **81/100 · B** · [feature-forge](https://github.com/jeffallan/claude-skills/blob/main/skills/feature-forge/SKILL.md): Conducts structured requirements workshops to produce feature specifications, user stories, EARS-format functional requirements, acceptance criteria, and implementation checklists. [Suede](https://skills.suedeai.ai/directory/jeffallan/claude-skills/#feature-forge)
 
@@ -235,7 +235,7 @@ Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Pr
 
 ## michalparkola/tapestry-skills-for-claude-code
 
-[Repository](https://github.com/michalparkola/tapestry-skills-for-claude-code) · Publisher: [michalparkola](https://github.com/michalparkola) · [Suede AI listing](https://skills.suedeai.ai/directory/michalparkola/tapestry-skills-for-claude-code/)
+[Repository](https://github.com/michalparkola/tapestry-skills-for-claude-code) · Publisher: [michalparkola](https://github.com/michalparkola) · [Suede listing](https://skills.suedeai.ai/directory/michalparkola/tapestry-skills-for-claude-code/)
 
 - **74/100 · C** · [scrum-sage](https://github.com/michalparkola/tapestry-skills-for-claude-code/blob/main/scrum-sage/SKILL.md): Acts as a Scrum Master and agility coach for Scrum questions, sprint analysis, backlog refinement, scaling advice, impediment removal, and team dynamics. [Suede](https://skills.suedeai.ai/directory/michalparkola/tapestry-skills-for-claude-code/scrum-sage/)
 
@@ -243,7 +243,7 @@ Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Pr
 
 ## phuryn/pm-skills
 
-[Repository](https://github.com/phuryn/pm-skills) · Publisher: [phuryn](https://github.com/phuryn) · [Suede AI listing](https://skills.suedeai.ai/directory/phuryn/pm-skills/)
+[Repository](https://github.com/phuryn/pm-skills) · Publisher: [phuryn](https://github.com/phuryn) · [Suede listing](https://skills.suedeai.ai/directory/phuryn/pm-skills/)
 
 - **81/100 · B** · [ansoff-matrix](https://github.com/phuryn/pm-skills/blob/main/pm-product-strategy/skills/ansoff-matrix/SKILL.md): Generates an Ansoff Matrix analysis mapping growth strategies across market penetration, market development, product development, and diversification. [Suede](https://skills.suedeai.ai/directory/phuryn/pm-skills/ansoff-matrix/)
 - **81/100 · B** · [beachhead-segment](https://github.com/phuryn/pm-skills/blob/main/pm-go-to-market/skills/beachhead-segment/SKILL.md): Identifies the beachhead market segment for a product launch by evaluating burning pain, willingness to pay, winnable market share, and referral potential. [Suede](https://skills.suedeai.ai/directory/phuryn/pm-skills/beachhead-segment/)
@@ -299,7 +299,7 @@ Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Pr
 
 ## product-on-purpose/pm-skills
 
-[Repository](https://github.com/product-on-purpose/pm-skills) · Publisher: [product-on-purpose](https://github.com/product-on-purpose) · [Suede AI listing](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/)
+[Repository](https://github.com/product-on-purpose/pm-skills) · Publisher: [product-on-purpose](https://github.com/product-on-purpose) · [Suede listing](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/)
 
 - **87/100 · B** · [define-opportunity-tree](https://github.com/product-on-purpose/pm-skills/blob/main/skills/define-opportunity-tree/SKILL.md): Creates an opportunity solution tree connecting a desired outcome to customer opportunities and candidate solutions, preventing solution-first jumps in continuous discovery. [Suede](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/#define-opportunity-tree)
 - **87/100 · B** · [discover-stakeholder-summary](https://github.com/product-on-purpose/pm-skills/blob/main/skills/discover-stakeholder-summary/SKILL.md): Maps the people and groups with a stake in a project, documenting their needs, concerns, influence, and engagement approach. [Suede](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/#discover-stakeholder-summary)
@@ -357,7 +357,7 @@ Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Pr
 
 ## takechanman1228/claude-persona
 
-[Repository](https://github.com/takechanman1228/claude-persona) · Publisher: [takechanman1228](https://github.com/takechanman1228) · [Suede AI listing](https://skills.suedeai.ai/directory/takechanman1228/claude-persona/)
+[Repository](https://github.com/takechanman1228/claude-persona) · Publisher: [takechanman1228](https://github.com/takechanman1228) · [Suede listing](https://skills.suedeai.ai/directory/takechanman1228/claude-persona/)
 
 - **65/100 · D** · [persona](https://github.com/takechanman1228/claude-persona/blob/main/skills/persona/SKILL.md): Build a persona panel, explore customer motivations through open-ended questions, and pressure-test product concepts before spending on fieldwork. [Suede](https://skills.suedeai.ai/directory/takechanman1228/claude-persona/#persona)
 
@@ -365,7 +365,7 @@ Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Pr
 
 ## tronghieu/agent-skills
 
-[Repository](https://github.com/tronghieu/agent-skills) · Publisher: [tronghieu](https://github.com/tronghieu) · [Suede AI listing](https://skills.suedeai.ai/directory/tronghieu/agent-skills/)
+[Repository](https://github.com/tronghieu/agent-skills) · Publisher: [tronghieu](https://github.com/tronghieu) · [Suede listing](https://skills.suedeai.ai/directory/tronghieu/agent-skills/)
 
 - **90/100 · A** · [design-thinking](https://github.com/tronghieu/agent-skills/blob/main/skills/design-thinking/SKILL.md): Facilitate a full design-thinking engagement (Empathize, Define, Ideate, Prototype, Test) grounded in real user evidence. [Suede](https://skills.suedeai.ai/directory/tronghieu/agent-skills/#design-thinking)
 - **88/100 · B** · [product-manager](https://github.com/tronghieu/agent-skills/blob/main/skills/product-manager/SKILL.md): Act as a product-manager copilot that turns evidence into product decisions and artifacts: backlogs and prioritization, PRDs and user stories, metrics and OKRs, experiments, launch plans, feedback triage, and pricing/packaging, kept in… [Suede](https://skills.suedeai.ai/directory/tronghieu/agent-skills/#product-manager)
@@ -374,7 +374,7 @@ Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Pr
 
 ## wondelai/skills
 
-[Repository](https://github.com/wondelai/skills) · Publisher: [wondelai](https://github.com/wondelai) · [Suede AI listing](https://skills.suedeai.ai/directory/wondelai/skills/)
+[Repository](https://github.com/wondelai/skills) · Publisher: [wondelai](https://github.com/wondelai) · [Suede listing](https://skills.suedeai.ai/directory/wondelai/skills/)
 
 - **83/100 · B** · [hooked-ux](https://github.com/wondelai/skills/blob/main/hooked-ux/SKILL.md): Design habit-forming product loops using the Hook Model (Trigger, Action, Variable Reward, Investment). [Suede](https://skills.suedeai.ai/directory/wondelai/skills/#hooked-ux)
 - **82/100 · B** · [grow-app](https://github.com/wondelai/skills/blob/main/grow-app/SKILL.md): Guided journey from an app people sign up for and then quietly abandon to a sealed retention engine with a habit loop, an activated first run, and one metric the whole team trusts. [Suede](https://skills.suedeai.ai/directory/wondelai/skills/#grow-app)
@@ -395,6 +395,6 @@ Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Pr
 
 ---
 
-**Run a team of agents.** Suede AI Agent Studio builds multi-agent automation for businesses. [suedeai.app](https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agent-studio) Listed here? [Add your badge](../README.md#add-your-badge).
+**Run a team of agents.** Suede Agent Studio builds multi-agent automation for businesses. [suedeai.app](https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agent-studio) Listed here? [Add your badge](../README.md#add-your-badge).
 
 [Awesome Everything](../README.md) · [Compare scores](../README.md#compare-099-quality-scores) · [Publishers](../publishers.md) · [Featured projects](../featured.md) · [Guides](../README.md#guides) · [Contribute](../CONTRIBUTING.md) · [Search by score](https://skills.suedeai.ai/directory/?sort=score)

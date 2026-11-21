@@ -8,9 +8,9 @@ Skills for security review, vulnerability hunting, threat detection, authenticat
 
 **115 accepted skills · 22 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
-**Compare on the 0–99 quality scale:** this category’s verified scores span **54–93 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=security&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
+**Compare on the 0–99 quality scale:** this category’s verified scores span **54–93 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=security&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
-[Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede AI listing.
+[Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede listing.
 
 <details>
 <summary>Browse publishers in this category</summary>
@@ -44,7 +44,7 @@ Skills for security review, vulnerability hunting, threat detection, authenticat
 
 ## anthropics/claude-plugins-official
 
-[Repository](https://github.com/anthropics/claude-plugins-official) · Publisher: [anthropics](https://github.com/anthropics) · [Suede AI listing](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/)
+[Repository](https://github.com/anthropics/claude-plugins-official) · Publisher: [anthropics](https://github.com/anthropics) · [Suede listing](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/)
 
 - **80/100 · B** · [claude-security](https://github.com/anthropics/claude-plugins-official/blob/main/plugins/claude-security/skills/claude-security/SKILL.md): Claude Security: scan the codebase (the whole repository or a scoped part of it), scan changes (this branch's or a pull request's diff, or one commit), or suggest patches (findings turned into targeted patch files, each verified by a… [Suede](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/#claude-security) · License: All rights reserved (review terms)
 
@@ -52,7 +52,7 @@ Skills for security review, vulnerability hunting, threat detection, authenticat
 
 ## avelikiy/great\_cto
 
-[Repository](https://github.com/avelikiy/great_cto) · Publisher: [avelikiy](https://github.com/avelikiy) · [Suede AI listing](https://skills.suedeai.ai/directory/avelikiy/great-cto/)
+[Repository](https://github.com/avelikiy/great_cto) · Publisher: [avelikiy](https://github.com/avelikiy) · [Suede listing](https://skills.suedeai.ai/directory/avelikiy/great-cto/)
 
 - **82/100 · B** · [secrets-rotation](https://github.com/avelikiy/great_cto/blob/main/skills/secrets-rotation/SKILL.md): Handles exposed secrets, such as ones pasted into chat or committed, by treating them as compromised and making revocation and rotation one tracked task. [Suede](https://skills.suedeai.ai/directory/avelikiy/great-cto/secrets-rotation/)
 
@@ -60,7 +60,7 @@ Skills for security review, vulnerability hunting, threat detection, authenticat
 
 ## aws/agent-toolkit-for-aws
 
-[Repository](https://github.com/aws/agent-toolkit-for-aws) · Publisher: [aws](https://github.com/aws) · [Suede AI listing](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/)
+[Repository](https://github.com/aws/agent-toolkit-for-aws) · Publisher: [aws](https://github.com/aws) · [Suede listing](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/)
 
 - **80/100 · B** · [setup-security-agent](https://github.com/aws/agent-toolkit-for-aws/blob/main/plugins/aws-agents-for-devsecops/skills/setup-security-agent/SKILL.md): Configure AWS Security Agent for the current workspace — provision or reuse an agent space, IAM service role, and S3 bucket. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#setup-security-agent)
 - **78/100 · C** · [remediating-with-aws-security-agent](https://github.com/aws/agent-toolkit-for-aws/blob/main/plugins/aws-agents-for-devsecops/skills/remediating-with-aws-security-agent/SKILL.md): Pull AWS Security Agent findings (penetration tests and code reviews) and drive remediation. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#remediating-with-aws-security-agent)
@@ -76,7 +76,7 @@ Skills for security review, vulnerability hunting, threat detection, authenticat
 
 ## cloudflare/security-audit-skill
 
-[Repository](https://github.com/cloudflare/security-audit-skill) · Publisher: [cloudflare](https://github.com/cloudflare) · [Suede AI listing](https://skills.suedeai.ai/directory/cloudflare/security-audit-skill/security-audit/)
+[Repository](https://github.com/cloudflare/security-audit-skill) · Publisher: [cloudflare](https://github.com/cloudflare) · [Suede listing](https://skills.suedeai.ai/directory/cloudflare/security-audit-skill/security-audit/)
 
 - **72/100 · C** · [security-audit](https://github.com/cloudflare/security-audit-skill/blob/main/skills/security-audit/SKILL.md): Provides security guidance and vulnerability review for codebases, APIs, services, CLI tools, libraries, and daemons, including focused reviews, vulnerability research, audits, and pen tests. [Suede](https://skills.suedeai.ai/directory/cloudflare/security-audit-skill/security-audit/)
 
@@ -84,7 +84,7 @@ Skills for security review, vulnerability hunting, threat detection, authenticat
 
 ## cloudflare/skills
 
-[Repository](https://github.com/cloudflare/skills) · Publisher: [cloudflare](https://github.com/cloudflare) · [Suede AI listing](https://skills.suedeai.ai/directory/cloudflare/skills/)
+[Repository](https://github.com/cloudflare/skills) · Publisher: [cloudflare](https://github.com/cloudflare) · [Suede listing](https://skills.suedeai.ai/directory/cloudflare/skills/)
 
 - **70/100 · C** · [cloudflare-one](https://github.com/cloudflare/skills/blob/main/skills/cloudflare-one/SKILL.md): Design, configure, troubleshoot, or review Cloudflare One Zero Trust and SASE deployments. [Suede](https://skills.suedeai.ai/directory/cloudflare/skills/#cloudflare-one)
 - **70/100 · C** · [turnstile-spin](https://github.com/cloudflare/skills/blob/main/skills/turnstile-spin/SKILL.md): Set up, repair, or migrate to Cloudflare Turnstile bot verification in an existing frontend and backend, including server-side Siteverify. [Suede](https://skills.suedeai.ai/directory/cloudflare/skills/#turnstile-spin)
@@ -94,7 +94,7 @@ Skills for security review, vulnerability hunting, threat detection, authenticat
 
 ## firebase/skills
 
-[Repository](https://github.com/firebase/skills) · Publisher: [firebase](https://github.com/firebase) · [Suede AI listing](https://skills.suedeai.ai/directory/firebase/skills/)
+[Repository](https://github.com/firebase/skills) · Publisher: [firebase](https://github.com/firebase) · [Suede listing](https://skills.suedeai.ai/directory/firebase/skills/)
 
 - **78/100 · C** · [firebase-security-rules-auditor](https://github.com/firebase/skills/blob/main/skills/firebase-security-rules-auditor/SKILL.md): Audits Firebase Firestore and Cloud Storage security rules for vulnerabilities including privilege escalation, role bypasses, and resource exhaustion. [Suede](https://skills.suedeai.ai/directory/firebase/skills/firebase-security-rules-auditor/)
 
@@ -102,7 +102,7 @@ Skills for security review, vulnerability hunting, threat detection, authenticat
 
 ## garrytan/gstack
 
-[Repository](https://github.com/garrytan/gstack) · Publisher: [garrytan](https://github.com/garrytan) · [Suede AI listing](https://skills.suedeai.ai/directory/garrytan/gstack/)
+[Repository](https://github.com/garrytan/gstack) · Publisher: [garrytan](https://github.com/garrytan) · [Suede listing](https://skills.suedeai.ai/directory/garrytan/gstack/)
 
 - **72/100 · C** · [cso](https://github.com/garrytan/gstack/blob/main/cso/SKILL.md): Security audit: supported static findings; qualified profiles add reproduction and repair candidates. (gstack) [Suede](https://skills.suedeai.ai/directory/garrytan/gstack/#cso)
 
@@ -110,7 +110,7 @@ Skills for security review, vulnerability hunting, threat detection, authenticat
 
 ## getsentry/skills
 
-[Repository](https://github.com/getsentry/skills) · Publisher: [getsentry](https://github.com/getsentry) · [Suede AI listing](https://skills.suedeai.ai/directory/getsentry/skills/)
+[Repository](https://github.com/getsentry/skills) · Publisher: [getsentry](https://github.com/getsentry) · [Suede listing](https://skills.suedeai.ai/directory/getsentry/skills/)
 
 - **88/100 · B** · [skill-scanner](https://github.com/getsentry/skills/blob/main/skills/skill-scanner/SKILL.md): Scans agent skills for prompt injection, malicious scripts, excessive permissions, secret exposure, and supply chain risks before installation. [Suede](https://skills.suedeai.ai/directory/getsentry/skills/skill-scanner/)
 - **86/100 · B** · [django-access-review](https://github.com/getsentry/skills/blob/main/skills/django-access-review/SKILL.md): Reviews Django views, DRF viewsets, and ORM queries for access control, authorization, IDOR, tenant isolation, and broken access problems. [Suede](https://skills.suedeai.ai/directory/getsentry/skills/django-access-review/)
@@ -122,7 +122,7 @@ Skills for security review, vulnerability hunting, threat detection, authenticat
 
 ## github/awesome-copilot
 
-[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede AI listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
+[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
 
 - **81/100 · B** · [security-review](https://github.com/github/awesome-copilot/blob/main/skills/security-review/SKILL.md): AI-powered codebase security scanner that reasons about code like a security researcher — tracing data flows, understanding component interactions, and catching vulnerabilities that pattern-matching tools miss. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#security-review)
 - **80/100 · B** · [agent-owasp-compliance](https://github.com/github/awesome-copilot/blob/main/skills/agent-owasp-compliance/SKILL.md): Check any AI agent codebase against the OWASP Agentic Security Initiative (ASI) Top 10 risks. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#agent-owasp-compliance)
@@ -139,7 +139,7 @@ Skills for security review, vulnerability hunting, threat detection, authenticat
 
 ## google/skills
 
-[Repository](https://github.com/google/skills) · Publisher: [google](https://github.com/google) · [Suede AI listing](https://skills.suedeai.ai/directory/google/skills/)
+[Repository](https://github.com/google/skills) · Publisher: [google](https://github.com/google) · [Suede listing](https://skills.suedeai.ai/directory/google/skills/)
 
 - **90/100 · A** · [assuredworkloads-environment-assessor](https://github.com/google/skills/blob/main/skills/cloud/assuredworkloads-environment-assessor/SKILL.md): Discovers Google Cloud resource telemetry and effective Org Policies, evaluates workloads against sovereign data boundary and compliance standards, and recommends the Assured Workloads Framework. [Suede](https://skills.suedeai.ai/directory/google/skills/assuredworkloads-environment-assessor/)
 - **89/100 · B** · [iam-helper-for-privileged-access-management](https://github.com/google/skills/blob/main/skills/cloud/iam-helper-for-privileged-access-management/SKILL.md): Manages the lifecycle of on-demand temporary access with Privileged Access Manager, including entitlements, access requests, and approving or denying pending grants. [Suede](https://skills.suedeai.ai/directory/google/skills/iam-helper-for-privileged-access-management/)
@@ -165,7 +165,7 @@ Skills for security review, vulnerability hunting, threat detection, authenticat
 
 ## googleworkspace/cli
 
-[Repository](https://github.com/googleworkspace/cli) · Publisher: [googleworkspace](https://github.com/googleworkspace) · [Suede AI listing](https://skills.suedeai.ai/directory/googleworkspace/cli/)
+[Repository](https://github.com/googleworkspace/cli) · Publisher: [googleworkspace](https://github.com/googleworkspace) · [Suede listing](https://skills.suedeai.ai/directory/googleworkspace/cli/)
 
 - **54/100 · D** · [gws-modelarmor](https://github.com/googleworkspace/cli/blob/main/skills/gws-modelarmor/SKILL.md): Google Model Armor: Filter user-generated content for safety. [Suede](https://skills.suedeai.ai/directory/googleworkspace/cli/#gws-modelarmor)
 - **54/100 · D** · [gws-modelarmor-create-template](https://github.com/googleworkspace/cli/blob/main/skills/gws-modelarmor-create-template/SKILL.md): Google Model Armor: Create a new Model Armor template. [Suede](https://skills.suedeai.ai/directory/googleworkspace/cli/#gws-modelarmor-create-template)
@@ -176,7 +176,7 @@ Skills for security review, vulnerability hunting, threat detection, authenticat
 
 ## gooseworks-ai/goose-skills
 
-[Repository](https://github.com/gooseworks-ai/goose-skills) · Publisher: [gooseworks-ai](https://github.com/gooseworks-ai) · [Suede AI listing](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/)
+[Repository](https://github.com/gooseworks-ai/goose-skills) · Publisher: [gooseworks-ai](https://github.com/gooseworks-ai) · [Suede listing](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/)
 
 - **78/100 · C** · [phone-verification](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/research-tools/capabilities/phone-verification/SKILL.md): Verify phone numbers using SMS one-time codes via the Didit API. [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#phone-verification)
 - **69/100 · D** · [identity-verification-didit](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/research-tools/capabilities/identity-verification-didit/SKILL.md): Identity verification via phone/email OTP and AML screening using Didit API [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#identity-verification-didit)
@@ -185,7 +185,7 @@ Skills for security review, vulnerability hunting, threat detection, authenticat
 
 ## jeffallan/claude-skills
 
-[Repository](https://github.com/jeffallan/claude-skills) · Publisher: [jeffallan](https://github.com/jeffallan) · [Suede AI listing](https://skills.suedeai.ai/directory/jeffallan/claude-skills/)
+[Repository](https://github.com/jeffallan/claude-skills) · Publisher: [jeffallan](https://github.com/jeffallan) · [Suede listing](https://skills.suedeai.ai/directory/jeffallan/claude-skills/)
 
 - **86/100 · B** · [security-reviewer](https://github.com/jeffallan/claude-skills/blob/main/skills/security-reviewer/SKILL.md): Identifies security vulnerabilities, generates structured audit reports with severity ratings, and provides actionable remediation guidance. [Suede](https://skills.suedeai.ai/directory/jeffallan/claude-skills/#security-reviewer)
 - **84/100 · B** · [secure-code-guardian](https://github.com/jeffallan/claude-skills/blob/main/skills/secure-code-guardian/SKILL.md): Use when implementing authentication/authorization, securing user input, or preventing OWASP Top 10 vulnerabilities — including custom security implementations such as hashing passwords with bcrypt/argon2, sanitizing SQL queries with… [Suede](https://skills.suedeai.ai/directory/jeffallan/claude-skills/#secure-code-guardian)
@@ -194,7 +194,7 @@ Skills for security review, vulnerability hunting, threat detection, authenticat
 
 ## LambdaTest/agent-skills
 
-[Repository](https://github.com/LambdaTest/agent-skills) · Publisher: [LambdaTest](https://github.com/LambdaTest) · [Suede AI listing](https://skills.suedeai.ai/directory/lambdatest/agent-skills/)
+[Repository](https://github.com/LambdaTest/agent-skills) · Publisher: [LambdaTest](https://github.com/LambdaTest) · [Suede listing](https://skills.suedeai.ai/directory/lambdatest/agent-skills/)
 
 - **71/100 · C** · [api-compliance-checker](https://github.com/LambdaTest/agent-skills/blob/main/api-skill/api-compliance/SKILL.md): Designs GDPR-compliant API patterns, PCI-DSS field handling, SOC2 audit log schemas, HIPAA data endpoints, and regulatory compliance checklists for any API. [Suede](https://skills.suedeai.ai/directory/lambdatest/agent-skills/#api-compliance-checker)
 - **71/100 · C** · [api-security-auth-pattern](https://github.com/LambdaTest/agent-skills/blob/main/api-skill/api-security-patterns/SKILL.md): Designs and documents authentication, authorization, and security patterns for any API. [Suede](https://skills.suedeai.ai/directory/lambdatest/agent-skills/#api-security-auth-pattern)
@@ -203,7 +203,7 @@ Skills for security review, vulnerability hunting, threat detection, authenticat
 
 ## mcollina/skills
 
-[Repository](https://github.com/mcollina/skills) · Publisher: [mcollina](https://github.com/mcollina) · [Suede AI listing](https://skills.suedeai.ai/directory/mcollina/skills/)
+[Repository](https://github.com/mcollina/skills) · Publisher: [mcollina](https://github.com/mcollina) · [Suede listing](https://skills.suedeai.ai/directory/mcollina/skills/)
 
 - **80/100 · B** · [oauth](https://github.com/mcollina/skills/blob/main/skills/oauth/SKILL.md): Implements OAuth 2.0 and 2.1 authorization flows in Fastify applications, including PKCE, client credentials, device flow, refresh token rotation, and JWT validation. [Suede](https://skills.suedeai.ai/directory/mcollina/skills/oauth/)
 
@@ -211,7 +211,7 @@ Skills for security review, vulnerability hunting, threat detection, authenticat
 
 ## NVIDIA/skills
 
-[Repository](https://github.com/NVIDIA/skills) · Publisher: [NVIDIA](https://github.com/NVIDIA) · [Suede AI listing](https://skills.suedeai.ai/directory/nvidia/skills/)
+[Repository](https://github.com/NVIDIA/skills) · Publisher: [NVIDIA](https://github.com/NVIDIA) · [Suede listing](https://skills.suedeai.ai/directory/nvidia/skills/)
 
 - **79/100 · C** · [doca-argus](https://github.com/NVIDIA/skills/blob/main/skills/doca-argus/SKILL.md): Use this skill when the user is deploying or operating the DOCA Argus Service — the packaged BlueField-side runtime-security container that watches the BlueField and attached host for suspicious activity, integrity violations, and… [Suede](https://skills.suedeai.ai/directory/nvidia/skills/#doca-argus)
 
@@ -219,7 +219,7 @@ Skills for security review, vulnerability hunting, threat detection, authenticat
 
 ## openai/skills
 
-[Repository](https://github.com/openai/skills) · Publisher: [openai](https://github.com/openai) · [Suede AI listing](https://skills.suedeai.ai/directory/openai/skills/)
+[Repository](https://github.com/openai/skills) · Publisher: [openai](https://github.com/openai) · [Suede listing](https://skills.suedeai.ai/directory/openai/skills/)
 
 - **79/100 · C** · [security-ownership-map](https://github.com/openai/skills/blob/main/skills/.curated/security-ownership-map/SKILL.md): Analyze git repositories to build a security ownership topology (people-to-file), compute bus factor and sensitive-code ownership, and export CSV/JSON for graph databases and visualization. [Suede](https://skills.suedeai.ai/directory/openai/skills/#security-ownership-map)
 - **77/100 · C** · [security-best-practices](https://github.com/openai/skills/blob/main/skills/.curated/security-best-practices/SKILL.md): Perform language and framework specific security best-practice reviews and suggest improvements. [Suede](https://skills.suedeai.ai/directory/openai/skills/#security-best-practices)
@@ -230,7 +230,7 @@ Skills for security review, vulnerability hunting, threat detection, authenticat
 
 ## Orchestra-Research/AI-Research-SKILLs
 
-[Repository](https://github.com/Orchestra-Research/AI-Research-SKILLs) · Publisher: [Orchestra-Research](https://github.com/Orchestra-Research) · [Suede AI listing](https://skills.suedeai.ai/directory/orchestra-research/ai-research-skills/)
+[Repository](https://github.com/Orchestra-Research/AI-Research-SKILLs) · Publisher: [Orchestra-Research](https://github.com/Orchestra-Research) · [Suede listing](https://skills.suedeai.ai/directory/orchestra-research/ai-research-skills/)
 
 - **66/100 · D** · [nemo-guardrails](https://github.com/Orchestra-Research/AI-Research-SKILLs/blob/main/07-safety-alignment/nemo-guardrails/SKILL.md): NVIDIA's runtime safety framework for LLM applications. [Suede](https://skills.suedeai.ai/directory/orchestra-research/ai-research-skills/#nemo-guardrails)
 - **66/100 · D** · [prompt-guard](https://github.com/Orchestra-Research/AI-Research-SKILLs/blob/main/07-safety-alignment/prompt-guard/SKILL.md): Meta's 86M prompt injection and jailbreak detector. [Suede](https://skills.suedeai.ai/directory/orchestra-research/ai-research-skills/#prompt-guard)
@@ -239,7 +239,7 @@ Skills for security review, vulnerability hunting, threat detection, authenticat
 
 ## redis/agent-skills
 
-[Repository](https://github.com/redis/agent-skills) · Publisher: [redis](https://github.com/redis) · [Suede AI listing](https://skills.suedeai.ai/directory/redis/agent-skills/)
+[Repository](https://github.com/redis/agent-skills) · Publisher: [redis](https://github.com/redis) · [Suede listing](https://skills.suedeai.ai/directory/redis/agent-skills/)
 
 - **75/100 · C** · [redis-security](https://github.com/redis/agent-skills/blob/main/skills/redis-security/SKILL.md): Guides Redis security, covering authentication with requirepass and ACL users, TLS, least-privilege access control, network exposure limits, and disabling dangerous commands. [Suede](https://skills.suedeai.ai/directory/redis/agent-skills/redis-security/)
 
@@ -247,7 +247,7 @@ Skills for security review, vulnerability hunting, threat detection, authenticat
 
 ## Tencent/AI-Infra-Guard
 
-[Repository](https://github.com/Tencent/AI-Infra-Guard) · Publisher: [Tencent](https://github.com/Tencent) · [Suede AI listing](https://skills.suedeai.ai/directory/tencent/ai-infra-guard/)
+[Repository](https://github.com/Tencent/AI-Infra-Guard) · Publisher: [Tencent](https://github.com/Tencent) · [Suede listing](https://skills.suedeai.ai/directory/tencent/ai-infra-guard/)
 
 - **82/100 · B** · [aig-scanner](https://github.com/Tencent/AI-Infra-Guard/blob/main/skills/aig-scanner/SKILL.md): Runs AI security scans of infrastructure, AI tools and skills, and AI agents, and evaluates LLM jailbreak resistance with Tencent's AI-Infra-Guard. [Suede](https://skills.suedeai.ai/directory/tencent/ai-infra-guard/aig-scanner/)
 - **62/100 · D** · [edgeone-clawscan](https://github.com/Tencent/AI-Infra-Guard/blob/main/skills/edgeone-clawscan/SKILL.md): The first security skill to install after setting up OpenClaw — powered by Tencent Zhuque Lab. [Suede](https://skills.suedeai.ai/directory/tencent/ai-infra-guard/#edgeone-clawscan)
@@ -256,7 +256,7 @@ Skills for security review, vulnerability hunting, threat detection, authenticat
 
 ## trailofbits/skills
 
-[Repository](https://github.com/trailofbits/skills) · Publisher: [trailofbits](https://github.com/trailofbits) · [Suede AI listing](https://skills.suedeai.ai/directory/trailofbits/skills/)
+[Repository](https://github.com/trailofbits/skills) · Publisher: [trailofbits](https://github.com/trailofbits) · [Suede listing](https://skills.suedeai.ai/directory/trailofbits/skills/)
 
 - **93/100 · A** · [fp-check](https://github.com/trailofbits/skills/blob/main/plugins/fp-check/skills/fp-check/SKILL.md): Systematically verifies suspected security bugs to eliminate false positives, producing a TRUE POSITIVE or FALSE POSITIVE verdict with documented evidence for each. [Suede](https://skills.suedeai.ai/directory/trailofbits/skills/#fp-check)
 - **92/100 · A** · [codeql](https://github.com/trailofbits/skills/blob/main/plugins/static-analysis/skills/codeql/SKILL.md): Scans a codebase for security vulnerabilities using CodeQL's interprocedural data flow and taint tracking analysis, with run-all and important-only scan modes. [Suede](https://skills.suedeai.ai/directory/trailofbits/skills/codeql/)
@@ -305,12 +305,12 @@ Skills for security review, vulnerability hunting, threat detection, authenticat
 
 ## wrsmith108/varlock-claude-skill
 
-[Repository](https://github.com/wrsmith108/varlock-claude-skill) · Publisher: [wrsmith108](https://github.com/wrsmith108) · [Suede AI listing](https://skills.suedeai.ai/directory/wrsmith108/varlock-claude-skill/varlock/)
+[Repository](https://github.com/wrsmith108/varlock-claude-skill) · Publisher: [wrsmith108](https://github.com/wrsmith108) · [Suede listing](https://skills.suedeai.ai/directory/wrsmith108/varlock-claude-skill/varlock/)
 
 - **75/100 · C** · [varlock](https://github.com/wrsmith108/varlock-claude-skill/blob/main/skills/varlock/SKILL.md): Manages environment variables and secrets with Varlock so secrets are never exposed in terminals, logs, traces, or Claude's context. [Suede](https://skills.suedeai.ai/directory/wrsmith108/varlock-claude-skill/varlock/)
 
 ---
 
-**Run a team of agents.** Suede AI Agent Studio builds multi-agent automation for businesses. [suedeai.app](https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agent-studio) Listed here? [Add your badge](../README.md#add-your-badge).
+**Run a team of agents.** Suede Agent Studio builds multi-agent automation for businesses. [suedeai.app](https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agent-studio) Listed here? [Add your badge](../README.md#add-your-badge).
 
 [Awesome Everything](../README.md) · [Compare scores](../README.md#compare-099-quality-scores) · [Publishers](../publishers.md) · [Featured projects](../featured.md) · [Guides](../README.md#guides) · [Contribute](../CONTRIBUTING.md) · [Search by score](https://skills.suedeai.ai/directory/?sort=score)

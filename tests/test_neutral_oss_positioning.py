@@ -150,5 +150,42 @@ class NeutralOssPositioningTests(unittest.TestCase):
                 self.assertTrue((ROOT / "docs" / asset_path).exists())
 
 
+    def test_public_copy_names_the_company_suede(self) -> None:
+        """The company is "Suede". "Suede AI" and "Suede Labs" appear only as
+        schema.org alternateName aliases and at most one "formerly known as"
+        line per discovery file. Domains (suedeai.ai, SuedeAI.directory) and
+        copyright/license notices are not brand copy and are not scanned."""
+        old_name = re.compile(r"suede\s+(?:ai|labs)\b", re.IGNORECASE)
+        alias_array = re.compile(r'"?alternateName"?\s*:\s*\[[^\]]*\]')
+        alias_line = "formerly known as Suede AI and Suede Labs"
+        exempt = (
+            "LICENSE", "licenses/", "tests/", "AGENTS.md", "CLAUDE.md", ".agents/docs/", "docs/plans/", "docs/superpowers/",
+            "directory/intake/", "directory/reviews/", "directory/agents/evidence/",
+            "docs/directory/agents/evidence/",
+        )
+        suffixes = {".html", ".txt", ".md", ".json", ".xml", ".yaml", ".yml", ".mjs", ".js", ".py", ".cff", ".svg"}
+        files = [
+            p for p in ROOT.rglob("*")
+            if p.is_file() and p.suffix in suffixes
+            and not any(part in {".git", "node_modules"} for part in p.parts)
+        ]
+        hits = []
+        for path in files:
+            rel = path.relative_to(ROOT).as_posix()
+            if rel.startswith(exempt):
+                continue
+            text = path.read_text(encoding="utf-8", errors="ignore")
+            if not old_name.search(text):
+                continue
+            text = alias_array.sub("", text)
+            if text.count(alias_line) > 1:
+                hits.append(f"{rel}: more than one alias line")
+            for number, line in enumerate(text.splitlines(), 1):
+                if alias_line in line or "\u00a9" in line or "Copyright" in line:
+                    continue
+                if old_name.search(line):
+                    hits.append(f"{rel}:{number}: {line.strip()[:120]}")
+        self.assertEqual(hits, [], "Use \"Suede\", not \"Suede AI\" or \"Suede Labs\":\n" + "\n".join(hits[:50]))
+
 if __name__ == "__main__":
     unittest.main()

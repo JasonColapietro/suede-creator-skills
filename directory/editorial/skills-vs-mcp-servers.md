@@ -1,6 +1,6 @@
 # Agent Skills vs MCP Servers vs Plugins: Which One Do You Need?
 
-By [Jason Colapietro](https://suedeai.ai/founder), Founder and CEO of Suede AI. Author of *Stake Your Claim*, *Proof as Infrastructure* and *The Human Authenticity Layer*, holder of the VoicePrint patent, and a builder of companies for two decades.
+By [Jason Colapietro](https://suedeai.ai/founder), Founder and CEO of Suede. Author of *Stake Your Claim*, *Proof as Infrastructure* and *The Human Authenticity Layer*, holder of the VoicePrint patent, and a builder of companies for two decades.
 
 Reviewed October 23, 2026.
 
@@ -55,7 +55,7 @@ Every full skill page in the directory lists the scripts, credentials and networ
 
 A single agent with a few skills and one MCP server covers a lot of individual work. Business processes usually span several systems and several roles: intake, research, drafting, approval, delivery. That calls for multiple agents with clear handoffs.
 
-[Suede AI Agent Studio](https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=guide&utm_campaign=skills-vs-mcp&utm_content=business-section) builds that kind of multi-agent automation for businesses. If your team has outgrown one assistant with a stack of skills, [see how Agent Studio works](https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=guide&utm_campaign=skills-vs-mcp&utm_content=business-section-cta).
+[Suede Agent Studio](https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=guide&utm_campaign=skills-vs-mcp&utm_content=business-section) builds that kind of multi-agent automation for businesses. If your team has outgrown one assistant with a stack of skills, [see how Agent Studio works](https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=guide&utm_campaign=skills-vs-mcp&utm_content=business-section-cta).
 
 ## FAQ
 

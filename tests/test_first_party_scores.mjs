@@ -20,7 +20,7 @@ test('every maintained first-party package has an actual directory score above 9
     assert.ok(skill.score >= 91, `${skill.name}: ${skill.score}`);
     assert.equal(skill.grade, 'A');
     assert.equal(skill.checks, '11111111', skill.name);
-    assert.match(skill.display_name, /^Suede AI(?: .+)? Skills$/);
+    assert.match(skill.display_name, /^Suede(?! AI\b| Labs\b)(?: .+)? Skills$/);
   }
 });
 
@@ -44,8 +44,8 @@ test('first-party reports and retained source inventories describe the exact rev
 
 test('the first-party collection uses its public name and useful category search terms', () => {
   const html = read('docs/directory/jasoncolapietro/suede-creator-skills/index.html');
-  assert.match(html, /<h1>Suede AI Skills\b/);
-  assert.match(html, /<title>Suede AI Skills:/);
+  assert.match(html, /<h1>Suede Skills\b/);
+  assert.match(html, /<title>Suede Skills:/);
   const keywords = html.match(/<meta name="keywords" content="([^"]+)"/)[1].split(', ');
   assert.ok(!/suede/i.test(keywords[0]));
   assert.equal(keywords.filter(k => /suede/i.test(k)).length, 1);

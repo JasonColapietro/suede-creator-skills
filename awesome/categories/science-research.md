@@ -8,9 +8,9 @@ Skills for scientific and academic work: bioinformatics, chemistry, materials, l
 
 **210 accepted skills · 8 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
-**Compare on the 0–99 quality scale:** this category’s verified scores span **66–93 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=science-research&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
+**Compare on the 0–99 quality scale:** this category’s verified scores span **66–93 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=science-research&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
-[Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede AI listing.
+[Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede listing.
 
 <details>
 <summary>Browse publishers in this category</summary>
@@ -30,7 +30,7 @@ Skills for scientific and academic work: bioinformatics, chemistry, materials, l
 
 ## firecrawl/skills
 
-[Repository](https://github.com/firecrawl/skills) · Publisher: [firecrawl](https://github.com/firecrawl) · [Suede AI listing](https://skills.suedeai.ai/directory/firecrawl/skills/)
+[Repository](https://github.com/firecrawl/skills) · Publisher: [firecrawl](https://github.com/firecrawl) · [Suede listing](https://skills.suedeai.ai/directory/firecrawl/skills/)
 
 - **76/100 · C** · [firecrawl-research-index](https://github.com/firecrawl/skills/blob/main/skills/core/firecrawl-research-index/SKILL.md): Finds papers that answer a research query in Firecrawl's paper index, covering biomedical and life-science literature plus arXiv preprints, using semantic search and verification. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-research-index/)
 - **75/100 · C** · [firecrawl-research-papers](https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-research-papers/SKILL.md): Finds and synthesizes research papers using semantic search and related-paper expansion over Firecrawl's index of largely biomedical and life-science literature plus arXiv preprints. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-research-papers/)
@@ -39,7 +39,7 @@ Skills for scientific and academic work: bioinformatics, chemistry, materials, l
 
 ## gooseworks-ai/goose-skills
 
-[Repository](https://github.com/gooseworks-ai/goose-skills) · Publisher: [gooseworks-ai](https://github.com/gooseworks-ai) · [Suede AI listing](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/)
+[Repository](https://github.com/gooseworks-ai/goose-skills) · Publisher: [gooseworks-ai](https://github.com/gooseworks-ai) · [Suede listing](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/)
 
 - **69/100 · D** · [hyperlocal-weather-precip](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/research-tools/capabilities/hyperlocal-weather-precip/SKILL.md): Hyperlocal weather data - precipitation, temperature, wind, soil moisture and more [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#hyperlocal-weather-precip)
 
@@ -47,7 +47,7 @@ Skills for scientific and academic work: bioinformatics, chemistry, materials, l
 
 ## HeshamFS/materials-simulation-skills
 
-[Repository](https://github.com/HeshamFS/materials-simulation-skills) · Publisher: [HeshamFS](https://github.com/HeshamFS) · [Suede AI listing](https://skills.suedeai.ai/directory/heshamfs/materials-simulation-skills/)
+[Repository](https://github.com/HeshamFS/materials-simulation-skills) · Publisher: [HeshamFS](https://github.com/HeshamFS) · [Suede listing](https://skills.suedeai.ai/directory/heshamfs/materials-simulation-skills/)
 
 - **85/100 · B** · [hpc-runtime-doctor](https://github.com/HeshamFS/materials-simulation-skills/blob/main/skills/hpc-deployment/hpc-runtime-doctor/SKILL.md): Diagnoses HPC runtime and scheduler problems for already-submitted materials simulation jobs that failed, ran slowly, were killed, or behaved differently on a cluster. [Suede](https://skills.suedeai.ai/directory/heshamfs/materials-simulation-skills/hpc-runtime-doctor/)
 - **84/100 · B** · [convergence-study](https://github.com/HeshamFS/materials-simulation-skills/blob/main/skills/core-numerical/convergence-study/SKILL.md): Performs spatial and temporal convergence analysis for numerical solutions, computing observed convergence orders, Richardson extrapolation, and Grid Convergence Index per ASME V&amp;V 20. [Suede](https://skills.suedeai.ai/directory/heshamfs/materials-simulation-skills/convergence-study/)
@@ -77,7 +77,7 @@ Skills for scientific and academic work: bioinformatics, chemistry, materials, l
 
 ## huggingface/skills
 
-[Repository](https://github.com/huggingface/skills) · Publisher: [huggingface](https://github.com/huggingface) · [Suede AI listing](https://skills.suedeai.ai/directory/huggingface/skills/)
+[Repository](https://github.com/huggingface/skills) · Publisher: [huggingface](https://github.com/huggingface) · [Suede listing](https://skills.suedeai.ai/directory/huggingface/skills/)
 
 - **80/100 · B** · [huggingface-papers](https://github.com/huggingface/skills/blob/main/skills/huggingface-papers/SKILL.md): Look up and read Hugging Face paper pages in markdown, and use the papers API for structured metadata such as authors, linked models/datasets/spaces, Github repo and project page. [Suede](https://skills.suedeai.ai/directory/huggingface/skills/#huggingface-papers)
 
@@ -85,7 +85,7 @@ Skills for scientific and academic work: bioinformatics, chemistry, materials, l
 
 ## K-Dense-AI/claude-scientific-skills
 
-[Repository](https://github.com/K-Dense-AI/claude-scientific-skills) · Publisher: [K-Dense-AI](https://github.com/K-Dense-AI) · [Suede AI listing](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/)
+[Repository](https://github.com/K-Dense-AI/claude-scientific-skills) · Publisher: [K-Dense-AI](https://github.com/K-Dense-AI) · [Suede listing](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/)
 
 - **93/100 · A** · [hypogenic](https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/skills/hypogenic/SKILL.md): Plans and audits use of ChicagoHAI HypoGeniC/HypoRefine for LLM-assisted hypothesis generation from labeled text datasets. [Suede](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/#hypogenic)
 - **93/100 · A** · [matchms](https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/skills/matchms/SKILL.md): Processes, cleans, compares, and searches tandem mass spectra with matchms. [Suede](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/#matchms)
@@ -228,7 +228,7 @@ Skills for scientific and academic work: bioinformatics, chemistry, materials, l
 
 ## NVIDIA/skills
 
-[Repository](https://github.com/NVIDIA/skills) · Publisher: [NVIDIA](https://github.com/NVIDIA) · [Suede AI listing](https://skills.suedeai.ai/directory/nvidia/skills/)
+[Repository](https://github.com/NVIDIA/skills) · Publisher: [NVIDIA](https://github.com/NVIDIA) · [Suede listing](https://skills.suedeai.ai/directory/nvidia/skills/)
 
 - **87/100 · B** · [nv-generate-ct-rflow](https://github.com/NVIDIA/skills/blob/main/skills/nv-generate-ct-rflow/SKILL.md): Used for generating synthetic CT volumes and masks with NV-Generate-CTMR rflow-ct. [Suede](https://skills.suedeai.ai/directory/nvidia/skills/#nv-generate-ct-rflow)
 - **87/100 · B** · [nv-generate-mr](https://github.com/NVIDIA/skills/blob/main/skills/nv-generate-mr/SKILL.md): Used for generating synthetic body MRI volumes with NV-Generate-CTMR rflow-mr. [Suede](https://skills.suedeai.ai/directory/nvidia/skills/#nv-generate-mr)
@@ -274,7 +274,7 @@ Skills for scientific and academic work: bioinformatics, chemistry, materials, l
 
 ## Orchestra-Research/AI-Research-SKILLs
 
-[Repository](https://github.com/Orchestra-Research/AI-Research-SKILLs) · Publisher: [Orchestra-Research](https://github.com/Orchestra-Research) · [Suede AI listing](https://skills.suedeai.ai/directory/orchestra-research/ai-research-skills/)
+[Repository](https://github.com/Orchestra-Research/AI-Research-SKILLs) · Publisher: [Orchestra-Research](https://github.com/Orchestra-Research) · [Suede listing](https://skills.suedeai.ai/directory/orchestra-research/ai-research-skills/)
 
 - **77/100 · C** · [academic-plotting](https://github.com/Orchestra-Research/AI-Research-SKILLs/blob/main/20-ml-paper-writing/academic-plotting/SKILL.md): Generates publication-quality figures for ML papers, including architecture diagrams via Gemini and data-driven charts via matplotlib or seaborn, from research context. [Suede](https://skills.suedeai.ai/directory/orchestra-research/ai-research-skills/academic-plotting/)
 - **77/100 · C** · [systems-paper-writing](https://github.com/Orchestra-Research/AI-Research-SKILLs/blob/main/20-ml-paper-writing/systems-paper-writing/SKILL.md): Guides writing systems papers for OSDI, SOSP, ASPLOS, NSDI, and EuroSys with structural blueprints, writing patterns, venue checklists, reviewer guidelines, LaTeX templates, and deadlines. [Suede](https://skills.suedeai.ai/directory/orchestra-research/ai-research-skills/systems-paper-writing/)
@@ -288,12 +288,12 @@ Skills for scientific and academic work: bioinformatics, chemistry, materials, l
 
 ## trailofbits/skills
 
-[Repository](https://github.com/trailofbits/skills) · Publisher: [trailofbits](https://github.com/trailofbits) · [Suede AI listing](https://skills.suedeai.ai/directory/trailofbits/skills/)
+[Repository](https://github.com/trailofbits/skills) · Publisher: [trailofbits](https://github.com/trailofbits) · [Suede listing](https://skills.suedeai.ai/directory/trailofbits/skills/)
 
 - **87/100 · B** · [writing-lean-proofs](https://github.com/trailofbits/skills/blob/main/plugins/writing-lean-proofs/skills/writing-lean-proofs/SKILL.md): Writes and reviews structured Lean 4 proofs and designs Lean libraries following Mathlib conventions. [Suede](https://skills.suedeai.ai/directory/trailofbits/skills/#writing-lean-proofs)
 
 ---
 
-**Run a team of agents.** Suede AI Agent Studio builds multi-agent automation for businesses. [suedeai.app](https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agent-studio) Listed here? [Add your badge](../README.md#add-your-badge).
+**Run a team of agents.** Suede Agent Studio builds multi-agent automation for businesses. [suedeai.app](https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agent-studio) Listed here? [Add your badge](../README.md#add-your-badge).
 
 [Awesome Everything](../README.md) · [Compare scores](../README.md#compare-099-quality-scores) · [Publishers](../publishers.md) · [Featured projects](../featured.md) · [Guides](../README.md#guides) · [Contribute](../CONTRIBUTING.md) · [Search by score](https://skills.suedeai.ai/directory/?sort=score)

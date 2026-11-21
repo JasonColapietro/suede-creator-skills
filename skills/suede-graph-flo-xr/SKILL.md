@@ -1,11 +1,11 @@
 ---
 name: suede-graph-flo-xr
-description: "Use when asked \"compare implementation plans before building\" for one multi-file repository change. Suede AI runs Suede Thought Graph shipping search: it searches, scores, prunes and refutes plans, selects one winner, then builds in an isolated worktree with a sandboxed gate and handoff. Halts on hazards, collisions or exhausted budget. NOT FOR: bulk worker tasks, existing-diff review (use suede-code), CI wiring (use suede-ci-gate), or copy-only work (use suede-ship-copy)."
+description: "Use when asked \"compare implementation plans before building\" for one multi-file repository change. Suede runs Suede Thought Graph shipping search: it searches, scores, prunes and refutes plans, selects one winner, then builds in an isolated worktree with a sandboxed gate and handoff. Halts on hazards, collisions or exhausted budget. NOT FOR: bulk worker tasks, existing-diff review (use suede-code), CI wiring (use suede-ci-gate), or copy-only work (use suede-ship-copy)."
 metadata:
-  display-name: "Suede AI Graph Flo XR Skills"
+  display-name: "Suede Graph Flo XR Skills"
 ---
 
-# Suede AI Graph Flo XR Skills
+# Suede Graph Flo XR Skills
 
 Use the bundled `workflows/suede-graph-flo-xr.js` workflow to search competing plans for
 one multi-file repository change. It makes an evidence-backed selection before

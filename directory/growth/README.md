@@ -8,7 +8,7 @@ The directory build now publishes:
 - 50 static comparisons drawn from shared topics and recorded installs. This
   is a reproducible selection heuristic, not measured comparison search volume.
 - `/state-of-agent-skills/`, including a downloadable SVG, CSV and JSON report.
-  All figures and rankings exclude Suede AI’s own skills.
+  All figures and rankings exclude Suede’s own skills.
 - `/finder/`, with the installable source in `directory/suede-directory/`.
 - `/rising/`, a readable issue and reusable Markdown draft from the saved weekly
   install history. Its dates stay tied to the source snapshot.

@@ -8,9 +8,9 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 **169 accepted skills · 28 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
-**Compare on the 0–99 quality scale:** this category’s verified scores span **53–93 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=business-finance&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
+**Compare on the 0–99 quality scale:** this category’s verified scores span **53–93 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=business-finance&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
-[Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede AI listing.
+[Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede listing.
 
 <details>
 <summary>Browse publishers in this category</summary>
@@ -50,7 +50,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 ## avelikiy/great\_cto
 
-[Repository](https://github.com/avelikiy/great_cto) · Publisher: [avelikiy](https://github.com/avelikiy) · [Suede AI listing](https://skills.suedeai.ai/directory/avelikiy/great-cto/)
+[Repository](https://github.com/avelikiy/great_cto) · Publisher: [avelikiy](https://github.com/avelikiy) · [Suede listing](https://skills.suedeai.ai/directory/avelikiy/great-cto/)
 
 - **74/100 · C** · [cost-model](https://github.com/avelikiy/great_cto/blob/main/skills/cost-model/SKILL.md): Standardized cost-estimation framework for great\_cto plans. [Suede](https://skills.suedeai.ai/directory/avelikiy/great-cto/#cost-model)
 - **74/100 · C** · [product-economics](https://github.com/avelikiy/great_cto/blob/main/skills/product-economics/SKILL.md): Does this product make money at a price someone will pay? [Suede](https://skills.suedeai.ai/directory/avelikiy/great-cto/#product-economics)
@@ -60,7 +60,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 ## browserbase/skills
 
-[Repository](https://github.com/browserbase/skills) · Publisher: [browserbase](https://github.com/browserbase) · [Suede AI listing](https://skills.suedeai.ai/directory/browserbase/skills/)
+[Repository](https://github.com/browserbase/skills) · Publisher: [browserbase](https://github.com/browserbase) · [Suede listing](https://skills.suedeai.ai/directory/browserbase/skills/)
 
 - **84/100 · B** · [company-research](https://github.com/browserbase/skills/blob/main/skills/company-research/SKILL.md): Researches a company's product and ICP, discovers target companies with the Browserbase Search API, researches each deeply, and scores ICP fit. [Suede](https://skills.suedeai.ai/directory/browserbase/skills/company-research/)
 - **84/100 · B** · [event-prospecting](https://github.com/browserbase/skills/blob/main/skills/event-prospecting/SKILL.md): Extracts speakers from a conference page, filters their companies against the user's ICP, and researches ICP-fit speakers into a person-first HTML report. [Suede](https://skills.suedeai.ai/directory/browserbase/skills/event-prospecting/)
@@ -70,7 +70,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 ## coinpaprika/skills
 
-[Repository](https://github.com/coinpaprika/skills) · Publisher: [coinpaprika](https://github.com/coinpaprika) · [Suede AI listing](https://skills.suedeai.ai/directory/coinpaprika/skills/)
+[Repository](https://github.com/coinpaprika/skills) · Publisher: [coinpaprika](https://github.com/coinpaprika) · [Suede listing](https://skills.suedeai.ai/directory/coinpaprika/skills/)
 
 - **83/100 · B** · [coinpaprika-api](https://github.com/coinpaprika/skills/blob/main/coinpaprika-api/SKILL.md): Queries the CoinPaprika API for cryptocurrency market data, including coin prices, tickers, exchanges, historical OHLCV data, and global market statistics. [Suede](https://skills.suedeai.ai/directory/coinpaprika/skills/coinpaprika-api/)
 - **80/100 · B** · [dexpaprika-api](https://github.com/coinpaprika/skills/blob/main/dexpaprika-api/SKILL.md): Queries the DexPaprika API, CLI, and streaming service for DEX data, including networks, pools, tokens, and trading activity. [Suede](https://skills.suedeai.ai/directory/coinpaprika/skills/dexpaprika-api/)
@@ -79,7 +79,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 ## coreyhaines31/marketingskills
 
-[Repository](https://github.com/coreyhaines31/marketingskills) · Publisher: [coreyhaines31](https://github.com/coreyhaines31) · [Suede AI listing](https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/)
+[Repository](https://github.com/coreyhaines31/marketingskills) · Publisher: [coreyhaines31](https://github.com/coreyhaines31) · [Suede listing](https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/)
 
 - **88/100 · B** · [cold-email](https://github.com/coreyhaines31/marketingskills/blob/main/skills/cold-email/SKILL.md): Writes and runs B2B cold outbound, from cold emails and follow-ups to sending setup, LinkedIn, multichannel cadences, and reply handling. [Suede](https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/cold-email/)
 - **88/100 · B** · [pricing](https://github.com/coreyhaines31/marketingskills/blob/main/skills/pricing/SKILL.md): When the user wants help with pricing decisions, packaging, or monetization strategy. [Suede](https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/#pricing)
@@ -91,7 +91,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 ## costory-io/costory-finops-mcp-skills
 
-[Repository](https://github.com/costory-io/costory-finops-mcp-skills) · Publisher: [costory-io](https://github.com/costory-io) · [Suede AI listing](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/)
+[Repository](https://github.com/costory-io/costory-finops-mcp-skills) · Publisher: [costory-io](https://github.com/costory-io) · [Suede listing](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/)
 
 - **81/100 · B** · [cost-change-investigation](https://github.com/costory-io/costory-finops-mcp-skills/blob/main/plugins/costory/skills/cost-change-investigation/SKILL.md): Explain cost changes using contributor, timing, usage and event evidence from the hosted Costory MCP. [Suede](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/cost-change-investigation/)
 - **80/100 · B** · [costory-finops](https://github.com/costory-io/costory-finops-mcp-skills/blob/main/powers/costory/skills/costory-finops/SKILL.md): Route cloud-spend questions to Costory cost queries, investigations, allocation, dashboards and reports. [Suede](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/costory-finops/)
@@ -100,7 +100,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 ## deanpeters/Product-Manager-Skills
 
-[Repository](https://github.com/deanpeters/Product-Manager-Skills) · Publisher: [deanpeters](https://github.com/deanpeters) · [Suede AI listing](https://skills.suedeai.ai/directory/deanpeters/product-manager-skills/)
+[Repository](https://github.com/deanpeters/Product-Manager-Skills) · Publisher: [deanpeters](https://github.com/deanpeters) · [Suede listing](https://skills.suedeai.ai/directory/deanpeters/product-manager-skills/)
 
 - **81/100 · B** · [battle-card-builder](https://github.com/deanpeters/Product-Manager-Skills/blob/main/skills/battle-card-builder/SKILL.md): Research and draft a competitive battle card from public evidence — every claim labeled and sourced. [Suede](https://skills.suedeai.ai/directory/deanpeters/product-manager-skills/#battle-card-builder) · License: CC-BY-NC-SA-4.0 (review terms)
 - **79/100 · C** · [finance-metrics-quickref](https://github.com/deanpeters/Product-Manager-Skills/blob/main/skills/finance-metrics-quickref/SKILL.md): Look up SaaS finance metrics, formulas, and benchmarks fast. [Suede](https://skills.suedeai.ai/directory/deanpeters/product-manager-skills/#finance-metrics-quickref) · License: CC-BY-NC-SA-4.0 (review terms)
@@ -113,7 +113,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 ## EmblemCompany/Agent-skills
 
-[Repository](https://github.com/EmblemCompany/Agent-skills) · Publisher: [EmblemCompany](https://github.com/EmblemCompany) · [Suede AI listing](https://skills.suedeai.ai/directory/emblemcompany/agent-skills/)
+[Repository](https://github.com/EmblemCompany/Agent-skills) · Publisher: [EmblemCompany](https://github.com/EmblemCompany) · [Suede listing](https://skills.suedeai.ai/directory/emblemcompany/agent-skills/)
 
 - **83/100 · B** · [emblem-ai-agent-wallet](https://github.com/EmblemCompany/Agent-skills/blob/main/skills/emblem-ai-agent-wallet/SKILL.md): Connects to EmblemVault to run review-first, operator-controlled wallet workflows across Solana, Ethereum, Base, BSC, Polygon, Hedera, and Bitcoin, and explains Emblem's authentication model. [Suede](https://skills.suedeai.ai/directory/emblemcompany/agent-skills/emblem-ai-agent-wallet/)
 - **81/100 · B** · [emblem-ai-prompt-examples](https://github.com/EmblemCompany/Agent-skills/blob/main/skills/emblem-ai-prompt-examples/SKILL.md): Provides example prompts for EmblemAI tasks such as research, portfolio review, quote requests, NFT discovery, and prediction-market analysis, with explicit confirmation before value-moving actions. [Suede](https://skills.suedeai.ai/directory/emblemcompany/agent-skills/emblem-ai-prompt-examples/)
@@ -127,7 +127,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 ## Ericyoung-183/alpha-insights
 
-[Repository](https://github.com/Ericyoung-183/alpha-insights) · Publisher: [Ericyoung-183](https://github.com/Ericyoung-183) · [Suede AI listing](https://skills.suedeai.ai/directory/ericyoung-183/alpha-insights/)
+[Repository](https://github.com/Ericyoung-183/alpha-insights) · Publisher: [Ericyoung-183](https://github.com/Ericyoung-183) · [Suede listing](https://skills.suedeai.ai/directory/ericyoung-183/alpha-insights/)
 
 - **65/100 · D** · [alpha-insights](https://github.com/Ericyoung-183/alpha-insights/blob/main/SKILL.md): Business Analyst Skill. [Suede](https://skills.suedeai.ai/directory/ericyoung-183/alpha-insights/#alpha-insights)
 
@@ -135,7 +135,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 ## firecrawl/skills
 
-[Repository](https://github.com/firecrawl/skills) · Publisher: [firecrawl](https://github.com/firecrawl) · [Suede AI listing](https://skills.suedeai.ai/directory/firecrawl/skills/)
+[Repository](https://github.com/firecrawl/skills) · Publisher: [firecrawl](https://github.com/firecrawl) · [Suede listing](https://skills.suedeai.ai/directory/firecrawl/skills/)
 
 - **82/100 · B** · [firecrawl-lead-research](https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-lead-research/SKILL.md): Produces pre-meeting intelligence briefs with Firecrawl, covering company and person research, talking points, and pain points before sales calls, partnership meetings, or investor conversations. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-lead-research/)
 - **79/100 · C** · [firecrawl-lead-gen](https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-lead-gen/SKILL.md): Find and qualify new prospects with Firecrawl Alexandria people and company data: people by role, seniority, company, industry, size, location or technology, target accounts that match criteria, or the right contacts at companies,… [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/#firecrawl-lead-gen)
@@ -147,7 +147,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 ## getsentry/skills
 
-[Repository](https://github.com/getsentry/skills) · Publisher: [getsentry](https://github.com/getsentry) · [Suede AI listing](https://skills.suedeai.ai/directory/getsentry/skills/)
+[Repository](https://github.com/getsentry/skills) · Publisher: [getsentry](https://github.com/getsentry) · [Suede listing](https://skills.suedeai.ai/directory/getsentry/skills/)
 
 - **71/100 · C** · [sred-project-organizer](https://github.com/getsentry/skills/blob/main/skills/sred-project-organizer/SKILL.md): Take a list of projects and their related documentation, and organize them into the SRED format for submission. [Suede](https://skills.suedeai.ai/directory/getsentry/skills/#sred-project-organizer)
 - **70/100 · C** · [sred-work-summary](https://github.com/getsentry/skills/blob/main/skills/sred-work-summary/SKILL.md): Go back through the previous year of work and create a Notion doc that groups relevant links into projects that can then be documented as SRED projects. [Suede](https://skills.suedeai.ai/directory/getsentry/skills/#sred-work-summary)
@@ -156,7 +156,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 ## github/awesome-copilot
 
-[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede AI listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
+[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
 
 - **80/100 · B** · [gtm-enterprise-account-planning](https://github.com/github/awesome-copilot/blob/main/skills/gtm-enterprise-account-planning/SKILL.md): Strategic account planning and execution for enterprise deals. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#gtm-enterprise-account-planning)
 - **79/100 · C** · [data-breach-blast-radius](https://github.com/github/awesome-copilot/blob/main/skills/data-breach-blast-radius/SKILL.md): Pre-breach impact analysis: inventories sensitive data (PII, PHI, PCI-DSS, credentials), traces data flows, scores exposure vectors, and produces a regulatory blast radius report with fine ranges sourced verbatim from GDPR Art. 83, CCPA… [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#data-breach-blast-radius)
@@ -167,7 +167,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 ## googleworkspace/cli
 
-[Repository](https://github.com/googleworkspace/cli) · Publisher: [googleworkspace](https://github.com/googleworkspace) · [Suede AI listing](https://skills.suedeai.ai/directory/googleworkspace/cli/)
+[Repository](https://github.com/googleworkspace/cli) · Publisher: [googleworkspace](https://github.com/googleworkspace) · [Suede listing](https://skills.suedeai.ai/directory/googleworkspace/cli/)
 
 - **54/100 · D** · [persona-sales-ops](https://github.com/googleworkspace/cli/blob/main/skills/persona-sales-ops/SKILL.md): Manage sales workflows — track deals, schedule calls, client comms. [Suede](https://skills.suedeai.ai/directory/googleworkspace/cli/#persona-sales-ops)
 - **53/100 · D** · [recipe-log-deal-update](https://github.com/googleworkspace/cli/blob/main/skills/recipe-log-deal-update/SKILL.md): Append a deal status update to a Google Sheets sales tracking spreadsheet. [Suede](https://skills.suedeai.ai/directory/googleworkspace/cli/#recipe-log-deal-update)
@@ -176,7 +176,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 ## gooseworks-ai/goose-skills
 
-[Repository](https://github.com/gooseworks-ai/goose-skills) · Publisher: [gooseworks-ai](https://github.com/gooseworks-ai) · [Suede AI listing](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/)
+[Repository](https://github.com/gooseworks-ai/goose-skills) · Publisher: [gooseworks-ai](https://github.com/gooseworks-ai) · [Suede listing](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/)
 
 - **84/100 · B** · [get-qualified-leads-from-luma](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/lead-generation/composites/get-qualified-leads-from-luma/SKILL.md): End-to-end lead prospecting from Luma events. [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#get-qualified-leads-from-luma)
 - **84/100 · B** · [icp-identification](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/lead-generation/capabilities/icp-identification/SKILL.md): Research a company or idea, define the Ideal Customer Profile, and route to the right next step — either mapping the TAM or finding leads/prospects directly. [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#icp-identification)
@@ -245,7 +245,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 ## infrasity-labs/dev-gtm-claude-skills
 
-[Repository](https://github.com/infrasity-labs/dev-gtm-claude-skills) · Publisher: [infrasity-labs](https://github.com/infrasity-labs) · [Suede AI listing](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/)
+[Repository](https://github.com/infrasity-labs/dev-gtm-claude-skills) · Publisher: [infrasity-labs](https://github.com/infrasity-labs) · [Suede listing](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/)
 
 - **80/100 · B** · [pricing](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/marketing-skills/pricing/SKILL.md): When the user wants help with pricing decisions, packaging, or monetization strategy. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#pricing)
 - **78/100 · C** · [cold-email](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/marketing-skills/cold-email/SKILL.md): Write B2B cold emails and follow-up sequences that get replies. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#cold-email)
@@ -283,20 +283,20 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 ## JasonColapietro/suede-creator-skills
 
-[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede AI listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
+[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
 
-- **93/100 · A** · [Suede AI Prospecting Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-prospecting/SKILL.md): Build a source-backed, scored prospect list across SaaS, B2B, local business, or early demand signals. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-prospecting)
-- **93/100 · A** · [Suede AI Rights Passport Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-rights-passport/SKILL.md): Audit rights gaps in ownership, contributors, splits, samples, licenses, provenance, and AI involvement, or assemble a hashed offline handoff package with a validated manifest. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-rights-passport)
-- **91/100 · A** · [Suede AI Offer Design Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-offers/SKILL.md): Suede AI Offer Design Skills: risk reversal, value levers, scope, proof, bonuses, guarantees, deadlines, and testable persuasion hypotheses. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-offers)
-- **91/100 · A** · [Suede AI Operations Assessment Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-ops-assessment/SKILL.md): Suede AI Operations Assessment Skills: map real work, silos, friction, ownership, costs, and adoption signals from operator evidence. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ops-assessment)
-- **91/100 · A** · [Suede AI Pricing Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-pricing/SKILL.md): Suede AI Pricing Skills: value metric selection, tiers, willingness-to-pay research, AI unit economics, migration, and pricing-page clarity. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-pricing)
-- **91/100 · A** · [Suede AI Sales Enablement Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-sales-enablement/SKILL.md): Create rep-ready pitch decks, one-pagers, objection libraries, demo scripts, battle cards, proposals, buyer cards, and ROI models with a claim-source table. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-sales-enablement)
+- **93/100 · A** · [Suede Prospecting Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-prospecting/SKILL.md): Build a source-backed, scored prospect list across SaaS, B2B, local business, or early demand signals. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-prospecting)
+- **93/100 · A** · [Suede Rights Passport Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-rights-passport/SKILL.md): Audit rights gaps in ownership, contributors, splits, samples, licenses, provenance, and AI involvement, or assemble a hashed offline handoff package with a validated manifest. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-rights-passport)
+- **91/100 · A** · [Suede Offer Design Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-offers/SKILL.md): Suede Offer Design Skills: risk reversal, value levers, scope, proof, bonuses, guarantees, deadlines, and testable persuasion hypotheses. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-offers)
+- **91/100 · A** · [Suede Operations Assessment Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-ops-assessment/SKILL.md): Suede Operations Assessment Skills: map real work, silos, friction, ownership, costs, and adoption signals from operator evidence. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ops-assessment)
+- **91/100 · A** · [Suede Pricing Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-pricing/SKILL.md): Suede Pricing Skills: value metric selection, tiers, willingness-to-pay research, AI unit economics, migration, and pricing-page clarity. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-pricing)
+- **91/100 · A** · [Suede Sales Enablement Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-sales-enablement/SKILL.md): Create rep-ready pitch decks, one-pagers, objection libraries, demo scripts, battle cards, proposals, buyer cards, and ROI models with a claim-source table. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-sales-enablement)
 
 <a id="k-dense-ai--claude-scientific-skills"></a>
 
 ## K-Dense-AI/claude-scientific-skills
 
-[Repository](https://github.com/K-Dense-AI/claude-scientific-skills) · Publisher: [K-Dense-AI](https://github.com/K-Dense-AI) · [Suede AI listing](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/)
+[Repository](https://github.com/K-Dense-AI/claude-scientific-skills) · Publisher: [K-Dense-AI](https://github.com/K-Dense-AI) · [Suede listing](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/)
 
 - **91/100 · A** · [iso-standards-readiness](https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/skills/iso-standards-readiness/SKILL.md): Prepares and structurally reviews readiness evidence for ISO 13485, ISO 14971, ISO/IEC 17025, and ISO 15189 standards, covering scope, controlled documents, and risk files. [Suede](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/iso-standards-readiness/)
 - **88/100 · B** · [fictiv](https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/skills/fictiv/SKILL.md): Operates Fictiv (app.fictiv.com), the on-demand manufacturing platform, end to end in the user's browser. [Suede](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/#fictiv)
@@ -307,7 +307,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 ## MelMayssonOwen/agent-skills
 
-[Repository](https://github.com/MelMayssonOwen/agent-skills) · Publisher: [MelMayssonOwen](https://github.com/MelMayssonOwen) · [Suede AI listing](https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/)
+[Repository](https://github.com/MelMayssonOwen/agent-skills) · Publisher: [MelMayssonOwen](https://github.com/MelMayssonOwen) · [Suede listing](https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/)
 
 - **73/100 · C** · [sheetfolk-budget-builder](https://github.com/MelMayssonOwen/agent-skills/blob/main/skills/sheetfolk-budget-builder/SKILL.md): Create a local Excel budget workbook with household, sinking-fund, and side-hustle inputs. [Suede](https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/sheetfolk-budget-builder/)
 
@@ -315,7 +315,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 ## nowork-studio/NotFair
 
-[Repository](https://github.com/nowork-studio/NotFair) · Publisher: [nowork-studio](https://github.com/nowork-studio) · [Suede AI listing](https://skills.suedeai.ai/directory/nowork-studio/notfair/)
+[Repository](https://github.com/nowork-studio/NotFair) · Publisher: [nowork-studio](https://github.com/nowork-studio) · [Suede listing](https://skills.suedeai.ai/directory/nowork-studio/notfair/)
 
 - **73/100 · C** · [gohighlevel](https://github.com/nowork-studio/NotFair/blob/main/skills/gohighlevel/SKILL.md): Operate connected GoHighLevel CRM accounts through the NotFair MCP. [Suede](https://skills.suedeai.ai/directory/nowork-studio/notfair/#gohighlevel)
 
@@ -323,7 +323,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 ## NVIDIA/skills
 
-[Repository](https://github.com/NVIDIA/skills) · Publisher: [NVIDIA](https://github.com/NVIDIA) · [Suede AI listing](https://skills.suedeai.ai/directory/nvidia/skills/)
+[Repository](https://github.com/NVIDIA/skills) · Publisher: [NVIDIA](https://github.com/NVIDIA) · [Suede listing](https://skills.suedeai.ai/directory/nvidia/skills/)
 
 - **81/100 · B** · [portfolio-optimization](https://github.com/NVIDIA/skills/blob/main/skills/portfolio-optimization/SKILL.md): Use when a user asks to build, optimize, backtest, rebalance, or analyze a stock portfolio with Mean-CVaR, Mean-Variance/SOCP variance caps, efficient frontiers, scenario generation, or NVIDIA cuOpt. [Suede](https://skills.suedeai.ai/directory/nvidia/skills/#portfolio-optimization)
 
@@ -331,7 +331,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 ## Octav-Labs/octav-api-skill
 
-[Repository](https://github.com/Octav-Labs/octav-api-skill) · Publisher: [Octav-Labs](https://github.com/Octav-Labs) · [Suede AI listing](https://skills.suedeai.ai/directory/octav-labs/octav-api-skill/)
+[Repository](https://github.com/Octav-Labs/octav-api-skill) · Publisher: [Octav-Labs](https://github.com/Octav-Labs) · [Suede listing](https://skills.suedeai.ai/directory/octav-labs/octav-api-skill/)
 
 - **70/100 · C** · [octav-api](https://github.com/Octav-Labs/octav-api-skill/blob/main/SKILL.md): Integrate with Octav API for cryptocurrency portfolio tracking, transaction history, and DeFi analytics across 50+ blockchain networks. [Suede](https://skills.suedeai.ai/directory/octav-labs/octav-api-skill/#octav-api)
 
@@ -339,7 +339,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 ## phuryn/pm-skills
 
-[Repository](https://github.com/phuryn/pm-skills) · Publisher: [phuryn](https://github.com/phuryn) · [Suede AI listing](https://skills.suedeai.ai/directory/phuryn/pm-skills/)
+[Repository](https://github.com/phuryn/pm-skills) · Publisher: [phuryn](https://github.com/phuryn) · [Suede listing](https://skills.suedeai.ai/directory/phuryn/pm-skills/)
 
 - **81/100 · B** · [competitive-battlecard](https://github.com/phuryn/pm-skills/blob/main/pm-go-to-market/skills/competitive-battlecard/SKILL.md): Create sales-ready competitive battlecards comparing your product against a specific competitor — positioning, feature comparison, objection handling, and win/loss patterns. [Suede](https://skills.suedeai.ai/directory/phuryn/pm-skills/#competitive-battlecard)
 - **81/100 · B** · [draft-nda](https://github.com/phuryn/pm-skills/blob/main/pm-toolkit/skills/draft-nda/SKILL.md): Draft a detailed Non-Disclosure Agreement between two parties covering information types, jurisdiction, and clauses needing legal review. [Suede](https://skills.suedeai.ai/directory/phuryn/pm-skills/#draft-nda)
@@ -350,7 +350,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 ## stripe/ai
 
-[Repository](https://github.com/stripe/ai) · Publisher: [stripe](https://github.com/stripe) · [Suede AI listing](https://skills.suedeai.ai/directory/stripe/ai/)
+[Repository](https://github.com/stripe/ai) · Publisher: [stripe](https://github.com/stripe) · [Suede listing](https://skills.suedeai.ai/directory/stripe/ai/)
 
 - **79/100 · C** · [stripe-best-practices](https://github.com/stripe/ai/blob/main/skills/stripe-best-practices/SKILL.md): Guides Stripe integration decisions across development and test environment planning (separate sandboxes vs the shared test mode sandbox), API selection (Checkout Sessions vs PaymentIntents), Connect platform setup (Accounts v2,… [Suede](https://skills.suedeai.ai/directory/stripe/ai/#stripe-best-practices)
 - **76/100 · C** · [connect-recommend](https://github.com/stripe/ai/blob/main/skills/connect-recommend/SKILL.md): Use this skill when the user asks about Stripe Connect configuration, charge patterns, Dashboard access, or how to get started with Connect, is building a marketplace, platform, multi-vendor store, gig platform, or subscription… [Suede](https://skills.suedeai.ai/directory/stripe/ai/#connect-recommend)
@@ -359,7 +359,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 ## takechanman1228/claude-ecom
 
-[Repository](https://github.com/takechanman1228/claude-ecom) · Publisher: [takechanman1228](https://github.com/takechanman1228) · [Suede AI listing](https://skills.suedeai.ai/directory/takechanman1228/claude-ecom/)
+[Repository](https://github.com/takechanman1228/claude-ecom) · Publisher: [takechanman1228](https://github.com/takechanman1228) · [Suede listing](https://skills.suedeai.ai/directory/takechanman1228/claude-ecom/)
 
 - **72/100 · C** · [ecom](https://github.com/takechanman1228/claude-ecom/blob/main/skills/ecom/SKILL.md): Ecommerce business review for D2C stores from order transaction CSVs. [Suede](https://skills.suedeai.ai/directory/takechanman1228/claude-ecom/#ecom)
 
@@ -367,7 +367,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 ## trailofbits/skills
 
-[Repository](https://github.com/trailofbits/skills) · Publisher: [trailofbits](https://github.com/trailofbits) · [Suede AI listing](https://skills.suedeai.ai/directory/trailofbits/skills/)
+[Repository](https://github.com/trailofbits/skills) · Publisher: [trailofbits](https://github.com/trailofbits) · [Suede listing](https://skills.suedeai.ai/directory/trailofbits/skills/)
 
 - **89/100 · B** · [interpreting-culture-index](https://github.com/trailofbits/skills/blob/main/plugins/culture-index/skills/interpreting-culture-index/SKILL.md): Interprets Culture Index (CI) surveys, behavioral profiles, and personality assessment data. [Suede](https://skills.suedeai.ai/directory/trailofbits/skills/#interpreting-culture-index)
 
@@ -375,7 +375,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 ## tronghieu/agent-skills
 
-[Repository](https://github.com/tronghieu/agent-skills) · Publisher: [tronghieu](https://github.com/tronghieu) · [Suede AI listing](https://skills.suedeai.ai/directory/tronghieu/agent-skills/)
+[Repository](https://github.com/tronghieu/agent-skills) · Publisher: [tronghieu](https://github.com/tronghieu) · [Suede listing](https://skills.suedeai.ai/directory/tronghieu/agent-skills/)
 
 - **86/100 · B** · [market-researcher](https://github.com/tronghieu/agent-skills/blob/main/skills/market-researcher/SKILL.md): Conducts citation-backed desk market research, including quick go/no-go scans, market sizing, competitor analysis, customer demand signals, and trend and PESTEL analysis. [Suede](https://skills.suedeai.ai/directory/tronghieu/agent-skills/market-researcher/)
 - **84/100 · B** · [strategy-board](https://github.com/tronghieu/agent-skills/blob/main/skills/strategy-board/SKILL.md): Runs a C-level strategy advisory board of specialist agents that takes an executive from a strategic question to a defended recommendation. [Suede](https://skills.suedeai.ai/directory/tronghieu/agent-skills/strategy-board/)
@@ -385,7 +385,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 ## veniceai/skills
 
-[Repository](https://github.com/veniceai/skills) · Publisher: [veniceai](https://github.com/veniceai) · [Suede AI listing](https://skills.suedeai.ai/directory/veniceai/skills/)
+[Repository](https://github.com/veniceai/skills) · Publisher: [veniceai](https://github.com/veniceai) · [Suede listing](https://skills.suedeai.ai/directory/veniceai/skills/)
 
 - **70/100 · C** · [venice-x402](https://github.com/veniceai/skills/blob/main/skills/venice-x402/SKILL.md): Manage Venice x402 wallet credits. [Suede](https://skills.suedeai.ai/directory/veniceai/skills/#venice-x402)
 
@@ -393,7 +393,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 ## vonarmen-wq/forward-deployed-selling
 
-[Repository](https://github.com/vonarmen-wq/forward-deployed-selling) · Publisher: [vonarmen-wq](https://github.com/vonarmen-wq) · [Suede AI listing](https://skills.suedeai.ai/directory/vonarmen-wq/forward-deployed-selling/forward-deployed-selling/)
+[Repository](https://github.com/vonarmen-wq/forward-deployed-selling) · Publisher: [vonarmen-wq](https://github.com/vonarmen-wq) · [Suede listing](https://skills.suedeai.ai/directory/vonarmen-wq/forward-deployed-selling/forward-deployed-selling/)
 
 - **76/100 · C** · [forward-deployed-selling](https://github.com/vonarmen-wq/forward-deployed-selling/blob/main/SKILL.md): Provides operating doctrine for AI-era enterprise sales when an agent works on accounts, deals, outreach, coaching, or pipeline. [Suede](https://skills.suedeai.ai/directory/vonarmen-wq/forward-deployed-selling/forward-deployed-selling/)
 
@@ -401,7 +401,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 ## wondelai/skills
 
-[Repository](https://github.com/wondelai/skills) · Publisher: [wondelai](https://github.com/wondelai) · [Suede AI listing](https://skills.suedeai.ai/directory/wondelai/skills/)
+[Repository](https://github.com/wondelai/skills) · Publisher: [wondelai](https://github.com/wondelai) · [Suede listing](https://skills.suedeai.ai/directory/wondelai/skills/)
 
 - **81/100 · B** · [negotiation](https://github.com/wondelai/skills/blob/main/negotiation/SKILL.md): Prepare and execute negotiations using tactical empathy, calibrated questions, and the Ackerman method. [Suede](https://skills.suedeai.ai/directory/wondelai/skills/#negotiation)
 - **81/100 · B** · [predictable-revenue](https://github.com/wondelai/skills/blob/main/predictable-revenue/SKILL.md): Build a scalable outbound B2B sales machine with specialized roles (SDR, AE, CSM). [Suede](https://skills.suedeai.ai/directory/wondelai/skills/#predictable-revenue)
@@ -413,6 +413,6 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 ---
 
-**Get your product cited in AI answers.** Suede AI's AEO, GEO and SEO team helps companies get found in Google and named by ChatGPT, Perplexity and Claude. [suedeai.agency](https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agency) Listed here? [Add your badge](../README.md#add-your-badge).
+**Get your product cited in AI answers.** Suede's AEO, GEO and SEO team helps companies get found in Google and named by ChatGPT, Perplexity and Claude. [suedeai.agency](https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agency) Listed here? [Add your badge](../README.md#add-your-badge).
 
 [Awesome Everything](../README.md) · [Compare scores](../README.md#compare-099-quality-scores) · [Publishers](../publishers.md) · [Featured projects](../featured.md) · [Guides](../README.md#guides) · [Contribute](../CONTRIBUTING.md) · [Search by score](https://skills.suedeai.ai/directory/?sort=score)

@@ -96,9 +96,9 @@ const esc = (s) =>
 
 // ------------------------------------------------------------------ page
 
-const TITLE = "Suede AI Skills listings: directories, registries and lists";
+const TITLE = "Suede Skills listings: directories, registries and lists";
 const DESCRIPTION =
-  `Every directory, registry and curated list that carries Suede AI Skills: skills.sh, SkillsMP, ` +
+  `Every directory, registry and curated list that carries Suede Skills: skills.sh, SkillsMP, ` +
   `the official MCP Registry, npm, PyPI, MCP Market and more. ${total} listings.`;
 
 function renderPage() {
@@ -114,7 +114,7 @@ function renderPage() {
     author: { "@type": "Person", "@id": "https://suedeai.ai/founder#person", name: "Jason Colapietro" },
     mainEntity: {
       "@type": "SoftwareSourceCode",
-      name: "Suede AI Skills",
+      name: "Suede Skills",
       url: BASE,
       codeRepository: REPO,
       sameAs: identityUrls,
@@ -157,12 +157,12 @@ function renderPage() {
     <link rel="canonical" href="${PAGE_URL}">
     <link rel="icon" href="assets/favicon-64.png" type="image/png">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Where to find Suede AI Skills">
+    <meta property="og:title" content="Where to find Suede Skills">
     <meta property="og:description" content="${esc(DESCRIPTION)}">
     <meta property="og:url" content="${PAGE_URL}">
     <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Where to find Suede AI Skills">
+    <meta name="twitter:title" content="Where to find Suede Skills">
     <meta name="twitter:description" content="${esc(DESCRIPTION)}">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <script type="application/ld+json">
@@ -177,8 +177,8 @@ ${jsonLdText}
 
     <header class="nav">
       <nav class="nav-inner" aria-label="Main navigation">
-        <a href="./" class="nav-logo" aria-label="Suede AI Skills home">
-          <img src="assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+        <a href="./" class="nav-logo" aria-label="Suede Skills home">
+          <img src="assets/suede-ai-logo-transparent.webp" alt="Suede" width="28" height="28" onerror="this.style.display='none'">
           <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
         </a>
         <details class="nav-disclosure" open>
@@ -202,10 +202,10 @@ ${jsonLdText}
     </header>
     <main id="main" tabindex="-1" class="shell">
       <p class="eyebrow">Listings &middot; Updated ${esc(updatedLong)}</p>
-      <h1>Where to find Suede AI Skills</h1>
+      <h1>Where to find Suede Skills</h1>
       <p class="post-meta">${total} third-party pages carry the pack.</p>
 
-      <p class="lead">Suede AI Skills is listed in the skill directories that grade and count installs, the official MCP Registry, npm and PyPI, the community awesome lists, and the open-source trackers. Pick the directory you already use, or install from <a href="plugins.html">GitHub</a> or <a href="plugins.html#python">PyPI</a>.</p>
+      <p class="lead">Suede Skills is listed in the skill directories that grade and count installs, the official MCP Registry, npm and PyPI, the community awesome lists, and the open-source trackers. Pick the directory you already use, or install from <a href="plugins.html">GitHub</a> or <a href="plugins.html#python">PyPI</a>.</p>
 
 ${sections}
 
@@ -225,18 +225,18 @@ ${sections}
     </section>
     <footer>
       <div class="footer-shell">
-        <p class="footer-note">Suede AI Skills is an MIT-licensed pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep.</p>
+        <p class="footer-note">Suede Skills is an MIT-licensed pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep.</p>
         <div class="footer-inner">
           <div class="footer-brand">
-            <img src="assets/suede-ai-logo-transparent.webp" alt="Suede AI" onerror="this.style.display='none'">
-            <span>Built by <strong>Jason Colapietro</strong> / Suede AI</span>
+            <img src="assets/suede-ai-logo-transparent.webp" alt="Suede" onerror="this.style.display='none'">
+            <span>Built by <strong>Jason Colapietro</strong> / Suede</span>
           </div>
           <div class="footer-links">
             <a href="https://x.com/johnnysuede" target="_blank" rel="noopener">@johnnysuede</a>
             <span class="footer-divider" aria-hidden="true">|</span>
             <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
             <span class="footer-divider" aria-hidden="true">|</span>
-            <a href="${REPO}" target="_blank" rel="noopener">★ Star Suede AI Skills on GitHub</a>
+            <a href="${REPO}" target="_blank" rel="noopener">★ Star Suede Skills on GitHub</a>
             <span class="footer-divider" aria-hidden="true">|</span>
             <a href="https://suedeai.ai/privacy" target="_blank" rel="noopener">Privacy</a>
             <span class="footer-divider" aria-hidden="true">|</span>
@@ -244,7 +244,7 @@ ${sections}
           </div>
         </div>
       </div>
-    <div class="trendshift-recognition" style="width:250px;max-width:100%;margin:24px auto;text-align:center"><p style="margin:0 0 8px;font-size:13px">Suede AI Skills on Trendshift</p><a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55" loading="lazy" style="display:block;max-width:100%;height:auto"/></a></div>
+    <div class="trendshift-recognition" style="width:250px;max-width:100%;margin:24px auto;text-align:center"><p style="margin:0 0 8px;font-size:13px">Suede Skills on Trendshift</p><a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55" loading="lazy" style="display:block;max-width:100%;height:auto"/></a></div>
 </footer>
   <script>
   // Mobile nav disclosure. The markup ships <details open> so a no-JS visit

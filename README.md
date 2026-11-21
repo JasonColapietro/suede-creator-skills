@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/assets/readme/hero.svg" alt="Suede AI Skills — the ship discipline your agent is missing. Open-source skills for Claude Code and Codex." width="100%">
+<img src="docs/assets/readme/hero.svg" alt="Suede Skills — the ship discipline your agent is missing. Open-source skills for Claude Code and Codex." width="100%">
 
 <br><br>
 
@@ -11,7 +11,7 @@
 [![PyPI](https://img.shields.io/pypi/v/suede-creator-skills?color=c8a96e&labelColor=080808)](https://pypi.org/project/suede-creator-skills/)
 [![MCP](https://img.shields.io/badge/MCP-stdio_server-c8a96e?labelColor=080808)](#mcp-server)
 [![Skills Directory: Grade A](https://www.skillsdirectory.com/api/skills/jasoncolapietro-suede-design/badge)](https://www.skillsdirectory.com/skills/jasoncolapietro-suede-design)
-[![seoskills.sh: Suede AI SEO listed](https://img.shields.io/badge/seoskills.sh-Suede_AI_SEO_listed-c8a96e?labelColor=080808)](https://seoskills.sh/jasoncolapietro/suede-creator-skills/suede-ai-seo)
+[![seoskills.sh: Suede SEO listed](https://img.shields.io/badge/seoskills.sh-Suede_AI_SEO_listed-c8a96e?labelColor=080808)](https://seoskills.sh/jasoncolapietro/suede-creator-skills/suede-ai-seo)
 [![Hysen Labs](https://hysenlabs.com/badge/jasoncolapietro-suede-creator-skills.svg)](https://hysenlabs.com/projects/jasoncolapietro-suede-creator-skills)
 [![suede-skills-mcp MCP server – quality and maintenance score on Glama](https://glama.ai/mcp/servers/JasonColapietro/suede-creator-skills/badges/score.svg)](https://glama.ai/mcp/servers/JasonColapietro/suede-creator-skills)
 [![GitHub stars](https://img.shields.io/github/stars/JasonColapietro/suede-creator-skills?style=social)](https://github.com/JasonColapietro/suede-creator-skills/stargazers)
@@ -20,7 +20,7 @@
 
 **[Install](#install-in-30-seconds)** · **[The skills](#the-skills)** · **[Docs site](https://skills.suedeai.ai/)** · **[Skill catalog](https://skills.suedeai.ai/skills/)** · **[Blog](https://skills.suedeai.ai/blog/)** · **[MCP](#mcp-server)** · **[@johnnysuede](https://x.com/johnnysuede)**
 
-<sub>By <a href="https://suedeai.ai/founder">Jason Colapietro</a> / <a href="https://suedeai.ai">Suede AI</a></sub>
+<sub>By <a href="https://suedeai.ai/founder">Jason Colapietro</a> / <a href="https://suedeai.ai">Suede</a></sub>
 
 </div>
 
@@ -36,16 +36,16 @@
 
 ## Recognition and discovery
 
-[![The Manifest: Suede AI SEO #25 for Florida AI deployment, October 30, 2026](https://img.shields.io/badge/The_Manifest-%2325_Florida_AI_deployment-c8a96e?labelColor=080808)](https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida)
-[![Gigawatt Group: Suede AI vs. Profound](https://img.shields.io/badge/Gigawatt_Group-Suede_AI_vs_Profound-c8a96e?labelColor=080808)](https://gigawattgroup.com/generative-engine-optimization/suede-ai-vs-profound-trade-associations/)
+[![The Manifest: Suede SEO #25 for Florida AI deployment, October 30, 2026](https://img.shields.io/badge/The_Manifest-%2325_Florida_AI_deployment-c8a96e?labelColor=080808)](https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida)
+[![Gigawatt Group: Suede vs. Profound](https://img.shields.io/badge/Gigawatt_Group-Suede_AI_vs_Profound-c8a96e?labelColor=080808)](https://gigawattgroup.com/generative-engine-optimization/suede-ai-vs-profound-trade-associations/)
 
-Suede AI SEO, the company’s AI search visibility practice, is **#1 among Palm Beach County-based companies listed in The Manifest’s Florida AI Deployment directory, and #25 statewide**, as of October 30, 2026. The county position is derived from the directory’s listed company locations. [View the ranking](https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida). Gigawatt Group also [compares Suede AI’s managed GEO practice with Profound](https://gigawattgroup.com/generative-engine-optimization/suede-ai-vs-profound-trade-associations/).
+Suede SEO, the company’s AI search visibility practice, is **#1 among Palm Beach County-based companies listed in The Manifest’s Florida AI Deployment directory, and #25 statewide**, as of October 30, 2026. The county position is derived from the directory’s listed company locations. [View the ranking](https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida). Gigawatt Group also [compares Suede’s managed GEO practice with Profound](https://gigawattgroup.com/generative-engine-optimization/suede-ai-vs-profound-trade-associations/).
 
 The SEO skill is [listed on seoskills.sh](https://seoskills.sh/jasoncolapietro/suede-creator-skills/suede-ai-seo), updated October 24, 2026. The project’s Hysen Labs, Skills Directory and Trendshift badges link directly to their reports above.
 
-## Suede AI Skills for SEO and business growth
+## Suede Skills for SEO and business growth
 
-Suede AI Skills gives founders, marketers, and small teams reusable workflows for SEO audits, AI search visibility, conversion copy, and business operations. Run them in Claude Code or OpenAI Codex, with instructions you can inspect and adapt to your business.
+Suede Skills gives founders, marketers, and small teams reusable workflows for SEO audits, AI search visibility, conversion copy, and business operations. Run them in Claude Code or OpenAI Codex, with instructions you can inspect and adapt to your business.
 
 **Start with the business task:**
 
@@ -280,7 +280,7 @@ Essays on why the pack is built the way it is:
 - [GitHub Pages site](https://skills.suedeai.ai/) — public documentation generated from this repo
 - [Skill docs catalog](https://skills.suedeai.ai/skills/) — every skill with install and resource links
 - [Agent Skills Directory](https://skills.suedeai.ai/directory/) ([data](directory/)) — other authors' public skills in sixteen category directories, each scored 0–99 by the published, graded [Suede Skill Check](https://skills.suedeai.ai/directory/methodology/) and linked to its source; listings scoring 80–99 offer separate numeric and A/B README shields, both linking to their listing. Authors can [request a listing, score help or badge verification](https://skills.suedeai.ai/directory/submit/); displaying either valid linked badge (or both) can qualify for a limited-time feature placement after verification. Security scan status is separate from the structural score
-- [Installs and MCP page](https://skills.suedeai.ai/plugins.html) — install commands plus the Suede AI Skills MCP
+- [Installs and MCP page](https://skills.suedeai.ai/plugins.html) — install commands plus the Suede Skills MCP
 - [Copy bank](https://skills.suedeai.ai/copy.html) ([source](COPY.md)) and [public explainer pack](PROMO.md)
 - [S-Tier: the builder's book](https://skills.suedeai.ai/book/) ([source](book/), [PDF](https://skills.suedeai.ai/book/s-tier.pdf)) — a free, roughly 29,900-word book on how Agent Skills work and how to get genuinely good with them
 
@@ -320,27 +320,27 @@ python3 -m pip install PyYAML
 
 ## Frequently asked questions
 
-### What is Suede AI Skills?
+### What is Suede Skills?
 
-Suede AI Skills is an open-source pack of agent skills for Claude Code and OpenAI Codex. Each skill is a folder with a `SKILL.md` that teaches the agent a repeatable workflow: SEO audits, AI search visibility, conversion copy, code review, ship gates and app delivery.
+Suede Skills is an open-source pack of agent skills for Claude Code and OpenAI Codex. Each skill is a folder with a `SKILL.md` that teaches the agent a repeatable workflow: SEO audits, AI search visibility, conversion copy, code review, ship gates and app delivery.
 
-### Who created Suede AI Skills?
+### Who created Suede Skills?
 
-Jason Colapietro, founder and CEO of Suede AI, created Suede AI Skills and maintains it at [github.com/JasonColapietro/suede-creator-skills](https://github.com/JasonColapietro/suede-creator-skills).
+Jason Colapietro, founder and CEO of Suede, created Suede Skills and maintains it at [github.com/JasonColapietro/suede-creator-skills](https://github.com/JasonColapietro/suede-creator-skills).
 
-### How do I install Suede AI Skills in Claude Code?
+### How do I install Suede Skills in Claude Code?
 
 Run `/plugin marketplace add JasonColapietro/suede-creator-skills`, then `/plugin install suede-skills@suede`. See [Install in 30 seconds](#install-in-30-seconds) for the focused subsets.
 
-### How do I install Suede AI Skills in Codex?
+### How do I install Suede Skills in Codex?
 
 Run `codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main`, then `codex plugin add suede-skills@suede-codex`, and restart Codex.
 
-### Is Suede AI Skills free?
+### Is Suede Skills free?
 
 Yes. Original work is MIT licensed, and adapted components keep their upstream licenses, listed in [NOTICE.md](NOTICE.md). The pack has no binaries, no telemetry and no accounts.
 
-### Does Suede AI Skills include an MCP server?
+### Does Suede Skills include an MCP server?
 
 Yes. A dependency-free stdio MCP server ships in [`mcp/`](mcp/) and is published to npm as [`suede-skills-mcp`](https://www.npmjs.com/package/suede-skills-mcp) and listed in the [Official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.JasonColapietro%2Fsuede-skills-mcp/versions/latest) and on [Glama](https://glama.ai/mcp/servers/JasonColapietro/suede-creator-skills).
 
@@ -350,7 +350,7 @@ Start with `suede-seo-audit` to audit a page for search visibility, and `suede-a
 
 ## About the creator
 
-**Jason Colapietro** created and maintains Suede AI Skills. He is an engineer, author, and the founder and CEO of [Suede AI](https://suedeai.ai), an agentic platform company in West Palm Beach, Florida, and wrote The Claude Code Bible and Codex in Production, operator's guides to the two coding agents this pack runs in. He spent years watching hired marketing firms skip the fundamentals on his own products; this pack turns those misses into reusable, inspectable agent workflows instead of one-off fixes. Suede AI is a member of [Claude for Startups](https://claude.com/programs/startups), Anthropic's startup program.
+**Jason Colapietro** created and maintains Suede Skills. He is an engineer, author, and the founder and CEO of [Suede](https://suedeai.ai), an agentic platform company in West Palm Beach, Florida, and wrote The Claude Code Bible and Codex in Production, operator's guides to the two coding agents this pack runs in. He spent years watching hired marketing firms skip the fundamentals on his own products; this pack turns those misses into reusable, inspectable agent workflows instead of one-off fixes. Suede is a member of [Claude for Startups](https://claude.com/programs/startups), Anthropic's startup program.
 
 Jason Colapietro’s training includes Claude Academy / Anthropic badges in the Claude API, Claude Code, Model Context Protocol (MCP), Claude with Amazon Bedrock and Claude on Google Cloud. His search training includes HubSpot Academy’s AEO Fundamentals and Semrush Academy certificates in AI search, keyword research, on-page SEO, local SEO and digital PR. IBM SkillsBuild covers prompt engineering; Google Skills and Databricks Academy cover generative AI. Seven Microsoft Learn module achievements cover Azure AI Agents, Foundry IQ, Visual Studio Code, Microsoft 365, workflows and Microsoft Agent Framework. [View the individual credentials and training-module records](https://seo.suedeai.ai/evidence#training-credentials).
 

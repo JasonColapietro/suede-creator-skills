@@ -60,4 +60,4 @@ These Futurepedia items have no counterpart because an agent skill is a SKILL.md
 
 - `node scripts/directory/topics-count.mjs` prints every topic's match count; add a topic id for its matches, or `--unmatched` for skills no published topic claims.
 - `directory/listed-since.json` is maintained by the build and dates new listings.
-- Rankings on `/top/`, `/new/` and in topic answers exclude Suede AI's own skills, the same rule as the task pages.
+- Rankings on `/top/`, `/new/` and in topic answers exclude Suede's own skills, the same rule as the task pages.
