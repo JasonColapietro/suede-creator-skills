@@ -513,6 +513,9 @@ const validateOperationGraph = operations => {
   for (const operation of operations) {
     if (!operation || !operation.id) throw new Error('operation requires an id')
     if (byId.has(operation.id)) throw new Error(`duplicate operation ${operation.id}`)
+    if (new Set(operation.predecessorIds).size !== operation.predecessorIds.length) {
+      throw new Error(`duplicate predecessor in operation ${operation.id}`)
+    }
     byId.set(operation.id, operation)
     operation.successorIds = []
   }
@@ -3053,116 +3056,67 @@ const graphObjections = graph.thoughts.flatMap(thought =>
     plan: thought.state.plan || null,
     objection,
   })))
-const handoffBudget = { name: BUDGET_NAME, projected: ceiling, ceiling, used: agentCalls + 1, remaining: ceiling - agentCalls - 1 }
-let handoff
-try {
-  handoff = await callAgent(
-  `Write the delivery record for this run. Facts only — every field below is required,
-and a missing field means status "held", not "done".
-
-Target: ${REPO} · worktree ${scout.worktreePath} · base ${scout.baseSha}
-Handoff key: ${evidence.runKey}
-Scope: ${SCOPE}
-Winning thought: ${JSON.stringify(selectedThought)}
-Lineage: ${JSON.stringify(graph.thoughts.map(thought => ({ id: thought.id, parentIds: thought.parentIds, operation: thought.operation, status: thought.status })))}
-Scores: ${JSON.stringify(graph.thoughts.filter(thought => thought.score).map(thought => ({ id: thought.id, score: thought.score })))}
-Pruned candidates: ${JSON.stringify(graph.pruned)}
-Dropped candidates: ${JSON.stringify(graph.dropped)}
-Refuted candidates: ${JSON.stringify(refutedCandidates)}
-All graph objections: ${JSON.stringify(graphObjections)}
-Agent budget: ${JSON.stringify(handoffBudget)}
-Lanes: ${JSON.stringify(plan.lanes.map(l => ({ name: l.name, tier: l.tier, files: l.files })))}
-Stalled lanes: ${JSON.stringify(stalled.map(l => ({ lane: l.lane.name, state: l.built && l.built.state, notes: l.built && l.built.notes })))}
-Build concerns carried from authors: ${JSON.stringify(evidence.buildConcerns || [])}
-Fix concerns carried from authors: ${JSON.stringify(evidence.fixConcerns || [])}
-Confirmed findings: ${JSON.stringify(confirmed)}
-Findings that were NEVER VERIFIED — minors, and anything past the per-lane refutation cap.
-No verifier was spent on these, so each is a reviewer's unchallenged assertion rather than
-a confirmed defect. Say exactly that under Caveats; do not present them as findings and do
-not quietly drop them either: ${JSON.stringify(unverified)}
-Blockers confirmed but left unfixed (past the fix cap): ${JSON.stringify(blockers.slice(FIX_CAP))}
-Blocker patches applied but pending semantic verification. These force a hold even when
-the Gate agent claims its restricted checks passed: ${JSON.stringify(evidence.fixedBlockersPendingVerification)}
-Gate: ${JSON.stringify(gate)}
-Gate command audit: ${JSON.stringify(evidence.gateAudit)}
-Gate verification: ${evidence.gateVerified ? 'verified by trusted runner receipts' : 'UNVERIFIED — no trusted runner execution receipts were supplied'}
-Mutation boundary audit: ${evidence.mutationAudit}
-Execution evidence boundary: Bash clamps constrain a Bash call only if the agent invokes
-it. Apply, worktree-verifier, and Gate structured results are model attestations, not
-host-certified execution receipts. The authority and allowed-files fields are audit
-metadata, not host filesystem permissions. State this distinction under Caveats and do
-not describe the run as host-certified.
-Release verification (${shipVerdict}): ${JSON.stringify(release)}
-Plan refutations and objections from graph search: ${JSON.stringify(objections)}
-Build and repair records: ${JSON.stringify({ builds: evidence.builds, fixes: evidence.fixes })}
-Cross-worktree overlap — these lane files are ALSO in flight on other unlanded branches,
-so this work will need a rebase or a merge resolution against them. Name each one and the
-branch it collides with under Caveats; this is the caveat most likely to be discovered by
-someone else, days later, as a conflict with no explanation: ${JSON.stringify(crossWorktree)}
-Constraints dropped by the skeptic (research asserted these; audit rejected them): ${JSON.stringify(rejected)}
-Sources never read: ${JSON.stringify(stillUnread)}
-Advisory hazards from scout (NOT fixed by this run): ${JSON.stringify(scout.hazards)}
-
-Produce markdown with exactly these headings: Target, Changed, Commands,
-Verification, Release Risk, Status, Caveats, Next.
-
-Under Release Risk: the advisory verdict, every blocker and irreversible risk with its
-evidence, the written undo procedure for anything not revert-able, and the live baseline
-readback. If this is not a deploying repo, write "n/a" and move on. The verdict is advice
-attached to the work — it does not change what was done, and nothing here was blocked by it.
-
-Status must be one of: changed locally | verified locally | reviewed | committed |
-pushed | deployed | verified live | held | blocked. "changed locally" is not
-"verified locally". THIS RUN DOES NOT DEPLOY — never write "deployed", "verified live",
-or "released" on the strength of the release verifier, which only read production. Those
-states require an actual deploy that has not happened here.
-Because this runner exposes no trusted required-tool execution receipts, Status MUST be
-exactly "held" for this run even when the Gate agent claims its restricted commands passed.
-When fixedBlockersPendingVerification is nonempty, Status must be "held" even if Gate passed.
-List every unfixed major/minor finding under Caveats. Omitting a caveat to make the
-handoff look clean is the failure mode this section exists to prevent.`,
-  { phase: 'Handoff', effort: 'low', authority: 'read-only', agentType: CODE_READER_AGENT }
-  )
-} catch (error) {
-  if (error && error.code === 'AGENT_BUDGET_EXHAUSTED') throw error
-  const handoffFailure = { message: error && error.message ? error.message : String(error), code: (error && error.code) || null }
-  evidence.handoffFailure = handoffFailure
-  graph.dropped.push({ operation: 'Handoff', inputs: { budget: handoffBudget }, reason: 'handoff agent failure', error: handoffFailure })
-  evidence.shipVerdict = 'hold'
-  return { halted: true, reason: 'handoff agent failure', graph, ...evidence }
-}
-evidence.handoff = handoff
-const requiredHandoffHeadings = ['Target', 'Changed', 'Commands', 'Verification', 'Release Risk', 'Status', 'Caveats', 'Next']
-const handoffHeadingMatches = typeof handoff === 'string'
-  ? [...handoff.matchAll(/^## ([^\r\n]+)\s*$/gm)]
-  : []
-const handoffHeadings = handoffHeadingMatches.map(match => match[1].trim())
-const handoffSections = handoffHeadingMatches.map((match, index) => {
-  const start = match.index + match[0].length
-  const end = index + 1 < handoffHeadingMatches.length ? handoffHeadingMatches[index + 1].index : handoff.length
-  return handoff.slice(start, end).trim()
-})
-const handoffSectionsComplete = handoffSections.every(section => section.length > 0)
-const reportedHandoffStatus = handoffHeadings.indexOf('Status') >= 0
-  ? handoffSections[handoffHeadings.indexOf('Status')].split(/\r?\n/)[0].trim().toLowerCase()
-  : null
-const handoffValid = nonEmptyString(handoff) &&
-  handoffHeadings.join('\u0000') === requiredHandoffHeadings.join('\u0000') &&
-  handoffSectionsComplete && reportedHandoffStatus === 'held'
-if (!handoffValid) {
-  evidence.handoffFailure = {
-    message: 'handoff output is missing the exact required markdown headings, section content, or mandatory held status',
-    code: 'INVALID_HANDOFF',
-  }
-  graph.dropped.push({
-    operation: 'Handoff',
-    inputs: { requiredHeadings: requiredHandoffHeadings, reportedHeadings: handoffHeadings },
-    reason: 'invalid handoff output',
-    error: evidence.handoffFailure,
-  })
-  evidence.shipVerdict = 'hold'
-  return { halted: true, reason: 'invalid handoff', graph, ...evidence }
-}
+// Only fixed strings can introduce markdown structure. JSON escapes line
+// breaks inside evidence strings; escaping backticks also prevents a value
+// from resembling a fence while preserving round-trip JSON semantics.
+const evidenceBlock = data => '```json\n' +
+  JSON.stringify(data, null, 2).replace(/`/g, '\\u0060') + '\n```'
+const handoffSections = [
+  ['Target', evidenceBlock({
+    Repository: REPO,
+    Worktree: scout.worktreePath,
+    Base: scout.baseSha,
+    'Handoff key': evidence.runKey,
+    Scope: SCOPE,
+    'Agent budget': graph.budget,
+    'Winning thought': selectedThought,
+    Lineage: graph.thoughts.map(({ id, parentIds, operation, status }) => ({ id, parentIds, operation, status })),
+    Scores: graph.thoughts.filter(thought => thought.score).map(({ id, score }) => ({ id, score })),
+    'Pruned candidates': graph.pruned,
+    'Dropped candidates': graph.dropped,
+    'Refuted candidates': refutedCandidates,
+    'All graph objections': graphObjections,
+    'Plan refutations': objections,
+    'Score reliability': evidence.scoreReliability,
+  })],
+  ['Changed', evidenceBlock({
+    Lanes: plan.lanes.map(({ name, tier, files }) => ({ name, tier, files })),
+    'Reported changed files': reportedMutationFiles,
+    'Build and repair records': { builds: evidence.builds, fixes: evidence.fixes },
+  })],
+  ['Commands', 'The Gate commands below are agent-reported, not verified execution.\n\n' +
+    evidenceBlock(evidence.gateAudit)],
+  ['Verification', evidenceBlock({
+    Gate: gate,
+    'Verified Gate': evidence.gateVerified,
+    'Mutation boundary audit': evidence.mutationAudit,
+    'Post-Gate mutation attestation': evidence.gateMutationAttestation,
+    'Confirmed findings': confirmed,
+    'Blocker patches pending semantic verification': evidence.fixedBlockersPendingVerification,
+  })],
+  ['Release Risk', DEPLOYS ? 'Read-only production review. No deployment was performed.\n\n' +
+    evidenceBlock({ Verdict: shipVerdict, 'Release verification': release }) : 'n/a'],
+  ['Status', 'held'],
+  ['Caveats', [
+    'Apply, worktree-verifier, and Gate results are model attestations, not host-certified execution receipts.',
+    'Bash clamps only constrain Bash when an agent calls it. The authority and allowed-files fields are audit metadata, not host filesystem permissions.',
+    'Unverified findings are unchallenged reviewer assertions, not confirmed defects.',
+    evidenceBlock({
+      'Stalled lanes': stalled.map(({ lane, built }) => ({ name: lane.name, state: built && built.state, notes: built && built.notes })),
+      'Build concerns': evidence.buildConcerns || [],
+      'Fix concerns': evidence.fixConcerns || [],
+      'Unverified findings': unverified,
+      'Unfixed confirmed blocker findings': blockers.slice(FIX_CAP),
+      'Confirmed non-blocker findings': confirmed.filter(finding => finding.severity !== 'blocker'),
+      'Cross-worktree overlap': crossWorktree,
+      'Constraints rejected by the skeptic': rejected,
+      'Sources never read': stillUnread,
+      'Advisory Scout hazards': scout.hazards,
+    }),
+  ].join('\n\n')],
+  ['Next', 'Review the selected diff and outstanding findings. Obtain trusted execution receipts for the selected acceptance commands while keeping the sandbox restrictions. Verify applied blocker fixes before reconsidering the hold.'],
+]
+evidence.handoff = handoffSections.map(([heading, body]) => `## ${heading}\n\n${body}`).join('\n\n') + '\n'
 
 return {
   agentBudget: BUDGET_NAME,
