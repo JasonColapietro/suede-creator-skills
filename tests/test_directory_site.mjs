@@ -161,7 +161,7 @@ test("standalone reports verify independently and match their displayed versions
 });
 
 test("the standalone home names suedeai.directory as its own WebSite", () => {
-  const html = `<script type="application/ld+json">\n    {"@type":"CollectionPage","isPartOf":{"@type":"WebSite","@id":"${OLD}/#website","name":"Suede AI Skills","url":"${OLD}/"}}\n  </script>`;
+  const html = `<script type="application/ld+json">\n    {"@type":"CollectionPage","isPartOf":{"@type":"WebSite","@id":"${OLD}/#website","name":"Suede Skills","url":"${OLD}/"}}\n  </script>`;
   const out = rehomeWebsite(html);
   const ld = JSON.parse(out.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
   assert.deepEqual(ld.isPartOf, SITE_NODE);

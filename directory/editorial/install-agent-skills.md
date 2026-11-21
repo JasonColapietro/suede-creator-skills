@@ -1,6 +1,6 @@
 # How to Install Agent Skills in Claude Code, Codex and Cursor
 
-By [Jason Colapietro](https://suedeai.ai/founder), Founder and CEO of Suede AI. Author of *Stake Your Claim*, *Proof as Infrastructure* and *The Human Authenticity Layer*, holder of the VoicePrint patent, and a builder of companies for two decades.
+By [Jason Colapietro](https://suedeai.ai/founder), Founder and CEO of Suede. Author of *Stake Your Claim*, *Proof as Infrastructure* and *The Human Authenticity Layer*, holder of the VoicePrint patent, and a builder of companies for two decades.
 
 Reviewed October 23, 2026, against the Claude Code and Codex documentation.
 
@@ -92,7 +92,7 @@ Work through these in order:
 
 Commit the skills to `.claude/skills/` (Claude Code) or `.agents/skills/` (Codex) in the shared repository, so everyone who clones it gets the same versions. For plugins, team admins can add a marketplace to the project's `.claude/settings.json` under `extraKnownMarketplaces`.
 
-When a team needs several agents working together across business systems, with handoffs and approvals, that is the job [Suede AI Agent Studio](https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=guide&utm_campaign=install-agent-skills&utm_content=team-section) is built for: multi-agent automation for businesses.
+When a team needs several agents working together across business systems, with handoffs and approvals, that is the job [Suede Agent Studio](https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=guide&utm_campaign=install-agent-skills&utm_content=team-section) is built for: multi-agent automation for businesses.
 
 ## FAQ
 

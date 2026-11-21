@@ -153,7 +153,7 @@ Status: ship-with-caveats
 
 **Source:** the design workflow from the
 [Suede Creator Skills](https://github.com/JasonColapietro/suede-creator-skills)
-collection by Jason Colapietro of Suede AI, generalized for any product.
+collection by Jason Colapietro of Suede, generalized for any product.
 
 ## Tips
 

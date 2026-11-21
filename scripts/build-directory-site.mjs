@@ -9,12 +9,12 @@
 // output, copies docs/assets/ beside it, and rewrites URLs:
 //   - https://skills.suedeai.ai/directory/... becomes https://suedeai.directory/...
 //   - root-absolute /directory/... becomes /...
-//   - relative links that leave the directory (to the Suede AI Skills pack,
+//   - relative links that leave the directory (to the Suede Skills pack,
 //     its blog or its home page) become absolute https://skills.suedeai.ai/... links,
 //     except /assets/..., which ships with this site
 //   - relative links that stay inside the directory are left alone: every page
 //     moves up one level together, so they still resolve
-//   - Suede AI call-to-action links tagged utm_source=skills.suedeai.ai are
+//   - Suede call-to-action links tagged utm_source=skills.suedeai.ai are
 //     retagged utm_source=suedeai.directory
 //   - og:image and twitter:image move to https://suedeai.directory/assets/...
 //     when the image ships in docs/assets/
@@ -53,7 +53,7 @@ export function rewriteUrl(value, pageUrl) {
 }
 
 // On its own domain the directory is its own WebSite. The pages were built as
-// part of the Suede AI Skills site, so their isPartOf named that site; search
+// part of the Suede Skills site, so their isPartOf named that site; search
 // engines take the site name from this node, so it has to name this host.
 export const SITE_NODE = {
   "@type": "WebSite",
@@ -83,7 +83,7 @@ export function rehomeWebsite(html) {
   });
 }
 
-// Outbound Suede AI calls to action carry utm_source naming the host the
+// Outbound Suede calls to action carry utm_source naming the host the
 // visitor clicked from. Every page this build writes is served on
 // suedeai.directory, so its links say so; docs/ keeps skills.suedeai.ai.
 const UTM_SOURCE_RE = /([?&]|&amp;)utm_source=skills\.suedeai\.ai(?=&|"|'|#|\s|$)/g;
@@ -198,14 +198,14 @@ export function build(out) {
   fs.writeFileSync(path.join(out, "llms.txt"), [
     "# Suede Skills Directory",
     "",
-    "> A curated, graded index of public Agent Skills for Claude Code, Codex and Cursor. Skill listings link to the author's GitHub repository, state licenses and show 0–99 Suede Skill Check scores. A separate Agents catalog covers runnable local and hosted editions with evidence-specific /10 ratings, alongside a searchable ungraded catalog with official sources. Published by Suede AI; edited by Jason Colapietro.",
+    "> A curated, graded index of public Agent Skills for Claude Code, Codex and Cursor. Skill listings link to the author's GitHub repository, state licenses and show 0–99 Suede Skill Check scores. A separate Agents catalog covers runnable local and hosted editions with evidence-specific /10 ratings, alongside a searchable ungraded catalog with official sources. Published by Suede; edited by Jason Colapietro.",
     "",
     "- [Find graded skills inside your agent](https://suedeai.directory/finder/): Installable read-only finder skill for Claude Code, Codex and Cursor.",
-    "- [State of Agent Skills](https://suedeai.directory/state-of-agent-skills/): Snapshot-based quality report with downloadable data and chart; excludes Suede AI skills.",
+    "- [State of Agent Skills](https://suedeai.directory/state-of-agent-skills/): Snapshot-based quality report with downloadable data and chart; excludes Suede skills.",
     "- [Rising Skills](https://suedeai.directory/rising/): Five skills from the recorded weekly install snapshot, with scores and source links.",
     ...llmsLines.map((l) => l.replace(OLD_DIR_RE, NEW)),
     "",
-    `Suede AI's own skill pack, Suede AI Skills: ${OLD}/`,
+    `Suede's own skill pack, Suede Skills: ${OLD}/`,
     "",
   ].join("\n"));
   return { urls: urls.length, llms: llmsLines.length };

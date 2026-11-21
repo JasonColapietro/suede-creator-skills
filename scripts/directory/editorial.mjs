@@ -1,5 +1,5 @@
 // Renders the directory guides in directory/editorial/*.md to HTML for
-// scripts/build-directory.mjs. The Markdown is Suede AI's own editorial copy,
+// scripts/build-directory.mjs. The Markdown is Suede's own editorial copy,
 // so the renderer supports exactly what those files use: H2 and H3 headings,
 // paragraphs, bullet and numbered lists, pipe tables, fenced code, and inline
 // code, bold, italic and links. Anything else renders as escaped text.

@@ -527,9 +527,9 @@ test("new/ lists exactly the skills first listed after the ledger floor within 3
   const expected = skills.filter((s) => isNewListing(s, snapshotDate, floorDate));
   const listedNew = [...new Set(rows.filter((r) => r["data-listed"] > floorDate).map((r) => r["data-id"]))].sort();
   const thirdParty = expected.filter((s) => !isFirstParty(s)).map((s) => s.id).sort();
-  // Suede AI's own new skills may be shown or held back, but all or nothing.
+  // Suede's own new skills may be shown or held back, but all or nothing.
   const all = expected.map((s) => s.id).sort();
-  assert.ok(JSON.stringify(listedNew) === JSON.stringify(all) || JSON.stringify(listedNew) === JSON.stringify(thirdParty), `new/ lists ${listedNew.length} new skills; expected ${all.length} (or ${thirdParty.length} without Suede AI's own)`);
+  assert.ok(JSON.stringify(listedNew) === JSON.stringify(all) || JSON.stringify(listedNew) === JSON.stringify(thirdParty), `new/ lists ${listedNew.length} new skills; expected ${all.length} (or ${thirdParty.length} without Suede's own)`);
   for (const r of rows) {
     const s = byId.get(r["data-id"]);
     assert.ok(s, `new/: unknown skill ${r["data-id"]}`);
@@ -551,14 +551,14 @@ test("top/ lists 100 third-party skills in non-increasing score order", () => {
   for (const r of rows) {
     const s = byId.get(r["data-id"]);
     assert.ok(s, `top/: unknown skill ${r["data-id"]}`);
-    assert.ok(!isFirstParty(s), `top/: Suede AI skill ${s.id} in a ranking`);
+    assert.ok(!isFirstParty(s), `top/: Suede skill ${s.id} in a ranking`);
     assert.equal(Number(r["data-score"]), s.score, `top/: ${s.id} score`);
   }
   // Every third-party skill scoring above the 100th row's score must be listed.
   const cutoff = scores.at(-1);
   const ids = new Set(rows.map((r) => r["data-id"]));
   for (const s of skills.filter((x) => !isFirstParty(x) && x.score > cutoff)) assert.ok(ids.has(s.id), `top/: ${s.id} (${s.score}) missing`);
-  assert.doesNotMatch(mainOf(html), new RegExp(FIRST_PARTY.replace("/", "\\/"), "i"), "top/ names a Suede AI skill");
+  assert.doesNotMatch(mainOf(html), new RegExp(FIRST_PARTY.replace("/", "\\/"), "i"), "top/ names a Suede skill");
   for (const item of collection(html).mainEntity.itemListElement) assert.doesNotMatch(item.url, /jasoncolapietro\/suede-creator-skills/i);
 });
 
@@ -732,7 +732,7 @@ test("browse page copy avoids em dashes and the banned AI-tell words", () => {
   const banned = /\u2014|\bdelve|game-changer|\bunlock|\belevate|\bseamless|\blandscape\b|\btapestry\b|\bmoreover\b|it's important to note/i;
   for (const rel of [...browsePages, "directory/saved/"]) {
     const main = mainOf(read(rel));
-    // Only Suede AI's own sentences: third-party summaries, skill names and
+    // Only Suede's own sentences: third-party summaries, skill names and
     // repository names sit in table cells.
     const own = main.replace(/<td class="(?:desc|meta|name)">[\s\S]*?<\/td>/g, "").replace(/<[^>]+>/g, " ")
       // Third-party owner/repo names (for example tapestry-skills-for-claude-code) are not our copy.

@@ -1668,35 +1668,35 @@
  ],
  "directory/compare/suede-vs-awesome-claude-skills/index.html": [
   "awesome-claude-skills comparison",
-  "awesome-claude-skills vs suede ai skills directory",
+  "awesome-claude-skills vs suede skills directory",
   "awesome-claude-skills features",
   "agent skill directory comparison",
   "graded agent skills directory"
  ],
  "directory/compare/suede-vs-claude-marketplaces/index.html": [
   "Claude Marketplaces comparison",
-  "Claude Marketplaces vs suede ai skills directory",
+  "Claude Marketplaces vs suede skills directory",
   "Claude Marketplaces features",
   "agent skill directory comparison",
   "graded agent skills directory"
  ],
  "directory/compare/suede-vs-claude-plugins-dev/index.html": [
   "claude-plugins.dev comparison",
-  "claude-plugins.dev vs suede ai skills directory",
+  "claude-plugins.dev vs suede skills directory",
   "claude-plugins.dev features",
   "agent skill directory comparison",
   "graded agent skills directory"
  ],
  "directory/compare/suede-vs-skills-sh/index.html": [
   "skills.sh comparison",
-  "skills.sh vs suede ai skills directory",
+  "skills.sh vs suede skills directory",
   "skills.sh features",
   "agent skill directory comparison",
   "graded agent skills directory"
  ],
  "directory/compare/suede-vs-skillsmp/index.html": [
   "SkillsMP comparison",
-  "SkillsMP vs suede ai skills directory",
+  "SkillsMP vs suede skills directory",
   "SkillsMP features",
   "agent skill directory comparison",
   "graded agent skills directory"
@@ -6010,21 +6010,21 @@
   "code review agent skills",
   "creator tools",
   "agent skills directory",
-  "Suede AI Skills"
+  "Suede Skills"
  ],
  "directory/jasoncolapietro/suede-creator-skills/suede-component-lab/index.html": [
   "component lab agent skill",
   "component lab workflow",
   "frontend and design agent skills",
   "SKILL.md",
-  "Suede AI Component Lab Skills"
+  "Suede Component Lab Skills"
  ],
  "directory/jasoncolapietro/suede-creator-skills/suede-interface-explain/index.html": [
   "interface explain agent skill",
   "interface explain workflow",
   "frontend and design agent skills",
   "SKILL.md",
-  "Suede AI Interface Explain Skills"
+  "Suede Interface Explain Skills"
  ],
  "directory/jeffallan/claude-skills/chaos-engineer/index.html": [
   "chaos-engineer skill by jeffallan",

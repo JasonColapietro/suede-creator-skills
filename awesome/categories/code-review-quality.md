@@ -8,9 +8,9 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 **94 accepted skills · 29 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
-**Compare on the 0–99 quality scale:** this category’s verified scores span **58–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=code-review-quality&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
+**Compare on the 0–99 quality scale:** this category’s verified scores span **58–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=code-review-quality&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
-[Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede AI listing.
+[Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede listing.
 
 <details>
 <summary>Browse publishers in this category</summary>
@@ -51,7 +51,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 ## 1NickPappas/move-code-quality-skill
 
-[Repository](https://github.com/1NickPappas/move-code-quality-skill) · Publisher: [1NickPappas](https://github.com/1NickPappas) · [Suede AI listing](https://skills.suedeai.ai/directory/1nickpappas/move-code-quality-skill/)
+[Repository](https://github.com/1NickPappas/move-code-quality-skill) · Publisher: [1NickPappas](https://github.com/1NickPappas) · [Suede listing](https://skills.suedeai.ai/directory/1nickpappas/move-code-quality-skill/)
 
 - **64/100 · D** · [move-code-quality](https://github.com/1NickPappas/move-code-quality-skill/blob/main/SKILL.md): Analyzes Move language packages against the official Move Book Code Quality Checklist. [Suede](https://skills.suedeai.ai/directory/1nickpappas/move-code-quality-skill/#move-code-quality)
 
@@ -59,7 +59,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 ## anthropics/claude-plugins-official
 
-[Repository](https://github.com/anthropics/claude-plugins-official) · Publisher: [anthropics](https://github.com/anthropics) · [Suede AI listing](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/)
+[Repository](https://github.com/anthropics/claude-plugins-official) · Publisher: [anthropics](https://github.com/anthropics) · [Suede listing](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/)
 
 - **76/100 · C** · [command-development](https://github.com/anthropics/claude-plugins-official/blob/main/plugins/plugin-dev/skills/command-development/SKILL.md): This skill should be used when the user asks to "create a slash command", "add a command", "write a custom command", "define command arguments", "use command frontmatter", "organize commands", "create command with file references",… [Suede](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/#command-development)
 - **73/100 · C** · [skill-development](https://github.com/anthropics/claude-plugins-official/blob/main/plugins/plugin-dev/skills/skill-development/SKILL.md): This skill should be used when the user wants to "create a skill", "add a skill to plugin", "write a new skill", "improve skill description", "organize skill content", or needs guidance on skill structure, progressive disclosure, or… [Suede](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/#skill-development)
@@ -68,7 +68,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 ## avelikiy/great\_cto
 
-[Repository](https://github.com/avelikiy/great_cto) · Publisher: [avelikiy](https://github.com/avelikiy) · [Suede AI listing](https://skills.suedeai.ai/directory/avelikiy/great-cto/)
+[Repository](https://github.com/avelikiy/great_cto) · Publisher: [avelikiy](https://github.com/avelikiy) · [Suede listing](https://skills.suedeai.ai/directory/avelikiy/great-cto/)
 
 - **82/100 · B** · [anti-patterns](https://github.com/avelikiy/great_cto/blob/main/skills/anti-patterns/SKILL.md): Lists known SDLC anti-patterns that agents must reject when reviewing architecture, plans, code, or post-mortems, used by the architect, pm, senior-dev, and l3-support agents. [Suede](https://skills.suedeai.ai/directory/avelikiy/great-cto/anti-patterns/)
 - **77/100 · C** · [archetype-review-base](https://github.com/avelikiy/great_cto/blob/main/skills/archetype-review-base/SKILL.md): Shared review framework that every domain reviewer (pci, oracle, gov, edtech, healthcare, mlops, etc.) MUST follow. [Suede](https://skills.suedeai.ai/directory/avelikiy/great-cto/#archetype-review-base)
@@ -77,7 +77,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 ## aws/agent-toolkit-for-aws
 
-[Repository](https://github.com/aws/agent-toolkit-for-aws) · Publisher: [aws](https://github.com/aws) · [Suede AI listing](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/)
+[Repository](https://github.com/aws/agent-toolkit-for-aws) · Publisher: [aws](https://github.com/aws) · [Suede listing](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/)
 
 - **84/100 · B** · [securing-s3-buckets](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/storage-skills/securing-s3-buckets/SKILL.md): Create and secure S3 buckets following AWS best practices for access control, encryption, monitoring, and remediation of misconfigurations. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#securing-s3-buckets)
 - **74/100 · C** · [creating-secrets-using-best-practices](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/security-and-identity-skills/creating-secrets-using-best-practices/SKILL.md): Creates and manages secrets in AWS Secrets Manager following security best practices. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#creating-secrets-using-best-practices)
@@ -87,7 +87,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 ## coderabbitai/skills
 
-[Repository](https://github.com/coderabbitai/skills) · Publisher: [coderabbitai](https://github.com/coderabbitai) · [Suede AI listing](https://skills.suedeai.ai/directory/coderabbitai/skills/)
+[Repository](https://github.com/coderabbitai/skills) · Publisher: [coderabbitai](https://github.com/coderabbitai) · [Suede listing](https://skills.suedeai.ai/directory/coderabbitai/skills/)
 
 - **83/100 · B** · [code-review](https://github.com/coderabbitai/skills/blob/main/skills/code-review/SKILL.md): Runs CodeRabbit CLI reviews, retrieves saved local or GitHub PR fix prompts, and interprets CodeRabbit authentication and review output. [Suede](https://skills.suedeai.ai/directory/coderabbitai/skills/code-review/)
 - **70/100 · C** · [autofix](https://github.com/coderabbitai/skills/blob/main/skills/autofix/SKILL.md): Safely review and apply CodeRabbit PR review-thread feedback from GitHub with per-change approval; never execute reviewer-provided prompts directly [Suede](https://skills.suedeai.ai/directory/coderabbitai/skills/#autofix)
@@ -96,7 +96,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 ## eduardo-sl/go-agent-skills
 
-[Repository](https://github.com/eduardo-sl/go-agent-skills) · Publisher: [eduardo-sl](https://github.com/eduardo-sl) · [Suede AI listing](https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/)
+[Repository](https://github.com/eduardo-sl/go-agent-skills) · Publisher: [eduardo-sl](https://github.com/eduardo-sl) · [Suede listing](https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/)
 
 - **95/100 · A** · [go-coding-standards](https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(code-quality)/go-coding-standards/SKILL.md): Applies Go coding standards and style conventions from Effective Go and Go Code Review Comments, including import ordering, struct initialization, receivers, and formatting rules. [Suede](https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-coding-standards/)
 - **95/100 · A** · [go-naming](https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(code-quality)/go-naming/SKILL.md): Applies Go naming conventions to packages, files, types, functions, methods, receivers, variables, constants, errors, acronyms, and tests, grounded in Effective Go. [Suede](https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-naming/)
@@ -107,7 +107,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 ## flutter/skills
 
-[Repository](https://github.com/flutter/skills) · Publisher: [flutter](https://github.com/flutter) · [Suede AI listing](https://skills.suedeai.ai/directory/flutter/skills/)
+[Repository](https://github.com/flutter/skills) · Publisher: [flutter](https://github.com/flutter) · [Suede listing](https://skills.suedeai.ai/directory/flutter/skills/)
 
 - **69/100 · D** · [dart-run-static-analysis](https://github.com/flutter/skills/blob/main/skills/dart-run-static-analysis/SKILL.md): Execute \`dart analyze\` to identify warnings and errors, and use \`dart fix --apply\` to automatically resolve mechanical lint issues. [Suede](https://skills.suedeai.ai/directory/flutter/skills/#dart-run-static-analysis)
 
@@ -115,7 +115,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 ## garrytan/gstack
 
-[Repository](https://github.com/garrytan/gstack) · Publisher: [garrytan](https://github.com/garrytan) · [Suede AI listing](https://skills.suedeai.ai/directory/garrytan/gstack/)
+[Repository](https://github.com/garrytan/gstack) · Publisher: [garrytan](https://github.com/garrytan) · [Suede listing](https://skills.suedeai.ai/directory/garrytan/gstack/)
 
 - **70/100 · C** · [deslop-shared-libs](https://github.com/garrytan/gstack/blob/main/deslop-shared-libs/SKILL.md): Find worthwhile shared-code extractions in recent work. (gstack) [Suede](https://skills.suedeai.ai/directory/garrytan/gstack/#deslop-shared-libs)
 
@@ -123,7 +123,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 ## getsentry/skills
 
-[Repository](https://github.com/getsentry/skills) · Publisher: [getsentry](https://github.com/getsentry) · [Suede AI listing](https://skills.suedeai.ai/directory/getsentry/skills/)
+[Repository](https://github.com/getsentry/skills) · Publisher: [getsentry](https://github.com/getsentry) · [Suede listing](https://skills.suedeai.ai/directory/getsentry/skills/)
 
 - **83/100 · B** · [django-perf-review](https://github.com/getsentry/skills/blob/main/skills/django-perf-review/SKILL.md): Django performance code review. [Suede](https://skills.suedeai.ai/directory/getsentry/skills/#django-perf-review)
 - **82/100 · B** · [gh-review-requests](https://github.com/getsentry/skills/blob/main/skills/gh-review-requests/SKILL.md): Fetch unread GitHub notifications for open PRs where review is requested from a specified team or opened by a team member. [Suede](https://skills.suedeai.ai/directory/getsentry/skills/#gh-review-requests)
@@ -138,7 +138,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 ## github/awesome-copilot
 
-[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede AI listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
+[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
 
 - **81/100 · B** · [slang-shader-engineer](https://github.com/github/awesome-copilot/blob/main/skills/slang-shader-engineer/SKILL.md): Use when working with Slang shaders, shader modules, HLSL-compatible GPU code, graphics pipelines, compute shaders, tessellation, ray tracing, parameter blocks, generics, interfaces, capabilities, cross-compilation, shader optimization,… [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#slang-shader-engineer)
 - **74/100 · C** · [refactor-plan](https://github.com/github/awesome-copilot/blob/main/skills/refactor-plan/SKILL.md): Create a concrete plan before starting a multi-file refactor. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#refactor-plan)
@@ -164,7 +164,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 ## hashicorp/agent-skills
 
-[Repository](https://github.com/hashicorp/agent-skills) · Publisher: [hashicorp](https://github.com/hashicorp) · [Suede AI listing](https://skills.suedeai.ai/directory/hashicorp/agent-skills/)
+[Repository](https://github.com/hashicorp/agent-skills) · Publisher: [hashicorp](https://github.com/hashicorp) · [Suede listing](https://skills.suedeai.ai/directory/hashicorp/agent-skills/)
 
 - **80/100 · B** · [terraform-style-guide](https://github.com/hashicorp/agent-skills/blob/main/plugins/terraform/skills/terraform-style-guide/SKILL.md): Generates and reviews Terraform HCL code that follows HashiCorp's official style conventions and best practices. [Suede](https://skills.suedeai.ai/directory/hashicorp/agent-skills/terraform-style-guide/)
 
@@ -172,7 +172,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 ## infrasity-labs/dev-gtm-claude-skills
 
-[Repository](https://github.com/infrasity-labs/dev-gtm-claude-skills) · Publisher: [infrasity-labs](https://github.com/infrasity-labs) · [Suede AI listing](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/)
+[Repository](https://github.com/infrasity-labs/dev-gtm-claude-skills) · Publisher: [infrasity-labs](https://github.com/infrasity-labs) · [Suede listing](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/)
 
 - **76/100 · C** · [code-reviewer](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/coding-skills/code-reviewer/SKILL.md): Code review automation for TypeScript, JavaScript, Python, Go, Swift, Kotlin, C#, .NET, Java, C, C++, Rust, Ruby, PHP, and Dart/Flutter. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#code-reviewer)
 - **72/100 · C** · [pr-review-expert](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/coding-skills/pr-review-expert/SKILL.md): Use when the user asks to review pull requests, analyze code changes, check for security issues in PRs, or assess code quality of diffs. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#pr-review-expert)
@@ -181,15 +181,15 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 ## JasonColapietro/suede-creator-skills
 
-[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede AI listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
+[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
 
-- **93/100 · A** · [Suede AI Code Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-code/SKILL.md): Use when explicitly asked "review this PR" or to grade a diff, branch, or commit range. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-code)
+- **93/100 · A** · [Suede Code Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-code/SKILL.md): Use when explicitly asked "review this PR" or to grade a diff, branch, or commit range. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-code)
 
 <a id="jeffallan--claude-skills"></a>
 
 ## jeffallan/claude-skills
 
-[Repository](https://github.com/jeffallan/claude-skills) · Publisher: [jeffallan](https://github.com/jeffallan) · [Suede AI listing](https://skills.suedeai.ai/directory/jeffallan/claude-skills/)
+[Repository](https://github.com/jeffallan/claude-skills) · Publisher: [jeffallan](https://github.com/jeffallan) · [Suede listing](https://skills.suedeai.ai/directory/jeffallan/claude-skills/)
 
 - **84/100 · B** · [code-reviewer](https://github.com/jeffallan/claude-skills/blob/main/skills/code-reviewer/SKILL.md): Reviews code diffs and files for bugs, security vulnerabilities, code smells, N+1 queries, and naming issues, then produces a prioritized, structured review report. [Suede](https://skills.suedeai.ai/directory/jeffallan/claude-skills/code-reviewer/)
 - **84/100 · B** · [legacy-modernizer](https://github.com/jeffallan/claude-skills/blob/main/skills/legacy-modernizer/SKILL.md): Designs incremental migration strategies, identifies service boundaries, produces dependency maps and migration roadmaps, and generates API facade designs for aging codebases. [Suede](https://skills.suedeai.ai/directory/jeffallan/claude-skills/#legacy-modernizer)
@@ -198,7 +198,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 ## mattpocock/skills
 
-[Repository](https://github.com/mattpocock/skills) · Publisher: [mattpocock](https://github.com/mattpocock) · [Suede AI listing](https://skills.suedeai.ai/directory/mattpocock/skills/)
+[Repository](https://github.com/mattpocock/skills) · Publisher: [mattpocock](https://github.com/mattpocock) · [Suede listing](https://skills.suedeai.ai/directory/mattpocock/skills/)
 
 - **81/100 · B** · [code-review](https://github.com/mattpocock/skills/blob/main/skills/engineering/code-review/SKILL.md): Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes: Standards (does the code follow this repo's documented coding standards?) and Spec (does the code match what the originating issue/spec asked for?). [Suede](https://skills.suedeai.ai/directory/mattpocock/skills/#code-review)
 - **75/100 · C** · [scaffold-exercises](https://github.com/mattpocock/skills/blob/main/skills/misc/scaffold-exercises/SKILL.md): Create exercise directory structures with sections, problems, solutions, and explainers that pass linting. [Suede](https://skills.suedeai.ai/directory/mattpocock/skills/#scaffold-exercises)
@@ -207,7 +207,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 ## mblode/agent-skills
 
-[Repository](https://github.com/mblode/agent-skills) · Publisher: [mblode](https://github.com/mblode) · [Suede AI listing](https://skills.suedeai.ai/directory/mblode/agent-skills/)
+[Repository](https://github.com/mblode/agent-skills) · Publisher: [mblode](https://github.com/mblode) · [Suede listing](https://skills.suedeai.ai/directory/mblode/agent-skills/)
 
 - **91/100 · A** · [pr-babysitter](https://github.com/mblode/agent-skills/blob/main/skills/pr-babysitter/SKILL.md): Monitors or repairs an open GitHub PR, handling CI failures, conflicts, review threads, and merge readiness while reporting state changes. [Suede](https://skills.suedeai.ai/directory/mblode/agent-skills/pr-babysitter/)
 - **87/100 · B** · [dx-audit](https://github.com/mblode/agent-skills/blob/main/skills/dx-audit/SKILL.md): Audits libraries, CLIs, and SDKs using 38 rules for public contracts, package exports, piped output, errors, and configuration. [Suede](https://skills.suedeai.ai/directory/mblode/agent-skills/#dx-audit)
@@ -218,7 +218,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 ## mcollina/skills
 
-[Repository](https://github.com/mcollina/skills) · Publisher: [mcollina](https://github.com/mcollina) · [Suede AI listing](https://skills.suedeai.ai/directory/mcollina/skills/)
+[Repository](https://github.com/mcollina/skills) · Publisher: [mcollina](https://github.com/mcollina) · [Suede listing](https://skills.suedeai.ai/directory/mcollina/skills/)
 
 - **77/100 · C** · [linting-neostandard-eslint9](https://github.com/mcollina/skills/blob/main/skills/linting-neostandard-eslint9/SKILL.md): Configures ESLint v9 flat config and neostandard for JavaScript and TypeScript projects, including migrating from legacy .eslintrc files or the standard package. [Suede](https://skills.suedeai.ai/directory/mcollina/skills/linting-neostandard-eslint9/)
 
@@ -226,7 +226,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 ## mhattingpete/claude-skills-marketplace
 
-[Repository](https://github.com/mhattingpete/claude-skills-marketplace) · Publisher: [mhattingpete](https://github.com/mhattingpete) · [Suede AI listing](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/)
+[Repository](https://github.com/mhattingpete/claude-skills-marketplace) · Publisher: [mhattingpete](https://github.com/mhattingpete) · [Suede listing](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/)
 
 - **78/100 · C** · [review-implementing](https://github.com/mhattingpete/claude-skills-marketplace/blob/main/engineering-workflow-plugin/skills/review-implementing/SKILL.md): Process and implement code review feedback systematically. [Suede](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/#review-implementing)
 - **75/100 · C** · [code-auditor](https://github.com/mhattingpete/claude-skills-marketplace/blob/main/productivity-skills-plugin/skills/code-auditor/SKILL.md): Audits a codebase across architecture, code quality, security, performance, testing, and maintainability to identify technical debt and give a health check. [Suede](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/code-auditor/)
@@ -236,7 +236,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 ## modem-dev/skills
 
-[Repository](https://github.com/modem-dev/skills) · Publisher: [modem-dev](https://github.com/modem-dev) · [Suede AI listing](https://skills.suedeai.ai/directory/modem-dev/skills/write-discoverable-code/)
+[Repository](https://github.com/modem-dev/skills) · Publisher: [modem-dev](https://github.com/modem-dev) · [Suede listing](https://skills.suedeai.ai/directory/modem-dev/skills/write-discoverable-code/)
 
 - **72/100 · C** · [write-discoverable-code](https://github.com/modem-dev/skills/blob/main/write-discoverable-code/SKILL.md): Sets rules for writing and renaming functions, types, constants, files, and error messages so coding agents and humans can find code through plain-text search. [Suede](https://skills.suedeai.ai/directory/modem-dev/skills/write-discoverable-code/)
 
@@ -244,7 +244,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 ## NeoLabHQ/context-engineering-kit
 
-[Repository](https://github.com/NeoLabHQ/context-engineering-kit) · Publisher: [NeoLabHQ](https://github.com/NeoLabHQ) · [Suede AI listing](https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/)
+[Repository](https://github.com/NeoLabHQ/context-engineering-kit) · Publisher: [NeoLabHQ](https://github.com/NeoLabHQ) · [Suede listing](https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/)
 
 - **78/100 · C** · [review-local-changes](https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/review-local-changes/SKILL.md): Reviews uncommitted working-tree changes, including untracked files, and returns actionable improvement suggestions before committing, when nothing has been pushed yet. [Suede](https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/review-local-changes/)
 - **78/100 · C** · [review-pr](https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/review-pr/SKILL.md): Reviews an existing GitHub pull request and posts inline review comments on its diff, for changes that are already on an opened PR. [Suede](https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/review-pr/)
@@ -258,7 +258,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 ## NVIDIA/skills
 
-[Repository](https://github.com/NVIDIA/skills) · Publisher: [NVIDIA](https://github.com/NVIDIA) · [Suede AI listing](https://skills.suedeai.ai/directory/nvidia/skills/)
+[Repository](https://github.com/NVIDIA/skills) · Publisher: [NVIDIA](https://github.com/NVIDIA) · [Suede listing](https://skills.suedeai.ai/directory/nvidia/skills/)
 
 - **66/100 · D** · [mcore-split-pr](https://github.com/NVIDIA/skills/blob/main/skills/mcore-split-pr/SKILL.md): Split a PR into multiple PRs to reduce the number of required CODEOWNERS reviewer groups. [Suede](https://skills.suedeai.ai/directory/nvidia/skills/#mcore-split-pr)
 - **62/100 · D** · [mcore-linting-and-formatting](https://github.com/NVIDIA/skills/blob/main/skills/mcore-linting-and-formatting/SKILL.md): Linting and formatting for Megatron-LM. [Suede](https://skills.suedeai.ai/directory/nvidia/skills/#mcore-linting-and-formatting)
@@ -267,7 +267,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 ## obra/superpowers
 
-[Repository](https://github.com/obra/superpowers) · Publisher: [obra](https://github.com/obra) · [Suede AI listing](https://skills.suedeai.ai/directory/obra/superpowers/)
+[Repository](https://github.com/obra/superpowers) · Publisher: [obra](https://github.com/obra) · [Suede listing](https://skills.suedeai.ai/directory/obra/superpowers/)
 
 - **84/100 · B** · [receiving-code-review](https://github.com/obra/superpowers/blob/main/skills/receiving-code-review/SKILL.md): Guides handling code review feedback with technical rigor and verification, rather than performative agreement or blind implementation, especially when feedback is unclear or questionable. [Suede](https://skills.suedeai.ai/directory/obra/superpowers/receiving-code-review/)
 - **79/100 · C** · [requesting-code-review](https://github.com/obra/superpowers/blob/main/skills/requesting-code-review/SKILL.md): Guides requesting a code review after completing tasks, implementing major features, or before merging, to verify the work meets requirements. [Suede](https://skills.suedeai.ai/directory/obra/superpowers/requesting-code-review/)
@@ -276,7 +276,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 ## obra/superpowers-lab
 
-[Repository](https://github.com/obra/superpowers-lab) · Publisher: [obra](https://github.com/obra) · [Suede AI listing](https://skills.suedeai.ai/directory/obra/superpowers-lab/)
+[Repository](https://github.com/obra/superpowers-lab) · Publisher: [obra](https://github.com/obra) · [Suede listing](https://skills.suedeai.ai/directory/obra/superpowers-lab/)
 
 - **76/100 · C** · [finding-duplicate-functions](https://github.com/obra/superpowers-lab/blob/main/skills/finding-duplicate-functions/SKILL.md): Audits a codebase for semantic duplication, finding functions that do the same thing under different names or implementations, especially in LLM-generated code. [Suede](https://skills.suedeai.ai/directory/obra/superpowers-lab/finding-duplicate-functions/)
 
@@ -284,7 +284,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 ## openai/skills
 
-[Repository](https://github.com/openai/skills) · Publisher: [openai](https://github.com/openai) · [Suede AI listing](https://skills.suedeai.ai/directory/openai/skills/)
+[Repository](https://github.com/openai/skills) · Publisher: [openai](https://github.com/openai) · [Suede listing](https://skills.suedeai.ai/directory/openai/skills/)
 
 - **72/100 · C** · [yeet](https://github.com/openai/skills/blob/main/skills/.curated/yeet/SKILL.md): Use only when the user explicitly asks to stage, commit, push, and open a GitHub pull request in one flow using the GitHub CLI (\`gh\`). [Suede](https://skills.suedeai.ai/directory/openai/skills/#yeet)
 
@@ -292,7 +292,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 ## phuryn/pm-skills
 
-[Repository](https://github.com/phuryn/pm-skills) · Publisher: [phuryn](https://github.com/phuryn) · [Suede AI listing](https://skills.suedeai.ai/directory/phuryn/pm-skills/)
+[Repository](https://github.com/phuryn/pm-skills) · Publisher: [phuryn](https://github.com/phuryn) · [Suede listing](https://skills.suedeai.ai/directory/phuryn/pm-skills/)
 
 - **84/100 · B** · [code-review](https://github.com/phuryn/pm-skills/blob/main/pm-ai-shipping/skills/code-review/SKILL.md): Reviews code for actionable defects, centering on correctness with performance and security as optional sub-cases, and tries to refute every candidate finding before reporting. [Suede](https://skills.suedeai.ai/directory/phuryn/pm-skills/code-review/)
 - **81/100 · B** · [intended-vs-implemented](https://github.com/phuryn/pm-skills/blob/main/pm-ai-shipping/skills/intended-vs-implemented/SKILL.md): The method for finding the gap between what a system is supposed to do and what the code actually does — the class of bug generic scanners miss because they have no model of intent. [Suede](https://skills.suedeai.ai/directory/phuryn/pm-skills/#intended-vs-implemented)
@@ -302,7 +302,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 ## Qiuner/birdview
 
-[Repository](https://github.com/Qiuner/birdview) · Publisher: [Qiuner](https://github.com/Qiuner) · [Suede AI listing](https://skills.suedeai.ai/directory/qiuner/birdview/)
+[Repository](https://github.com/Qiuner/birdview) · Publisher: [Qiuner](https://github.com/Qiuner) · [Suede listing](https://skills.suedeai.ai/directory/qiuner/birdview/)
 
 - **86/100 · B** · [birdview](https://github.com/Qiuner/birdview/blob/main/SKILL.md): Maps evidence-linked architecture, constraints and change scope, and reviews architecture improvement opportunities when requested or when a project enables auto mode. [Suede](https://skills.suedeai.ai/directory/qiuner/birdview/birdview/)
 - **70/100 · C** · [birdview-review](https://github.com/Qiuner/birdview/blob/main/review-skill/SKILL.md): Review and improve codebase architecture with source-backed current/proposed diagrams, tradeoffs and verification. [Suede](https://skills.suedeai.ai/directory/qiuner/birdview/#birdview-review)
@@ -311,7 +311,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 ## trailofbits/skills
 
-[Repository](https://github.com/trailofbits/skills) · Publisher: [trailofbits](https://github.com/trailofbits) · [Suede AI listing](https://skills.suedeai.ai/directory/trailofbits/skills/)
+[Repository](https://github.com/trailofbits/skills) · Publisher: [trailofbits](https://github.com/trailofbits) · [Suede listing](https://skills.suedeai.ai/directory/trailofbits/skills/)
 
 - **93/100 · A** · [pr-improver](https://github.com/trailofbits/skills/blob/main/plugins/code-improver/skills/pr-improver/SKILL.md): Runs an autonomous review-and-fix improvement loop over the current branch's changes until a PR review comes back clean, scoped mechanically to the directories the branch touched. [Suede](https://skills.suedeai.ai/directory/trailofbits/skills/#pr-improver)
 - **89/100 · B** · [code-improver](https://github.com/trailofbits/skills/blob/main/plugins/code-improver/skills/code-improver/SKILL.md): Runs an autonomous review-and-fix improvement loop over any code target — a skill, plugin, module, or directory — using a reviewer the user names: any installed skill or agent. [Suede](https://skills.suedeai.ai/directory/trailofbits/skills/#code-improver)
@@ -326,7 +326,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 ## vercel-labs/agent-skills
 
-[Repository](https://github.com/vercel-labs/agent-skills) · Publisher: [vercel-labs](https://github.com/vercel-labs) · [Suede AI listing](https://skills.suedeai.ai/directory/vercel-labs/agent-skills/)
+[Repository](https://github.com/vercel-labs/agent-skills) · Publisher: [vercel-labs](https://github.com/vercel-labs) · [Suede listing](https://skills.suedeai.ai/directory/vercel-labs/agent-skills/)
 
 - **67/100 · D** · [vercel-react-best-practices](https://github.com/vercel-labs/agent-skills/blob/main/skills/react-best-practices/SKILL.md): React and Next.js performance optimization guidelines from Vercel Engineering. [Suede](https://skills.suedeai.ai/directory/vercel-labs/agent-skills/#vercel-react-best-practices)
 
@@ -334,7 +334,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 ## wondelai/skills
 
-[Repository](https://github.com/wondelai/skills) · Publisher: [wondelai](https://github.com/wondelai) · [Suede AI listing](https://skills.suedeai.ai/directory/wondelai/skills/)
+[Repository](https://github.com/wondelai/skills) · Publisher: [wondelai](https://github.com/wondelai) · [Suede listing](https://skills.suedeai.ai/directory/wondelai/skills/)
 
 - **81/100 · B** · [clean-code](https://github.com/wondelai/skills/blob/main/clean-code/SKILL.md): Guides writing readable, maintainable code through disciplined naming, small functions, and clean error handling, including readability reviews of pull requests. [Suede](https://skills.suedeai.ai/directory/wondelai/skills/clean-code/)
 - **81/100 · B** · [refactoring-patterns](https://github.com/wondelai/skills/blob/main/refactoring-patterns/SKILL.md): Apply named refactoring transformations to improve code structure without changing behavior. [Suede](https://skills.suedeai.ai/directory/wondelai/skills/#refactoring-patterns)
@@ -346,6 +346,6 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 ---
 
-**Run a team of agents.** Suede AI Agent Studio builds multi-agent automation for businesses. [suedeai.app](https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agent-studio) Listed here? [Add your badge](../README.md#add-your-badge).
+**Run a team of agents.** Suede Agent Studio builds multi-agent automation for businesses. [suedeai.app](https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agent-studio) Listed here? [Add your badge](../README.md#add-your-badge).
 
 [Awesome Everything](../README.md) · [Compare scores](../README.md#compare-099-quality-scores) · [Publishers](../publishers.md) · [Featured projects](../featured.md) · [Guides](../README.md#guides) · [Contribute](../CONTRIBUTING.md) · [Search by score](https://skills.suedeai.ai/directory/?sort=score)

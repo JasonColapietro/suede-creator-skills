@@ -105,7 +105,7 @@ export function generateCatalog(inputs) {
   const cta = (placement, variant) => (Array.isArray(inputs.ctas?.campaigns) ? inputs.ctas.campaigns : []).find((p) => p.id === placement)?.variants.find((v) => v.id === variant && !v.confirm_offer);
   const route = (slug) => inputs.ctas?.lead_by_category?.[slug] === 'agents' ? 'agent-studio' : 'agency';
   const ctaLine = (v) => v ? `**${md(v.headline)}.** ${md(v.body)} ${link(v.button, v.url)}` : '';
-  const badgeSnippet = '[![Listed in the Agent Skills Directory by Suede AI](https://skills.suedeai.ai/directory/badge.svg)](https://skills.suedeai.ai/directory/)';
+  const badgeSnippet = '[![Listed in the Agent Skills Directory by Suede](https://skills.suedeai.ai/directory/badge.svg)](https://skills.suedeai.ai/directory/)';
   const repos = [...new Set(data.skills.map((s) => s.repo))].sort(alphabetical);
   // Single-skill collections may have only a full skill page, with no repo index.
   const repoTargets = new Map(repos.map((repo) => {
@@ -126,21 +126,21 @@ export function generateCatalog(inputs) {
     return `| ${link(c.title, `categories/${c.slug}.md`)} | **${range(skills)} / 100** | ${number(skills.length)} | ${new Set(skills.map((s) => s.repo)).size} |`;
   }).join('\n');
   pages.set('README.md', finish(`
-<a href="https://suedeai.ai"><img src="../docs/assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="88"></a>
+<a href="https://suedeai.ai"><img src="../docs/assets/suede-ai-logo-transparent.webp" alt="Suede" width="88"></a>
 
 # Suede Awesome Everything
 
 **AI agent skills, scored 0–99.**
 
-Compare agent skills with **0–99 quality scores**, verified against [Suede AI’s published rubric](${SITE}methodology/). Find the workflow for your task, compare the evidence behind its score, then inspect the source before you install.
+Compare agent skills with **0–99 quality scores**, verified against [Suede’s published rubric](${SITE}methodology/). Find the workflow for your task, compare the evidence behind its score, then inspect the source before you install.
 
 Browse **${number(data.skills.length)} scored skills from ${repos.length} repositories** across **${categories.length} categories**, with publisher credits and direct source links.
 
-The GitHub companion to the [Agent Skills Directory](${SITE}), maintained by [Jason Colapietro / Suede AI](https://suedeai.ai/founder). Coverage follows the directory’s accepted snapshot and editorial rules. The [Suede AI Skills pack](../README.md) has its own installation guide.
+The GitHub companion to the [Agent Skills Directory](${SITE}), maintained by [Jason Colapietro / Suede](https://suedeai.ai/founder). Coverage follows the directory’s accepted snapshot and editorial rules. The [Suede Skills pack](../README.md) has its own installation guide.
 
 <a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55"/></a>
 
-**[Compare scores](#compare-099-quality-scores)** · **[Browse categories](#contents)** · **[Highest scores on Suede AI](${SITE}?sort=score)** · **[Publishers](publishers.md)** · **[Featured projects](featured.md)**${guides.length ? ' · **[Guides](#guides)**' : ''} · **[Add your badge](#add-your-badge)** · **[Contribute](CONTRIBUTING.md)**
+**[Compare scores](#compare-099-quality-scores)** · **[Browse categories](#contents)** · **[Highest scores on Suede](${SITE}?sort=score)** · **[Publishers](publishers.md)** · **[Featured projects](featured.md)**${guides.length ? ' · **[Guides](#guides)**' : ''} · **[Add your badge](#add-your-badge)** · **[Contribute](CONTRIBUTING.md)**
 
 ${stamp}
 
@@ -152,7 +152,7 @@ The published quality scale is **0–99**. The rubric totals **100 points**; pub
 
 | Quality score / 100 | Accepted skills | Browse |
 | --- | ---: | --- |
-${bands.map(([band, grade]) => `| **${band} · ${grade}** | ${number(data.skills.filter((s) => s.grade === grade).length)} | ${link('View scored skills on Suede AI', `${SITE}?sort=score&grade=${grade}`)} |`).join('\n')}
+${bands.map(([band, grade]) => `| **${band} · ${grade}** | ${number(data.skills.filter((s) => s.grade === grade).length)} | ${link('View scored skills on Suede', `${SITE}?sort=score&grade=${grade}`)} |`).join('\n')}
 
 For GitHub browsing, choose a category below. Numeric scores lead every listing, with higher-scoring skills first within each publisher. The category ranges describe individual skill scores, not a repository grade.
 
@@ -178,7 +178,7 @@ ${guides.map((g) => `- **${link(g.h1, guideHref(g))}**: ${md(g.meta_description)
 ` : ''}
 ## Add your badge
 
-Is your skill listed here? Show it. Every listed skill and repository has a badge that links readers to its Suede AI listing, and skills scoring 80–99 also get numeric and letter quality shields. Copy the snippet from your own listing page so the badge points at your listing; the general version is:
+Is your skill listed here? Show it. Every listed skill and repository has a badge that links readers to its Suede listing, and skills scoring 80–99 also get numeric and letter quality shields. Copy the snippet from your own listing page so the badge points at your listing; the general version is:
 
 \`\`\`md
 ${badgeSnippet}
@@ -193,11 +193,11 @@ Then [request badge verification](${SITE}submit/). While the feature offer is op
 - **Score / 100 · grade** is recomputed from the saved evidence using the existing [Suede Skill Check](${SITE}methodology/). Published scores range from 0 to 99; 100 is reserved. A = 90–99, B = 80–89, C = 70–79, D = 0–69. Listing eligibility and quality-badge eligibility remain separate.
 - **License: … (review terms)** identifies entries whose recorded license is not an open license. Check the source license and publisher’s supported install route before copying.
 
-Scores measure structural evidence, not runtime performance. External listings have security status \`not_scanned\`; Suede AI’s own CI scan supplies no security result for them. Read the source, permissions and prerequisites before enabling a skill. Use the project-specific route for plugins that require hooks or an engine; [CoalWash’s complete plugin setup](featured.md#coalwash) preserves those components.
+Scores measure structural evidence, not runtime performance. External listings have security status \`not_scanned\`; Suede’s own CI scan supplies no security result for them. Read the source, permissions and prerequisites before enabling a skill. Use the project-specific route for plugins that require hooks or an engine; [CoalWash’s complete plugin setup](featured.md#coalwash) preserves those components.
 ${cta('awesome-readme', 'agency') ? `
-## Work with Suede AI
+## Work with Suede
 
-Scores and listings never depend on any business relationship with Suede AI. If you want help beyond the catalog:
+Scores and listings never depend on any business relationship with Suede. If you want help beyond the catalog:
 
 - ${ctaLine(cta('awesome-readme', 'agency'))}
 - ${ctaLine(cta('awesome-readme', 'agent-studio'))}
@@ -237,7 +237,7 @@ These commands read local data only. CI rejects missing, stale or orphaned gener
         const license = s.open_license ? '' : ` · License: ${md(s.license)} (review terms)`;
         return `- **${s.score}/100 · ${s.grade}** · ${link(s.display_name || s.name, source)}: ${excerpt(s.summary || s.description)} [Suede](${listingTarget(s)})${license}${notice}`;
       }).join('\n');
-      return `<a id="${repoAnchor(repo)}"></a>\n\n## ${md(repo)}\n\n${link('Repository', github(repo))} · Publisher: ${link(inputs.notes?.[repo]?.publisher || owner, github(owner))} · ${link('Suede AI listing', repoTargets.get(repo))}\n\n${entries}`;
+      return `<a id="${repoAnchor(repo)}"></a>\n\n## ${md(repo)}\n\n${link('Repository', github(repo))} · Publisher: ${link(inputs.notes?.[repo]?.publisher || owner, github(owner))} · ${link('Suede listing', repoTargets.get(repo))}\n\n${entries}`;
     }).join('\n\n');
     pages.set(`categories/${c.slug}.md`, finish(`
 ${nav('../')}
@@ -248,9 +248,9 @@ ${md(c.intro)}
 
 **${number(skills.length)} accepted skills · ${publishers.length} repositories.** ${stamp}
 
-**Compare on the 0–99 quality scale:** this category’s verified scores span **${range(skills)} / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](${SITE}?category=${c.slug}&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
+**Compare on the 0–99 quality scale:** this category’s verified scores span **${range(skills)} / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](${SITE}?category=${c.slug}&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
-[Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede AI listing.
+[Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede listing.
 ${guides.filter((g) => g.category === c.slug).map((g) => `\n**Guide:** ${link(g.h1, guideHref(g, '../'))}\n`).join('')}
 <details>
 <summary>Browse publishers in this category</summary>
@@ -278,7 +278,7 @@ ${nav()}
 
 ${stamp}
 
-| Repository | Publisher / team | Skills | Browse categories | Suede AI |
+| Repository | Publisher / team | Skills | Browse categories | Suede |
 | --- | --- | ---: | --- | --- |
 ${repos.map((repo) => {
   const skills = data.skills.filter((s) => s.repo === repo), owner = repo.split('/')[0];
@@ -300,7 +300,7 @@ ${nav()}
 
 Editorial selection highlights a project’s workflow and accepted scope. It is separate from structural quality grades, security certification and README-badge verification. A plugin feature does not add its contents to the scored skill catalog.
 
-Selections updated **${editorial.updated}**. [View on Suede AI](${SITE}featured/).
+Selections updated **${editorial.updated}**. [View on Suede](${SITE}featured/).
 
 ${editorial.projects.map((p) => `- ${link(p.name, `#${p.id}`)}`).join('\n')}
 
@@ -336,7 +336,7 @@ ${[
   p.repo ? link('Repository', github(p.repo)) : '',
   isPending(p) ? `**${md(PENDING_LABEL)}**` : link('Intake review', `../${p.review}`),
   p.repo ? link(`${isPending(p) ? 'Source at' : 'Reviewed source'} ${p.commit.slice(0, 7)}`, `${github(p.repo)}/tree/${p.commit}`) : '',
-  link('Suede AI feature', `${SITE}featured/#${p.id}`),
+  link('Suede feature', `${SITE}featured/#${p.id}`),
 ].filter(Boolean).join(' · ')}`;
 }).join('\n\n---\n\n')}
 ${directoryMembers(editorial).length ? `

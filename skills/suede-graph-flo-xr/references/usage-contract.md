@@ -1,4 +1,4 @@
-# Worked contract: Suede AI Graph Flo XR Skills
+# Worked contract: Suede Graph Flo XR Skills
 
 This is an illustrative application, not a claim of measured customer results.
 
