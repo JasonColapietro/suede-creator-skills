@@ -159,7 +159,7 @@ class NeutralOssPositioningTests(unittest.TestCase):
         alias_array = re.compile(r'"?alternateName"?\s*:\s*\[[^\]]*\]')
         alias_line = "formerly known as Suede AI and Suede Labs"
         exempt = (
-            "LICENSE", "licenses/", "tests/", ".agents/docs/", "docs/plans/", "docs/superpowers/",
+            "LICENSE", "licenses/", "tests/", "AGENTS.md", "CLAUDE.md", ".agents/docs/", "docs/plans/", "docs/superpowers/",
             "directory/intake/", "directory/reviews/", "directory/agents/evidence/",
             "docs/directory/agents/evidence/",
         )
