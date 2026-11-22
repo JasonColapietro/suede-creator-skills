@@ -1,115 +1,115 @@
 {
-  "date": "2026-11-15",
-  "since": "2026-11-08",
+  "date": "2026-11-22",
+  "since": "2026-11-15",
   "source": "https://api.github.com/search/repositories",
   "repos": [
     {
-      "repo": "agentes-chat/agentes-chat",
-      "url": "https://github.com/agentes-chat/agentes-chat",
-      "stars": 1414,
-      "created": "2026-11-09",
-      "language": "TypeScript",
-      "license": "AGPL-3.0",
-      "description": "Open-source, self-hosted Slack alternative where your team and AI agents work together in channels and DMs. Agents run on Claude, ChatGPT/Codex, Gemini or Grok, with MCP tools, their own computer and browser, routines, m"
-    },
-    {
-      "repo": "alexeyw/lot-map",
-      "url": "https://github.com/alexeyw/lot-map",
-      "stars": 840,
-      "created": "2026-11-09",
-      "language": "TypeScript",
+      "repo": "erkamyaman/rust-anything",
+      "url": "https://github.com/erkamyaman/rust-anything",
+      "stars": 7511,
+      "created": "2026-11-16",
+      "language": "Rust",
       "license": "MIT",
-      "description": "A live map beside the chat that shows what Claude Code is doing: tool calls, model steps, hooks, skills and subagents light up as they happen. Local only, in 7 languages."
+      "description": "Rewrite your whole app in Rust, one piece at a time, checked against the original's recorded behavior at every step. CLIs, HTTP servers and libraries in TypeScript, Python, C, Go, Ruby and Java."
     },
     {
-      "repo": "JDhruv14/line-art-animation",
-      "url": "https://github.com/JDhruv14/line-art-animation",
-      "stars": 778,
-      "created": "2026-11-10",
-      "language": "TypeScript",
-      "license": "MIT",
-      "description": "A Claude skill and TypeScript library for animated line-art SVG components: ink figures that walk and react, scenes with a day/night cycle."
-    },
-    {
-      "repo": "Dodaios/ste80-humanizer",
-      "url": "https://github.com/Dodaios/ste80-humanizer",
-      "stars": 621,
-      "created": "2026-11-09",
-      "language": "Python",
-      "license": "MIT",
-      "description": "STE80 Humanizer: agent skill that removes AI tells and rewrites text 80% of the way to ASD-STE100 (Simplified Technical English), the method Andrej Karpathy shared."
-    },
-    {
-      "repo": "Moh4696/cinematic-skill",
-      "url": "https://github.com/Moh4696/cinematic-skill",
-      "stars": 421,
-      "created": "2026-11-09",
-      "language": "Python",
-      "license": "MIT",
-      "description": "Agent skill for narrated cinematic films built entirely from code: one continuous camera over photos, maps and cards, timed to the voice. Claude Code, Codex, Cursor, Gemini CLI."
-    },
-    {
-      "repo": "Outpostkrewhirl86/Capri-AI",
-      "url": "https://github.com/Outpostkrewhirl86/Capri-AI",
-      "stars": 345,
-      "created": "2026-11-14",
+      "repo": "bookwjitchieni1986/blender-ai-mcp-addon",
+      "url": "https://github.com/bookwjitchieni1986/blender-ai-mcp-addon",
+      "stars": 2616,
+      "created": "2026-11-19",
       "language": null,
       "license": "MIT",
-      "description": "Capri: a local-first desktop AI agent with a cyberpunk HUD. Your personal Jarvis for Windows. Controls files, apps, terminal and browser, powered by Claude Code, Codex, Antigravity or any backend. Inspired by Cyberpunk: "
+      "description": "AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with ChatGPT/GPT, Claude, Gemini, Ollama, OpenCode. Blender AI addon, copilot for 3D, bpy Python scripting, MCP integration."
     },
     {
-      "repo": "op7418/guizang-game-skill",
-      "url": "https://github.com/op7418/guizang-game-skill",
-      "stars": 343,
-      "created": "2026-11-11",
+      "repo": "sybil-solutions/inference-optimisation-skill",
+      "url": "https://github.com/sybil-solutions/inference-optimisation-skill",
+      "stars": 1730,
+      "created": "2026-11-16",
+      "language": "Python",
+      "license": "MIT",
+      "description": "Agent skill for hill-climbing local LLM serving speed (decode, speculative decoding, prefill, KV, startup, TTFT) on any hardware and quantization"
+    },
+    {
+      "repo": "boringmarketer/boring-marketing-skills",
+      "url": "https://github.com/boringmarketer/boring-marketing-skills",
+      "stars": 781,
+      "created": "2026-11-16",
+      "language": "Python",
+      "license": "MIT",
+      "description": "32 free marketing skills for your AI agent: research, positioning, copy, pages, SEO, AI search, ads, email and content, plus a deep local-business pack. MIT."
+    },
+    {
+      "repo": "Illson/RustText",
+      "url": "https://github.com/Illson/RustText",
+      "stars": 469,
+      "created": "2026-11-16",
+      "language": "C#",
+      "license": null,
+      "description": "Portable Windows text editor with Sublime Text-style multi-cursor editing, regex find and replace, split views, and a live viewer for large log files."
+    },
+    {
+      "repo": "diego3g/craft",
+      "url": "https://github.com/diego3g/craft",
+      "stars": 393,
+      "created": "2026-11-15",
       "language": "JavaScript",
-      "license": "AGPL-3.0",
-      "description": "歸藏 Game Skill：让 AI 从零做出能在浏览器里玩的 3D 动作游戏，附可玩演示《雾锁山门》。Agent skill for Claude Code / Codex that builds a playable browser 3D action game with AI-generated assets (three.js, single-HTML). Playable demo included."
+      "license": "NOASSERTION",
+      "description": "Design skills for AI agents: /craft-setup writes your design brief, /craft designs screens with every state from your design system and reviews them. Works with Paper, pen.dev, Figma or HTML."
     },
     {
-      "repo": "threerocks/article2media",
-      "url": "https://github.com/threerocks/article2media",
-      "stars": 316,
-      "created": "2026-11-08",
+      "repo": "danielwh2/sprite-stacking",
+      "url": "https://github.com/danielwh2/sprite-stacking",
+      "stars": 392,
+      "created": "2026-11-20",
+      "language": "HTML",
+      "license": "MIT",
+      "description": "Agent skill: turn four pixel art views into fake-3D sprites you can spin. Works with Claude Code, Codex, Cursor, OpenCode, Gemini CLI, Pi."
+    },
+    {
+      "repo": "sybil-solutions/skill-distill",
+      "url": "https://github.com/sybil-solutions/skill-distill",
+      "stars": 389,
+      "created": "2026-11-21",
+      "language": "Python",
+      "license": "MIT",
+      "description": "Distill a good Claude Code / Codex session into a skill an open-weight model can follow to reproduce the task"
+    },
+    {
+      "repo": "staryone/motlab",
+      "url": "https://github.com/staryone/motlab",
+      "stars": 358,
+      "created": "2026-11-16",
       "language": "JavaScript",
       "license": "MIT",
-      "description": "把一篇文章或一条视频（抖音、B 站、YouTube，先转逐字稿）一键做成小红书图文、杂志长图、公众号排版和 AI 配音口播短视频的开源 Claude Code / Codex Skill。21 套主题，自动验收，零 npm 依赖。"
+      "description": "Video as code: canvas scenes rendered with WebCodecs in headless Chrome, a review viewer, and agent skills that build the video from your references."
     },
     {
-      "repo": "AFangTeam/PrintLab",
-      "url": "https://github.com/AFangTeam/PrintLab",
-      "stars": 309,
-      "created": "2026-11-11",
+      "repo": "andrey-wilson-lab95d5/ai-ide-system-utilities-cursor-pro-v0-47-portable-x64",
+      "url": "https://github.com/andrey-wilson-lab95d5/ai-ide-system-utilities-cursor-pro-v0-47-portable-x64",
+      "stars": 325,
+      "created": "2026-11-21",
+      "language": "Jupyter Notebook",
+      "license": "NOASSERTION",
+      "description": "AI IDE & System Utilities Cursor Pro v0.47 Machine-ID, Telemetry & quota Quota manager: native 64-bit Windows 10/11 portable x64 build with hot-reloadable JSON configuration, low-overhead runtime, and prebuilt portable r"
+    },
+    {
+      "repo": "lizhenjie137/intelligent-organization",
+      "url": "https://github.com/lizhenjie137/intelligent-organization",
+      "stars": 322,
+      "created": "2026-11-15",
       "language": "Python",
       "license": "NOASSERTION",
-      "description": "Mac + Codex + 拓竹的个人 3D 打印工作台与工作流。允许非商业修改与再发布，保留署名。"
+      "description": "智能组织 · Intelligent Organization | 人与 AI Agent 按原子能力协作，连接目标、分工、进展、成果、验收与交接，减少重复沟通与返工。当前支持本机多账号，跨设备协作为后续方向。"
     },
     {
-      "repo": "gokayfem/image-to-sculpt",
-      "url": "https://github.com/gokayfem/image-to-sculpt",
-      "stars": 293,
-      "created": "2026-11-08",
-      "language": "Python",
-      "license": "MIT",
-      "description": "Turn one image of anything into a 3D sculpt measured against that image: registered views, map-fitting passes, Blender replay and timelapse. A skill for coding agents."
-    },
-    {
-      "repo": "kociden/sakurai-skill",
-      "url": "https://github.com/kociden/sakurai-skill",
-      "stars": 274,
-      "created": "2026-11-12",
-      "language": "Python",
-      "license": null,
-      "description": "桜井政博のゲーム作るには 全本編257本の字幕から作ったゲーム制作の Agent Skill（非公式・日本語）"
-    },
-    {
-      "repo": "ScottDuncanAI/PID-to-Knowledge-Graph",
-      "url": "https://github.com/ScottDuncanAI/PID-to-Knowledge-Graph",
-      "stars": 271,
-      "created": "2026-11-08",
-      "language": "Python",
-      "license": "MIT",
-      "description": "P&ID to Knowledge Graph: a Claude skill that turns P&ID PDFs (digital or scanned) into a process knowledge graph of flow, instruments and control loops."
+      "repo": "MoritzPindorek/Five-Laws-of-AI-Agents",
+      "url": "https://github.com/MoritzPindorek/Five-Laws-of-AI-Agents",
+      "stars": 283,
+      "created": "2026-11-21",
+      "language": "HTML",
+      "license": "Apache-2.0",
+      "description": "Independent philosophical research on the Five Laws of AI Agents, delegated authority, non-entitlement and corrigibility. Zenodo DOI: 10.5281/zenodo.24417028"
     }
   ]
 }
