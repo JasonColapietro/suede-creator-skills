@@ -6,7 +6,7 @@
 
 Skills for making and editing media: video production, image generation and editing, music, audio, diagrams and generative art. They pair an agent with the prompts, tools and file formats each medium needs.
 
-**235 accepted skills · 39 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**237 accepted skills · 40 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **56–93 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=media-creative&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -40,6 +40,7 @@ Skills for making and editing media: video production, image generation and edit
 - [MelMayssonOwen/agent-skills](#melmayssonowen--agent-skills)
 - [mhattingpete/claude-skills-marketplace](#mhattingpete--claude-skills-marketplace)
 - [MiniMax-AI/skills](#minimax-ai--skills)
+- [mrhy7176/cloudgpu-agent-skills](#mrhy7176--cloudgpu-agent-skills)
 - [muthuishere/hand-drawn-diagrams](#muthuishere--hand-drawn-diagrams)
 - [NVIDIA/skills](#nvidia--skills)
 - [ohad6k/emulo](#ohad6k--emulo)
@@ -425,6 +426,15 @@ Skills for making and editing media: video production, image generation and edit
 - **70/100 · C** · [minimax-music-playlist](https://github.com/MiniMax-AI/skills/blob/main/skills/minimax-music-playlist/SKILL.md): Generates personalized music playlists by analyzing the user's music taste and generation feedback history. [Suede](https://skills.suedeai.ai/directory/minimax-ai/skills/minimax-music-playlist/)
 - **69/100 · D** · [vision-analysis](https://github.com/MiniMax-AI/skills/blob/main/skills/vision-analysis/SKILL.md): Analyzes, describes, and extracts information from images, including text extraction, using the MiniMax vision MCP tool. [Suede](https://skills.suedeai.ai/directory/minimax-ai/skills/vision-analysis/)
 - **62/100 · D** · [mmx-cli](https://github.com/MiniMax-AI/skills/blob/main/skills/minimax-multimodal-toolkit/SKILL.md): Use mmx to generate text, images, video, speech, and music via the MiniMax AI platform. [Suede](https://skills.suedeai.ai/directory/minimax-ai/skills/#mmx-cli)
+
+<a id="mrhy7176--cloudgpu-agent-skills"></a>
+
+## mrhy7176/cloudgpu-agent-skills
+
+[Repository](https://github.com/mrhy7176/cloudgpu-agent-skills) · Publisher: [mrhy7176](https://github.com/mrhy7176) · [Suede listing](https://skills.suedeai.ai/directory/mrhy7176/cloudgpu-agent-skills/)
+
+- **77/100 · C** · [cloudgpu-ai-short-drama](https://github.com/mrhy7176/cloudgpu-agent-skills/blob/main/cloudgpu-ai-short-drama/SKILL.md): Plan staged GPU-rendered shots with open video models, character LoRA and image workflows, then export reusable assets within an approved budget. [Suede](https://skills.suedeai.ai/directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-ai-short-drama/)
+- **77/100 · C** · [cloudgpu-comfyui-images](https://github.com/mrhy7176/cloudgpu-agent-skills/blob/main/cloudgpu-comfyui-images/SKILL.md): Run an approved ComfyUI image workflow on rented GPU compute and retrieve images with their workflow metadata. [Suede](https://skills.suedeai.ai/directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-comfyui-images/)
 
 <a id="muthuishere--hand-drawn-diagrams"></a>
 

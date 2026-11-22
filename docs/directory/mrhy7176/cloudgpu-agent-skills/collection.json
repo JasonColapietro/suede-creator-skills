@@ -1,0 +1,545 @@
+{
+  "schema_version": 1,
+  "repository": "mrhy7176/cloudgpu-agent-skills",
+  "listing_url": "https://skills.suedeai.ai/directory/mrhy7176/cloudgpu-agent-skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "176044f4b49e4c4f8168396e3fa66419",
+    "dataset_sha256": "9d179955d9810cbf16cc51f27e61f1c28a17d3c68a608978e342b73ba00f4c87"
+  },
+  "listed_skill_count": 5,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "mrhy7176/cloudgpu-agent-skills/cloudgpu-ai-short-drama",
+      "name": "cloudgpu-ai-short-drama",
+      "description": "Rent GPU compute for an AI short-drama pipeline using open video models, character LoRA and image workflows. Use when creating GPU-rendered shots and collecting reusable video assets, with a user-approved stage budget and a review before final rendering.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/mrhy7176/cloudgpu-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "6cfd60330c9563b8d27a6bc0b96592fa3410d23b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-15",
+        "assessment_date": "2026-11-19",
+        "skill_md_url": "https://github.com/mrhy7176/cloudgpu-agent-skills/blob/6cfd60330c9563b8d27a6bc0b96592fa3410d23b/cloudgpu-ai-short-drama/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-ai-short-drama/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-ai-short-drama/",
+      "source_folder_url": "https://github.com/mrhy7176/cloudgpu-agent-skills/tree/main/cloudgpu-ai-short-drama",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mrhy7176/cloudgpu-agent-skills/tree/main/cloudgpu-ai-short-drama",
+        "publisher_setup_url": "https://github.com/mrhy7176/cloudgpu-agent-skills/blob/83cde0602ec73f6c4f4eec8a60c42b34fef1bac1/README.md"
+      }
+    },
+    {
+      "id": "mrhy7176/cloudgpu-agent-skills/cloudgpu-comfyui-images",
+      "name": "cloudgpu-comfyui-images",
+      "description": "Rent a GPU to generate images with ComfyUI and an open image model such as FLUX, then retrieve images and workflow metadata. Use when a user-provided image workflow needs more GPU memory or CUDA than the local machine.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/mrhy7176/cloudgpu-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "6cfd60330c9563b8d27a6bc0b96592fa3410d23b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-15",
+        "assessment_date": "2026-11-19",
+        "skill_md_url": "https://github.com/mrhy7176/cloudgpu-agent-skills/blob/6cfd60330c9563b8d27a6bc0b96592fa3410d23b/cloudgpu-comfyui-images/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-comfyui-images/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-comfyui-images/",
+      "source_folder_url": "https://github.com/mrhy7176/cloudgpu-agent-skills/tree/main/cloudgpu-comfyui-images",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mrhy7176/cloudgpu-agent-skills/tree/main/cloudgpu-comfyui-images",
+        "publisher_setup_url": "https://github.com/mrhy7176/cloudgpu-agent-skills/blob/83cde0602ec73f6c4f4eec8a60c42b34fef1bac1/README.md"
+      }
+    },
+    {
+      "id": "mrhy7176/cloudgpu-agent-skills/cloudgpu-discover-compute",
+      "name": "cloudgpu-discover-compute",
+      "description": "Discover and compare GPU compute for an AI agent, without an account. Use when local CUDA or VRAM is insufficient, or when asked how an agent can find GPUs, estimate task cost and obtain user approval before computing.",
+      "category": "devops-cloud",
+      "license": "MIT",
+      "license_url": "https://github.com/mrhy7176/cloudgpu-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "6cfd60330c9563b8d27a6bc0b96592fa3410d23b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-15",
+        "assessment_date": "2026-11-19",
+        "skill_md_url": "https://github.com/mrhy7176/cloudgpu-agent-skills/blob/6cfd60330c9563b8d27a6bc0b96592fa3410d23b/cloudgpu-discover-compute/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-discover-compute/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-discover-compute/",
+      "source_folder_url": "https://github.com/mrhy7176/cloudgpu-agent-skills/tree/main/cloudgpu-discover-compute",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mrhy7176/cloudgpu-agent-skills/tree/main/cloudgpu-discover-compute",
+        "publisher_setup_url": "https://github.com/mrhy7176/cloudgpu-agent-skills/blob/83cde0602ec73f6c4f4eec8a60c42b34fef1bac1/README.md"
+      }
+    },
+    {
+      "id": "mrhy7176/cloudgpu-agent-skills/cloudgpu-lora-finetune",
+      "name": "cloudgpu-lora-finetune",
+      "description": "Rent a GPU to train or fine-tune an open model with LoRA or QLoRA and retrieve adapters, checkpoints and metrics. Use when model training exceeds local CUDA, VRAM or storage and the user wants a bounded remote training run.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/mrhy7176/cloudgpu-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "6cfd60330c9563b8d27a6bc0b96592fa3410d23b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-15",
+        "assessment_date": "2026-11-19",
+        "skill_md_url": "https://github.com/mrhy7176/cloudgpu-agent-skills/blob/6cfd60330c9563b8d27a6bc0b96592fa3410d23b/cloudgpu-lora-finetune/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-lora-finetune/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-lora-finetune/",
+      "source_folder_url": "https://github.com/mrhy7176/cloudgpu-agent-skills/tree/main/cloudgpu-lora-finetune",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mrhy7176/cloudgpu-agent-skills/tree/main/cloudgpu-lora-finetune",
+        "publisher_setup_url": "https://github.com/mrhy7176/cloudgpu-agent-skills/blob/83cde0602ec73f6c4f4eec8a60c42b34fef1bac1/README.md"
+      }
+    },
+    {
+      "id": "mrhy7176/cloudgpu-agent-skills/cloudgpu-open-model-inference",
+      "name": "cloudgpu-open-model-inference",
+      "description": "Run open-model GPU inference or evaluation and retrieve outputs, metrics and logs. Use when a private or custom model needs CUDA, larger VRAM, an Ollama instance or a bounded batch beyond the local machine.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/mrhy7176/cloudgpu-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "6cfd60330c9563b8d27a6bc0b96592fa3410d23b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-15",
+        "assessment_date": "2026-11-19",
+        "skill_md_url": "https://github.com/mrhy7176/cloudgpu-agent-skills/blob/6cfd60330c9563b8d27a6bc0b96592fa3410d23b/cloudgpu-open-model-inference/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-open-model-inference/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-open-model-inference/",
+      "source_folder_url": "https://github.com/mrhy7176/cloudgpu-agent-skills/tree/main/cloudgpu-open-model-inference",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mrhy7176/cloudgpu-agent-skills/tree/main/cloudgpu-open-model-inference",
+        "publisher_setup_url": "https://github.com/mrhy7176/cloudgpu-agent-skills/blob/83cde0602ec73f6c4f4eec8a60c42b34fef1bac1/README.md"
+      }
+    }
+  ]
+}

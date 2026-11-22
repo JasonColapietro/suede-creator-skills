@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "repository": "korey2028-prog/resume-claim-guard",
+  "listing_url": "https://skills.suedeai.ai/directory/korey2028-prog/resume-claim-guard/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "176044f4b49e4c4f8168396e3fa66419",
+    "dataset_sha256": "9d179955d9810cbf16cc51f27e61f1c28a17d3c68a608978e342b73ba00f4c87"
+  },
+  "listed_skill_count": 1,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "korey2028-prog/resume-claim-guard/resume-claim-guard",
+      "name": "resume-claim-guard",
+      "description": "从岗位 JD 出发写一份经得起面试追问的简历：拆解 JD 要求，把要求翻译成生活里的线索反问候选人，挖出简历上没写的相关真实经历，只用候选人确认过的事实贴着 JD 写定向简历，最后逐句做事实体检并预演面试官会怎么追问、该怎么答。也可单独体检已有简历，识别 AI 改写造成的动词升级、无依据数字和把计划或团队成果写成个人成果。用户要求按 JD 写或改简历、定向简历、岗位匹配、简历事实核查、反注水审查、准备面试时讲清每段经历时使用。",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/korey2028-prog/resume-claim-guard/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "aff5af787198ec2093e485b7041c79484ffd1ef5",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-12",
+        "assessment_date": "2026-11-19",
+        "skill_md_url": "https://github.com/korey2028-prog/resume-claim-guard/blob/aff5af787198ec2093e485b7041c79484ffd1ef5/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/korey2028-prog/resume-claim-guard/resume-claim-guard/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/korey2028-prog/resume-claim-guard",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/korey2028-prog/resume-claim-guard",
+        "publisher_setup_url": "https://github.com/korey2028-prog/resume-claim-guard/blob/main/SKILL.md"
+      }
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "repository": "rnthking/redya-skills",
+  "listing_url": "https://skills.suedeai.ai/directory/rnthking/redya-skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "176044f4b49e4c4f8168396e3fa66419",
+    "dataset_sha256": "9d179955d9810cbf16cc51f27e61f1c28a17d3c68a608978e342b73ba00f4c87"
+  },
+  "listed_skill_count": 1,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "rnthking/redya-skills/redya-xiaohongshu",
+      "name": "redya-xiaohongshu",
+      "description": "使用红鸦 API 创作小红书图文、制作 Live 实况图片，或检测和修改文案敏感词；支持商品档案及个人词库。",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/rnthking/redya-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "a833171c4b126a226a31f8680118fa8df29796cc",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-09",
+        "assessment_date": "2026-11-19",
+        "skill_md_url": "https://github.com/rnthking/redya-skills/blob/a833171c4b126a226a31f8680118fa8df29796cc/skill/redya-xiaohongshu/SKILL.md"
+      },
+      "quality": {
+        "score": 65,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/rnthking/redya-skills/redya-xiaohongshu/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/rnthking/redya-skills/tree/main/skill/redya-xiaohongshu",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/rnthking/redya-skills/tree/main/skill/redya-xiaohongshu",
+        "publisher_setup_url": "https://github.com/rnthking/redya-skills/blob/a833171c4b126a226a31f8680118fa8df29796cc/skill/redya-xiaohongshu/SKILL.md"
+      }
+    }
+  ]
+}

@@ -6,7 +6,7 @@
 
 Framework, language, SDK and CLI skills that teach an agent the conventions of a specific stack, from Flutter, Angular and Expo to GraphQL, Go and mobile builds. Install the ones that match your codebase and the agent follows that stack's rules without a long prompt.
 
-**548 accepted skills · 66 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**549 accepted skills · 67 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **54–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=developer-tools&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -79,6 +79,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 - [trycourier/courier-skills](#trycourier--courier-skills)
 - [veniceai/skills](#veniceai--skills)
 - [vercel/ai](#vercel--ai)
+- [waynehamadi/datacircle](#waynehamadi--datacircle)
 - [wondelai/skills](#wondelai--skills)
 - [ykdojo/claude-code-tips](#ykdojo--claude-code-tips)
 
@@ -1071,6 +1072,14 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 - **77/100 · C** · [migrate-ai-sdk-v6-to-v7](https://github.com/vercel/ai/blob/main/skills/migrate-ai-sdk-v6-to-v7/SKILL.md): Migrate applications from AI SDK 6.x to AI SDK 7.0. [Suede](https://skills.suedeai.ai/directory/vercel/ai/#migrate-ai-sdk-v6-to-v7)
 - **70/100 · C** · [ai-sdk](https://github.com/vercel/ai/blob/main/skills/use-ai-sdk/SKILL.md): Answer questions about the AI SDK and help build AI-powered features. [Suede](https://skills.suedeai.ai/directory/vercel/ai/#ai-sdk)
+
+<a id="waynehamadi--datacircle"></a>
+
+## waynehamadi/datacircle
+
+[Repository](https://github.com/waynehamadi/datacircle) · Publisher: [waynehamadi](https://github.com/waynehamadi) · [Suede listing](https://skills.suedeai.ai/directory/waynehamadi/datacircle/)
+
+- **63/100 · D** · [datacircle](https://github.com/waynehamadi/datacircle/blob/main/skills/datacircle/SKILL.md): Every plan of every GTM API on datacircle.dev, as one file you download and query. [Suede](https://skills.suedeai.ai/directory/waynehamadi/datacircle/#datacircle)
 
 <a id="wondelai--skills"></a>
 

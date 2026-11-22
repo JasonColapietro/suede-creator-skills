@@ -623,7 +623,7 @@ test('November applicants have pinned editorial features without invented scores
 });
 
 
-test('November 9 editorial features preserve authentic scores and pending catalog scope', () => {
+test('November 9 editorial features preserve authentic scores and their catalog listing', () => {
   const intake = JSON.parse(read('directory/intake/2026-11-09-cloudgpu-agentswarm.json'));
   const inclusions = JSON.parse(read('directory/inclusions.json'));
   const catalog = JSON.parse(read('directory/skills.json'));
@@ -634,11 +634,13 @@ test('November 9 editorial features preserve authentic scores and pending catalo
     assert.equal(record.security_scan_status, 'not_scanned');
     assert.ok(record.skills.every((s) => s.score === score && s.grade === 'C'));
     assert.deepEqual([...inclusions.skills[repo]].sort(), record.skills.map((s) => s.name).sort());
-    assert.equal(catalog.skills.filter((s) => s.repo === repo).length, 0);
+    const listed = catalog.skills.filter((s) => s.repo === repo);
+    assert.equal(listed.length, count);
+    assert.ok(listed.every((s) => s.score === score && s.grade === 'C'));
     const project = data.projects.find((p) => p.repo === repo);
     assert.equal(project.commit, record.commit);
     assert.ok(project.capabilities.length === count);
-    assert.match(project.setup, /pending the next regular scored-catalog refresh/);
+    assert.match(project.setup, /in the scored catalog as of November 19, 2026/);
     assert.match(read(project.review), new RegExp(score + ', grade C'));
     assert.ok(published().includes('featured-badge-' + project.id));
   }
@@ -675,7 +677,7 @@ test('November 10 editorial exceptions use neutral badges and preserve source as
   assert.deepEqual(inclusions.language_exceptions['korey2028-prog/resume-claim-guard'], [{ name: 'resume-claim-guard', path: '.', approval: 'https://github.com/JasonColapietro/suede-creator-skills/issues/374#issuecomment-6779995466' }]);
   const resume = data.projects.find((p) => p.id === 'resume-claim-guard');
   assert.match(resume.setup, /written in Chinese/);
-  assert.match(resume.setup, /accepted for the next regular scored-catalog refresh/i);
+  assert.match(resume.setup, /in the scored catalog as of November 19, 2026/i);
   assert.doesNotMatch(resume.setup, /awaits.*English|translation is required/i);
   const record = intake.repositories.find((r) => r.repo === resume.repo);
   assert.equal(record.catalog_disposition, 'accepted_next_regular_refresh');

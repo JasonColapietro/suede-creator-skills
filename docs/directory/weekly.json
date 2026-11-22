@@ -61,6 +61,18 @@
     "coreyhaines31/marketingskills/ads"
   ],
   "new_listings": [
+    "metcalfsolutions/satori/satori",
+    "andrewsiah/agentswarm-work-skill/agentswarm-work",
+    "mrhy7176/cloudgpu-agent-skills/cloudgpu-ai-short-drama",
+    "mrhy7176/cloudgpu-agent-skills/cloudgpu-comfyui-images",
+    "mrhy7176/cloudgpu-agent-skills/cloudgpu-discover-compute",
+    "mrhy7176/cloudgpu-agent-skills/cloudgpu-lora-finetune",
+    "mrhy7176/cloudgpu-agent-skills/cloudgpu-open-model-inference",
+    "oakcoderx/awesome-agent-skills/socratic-story-cartographer",
+    "korey2028-prog/resume-claim-guard/resume-claim-guard",
+    "cwong5/extra-caffeine-mcp/extra-caffeine-workflow",
+    "rnthking/redya-skills/redya-xiaohongshu",
+    "waynehamadi/datacircle/datacircle",
     "inhotel-io/govisit-toolkit/govisit-get-category-overview",
     "inhotel-io/govisit-toolkit/govisit-get-category-section",
     "inhotel-io/govisit-toolkit/govisit-get-collection-overview",
@@ -98,19 +110,7 @@
     "eduardo-sl/go-agent-skills/go-context",
     "eduardo-sl/go-agent-skills/go-data-structures",
     "eduardo-sl/go-agent-skills/go-database",
-    "eduardo-sl/go-agent-skills/go-design-patterns",
-    "eduardo-sl/go-agent-skills/go-documentation",
-    "eduardo-sl/go-agent-skills/go-error-handling",
-    "eduardo-sl/go-agent-skills/go-grpc",
-    "eduardo-sl/go-agent-skills/go-interface-design",
-    "eduardo-sl/go-agent-skills/go-modernize",
-    "eduardo-sl/go-agent-skills/go-naming",
-    "eduardo-sl/go-agent-skills/go-observability",
-    "eduardo-sl/go-agent-skills/go-performance-review",
-    "eduardo-sl/go-agent-skills/go-refactoring",
-    "eduardo-sl/go-agent-skills/go-troubleshooting",
-    "sergebulaev/linkedin-skills/linkedin-employee-advocacy",
-    "sergebulaev/linkedin-skills/linkedin-profile-optimizer"
+    "eduardo-sl/go-agent-skills/go-design-patterns"
   ],
   "topics": [
     {
@@ -272,7 +272,7 @@
     {
       "id": "fine-tuning",
       "name": "Fine-Tuning and Model Training",
-      "skills": 127,
+      "skills": 128,
       "weekly_installs": 56233,
       "change_pct": -26,
       "best": [
@@ -1304,7 +1304,7 @@
     {
       "id": "books-publishing",
       "name": "Books and Publishing",
-      "skills": 7,
+      "skills": 8,
       "weekly_installs": 0,
       "change_pct": null,
       "best": [
@@ -1628,7 +1628,7 @@
     {
       "id": "health-medical",
       "name": "Health and Medical",
-      "skills": 15,
+      "skills": 16,
       "weekly_installs": 0,
       "change_pct": null,
       "best": [
@@ -1640,7 +1640,7 @@
     {
       "id": "hr-recruiting",
       "name": "HR and Recruiting",
-      "skills": 33,
+      "skills": 34,
       "weekly_installs": 0,
       "change_pct": null,
       "best": [
@@ -1700,7 +1700,7 @@
     {
       "id": "inference-serving",
       "name": "Inference and Model Serving",
-      "skills": 39,
+      "skills": 40,
       "weekly_installs": 0,
       "change_pct": null,
       "best": [
@@ -2034,13 +2034,13 @@
     {
       "id": "resume-builder",
       "name": "Resumes and Cover Letters",
-      "skills": 15,
+      "skills": 16,
       "weekly_installs": 0,
       "change_pct": null,
       "best": [
         "phuryn/pm-skills/review-resume",
         "github/awesome-copilot/technical-job-search",
-        "infrasity-labs/dev-gtm-claude-skills/cover-letter"
+        "korey2028-prog/resume-claim-guard/resume-claim-guard"
       ]
     },
     {
@@ -2070,7 +2070,7 @@
     {
       "id": "scheduling",
       "name": "Scheduling and Calendar",
-      "skills": 19,
+      "skills": 20,
       "weekly_installs": 0,
       "change_pct": null,
       "best": [
@@ -2094,7 +2094,7 @@
     {
       "id": "scriptwriting",
       "name": "Scriptwriting",
-      "skills": 3,
+      "skills": 4,
       "weekly_installs": 0,
       "change_pct": null,
       "best": [
@@ -2178,7 +2178,7 @@
     {
       "id": "storytelling",
       "name": "Storytelling and Fiction",
-      "skills": 21,
+      "skills": 22,
       "weekly_installs": 0,
       "change_pct": null,
       "best": [
@@ -3319,6 +3319,19 @@
       "license": "MIT",
       "cost_lane": "free-with-service",
       "listing": "https://suedeai.directory/alisa0808/vox-director/vox-director/"
+    },
+    "andrewsiah/agentswarm-work-skill/agentswarm-work": {
+      "id": "andrewsiah/agentswarm-work-skill/agentswarm-work",
+      "name": "agentswarm-work",
+      "repo": "andrewsiah/agentswarm-work-skill",
+      "description": "Use when the user explicitly asks to find open tasks or bounties for AI agents on agentswarm.space or deliver results. Inspect requirements, submit evidence for review, and check acceptance. Some tasks offer site credits",
+      "score": 79,
+      "grade": "C",
+      "category": "ai-agents-llm",
+      "topics": [],
+      "license": "MIT",
+      "cost_lane": "free-open-source",
+      "listing": "https://suedeai.directory/andrewsiah/agentswarm-work-skill/agentswarm-work/"
     },
     "angular/skills/angular-developer": {
       "id": "angular/skills/angular-developer",
@@ -5152,6 +5165,21 @@
       "weekly_installs": 4098,
       "change_pct": 8
     },
+    "cwong5/extra-caffeine-mcp/extra-caffeine-workflow": {
+      "id": "cwong5/extra-caffeine-mcp/extra-caffeine-workflow",
+      "name": "extra-caffeine-workflow",
+      "repo": "cwong5/extra-caffeine-mcp",
+      "description": "Use Extra Caffeine to keep a local Mac awake for long AI or file-processing work, check awake state, or manage requested one-time schedules. Applies to Mac-dependent tasks and explicit Extra Caffeine requests; cloud-only",
+      "score": 69,
+      "grade": "D",
+      "category": "productivity-knowledge",
+      "topics": [
+        "scheduling"
+      ],
+      "license": "All rights reserved",
+      "cost_lane": "restricted",
+      "listing": "https://suedeai.directory/cwong5/extra-caffeine-mcp/#extra-caffeine-workflow"
+    },
     "danjdewhurst/story-skills/adaptation": {
       "id": "danjdewhurst/story-skills/adaptation",
       "name": "adaptation",
@@ -5582,21 +5610,6 @@
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/eduardo-sl/go-agent-skills/go-grpc/"
     },
-    "eduardo-sl/go-agent-skills/go-interface-design": {
-      "id": "eduardo-sl/go-agent-skills/go-interface-design",
-      "name": "go-interface-design",
-      "repo": "eduardo-sl/go-agent-skills",
-      "description": "Go interface design patterns: implicit interfaces, consumer-side definition, interface compliance verification, composition, the accept-interfaces-return-structs principle, and common pitfalls. Use when designing interfa",
-      "score": 95,
-      "grade": "A",
-      "category": "developer-tools",
-      "topics": [
-        "golang"
-      ],
-      "license": "MIT",
-      "cost_lane": "free-open-source",
-      "listing": "https://suedeai.directory/eduardo-sl/go-agent-skills/go-interface-design/"
-    },
     "eduardo-sl/go-agent-skills/go-modernize": {
       "id": "eduardo-sl/go-agent-skills/go-modernize",
       "name": "go-modernize",
@@ -5729,21 +5742,6 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/eduardo-sl/go-agent-skills/go-test-table-driven/"
-    },
-    "eduardo-sl/go-agent-skills/go-troubleshooting": {
-      "id": "eduardo-sl/go-agent-skills/go-troubleshooting",
-      "name": "go-troubleshooting",
-      "repo": "eduardo-sl/go-agent-skills",
-      "description": "Diagnose runtime problems in Go programs: panics and stack traces, deadlocks, goroutine leaks, memory leaks, OOM kills, race reports, and debugging with delve and pprof. Use when: \"debug this panic\", \"read this stack tra",
-      "score": 95,
-      "grade": "A",
-      "category": "testing-qa",
-      "topics": [
-        "golang"
-      ],
-      "license": "MIT",
-      "cost_lane": "free-open-source",
-      "listing": "https://suedeai.directory/eduardo-sl/go-agent-skills/go-troubleshooting/"
     },
     "emblemcompany/agent-skills/emblem-ai-agent-wallet": {
       "id": "emblemcompany/agent-skills/emblem-ai-agent-wallet",
@@ -8032,23 +8030,6 @@
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/infrasity-labs/dev-gtm-claude-skills/capture/"
     },
-    "infrasity-labs/dev-gtm-claude-skills/cover-letter": {
-      "id": "infrasity-labs/dev-gtm-claude-skills/cover-letter",
-      "name": "cover-letter",
-      "repo": "infrasity-labs/dev-gtm-claude-skills",
-      "description": "Write a tailored cover letter for a specific job posting",
-      "score": 64,
-      "grade": "D",
-      "category": "business-finance",
-      "topics": [
-        "hr-recruiting",
-        "resume-builder",
-        "job-search"
-      ],
-      "license": "MIT",
-      "cost_lane": "free-open-source",
-      "listing": "https://suedeai.directory/infrasity-labs/dev-gtm-claude-skills/#cover-letter"
-    },
     "infrasity-labs/dev-gtm-claude-skills/critique-color": {
       "id": "infrasity-labs/dev-gtm-claude-skills/critique-color",
       "name": "critique-color",
@@ -9324,6 +9305,22 @@
       "cost_lane": "free-with-service",
       "listing": "https://suedeai.directory/k-dense-ai/claude-scientific-skills/#zarr-python"
     },
+    "korey2028-prog/resume-claim-guard/resume-claim-guard": {
+      "id": "korey2028-prog/resume-claim-guard/resume-claim-guard",
+      "name": "resume-claim-guard",
+      "repo": "korey2028-prog/resume-claim-guard",
+      "description": "从岗位 JD 出发写一份经得起面试追问的简历：拆解 JD 要求，把要求翻译成生活里的线索反问候选人，挖出简历上没写的相关真实经历，只用候选人确认过的事实贴着 JD 写定向简历，最后逐句做事实体检并预演面试官会怎么追问、该怎么答。也可单独体检已有简历，识别 AI 改写造成的动词升级、无依据数字和把计划或团队成果写成个人成果。用户要求按 JD 写或改简历、定向简历、岗位匹配、简历事实核查、反注水审查、准备面试时讲清每段经历时使用。",
+      "score": 72,
+      "grade": "C",
+      "category": "writing-content",
+      "topics": [
+        "hr-recruiting",
+        "resume-builder"
+      ],
+      "license": "MIT",
+      "cost_lane": "free-open-source",
+      "listing": "https://suedeai.directory/korey2028-prog/resume-claim-guard/#resume-claim-guard"
+    },
     "lackeyjb/playwright-skill/playwright-skill": {
       "id": "lackeyjb/playwright-skill/playwright-skill",
       "name": "playwright-skill",
@@ -10369,6 +10366,21 @@
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/melmayssonowen/agent-skills/toolfound-launch-kit/"
     },
+    "metcalfsolutions/satori/satori": {
+      "id": "metcalfsolutions/satori/satori",
+      "name": "satori",
+      "repo": "MetcalfSolutions/Satori",
+      "description": "Psychologically grounded wisdom companion for inner life. Use for reflective dialogue, grief, dark-night, burnout, anxiety, stress, loneliness, relationship conflict, shadow work, crossroads, tiered crisis check-ins, con",
+      "score": 87,
+      "grade": "B",
+      "category": "productivity-knowledge",
+      "topics": [
+        "health-medical"
+      ],
+      "license": "Apache-2.0",
+      "cost_lane": "free-open-source",
+      "listing": "https://suedeai.directory/metcalfsolutions/satori/satori/"
+    },
     "michalparkola/tapestry-skills-for-claude-code/ship-learn-next": {
       "id": "michalparkola/tapestry-skills-for-claude-code/ship-learn-next",
       "name": "ship-learn-next",
@@ -10974,6 +10986,75 @@
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mohamedabdallah-14/unslop/unslop-review/"
     },
+    "mrhy7176/cloudgpu-agent-skills/cloudgpu-ai-short-drama": {
+      "id": "mrhy7176/cloudgpu-agent-skills/cloudgpu-ai-short-drama",
+      "name": "cloudgpu-ai-short-drama",
+      "repo": "mrhy7176/cloudgpu-agent-skills",
+      "description": "Rent GPU compute for an AI short-drama pipeline using open video models, character LoRA and image workflows. Use when creating GPU-rendered shots and collecting reusable video assets, with a user-approved stage budget an",
+      "score": 77,
+      "grade": "C",
+      "category": "media-creative",
+      "topics": [],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-ai-short-drama/"
+    },
+    "mrhy7176/cloudgpu-agent-skills/cloudgpu-comfyui-images": {
+      "id": "mrhy7176/cloudgpu-agent-skills/cloudgpu-comfyui-images",
+      "name": "cloudgpu-comfyui-images",
+      "repo": "mrhy7176/cloudgpu-agent-skills",
+      "description": "Rent a GPU to generate images with ComfyUI and an open image model such as FLUX, then retrieve images and workflow metadata. Use when a user-provided image workflow needs more GPU memory or CUDA than the local machine.",
+      "score": 77,
+      "grade": "C",
+      "category": "media-creative",
+      "topics": [],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-comfyui-images/"
+    },
+    "mrhy7176/cloudgpu-agent-skills/cloudgpu-discover-compute": {
+      "id": "mrhy7176/cloudgpu-agent-skills/cloudgpu-discover-compute",
+      "name": "cloudgpu-discover-compute",
+      "repo": "mrhy7176/cloudgpu-agent-skills",
+      "description": "Discover and compare GPU compute for an AI agent, without an account. Use when local CUDA or VRAM is insufficient, or when asked how an agent can find GPUs, estimate task cost and obtain user approval before computing.",
+      "score": 77,
+      "grade": "C",
+      "category": "devops-cloud",
+      "topics": [],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-discover-compute/"
+    },
+    "mrhy7176/cloudgpu-agent-skills/cloudgpu-lora-finetune": {
+      "id": "mrhy7176/cloudgpu-agent-skills/cloudgpu-lora-finetune",
+      "name": "cloudgpu-lora-finetune",
+      "repo": "mrhy7176/cloudgpu-agent-skills",
+      "description": "Rent a GPU to train or fine-tune an open model with LoRA or QLoRA and retrieve adapters, checkpoints and metrics. Use when model training exceeds local CUDA, VRAM or storage and the user wants a bounded remote training r",
+      "score": 77,
+      "grade": "C",
+      "category": "ai-agents-llm",
+      "topics": [
+        "fine-tuning"
+      ],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-lora-finetune/"
+    },
+    "mrhy7176/cloudgpu-agent-skills/cloudgpu-open-model-inference": {
+      "id": "mrhy7176/cloudgpu-agent-skills/cloudgpu-open-model-inference",
+      "name": "cloudgpu-open-model-inference",
+      "repo": "mrhy7176/cloudgpu-agent-skills",
+      "description": "Run open-model GPU inference or evaluation and retrieve outputs, metrics and logs. Use when a private or custom model needs CUDA, larger VRAM, an Ollama instance or a bounded batch beyond the local machine.",
+      "score": 77,
+      "grade": "C",
+      "category": "ai-agents-llm",
+      "topics": [
+        "inference-serving"
+      ],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-open-model-inference/"
+    },
     "muratcankoylan/agent-skills-for-context-engineering/advanced-evaluation": {
       "id": "muratcankoylan/agent-skills-for-context-engineering/advanced-evaluation",
       "name": "advanced-evaluation",
@@ -11415,6 +11496,23 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/nvidia/skills/#vss-summarize-video"
+    },
+    "oakcoderx/awesome-agent-skills/socratic-story-cartographer": {
+      "id": "oakcoderx/awesome-agent-skills/socratic-story-cartographer",
+      "name": "socratic-story-cartographer",
+      "repo": "OakcoderX/awesome-agent-skills",
+      "description": "Diagnose and iteratively improve novels, screenplays, scenes, characters, and story outlines using competing hypotheses, falsification, counterfactual tests, evidence anchors, minimum-sufficient intervention, blind re-ch",
+      "score": 72,
+      "grade": "C",
+      "category": "writing-content",
+      "topics": [
+        "storytelling",
+        "scriptwriting",
+        "books-publishing"
+      ],
+      "license": "MIT",
+      "cost_lane": "free-open-source",
+      "listing": "https://suedeai.directory/oakcoderx/awesome-agent-skills/#socratic-story-cartographer"
     },
     "obra/superpowers/brainstorming": {
       "id": "obra/superpowers/brainstorming",
@@ -11886,6 +11984,19 @@
       "license": "MIT",
       "cost_lane": "free-with-service",
       "listing": "https://suedeai.directory/resend/resend-skills/resend/"
+    },
+    "rnthking/redya-skills/redya-xiaohongshu": {
+      "id": "rnthking/redya-skills/redya-xiaohongshu",
+      "name": "redya-xiaohongshu",
+      "repo": "rnthking/redya-skills",
+      "description": "使用红鸦 API 创作小红书图文、制作 Live 实况图片，或检测和修改文案敏感词；支持商品档案及个人词库。",
+      "score": 65,
+      "grade": "D",
+      "category": "marketing-seo",
+      "topics": [],
+      "license": "MIT",
+      "cost_lane": "free-open-source",
+      "listing": "https://suedeai.directory/rnthking/redya-skills/#redya-xiaohongshu"
     },
     "sanity-io/agent-toolkit/sanity-migration": {
       "id": "sanity-io/agent-toolkit/sanity-migration",
@@ -13044,6 +13155,19 @@
       "listing": "https://suedeai.directory/vercel-labs/skills/find-skills/",
       "weekly_installs": 109742,
       "change_pct": 0
+    },
+    "waynehamadi/datacircle/datacircle": {
+      "id": "waynehamadi/datacircle/datacircle",
+      "name": "datacircle",
+      "repo": "waynehamadi/datacircle",
+      "description": "Every plan of every GTM API on datacircle.dev, as one file you download and query. The file covers People, Contact, Companies, Signals, Social media, E-commerce, Real estate and Web. For each plan, the file lists the pri",
+      "score": 63,
+      "grade": "D",
+      "category": "developer-tools",
+      "topics": [],
+      "license": "MIT",
+      "cost_lane": "free-open-source",
+      "listing": "https://suedeai.directory/waynehamadi/datacircle/#datacircle"
     },
     "wondelai/skills/contagious": {
       "id": "wondelai/skills/contagious",
