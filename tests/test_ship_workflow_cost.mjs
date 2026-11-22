@@ -1938,7 +1938,8 @@ test('release verification receives read-only authority and never a deployment a
   assert.match(helperSource('gate-sandbox.cjs'), /"\/bin\/sh","-c",payload/)
   assert.match(helperSource('gate-sandbox.cjs'), /sanitizeGateEnvironment\(process\.env\)/)
   assert.match(helperSource('gate-sandbox.cjs'), /delete process\.env\[name\]/)
-  assert.match(SKILL, /If a check depends on removed credentials, report it as unverified/)
+  // The rule moved from SKILL.md to the bundled usage contract (#439).
+  assert.match(readFileSync(path.join(ROOT, 'skills/suede-graph-flo-xr/references/usage-contract.md'), 'utf8'), /If a check depends on removed credentials, report it as unverified/)
   assert.match(gateCall.bashCommandClamp[0], /cd .*\/tmp\/repo\.worktrees\/ship-test.*&& node --test/)
   assert.doesNotMatch(helperSource('gate-sandbox.cjs'), /\(subpath "\/private\/tmp"\)/)
   assert.doesNotMatch(helperSource('gate-sandbox.cjs'), /\(subpath "\/private\/var\/folders"\)/)
