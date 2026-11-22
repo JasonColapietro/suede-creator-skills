@@ -30,7 +30,7 @@
         "name": "Directory API and Data: Index, Reports, Badges, Feed",
         "description": "Every file the directory publishes: the search index, per-skill reports, badges, the skills.sh install snapshot, the RSS feed and the sitemap.",
         "url": "https://skills.suedeai.ai/directory/api/",
-        "dateModified": "2026-11-17",
+        "dateModified": "2026-11-22",
         "inLanguage": "en",
         "isPartOf": {
           "@type": "CollectionPage",
@@ -116,7 +116,7 @@
           <img src="../../assets/suede-ai-logo-transparent.webp" alt="Suede" width="28" height="28" onerror="this.style.display='none'">
           <span class="nav-logo-wordmark">SuedeAI<span>.directory</span></span>
         </a>
-        <a class="gh-star gh-star--nav" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" data-gh-star aria-label="Star Suede Skills on GitHub, 124 stars"><svg class="gh-star-icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg><span>Star</span><span class="gh-star-count">124</span></a>
+        <a class="gh-star gh-star--nav" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" data-gh-star aria-label="Star Suede Skills on GitHub, 121 stars"><svg class="gh-star-icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg><span>Star</span><span class="gh-star-count">121</span></a>
         <details class="nav-disclosure" open>
       <summary class="nav-hamburger" aria-label="Open navigation menu">
         <span></span>
@@ -161,7 +161,7 @@
           <tr><td>Search index</td><td><a href="https://suedeai.directory/search-index.json">/search-index.json</a></td><td>One record per listed skill (3,894): name, repo, description, category, license, grade, score, href, full, report, lane, flags, topics, listed, updated, installs.</td></tr>
           <tr><td>Skill report</td><td><a href="https://suedeai.directory/activeloopai/hivemind/hivemind-goals/report.json">/activeloopai/hivemind/hivemind-goals/report.json</a></td><td>A verifiable report per listing: snapshot id and dataset hash, score by component, source revision, badges and the methodology version. Every listed skill has one at its listing path.</td></tr>
           <tr><td>Quality badges</td><td><a href="https://suedeai.directory/activeloopai/hivemind/hivemind-goals/score.svg">/activeloopai/hivemind/hivemind-goals/score.svg</a></td><td>score.svg and badge.svg per listing. Skills scoring 80 to 99 get the numeric and letter shields; others serve the general listing badge.</td></tr>
-          <tr><td>Install snapshot</td><td><a href="https://suedeai.directory/installs.json">/installs.json</a></td><td>Install counts for 2,901 listed skills as published by skills.sh, with the fetch date and the method. The directory measures no installs of its own.</td></tr>
+          <tr><td>Install snapshot</td><td><a href="https://suedeai.directory/installs.json">/installs.json</a></td><td>Install counts for 2,905 listed skills as published by skills.sh, with the fetch date and the method. The directory measures no installs of its own.</td></tr>
           <tr><td>Kinds</td><td><a href="https://suedeai.directory/kinds.json">/kinds.json</a></td><td>The plugins, Grok, MCP server and rules listings as one JSON document.</td></tr>
           <tr><td>Finder skill</td><td><a href="https://suedeai.directory/finder/">/finder/</a></td><td>Install the read-only directory search skill for Claude Code, Codex or Cursor.</td></tr>
           <tr><td>Weekly feed</td><td><a href="https://suedeai.directory/weekly.json">/weekly.json</a></td><td>Rising and climbing skills, topic growth, new listings and repository stars for the latest snapshots; read by the finder’s weekly briefing. Suede excluded.</td></tr>
@@ -173,7 +173,7 @@
       </section>
       <section class="panel" id="installs" aria-labelledby="installs-title">
         <h2 id="installs-title">Where install counts come from</h2>
-        <p>The directory does not measure installs. <code>installs.json</code> is a snapshot of counts published by <a href="https://skills.sh/" target="_blank" rel="noopener">skills.sh</a>, which records installs made with the skills CLI (<code>npx skills add</code>) from anonymous, deduplicated telemetry as its documentation describes. The snapshot was read on November 15, 2026 from its public search endpoint, one query per listed repository, and its home page leaderboard for eight weeks of history. 2,901 listed skills matched; skills without a count are not tracked there. The script is <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/scripts/directory/installs.mjs" target="_blank" rel="noopener">scripts/directory/installs.mjs</a>.</p>
+        <p>The directory does not measure installs. <code>installs.json</code> is a snapshot of counts published by <a href="https://skills.sh/" target="_blank" rel="noopener">skills.sh</a>, which records installs made with the skills CLI (<code>npx skills add</code>) from anonymous, deduplicated telemetry as its documentation describes. The snapshot was read on November 22, 2026 from its public search endpoint, one query per listed repository, and its home page leaderboard for eight weeks of history. 2,905 listed skills matched; skills without a count are not tracked there. The script is <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/scripts/directory/installs.mjs" target="_blank" rel="noopener">scripts/directory/installs.mjs</a>.</p>
       </section>
       <section class="panel" aria-labelledby="score-api-title">
         <h2 id="score-api-title">Recomputing a score</h2>
@@ -185,7 +185,7 @@
     <footer>
       <div class="shell">
         <p class="footer-note">The directory's data is published as static files. Scores follow the published methodology; install counts are skills.sh's.</p>
-        <div class="footer-star"><p>Star Suede Skills on GitHub so more builders find graded skills.</p><a class="gh-star gh-star--lg" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" data-gh-star aria-label="Star Suede Skills on GitHub, 124 stars"><svg class="gh-star-icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg><span>Star</span><span class="gh-star-count">124</span></a></div>
+        <div class="footer-star"><p>Star Suede Skills on GitHub so more builders find graded skills.</p><a class="gh-star gh-star--lg" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" data-gh-star aria-label="Star Suede Skills on GitHub, 121 stars"><svg class="gh-star-icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg><span>Star</span><span class="gh-star-count">121</span></a></div>
         <div class="footer-inner">
           <div class="footer-brand">
             <img src="../../assets/suede-ai-logo-transparent.webp" alt="Suede" width="24" height="24" onerror="this.style.display='none'">
