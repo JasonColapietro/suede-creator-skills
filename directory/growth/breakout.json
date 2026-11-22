@@ -6,7 +6,7 @@
     {
       "repo": "erkamyaman/rust-anything",
       "url": "https://github.com/erkamyaman/rust-anything",
-      "stars": 7511,
+      "stars": 7635,
       "created": "2026-11-16",
       "language": "Rust",
       "license": "MIT",
@@ -15,7 +15,7 @@
     {
       "repo": "bookwjitchieni1986/blender-ai-mcp-addon",
       "url": "https://github.com/bookwjitchieni1986/blender-ai-mcp-addon",
-      "stars": 2616,
+      "stars": 2709,
       "created": "2026-11-19",
       "language": null,
       "license": "MIT",
@@ -24,7 +24,7 @@
     {
       "repo": "sybil-solutions/inference-optimisation-skill",
       "url": "https://github.com/sybil-solutions/inference-optimisation-skill",
-      "stars": 1730,
+      "stars": 1807,
       "created": "2026-11-16",
       "language": "Python",
       "license": "MIT",
@@ -33,11 +33,20 @@
     {
       "repo": "boringmarketer/boring-marketing-skills",
       "url": "https://github.com/boringmarketer/boring-marketing-skills",
-      "stars": 781,
+      "stars": 787,
       "created": "2026-11-16",
       "language": "Python",
       "license": "MIT",
       "description": "32 free marketing skills for your AI agent: research, positioning, copy, pages, SEO, AI search, ads, email and content, plus a deep local-business pack. MIT."
+    },
+    {
+      "repo": "EL4CTEO/fast-anything",
+      "url": "https://github.com/EL4CTEO/fast-anything",
+      "stars": 498,
+      "created": "2026-11-21",
+      "language": "Rust",
+      "license": "MIT",
+      "description": "Don't rewrite it in Rust. Rewrite the 5% that's slow: profile Python, Node or Ruby apps, port the hot functions with your coding agent, prove they behave the same."
     },
     {
       "repo": "Illson/RustText",
@@ -49,67 +58,58 @@
       "description": "Portable Windows text editor with Sublime Text-style multi-cursor editing, regex find and replace, split views, and a live viewer for large log files."
     },
     {
-      "repo": "diego3g/craft",
-      "url": "https://github.com/diego3g/craft",
-      "stars": 393,
-      "created": "2026-11-15",
-      "language": "JavaScript",
-      "license": "NOASSERTION",
-      "description": "Design skills for AI agents: /craft-setup writes your design brief, /craft designs screens with every state from your design system and reviews them. Works with Paper, pen.dev, Figma or HTML."
-    },
-    {
-      "repo": "danielwh2/sprite-stacking",
-      "url": "https://github.com/danielwh2/sprite-stacking",
-      "stars": 392,
-      "created": "2026-11-20",
-      "language": "HTML",
-      "license": "MIT",
-      "description": "Agent skill: turn four pixel art views into fake-3D sprites you can spin. Works with Claude Code, Codex, Cursor, OpenCode, Gemini CLI, Pi."
-    },
-    {
       "repo": "sybil-solutions/skill-distill",
       "url": "https://github.com/sybil-solutions/skill-distill",
-      "stars": 389,
+      "stars": 419,
       "created": "2026-11-21",
       "language": "Python",
       "license": "MIT",
       "description": "Distill a good Claude Code / Codex session into a skill an open-weight model can follow to reproduce the task"
     },
     {
+      "repo": "danielwh2/sprite-stacking",
+      "url": "https://github.com/danielwh2/sprite-stacking",
+      "stars": 407,
+      "created": "2026-11-20",
+      "language": "HTML",
+      "license": "MIT",
+      "description": "Agent skill: turn four pixel art views into fake-3D sprites you can spin. Works with Claude Code, Codex, Cursor, OpenCode, Gemini CLI, Pi."
+    },
+    {
+      "repo": "diego3g/craft",
+      "url": "https://github.com/diego3g/craft",
+      "stars": 395,
+      "created": "2026-11-15",
+      "language": "JavaScript",
+      "license": "NOASSERTION",
+      "description": "Design skills for AI agents: /craft-setup writes your design brief, /craft designs screens with every state from your design system and reviews them. Works with Paper, pen.dev, Figma or HTML."
+    },
+    {
       "repo": "staryone/motlab",
       "url": "https://github.com/staryone/motlab",
-      "stars": 358,
+      "stars": 368,
       "created": "2026-11-16",
       "language": "JavaScript",
       "license": "MIT",
       "description": "Video as code: canvas scenes rendered with WebCodecs in headless Chrome, a review viewer, and agent skills that build the video from your references."
     },
     {
-      "repo": "andrey-wilson-lab95d5/ai-ide-system-utilities-cursor-pro-v0-47-portable-x64",
-      "url": "https://github.com/andrey-wilson-lab95d5/ai-ide-system-utilities-cursor-pro-v0-47-portable-x64",
-      "stars": 325,
-      "created": "2026-11-21",
-      "language": "Jupyter Notebook",
-      "license": "NOASSERTION",
-      "description": "AI IDE & System Utilities Cursor Pro v0.47 Machine-ID, Telemetry & quota Quota manager: native 64-bit Windows 10/11 portable x64 build with hot-reloadable JSON configuration, low-overhead runtime, and prebuilt portable r"
-    },
-    {
-      "repo": "lizhenjie137/intelligent-organization",
-      "url": "https://github.com/lizhenjie137/intelligent-organization",
-      "stars": 322,
-      "created": "2026-11-15",
-      "language": "Python",
-      "license": "NOASSERTION",
-      "description": "智能组织 · Intelligent Organization | 人与 AI Agent 按原子能力协作，连接目标、分工、进展、成果、验收与交接，减少重复沟通与返工。当前支持本机多账号，跨设备协作为后续方向。"
-    },
-    {
-      "repo": "MoritzPindorek/Five-Laws-of-AI-Agents",
-      "url": "https://github.com/MoritzPindorek/Five-Laws-of-AI-Agents",
-      "stars": 283,
+      "repo": "rafiiiakmall-cpu/aida-64-extreme",
+      "url": "https://github.com/rafiiiakmall-cpu/aida-64-extreme",
+      "stars": 337,
       "created": "2026-11-21",
       "language": "HTML",
-      "license": "Apache-2.0",
-      "description": "Independent philosophical research on the Five Laws of AI Agents, delegated authority, non-entitlement and corrigibility. Zenodo DOI: 10.5281/zenodo.24417028"
+      "license": null,
+      "description": "Aida 64 Extreme: Desktop Hardware Diagnostics and System Profiling Suite"
+    },
+    {
+      "repo": "rcgaming265-afk/claude-prompt-studio",
+      "url": "https://github.com/rcgaming265-afk/claude-prompt-studio",
+      "stars": 336,
+      "created": "2026-11-21",
+      "language": "HTML",
+      "license": null,
+      "description": "Claude Prompt Studio: Desktop Environment for Structured AI Prompt Engineering"
     }
   ]
 }

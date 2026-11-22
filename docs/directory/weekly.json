@@ -2419,158 +2419,158 @@
   "repositories": [
     {
       "repo": "obra/superpowers",
-      "stars": 323829,
-      "gained": 6125
+      "stars": 323974,
+      "gained": 6270
     },
     {
       "repo": "mattpocock/skills",
-      "stars": 329863,
-      "gained": 5289
+      "stars": 330008,
+      "gained": 5434
     },
     {
       "repo": "pbakaus/impeccable",
-      "stars": 114602,
-      "gained": 4293
+      "stars": 114707,
+      "gained": 4398
     },
     {
       "repo": "Leonxlnx/taste-skill",
-      "stars": 119796,
-      "gained": 4062
+      "stars": 119868,
+      "gained": 4134
     },
     {
       "repo": "cloudflare/security-audit-skill",
-      "stars": 76750,
-      "gained": 4017
+      "stars": 76841,
+      "gained": 4108
     },
     {
       "repo": "anthropics/skills",
-      "stars": 198569,
-      "gained": 3876
+      "stars": 198691,
+      "gained": 3998
     },
     {
       "repo": "heygen-com/hyperframes",
-      "stars": 87912,
-      "gained": 3502
+      "stars": 87977,
+      "gained": 3567
     },
     {
       "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
-      "stars": 152563,
-      "gained": 2985
+      "stars": 152626,
+      "gained": 3048
     },
     {
       "repo": "google-labs-code/stitch-skills",
-      "stars": 11526,
-      "gained": 2563
+      "stars": 11642,
+      "gained": 2679
     },
     {
       "repo": "tt-a1i/archify",
-      "stars": 98617,
-      "gained": 2122
+      "stars": 98676,
+      "gained": 2181
     },
     {
       "repo": "AgriciDaniel/claude-seo",
-      "stars": 31433,
-      "gained": 2001
+      "stars": 31488,
+      "gained": 2056
     },
     {
       "repo": "vercel-labs/agent-browser",
-      "stars": 53251,
-      "gained": 1964
+      "stars": 53299,
+      "gained": 2012
     },
     {
       "repo": "coreyhaines31/marketingskills",
-      "stars": 61911,
-      "gained": 1537
+      "stars": 61944,
+      "gained": 1570
     },
     {
       "repo": "vercel-labs/skills",
-      "stars": 40375,
-      "gained": 985
+      "stars": 40396,
+      "gained": 1006
     },
     {
       "repo": "garrytan/gstack",
-      "stars": 142296,
-      "gained": 703
+      "stars": 142317,
+      "gained": 724
     },
     {
       "repo": "browser-use/browser-use",
-      "stars": 121695,
-      "gained": 645
+      "stars": 121718,
+      "gained": 668
     },
     {
       "repo": "vercel-labs/agent-skills",
-      "stars": 34680,
-      "gained": 603
+      "stars": 34698,
+      "gained": 621
     },
     {
       "repo": "anthropics/claude-plugins-official",
-      "stars": 47920,
-      "gained": 601
+      "stars": 47935,
+      "gained": 616
     },
     {
       "repo": "zarazhangrui/frontend-slides",
-      "stars": 32739,
-      "gained": 410
+      "stars": 32751,
+      "gained": 422
     },
     {
       "repo": "Continuum-AI-Corp/OrcaReplay",
-      "stars": 1110,
-      "gained": 385
-    },
-    {
-      "repo": "github/awesome-copilot",
-      "stars": 41431,
-      "gained": 268
+      "stars": 1116,
+      "gained": 391
     },
     {
       "repo": "conorbronsdon/avoid-ai-writing",
-      "stars": 5904,
-      "gained": 260
+      "stars": 5929,
+      "gained": 285
+    },
+    {
+      "repo": "github/awesome-copilot",
+      "stars": 41436,
+      "gained": 273
     },
     {
       "repo": "google/skills",
-      "stars": 24527,
-      "gained": 236
+      "stars": 24533,
+      "gained": 242
     },
     {
       "repo": "phuryn/pm-skills",
-      "stars": 28210,
-      "gained": 216
+      "stars": 28214,
+      "gained": 220
     },
     {
       "repo": "Orchestra-Research/AI-Research-SKILLs",
-      "stars": 14729,
-      "gained": 186
+      "stars": 14736,
+      "gained": 193
     },
     {
       "repo": "sergebulaev/linkedin-skills",
-      "stars": 6105,
-      "gained": 181
+      "stars": 6111,
+      "gained": 187
     },
     {
       "repo": "Alisa0808/vox-director",
-      "stars": 3015,
-      "gained": 176
+      "stars": 3016,
+      "gained": 177
     },
     {
       "repo": "vercel/ai",
-      "stars": 28121,
-      "gained": 160
+      "stars": 28123,
+      "gained": 162
     },
     {
       "repo": "trailofbits/skills",
-      "stars": 8341,
-      "gained": 146
+      "stars": 8343,
+      "gained": 148
     },
     {
       "repo": "openai/skills",
-      "stars": 28881,
-      "gained": 129
+      "stars": 28888,
+      "gained": 136
     },
     {
       "repo": "googleworkspace/cli",
-      "stars": 32435,
-      "gained": 117
+      "stars": 32436,
+      "gained": 118
     },
     {
       "repo": "NVIDIA/skills",
@@ -2579,23 +2579,23 @@
     },
     {
       "repo": "jeffallan/claude-skills",
-      "stars": 12476,
-      "gained": 110
+      "stars": 12477,
+      "gained": 111
     },
     {
       "repo": "Tencent/AI-Infra-Guard",
-      "stars": 7607,
-      "gained": 99
+      "stars": 7609,
+      "gained": 101
     },
     {
       "repo": "deanpeters/Product-Manager-Skills",
-      "stars": 8116,
-      "gained": 93
+      "stars": 8118,
+      "gained": 95
     },
     {
       "repo": "wondelai/skills",
-      "stars": 2760,
-      "gained": 58
+      "stars": 2761,
+      "gained": 59
     },
     {
       "repo": "MiniMax-AI/skills",
@@ -2609,13 +2609,13 @@
     },
     {
       "repo": "renezander030/capcut-cli",
-      "stars": 1248,
-      "gained": 54
+      "stars": 1250,
+      "gained": 56
     },
     {
       "repo": "expo/skills",
-      "stars": 4206,
-      "gained": 53
+      "stars": 4207,
+      "gained": 54
     },
     {
       "repo": "supabase/agent-skills",
@@ -2639,8 +2639,8 @@
     },
     {
       "repo": "superdesigndev/superdesign-skill",
-      "stars": 1044,
-      "gained": 37
+      "stars": 1045,
+      "gained": 38
     },
     {
       "repo": "ilyautov/humanizer-ru",
@@ -2649,18 +2649,23 @@
     },
     {
       "repo": "huggingface/skills",
-      "stars": 11381,
-      "gained": 30
+      "stars": 11380,
+      "gained": 29
     },
     {
       "repo": "product-on-purpose/pm-skills",
-      "stars": 833,
-      "gained": 28
+      "stars": 834,
+      "gained": 29
     },
     {
       "repo": "danjdewhurst/story-skills",
       "stars": 443,
       "gained": 25
+    },
+    {
+      "repo": "ykdojo/claude-code-tips",
+      "stars": 10364,
+      "gained": 21
     },
     {
       "repo": "microsoft/azure-skills",
@@ -2673,14 +2678,14 @@
       "gained": 21
     },
     {
-      "repo": "ykdojo/claude-code-tips",
-      "stars": 10363,
-      "gained": 20
-    },
-    {
       "repo": "inhouseseo/superseo-skills",
       "stars": 416,
       "gained": 20
+    },
+    {
+      "repo": "SawyerHood/dev-browser",
+      "stars": 6750,
+      "gained": 18
     },
     {
       "repo": "bitwize-music-studio/claude-ai-music-skills",
@@ -2688,14 +2693,19 @@
       "gained": 18
     },
     {
-      "repo": "SawyerHood/dev-browser",
-      "stars": 6749,
-      "gained": 17
-    },
-    {
       "repo": "antonbabenko/terraform-skill",
       "stars": 2483,
       "gained": 17
+    },
+    {
+      "repo": "tjboudreaux/cc-thinking-skills",
+      "stars": 1759,
+      "gained": 17
+    },
+    {
+      "repo": "apify/agent-skills",
+      "stars": 2516,
+      "gained": 16
     },
     {
       "repo": "NeoLabHQ/context-engineering-kit",
@@ -2703,8 +2713,8 @@
       "gained": 16
     },
     {
-      "repo": "tjboudreaux/cc-thinking-skills",
-      "stars": 1758,
+      "repo": "ZeroPointRepo/youtube-skills",
+      "stars": 1223,
       "gained": 16
     },
     {
@@ -2718,13 +2728,13 @@
       "gained": 15
     },
     {
-      "repo": "apify/agent-skills",
-      "stars": 2515,
+      "repo": "HUANGCHIHHUNGLeo/claude-real-video",
+      "stars": 2332,
       "gained": 15
     },
     {
-      "repo": "ZeroPointRepo/youtube-skills",
-      "stars": 1222,
+      "repo": "gooseworks-ai/goose-skills",
+      "stars": 1335,
       "gained": 15
     },
     {
@@ -2738,19 +2748,9 @@
       "gained": 14
     },
     {
-      "repo": "gooseworks-ai/goose-skills",
-      "stars": 1334,
-      "gained": 14
-    },
-    {
       "repo": "mblode/agent-skills",
       "stars": 216,
       "gained": 14
-    },
-    {
-      "repo": "HUANGCHIHHUNGLeo/claude-real-video",
-      "stars": 2330,
-      "gained": 13
     },
     {
       "repo": "langchain-ai/langchain-skills",
@@ -2773,6 +2773,11 @@
       "gained": 9
     },
     {
+      "repo": "infrasity-labs/dev-gtm-claude-skills",
+      "stars": 177,
+      "gained": 9
+    },
+    {
       "repo": "hashicorp/agent-skills",
       "stars": 936,
       "gained": 8
@@ -2783,14 +2788,14 @@
       "gained": 8
     },
     {
-      "repo": "infrasity-labs/dev-gtm-claude-skills",
-      "stars": 176,
-      "gained": 8
-    },
-    {
       "repo": "inhotel-io/govisit-toolkit",
       "stars": 9,
       "gained": 7
+    },
+    {
+      "repo": "PleasePrompto/notebooklm-skill",
+      "stars": 7799,
+      "gained": 6
     },
     {
       "repo": "angular/skills",
@@ -2806,11 +2811,6 @@
       "repo": "firecrawl/skills",
       "stars": 163,
       "gained": 6
-    },
-    {
-      "repo": "PleasePrompto/notebooklm-skill",
-      "stars": 7798,
-      "gained": 5
     },
     {
       "repo": "activeloopai/hivemind",
@@ -2840,6 +2840,11 @@
     {
       "repo": "resend/resend-skills",
       "stars": 216,
+      "gained": 4
+    },
+    {
+      "repo": "Digidai/product-manager-skills",
+      "stars": 208,
       "gained": 4
     },
     {
@@ -2888,13 +2893,18 @@
       "gained": 3
     },
     {
-      "repo": "Digidai/product-manager-skills",
-      "stars": 207,
+      "repo": "hqhq1025/skill-optimizer",
+      "stars": 196,
       "gained": 3
     },
     {
       "repo": "MohamedAbdallah-14/unslop",
       "stars": 195,
+      "gained": 3
+    },
+    {
+      "repo": "shepsci/kaggle-skill",
+      "stars": 115,
       "gained": 3
     },
     {
@@ -2918,11 +2928,6 @@
       "gained": 2
     },
     {
-      "repo": "hqhq1025/skill-optimizer",
-      "stars": 195,
-      "gained": 2
-    },
-    {
       "repo": "redis/agent-skills",
       "stars": 178,
       "gained": 2
@@ -2935,11 +2940,6 @@
     {
       "repo": "glacierphonk/naming",
       "stars": 137,
-      "gained": 2
-    },
-    {
-      "repo": "shepsci/kaggle-skill",
-      "stars": 114,
       "gained": 2
     },
     {
@@ -3033,13 +3033,13 @@
       "gained": 1
     },
     {
-      "repo": "ohad6k/emulo",
-      "stars": 306,
-      "gained": 0
+      "repo": "costory-io/costory-finops-mcp-skills",
+      "stars": 4,
+      "gained": 1
     },
     {
-      "repo": "makenotion/skills",
-      "stars": 184,
+      "repo": "ohad6k/emulo",
+      "stars": 306,
       "gained": 0
     },
     {
@@ -3138,11 +3138,6 @@
       "gained": 0
     },
     {
-      "repo": "costory-io/costory-finops-mcp-skills",
-      "stars": 3,
-      "gained": 0
-    },
-    {
       "repo": "MelMayssonOwen/agent-skills",
       "stars": 1,
       "gained": 0
@@ -3161,6 +3156,11 @@
       "repo": "apitube/news-api-skills",
       "stars": 0,
       "gained": 0
+    },
+    {
+      "repo": "makenotion/skills",
+      "stars": 183,
+      "gained": -1
     },
     {
       "repo": "k-kolomeitsev/data-structure-protocol",
