@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { createHash } from 'node:crypto';
+import { createHash, randomBytes } from 'node:crypto';
 import { createMakerRuntime } from '../scripts/directory/maker-runtime-v2.mjs';
 
 const origin = 'https://suedeai.directory';
@@ -8,8 +8,9 @@ const req = (query, init) => new Request(origin + '/api/maker?' + query, init);
 const url = 'https://github.com/login/oauth/access_token';
 const fixture = (override = {}) => {
   const flows = new Map(), sessions = new Map(), calls = [];
+  const providerToken = randomBytes(24).toString('base64url');
   const config = {
-    enabled: true, site: 'directory', origin, clientId: 'fake-client', clientSecret: 'fixture-only',
+    enabled: true, site: 'directory', origin, clientId: 'fake-client', clientSecret: randomBytes(24).toString('hex'),
     store: { durable: true,
       async saveFlow(key, value) { flows.set(key, value); },
       async consumeFlow(key) { const value = flows.get(key); flows.delete(key); return value; },
@@ -19,12 +20,12 @@ const fixture = (override = {}) => {
     makeService: ({ user }) => ({ async get(session, id) { return { user: await user(session), id }; } }),
     fetch: async (target, options) => {
       calls.push([target, options]);
-      if (target === url) return Response.json({ access_token: 'test-provider-token', token_type: 'bearer', scope: '' });
+      if (target === url) return Response.json({ access_token: providerToken, token_type: 'bearer', scope: '' });
       if (target === 'https://api.github.com/user') return Response.json({ id: 100, login: 'tester' });
       throw new Error('unexpected URL');
     }, ...override,
   };
-  return { handle: createMakerRuntime(config), config, calls, sessions };
+  return { handle: createMakerRuntime(config), config, calls, sessions, providerToken };
 };
 const cookie = (response, name) => response.headers.getSetCookie()
   .find(value => value.startsWith(name + '=')).split(';')[0];
@@ -41,7 +42,7 @@ test('disabled, missing durable store, and wrong host never contact GitHub', asy
   assert.equal((await handle(req('action=claim&id=project-a', { method: 'POST', headers: { origin: 'https://other.example' } }))).status, 403);
 });
 test('state cookie, S256 verifier, fixed GitHub endpoints, opaque session and logout', async () => {
-  const { handle, calls, sessions } = fixture();
+  const { handle, calls, sessions, providerToken } = fixture();
   const start = await handle(req('action=sign-in&id=project-a'));
   assert.equal(start.status, 303);
   const auth = new URL(start.headers.get('Location'));
@@ -59,20 +60,21 @@ test('state cookie, S256 verifier, fixed GitHub endpoints, opaque session and lo
   assert.equal(done.headers.get('Cache-Control'), 'no-store');
   assert.equal((await callback()).status, 400);
   const session = cookie(done, '__Host-suede-maker-session');
-  assert.equal(session.includes('test-provider-token'), false);
+  assert.equal(session.includes(providerToken), false);
   assert.equal([...sessions.keys()].includes(session.split('=')[1]), false);
   assert.equal(calls[0][0], url);
   assert.equal(calls[0][1].redirect, 'error');
   const params = calls[0][1].body;
   assert.equal(createHash('sha256').update(params.get('code_verifier')).digest('base64url'), auth.searchParams.get('code_challenge'));
   assert.equal(calls[1][0], 'https://api.github.com/user');
+  assert.equal(calls[1][1].headers.Authorization, 'Bearer ' + providerToken);
   assert.deepEqual(await (await handle(req('action=listing&id=project-a', { headers: { cookie: session } }))).json(), { user: 100, id: 'project-a' });
   assert.equal((await handle(req('action=logout', { method: 'POST', headers: { cookie: session, origin } }))).status, 204);
   assert.equal((await handle(req('action=listing&id=project-a', { headers: { cookie: session } }))).status, 401);
 });
 test('rejects an over-scoped provider token without requesting identity or issuing a session', async () => {
   let attempts = 0;
-  const { handle } = fixture({ fetch: async () => { attempts++; return Response.json({ token_type: 'bearer', access_token: 'fake', scope: 'repo' }); } });
+  const { handle } = fixture({ fetch: async () => { attempts++; return Response.json({ token_type: 'bearer', access_token: randomBytes(24).toString('base64url'), scope: 'repo' }); } });
   const start = await handle(req('action=sign-in&id=project-a'));
   const state = new URL(start.headers.get('Location')).searchParams.get('state');
   const failed = await handle(req('action=callback&code=test&state=' + state, { headers: { cookie: cookie(start, '__Host-suede-maker-flow') } }));

@@ -1,3 +1,4 @@
+import { randomBytes } from 'node:crypto';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createMakerOwnerService } from '../scripts/directory/maker-owner-v2.mjs';
@@ -80,10 +81,11 @@ test('HTTP submit and withdraw use an explicit version envelope; unversioned cli
  const {createMakerRuntime}=await import('../scripts/directory/maker-runtime-v2.mjs');
  const origin='https://directory.example';
  const attempts=[];
- const api=createMakerRuntime({site:'directory',enabled:true,origin,clientId:'oauth',clientSecret:'secret',store:{durable:true,saveFlow(){},consumeFlow(){},saveSession(){},deleteSession(){},
+ const api=createMakerRuntime({site:'directory',enabled:true,origin,clientId:'oauth',clientSecret:randomBytes(24).toString('hex'),store:{durable:true,saveFlow(){},consumeFlow(){},saveSession(){},deleteSession(){},
     readSession:async()=>({userId:1,expiresAt:Date.now()+100000})},makeService:()=>({submit:async (...p)=>{attempts.push(p.slice(1));return true;},withdraw:async (...p)=>{attempts.push(p.slice(1));return true;}})});
+ const session=randomBytes(32).toString('base64url');
  const write=(action,body)=>api(new Request(origin+'/api/maker/?action='+action+'&id=example',{method:'POST',headers:{origin,'Content-Type':'application/json',
-   cookie:'__Host-suede-maker-session='+'x'.repeat(43)},body:JSON.stringify(body)}));
+   cookie:'__Host-suede-maker-session='+session},body:JSON.stringify(body)}));
  assert.equal((await write('submit',{statement:'unversioned'})).status,400);
  assert.equal((await write('withdraw',{})).status,400);
  assert.equal((await write('submit',{profile:{statement:'updated'},expected:4})).status,200);

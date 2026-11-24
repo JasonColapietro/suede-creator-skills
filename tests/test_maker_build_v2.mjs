@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { randomBytes } from 'node:crypto';
 import fs from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
@@ -8,8 +9,8 @@ import catalog from '../directory/featured-projects.json' with { type: 'json' };
 
 const enabled = {
   SUEDE_SITE: 'directory', MAKER_V2_ENABLED: 'true', MAKER_V2_FEATURED_LINKS: 'true', MAKER_V2_ORIGIN: NEW,
-  MAKER_V2_DB_URL: 'https://fixture.supabase.co', MAKER_V2_DB_SECRET_KEY: 'sb_secret_fixture_only',
-  MAKER_V2_GITHUB_CLIENT_ID: 'fixture-oauth-client', MAKER_V2_GITHUB_CLIENT_SECRET: 'fixture-oauth-secret',
+  MAKER_V2_DB_URL: 'https://fixture.supabase.co', MAKER_V2_DB_SECRET_KEY: 'sb_secret_' + randomBytes(24).toString('base64url'),
+  MAKER_V2_GITHUB_CLIENT_ID: 'fixture-oauth-client', MAKER_V2_GITHUB_CLIENT_SECRET: randomBytes(24).toString('hex'),
   MAKER_V2_MODERATOR_IDS: '123',
 };
 function output(env, callback) {
@@ -33,7 +34,8 @@ test('config plus explicit rollout adds exactly one link to every featured proje
     const html = read(dir, 'featured/index.html');
     const linked = [...html.matchAll(/href="\/maker\/\?id=([a-z0-9-]+)" data-maker-claim/g)].map(match => match[1]).sort();
     assert.deepEqual(linked, catalog.projects.filter(entry => entry.status !== 'pending').map(entry => entry.id).sort());
-    assert.doesNotMatch(html, /fixture_only|fixture-oauth-secret/);
+    assert.equal(html.includes(enabled.MAKER_V2_DB_SECRET_KEY), false, 'database fixture key must not enter the built page');
+    assert.equal(html.includes(enabled.MAKER_V2_GITHUB_CLIENT_SECRET), false, 'OAuth fixture secret must not enter the built page');
   });
   output({ ...enabled, MAKER_V2_GITHUB_CLIENT_SECRET: '' }, dir => assert.doesNotMatch(read(dir, 'featured/index.html'), /data-maker-claim/));
 });

@@ -1,9 +1,10 @@
+import { randomBytes } from 'node:crypto';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createMakerStore } from '../scripts/directory/maker-store-v2.mjs';
 import { buildMakerHandler } from '../api/maker.mjs';
 
-const fakeKey = 'sb_secret_fixtureOnlyWhichIsNotARealKey';
+const fakeKey = 'sb_secret_' + randomBytes(24).toString('base64url');
 const endpoint = 'https://projectref.supabase.co';
 const config = { endpoint, key: fakeKey };
 test('store refuses non-Supabase hosts and missing or publishable keys', () => {
