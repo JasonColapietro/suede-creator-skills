@@ -1,49 +1,46 @@
-# Directory Maker V2 staging checklist
+# Release checklist: Directory maker workspace
 
-This route is disabled by default. Apply the private maker V2 and recovery migrations, in date order, only to a dedicated Directory database, not to a shared company data project. Use separate staging and production database projects and separate new GitHub OAuth apps. The app must request zero OAuth scopes.
+## Set up protected staging
 
-Set these only in the appropriate Directory deployment environment:
+Use an isolated database and a dedicated GitHub OAuth app for each environment. Do not share a database or OAuth client between staging, production or the sibling Skills site. As database owner, apply `deployment/migrations/20261123-maker-v2.sql` followed by `deployment/migrations/20261124-maker-recovery.sql`. Do not expose the private schema.
 
-| Name | Expected value |
-|---|---|
-| `SUEDE_SITE` | `directory` explicitly |
-| `MAKER_V2_ENABLED` | `true` only after both private migrations and config |
-| `MAKER_V2_ORIGIN` | Exact HTTPS origin, no trailing slash |
-| `MAKER_V2_DB_URL` | Exact managed Supabase project origin ending in `.supabase.co`, no path |
-| `MAKER_V2_DB_SECRET_KEY` | Dedicated server-side `sb_secret_…`, never included in site output |
-| `MAKER_V2_GITHUB_CLIENT_ID` | Dedicated GitHub OAuth app client ID |
-| `MAKER_V2_GITHUB_CLIENT_SECRET` | Dedicated GitHub OAuth app client secret, server-only |
-| `MAKER_V2_PUBLISH_PROFILES` | Leave off in first staging. Exact `true` permits public overlay independently of claim CTAs; disabled otherwise. |
-| `MAKER_V2_MODERATOR_IDS` | Comma-separated immutable GitHub numeric IDs, verified by a Directory administrator |
+| Directory setting | Staging value |
+| --- | --- |
+| `SUEDE_SITE` | `directory` |
+| `MAKER_V2_ORIGIN` | The exact protected HTTPS origin, without a trailing slash |
+| `MAKER_V2_DB_URL` | The designated Supabase HTTPS origin, without a path |
+| `MAKER_V2_DB_SECRET_KEY` | The designated Supabase server key |
+| `MAKER_V2_GITHUB_CLIENT_ID` | The dedicated app's client ID |
+| `MAKER_V2_GITHUB_CLIENT_SECRET` | The matching server-side OAuth credential |
+| `MAKER_V2_MODERATOR_IDS` | Verified numeric GitHub IDs, separated by commas |
+| `MAKER_V2_ENABLED` | Set to `true` only after migrations and runtime configuration |
+| `MAKER_V2_FEATURED_LINKS` | Set to `true` at build time only after testing claim access |
+| `MAKER_V2_PUBLISH_PROFILES` | Unset until the publishing and removal drill passes |
 
-Use the exact GitHub callback URL `<MAKER_V2_ORIGIN>/api/maker/?action=callback`. Keep staging on an explicitly selected protected HTTPS origin; it needs a route for an authenticated browser to reach the callback. Leave the sibling site and all unrelated projects disabled. Configure diagnostics to never collect query values for the OAuth callback (notably `code`, `state`), session cookies, tokens, or OAuth secrets. Add host-side request rate limits for sign-in and writes before launch and periodically remove expired flow/session rows.
+Register `<MAKER_V2_ORIGIN>/api/maker/?action=callback` with the OAuth app. The sign-in must request no GitHub scopes. Make the protected callback reachable in an authenticated staging browser. Store secrets on the server only. Before public access, configure limits for auth and write requests, purge expired login and session rows, and keep OAuth callback parameters, cookies, tokens and secrets out of logs.
 
-Before enabling production:
-1. Check access with a signed-out browser, two independent GitHub users and a reviewer account. An outsider cannot claim the same listing or see pending details. A fresh maker sees blank editable fields next to original read-only details.
-2. Sign in on the real staging host and verify the browser cookie, provider callback, restoration to the exact featured listing, and no broad scope. Logout must invalidate the prior session. Wrong-origin writes and expired/replayed OAuth callbacks must be rejected.
-3. Test an organization claim only after a reviewer records verified evidence for the exact listing/repository/user/organization. Review must approve the precise current revision; prior approved content must survive pending or rejected changes. Check concurrent requests and revocation.
-4. Verify that the approved projection reaches the public build HTML and no pending or private metadata is published. Confirm original editorial copy, canonical links and indexing rules still work. No outreach before this passes with a real claim.
-5. Rehearse both controls. For public removal, unset `MAKER_V2_PUBLISH_PROFILES` (not just `MAKER_V2_ENABLED`), build and redeploy the Directory after verifying the new artifact lacks all maker overlays. The feature flags are build/deploy controls, not a promise of instant removal. Exercise removal before allowing public author copy.
+## Exercise the staging flow
 
-## Publish reviewed details
-Use the dedicated Directory environment to run `MAKER_V2_EXPORT_APPROVED=true node scripts/export-maker-profiles.mjs > /tmp/maker-profiles.next.json`. The exporter only reads the approved projection, verifies that any approved item's immutable GitHub repository and owner still match the current catalog, and writes public fields to stdout. It cannot approve or deploy. Review the JSON diff; preserve the prior file on errors. Protect the overlay with required editorial review: never direct-push it or publish from an unreviewed artifact. Move the reviewed result to `directory/maker-profiles.json`, then build/deploy through the standard editorial release procedure. The public featured card shows the separately labeled maker statement and supported social links; a different approved maker website is labeled separately and the existing editorial website remains unchanged. A submitted profile is not live when approved: the workspace says it appears after publication.
+- Use separate owner, outsider and moderator accounts. Check signed-out routing, the exact OAuth return listing, replay and expiry, logout and origin checks. Confirm the outsider cannot claim or read the owner's data, and the owner starts with empty fields next to the original listing.
+- Submit a profile, verify that a stale tab cannot replace it, and approve only the current revision. A rejected or pending revision must not replace an earlier approval. Check that demo and post links are plain outbound links, not hosted previews. A maker may request removal of an approved profile, not an empty one.
+- Ask for a re-review or improvement feedback. Confirm the moderator can find the request, reply and close that version. Makers see their latest request and reply for each kind, and must wait for a reply before replacing a pending one. No request, reply or decision goes into the public artifact. Suede's review, grade and rank are independent.
+- For an organization, verify an exact listing, repository, account and organization match. Rehearse revocation and an explicitly reviewed transfer using fixture accounts. A moderator uses the successor's immutable GitHub account ID and an internal case reference. Never accept an uncertain or different repository as a transfer, let moderators review their own work, or hand prior private drafts to the successor. Keep the archived state private; set access and retention rules before launch.
+- Compare the public artifact with the existing Directory: the maker block is distinct from Suede's review and links; no drafts or private fields appear, and catalog, canonical URLs and indexing behavior are unchanged. Do not send outreach before this passes with a verified live claim.
 
-## Moderation and ownership recovery
-Use a signed-in moderator account and the exact per-listing GET and POST review endpoints in the foundation plan; the moderator-only **Find pending listings** button discovers pending profile revisions and inquiries. It returns listing names and IDs only, up to 100 (29 currently eligible). A maker cannot moderate their own profile. Reviewers must check every supplied URL and statement before approving; approve only the current revision number. There is no automatic transfer. If verified ownership changes, the per-listing queue offers recovery without exposing the old draft or requests. A staff moderator enters the verified successor's immutable GitHub ID and an internal non-secret case reference. The API validates the same immutable repo, the stale claim, the current owner and the exact database snapshot. The transaction archives the prior record in a private table and starts the successor blank. An unavailable or unrelated repository is not a verified transfer; do not rebind it. Organization successors need a new exact reviewed proof. A repository deletion, replacement or uncertain identity stays on hold, not an automatic reassignment. Do not export the recovery archive; ahead of launch, document who may inspect it and the retention/purge process.
+## Publish or remove maker details
 
-## Selected posts and private requests
-On the featured listing, choose **Manage this listing**, sign in, then verify repository ownership. The first profile is blank. Updates to your previous submission use your own fields, never Suede’s review. Submit public details for moderation; curated posts are plain permalinks, never embeds. The published review link comes from the existing editorial catalog and is read-only. Website, demo and public social URLs are reviewed as references, not fetched by this feature.
+Use one release owner. Do not allow parallel promotion of maker overlays. Prepare a fresh candidate:
 
-In **Ask Suede**, a verified owner can send one pending re-review and one pending improvement request per listing. A retry with identical text while pending returns the same receipt. A reviewer signs in to the same listing and opens **Listing moderation → Open review queue**, replies privately and closes the matching version. Owners can read the reply on return. Only the latest request and reply of each kind are retained; a new request after resolution replaces the old one. These records never enter static export. Resolving a request neither approves a profile nor updates a grade. During early access, the assigned moderator checks Find pending listings every working day, then opens each listing’s queue. No public request queue, notifications, automatic editorial changes or automatic publication.
+```sh
+MAKER_V2_EXPORT_APPROVED=true node scripts/export-maker-profiles.mjs > /tmp/maker-profiles.next.json
+```
 
-Routes: same-origin POST /api/maker/?action=ask&id=LISTING with {kind,note}; kind is re-review or improvement. A signed-in moderator uses GET action=review-queue for that listing, then POST action=resolve-request with {kind,version,reply}. Existing private owner-state CAS storage handles both types without a new table. Enable MAKER_V2_FEATURED_LINKS=true at build only after live staging authentication and isolation tests. For a shutdown, disable the API and build flag, and rebuild if a public approved overlay needs withdrawal.
+Review the diff, including intentional removals or an empty result, and put the reviewed file at `directory/maker-profiles.json` through the usual review process. Do not direct-push it or reuse stale output after an error. Just before building, and again just before promoting the same immutable artifact, run:
 
-**Withdraw:** A maker with previously approved details can choose “Remove my public maker profile” and request removal. Moderators approve or reject that exact revision. On approval, the next reviewed export and build omit the maker section; the original listing and review remain. A blank new profile cannot request removal. Queue discovery and withdrawal are new entries in the same Directory API: moderator-only GET action=inbox; verified-owner POST action=withdraw.
+```sh
+MAKER_V2_EXPORT_APPROVED=true node scripts/export-maker-profiles.mjs --verify-file directory/maker-profiles.json
+```
 
-The catalog, sitemap, ASOScan website and existing repository links are unchanged. CloudGPU has a maker-authentication-only canonical alias, restricted to the previously verified repository ID 1449190655; the pre-transfer name is not treated as identity. Pending BulkPublish remains ineligible. Before accepting a new claim if the identity of its source repository is disputed, suspend the listing’s maker rollout and review its provenance.
+Only an approved release with `MAKER_V2_PUBLISH_PROFILES=true` shows maker content. If a withdrawal, claim recovery or revocation lands before promotion, stop, export again and rebuild. Earlier static releases can still contain old maker content. Rehearse removal before enabling the flag: rebuild with the flag unset or switch to a verified release without the stale content, clear affected caches and verify the listing from a fresh session. Do not roll back to a release that still contains the withdrawn copy. This public removal does not change editorial content or depend on the claim link flag.
 
-### Single-publisher gate and emergency removal
-- First protected staging, and first public claim deployment if the purge drill is still pending, leave `MAKER_V2_PUBLISH_PROFILES` unset. Test sign-in, claim, profile moderation and private replies independently from public publication. This does not promise that approved maker copy has appeared publicly.
-- Designate one publisher; do not enable competing auto-deploys for maker overlay promotion. Compare a fresh export with the reviewed file, then run `MAKER_V2_EXPORT_APPROVED=true node scripts/export-maker-profiles.mjs --verify-file directory/maker-profiles.json` immediately before build and again before promoting that exact immutable artifact. No output is safer than reusing a cached approval file on provider failure. If the new projection is empty, review it, not the last known file. Imports/exports do not release anything themselves.
-- If withdrawal, recovery or a revocation lands during promotion, abort that promotion. If a previously built deployment is already serving stale maker copy, switch the production alias to a separately verified newer baseline or rebuild/redeploy with the publication flag off, purge the affected caching surface, check the public listing from a clean session, and prohibit alias rollback to any artifact containing the withdrawn copy. Keep the editorial content and CTA outside the publication switch. A reviewed profile can briefly exist in a previously served static artifact; if the team cannot operate the removal drill, keep the overlay flag off.
-- Owner submit/withdraw actions include an expected edit version. A stale tab gets a conflict instead of discarding another tab's submission or a moderator decision. Copy unsaved text before refreshing.
+To stop new sign-ins and edits, unset `MAKER_V2_ENABLED` and build without `MAKER_V2_FEATURED_LINKS`. Turning off the API alone does not remove a published profile. Preserve private state during rollback.
