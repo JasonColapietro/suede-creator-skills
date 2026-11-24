@@ -31,13 +31,17 @@ const kindBar = (html) => (html.match(/<nav class="kind-bar"[\s\S]*?<\/nav>/) ||
 const lit = (rel) => [...kindBar(read(rel)).matchAll(/<a [^>]*aria-current="page"[^>]*>([\s\S]*?)<\/a>/g)]
   .map((m) => m[1].replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim().replace(/\s[\d,]+$/, ""));
 
-test("every directory page carries the kind bar with every catalog linked", () => {
+test("every catalog page carries the kind bar with every catalog linked", () => {
   const targets = ["featured/", "agents/", "stacks/", ...kinds.map((k) => `${k.path}/`)];
   let n = 0;
   for (const file of pages(dirRoot)) {
     const html = fs.readFileSync(file, "utf8");
     const bar = kindBar(html);
     const rel = path.relative(dirRoot, file);
+    if (["maker/index.html", "maker/guide/index.html", "maker/demo/index.html"].includes(rel.split(path.sep).join("/"))) {
+      assert.match(html, /<meta name="robots" content="noindex, nofollow"/, `${rel}: private workspace shell must not be indexed`);
+      continue;
+    }
     assert.ok(bar, `${rel}: no kind bar`);
     // Links are relative to the page; resolve them to directory paths.
     const pageUrl = new URL(`https://x/${path.relative(dirRoot, path.dirname(file)).split(path.sep).join("/")}/`.replace(/\/\/$/, "/"));
