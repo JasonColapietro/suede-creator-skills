@@ -30,7 +30,7 @@
         "name": "LLM APIs and SDKs Skills for Claude Code and Codex",
         "description": "Browse 28 LLM API skills for Claude Code and Codex from 11 repositories, graded 0 to 99 and linked to source. venice-text-routing leads at 80/100.",
         "url": "https://skills.suedeai.ai/directory/topics/llm-apis/",
-        "dateModified": "2026-11-22",
+        "dateModified": "2026-11-25",
         "inLanguage": "en",
         "isPartOf": {
           "@type": "CollectionPage",
@@ -279,6 +279,55 @@
         ]
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://skills.suedeai.ai/directory/topics/llm-apis/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Which LLM API skill has the highest Suede Skill Check score?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "venice-text-routing from veniceai/skills scores 80/100, grade B, the highest-scoring LLM API skill with a full directory page in the October 22, 2026 snapshot. It earns full points for structural checks, recent maintenance and instruction depth. firebase-ai-logic-basics from firebase/skills follows at 80/100. Suede's own skills are not ranked."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are these LLM API skills free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "All 28 LLM API skills on this page are published in public GitHub repositories and cost nothing to download. Every one uses an open-source or open-content license, led by MIT (16) and Apache-2.0 (12). 4 skills connect to an outside service, which may charge for its own use."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I install an LLM API skill in Claude Code or Codex?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Run npx skills add with the skill folder's GitHub URL and pick your agent when the skills CLI asks. For venice-text-routing, run: npx skills add https://github.com/veniceai/skills/tree/main/skills/venice-text-routing. You can also copy the folder into .claude/skills/ for Claude Code or .agents/skills/ for Codex; the agent loads it when a request matches the skill's description."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do LLM API skills work in Cursor and other agents?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Each listed skill is a SKILL.md folder in the Agent Skills format, which Claude Code, Codex and Cursor all read. A full skill page lists the scripts, credentials and outside hosts that skill uses under Before you install."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does a skill get on the LLM APIs and SDKs page?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A listed skill joins this topic when its name, folder or one-line summary matches the LLM API keyword map for its category. A topic gets a page once 3 listed skills match it. Scores follow the published methodology, and publishers can request a listing for free."
+            }
+          }
+        ]
+      }
+    </script>
     <meta name="theme-color" content="#000000">
     <link rel="preload" href="../../../assets/fonts/geist-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../../assets/fonts/geist-mono-var-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -396,6 +445,19 @@
         <p>If you route across several providers, a gateway skill (azure-aigateway, neon-ai-gateway) centralizes keys, rate limits and caching in one place instead of in each app.</p>
       </section>
 
+      <section class="panel faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Questions and answers</h2>
+        <h3>Which LLM API skill has the highest Suede Skill Check score?</h3>
+        <p>venice-text-routing from veniceai/skills scores 80/100, grade B, the highest-scoring LLM API skill with a full directory page in the October 22, 2026 snapshot. It earns full points for structural checks, recent maintenance and instruction depth. firebase-ai-logic-basics from firebase/skills follows at 80/100. Suede's own skills are not ranked.</p>
+        <h3>Are these LLM API skills free?</h3>
+        <p>All 28 LLM API skills on this page are published in public GitHub repositories and cost nothing to download. Every one uses an open-source or open-content license, led by MIT (16) and Apache-2.0 (12). 4 skills connect to an outside service, which may charge for its own use.</p>
+        <h3>How do I install an LLM API skill in Claude Code or Codex?</h3>
+        <p>Run npx skills add with the skill folder's GitHub URL and pick your agent when the skills CLI asks. For venice-text-routing, run: npx skills add https://github.com/veniceai/skills/tree/main/skills/venice-text-routing. You can also copy the folder into .claude/skills/ for Claude Code or .agents/skills/ for Codex; the agent loads it when a request matches the skill's description.</p>
+        <h3>Do LLM API skills work in Cursor and other agents?</h3>
+        <p>Yes. Each listed skill is a SKILL.md folder in the Agent Skills format, which Claude Code, Codex and Cursor all read. A full skill page lists the scripts, credentials and outside hosts that skill uses under Before you install.</p>
+        <h3>How does a skill get on the LLM APIs and SDKs page?</h3>
+        <p>A listed skill joins this topic when its name, folder or one-line summary matches the LLM API keyword map for its category. A topic gets a page once 3 listed skills match it. Scores follow the published methodology, and publishers can request a listing for free.</p>
+      </section>
       <section class="panel" aria-labelledby="related-topics-title">
         <h2 id="related-topics-title">Related topics</h2>
         <p class="topic-chips"><a href="../google-cloud/">Google Cloud <span class="count-chip">146</span></a><a href="../mcp-servers/">MCP Servers <span class="count-chip">82</span></a><a href="../rag-retrieval/">RAG and Retrieval <span class="count-chip">32</span></a><a href="../secrets-credentials/">Secrets and Credentials <span class="count-chip">18</span></a><a href="../agent-observability/">Agent Tracing and Observability <span class="count-chip">41</span></a><a href="../ai-agent-builders/">AI Agent Builders <span class="count-chip">56</span></a><a href="../coding-agents/">Codex, Cursor and Coding Agents <span class="count-chip">23</span></a><a href="../inference-serving/">Inference and Model Serving <span class="count-chip">40</span></a></p>

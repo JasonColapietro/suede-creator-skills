@@ -30,7 +30,7 @@
         "name": "Meeting Assistant Skills for Claude Code and Codex",
         "description": "Browse 26 meeting skills for Claude Code and Codex from 10 repositories, graded 0 to 99 and linked to source. firecrawl-lead-research leads at 82/100.",
         "url": "https://skills.suedeai.ai/directory/topics/meeting-assistant/",
-        "dateModified": "2026-11-22",
+        "dateModified": "2026-11-25",
         "inLanguage": "en",
         "isPartOf": {
           "@type": "CollectionPage",
@@ -267,6 +267,55 @@
         ]
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://skills.suedeai.ai/directory/topics/meeting-assistant/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Which meeting skill has the highest Suede Skill Check score?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "firecrawl-lead-research from firecrawl/skills scores 82/100, grade B, the highest-scoring meeting skill with a full directory page in the October 22, 2026 snapshot. It earns full points for structural checks, recent maintenance and instruction depth. google-calendar from sanjay3290/ai-skills follows at 80/100. Suede's own skills are not ranked."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are these meeting skills free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "All 26 meeting skills on this page are published in public GitHub repositories and cost nothing to download. Every one uses an open-source or open-content license, led by Apache-2.0 (15), MIT (10) and ISC (1). One skill connects to an outside service, which may charge for its own use."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I install a meeting skill in Claude Code or Codex?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Run npx skills add with the skill folder's GitHub URL and pick your agent when the skills CLI asks. For firecrawl-lead-research, run: npx skills add https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-lead-research. You can also copy the folder into .claude/skills/ for Claude Code or .agents/skills/ for Codex; the agent loads it when a request matches the skill's description."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do meeting skills work in Cursor and other agents?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Each listed skill is a SKILL.md folder in the Agent Skills format, which Claude Code, Codex and Cursor all read. A full skill page lists the scripts, credentials and outside hosts that skill uses under Before you install."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does a skill get on the Meeting Assistant page?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A listed skill joins this topic when its name, folder or one-line summary matches the meeting keyword map for its category. A topic gets a page once 3 listed skills match it. Scores follow the published methodology, and publishers can request a listing for free."
+            }
+          }
+        ]
+      }
+    </script>
     <meta name="theme-color" content="#000000">
     <link rel="preload" href="../../../assets/fonts/geist-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../../assets/fonts/geist-mono-var-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -382,6 +431,19 @@
         <p>Notion meeting intelligence skills pull context from your workspace into pre-reads. They need the Notion connection set up, which the Before you install panel notes.</p>
       </section>
 
+      <section class="panel faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Questions and answers</h2>
+        <h3>Which meeting skill has the highest Suede Skill Check score?</h3>
+        <p>firecrawl-lead-research from firecrawl/skills scores 82/100, grade B, the highest-scoring meeting skill with a full directory page in the October 22, 2026 snapshot. It earns full points for structural checks, recent maintenance and instruction depth. google-calendar from sanjay3290/ai-skills follows at 80/100. Suede's own skills are not ranked.</p>
+        <h3>Are these meeting skills free?</h3>
+        <p>All 26 meeting skills on this page are published in public GitHub repositories and cost nothing to download. Every one uses an open-source or open-content license, led by Apache-2.0 (15), MIT (10) and ISC (1). One skill connects to an outside service, which may charge for its own use.</p>
+        <h3>How do I install a meeting skill in Claude Code or Codex?</h3>
+        <p>Run npx skills add with the skill folder's GitHub URL and pick your agent when the skills CLI asks. For firecrawl-lead-research, run: npx skills add https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-lead-research. You can also copy the folder into .claude/skills/ for Claude Code or .agents/skills/ for Codex; the agent loads it when a request matches the skill's description.</p>
+        <h3>Do meeting skills work in Cursor and other agents?</h3>
+        <p>Yes. Each listed skill is a SKILL.md folder in the Agent Skills format, which Claude Code, Codex and Cursor all read. A full skill page lists the scripts, credentials and outside hosts that skill uses under Before you install.</p>
+        <h3>How does a skill get on the Meeting Assistant page?</h3>
+        <p>A listed skill joins this topic when its name, folder or one-line summary matches the meeting keyword map for its category. A topic gets a page once 3 listed skills match it. Scores follow the published methodology, and publishers can request a listing for free.</p>
+      </section>
       <section class="panel" aria-labelledby="related-topics-title">
         <h2 id="related-topics-title">Related topics</h2>
         <p class="topic-chips"><a href="../scheduling/">Scheduling and Calendar <span class="count-chip">20</span></a><a href="../personal-assistant/">Personal Assistant <span class="count-chip">15</span></a><a href="../note-taking/">Note Taking <span class="count-chip">24</span></a><a href="../task-management/">Task Management <span class="count-chip">15</span></a><a href="../summarizer/">Summarizer <span class="count-chip">16</span></a><a href="../workflow-automation/">Workflow Automation <span class="count-chip">13</span></a><a href="../project-management/">Project Management <span class="count-chip">27</span></a></p>

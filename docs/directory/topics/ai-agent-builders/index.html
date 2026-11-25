@@ -30,7 +30,7 @@
         "name": "AI Agent Builders Skills for Claude Code and Codex",
         "description": "Browse 56 AI agent builder skills for Claude Code and Codex from 13 repositories, graded 0 to 99 and linked to source. aws-agentic-ai leads at 83/100.",
         "url": "https://skills.suedeai.ai/directory/topics/ai-agent-builders/",
-        "dateModified": "2026-11-22",
+        "dateModified": "2026-11-25",
         "inLanguage": "en",
         "isPartOf": {
           "@type": "CollectionPage",
@@ -447,6 +447,55 @@
         ]
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://skills.suedeai.ai/directory/topics/ai-agent-builders/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Which AI agent builder skill has the highest Suede Skill Check score?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "aws-agentic-ai from zxkane/aws-skills scores 83/100, grade B, the highest-scoring AI agent builder skill with a full directory page in the October 22, 2026 snapshot. It earns full points for structural checks, curated-list citations and instruction depth. langchain from Orchestra-Research/AI-Research-SKILLs follows at 77/100. Suede's own skills are not ranked."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are these AI agent builder skills free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "All 56 AI agent builder skills on this page are published in public GitHub repositories and cost nothing to download. Every one uses an open-source or open-content license, led by MIT (36), Apache-2.0 (18) and CC-BY-4.0 AND Apache-2.0 (1). 4 skills connect to an outside service, which may charge for its own use."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I install an AI agent builder skill in Claude Code or Codex?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Run npx skills add with the skill folder's GitHub URL and pick your agent when the skills CLI asks. For aws-agentic-ai, run: npx skills add https://github.com/zxkane/aws-skills/tree/main/plugins/aws-agentic-ai/skills/aws-agentic-ai. You can also copy the folder into .claude/skills/ for Claude Code or .agents/skills/ for Codex; the agent loads it when a request matches the skill's description."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do AI agent builder skills work in Cursor and other agents?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Each listed skill is a SKILL.md folder in the Agent Skills format, which Claude Code, Codex and Cursor all read. A full skill page lists the scripts, credentials and outside hosts that skill uses under Before you install."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does a skill get on the AI Agent Builders page?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A listed skill joins this topic when its name, folder or one-line summary matches the AI agent builder keyword map for its category. A topic gets a page once 3 listed skills match it. Scores follow the published methodology, and publishers can request a listing for free."
+            }
+          }
+        ]
+      }
+    </script>
     <meta name="theme-color" content="#000000">
     <link rel="preload" href="../../../assets/fonts/geist-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../../assets/fonts/geist-mono-var-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -592,6 +641,19 @@
         <p>Architecture skills (agent-architecture, agent-advisor, the Google Cloud solution designers) produce a design before any code. Run one of those first when the framework is still undecided, then add the framework skill once you have chosen.</p>
       </section>
 
+      <section class="panel faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Questions and answers</h2>
+        <h3>Which AI agent builder skill has the highest Suede Skill Check score?</h3>
+        <p>aws-agentic-ai from zxkane/aws-skills scores 83/100, grade B, the highest-scoring AI agent builder skill with a full directory page in the October 22, 2026 snapshot. It earns full points for structural checks, curated-list citations and instruction depth. langchain from Orchestra-Research/AI-Research-SKILLs follows at 77/100. Suede's own skills are not ranked.</p>
+        <h3>Are these AI agent builder skills free?</h3>
+        <p>All 56 AI agent builder skills on this page are published in public GitHub repositories and cost nothing to download. Every one uses an open-source or open-content license, led by MIT (36), Apache-2.0 (18) and CC-BY-4.0 AND Apache-2.0 (1). 4 skills connect to an outside service, which may charge for its own use.</p>
+        <h3>How do I install an AI agent builder skill in Claude Code or Codex?</h3>
+        <p>Run npx skills add with the skill folder's GitHub URL and pick your agent when the skills CLI asks. For aws-agentic-ai, run: npx skills add https://github.com/zxkane/aws-skills/tree/main/plugins/aws-agentic-ai/skills/aws-agentic-ai. You can also copy the folder into .claude/skills/ for Claude Code or .agents/skills/ for Codex; the agent loads it when a request matches the skill's description.</p>
+        <h3>Do AI agent builder skills work in Cursor and other agents?</h3>
+        <p>Yes. Each listed skill is a SKILL.md folder in the Agent Skills format, which Claude Code, Codex and Cursor all read. A full skill page lists the scripts, credentials and outside hosts that skill uses under Before you install.</p>
+        <h3>How does a skill get on the AI Agent Builders page?</h3>
+        <p>A listed skill joins this topic when its name, folder or one-line summary matches the AI agent builder keyword map for its category. A topic gets a page once 3 listed skills match it. Scores follow the published methodology, and publishers can request a listing for free.</p>
+      </section>
       <section class="panel" aria-labelledby="related-topics-title">
         <h2 id="related-topics-title">Related topics</h2>
         <p class="topic-chips"><a href="../subagents/">Subagents and Multi-Agent Orchestration <span class="count-chip">40</span></a><a href="../python/">Python <span class="count-chip">32</span></a><a href="../typescript-node/">TypeScript and Node.js <span class="count-chip">18</span></a><a href="../google-cloud/">Google Cloud <span class="count-chip">146</span></a><a href="../agent-safety/">Agent Safety and Guardrails <span class="count-chip">27</span></a><a href="../aws/">AWS <span class="count-chip">151</span></a><a href="../context-memory/">Context Engineering and Agent Memory <span class="count-chip">31</span></a><a href="../mcp-servers/">MCP Servers <span class="count-chip">82</span></a></p>

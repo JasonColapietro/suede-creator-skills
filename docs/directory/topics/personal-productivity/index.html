@@ -30,7 +30,7 @@
         "name": "Personal Productivity Skills for Claude Code and Codex",
         "description": "Browse 4 personal productivity skills for Claude Code and Codex from 4 repositories, graded 0 to 99 and linked to source. capture leads at 78/100.",
         "url": "https://skills.suedeai.ai/directory/topics/personal-productivity/",
-        "dateModified": "2026-11-22",
+        "dateModified": "2026-11-25",
         "inLanguage": "en",
         "isPartOf": {
           "@type": "CollectionPage",
@@ -135,6 +135,55 @@
         ]
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://skills.suedeai.ai/directory/topics/personal-productivity/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Which personal productivity skill has the highest Suede Skill Check score?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "capture from infrasity-labs/dev-gtm-claude-skills scores 78/100, grade C, the highest-scoring personal productivity skill with a full directory page in the October 22, 2026 snapshot. It earns full points for structural checks, instruction depth and example request. Suede's own skills are not ranked."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are these personal productivity skills free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "All 4 personal productivity skills on this page are published in public GitHub repositories and cost nothing to download. Every one uses an open-source or open-content license, led by MIT (3) and Apache-2.0 (1)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I install a personal productivity skill in Claude Code or Codex?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Run npx skills add with the skill folder's GitHub URL and pick your agent when the skills CLI asks. For capture, run: npx skills add https://github.com/infrasity-labs/dev-gtm-claude-skills/tree/main/notion-skills/capture. You can also copy the folder into .claude/skills/ for Claude Code or .agents/skills/ for Codex; the agent loads it when a request matches the skill's description."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do personal productivity skills work in Cursor and other agents?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Each listed skill is a SKILL.md folder in the Agent Skills format, which Claude Code, Codex and Cursor all read. A full skill page lists the scripts, credentials and outside hosts that skill uses under Before you install."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does a skill get on the Personal Productivity page?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A listed skill joins this topic when its name, folder or one-line summary matches the personal productivity keyword map for its category. A topic gets a page once 3 listed skills match it. Scores follow the published methodology, and publishers can request a listing for free."
+            }
+          }
+        ]
+      }
+    </script>
     <meta name="theme-color" content="#000000">
     <link rel="preload" href="../../../assets/fonts/geist-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../../assets/fonts/geist-mono-var-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -227,6 +276,19 @@
         <p>Pick one capture method and one focus method, and use them daily rather than stacking overlapping skills.</p>
       </section>
 
+      <section class="panel faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Questions and answers</h2>
+        <h3>Which personal productivity skill has the highest Suede Skill Check score?</h3>
+        <p>capture from infrasity-labs/dev-gtm-claude-skills scores 78/100, grade C, the highest-scoring personal productivity skill with a full directory page in the October 22, 2026 snapshot. It earns full points for structural checks, instruction depth and example request. Suede's own skills are not ranked.</p>
+        <h3>Are these personal productivity skills free?</h3>
+        <p>All 4 personal productivity skills on this page are published in public GitHub repositories and cost nothing to download. Every one uses an open-source or open-content license, led by MIT (3) and Apache-2.0 (1).</p>
+        <h3>How do I install a personal productivity skill in Claude Code or Codex?</h3>
+        <p>Run npx skills add with the skill folder's GitHub URL and pick your agent when the skills CLI asks. For capture, run: npx skills add https://github.com/infrasity-labs/dev-gtm-claude-skills/tree/main/notion-skills/capture. You can also copy the folder into .claude/skills/ for Claude Code or .agents/skills/ for Codex; the agent loads it when a request matches the skill's description.</p>
+        <h3>Do personal productivity skills work in Cursor and other agents?</h3>
+        <p>Yes. Each listed skill is a SKILL.md folder in the Agent Skills format, which Claude Code, Codex and Cursor all read. A full skill page lists the scripts, credentials and outside hosts that skill uses under Before you install.</p>
+        <h3>How does a skill get on the Personal Productivity page?</h3>
+        <p>A listed skill joins this topic when its name, folder or one-line summary matches the personal productivity keyword map for its category. A topic gets a page once 3 listed skills match it. Scores follow the published methodology, and publishers can request a listing for free.</p>
+      </section>
       <section class="panel" aria-labelledby="related-topics-title">
         <h2 id="related-topics-title">Related topics</h2>
         <p class="topic-chips"><a href="../task-management/">Task Management <span class="count-chip">15</span></a></p>

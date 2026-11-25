@@ -30,7 +30,7 @@
         "name": "List Your Agent Skill | Suede Skills Directory",
         "description": "Request a free listing for your agent skill. Pass the Suede Skill Check to get a category placement and a README badge that links to your listing.",
         "url": "https://skills.suedeai.ai/directory/submit/",
-        "dateModified": "2026-11-22",
+        "dateModified": "2026-11-25",
         "isPartOf": {
           "@type": "CollectionPage",
           "@id": "https://skills.suedeai.ai/directory/#directory",
@@ -94,6 +94,47 @@
             "position": 2,
             "name": "List your skill",
             "item": "https://skills.suedeai.ai/directory/submit/"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://skills.suedeai.ai/directory/submit/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does it cost anything to list a skill?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Listings, README badges and featured placements are free. The directory links to your repository and hosts none of your code."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does a skill need to be listed?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A SKILL.md with YAML frontmatter that declares a name and a description, a declared license, a description written mainly in English, and a pass on at least six of the seven graded checks of the Suede Skill Check, which cover the SKILL.md format, the description, the license and a commit to the repository in the last year."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which skills are not listed?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Templates, examples, drafts and test fixtures; duplicate copies of a skill already listed; and skills that automate posting, messaging or account activity on a social platform, work around a site's blocks or official API, have scraping a third-party site as their main job, or collect personal data by scraping a social network or map listings. The methodology lists every rule."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where will my skill appear?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In its category directory and on its repository's page, with its score, grade and license. Skills that pass all seven graded checks can also get a full page with an editorial summary, the files and commands found in the folder, install routes and a downloadable report. Topic pages whose keyword map matches its name or summary list it too."
+            }
           }
         ]
       }
@@ -202,6 +243,17 @@
       <section class="panel" aria-labelledby="check-link-title">
         <h2 id="check-link-title">Already listed?</h2>
         <p>The free <a href="../check/">Skill AI-visibility check</a> finds your listing, shows its score by component and names the points still open. It runs in your browser.</p>
+      </section>
+      <section class="panel faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Questions and answers</h2>
+        <h3>Does it cost anything to list a skill?</h3>
+        <p>No. Listings, README badges and featured placements are free. The directory links to your repository and hosts none of your code.</p>
+        <h3>What does a skill need to be listed?</h3>
+        <p>A SKILL.md with YAML frontmatter that declares a name and a description, a declared license, a description written mainly in English, and a pass on at least six of the seven graded checks of the Suede Skill Check, which cover the SKILL.md format, the description, the license and a commit to the repository in the last year.</p>
+        <h3>Which skills are not listed?</h3>
+        <p>Templates, examples, drafts and test fixtures; duplicate copies of a skill already listed; and skills that automate posting, messaging or account activity on a social platform, work around a site's blocks or official API, have scraping a third-party site as their main job, or collect personal data by scraping a social network or map listings. The methodology lists every rule.</p>
+        <h3>Where will my skill appear?</h3>
+        <p>In its category directory and on its repository's page, with its score, grade and license. Skills that pass all seven graded checks can also get a full page with an editorial summary, the files and commands found in the folder, install routes and a downloadable report. Topic pages whose keyword map matches its name or summary list it too.</p>
       </section>
       <aside class="panel cta-placement" aria-labelledby="cta-submit-success-a-next-step" data-cta-placement="submit-success" data-cta-variant="a-next-step">
         <h2 id="cta-submit-success-a-next-step">While you wait: add the listing badge</h2>

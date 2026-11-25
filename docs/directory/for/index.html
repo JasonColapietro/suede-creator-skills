@@ -30,7 +30,7 @@
         "name": "Claude Code Skills by Task: 21 Graded Shortlists",
         "description": "Find the best Claude Code skills for presentations, Playwright and browser testing, Terraform, SEO and 17 more tasks, ranked by the Suede Skill Check.",
         "url": "https://skills.suedeai.ai/directory/for/",
-        "dateModified": "2026-11-22",
+        "dateModified": "2026-11-25",
         "inLanguage": "en",
         "isPartOf": {
           "@type": "WebSite",
@@ -234,6 +234,55 @@
         ]
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://skills.suedeai.ai/directory/for/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a Claude Code skill?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A skill is a folder with a SKILL.md file: a name, a description that tells the agent when to use it, and the instructions it follows, sometimes with scripts and reference files beside it. Claude Code loads a skill when a request matches its description. Codex and Cursor read the same Agent Skills format."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How are the shortlists ranked?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "By Suede Skill Check score from 0 to 99, which adds structure, description quality, instruction depth, bundled files, maintenance and curated-list citations, all read from each skill's published files. Each repository fills at most three rows, so a table compares publishers instead of one repository's variations."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are the skills on these shortlists free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Every listed skill is published in a public GitHub repository and costs nothing to download. Each table shows the license, so you can see at a glance which skills allow commercial use. Skills that call an outside service may need an account with that service."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do the shortlists include Suede's own skills?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Suede publishes this directory, so its own skills are never ranked on a task page. They are catalogued separately on the Suede Skills site and pass the same listing rules."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How often do the shortlists change?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each directory refresh re-reads the source repositories and rescores every listed skill, so rankings follow the published files. The figures on each page name the snapshot they come from; this hub uses the October 22, 2026 snapshot."
+            }
+          }
+        ]
+      }
+    </script>
     <meta name="theme-color" content="#000000">
     <link rel="preload" href="../../assets/fonts/geist-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../assets/fonts/geist-mono-var-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -319,6 +368,29 @@
       <section class="panel" aria-labelledby="gate-title">
         <h2 id="gate-title">How a task gets a page</h2>
         <p>A task gets its own page when at least 5 listed skills match it and at least 3 of them have full directory pages scoring 80 or more. Suede's own skills are never ranked here. <a href="../methodology/">How skills are scored</a>.</p>
+      </section>
+      <section class="panel" aria-labelledby="use-title">
+        <h2 id="use-title">How to use a shortlist</h2>
+        <ol>
+          <li><b>Read the direct answer.</b> The first paragraph names the highest-scoring skill for the task and how many listed skills were compared.</li>
+          <li><b>Scan the table.</b> Each row shows the skill, its publisher, its Suede Skill Check score and its license, with a one-line description of what it does. Official publishers are marked.</li>
+          <li><b>Open the full skill page.</b> It lists the files in the skill folder, the scripts, credentials and outside hosts it uses, and copy-ready install commands for Claude Code and Codex.</li>
+          <li><b>Install one skill and try it.</b> Run the install command, then give your agent a request that matches the skill's description.</li>
+        </ol>
+        <p>No shortlist for your job yet? Browse <a href="../topics/">192 topics</a>, the <a href="../">category directories</a> or the <a href="../stacks/">recommended stacks</a>.</p>
+      </section>
+      <section class="panel faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Questions and answers</h2>
+        <h3>What is a Claude Code skill?</h3>
+        <p>A skill is a folder with a SKILL.md file: a name, a description that tells the agent when to use it, and the instructions it follows, sometimes with scripts and reference files beside it. Claude Code loads a skill when a request matches its description. Codex and Cursor read the same Agent Skills format.</p>
+        <h3>How are the shortlists ranked?</h3>
+        <p>By Suede Skill Check score from 0 to 99, which adds structure, description quality, instruction depth, bundled files, maintenance and curated-list citations, all read from each skill's published files. Each repository fills at most three rows, so a table compares publishers instead of one repository's variations.</p>
+        <h3>Are the skills on these shortlists free?</h3>
+        <p>Every listed skill is published in a public GitHub repository and costs nothing to download. Each table shows the license, so you can see at a glance which skills allow commercial use. Skills that call an outside service may need an account with that service.</p>
+        <h3>Do the shortlists include Suede's own skills?</h3>
+        <p>No. Suede publishes this directory, so its own skills are never ranked on a task page. They are catalogued separately on the Suede Skills site and pass the same listing rules.</p>
+        <h3>How often do the shortlists change?</h3>
+        <p>Each directory refresh re-reads the source repositories and rescores every listed skill, so rankings follow the published files. The figures on each page name the snapshot they come from; this hub uses the October 22, 2026 snapshot.</p>
       </section>
 
 

@@ -30,7 +30,7 @@
         "name": "Deployment and Hosting Skills for Claude Code and Codex",
         "description": "Browse 40 deployment skills for Claude Code and Codex from 10 repositories, graded 0 to 99 and linked to source.",
         "url": "https://skills.suedeai.ai/directory/topics/deployment-hosting/",
-        "dateModified": "2026-11-22",
+        "dateModified": "2026-11-25",
         "inLanguage": "en",
         "isPartOf": {
           "@type": "CollectionPage",
@@ -351,6 +351,55 @@
         ]
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://skills.suedeai.ai/directory/topics/deployment-hosting/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Which deployment skill has the highest Suede Skill Check score?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "vss-deploy-detection-tracking-2d from NVIDIA/skills scores 90/100, grade A, the highest-scoring deployment skill with a full directory page in the October 22, 2026 snapshot. It earns full points for structural checks, recent maintenance and instruction depth. eas-update-insights from expo/skills follows at 85/100. Suede's own skills are not ranked."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are these deployment skills free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "All 40 deployment skills on this page are published in public GitHub repositories and cost nothing to download. Every one uses an open-source or open-content license, led by Apache-2.0 (24) and MIT (16). One skill connects to an outside service, which may charge for its own use."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I install a deployment skill in Claude Code or Codex?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Run npx skills add with the skill folder's GitHub URL and pick your agent when the skills CLI asks. For vss-deploy-detection-tracking-2d, run: npx skills add https://github.com/NVIDIA/skills/tree/main/skills/vss-deploy-detection-tracking-2d. You can also copy the folder into .claude/skills/ for Claude Code or .agents/skills/ for Codex; the agent loads it when a request matches the skill's description."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do deployment skills work in Cursor and other agents?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Each listed skill is a SKILL.md folder in the Agent Skills format, which Claude Code, Codex and Cursor all read. A full skill page lists the scripts, credentials and outside hosts that skill uses under Before you install."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does a skill get on the Deployment and Hosting page?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A listed skill joins this topic when its name, folder or one-line summary matches the deployment keyword map for its category. A topic gets a page once 3 listed skills match it. Scores follow the published methodology, and publishers can request a listing for free."
+            }
+          }
+        ]
+      }
+    </script>
     <meta name="theme-color" content="#000000">
     <link rel="preload" href="../../../assets/fonts/geist-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../../assets/fonts/geist-mono-var-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -480,6 +529,19 @@
         <p>Mobile teams should look at the Expo EAS skills, which cover over-the-air updates, store submission and hosting from one CLI.</p>
       </section>
 
+      <section class="panel faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Questions and answers</h2>
+        <h3>Which deployment skill has the highest Suede Skill Check score?</h3>
+        <p>vss-deploy-detection-tracking-2d from NVIDIA/skills scores 90/100, grade A, the highest-scoring deployment skill with a full directory page in the October 22, 2026 snapshot. It earns full points for structural checks, recent maintenance and instruction depth. eas-update-insights from expo/skills follows at 85/100. Suede's own skills are not ranked.</p>
+        <h3>Are these deployment skills free?</h3>
+        <p>All 40 deployment skills on this page are published in public GitHub repositories and cost nothing to download. Every one uses an open-source or open-content license, led by Apache-2.0 (24) and MIT (16). One skill connects to an outside service, which may charge for its own use.</p>
+        <h3>How do I install a deployment skill in Claude Code or Codex?</h3>
+        <p>Run npx skills add with the skill folder's GitHub URL and pick your agent when the skills CLI asks. For vss-deploy-detection-tracking-2d, run: npx skills add https://github.com/NVIDIA/skills/tree/main/skills/vss-deploy-detection-tracking-2d. You can also copy the folder into .claude/skills/ for Claude Code or .agents/skills/ for Codex; the agent loads it when a request matches the skill's description.</p>
+        <h3>Do deployment skills work in Cursor and other agents?</h3>
+        <p>Yes. Each listed skill is a SKILL.md folder in the Agent Skills format, which Claude Code, Codex and Cursor all read. A full skill page lists the scripts, credentials and outside hosts that skill uses under Before you install.</p>
+        <h3>How does a skill get on the Deployment and Hosting page?</h3>
+        <p>A listed skill joins this topic when its name, folder or one-line summary matches the deployment keyword map for its category. A topic gets a page once 3 listed skills match it. Scores follow the published methodology, and publishers can request a listing for free.</p>
+      </section>
       <section class="panel" aria-labelledby="related-topics-title">
         <h2 id="related-topics-title">Related topics</h2>
         <p class="topic-chips"><a href="../azure/">Azure <span class="count-chip">78</span></a><a href="../aws/">AWS <span class="count-chip">151</span></a><a href="../google-cloud/">Google Cloud <span class="count-chip">146</span></a><a href="../expo-react-native/">Expo and React Native <span class="count-chip">29</span></a><a href="../ci-cd/">CI/CD and DevOps <span class="count-chip">39</span></a><a href="../supabase-firebase/">Supabase and Firebase <span class="count-chip">22</span></a><a href="../app-builders/">App Builders <span class="count-chip">15</span></a><a href="../cloudflare/">Cloudflare <span class="count-chip">20</span></a></p>

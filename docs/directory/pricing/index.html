@@ -30,7 +30,7 @@
         "name": "Free Agent Skills by License and Cost",
         "description": "Which Claude Code skills are free? 3,484 use an open license with no paid service. Browse every listed skill by cost and license.",
         "url": "https://skills.suedeai.ai/directory/pricing/",
-        "dateModified": "2026-11-22",
+        "dateModified": "2026-11-25",
         "inLanguage": "en",
         "isPartOf": {
           "@type": "CollectionPage",
@@ -158,6 +158,22 @@
               "@type": "Answer",
               "text": "Skills under open-source or open-content licenses allow it under their terms. Non-commercial licenses do not, and restricted licenses need the publisher's permission. Each listing links to its license file."
             }
+          },
+          {
+            "@type": "Question",
+            "name": "Do free skills cost anything to run?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A skill in the free and open source lane names no paid service, API key or hosted account, so it runs on your agent alone. A skill in the needs a service lane is free itself, but it reads an API key, calls an outside host or connects to an MCP server, and that service may charge for its own use."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I check a skill's license before installing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Every listing names its license and links to the license file at the source. Pages for skills under non-commercial or restricted terms flag them next to the license, and every task shortlist shows the license of each skill it compares."
+            }
           }
         ]
       }
@@ -235,6 +251,10 @@
         <p>From saved install evidence: environment variables, MCP servers, outside hosts and HTTP requests declared in code or instructions. Network dependencies are retained even without a full page. Listings without install evidence fall back to the compatibility line in SKILL.md.</p>
         <h3>Can I use these skills in commercial work?</h3>
         <p>Skills under open-source or open-content licenses allow it under their terms. Non-commercial licenses do not, and restricted licenses need the publisher's permission. Each listing links to its license file.</p>
+        <h3>Do free skills cost anything to run?</h3>
+        <p>A skill in the free and open source lane names no paid service, API key or hosted account, so it runs on your agent alone. A skill in the needs a service lane is free itself, but it reads an API key, calls an outside host or connects to an MCP server, and that service may charge for its own use.</p>
+        <h3>How do I check a skill's license before installing?</h3>
+        <p>Every listing names its license and links to the license file at the source. Pages for skills under non-commercial or restricted terms flag them next to the license, and every task shortlist shows the license of each skill it compares.</p>
       </section>
       <aside class="panel svc-cta" aria-labelledby="svc-title" data-services-cta="browse-hub">
         <h2 class="svc-kicker" id="svc-title">From Suede, the publisher of this directory</h2>

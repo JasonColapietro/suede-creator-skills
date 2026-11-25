@@ -30,7 +30,7 @@
         "name": "Subagents and Multi-Agent Orchestration Agent Skills",
         "description": "Browse 40 subagent skills for Claude Code and Codex from 19 repositories, graded 0 to 99 and linked to source. slicing-code-context leads at 89/100.",
         "url": "https://skills.suedeai.ai/directory/topics/subagents/",
-        "dateModified": "2026-11-22",
+        "dateModified": "2026-11-25",
         "inLanguage": "en",
         "isPartOf": {
           "@type": "CollectionPage",
@@ -351,6 +351,55 @@
         ]
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://skills.suedeai.ai/directory/topics/subagents/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Which subagent skill has the highest Suede Skill Check score?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "slicing-code-context from trailofbits/skills scores 89/100, grade B, the highest-scoring subagent skill with a full directory page in the October 22, 2026 snapshot. It earns full points for structural checks, recent maintenance and curated-list citations. grok-build from sanjay3290/ai-skills follows at 87/100. Suede's own skills are not ranked."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are these subagent skills free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "All 40 subagent skills on this page are published in public GitHub repositories and cost nothing to download. 39 use an open-source or open-content license, led by MIT (16), Apache-2.0 (13) and GPL-3.0 (8). agent-orchestration-advisor allows non-commercial use only. 2 skills connect to an outside service, which may charge for its own use."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I install a subagent skill in Claude Code or Codex?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Run npx skills add with the skill folder's GitHub URL and pick your agent when the skills CLI asks. For slicing-code-context, run: npx skills add https://github.com/trailofbits/skills/tree/main/plugins/trailmark/skills/slicing-code-context. You can also copy the folder into .claude/skills/ for Claude Code or .agents/skills/ for Codex; the agent loads it when a request matches the skill's description."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do subagent skills work in Cursor and other agents?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Each listed skill is a SKILL.md folder in the Agent Skills format, which Claude Code, Codex and Cursor all read. A full skill page lists the scripts, credentials and outside hosts that skill uses under Before you install."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does a skill get on the Subagents and Multi-Agent Orchestration page?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A listed skill joins this topic when its name, folder or one-line summary matches the subagent keyword map for its category. A topic gets a page once 3 listed skills match it. Scores follow the published methodology, and publishers can request a listing for free."
+            }
+          }
+        ]
+      }
+    </script>
     <meta name="theme-color" content="#000000">
     <link rel="preload" href="../../../assets/fonts/geist-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../../assets/fonts/geist-mono-var-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -480,6 +529,19 @@
         <p>Use the design guides (multi-agent-patterns, agent-orchestration-advisor) before you write a workflow script. They cover context isolation, handoffs and when one agent is enough, which saves tokens on tasks that do not split cleanly.</p>
       </section>
 
+      <section class="panel faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Questions and answers</h2>
+        <h3>Which subagent skill has the highest Suede Skill Check score?</h3>
+        <p>slicing-code-context from trailofbits/skills scores 89/100, grade B, the highest-scoring subagent skill with a full directory page in the October 22, 2026 snapshot. It earns full points for structural checks, recent maintenance and curated-list citations. grok-build from sanjay3290/ai-skills follows at 87/100. Suede's own skills are not ranked.</p>
+        <h3>Are these subagent skills free?</h3>
+        <p>All 40 subagent skills on this page are published in public GitHub repositories and cost nothing to download. 39 use an open-source or open-content license, led by MIT (16), Apache-2.0 (13) and GPL-3.0 (8). agent-orchestration-advisor allows non-commercial use only. 2 skills connect to an outside service, which may charge for its own use.</p>
+        <h3>How do I install a subagent skill in Claude Code or Codex?</h3>
+        <p>Run npx skills add with the skill folder's GitHub URL and pick your agent when the skills CLI asks. For slicing-code-context, run: npx skills add https://github.com/trailofbits/skills/tree/main/plugins/trailmark/skills/slicing-code-context. You can also copy the folder into .claude/skills/ for Claude Code or .agents/skills/ for Codex; the agent loads it when a request matches the skill's description.</p>
+        <h3>Do subagent skills work in Cursor and other agents?</h3>
+        <p>Yes. Each listed skill is a SKILL.md folder in the Agent Skills format, which Claude Code, Codex and Cursor all read. A full skill page lists the scripts, credentials and outside hosts that skill uses under Before you install.</p>
+        <h3>How does a skill get on the Subagents and Multi-Agent Orchestration page?</h3>
+        <p>A listed skill joins this topic when its name, folder or one-line summary matches the subagent keyword map for its category. A topic gets a page once 3 listed skills match it. Scores follow the published methodology, and publishers can request a listing for free.</p>
+      </section>
       <section class="panel" aria-labelledby="related-topics-title">
         <h2 id="related-topics-title">Related topics</h2>
         <p class="topic-chips"><a href="../ai-agent-builders/">AI Agent Builders <span class="count-chip">56</span></a><a href="../code-assistant/">Code Assistants <span class="count-chip">21</span></a><a href="../coding-agents/">Codex, Cursor and Coding Agents <span class="count-chip">23</span></a><a href="../context-memory/">Context Engineering and Agent Memory <span class="count-chip">31</span></a><a href="../google-cloud/">Google Cloud <span class="count-chip">146</span></a><a href="../claude-code-config/">Claude Code Setup and Hooks <span class="count-chip">31</span></a><a href="../evals/">Evals and Benchmarks <span class="count-chip">27</span></a><a href="../prompt-engineering/">Prompt Engineering <span class="count-chip">28</span></a></p>

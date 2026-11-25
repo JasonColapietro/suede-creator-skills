@@ -30,7 +30,7 @@
         "name": "Experiments and Playgrounds Skills for Claude Code and Codex",
         "description": "Browse 3 experiment and playground skills for Claude Code and Codex from 3 repositories, graded 0 to 99 and linked to source.",
         "url": "https://skills.suedeai.ai/directory/topics/experiments-playgrounds/",
-        "dateModified": "2026-11-22",
+        "dateModified": "2026-11-25",
         "inLanguage": "en",
         "isPartOf": {
           "@type": "CollectionPage",
@@ -129,6 +129,47 @@
         ]
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://skills.suedeai.ai/directory/topics/experiments-playgrounds/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Are these experiment and playground skills free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "All 3 experiment and playground skills on this page are published in public GitHub repositories and cost nothing to download. 2 use an open-source or open-content license, led by Apache-2.0 (1) and MIT (1). what-if-oracle allows non-commercial use only."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I install an experiment and playground skill in Claude Code or Codex?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Run npx skills add with the skill folder's GitHub URL and pick your agent when the skills CLI asks. For playground, run: npx skills add https://github.com/anthropics/claude-plugins-official/tree/main/plugins/playground/skills/playground. You can also copy the folder into .claude/skills/ for Claude Code or .agents/skills/ for Codex; the agent loads it when a request matches the skill's description."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do experiment and playground skills work in Cursor and other agents?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Each listed skill is a SKILL.md folder in the Agent Skills format, which Claude Code, Codex and Cursor all read. A full skill page lists the scripts, credentials and outside hosts that skill uses under Before you install."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does a skill get on the Experiments and Playgrounds page?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A listed skill joins this topic when its name, folder or one-line summary matches the experiment and playground keyword map for its category. A topic gets a page once 3 listed skills match it. Scores follow the published methodology, and publishers can request a listing for free."
+            }
+          }
+        ]
+      }
+    </script>
     <meta name="theme-color" content="#000000">
     <link rel="preload" href="../../../assets/fonts/geist-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../../assets/fonts/geist-mono-var-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -221,6 +262,17 @@
         <p>All three are light installs with no keys, which makes them easy to try on a real question today.</p>
       </section>
 
+      <section class="panel faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Questions and answers</h2>
+        <h3>Are these experiment and playground skills free?</h3>
+        <p>All 3 experiment and playground skills on this page are published in public GitHub repositories and cost nothing to download. 2 use an open-source or open-content license, led by Apache-2.0 (1) and MIT (1). what-if-oracle allows non-commercial use only.</p>
+        <h3>How do I install an experiment and playground skill in Claude Code or Codex?</h3>
+        <p>Run npx skills add with the skill folder's GitHub URL and pick your agent when the skills CLI asks. For playground, run: npx skills add https://github.com/anthropics/claude-plugins-official/tree/main/plugins/playground/skills/playground. You can also copy the folder into .claude/skills/ for Claude Code or .agents/skills/ for Codex; the agent loads it when a request matches the skill's description.</p>
+        <h3>Do experiment and playground skills work in Cursor and other agents?</h3>
+        <p>Yes. Each listed skill is a SKILL.md folder in the Agent Skills format, which Claude Code, Codex and Cursor all read. A full skill page lists the scripts, credentials and outside hosts that skill uses under Before you install.</p>
+        <h3>How does a skill get on the Experiments and Playgrounds page?</h3>
+        <p>A listed skill joins this topic when its name, folder or one-line summary matches the experiment and playground keyword map for its category. A topic gets a page once 3 listed skills match it. Scores follow the published methodology, and publishers can request a listing for free.</p>
+      </section>
 
       <aside class="panel svc-cta" aria-labelledby="svc-title" data-services-cta="browse">
         <h2 class="svc-kicker" id="svc-title">From Suede, the publisher of this directory</h2>
