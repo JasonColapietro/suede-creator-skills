@@ -58,8 +58,8 @@ Studio". Domains (suedeai.ai, SuedeAI.directory), package names, registry ids
 and the GitHub org are not brand copy and keep their spelling.
 
 "Suede AI" and "Suede Labs" appear in public copy only as schema.org
-`alternateName` aliases and in the single "Suede was formerly known as Suede AI
-and Suede Labs." line in `docs/llms.txt`. The guard is
+`alternateName` aliases and in the single "Suede was formerly known as Suede Labs AI
+and Suede AI." line in `docs/llms.txt`. The guard is
 `test_public_copy_names_the_company_suede` in
 `tests/test_neutral_oss_positioning.py` (run by `npm test`); when it fails,
 write "Suede", do not add an exemption. Dated blog posts keep their frozen
