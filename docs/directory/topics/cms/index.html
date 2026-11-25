@@ -30,7 +30,7 @@
         "name": "CMS, Sanity and WordPress Skills for Claude Code and Codex",
         "description": "Browse 13 CMS skills for Claude Code and Codex from 6 repositories, graded 0 to 99 and linked to source. building-blog leads at 77/100.",
         "url": "https://skills.suedeai.ai/directory/topics/cms/",
-        "dateModified": "2026-11-22",
+        "dateModified": "2026-11-25",
         "inLanguage": "en",
         "isPartOf": {
           "@type": "CollectionPage",
@@ -189,6 +189,55 @@
         ]
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://skills.suedeai.ai/directory/topics/cms/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Which CMS skill has the highest Suede Skill Check score?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "building-blog from BuildShipGrowRepeat/nextjs-sanity-blog-skill scores 77/100, grade C, the highest-scoring CMS skill with a full directory page in the October 22, 2026 snapshot. It earns full points for structural checks, instruction depth and description length. Suede's own skills are not ranked."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are these CMS skills free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "All 13 CMS skills on this page are published in public GitHub repositories and cost nothing to download. Every one uses the MIT license."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I install a CMS skill in Claude Code or Codex?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Run npx skills add with the skill folder's GitHub URL and pick your agent when the skills CLI asks. For building-blog, run: npx skills add https://github.com/BuildShipGrowRepeat/nextjs-sanity-blog-skill/tree/main/skills/building-blog. You can also copy the folder into .claude/skills/ for Claude Code or .agents/skills/ for Codex; the agent loads it when a request matches the skill's description."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do CMS skills work in Cursor and other agents?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Each listed skill is a SKILL.md folder in the Agent Skills format, which Claude Code, Codex and Cursor all read. A full skill page lists the scripts, credentials and outside hosts that skill uses under Before you install."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does a skill get on the CMS, Sanity and WordPress page?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A listed skill joins this topic when its name, folder or one-line summary matches the CMS keyword map for its category. A topic gets a page once 3 listed skills match it. Scores follow the published methodology, and publishers can request a listing for free."
+            }
+          }
+        ]
+      }
+    </script>
     <meta name="theme-color" content="#000000">
     <link rel="preload" href="../../../assets/fonts/geist-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../../assets/fonts/geist-mono-var-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -290,6 +339,19 @@
         <p>For a new blog on Next.js and Sanity, the building-blog skill walks through the full section, including SEO.</p>
       </section>
 
+      <section class="panel faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Questions and answers</h2>
+        <h3>Which CMS skill has the highest Suede Skill Check score?</h3>
+        <p>building-blog from BuildShipGrowRepeat/nextjs-sanity-blog-skill scores 77/100, grade C, the highest-scoring CMS skill with a full directory page in the October 22, 2026 snapshot. It earns full points for structural checks, instruction depth and description length. Suede's own skills are not ranked.</p>
+        <h3>Are these CMS skills free?</h3>
+        <p>All 13 CMS skills on this page are published in public GitHub repositories and cost nothing to download. Every one uses the MIT license.</p>
+        <h3>How do I install a CMS skill in Claude Code or Codex?</h3>
+        <p>Run npx skills add with the skill folder's GitHub URL and pick your agent when the skills CLI asks. For building-blog, run: npx skills add https://github.com/BuildShipGrowRepeat/nextjs-sanity-blog-skill/tree/main/skills/building-blog. You can also copy the folder into .claude/skills/ for Claude Code or .agents/skills/ for Codex; the agent loads it when a request matches the skill's description.</p>
+        <h3>Do CMS skills work in Cursor and other agents?</h3>
+        <p>Yes. Each listed skill is a SKILL.md folder in the Agent Skills format, which Claude Code, Codex and Cursor all read. A full skill page lists the scripts, credentials and outside hosts that skill uses under Before you install.</p>
+        <h3>How does a skill get on the CMS, Sanity and WordPress page?</h3>
+        <p>A listed skill joins this topic when its name, folder or one-line summary matches the CMS keyword map for its category. A topic gets a page once 3 listed skills match it. Scores follow the published methodology, and publishers can request a listing for free.</p>
+      </section>
       <section class="panel" aria-labelledby="related-topics-title">
         <h2 id="related-topics-title">Related topics</h2>
         <p class="topic-chips"><a href="../shopify-ecommerce-dev/">Shopify and E-commerce Development <span class="count-chip">4</span></a><a href="../dependency-management/">Dependency Management <span class="count-chip">23</span></a><a href="../react-nextjs/">React and Next.js <span class="count-chip">30</span></a></p>

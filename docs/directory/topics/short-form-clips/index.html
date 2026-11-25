@@ -30,7 +30,7 @@
         "name": "Short-Form Clips and Reels Skills for Claude Code and Codex",
         "description": "Browse 7 short-form video skills for Claude Code and Codex from 4 repositories, graded 0 to 99 and linked to source. capcut-edit leads at 85/100.",
         "url": "https://skills.suedeai.ai/directory/topics/short-form-clips/",
-        "dateModified": "2026-11-22",
+        "dateModified": "2026-11-25",
         "inLanguage": "en",
         "isPartOf": {
           "@type": "CollectionPage",
@@ -153,6 +153,55 @@
         ]
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://skills.suedeai.ai/directory/topics/short-form-clips/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Which short-form video skill has the highest Suede Skill Check score?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "capcut-edit from renezander030/capcut-cli scores 85/100, grade B, the highest-scoring short-form video skill with a full directory page in the October 22, 2026 snapshot. It earns full points for structural checks, recent maintenance and instruction depth. Suede's own skills are not ranked."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are these short-form video skills free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "All 7 short-form video skills on this page are published in public GitHub repositories and cost nothing to download. Every one uses an open-source or open-content license, led by MIT (6) and CC0-1.0 (1)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I install a short-form video skill in Claude Code or Codex?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Run npx skills add with the skill folder's GitHub URL and pick your agent when the skills CLI asks. For capcut-edit, run: npx skills add https://github.com/renezander030/capcut-cli/tree/master/skills/capcut-edit. You can also copy the folder into .claude/skills/ for Claude Code or .agents/skills/ for Codex; the agent loads it when a request matches the skill's description."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do short-form video skills work in Cursor and other agents?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Each listed skill is a SKILL.md folder in the Agent Skills format, which Claude Code, Codex and Cursor all read. A full skill page lists the scripts, credentials and outside hosts that skill uses under Before you install."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does a skill get on the Short-Form Clips and Reels page?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A listed skill joins this topic when its name, folder or one-line summary matches the short-form video keyword map for its category. A topic gets a page once 3 listed skills match it. Scores follow the published methodology, and publishers can request a listing for free."
+            }
+          }
+        ]
+      }
+    </script>
     <meta name="theme-color" content="#000000">
     <link rel="preload" href="../../../assets/fonts/geist-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../../assets/fonts/geist-mono-var-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -253,6 +302,19 @@
           <a class="link-row" href="../../for/video/"><b>Best Claude Code skills for video</b><span>Top pick: youtube-api (90/100) &middot; 15 skills compared</span></a>
         </div>
         <p><a href="../../for/">All Claude Code skills by task</a></p>
+      </section>
+      <section class="panel faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Questions and answers</h2>
+        <h3>Which short-form video skill has the highest Suede Skill Check score?</h3>
+        <p>capcut-edit from renezander030/capcut-cli scores 85/100, grade B, the highest-scoring short-form video skill with a full directory page in the October 22, 2026 snapshot. It earns full points for structural checks, recent maintenance and instruction depth. Suede's own skills are not ranked.</p>
+        <h3>Are these short-form video skills free?</h3>
+        <p>All 7 short-form video skills on this page are published in public GitHub repositories and cost nothing to download. Every one uses an open-source or open-content license, led by MIT (6) and CC0-1.0 (1).</p>
+        <h3>How do I install a short-form video skill in Claude Code or Codex?</h3>
+        <p>Run npx skills add with the skill folder's GitHub URL and pick your agent when the skills CLI asks. For capcut-edit, run: npx skills add https://github.com/renezander030/capcut-cli/tree/master/skills/capcut-edit. You can also copy the folder into .claude/skills/ for Claude Code or .agents/skills/ for Codex; the agent loads it when a request matches the skill's description.</p>
+        <h3>Do short-form video skills work in Cursor and other agents?</h3>
+        <p>Yes. Each listed skill is a SKILL.md folder in the Agent Skills format, which Claude Code, Codex and Cursor all read. A full skill page lists the scripts, credentials and outside hosts that skill uses under Before you install.</p>
+        <h3>How does a skill get on the Short-Form Clips and Reels page?</h3>
+        <p>A listed skill joins this topic when its name, folder or one-line summary matches the short-form video keyword map for its category. A topic gets a page once 3 listed skills match it. Scores follow the published methodology, and publishers can request a listing for free.</p>
       </section>
       <section class="panel" aria-labelledby="related-topics-title">
         <h2 id="related-topics-title">Related topics</h2>

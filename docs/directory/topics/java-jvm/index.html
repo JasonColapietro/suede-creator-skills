@@ -30,7 +30,7 @@
         "name": "Java and JVM Skills for Claude Code and Codex",
         "description": "Browse 20 Java and JVM skills for Claude Code and Codex from 3 repositories, graded 0 to 99 and linked to source.",
         "url": "https://skills.suedeai.ai/directory/topics/java-jvm/",
-        "dateModified": "2026-11-22",
+        "dateModified": "2026-11-25",
         "inLanguage": "en",
         "isPartOf": {
           "@type": "CollectionPage",
@@ -231,6 +231,47 @@
         ]
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://skills.suedeai.ai/directory/topics/java-jvm/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Are these Java and JVM skills free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "All 20 Java and JVM skills on this page are published in public GitHub repositories and cost nothing to download. Every one uses the MIT license."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I install a Java and JVM skill in Claude Code or Codex?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Run npx skills add with the skill folder's GitHub URL and pick your agent when the skills CLI asks. For create-quarkus-project, run: npx skills add https://github.com/github/awesome-copilot/tree/main/skills/create-quarkus-project. You can also copy the folder into .claude/skills/ for Claude Code or .agents/skills/ for Codex; the agent loads it when a request matches the skill's description."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do Java and JVM skills work in Cursor and other agents?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Each listed skill is a SKILL.md folder in the Agent Skills format, which Claude Code, Codex and Cursor all read. A full skill page lists the scripts, credentials and outside hosts that skill uses under Before you install."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does a skill get on the Java and JVM page?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A listed skill joins this topic when its name, folder or one-line summary matches the Java and JVM keyword map for its category. A topic gets a page once 3 listed skills match it. Scores follow the published methodology, and publishers can request a listing for free."
+            }
+          }
+        ]
+      }
+    </script>
     <meta name="theme-color" content="#000000">
     <link rel="preload" href="../../../assets/fonts/geist-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../../assets/fonts/geist-mono-var-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -339,6 +380,17 @@
         <p>Most of these are Markdown guidance from the awesome-copilot collection, so they run with your existing Maven or Gradle setup.</p>
       </section>
 
+      <section class="panel faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Questions and answers</h2>
+        <h3>Are these Java and JVM skills free?</h3>
+        <p>All 20 Java and JVM skills on this page are published in public GitHub repositories and cost nothing to download. Every one uses the MIT license.</p>
+        <h3>How do I install a Java and JVM skill in Claude Code or Codex?</h3>
+        <p>Run npx skills add with the skill folder's GitHub URL and pick your agent when the skills CLI asks. For create-quarkus-project, run: npx skills add https://github.com/github/awesome-copilot/tree/main/skills/create-quarkus-project. You can also copy the folder into .claude/skills/ for Claude Code or .agents/skills/ for Codex; the agent loads it when a request matches the skill's description.</p>
+        <h3>Do Java and JVM skills work in Cursor and other agents?</h3>
+        <p>Yes. Each listed skill is a SKILL.md folder in the Agent Skills format, which Claude Code, Codex and Cursor all read. A full skill page lists the scripts, credentials and outside hosts that skill uses under Before you install.</p>
+        <h3>How does a skill get on the Java and JVM page?</h3>
+        <p>A listed skill joins this topic when its name, folder or one-line summary matches the Java and JVM keyword map for its category. A topic gets a page once 3 listed skills match it. Scores follow the published methodology, and publishers can request a listing for free.</p>
+      </section>
       <section class="panel" aria-labelledby="related-topics-title">
         <h2 id="related-topics-title">Related topics</h2>
         <p class="topic-chips"><a href="../test-automation/">Test Automation <span class="count-chip">134</span></a><a href="../unit-testing/">Unit Testing <span class="count-chip">42</span></a><a href="../code-assistant/">Code Assistants <span class="count-chip">21</span></a><a href="../refactoring/">Refactoring <span class="count-chip">23</span></a><a href="../authentication/">Authentication and Login <span class="count-chip">16</span></a><a href="../dependency-management/">Dependency Management <span class="count-chip">23</span></a><a href="../docker-containers/">Docker and Containers <span class="count-chip">22</span></a><a href="../documentation/">Documentation and READMEs <span class="count-chip">44</span></a></p>

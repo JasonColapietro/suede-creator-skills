@@ -30,7 +30,7 @@
         "name": "Agent Skills by Capability: MCP, Scripts, No Setup",
         "description": "Filter Claude Code skills by capability: official publishers, MCP servers, API keys, bundled scripts, no setup required and 9 more.",
         "url": "https://skills.suedeai.ai/directory/features/",
-        "dateModified": "2026-11-22",
+        "dateModified": "2026-11-25",
         "inLanguage": "en",
         "isPartOf": {
           "@type": "CollectionPage",
@@ -189,6 +189,47 @@
         ]
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://skills.suedeai.ai/directory/features/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does the directory decide a skill has a capability?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each capability is a yes or no fact read from the skill's published files: its SKILL.md frontmatter, the folders that ship with it, and the commands, hosts, credentials and MCP servers its scripts and instructions declare."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does install evidence mean?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "772 listed skills have saved install facts. Those facts record the credentials, MCP servers, outside hosts and commands a skill's files declare. Filters marked install evidence count only those skills, so a skill without saved facts is not counted as needing nothing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does No setup required mean?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The skill's files read no credential, call no outside host, connect to no MCP server and run no command. You install the folder and the agent can use it right away."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I combine capability filters?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Each capability page links to every category directory with that filter already applied, so you can narrow a capability to one kind of work. For cost, use the 4 cost and license lanes."
+            }
+          }
+        ]
+      }
+    </script>
     <meta name="theme-color" content="#000000">
     <link rel="preload" href="../../assets/fonts/geist-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../assets/fonts/geist-mono-var-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -263,6 +304,31 @@
           <a class="link-row" href="runs-commands/"><b>Runs commands (102 of 772 with install evidence)</b><span>Skills whose files run package managers, CLIs or other commands.</span></a>
           <a class="link-row" href="no-setup/"><b>No setup required (484 of 772 with install evidence)</b><span>Skills whose files read no credential, call no outside host, connect to no MCP server and run no command: install and go.</span></a>
         </div>
+      </section>
+      <section class="panel" aria-labelledby="pick-title">
+        <h2 id="pick-title">Which capabilities to check first</h2>
+        <dl>
+          <dt>A locked-down or offline machine</dt>
+          <dd>Start with skills whose files read no credential, call no outside host and run no command, or with single-file skills you can read in full before installing. <a href="no-setup/">No setup required</a> &middot; <a href="markdown-only/">SKILL.md only</a></dd>
+          <dt>Work inside a product you already use</dt>
+          <dd>Pick skills from the company behind the tool, or skills that connect to that tool through an MCP server. <a href="official/">Official publisher</a> &middot; <a href="mcp/">Uses an MCP server</a></dd>
+          <dt>Repeatable results on real files</dt>
+          <dd>Skills that bundle scripts or templates hand the agent code and files the author wrote instead of asking it to improvise them. <a href="scripts/">Bundles scripts</a> &middot; <a href="assets/">Bundles assets or templates</a></dd>
+          <dt>A security review before install</dt>
+          <dd>See which tools a skill may call, which hosts it reaches and which credentials it reads. <a href="allowed-tools/">Declares tool permissions</a> &middot; <a href="network/">Calls outside services</a> &middot; <a href="api-key/">Needs an API key or account</a></dd>
+        </dl>
+        <p>For what a skill costs to run, browse by <a href="../pricing/">cost and license</a>. For the job it does, browse by <a href="../topics/">topic</a>.</p>
+      </section>
+      <section class="panel faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Questions and answers</h2>
+        <h3>How does the directory decide a skill has a capability?</h3>
+        <p>Each capability is a yes or no fact read from the skill's published files: its SKILL.md frontmatter, the folders that ship with it, and the commands, hosts, credentials and MCP servers its scripts and instructions declare.</p>
+        <h3>What does install evidence mean?</h3>
+        <p>772 listed skills have saved install facts. Those facts record the credentials, MCP servers, outside hosts and commands a skill's files declare. Filters marked install evidence count only those skills, so a skill without saved facts is not counted as needing nothing.</p>
+        <h3>What does No setup required mean?</h3>
+        <p>The skill's files read no credential, call no outside host, connect to no MCP server and run no command. You install the folder and the agent can use it right away.</p>
+        <h3>Can I combine capability filters?</h3>
+        <p>Yes. Each capability page links to every category directory with that filter already applied, so you can narrow a capability to one kind of work. For cost, use the 4 cost and license lanes.</p>
       </section>
       <aside class="panel svc-cta" aria-labelledby="svc-title" data-services-cta="browse-hub">
         <h2 class="svc-kicker" id="svc-title">From Suede, the publisher of this directory</h2>
