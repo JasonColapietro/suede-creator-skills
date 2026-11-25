@@ -32,7 +32,8 @@
   "OakcoderX/awesome-agent-skills",
   "korey2028-prog/resume-claim-guard",
   "inhotel-io/govisit-toolkit",
-  "rnthking/redya-skills"
+  "rnthking/redya-skills",
+  "moonlitnayeem/fairvalid-ai"
  ],
  "skills": {
   "appierun/appie-mcp": [
@@ -1016,6 +1017,10 @@
   ],
   "rnthking/redya-skills": [
    "redya-xiaohongshu"
+  ],
+  "moonlitnayeem/fairvalid-ai": [
+   "email-verification",
+   "fairmatch-leads"
   ]
  },
  "skill_roots": {
@@ -1198,6 +1203,10 @@
   ],
   "rnthking/redya-skills": [
    "skill/redya-xiaohongshu"
+  ],
+  "moonlitnayeem/fairvalid-ai": [
+   "skills/email-verification",
+   "skills/fairmatch-leads"
   ]
  }
 }
