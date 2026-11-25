@@ -30,7 +30,7 @@
         "name": "Skill AI-Visibility Check: Score Your Agent Skill",
         "description": "Free check for skill publishers: see your directory score, the points still open and what to fix so people and AI assistants find your skill.",
         "url": "https://skills.suedeai.ai/directory/check/",
-        "dateModified": "2026-11-22",
+        "dateModified": "2026-11-25",
         "inLanguage": "en",
         "isPartOf": {
           "@type": "CollectionPage",
@@ -95,6 +95,47 @@
             "position": 2,
             "name": "Skill AI-visibility check",
             "item": "https://skills.suedeai.ai/directory/check/"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://skills.suedeai.ai/directory/check/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is the Skill AI-visibility check free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. It is free with no signup, and a listing in the directory, its README badges and featured placements are free as well."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the check send my repository anywhere?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. It runs in your browser and reads only the directory's published files. Nothing you type is sent to Suede or anyone else, and the page stores nothing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if my skill is not in the directory?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The check tells you so and links to the free listing request. Once a listing is accepted, the skill is scored at the next directory refresh and gets a listing page, a README badge and a report of the points it can still earn."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which fixes raise a score the most?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The rubric awards points for structure, description length, a when-not-to-use clause, an example request, instruction depth, reference files, scripts, declared tools and compatibility, and recent maintenance. The check lists the three largest open points you control, so you can start with the biggest gain."
+            }
           }
         ]
       }
@@ -193,6 +234,17 @@
       <section class="panel" aria-labelledby="how-check-title">
         <h2 id="how-check-title">How the check works</h2>
         <p>It looks your skill up in the directory’s October 22, 2026 snapshot of 3,906 listed skills, then reads that listing’s report: the graded-v2 score, each component’s points and the three largest open points a publisher controls. Curated-list citations are left out of the suggestions because other people award them. <a href="../methodology/#score">Read the scoring rubric</a>. For the full approach, read <a href="../guides/skill-ai-visibility/">How to get your agent skill found in search and cited by AI assistants</a>.</p>
+      </section>
+      <section class="panel faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Questions and answers</h2>
+        <h3>Is the Skill AI-visibility check free?</h3>
+        <p>Yes. It is free with no signup, and a listing in the directory, its README badges and featured placements are free as well.</p>
+        <h3>Does the check send my repository anywhere?</h3>
+        <p>No. It runs in your browser and reads only the directory's published files. Nothing you type is sent to Suede or anyone else, and the page stores nothing.</p>
+        <h3>What if my skill is not in the directory?</h3>
+        <p>The check tells you so and links to the free listing request. Once a listing is accepted, the skill is scored at the next directory refresh and gets a listing page, a README badge and a report of the points it can still earn.</p>
+        <h3>Which fixes raise a score the most?</h3>
+        <p>The rubric awards points for structure, description length, a when-not-to-use clause, an example request, instruction depth, reference files, scripts, declared tools and compatibility, and recent maintenance. The check lists the three largest open points you control, so you can start with the biggest gain.</p>
       </section>
       <script type="application/json" id="check-rubric">{"structure":"8 points for each of the seven graded checks","description_length":"5 for 150–600 characters; 3 for 100–900; 1 for 50–1,024","boundary":"4 when the description says when not to use the skill (“Not for …”, “Do not use …”, “Use … instead”)","example":"3 when the description quotes an example request (3–60 characters in quotation marks)","depth":"7 for a SKILL.md body of 500–3,000 words; 4 for 250–4,500; 1 for 100 or more","references":"3 when the skill folder ships a references/, reference/ or docs/ folder","scripts":"2 when the skill folder ships a scripts/ folder","recency":"9 for a repository commit within 30 days of the snapshot; 6 within 90; 3 within 180; 1 within 365","adoption":"7 for a repository cited by four or more curated lists; 4 for three; 3 for two; 1 for one","allowed_tools":"2 when the frontmatter declares allowed-tools","compatibility":"2 when the frontmatter declares compatibility"}</script>
       <script src="check.js" defer></script>

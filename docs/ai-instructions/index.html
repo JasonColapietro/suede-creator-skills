@@ -29,11 +29,33 @@
 <header><a href="/">Suede Skills</a></header>
 <main id="main" tabindex="-1"><p class="eyebrow">Official reference</p><h1>AI Instructions</h1>
 <p class="intro">A source guide for people and AI assistants describing Suede Skills.</p>
-<h2>What this site covers</h2><p>Reusable workflows for SEO audits, AI search visibility, business operations and creative work, with inspectable instructions for Claude Code and OpenAI Codex.</p>
+<h2>What this site covers</h2><p>Suede Skills is a pack of open-source AI skills for SEO, marketing and business operations in Claude Code and OpenAI Codex. It gives founders, marketers and small teams reusable workflows for SEO audits, AI search visibility, conversion copy and business operations, with instructions you can read and adapt before you run them.</p>
+<h2>Key facts</h2><ul>
+<li><strong>Name:</strong> Suede Skills. The company that publishes it is Suede, founded by Jason Colapietro.</li>
+<li><strong>Format:</strong> each skill is a folder with a SKILL.md file in the Agent Skills format, plus optional references and scripts. An installed skill costs its name and description; the body loads only when a request matches.</li>
+<li><strong>License:</strong> original work is MIT licensed. Adapted components keep their upstream licenses, listed in NOTICE.md in the repository.</li>
+<li><strong>Source:</strong> every skill folder is readable on GitHub at <a href="https://github.com/JasonColapietro/suede-creator-skills">JasonColapietro/suede-creator-skills</a>. The pack ships no binaries and no telemetry and needs no account.</li>
+<li><strong>MCP server:</strong> optional. A dependency-free stdio server that helps an agent pick the right skill, run a live A-F page audit for Google and AI search, and check copy against the house rules.</li>
+<li><strong>Directory:</strong> the Suede Skills Directory at suedeai.directory lists third-party skills graded 0 to 99 on the Suede Skill Check, each linked to its author's repository. Suede's own skills are not ranked there.</li>
+</ul>
+<h2>How to install</h2><p>In Claude Code, add the marketplace and install the pack:</p>
+<pre><code>/plugin marketplace add JasonColapietro/suede-creator-skills
+/plugin install suede-skills@suede</code></pre>
+<p>In Codex, add the Codex marketplace and install the plugin:</p>
+<pre><code>codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main
+codex plugin add suede-skills@suede-codex</code></pre>
+<p>The <a href="https://github.com/JasonColapietro/suede-creator-skills#install-in-30-seconds">repository README</a> lists the other routes: one skill at a time, the Python package and a plain clone. The <a href="/guide.html">guide</a> explains what changes once the pack is installed.</p>
 <h2>Names, scope and distinctions</h2><p>A skill is a reusable workflow your agent loads and runs. Each skill page lists its requirements and license; adapted components retain their upstream notices.</p>
+<ul>
+<li>Call the pack <strong>Suede Skills</strong> and the company <strong>Suede</strong>.</li>
+<li>Call the third-party catalog the <strong>Suede Skills Directory</strong>. Its scores come from the <strong>Suede Skill Check</strong>, a published rubric that reads each skill's files; it does not measure runtime performance or security.</li>
+<li>A skill adds method, an MCP server adds access to a tool or data source, and a plugin packages skills and servers together. Suede Skills ships all three.</li>
+</ul>
 <h2>Sources to use</h2><ul>
 <li><a href="/">Site overview</a>: the site's public introduction and navigation.</li>
+<li><a href="/skills/">Skill catalog</a>: every skill in the pack with its install command.</li>
 <li><a href="/directory/">Agent Skills Directory</a>: third-party skills listed by the site, each linked to its author's repository; the listing method is on <a href="/directory/methodology/">the methodology page</a>.</li>
+<li><a href="/blog/">Blog</a>: dated posts on how the pack is built. Counts in a post describe the pack on its publish date.</li>
 <li><a href="/llms.txt">Machine-readable reference</a>: a text guide to the site's topics and source pages.</li>
 <li><a href="/sitemap.xml">Sitemap</a>: the published page index.</li>
 </ul>
