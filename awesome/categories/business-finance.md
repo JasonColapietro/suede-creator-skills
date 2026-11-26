@@ -6,7 +6,7 @@
 
 Skills for sales outreach, finance, legal review, e-commerce, payments and careers. They give an agent the playbooks and checklists that business work depends on, so drafts arrive structured and reviewable.
 
-**169 accepted skills · 28 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**172 accepted skills · 29 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **53–93 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=business-finance&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -36,6 +36,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 - [NVIDIA/skills](#nvidia--skills)
 - [Octav-Labs/octav-api-skill](#octav-labs--octav-api-skill)
 - [phuryn/pm-skills](#phuryn--pm-skills)
+- [StalkC/stalkchain-plugin](#stalkc--stalkchain-plugin)
 - [stripe/ai](#stripe--ai)
 - [takechanman1228/claude-ecom](#takechanman1228--claude-ecom)
 - [trailofbits/skills](#trailofbits--skills)
@@ -345,6 +346,16 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 - **81/100 · B** · [draft-nda](https://github.com/phuryn/pm-skills/blob/main/pm-toolkit/skills/draft-nda/SKILL.md): Draft a detailed Non-Disclosure Agreement between two parties covering information types, jurisdiction, and clauses needing legal review. [Suede](https://skills.suedeai.ai/directory/phuryn/pm-skills/#draft-nda)
 - **81/100 · B** · [privacy-policy](https://github.com/phuryn/pm-skills/blob/main/pm-toolkit/skills/privacy-policy/SKILL.md): Draft a detailed privacy policy covering data types, jurisdiction, GDPR and compliance considerations, and clauses needing legal review. [Suede](https://skills.suedeai.ai/directory/phuryn/pm-skills/#privacy-policy)
 - **81/100 · B** · [review-resume](https://github.com/phuryn/pm-skills/blob/main/pm-toolkit/skills/review-resume/SKILL.md): Reviews and tailors a PM resume against 10 best practices, including the XYZ+S formula, keyword optimization, job-specific tailoring, and structure. [Suede](https://skills.suedeai.ai/directory/phuryn/pm-skills/review-resume/)
+
+<a id="stalkc--stalkchain-plugin"></a>
+
+## StalkC/stalkchain-plugin
+
+[Repository](https://github.com/StalkC/stalkchain-plugin) · Publisher: [StalkC](https://github.com/StalkC) · [Suede listing](https://skills.suedeai.ai/directory/stalkc/stalkchain-plugin/)
+
+- **77/100 · C** · [token-check](https://github.com/StalkC/stalkchain-plugin/blob/main/skills/token-check/SKILL.md): Check a crypto token's holders, liquidity, dev activity and smart-money flow before buying it. [Suede](https://skills.suedeai.ai/directory/stalkc/stalkchain-plugin/token-check/)
+- **77/100 · C** · [trader-check](https://github.com/StalkC/stalkchain-plugin/blob/main/skills/trader-check/SKILL.md): Research a crypto trader or influencer's real trading record, wallets and holdings before following or copying them. [Suede](https://skills.suedeai.ai/directory/stalkc/stalkchain-plugin/trader-check/)
+- **74/100 · C** · [smart-money-radar](https://github.com/StalkC/stalkchain-plugin/blob/main/skills/smart-money-radar/SKILL.md): List the coins that tracked crypto traders are buying or selling right now, as leads to research. [Suede](https://skills.suedeai.ai/directory/stalkc/stalkchain-plugin/smart-money-radar/)
 
 <a id="stripe--ai"></a>
 

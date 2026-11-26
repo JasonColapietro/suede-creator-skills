@@ -10052,5 +10052,25 @@
  "moonlitnayeem/fairvalid-ai/fairmatch-leads": {
   "category": "marketing-seo",
   "summary": "Searches FairMatch business leads, quotes a selection and unlocks verified work emails only after you confirm a credit maximum, through FairValid's hosted MCP server."
+ },
+ "stalkc/stalkchain-plugin/trader-check": {
+  "category": "business-finance",
+  "summary": "Research a crypto trader or influencer's real trading record, wallets and holdings before following or copying them."
+ },
+ "stalkc/stalkchain-plugin/token-check": {
+  "category": "business-finance",
+  "summary": "Check a crypto token's holders, liquidity, dev activity and smart-money flow before buying it."
+ },
+ "stalkc/stalkchain-plugin/smart-money-radar": {
+  "category": "business-finance",
+  "summary": "List the coins that tracked crypto traders are buying or selling right now, as leads to research."
+ },
+ "skillsforbots/grok-bot-skills/bot-safety-rules-starter": {
+  "category": "ai-agents-llm",
+  "summary": "Give bots standing rules to ask before sending or spending, ignore outside instructions, and hand off work cleanly."
+ },
+ "skillsforbots/grok-bot-skills/reminder-basics": {
+  "category": "productivity-knowledge",
+  "summary": "Set one daily reminder that repeats until the owner clearly says the task is done."
  }
 }

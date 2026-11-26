@@ -1057,6 +1057,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/moonlitnayeem/fairvalid-ai/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/mrhy7176/cloudgpu-agent-skills/</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -1261,6 +1267,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/skillsforbots/grok-bot-skills/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/stacks/agent-building/</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -1319,6 +1331,12 @@
     <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/stalkc/stalkchain-plugin/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/stripe/ai/</loc>
@@ -8005,6 +8023,18 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/moonlitnayeem/fairvalid-ai/email-verification/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/moonlitnayeem/fairvalid-ai/fairmatch-leads/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-ai-short-drama/</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
@@ -9673,7 +9703,37 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/skillsforbots/grok-bot-skills/bot-safety-rules-starter/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/skillsforbots/grok-bot-skills/reminder-basics/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/smixs/creative-director-skill/creative-director/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/stalkc/stalkchain-plugin/smart-money-radar/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/stalkc/stalkchain-plugin/token-check/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/stalkc/stalkchain-plugin/trader-check/</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
