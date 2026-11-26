@@ -120,6 +120,52 @@ export function rewriteText(text, ext, pageUrl, { assetExists = shippedAsset } =
   return out;
 }
 
+// Compact only the standalone directory chrome. Secondary destinations stay
+// reachable by keyboard and with JavaScript off using a native disclosure.
+function compactNavigation(page) {
+  const nav = /(<div class="nav-links">)([\s\S]*?)(<\/div>\s*<\/details>)/;
+  return page.replace(nav, (whole, open, body, close) => {
+    const main = [], secondary = [], action = [];
+    for (const match of body.matchAll(/<a\b[^>]*>[\s\S]*?<\/a>/g)) {
+      const link = match[0];
+      if (link.includes('class="nav-cta"')) action.push(link);
+      else if (/>\s*(Skills|Featured Skills|Agents)\s*<\/a>$/.test(link)) main.push(link);
+      else secondary.push(link);
+    }
+    if (main.length < 2 || !secondary.length || action.length !== 1) return whole;
+    const more = `<details class="directory-more"><summary>More <span aria-hidden="true">▾</span></summary><div class="directory-more-links">${secondary.join("")}</div></details>`;
+    return open + [...main, more, ...action].join("\n") + close;
+  }).replace("</head>", '    <link rel="stylesheet" href="/assets/cracked-devs.css">\n</head>');
+}
+
+// Keep the editorial CTA on the standalone homepage, not on every generated
+// directory page or on the linked feature itself.
+function addCrackedDevs(home) {
+  const note = 'Don’t click. They’re already insufferable.';
+  const cta = (layout) => {
+    const id = `cracked-devs-${layout}-note`;
+    return `<a class="cracked-devs-link" href="${OLD}/cracked.html" aria-describedby="${id}">
+            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M9.2 0 2 9h5l-1 7 8-10H9l.2-6Z"/></svg>
+            Cracked Devs <span aria-hidden="true">→</span>
+          </a>
+          <span class="cracked-devs-note" id="${id}">${note}</span>`;
+  };
+  const submit = /<a href="submit\/" class="nav-cta">[^<]+<\/a>/;
+  const main = '<main id="main"';
+  if (!submit.test(home) || !home.includes(main)) {
+    throw new Error("The standalone directory homepage CTA anchors have changed");
+  }
+  return home
+    .replace(submit, (link) => `<div class="cracked-devs-desktop">
+          ${cta("desktop")}
+          ${link}
+        </div>`)
+    .replace(main, `<div class="shell cracked-devs-mobile">
+      ${cta("mobile")}
+    </div>
+    ${main}`);
+}
+
 function copyTree(src, dest, transform) {
   for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
     const s = path.join(src, entry.name);
@@ -145,7 +191,9 @@ export function build(out) {
   const reports = [];
   copyTree(dirSrc, out, (text, ext, file) => {
     const rel = path.relative(dirSrc, file).split(path.sep).join("/");
-    const rewritten = rewriteText(text, ext, `${OLD}/directory/${rel}`);
+    const original = rewriteText(text, ext, `${OLD}/directory/${rel}`);
+    const rewritten = ext === ".html" ? compactNavigation(original) : original;
+    if (rel === "index.html") return addCrackedDevs(rewritten);
     if (path.basename(file) !== "report.json") return rewritten;
     const { report_version: previousVersion, ...evidence } = JSON.parse(rewritten);
     // Match the original directory report verifier: hash compact evidence in
@@ -166,6 +214,7 @@ export function build(out) {
   fs.mkdirSync(path.join(out, "assets"), { recursive: true });
   fs.copyFileSync(path.join(docs, "favicon.ico"), path.join(out, "favicon.ico"));
   copyTree(path.join(docs, "assets"), path.join(out, "assets"), null);
+  fs.copyFileSync(path.join(ROOT, "directory", "assets", "cracked-devs.css"), path.join(out, "assets", "cracked-devs.css"));
 
   const notFound = path.join(docs, "404.html");
   // The shared 404 says which host the visitor missed; on this host, say this one.
