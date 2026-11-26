@@ -195,3 +195,38 @@
   .skills-home .example-request, .skills-home .example-result { padding: 20px; }
   .skills-home #hero-headline { max-width: 17ch; }
 }
+
+/* Visual refresh: the specialty map runs the full catalog width, matching
+   the filter toolbar below it, and its SVG keeps a readable size. */
+.skills-catalog .lanemap { max-width: none; }
+.skills-catalog .lanemap-svg { max-width: 1000px; }
+/* At phone width the 1000-unit chart would render its labels near 7px; the
+   filter toolbar directly below already lists every specialty. */
+@media (max-width: 720px) {
+  .skills-catalog :is(.lanemap-head, .lanemap-scroll) { display: none; }
+  .skills-catalog .premium-map > summary { display: none; }
+  /* With scripts, the filter toolbar replaces the jump links, so nothing of
+     the map is left to show. Without scripts the jump links stay. */
+  .skills-catalog.catalog-filter-ready .lanemap { display: none; }
+}
+
+/* Filter toolbar: specialty chips read as one set of pills (44px tap height
+   kept), the count sits with the search on phones instead of floating
+   between wrapped chips. */
+.skills-catalog .catalog-chips { gap: 6px; align-items: center; mask-image: none; -webkit-mask-image: none; padding-right: 0; }
+.skills-catalog .catalog-chips a {
+  min-height: 44px; padding: 0 14px;
+  border: 1px solid var(--cp-border, #343129); border-radius: 999px;
+  background: #141412;
+}
+.skills-catalog .catalog-chips a:hover { border-color: #5a4d36; color: var(--cream, #f0ece4); }
+@media (min-width: 1200px) {
+  .skills-catalog .filter-field { flex: 0 0 200px; }
+  .skills-catalog .catalog-chips { border-left: 0; padding-left: 0; gap: 4px; flex-wrap: nowrap; }
+  .skills-catalog .catalog-chips a { padding: 0 10px; }
+}
+@media (max-width: 1199px) {
+  .skills-catalog .filter-field { flex: 1 1 0; }
+  .skills-catalog .filter-count { order: 2; margin-left: 0; padding: 0 4px 0 6px; white-space: nowrap; }
+  .skills-catalog .catalog-chips { order: 3; flex: 1 1 100%; border-left: 0; padding-left: 0; }
+}

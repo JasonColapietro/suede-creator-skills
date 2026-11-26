@@ -1,0 +1,333 @@
+{
+  "schema_version": 1,
+  "repository": "StalkC/stalkchain-plugin",
+  "listing_url": "https://skills.suedeai.ai/directory/stalkc/stalkchain-plugin/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "929dcf97e9ed44db9c6487396d8f3d57",
+    "dataset_sha256": "b3776666fef20de5d77ba0adcd2e6275ba9110dded762cd70ed683a62df9d95f"
+  },
+  "listed_skill_count": 3,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "stalkc/stalkchain-plugin/smart-money-radar",
+      "name": "smart-money-radar",
+      "description": "Find what top crypto traders and smart money are buying or selling right now. Use when the user asks what's trending, what KOLs or whales are buying, which coins several traders just entered, what is hot today, or wants a list of new opportunities to research.",
+      "category": "business-finance",
+      "license": "MIT",
+      "license_url": "https://github.com/StalkC/stalkchain-plugin/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b69be0f9eac83d26ec37699ee31bdc4d643635c2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-19",
+        "assessment_date": "2026-11-26",
+        "skill_md_url": "https://github.com/StalkC/stalkchain-plugin/blob/b69be0f9eac83d26ec37699ee31bdc4d643635c2/skills/smart-money-radar/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/stalkc/stalkchain-plugin/smart-money-radar/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/stalkc/stalkchain-plugin/smart-money-radar/",
+      "source_folder_url": "https://github.com/StalkC/stalkchain-plugin/tree/main/skills/smart-money-radar",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/StalkC/stalkchain-plugin/tree/main/skills/smart-money-radar",
+        "publisher_setup_url": "https://github.com/StalkC/stalkchain-plugin/blob/b69be0f9eac83d26ec37699ee31bdc4d643635c2/skills/smart-money-radar/SKILL.md"
+      }
+    },
+    {
+      "id": "stalkc/stalkchain-plugin/token-check",
+      "name": "token-check",
+      "description": "Check a crypto coin or token before buying it. Use when the user asks whether a coin is safe, legit, a rug, worth buying, who holds it, whether the dev or insiders are selling, whether smart money is in it, or pastes a token address or ticker and wants to know about it.",
+      "category": "business-finance",
+      "license": "MIT",
+      "license_url": "https://github.com/StalkC/stalkchain-plugin/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b69be0f9eac83d26ec37699ee31bdc4d643635c2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-19",
+        "assessment_date": "2026-11-26",
+        "skill_md_url": "https://github.com/StalkC/stalkchain-plugin/blob/b69be0f9eac83d26ec37699ee31bdc4d643635c2/skills/token-check/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/stalkc/stalkchain-plugin/token-check/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/stalkc/stalkchain-plugin/token-check/",
+      "source_folder_url": "https://github.com/StalkC/stalkchain-plugin/tree/main/skills/token-check",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/StalkC/stalkchain-plugin/tree/main/skills/token-check",
+        "publisher_setup_url": "https://github.com/StalkC/stalkchain-plugin/blob/b69be0f9eac83d26ec37699ee31bdc4d643635c2/skills/token-check/SKILL.md"
+      }
+    },
+    {
+      "id": "stalkc/stalkchain-plugin/trader-check",
+      "name": "trader-check",
+      "description": "Research a crypto trader or KOL before following or copy-trading them. Use when the user names a trader, handle or influencer and asks whether they are any good, worth copying, legit, how much they've made, what they hold, what their wallets are, or to compare several traders.",
+      "category": "business-finance",
+      "license": "MIT",
+      "license_url": "https://github.com/StalkC/stalkchain-plugin/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b69be0f9eac83d26ec37699ee31bdc4d643635c2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-19",
+        "assessment_date": "2026-11-26",
+        "skill_md_url": "https://github.com/StalkC/stalkchain-plugin/blob/b69be0f9eac83d26ec37699ee31bdc4d643635c2/skills/trader-check/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/stalkc/stalkchain-plugin/trader-check/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/stalkc/stalkchain-plugin/trader-check/",
+      "source_folder_url": "https://github.com/StalkC/stalkchain-plugin/tree/main/skills/trader-check",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/StalkC/stalkchain-plugin/tree/main/skills/trader-check",
+        "publisher_setup_url": "https://github.com/StalkC/stalkchain-plugin/blob/b69be0f9eac83d26ec37699ee31bdc4d643635c2/skills/trader-check/SKILL.md"
+      }
+    }
+  ]
+}

@@ -30,7 +30,7 @@
         "name": "Directory API and Data: Index, Reports, Badges, Feed",
         "description": "Every file the directory publishes: the search index, per-skill reports, badges, the skills.sh install snapshot, the RSS feed and the sitemap.",
         "url": "https://skills.suedeai.ai/directory/api/",
-        "dateModified": "2026-11-22",
+        "dateModified": "2026-11-26",
         "inLanguage": "en",
         "isPartOf": {
           "@type": "CollectionPage",
@@ -99,6 +99,47 @@
         ]
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://skills.suedeai.ai/directory/api/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do I need an API key to use the directory data?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Every file is a static file on this host, with no key, no account and no rate limit. Fetch it over HTTPS like any other page."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where is the report for one skill?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each listing's report.json sits at its listing path, the href field in the search index. It holds the snapshot id and dataset hash, the score by component, the source revision where recorded, the badges and the methodology version."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I quote scores and install counts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Link back to the skill's listing when you quote a score, and name skills.sh when you quote an install count, since the directory measures no installs of its own."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How current is the data?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each file names the snapshot it was built from. This page reflects the October 22, 2026 quality snapshot and the install snapshot dated in installs.json. The sitemap lists every page's last-modified date."
+            }
+          }
+        ]
+      }
+    </script>
     <meta name="theme-color" content="#000000">
     <link rel="preload" href="../../assets/fonts/geist-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../assets/fonts/geist-mono-var-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -114,7 +155,7 @@
       <nav class="shell nav-inner" aria-label="Main navigation">
         <a href="../" class="nav-logo" aria-label="Suede Skills Directory home">
           <img src="../../assets/suede-ai-logo-transparent.webp" alt="Suede" width="28" height="28" onerror="this.style.display='none'">
-          <span class="nav-logo-wordmark">SuedeAI<span>.directory</span></span>
+          <span class="nav-logo-wordmark">Suede <span>Directory</span></span>
         </a>
         <a class="gh-star gh-star--nav" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" data-gh-star aria-label="Star Suede Skills on GitHub, 121 stars"><svg class="gh-star-icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg><span>Star</span><span class="gh-star-count">121</span></a>
         <details class="nav-disclosure" open>
@@ -140,8 +181,8 @@
     </header>
     <nav class="kind-bar" aria-label="Directory catalogs">
       <div class="shell kind-bar-inner">
-        <a href="../"><svg class="pix" viewBox="0 0 12 12" width="14" height="14" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M0 0h4v1h-4zM5 0h4v1h-4zM0 1h4v1h-4zM5 1h4v1h-4zM0 2h4v1h-4zM5 2h4v1h-4zM0 4h4v1h-4zM5 4h4v1h-4zM0 5h4v1h-4zM5 5h4v1h-4zM0 6h4v1h-4zM5 6h4v1h-4zM0 8h4v1h-4zM5 8h4v1h-4zM0 9h4v1h-4zM5 9h4v1h-4zM0 10h4v1h-4zM5 10h4v1h-4z"/></svg><span class="kind-label" data-short="Skills">Skills</span><span class="count-chip">3,906</span></a>
-        <a href="../featured/"><svg class="pix" viewBox="0 0 12 12" width="14" height="14" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M5 0h2v1h-2zM5 1h2v1h-2zM4 2h4v1h-4zM4 3h4v1h-4zM0 4h12v1h-12zM1 5h10v1h-10zM2 6h8v1h-8zM3 7h6v1h-6zM3 8h2v1h-2zM7 8h2v1h-2zM2 9h2v1h-2zM8 9h2v1h-2zM1 10h1v1h-1zM10 10h1v1h-1z"/></svg><span class="kind-label" data-short="Featured">Featured Skills</span><span class="count-chip">36</span></a>
+        <a href="../"><svg class="pix" viewBox="0 0 12 12" width="14" height="14" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M0 0h4v1h-4zM5 0h4v1h-4zM0 1h4v1h-4zM5 1h4v1h-4zM0 2h4v1h-4zM5 2h4v1h-4zM0 4h4v1h-4zM5 4h4v1h-4zM0 5h4v1h-4zM5 5h4v1h-4zM0 6h4v1h-4zM5 6h4v1h-4zM0 8h4v1h-4zM5 8h4v1h-4zM0 9h4v1h-4zM5 9h4v1h-4zM0 10h4v1h-4zM5 10h4v1h-4z"/></svg><span class="kind-label" data-short="Skills">Skills</span><span class="count-chip">3,916</span></a>
+        <a href="../featured/"><svg class="pix" viewBox="0 0 12 12" width="14" height="14" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M5 0h2v1h-2zM5 1h2v1h-2zM4 2h4v1h-4zM4 3h4v1h-4zM0 4h12v1h-12zM1 5h10v1h-10zM2 6h8v1h-8zM3 7h6v1h-6zM3 8h2v1h-2zM7 8h2v1h-2zM2 9h2v1h-2zM8 9h2v1h-2zM1 10h1v1h-1zM10 10h1v1h-1z"/></svg><span class="kind-label" data-short="Featured">Featured Skills</span><span class="count-chip">37</span></a>
         <a href="../agents/"><svg class="pix" viewBox="0 0 12 12" width="14" height="14" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M5 0h2v1h-2zM5 1h2v1h-2zM2 2h8v1h-8zM1 3h1v1h-1zM10 3h1v1h-1zM1 4h1v1h-1zM3 4h2v1h-2zM7 4h2v1h-2zM10 4h1v1h-1zM1 5h1v1h-1zM3 5h2v1h-2zM7 5h2v1h-2zM10 5h1v1h-1zM1 6h1v1h-1zM10 6h1v1h-1zM1 7h1v1h-1zM3 7h6v1h-6zM10 7h1v1h-1zM1 8h1v1h-1zM10 8h1v1h-1zM2 9h8v1h-8zM3 10h1v1h-1zM8 10h1v1h-1zM3 11h1v1h-1zM8 11h1v1h-1z"/></svg><span class="kind-label" data-short="Agents">AI agents</span><span class="count-chip">87</span></a>
         <a href="../plugins/"><svg class="pix" viewBox="0 0 12 12" width="14" height="14" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M3 0h1v1h-1zM8 0h1v1h-1zM3 1h1v1h-1zM8 1h1v1h-1zM2 2h8v1h-8zM2 3h1v1h-1zM9 3h1v1h-1zM2 4h1v1h-1zM9 4h1v1h-1zM2 5h1v1h-1zM9 5h1v1h-1zM3 6h1v1h-1zM8 6h1v1h-1zM4 7h4v1h-4zM5 8h2v1h-2zM5 9h2v1h-2zM5 10h2v1h-2z"/></svg><span class="kind-label" data-short="Plugins">Plugins and mods</span><span class="count-chip">22</span></a>
         <a href="../grok/"><svg class="pix" viewBox="0 0 12 12" width="14" height="14" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M6 0h4v1h-4zM5 1h1v1h-1zM4 2h1v1h-1zM3 3h1v1h-1zM2 4h7v1h-7zM7 5h1v1h-1zM6 6h1v1h-1zM5 7h1v1h-1zM4 8h1v1h-1zM3 9h1v1h-1zM2 10h1v1h-1z"/></svg><span class="kind-label" data-short="Grok">Grok bots</span><span class="count-chip">20</span></a>
@@ -158,7 +199,7 @@
       <section class="panel" aria-labelledby="files-title">
         <h2 id="files-title">Files</h2>
         <div class="table-wrap"><table class="checks"><thead><tr><th scope="col">File</th><th scope="col">URL</th><th scope="col">What it holds</th></tr></thead><tbody>
-          <tr><td>Search index</td><td><a href="https://suedeai.directory/search-index.json">/search-index.json</a></td><td>One record per listed skill (3,906): name, repo, description, category, license, grade, score, href, full, report, lane, flags, topics, listed, updated, installs.</td></tr>
+          <tr><td>Search index</td><td><a href="https://suedeai.directory/search-index.json">/search-index.json</a></td><td>One record per listed skill (3,916): name, repo, description, category, license, grade, score, href, full, report, lane, flags, topics, listed, updated, installs.</td></tr>
           <tr><td>Skill report</td><td><a href="https://suedeai.directory/activeloopai/hivemind/hivemind-goals/report.json">/activeloopai/hivemind/hivemind-goals/report.json</a></td><td>A verifiable report per listing: snapshot id and dataset hash, score by component, source revision, badges and the methodology version. Every listed skill has one at its listing path.</td></tr>
           <tr><td>Quality badges</td><td><a href="https://suedeai.directory/activeloopai/hivemind/hivemind-goals/score.svg">/activeloopai/hivemind/hivemind-goals/score.svg</a></td><td>score.svg and badge.svg per listing. Skills scoring 80 to 99 get the numeric and letter shields; others serve the general listing badge.</td></tr>
           <tr><td>Install snapshot</td><td><a href="https://suedeai.directory/installs.json">/installs.json</a></td><td>Install counts for 2,905 listed skills as published by skills.sh, with the fetch date and the method. The directory measures no installs of its own.</td></tr>
@@ -178,6 +219,26 @@
       <section class="panel" aria-labelledby="score-api-title">
         <h2 id="score-api-title">Recomputing a score</h2>
         <p>Scores are computed only from published fields, so a report can be checked. <code>scripts/directory/badges.mjs</code> and <code>scripts/directory/grade.py</code> in the repository recompute the same value from <code>skills.json</code>; the <a href="../methodology/#score">methodology</a> lists every component and its points.</p>
+      </section>
+      <section class="panel" aria-labelledby="uses-title">
+        <h2 id="uses-title">Common uses</h2>
+        <ul>
+          <li><b>Show a score in your own docs.</b> Embed a listing's <code>score.svg</code> or <code>badge.svg</code> and link it to the listing, as the <a href="../badges/">badge guide</a> shows.</li>
+          <li><b>Search from a script.</b> Download <code>search-index.json</code> once and filter by category, license, grade, score or topic. The <a href="../finder/">finder skill</a> does this from inside Claude Code, Codex or Cursor.</li>
+          <li><b>Follow what changes.</b> Read <code>feed.xml</code> for new listings and guides, or <code>weekly.json</code> for rising skills, topic growth and repository stars.</li>
+          <li><b>Verify a score.</b> Open a listing's <code>report.json</code> and compare its components with the <a href="../methodology/">published rubric</a>.</li>
+        </ul>
+      </section>
+      <section class="panel faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Questions and answers</h2>
+        <h3>Do I need an API key to use the directory data?</h3>
+        <p>No. Every file is a static file on this host, with no key, no account and no rate limit. Fetch it over HTTPS like any other page.</p>
+        <h3>Where is the report for one skill?</h3>
+        <p>Each listing's report.json sits at its listing path, the href field in the search index. It holds the snapshot id and dataset hash, the score by component, the source revision where recorded, the badges and the methodology version.</p>
+        <h3>Can I quote scores and install counts?</h3>
+        <p>Yes. Link back to the skill's listing when you quote a score, and name skills.sh when you quote an install count, since the directory measures no installs of its own.</p>
+        <h3>How current is the data?</h3>
+        <p>Each file names the snapshot it was built from. This page reflects the October 22, 2026 quality snapshot and the install snapshot dated in installs.json. The sitemap lists every page's last-modified date.</p>
       </section>
 
 

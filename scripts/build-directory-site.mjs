@@ -127,6 +127,81 @@ export function rewriteText(text, ext, pageUrl, { assetExists = shippedAsset, ag
   return out;
 }
 
+// The directory's own icon set (directory/assets/favicon/): a bold S that
+// stays legible at 16px, the full ringed mark from 32px up, and a home-screen
+// icon. The shared 64px icon's thin rings blur to a pale square in a tab.
+const SHARED_ICON = '<link rel="icon" href="/assets/favicon-64.png" type="image/png">';
+const DIRECTORY_ICONS = [
+  '<link rel="icon" href="/favicon.ico" sizes="48x48">',
+  '<link rel="icon" href="/assets/favicon/favicon-16.png" type="image/png" sizes="16x16">',
+  '<link rel="icon" href="/assets/favicon/favicon-32.png" type="image/png" sizes="32x32">',
+  '<link rel="icon" href="/assets/favicon/favicon-192.png" type="image/png" sizes="192x192">',
+  '<link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png" sizes="180x180">',
+].join("\n    ");
+
+// The More menu closes on Escape (focus returns to its button), on a click
+// outside it, and when focus leaves it, like any other dropdown.
+const MORE_MENU_SCRIPT = `  <script>
+  (function () {
+    var more = document.querySelector('.directory-more');
+    if (!more) return;
+    var summary = more.querySelector('summary');
+    more.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && more.open) { more.open = false; summary.focus(); }
+    });
+    document.addEventListener('click', function (e) { if (more.open && !more.contains(e.target)) more.open = false; });
+    more.addEventListener('focusout', function (e) { if (more.open && e.relatedTarget && !more.contains(e.relatedTarget)) more.open = false; });
+  })();
+</script>`;
+
+// Compact only the standalone directory chrome. Secondary destinations stay
+// reachable by keyboard and with JavaScript off using a native disclosure.
+function compactNavigation(page) {
+  const nav = /(<div class="nav-links">)([\s\S]*?)(<\/div>\s*<\/details>)/;
+  return page.replace(nav, (whole, open, body, close) => {
+    const main = [], secondary = [], action = [];
+    for (const match of body.matchAll(/<a\b[^>]*>[\s\S]*?<\/a>/g)) {
+      const link = match[0];
+      if (link.includes('class="nav-cta"')) action.push(link);
+      else if (/>\s*(Skills|Featured Skills|Agents)\s*<\/a>$/.test(link)) main.push(link);
+      else secondary.push(link);
+    }
+    if (main.length < 2 || !secondary.length || action.length !== 1) return whole;
+    const more = `<details class="directory-more"><summary aria-label="More pages">More <span class="directory-more-caret" aria-hidden="true">▾</span></summary><div class="directory-more-links">${secondary.join("")}</div></details>`;
+    return open + [...main, more, ...action].join("\n") + close;
+  }).replace(SHARED_ICON, DIRECTORY_ICONS)
+    .replace("</head>", '    <link rel="stylesheet" href="/assets/cracked-devs.css">\n</head>')
+    .replace("</body>", `${MORE_MENU_SCRIPT}\n</body>`);
+}
+
+// Keep the editorial CTA on the standalone homepage, not on every generated
+// directory page or on the linked feature itself.
+function addCrackedDevs(home) {
+  const note = 'Don’t click. They’re already insufferable.';
+  const cta = (layout) => {
+    const id = `cracked-devs-${layout}-note`;
+    return `<a class="cracked-devs-link" href="${OLD}/cracked.html" aria-describedby="${id}">
+            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M9.2 0 2 9h5l-1 7 8-10H9l.2-6Z"/></svg>
+            Cracked Devs <span aria-hidden="true">→</span>
+          </a>
+          <span class="cracked-devs-note" id="${id}">${note}</span>`;
+  };
+  const submit = /<a href="submit\/" class="nav-cta">[^<]+<\/a>/;
+  const main = '<main id="main"';
+  if (!submit.test(home) || !home.includes(main)) {
+    throw new Error("The standalone directory homepage CTA anchors have changed");
+  }
+  return home
+    .replace(submit, (link) => `<div class="cracked-devs-desktop">
+          ${cta("desktop")}
+          ${link}
+        </div>`)
+    .replace(main, `<div class="shell cracked-devs-mobile">
+      ${cta("mobile")}
+    </div>
+    ${main}`);
+}
+
 function copyTree(src, dest, transform) {
   for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
     const s = path.join(src, entry.name);
@@ -162,7 +237,9 @@ export function build(out, { env = process.env, makerProjection = makerProfiles 
   const reports = [];
   copyTree(dirSrc, out, (text, ext, file) => {
     const rel = path.relative(dirSrc, file).split(path.sep).join("/");
-    const rewritten = rewriteText(text, ext, `${OLD}/directory/${rel}`, { agentView: !rel.startsWith("maker/") });
+    const original = rewriteText(text, ext, `${OLD}/directory/${rel}`, { agentView: !rel.startsWith("maker/") });
+    const rewritten = ext === ".html" ? compactNavigation(original) : original;
+    if (rel === "index.html") return addCrackedDevs(rewritten);
     if (rel === "featured/index.html") {
       const featured = env.MAKER_V2_PUBLISH_PROFILES === 'true'
         ? renderFeaturedMakerProfiles(rewritten, makerProjection, featuredCatalog.projects) : rewritten;
@@ -186,13 +263,18 @@ export function build(out, { env = process.env, makerProjection = makerProfiles 
     fs.writeFileSync(listing, html.replaceAll(previous, `Report version <code>${report_version.slice(0, 12)}</code>`));
   }
   fs.mkdirSync(path.join(out, "assets"), { recursive: true });
-  fs.copyFileSync(path.join(docs, "favicon.ico"), path.join(out, "favicon.ico"));
+  const icons = path.join(ROOT, "directory", "assets", "favicon");
+  fs.copyFileSync(path.join(icons, "favicon.ico"), path.join(out, "favicon.ico"));
   copyTree(path.join(docs, "assets"), path.join(out, "assets"), null);
+  fs.copyFileSync(path.join(ROOT, "directory", "assets", "cracked-devs.css"), path.join(out, "assets", "cracked-devs.css"));
+  fs.mkdirSync(path.join(out, "assets", "favicon"), { recursive: true });
+  for (const f of fs.readdirSync(icons)) fs.copyFileSync(path.join(icons, f), path.join(out, "assets", "favicon", f));
 
   const notFound = path.join(docs, "404.html");
   // The shared 404 says which host the visitor missed; on this host, say this one.
   if (fs.existsSync(notFound)) fs.writeFileSync(path.join(out, "404.html"), rewriteText(fs.readFileSync(notFound, "utf8"), ".html", `${OLD}/404.html`)
-    .replaceAll("This page is not on skills.suedeai.ai.", "This page is not on suedeai.directory."));
+    .replaceAll("This page is not on skills.suedeai.ai.", "This page is not on suedeai.directory.")
+    .replace(SHARED_ICON, DIRECTORY_ICONS));
 
   const sitemap = fs.readFileSync(path.join(docs, "directory-sitemap.xml"), "utf8");
   const urls = [...sitemap.matchAll(/  <url>[\s\S]*?<\/url>\n/g)].map((m) => m[0]).filter((u) => u.includes(`<loc>${OLD}/directory/`));

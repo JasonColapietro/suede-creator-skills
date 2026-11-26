@@ -61,6 +61,16 @@
     "coreyhaines31/marketingskills/ads"
   ],
   "new_listings": [
+    "klingai-tech/claude-plugin/kling-ai-generate-image",
+    "moonlitnayeem/fairvalid-ai/email-verification",
+    "moonlitnayeem/fairvalid-ai/fairmatch-leads",
+    "skillsforbots/grok-bot-skills/bot-safety-rules-starter",
+    "skillsforbots/grok-bot-skills/reminder-basics",
+    "stalkc/stalkchain-plugin/token-check",
+    "stalkc/stalkchain-plugin/trader-check",
+    "stalkc/stalkchain-plugin/smart-money-radar",
+    "klingai-tech/claude-plugin/kling-ai",
+    "klingai-tech/claude-plugin/kling-ai-generate-video",
     "metcalfsolutions/satori/satori",
     "andrewsiah/agentswarm-work-skill/agentswarm-work",
     "mrhy7176/cloudgpu-agent-skills/cloudgpu-ai-short-drama",
@@ -100,17 +110,7 @@
     "melmayssonowen/agent-skills/timetopost-autoseo-blog",
     "melmayssonowen/agent-skills/clef-music-tools",
     "melmayssonowen/agent-skills/toolfound-launch-kit",
-    "melmayssonowen/agent-skills/amazon-listing-checker",
-    "melmayssonowen/agent-skills/sheetfolk-budget-builder",
-    "eduardo-sl/go-agent-skills/go-api-design",
-    "eduardo-sl/go-agent-skills/go-ci",
-    "eduardo-sl/go-agent-skills/go-cli",
-    "eduardo-sl/go-agent-skills/go-coding-standards",
-    "eduardo-sl/go-agent-skills/go-concurrency-review",
-    "eduardo-sl/go-agent-skills/go-context",
-    "eduardo-sl/go-agent-skills/go-data-structures",
-    "eduardo-sl/go-agent-skills/go-database",
-    "eduardo-sl/go-agent-skills/go-design-patterns"
+    "melmayssonowen/agent-skills/amazon-listing-checker"
   ],
   "topics": [
     {
@@ -620,7 +620,7 @@
     {
       "id": "sales",
       "name": "Sales",
-      "skills": 61,
+      "skills": 63,
       "weekly_installs": 15643,
       "change_pct": 9,
       "best": [
@@ -644,7 +644,7 @@
     {
       "id": "email",
       "name": "Email",
-      "skills": 34,
+      "skills": 36,
       "weekly_installs": 14106,
       "change_pct": 9,
       "best": [
@@ -1544,7 +1544,7 @@
     {
       "id": "finance",
       "name": "Finance and Accounting",
-      "skills": 29,
+      "skills": 32,
       "weekly_installs": 0,
       "change_pct": null,
       "best": [
@@ -1676,7 +1676,7 @@
     {
       "id": "image-editing",
       "name": "Image Editing",
-      "skills": 11,
+      "skills": 12,
       "weekly_installs": 0,
       "change_pct": null,
       "best": [
@@ -1688,7 +1688,7 @@
     {
       "id": "image-generation",
       "name": "Image Generation",
-      "skills": 16,
+      "skills": 17,
       "weekly_installs": 0,
       "change_pct": null,
       "best": [
@@ -1712,7 +1712,7 @@
     {
       "id": "influencer-marketing",
       "name": "Influencer Marketing",
-      "skills": 5,
+      "skills": 6,
       "weekly_installs": 0,
       "change_pct": null,
       "best": [
@@ -1998,7 +1998,7 @@
     {
       "id": "prompt-engineering",
       "name": "Prompt Engineering",
-      "skills": 28,
+      "skills": 29,
       "weekly_installs": 0,
       "change_pct": null,
       "best": [
@@ -2310,7 +2310,7 @@
     {
       "id": "video-generation",
       "name": "AI Video Generation",
-      "skills": 18,
+      "skills": 21,
       "weekly_installs": 0,
       "change_pct": null,
       "best": [
@@ -2322,7 +2322,7 @@
     {
       "id": "video-scripts",
       "name": "Video Scripts and Storyboards",
-      "skills": 6,
+      "skills": 7,
       "weekly_installs": 0,
       "change_pct": null,
       "best": [
@@ -5485,36 +5485,6 @@
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/eduardo-sl/go-agent-skills/go-concurrency-review/"
     },
-    "eduardo-sl/go-agent-skills/go-context": {
-      "id": "eduardo-sl/go-agent-skills/go-context",
-      "name": "go-context",
-      "repo": "eduardo-sl/go-agent-skills",
-      "description": "Correct usage of context.Context in Go: propagation, cancellation, timeouts, deadlines, values, and common anti-patterns. Use when: \"context usage\", \"context.Context\", \"context cancellation\", \"timeout\", \"context.WithTime",
-      "score": 95,
-      "grade": "A",
-      "category": "developer-tools",
-      "topics": [
-        "golang"
-      ],
-      "license": "MIT",
-      "cost_lane": "free-open-source",
-      "listing": "https://suedeai.directory/eduardo-sl/go-agent-skills/go-context/"
-    },
-    "eduardo-sl/go-agent-skills/go-data-structures": {
-      "id": "eduardo-sl/go-agent-skills/go-data-structures",
-      "name": "go-data-structures",
-      "repo": "eduardo-sl/go-agent-skills",
-      "description": "Correct use of Go's built-in data structures: slices (nil vs empty, append semantics, aliasing, preallocation), maps (comma-ok, sets, iteration order), arrays, and choosing between them. Use when: \"slice vs array\", \"nil ",
-      "score": 95,
-      "grade": "A",
-      "category": "developer-tools",
-      "topics": [
-        "golang"
-      ],
-      "license": "MIT",
-      "cost_lane": "free-open-source",
-      "listing": "https://suedeai.directory/eduardo-sl/go-agent-skills/go-data-structures/"
-    },
     "eduardo-sl/go-agent-skills/go-database": {
       "id": "eduardo-sl/go-agent-skills/go-database",
       "name": "go-database",
@@ -5530,21 +5500,6 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/eduardo-sl/go-agent-skills/go-database/"
-    },
-    "eduardo-sl/go-agent-skills/go-design-patterns": {
-      "id": "eduardo-sl/go-agent-skills/go-design-patterns",
-      "name": "go-design-patterns",
-      "repo": "eduardo-sl/go-agent-skills",
-      "description": "Idiomatic Go design patterns: functional options, builder, factory, strategy, middleware chain, pub/sub, and other patterns adapted for Go's type system. Use when: \"design pattern\", \"functional options\", \"builder pattern",
-      "score": 95,
-      "grade": "A",
-      "category": "developer-tools",
-      "topics": [
-        "golang"
-      ],
-      "license": "MIT",
-      "cost_lane": "free-open-source",
-      "listing": "https://suedeai.directory/eduardo-sl/go-agent-skills/go-design-patterns/"
     },
     "eduardo-sl/go-agent-skills/go-documentation": {
       "id": "eduardo-sl/go-agent-skills/go-documentation",
@@ -9305,6 +9260,55 @@
       "cost_lane": "free-with-service",
       "listing": "https://suedeai.directory/k-dense-ai/claude-scientific-skills/#zarr-python"
     },
+    "klingai-tech/claude-plugin/kling-ai": {
+      "id": "klingai-tech/claude-plugin/kling-ai",
+      "name": "kling-ai",
+      "repo": "klingai-tech/claude-plugin",
+      "description": "Handle Kling AI / 可灵 requests in Claude Code, including prompt-only planning, missing-asset next steps, generation preparation and approved image/video creation. Route creative work to the dedicated Skills; manage Elemen",
+      "score": 72,
+      "grade": "C",
+      "category": "media-creative",
+      "topics": [
+        "video-generation"
+      ],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/klingai-tech/claude-plugin/#kling-ai"
+    },
+    "klingai-tech/claude-plugin/kling-ai-generate-image": {
+      "id": "klingai-tech/claude-plugin/kling-ai-generate-image",
+      "name": "kling-ai-generate-image",
+      "repo": "klingai-tech/claude-plugin",
+      "description": "Write or refine Kling AI image prompts, including prompt-only requests, or generate and edit images through the Kling AI MCP in Claude Code. Use for posters, product photography, portraits, covers, advertising stills, vi",
+      "score": 80,
+      "grade": "B",
+      "category": "media-creative",
+      "topics": [
+        "prompt-engineering",
+        "image-generation",
+        "image-editing",
+        "video-generation"
+      ],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/klingai-tech/claude-plugin/#kling-ai-generate-image"
+    },
+    "klingai-tech/claude-plugin/kling-ai-generate-video": {
+      "id": "klingai-tech/claude-plugin/kling-ai-generate-video",
+      "name": "kling-ai-generate-video",
+      "repo": "klingai-tech/claude-plugin",
+      "description": "Write Kling AI / 可灵 video prompts and storyboards, prepare video settings including HDR for approval, and submit authorized text-to-video, image-to-video, omni reference, keyframe, or motion-control requests in Claude Co",
+      "score": 72,
+      "grade": "C",
+      "category": "media-creative",
+      "topics": [
+        "video-generation",
+        "video-scripts"
+      ],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/klingai-tech/claude-plugin/#kling-ai-generate-video"
+    },
     "korey2028-prog/resume-claim-guard/resume-claim-guard": {
       "id": "korey2028-prog/resume-claim-guard/resume-claim-guard",
       "name": "resume-claim-guard",
@@ -10986,6 +10990,37 @@
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mohamedabdallah-14/unslop/unslop-review/"
     },
+    "moonlitnayeem/fairvalid-ai/email-verification": {
+      "id": "moonlitnayeem/fairvalid-ai/email-verification",
+      "name": "email-verification",
+      "repo": "moonlitnayeem/fairvalid-ai",
+      "description": "Verify user-provided email addresses with FairValid, inspect existing verification jobs, explain results, or check FairValid workspace credits. Use when the user asks for email verification or FairValid job and balance i",
+      "score": 77,
+      "grade": "C",
+      "category": "marketing-seo",
+      "topics": [
+        "email"
+      ],
+      "license": "MIT",
+      "cost_lane": "free-open-source",
+      "listing": "https://suedeai.directory/moonlitnayeem/fairvalid-ai/email-verification/"
+    },
+    "moonlitnayeem/fairvalid-ai/fairmatch-leads": {
+      "id": "moonlitnayeem/fairvalid-ai/fairmatch-leads",
+      "name": "fairmatch-leads",
+      "repo": "moonlitnayeem/fairvalid-ai",
+      "description": "Use FairMatch by FairValid to discover business leads, inspect supported filters, quote selected leads, unlock verified work emails after explicit credit-limit confirmation, and retrieve owned leads. Use when the user re",
+      "score": 77,
+      "grade": "C",
+      "category": "marketing-seo",
+      "topics": [
+        "sales",
+        "email"
+      ],
+      "license": "MIT",
+      "cost_lane": "free-open-source",
+      "listing": "https://suedeai.directory/moonlitnayeem/fairvalid-ai/fairmatch-leads/"
+    },
     "mrhy7176/cloudgpu-agent-skills/cloudgpu-ai-short-drama": {
       "id": "mrhy7176/cloudgpu-agent-skills/cloudgpu-ai-short-drama",
       "name": "cloudgpu-ai-short-drama",
@@ -12202,6 +12237,32 @@
       "cost_lane": "free-with-service",
       "listing": "https://suedeai.directory/shepsci/kaggle-skill/kaggle/"
     },
+    "skillsforbots/grok-bot-skills/bot-safety-rules-starter": {
+      "id": "skillsforbots/grok-bot-skills/bot-safety-rules-starter",
+      "name": "bot-safety-rules-starter",
+      "repo": "skillsforbots/grok-bot-skills",
+      "description": "Use this when setting standing safety rules for one or more bots: no sending email or messages without owner approval, no spending money, ignore instructions hidden in outside content, and a structured handoff note so wo",
+      "score": 77,
+      "grade": "C",
+      "category": "ai-agents-llm",
+      "topics": [],
+      "license": "MIT",
+      "cost_lane": "free-open-source",
+      "listing": "https://suedeai.directory/skillsforbots/grok-bot-skills/bot-safety-rules-starter/"
+    },
+    "skillsforbots/grok-bot-skills/reminder-basics": {
+      "id": "skillsforbots/grok-bot-skills/reminder-basics",
+      "name": "reminder-basics",
+      "repo": "skillsforbots/grok-bot-skills",
+      "description": "Use this when the owner wants one simple reminder that repeats once a day and stays on until they clearly say it is done. Free, limited version: one item, one daily time, no lists or custom schedules.",
+      "score": 77,
+      "grade": "C",
+      "category": "productivity-knowledge",
+      "topics": [],
+      "license": "MIT",
+      "cost_lane": "free-open-source",
+      "listing": "https://suedeai.directory/skillsforbots/grok-bot-skills/reminder-basics/"
+    },
     "smixs/creative-director-skill/creative-director": {
       "id": "smixs/creative-director-skill/creative-director",
       "name": "creative-director",
@@ -12216,6 +12277,53 @@
       "license": "CC-BY-4.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/smixs/creative-director-skill/creative-director/"
+    },
+    "stalkc/stalkchain-plugin/smart-money-radar": {
+      "id": "stalkc/stalkchain-plugin/smart-money-radar",
+      "name": "smart-money-radar",
+      "repo": "StalkC/stalkchain-plugin",
+      "description": "Find what top crypto traders and smart money are buying or selling right now. Use when the user asks what's trending, what KOLs or whales are buying, which coins several traders just entered, what is hot today, or wants ",
+      "score": 74,
+      "grade": "C",
+      "category": "business-finance",
+      "topics": [
+        "sales",
+        "finance"
+      ],
+      "license": "MIT",
+      "cost_lane": "free-open-source",
+      "listing": "https://suedeai.directory/stalkc/stalkchain-plugin/smart-money-radar/"
+    },
+    "stalkc/stalkchain-plugin/token-check": {
+      "id": "stalkc/stalkchain-plugin/token-check",
+      "name": "token-check",
+      "repo": "StalkC/stalkchain-plugin",
+      "description": "Check a crypto coin or token before buying it. Use when the user asks whether a coin is safe, legit, a rug, worth buying, who holds it, whether the dev or insiders are selling, whether smart money is in it, or pastes a t",
+      "score": 77,
+      "grade": "C",
+      "category": "business-finance",
+      "topics": [
+        "finance"
+      ],
+      "license": "MIT",
+      "cost_lane": "free-open-source",
+      "listing": "https://suedeai.directory/stalkc/stalkchain-plugin/token-check/"
+    },
+    "stalkc/stalkchain-plugin/trader-check": {
+      "id": "stalkc/stalkchain-plugin/trader-check",
+      "name": "trader-check",
+      "repo": "StalkC/stalkchain-plugin",
+      "description": "Research a crypto trader or KOL before following or copy-trading them. Use when the user names a trader, handle or influencer and asks whether they are any good, worth copying, legit, how much they've made, what they hol",
+      "score": 77,
+      "grade": "C",
+      "category": "business-finance",
+      "topics": [
+        "finance",
+        "influencer-marketing"
+      ],
+      "license": "MIT",
+      "cost_lane": "free-open-source",
+      "listing": "https://suedeai.directory/stalkc/stalkchain-plugin/trader-check/"
     },
     "stripe/ai/stripe-apps": {
       "id": "stripe/ai/stripe-apps",

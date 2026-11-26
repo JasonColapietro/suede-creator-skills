@@ -58,7 +58,8 @@
     "intro": "Practical guides from Suede, built on the Agent Skills Directory's published data. Every figure names the snapshot it comes from.",
     "schema_types": [
       "CollectionPage",
-      "BreadcrumbList"
+      "BreadcrumbList",
+      "FAQPage"
     ]
   },
   "pages": [

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { editorialRating } from './directory/editorial-ratings.mjs';
 // Builds the Agent Skills Directory at skills.suedeai.ai/directory/ from
 // directory/skills.json (the curated dataset) and directory/categories.json
 // (the category copy). Every page under docs/directory/, docs/404.html, the
@@ -98,6 +99,8 @@ if (NEWSLETTER.signup_url !== null) {
   if (signup.protocol !== 'https:' || signup.username || signup.password) throw new Error('Newsletter signup must use a public HTTPS URL');
 }
 const CHECKS = data.checks;
+const editorialRatingsFile = path.join(repoRoot, "directory", "editorial-ratings.json");
+const EDITORIAL_RATINGS = fs.existsSync(editorialRatingsFile) ? JSON.parse(fs.readFileSync(editorialRatingsFile, "utf8")) : {};
 const PROMOTION = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "promotion.json"), "utf8"));
 if (typeof PROMOTION.enabled !== "boolean" || !PROMOTION.verifications || typeof PROMOTION.verifications !== "object" || Array.isArray(PROMOTION.verifications)) throw new Error("promotion.json: expected enabled and a verification map");
 // Template copy lives in promotion.json; a file without it (a test fixture)
@@ -309,6 +312,7 @@ data.skills = data.skills.map((base) => {
   return {
     ...c,
     id: `${repoSlug}/${c.slug}`,
+    editorial_rating: editorialRating({id: `${repoSlug}/${c.slug}`}, EDITORIAL_RATINGS),
     owner,
     repo_name: name,
     repo_slug: repoSlug,
@@ -741,7 +745,7 @@ function nav(here, absolute = false) {
       <nav class="shell nav-inner" aria-label="Main navigation">
         <a href="${rel(here, "directory/")}" class="nav-logo" aria-label="Suede Skills Directory home">
           <img src="${rel(here, "assets/")}suede-ai-logo-transparent.webp" alt="Suede" width="28" height="28" onerror="this.style.display='none'">
-          <span class="nav-logo-wordmark">SuedeAI<span>.directory</span></span>
+          <span class="nav-logo-wordmark">Suede <span>Directory</span></span>
         </a>
         ${starButton("nav")}
         <details class="nav-disclosure" open>
@@ -941,7 +945,7 @@ function crumbs(here, items) {
   return { html: `      <nav class="crumbs" aria-label="Breadcrumb">${html}</nav>`, ld };
 }
 
-const gradeChip = (s) => `<span class="grade grade-${s.grade.toLowerCase()}" title="Suede Skill Check: ${s.score}/100, grade ${s.grade}">${s.score}/100 · ${s.grade}</span>`;
+const gradeChip = (s) => s.editorial_rating ? `<span class="grade grade-${s.editorial_rating.grade.toLowerCase()}" title="Suede owner editorial assessment">${s.editorial_rating.score}/100 · ${s.editorial_rating.grade} · Editorial</span><small class="muted"> Skill Check: ${s.score}/100 · ${s.grade}</small>` : `<span class="grade grade-${s.grade.toLowerCase()}" title="Suede Skill Check: ${s.score}/100, grade ${s.grade}">${s.score}/100 · ${s.grade}</span>`;
 const listLink = (l) => `<a href="https://github.com/${esc(l)}" target="_blank" rel="noopener">${esc(l)}</a>`;
 const citationEvidence = (repo) => (data.repos[repo].supplementary_citations || []).map((c) =>
   `\n        <p>Verified citation: <a href="https://github.com/${esc(c.source)}/blob/${esc(c.commit)}/${esc(c.path)}" target="_blank" rel="noopener">${esc(c.source)}</a>, checked ${esc(c.verified_at)}.</p>`).join("");
@@ -1245,6 +1249,7 @@ function skillReport(s) {
       skill_md_url: revision ? `https://github.com/${s.repo}/blob/${revision}/${s.dir === "." ? "" : s.dir + "/"}SKILL.md` : s.skill_md_url },
     methodology: { version: SCORE_METHOD, url: `${DIR_URL}methodology/#score`, rubric_total: RUBRIC_MAX, published_cap: SCORE_CAP },
     quality: { score: s.score, grade: s.grade, components: s.score_parts, checks: s.checks },
+    ...(s.editorial_rating ? { editorial_rating: s.editorial_rating } : {}),
     ...(data.repos[s.repo].supplementary_citations ? { supplementary_citations: data.repos[s.repo].supplementary_citations } : {}),
     ...(NOTES[s.id]?.notice ? { service_notice: NOTES[s.id].notice, service_terms_url: NOTES[s.id].source } : {}),
     ...(s.install ? { install: s.install } : {}),
@@ -2418,6 +2423,13 @@ ${servicesCta("task", cats[0], here)}
 
 function renderTaskHub() {
   const here = TASKS_PATH;
+  const hubFaq = faqBlock(here, [
+    ["What is a Claude Code skill?", "A skill is a folder with a SKILL.md file: a name, a description that tells the agent when to use it, and the instructions it follows, sometimes with scripts and reference files beside it. Claude Code loads a skill when a request matches its description. Codex and Cursor read the same Agent Skills format."],
+    ["How are the shortlists ranked?", `By Suede Skill Check score from 0 to 99, which adds structure, description quality, instruction depth, bundled files, maintenance and curated-list citations, all read from each skill's published files. Each repository fills at most three rows, so a table compares publishers instead of one repository's variations.`],
+    ["Are the skills on these shortlists free?", "Every listed skill is published in a public GitHub repository and costs nothing to download. Each table shows the license, so you can see at a glance which skills allow commercial use. Skills that call an outside service may need an account with that service."],
+    ["Do the shortlists include Suede's own skills?", "No. Suede publishes this directory, so its own skills are never ranked on a task page. They are catalogued separately on the Suede Skills site and pass the same listing rules."],
+    ["How often do the shortlists change?", `Each directory refresh re-reads the source repositories and rescores every listed skill, so rankings follow the published files. The figures on each page name the snapshot they come from; this hub uses the ${longDate(data.generated)} snapshot.`],
+  ]);
   const bc = crumbs(here, [["directory/", "Directory"], [null, "Skills by task"]]);
   const title = `Claude Code Skills by Task: ${TASKS.length} Graded Shortlists`;
   const description = fitMeta([`Find the best Claude Code skills for ${TASKS.slice(0, 4).map((t) => t.job.topic).join(", ")} and ${fmt(TASKS.length - 4)} more tasks, ranked by the Suede Skill Check.`, `Find the best Claude Code skills for ${fmt(TASKS.length)} tasks, each a shortlist ranked by the Suede Skill Check with scores and licenses.`], "task hub");
@@ -2432,7 +2444,18 @@ ${TASKS.map((t) => `          <a class="link-row" href="${rel(here, taskPath(t))
       <section class="panel" aria-labelledby="gate-title">
         <h2 id="gate-title">How a task gets a page</h2>
         <p>A task gets its own page when at least ${TASK_GATE.minListed} listed skills match it and at least ${TASK_GATE.minStrongPages} of them have full directory pages scoring ${TASK_GATE.strongScore} or more. Suede's own skills are never ranked here. <a href="${rel(here, "directory/methodology/")}">How skills are scored</a>.</p>
-      </section>`;
+      </section>
+      <section class="panel" aria-labelledby="use-title">
+        <h2 id="use-title">How to use a shortlist</h2>
+        <ol>
+          <li><b>Read the direct answer.</b> The first paragraph names the highest-scoring skill for the task and how many listed skills were compared.</li>
+          <li><b>Scan the table.</b> Each row shows the skill, its publisher, its Suede Skill Check score and its license, with a one-line description of what it does. Official publishers are marked.</li>
+          <li><b>Open the full skill page.</b> It lists the files in the skill folder, the scripts, credentials and outside hosts it uses, and copy-ready install commands for Claude Code and Codex.</li>
+          <li><b>Install one skill and try it.</b> Run the install command, then give your agent a request that matches the skill's description.</li>
+        </ol>
+        <p>No shortlist for your job yet? Browse <a href="${rel(here, TOPICS_PATH)}">${fmt(TOPICS.length)} topics</a>, the <a href="${rel(here, "directory/")}">category directories</a> or the <a href="${rel(here, STACKS_PATH)}">recommended stacks</a>.</p>
+      </section>
+${hubFaq.html}`;
   const keywords = setKeywords(here, ["claude code skills by task", "best claude code skills for every task", "agent skills by use case", "claude skills shortlist"]);
   files.set(`${here}index.html`, page({
     here,
@@ -2462,6 +2485,7 @@ ${TASKS.map((t) => `          <a class="link-row" href="${rel(here, taskPath(t))
         },
       },
       bc.ld,
+      hubFaq.ld,
     ],
     footerNote: `Task shortlists from ${SITE_LABEL}, built from the directory's published scores.`,
   }));
@@ -2656,7 +2680,7 @@ function renderHub() {
   files.set("directory/search-index.json", JSON.stringify(discovery.map((s) => ({
     name: displayName(s), ...(s.display_name ? { slug: s.name } : {}), repo: s.repo, description: s.summary || trimTo(s.description, 180),
     category: s.category, label: catBySlug.get(s.category).label, license: s.license,
-    grade: s.grade, score: s.score, href: listingTarget(s).replace(BASE, ""), full: s.featured || s.full_page,
+    grade: s.grade, score: s.score, ...(s.editorial_rating ? {editorial_rating: s.editorial_rating} : {}), href: listingTarget(s).replace(BASE, ""), full: s.featured || s.full_page,
     install: licenseKind(s) === "restricted" ? null : `npx skills add ${shq(skillTreeUrl(s))}`,
     install_reviewed: Boolean(s.install),
     report: `/${skillPath(s)}report.json`, snapshot: snapshot.date, method: SCORE_METHOD,
@@ -3019,6 +3043,7 @@ ${gradeRows}
       </section>
       <section class="panel" aria-labelledby="authors-title">
         <h2 id="authors-title">Two README badges and a limited-time feature offer</h2>
+        <p>Some listings also show a separately labeled owner editorial rating. It does not replace the reproducible Skill Check score, change its component totals, or establish badge verification.</p>
         <p>Skills scoring 80–${SCORE_CAP} receive separate numeric and A/B shields, each linking to their actual Suede listing. Scores from 90–${SCORE_CAP} and grade A use gold; scores from 80–89 and grade B use cool metallic styling. The Suede S remains the main mark on both shields. Every listed skill, at any score, keeps its listing badge, and its existing <code>badge.svg</code> and <code>score.svg</code> links keep working.</p>
         <p>Display either the numeric or letter badge in your repository or skill README, linked to your Suede listing, then request verification. Displaying both also qualifies. Suede checks the rendered README at a recorded commit before a feature placement is activated. An unverified request, no valid linked badge or failed fetch cannot activate promotion. Verification is checked again after a dataset refresh. Existing editorial full pages keep their separate rules.</p>
         ${promotionOffer(here)}
@@ -3104,6 +3129,12 @@ ${guideLinksPanel(here, pageGuides(here).filter((g) => g.path !== linked), "Guid
 function renderSubmit() {
   const here = "directory/submit/";
   const bc = crumbs(here, [["directory/", "Directory"], [null, "List your skill"]]);
+  const submitFaq = faqBlock(here, [
+    ["Does it cost anything to list a skill?", "No. Listings, README badges and featured placements are free. The directory links to your repository and hosts none of your code."],
+    ["What does a skill need to be listed?", "A SKILL.md with YAML frontmatter that declares a name and a description, a declared license, a description written mainly in English, and a pass on at least six of the seven graded checks of the Suede Skill Check, which cover the SKILL.md format, the description, the license and a commit to the repository in the last year."],
+    ["Which skills are not listed?", "Templates, examples, drafts and test fixtures; duplicate copies of a skill already listed; and skills that automate posting, messaging or account activity on a social platform, work around a site's blocks or official API, have scraping a third-party site as their main job, or collect personal data by scraping a social network or map listings. The methodology lists every rule."],
+    ["Where will my skill appear?", "In its category directory and on its repository's page, with its score, grade and license. Skills that pass all seven graded checks can also get a full page with an editorial summary, the files and commands found in the folder, install routes and a downloadable report. Topic pages whose keyword map matches its name or summary list it too."],
+  ]);
   const body = `${bc.html}
       <p class="lead">Put your skill in front of people browsing for exactly what it does. Listing is free: send the repository, and skills that pass the Suede Skill Check get a category placement and a listing page with a README badge that links to it.</p>
       <p><a class="button" href="${ISSUE_URL}" target="_blank" rel="noopener">Request a listing on GitHub</a></p>
@@ -3149,6 +3180,7 @@ ${badgeBlock(here, {
         <h2 id="check-link-title">Already listed?</h2>
         <p>The free <a href="${rel(here, CHECK_PATH)}">Skill AI-visibility check</a> finds your listing, shows its score by component and names the points still open. It runs in your browser.</p>
       </section>
+${submitFaq.html}
 ${submitSuccessPanel(here)}`;
   const title = "List Your Agent Skill | Suede Skills Directory";
   const description = "Request a free listing for your agent skill. Pass the Suede Skill Check to get a category placement and a README badge that links to your listing.";
@@ -3164,6 +3196,7 @@ ${submitSuccessPanel(here)}`;
     jsonld: [
       { "@context": "https://schema.org", "@type": "WebPage", "@id": `${url(here)}#page`, name: title, description, url: url(here), dateModified: PAGE_DATE, isPartOf: DIRECTORY_REF, publisher: PUBLISHER_REF, breadcrumb: { "@id": `${url(here)}#breadcrumb` } },
       bc.ld,
+      submitFaq.ld,
     ],
     footerNote: "Listing in the Suede Skills Directory is free. The directory links to your repository and hosts none of your code.",
   }));
@@ -3279,6 +3312,18 @@ function renderGuidesHub() {
   if (hub.path !== here || hub.title.length > 60 || hub.meta_description.length > 160) throw new Error("pages.json: invalid guides hub");
   const bc = crumbs(here, [["directory/", "Directory"], [null, "Guides"]]);
   const modified = GUIDES.map((g) => g.date_modified).sort().at(-1);
+  const guideLink = (id) => { const g = GUIDES.find((x) => x.id === id); return g ? `<a href="${rel(here, g.path)}">${esc(g.h1)}</a>` : null; };
+  const start = [
+    ["New to agent skills", "Learn where Claude Code, Codex and Cursor load skills and how a skill differs from an MCP server or a plugin.", [guideLink("install-agent-skills"), guideLink("skills-vs-mcp-servers")]],
+    ["Choosing skills for a job", "Start from a graded list for your task, then open the full skill pages to compare files, licenses and install routes.", [guideLink("best-seo-skills"), `<a href="${rel(here, TASKS_PATH)}">Shortlists by task</a>`, `<a href="${rel(here, TOPICS_PATH)}">Skills by topic</a>`, `<a href="${rel(here, STACKS_PATH)}">Recommended stacks</a>`]],
+    ["Publishing a skill", "Write a description that triggers and a README that answers, then earn a listing and a README badge. Listings and badges are free.", [guideLink("skill-ai-visibility"), `<a href="${rel(here, "directory/submit/")}">List your skill</a>`, `<a href="${rel(here, "directory/badges/")}">Quality badges</a>`]],
+  ].map(([who, text, links]) => [who, text, links.filter(Boolean)]).filter(([, , links]) => links.length);
+  const faq = faqBlock(here, [
+    ["Who writes these guides?", "Jason Colapietro, founder of Suede, which publishes this directory. Each guide carries his byline and the date it was last reviewed."],
+    ["Where do the figures in the guides come from?", "From the directory's own published data: Suede Skill Check scores, licenses and file facts from the dated snapshot each guide names, plus install counts published by skills.sh where a guide quotes them. The same files are open on the API and data page."],
+    ["Do the guides apply to Codex and Cursor as well as Claude Code?", "Yes. Claude Code, Codex and Cursor all read skills in the Agent Skills format, a folder with a SKILL.md file. Where the agents differ, such as the folder each one loads skills from, the guides say so."],
+    ["I publish a skill. What should I read first?", "Start with the guide on getting your skill found in search and cited by AI assistants, then run the free Skill AI-visibility check on your repository. It shows your score by component and the points you can still earn."],
+  ]);
   const body = `${bc.html}
       <p class="lead">${esc(hub.intro)}</p>
       <section class="panel" aria-labelledby="all-guides-title">
@@ -3287,10 +3332,17 @@ function renderGuidesHub() {
 ${GUIDES.map((g) => `          <a class="link-row" href="${rel(here, g.path)}"><b>${esc(g.h1)}</b><span>${esc(g.meta_description)} Reviewed ${longDate(g.date_modified)}.</span></a>`).join("\n")}
         </div>
       </section>
+${start.length ? `      <section class="panel" aria-labelledby="start-title">
+        <h2 id="start-title">Where to start</h2>
+        <dl>
+${start.map(([who, text, links]) => `          <dt>${esc(who)}</dt>\n          <dd>${esc(text)} ${links.join(" &middot; ")}</dd>`).join("\n")}
+        </dl>
+      </section>` : ""}
       <section class="panel" aria-labelledby="tools-title">
         <h2 id="tools-title">Check your own skill</h2>
         <p>Publish a skill? The free <a href="${rel(here, CHECK_PATH)}">Skill AI-visibility check</a> shows its score, the points still open and what to fix on its README. Every score follows the published <a href="${rel(here, "directory/methodology/")}">methodology</a>.</p>
-      </section>`;
+      </section>
+${faq.html}`;
   const keywords = setKeywords(here, ["agent skills guides", "agent skills how-to guides", "skill publisher guides"]);
   files.set(`${here}index.html`, page({
     here,
@@ -3321,6 +3373,7 @@ ${GUIDES.map((g) => `          <a class="link-row" href="${rel(here, g.path)}"><
         },
       },
       bc.ld,
+      faq.ld,
     ],
     footerNote: "Guides from the Suede Skills Directory, built on its published data.",
   }));
@@ -3344,6 +3397,12 @@ function renderCheck() {
   const listedCta = campaignPanel(here, { campaign: { id: "check-result" }, variant: { id: "listed-services", headline: plain.heading, body: plain.body, button: plain.cta, url: listedHref } });
   const missingCta = campaignPanel(here, campaignVariant("check-result", here, { id: "b-not-found" }));
   const guide = GUIDES.find((g) => g.id === "skill-ai-visibility");
+  const checkFaq = faqBlock(here, [
+    ["Is the Skill AI-visibility check free?", "Yes. It is free with no signup, and a listing in the directory, its README badges and featured placements are free as well."],
+    ["Does the check send my repository anywhere?", "No. It runs in your browser and reads only the directory's published files. Nothing you type is sent to Suede or anyone else, and the page stores nothing."],
+    ["What if my skill is not in the directory?", "The check tells you so and links to the free listing request. Once a listing is accepted, the skill is scored at the next directory refresh and gets a listing page, a README badge and a report of the points it can still earn."],
+    ["Which fixes raise a score the most?", "The rubric awards points for structure, description length, a when-not-to-use clause, an example request, instruction depth, reference files, scripts, declared tools and compatibility, and recent maintenance. The check lists the three largest open points you control, so you can start with the biggest gain."],
+  ]);
   const body = `${bc.html}
       <p class="lead">See how your skill scores, what it is missing, and what to fix so people and AI assistants can find it. Free, no signup.</p>
       <form class="check-form panel" data-skill-check data-directory="${rel(here, "directory/")}" hidden>
@@ -3377,6 +3436,7 @@ ${missingCta}
         <h2 id="how-check-title">How the check works</h2>
         <p>It looks your skill up in the directory’s ${longDate(data.generated)} snapshot of ${fmt(data.skills.length)} listed skills, then reads that listing’s report: the ${SCORE_METHOD} score, each component’s points and the three largest open points a publisher controls. Curated-list citations are left out of the suggestions because other people award them. <a href="${rel(here, "directory/methodology/")}#score">Read the scoring rubric</a>.${guide ? ` For the full approach, read ${guideAnchor(here, guide)}.` : ""}</p>
       </section>
+${checkFaq.html}
       <script type="application/json" id="check-rubric">${JSON.stringify(Object.fromEntries(RUBRIC.map((r) => [r.id, r.rule]))).replace(/</g, "\\u003c")}</script>
       <script src="check.js" defer></script>`;
   const title = "Skill AI-Visibility Check: Score Your Agent Skill";
@@ -3405,6 +3465,7 @@ ${missingCta}
         breadcrumb: { "@id": `${url(here)}#breadcrumb` },
       },
       bc.ld,
+      checkFaq.ld,
     ],
     footerNote: "The Skill AI-visibility check reads the directory’s published listing data in your browser. It stores and sends nothing.",
   }));
@@ -3746,6 +3807,42 @@ ${filterField(id, rows.length, "skills")}
 ${skillTable(here, rows, { id, showRepo: true, caption })}`;
 }
 
+// Names a short list in full and counts a long one, so an answer on a topic
+// with hundreds of skills stays readable.
+const nameOrCount = (xs, noun) => (xs.length <= 3 ? listPhrase(xs.map((s) => displayName(s))) : `${fmt(xs.length)} ${noun}`);
+
+// Questions a searcher brings to a topic page, answered from that topic's own
+// rows: its top pick, its licenses, its install route and how it was matched.
+function topicFaq(t, best) {
+  const { noun } = t.topic;
+  const rows = t.rows;
+  const top = best[0];
+  const faq = [];
+  if (top) {
+    const drivers = fullPointDrivers(top);
+    faq.push([`Which ${noun} skill has the highest Suede Skill Check score?`, `${displayName(top)} from ${top.repo} scores ${top.score}/100, grade ${top.grade}, the highest-scoring ${noun} skill with a full directory page in the ${longDate(data.generated)} snapshot.${drivers.length ? ` It earns full points for ${listPhrase(drivers)}.` : ""}${best[1] ? ` ${displayName(best[1])} from ${best[1].repo} follows at ${best[1].score}/100.` : ""} Suede's own skills are not ranked.`]);
+  }
+  const kinds = { open: [], noncommercial: [], restricted: [], unknown: [] };
+  for (const s of rows) kinds[licenseKind(s)].push(s);
+  const free = [`All ${fmt(rows.length)} ${noun} skills on this page are published in public GitHub repositories and cost nothing to download.`];
+  if (kinds.open.length) {
+    const lic = licenseCounts(kinds.open);
+    const which = lic.length === 1 ? `the ${lic[0][0]} license` : `an open-source or open-content license, led by ${listPhrase(lic.slice(0, 3).map(([l, n]) => `${l} (${fmt(n)})`))}`;
+    free.push(`${kinds.open.length === rows.length ? (rows.length === 2 ? "Both use" : "Every one uses") : kinds.open.length === 1 ? "One uses" : `${fmt(kinds.open.length)} use`} ${which}.`);
+  }
+  if (kinds.noncommercial.length) free.push(`${nameOrCount(kinds.noncommercial, "skills")} ${kinds.noncommercial.length === 1 ? "allows" : "allow"} non-commercial use only.`);
+  const own = [...kinds.restricted, ...kinds.unknown];
+  if (own.length) free.push(`${nameOrCount(own, "skills")} ${own.length === 1 ? "uses" : "use"} the publisher's own terms; read them before you reuse the files.`);
+  const service = rows.filter((s) => s.lane === "free-with-service").length;
+  if (service) free.push(`${service === 1 ? "One skill connects" : `${fmt(service)} skills connect`} to an outside service, which may charge for its own use.`);
+  faq.push([`Are these ${noun} skills free?`, free.join(" ")]);
+  const pick = top && licenseKind(top) !== "restricted" ? top : rows.find((s) => licenseKind(s) !== "restricted");
+  if (pick) faq.push([`How do I install ${withArticle(noun)} skill in Claude Code or Codex?`, `Run npx skills add with the skill folder's GitHub URL and pick your agent when the skills CLI asks. For ${displayName(pick)}, run: npx skills add ${skillTreeUrl(pick)}. You can also copy the folder into .claude/skills/ for Claude Code or .agents/skills/ for Codex; the agent loads it when a request matches the skill's description.`]);
+  faq.push([`Do ${noun} skills work in Cursor and other agents?`, `Yes. Each listed skill is a SKILL.md folder in the Agent Skills format, which Claude Code, Codex and Cursor all read.${kinds.restricted.length ? ` ${nameOrCount(kinds.restricted, "skills")} ${kinds.restricted.length === 1 ? "follows" : "follow"} the publisher's own install route, shown on the listing.` : ""} A full skill page lists the scripts, credentials and outside hosts that skill uses under Before you install.`]);
+  faq.push([`How does a skill get on the ${t.topic.name} page?`, `A listed skill joins this topic when its name, folder or one-line summary matches the ${noun} keyword map for its category. A topic gets a page once ${TOPIC_GATE.minListed} listed skills match it. Scores follow the published methodology, and publishers can request a listing for free.`]);
+  return faq;
+}
+
 function renderTopic(t) {
   const here = topicPath(t);
   const g = groupById.get(t.topic.group);
@@ -3761,6 +3858,7 @@ function renderTopic(t) {
   const official = rows.filter((s) => s.official).length;
   const related = TOPICS.filter((o) => o !== t).map((o) => [o, o.rows.filter((s) => t.reasons.has(s.id)).length]).filter(([o, n]) => n >= 2 || (o.topic.group === t.topic.group && n >= 1)).sort((a, b) => b[1] - a[1] || a[0].topic.name.localeCompare(b[0].topic.name)).slice(0, 8);
   const tasks = TASKS.filter((k) => k.rows.filter((s) => t.reasons.has(s.id)).length >= 2);
+  const faq = faqBlock(here, topicFaq(t, best));
   const body = `      <p class="lead">${esc(intro)}</p>
 ${best.length ? `      <p class="answer"><b>Highest-scoring ${esc(noun)} skills</b> in the ${longDate(data.generated)} snapshot: ${listPhrase(best.map((s) => `<a href="${rel(here, skillPath(s))}">${esc(displayName(s))}</a> from ${esc(s.repo)} (${s.score}/100)`))}. Scores come from the <a href="${rel(here, "directory/methodology/")}">Suede Skill Check</a>.</p>` : ""}
       <ul class="stat-row" aria-label="Topic size">
@@ -3778,6 +3876,7 @@ ${t.topic.guide ? `      <section class="panel" aria-labelledby="choose-title">
 ${t.topic.guide.map((p) => `        <p>${esc(p)}</p>`).join("\n")}
       </section>` : ""}
 ${tasksPanel(here, tasks, `Ranked ${noun} shortlists`)}
+${faq.html}
 ${related.length ? `      <section class="panel" aria-labelledby="related-topics-title">
         <h2 id="related-topics-title">Related topics</h2>
         <p class="topic-chips">${related.map(([o, n]) => topicChip(here, o, o.rows.length)).join("")}</p>
@@ -3801,6 +3900,7 @@ ${servicesCta("browse", catCounts[0][0], here)}`;
     h1: `${esc(name)} skills <span class="h1-sub">for Claude Code and Codex</span>`,
     body,
     items: rows.map((s) => [displayName(s), listItemUrl(s)]),
+    extraLd: [faq.ld],
     footerNote: `${esc(name)} skills on ${SITE_LABEL}. Every skill belongs to its publisher and links to its source.`,
   });
 }
@@ -3855,6 +3955,8 @@ const PRICING_FAQ = () => {
     ["Are Claude Code skills free?", `Every listed skill is published in a public GitHub repository and costs nothing to download. In the ${longDate(data.generated)} snapshot, ${fmt(by["free-open-source"])} use an open license and name no paid service, ${fmt(by["free-with-service"])} use an open license but connect to an outside service, ${fmt(by.noncommercial)} allow non-commercial use only and ${fmt(by.restricted)} use restricted terms.`],
     ["How does the directory decide a skill needs a service?", "From saved install evidence: environment variables, MCP servers, outside hosts and HTTP requests declared in code or instructions. Network dependencies are retained even without a full page. Listings without install evidence fall back to the compatibility line in SKILL.md."],
     ["Can I use these skills in commercial work?", "Skills under open-source or open-content licenses allow it under their terms. Non-commercial licenses do not, and restricted licenses need the publisher's permission. Each listing links to its license file."],
+    ["Do free skills cost anything to run?", "A skill in the free and open source lane names no paid service, API key or hosted account, so it runs on your agent alone. A skill in the needs a service lane is free itself, but it reads an API key, calls an outside host or connects to an MCP server, and that service may charge for its own use."],
+    ["How do I check a skill's license before installing?", "Every listing names its license and links to the license file at the source. Pages for skills under non-commercial or restricted terms flag them next to the license, and every task shortlist shows the license of each skill it compares."],
   ];
 };
 
@@ -3916,6 +4018,21 @@ ${servicesCta("browse", null, here)}`,
 
 function renderFeaturesHub() {
   const here = FEATURES_PATH;
+  const flag = (id) => FLAGS_LIVE.find((f) => f.flag.id === id);
+  const link = (id) => (flag(id) ? `<a href="${rel(here, flagPath(id))}">${esc(flag(id).flag.label)}</a>` : "");
+  const scenarios = [
+    ["A locked-down or offline machine", ["no-setup", "markdown-only"], "Start with skills whose files read no credential, call no outside host and run no command, or with single-file skills you can read in full before installing."],
+    ["Work inside a product you already use", ["official", "mcp"], "Pick skills from the company behind the tool, or skills that connect to that tool through an MCP server."],
+    ["Repeatable results on real files", ["scripts", "assets"], "Skills that bundle scripts or templates hand the agent code and files the author wrote instead of asking it to improvise them."],
+    ["A security review before install", ["allowed-tools", "network", "api-key"], "See which tools a skill may call, which hosts it reaches and which credentials it reads."],
+  ].filter(([, ids]) => ids.some(flag));
+  const universe = FLAGS_LIVE.find((f) => f.flag.scope === "install")?.universe;
+  const faq = faqBlock(here, [
+    ["How does the directory decide a skill has a capability?", "Each capability is a yes or no fact read from the skill's published files: its SKILL.md frontmatter, the folders that ship with it, and the commands, hosts, credentials and MCP servers its scripts and instructions declare."],
+    ["What does install evidence mean?", `${universe ? `${fmt(universe)} listed skills have saved install facts. ` : ""}Those facts record the credentials, MCP servers, outside hosts and commands a skill's files declare. Filters marked install evidence count only those skills, so a skill without saved facts is not counted as needing nothing.`],
+    ["What does No setup required mean?", "The skill's files read no credential, call no outside host, connect to no MCP server and run no command. You install the folder and the agent can use it right away."],
+    ["Can I combine capability filters?", `Yes. Each capability page links to every category directory with that filter already applied, so you can narrow a capability to one kind of work. For cost, use the ${fmt(LANES_LIVE.length)} cost and license lanes.`],
+  ]);
   browsePage({
     here,
     trail: [["directory/", "Directory"], [null, "Capabilities"]],
@@ -3931,9 +4048,18 @@ function renderFeaturesHub() {
 ${FLAGS_LIVE.map((f) => `          <a class="link-row" href="${rel(here, flagPath(f.flag.id))}"><b>${esc(f.flag.label)} (${fmt(f.rows.length)}${f.flag.scope === "install" ? ` of ${fmt(f.universe)} with install evidence` : ""})</b><span>${esc(f.flag.lede)}</span></a>`).join("\n")}
         </div>
       </section>
+      <section class="panel" aria-labelledby="pick-title">
+        <h2 id="pick-title">Which capabilities to check first</h2>
+        <dl>
+${scenarios.map(([need, ids, text]) => `          <dt>${esc(need)}</dt>\n          <dd>${esc(text)} ${ids.map(link).filter(Boolean).join(" &middot; ")}</dd>`).join("\n")}
+        </dl>
+        <p>For what a skill costs to run, browse by <a href="${rel(here, PRICING_PATH)}">cost and license</a>. For the job it does, browse by <a href="${rel(here, TOPICS_PATH)}">topic</a>.</p>
+      </section>
+${faq.html}
 ${servicesCta("browse-hub", null, here)}`,
     items: FLAGS_LIVE.map((f) => [f.flag.label, url(flagPath(f.flag.id))]),
     footerNote: `Capability filters on ${SITE_LABEL}, read from each skill's published files.`,
+    extraLd: [faq.ld],
   });
 }
 
@@ -4715,6 +4841,12 @@ function renderApi() {
     ["llms.txt", `${host}/llms.txt`, "The directory described for answer engines, with every browse page."],
     ["Sitemap", `${host}/sitemap.xml`, "Every indexable page with its last-modified date."],
   ].filter(Boolean);
+  const apiFaq = faqBlock(here, [
+    ["Do I need an API key to use the directory data?", "No. Every file is a static file on this host, with no key, no account and no rate limit. Fetch it over HTTPS like any other page."],
+    ["Where is the report for one skill?", "Each listing's report.json sits at its listing path, the href field in the search index. It holds the snapshot id and dataset hash, the score by component, the source revision where recorded, the badges and the methodology version."],
+    ["Can I quote scores and install counts?", "Yes. Link back to the skill's listing when you quote a score, and name skills.sh when you quote an install count, since the directory measures no installs of its own."],
+    ["How current is the data?", `Each file names the snapshot it was built from. This page reflects the ${longDate(data.generated)} quality snapshot${INSTALLS ? " and the install snapshot dated in installs.json" : ""}. The sitemap lists every page's last-modified date.`],
+  ]);
   const body = `${bc.html}
       <p class="lead">Everything the directory publishes is a static file on this host. There is no key, no rate limit and no account; please link back to the listing when you quote a score, and name skills.sh when you quote an install count.</p>
       <section class="panel" aria-labelledby="files-title">
@@ -4730,7 +4862,17 @@ ${rows.map(([n, u, t]) => `          <tr><td>${esc(n)}</td><td><a href="${esc(u)
       <section class="panel" aria-labelledby="score-api-title">
         <h2 id="score-api-title">Recomputing a score</h2>
         <p>Scores are computed only from published fields, so a report can be checked. <code>scripts/directory/badges.mjs</code> and <code>scripts/directory/grade.py</code> in the repository recompute the same value from <code>skills.json</code>; the <a href="${rel(here, "directory/methodology/")}#score">methodology</a> lists every component and its points.</p>
-      </section>`;
+      </section>
+      <section class="panel" aria-labelledby="uses-title">
+        <h2 id="uses-title">Common uses</h2>
+        <ul>
+          <li><b>Show a score in your own docs.</b> Embed a listing's <code>score.svg</code> or <code>badge.svg</code> and link it to the listing, as the <a href="${rel(here, "directory/badges/")}">badge guide</a> shows.</li>
+          <li><b>Search from a script.</b> Download <code>search-index.json</code> once and filter by category, license, grade, score or topic. The <a href="${rel(here, "directory/finder/")}">finder skill</a> does this from inside Claude Code, Codex or Cursor.</li>
+          <li><b>Follow what changes.</b> Read <code>feed.xml</code> for new listings and guides${GROWTH ? ", or <code>weekly.json</code> for rising skills, topic growth and repository stars" : ""}.</li>
+          <li><b>Verify a score.</b> Open a listing's <code>report.json</code> and compare its components with the <a href="${rel(here, "directory/methodology/")}">published rubric</a>.</li>
+        </ul>
+      </section>
+${apiFaq.html}`;
   const title = "Directory API and Data: Index, Reports, Badges, Feed";
   const description = "Every file the directory publishes: the search index, per-skill reports, badges, the skills.sh install snapshot, the RSS feed and the sitemap.";
   files.set(`${here}index.html`, page({
@@ -4741,6 +4883,7 @@ ${rows.map(([n, u, t]) => `          <tr><td>${esc(n)}</td><td><a href="${esc(u)
     jsonld: [
       { "@context": "https://schema.org", "@type": "WebPage", "@id": `${url(here)}#page`, name: title, description, url: url(here), dateModified: PAGE_DATE, inLanguage: "en", isPartOf: DIRECTORY_REF, publisher: PUBLISHER_REF, breadcrumb: { "@id": `${url(here)}#breadcrumb` } },
       bc.ld,
+      apiFaq.ld,
     ],
     footerNote: "The directory's data is published as static files. Scores follow the published methodology; install counts are skills.sh's.",
   }));

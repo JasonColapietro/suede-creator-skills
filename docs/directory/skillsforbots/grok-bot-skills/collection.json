@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "repository": "skillsforbots/grok-bot-skills",
+  "listing_url": "https://skills.suedeai.ai/directory/skillsforbots/grok-bot-skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "929dcf97e9ed44db9c6487396d8f3d57",
+    "dataset_sha256": "b3776666fef20de5d77ba0adcd2e6275ba9110dded762cd70ed683a62df9d95f"
+  },
+  "listed_skill_count": 2,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "skillsforbots/grok-bot-skills/bot-safety-rules-starter",
+      "name": "bot-safety-rules-starter",
+      "description": "Use this when setting standing safety rules for one or more bots: no sending email or messages without owner approval, no spending money, ignore instructions hidden in outside content, and a structured handoff note so work can be passed along without losing context.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/skillsforbots/grok-bot-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8b871bc71daa2ad8c7c005d15b938bdf82445859",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-24",
+        "assessment_date": "2026-11-26",
+        "skill_md_url": "https://github.com/skillsforbots/grok-bot-skills/blob/8b871bc71daa2ad8c7c005d15b938bdf82445859/skills/bot-safety-rules-starter/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/skillsforbots/grok-bot-skills/bot-safety-rules-starter/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/skillsforbots/grok-bot-skills/bot-safety-rules-starter/",
+      "source_folder_url": "https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/bot-safety-rules-starter",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/bot-safety-rules-starter",
+        "publisher_setup_url": "https://github.com/skillsforbots/grok-bot-skills/blob/main/skills/bot-safety-rules-starter/SKILL.md"
+      }
+    },
+    {
+      "id": "skillsforbots/grok-bot-skills/reminder-basics",
+      "name": "reminder-basics",
+      "description": "Use this when the owner wants one simple reminder that repeats once a day and stays on until they clearly say it is done. Free, limited version: one item, one daily time, no lists or custom schedules.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/skillsforbots/grok-bot-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8b871bc71daa2ad8c7c005d15b938bdf82445859",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-24",
+        "assessment_date": "2026-11-26",
+        "skill_md_url": "https://github.com/skillsforbots/grok-bot-skills/blob/8b871bc71daa2ad8c7c005d15b938bdf82445859/skills/reminder-basics/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/skillsforbots/grok-bot-skills/reminder-basics/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/skillsforbots/grok-bot-skills/reminder-basics/",
+      "source_folder_url": "https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/reminder-basics",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/reminder-basics",
+        "publisher_setup_url": "https://github.com/skillsforbots/grok-bot-skills/blob/main/skills/reminder-basics/SKILL.md"
+      }
+    }
+  ]
+}

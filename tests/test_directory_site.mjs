@@ -73,7 +73,32 @@ test("the built site has no old directory URLs and no broken internal links", ()
     const sitemap = fs.readFileSync(path.join(out, "sitemap.xml"), "utf8");
     assert.ok(sitemap.includes(`<loc>${NEW}/</loc>`));
     assert.ok(!sitemap.includes(OLD));
+    const home = fs.readFileSync(path.join(out, 'index.html'), 'utf8');
+    const menu = home.match(/<details class="directory-more">[\s\S]*?<\/details>/)?.[0];
+    assert.ok(menu, 'the standalone directory groups secondary navigation');
+    for (const label of ['Top 100', 'New', 'Topics', 'Stacks', 'Security', 'Saved']) {
+      assert.ok(menu.includes('>' + label), label + ' is reachable from More');
+    }
+    for (const label of ['Skills', 'Featured Skills', 'Agents']) {
+      assert.ok(!menu.includes('>' + label + '<'), label + ' remains in the primary navigation');
+    }
+    const crackedLink = /<a class="cracked-devs-link" href="https:\/\/skills\.suedeai\.ai\/cracked\.html" aria-describedby="(cracked-devs-(?:desktop|mobile)-note)">/g;
+    assert.deepEqual([...home.matchAll(crackedLink)].map(match => match[1]), ['cracked-devs-desktop-note', 'cracked-devs-mobile-note']);
+    for (const id of ['cracked-devs-desktop-note', 'cracked-devs-mobile-note']) {
+      assert.match(home, new RegExp(`id="${id}">Don’t click\\. They’re already insufferable\\.<`));
+    }
+    assert.match(home, /<nav class="kind-bar"[\s\S]*?<\/nav>\s*<div class="shell cracked-devs-mobile"/);
+    // The directory ships its own legible icon set, not the shared thin-ring 64px icon.
+    assert.doesNotMatch(home, /favicon-64\.png/);
+    for (const icon of ['/favicon.ico', '/assets/favicon/favicon-16.png', '/assets/favicon/favicon-32.png', '/assets/favicon/apple-touch-icon.png']) {
+      assert.ok(home.includes(`href="${icon}"`), `${icon} is linked from the homepage`);
+      assert.ok(fs.existsSync(path.join(out, icon)), `${icon} ships with the site`);
+    }
+    assert.ok(fs.readFileSync(path.join(out, 'favicon.ico')).equals(fs.readFileSync(new URL('../directory/assets/favicon/favicon.ico', import.meta.url))));
+    const sharedHome = fs.readFileSync(new URL('../docs/directory/index.html', import.meta.url), 'utf8');
+    assert.doesNotMatch(sharedHome, /class="cracked-devs-link"/, 'the old host does not get the new CTA');
     const featured = fs.readFileSync(path.join(out, 'featured/index.html'), 'utf8');
+    assert.doesNotMatch(featured, /class="cracked-devs-link"/, 'subpages do not get the homepage CTA');
     assert.ok(sitemap.includes(`<loc>${NEW}/featured/</loc>`));
     assert.ok(featured.includes(`rel="canonical" href="${NEW}/featured/"`));
     assert.doesNotMatch(featured, /noindex/);

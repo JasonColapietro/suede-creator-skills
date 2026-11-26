@@ -1,0 +1,161 @@
+/* Homepage visual refresh (loaded last on docs/index.html).
+   1. One content column: every section's text starts on the same left edge
+      (1100px column, 40px gutter; 24px under 640px), instead of the five
+      edges the page had drifted into (hero 1180, landing 1180, most 1100,
+      training 900, founder/FAQ 820).
+   2. The six specialties become cards with a proportional lane bar.
+   Long-form text keeps its reading measure via max-width on the text itself,
+   not on the column. */
+
+:root { --home-col: 1100px; --home-gutter: 40px; }
+@media (max-width: 640px) { :root { --home-gutter: 24px; } }
+
+/* ---------- 1. shared column ---------- */
+.skills-home #hero-inner,
+.skills-home .landing-inner,
+.skills-home .faq-inner,
+.skills-home #creator-training > div {
+  max-width: var(--home-col) !important;
+  padding-left: var(--home-gutter) !important;
+  padding-right: var(--home-gutter) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box;
+}
+.skills-home #creator-training { padding-left: 0 !important; padding-right: 0 !important; }
+.skills-home #creator-training p,
+.skills-home .faq-inner > p { max-width: 72ch; }
+.skills-home .faq-inner .faq-item { max-width: 860px; }
+.skills-home #founder-record .faq-inner > div,
+.skills-home #founder-record .faq-inner > article { max-width: 860px; }
+
+/* ---------- 2. specialty cards ---------- */
+.skills-home .lanes-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  border-top: 0;
+  margin-top: 8px;
+}
+.skills-home .lane-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "name count"
+    "desc desc"
+    "bar  bar";
+  align-items: center;
+  gap: 10px 16px;
+  min-height: 188px;
+  padding: 26px 24px 24px;
+  border: 1px solid #1d2b30;
+  border-radius: 6px;
+  background:
+    radial-gradient(120% 80% at 100% 0%, rgba(182, 255, 77, 0.06), transparent 60%),
+    #0a1114;
+  text-decoration: none;
+  overflow: hidden;
+  transition: border-color 0.2s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
+}
+.skills-home .lane-row::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 24px;
+  width: 44px; height: 2px;
+  background: #b6ff4d;
+  transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.skills-home .lane-row:hover,
+.skills-home .lane-row:focus-visible {
+  border-color: #3e5a3a;
+  background-color: #0c1519;
+  transform: translateY(-2px);
+}
+.skills-home .lane-row:hover::before,
+.skills-home .lane-row:focus-visible::before { width: calc(100% - 48px); }
+.skills-home .lane-row:focus-visible { outline: 2px solid #b6ff4d; outline-offset: 3px; }
+
+.skills-home .lane-row .lane-name {
+  grid-area: name;
+  font-size: clamp(22px, 2vw, 26px);
+  line-height: 1.15;
+  color: #e6f3ee;
+}
+.skills-home .lane-row .lane-count {
+  grid-area: count;
+  font: 600 12px/1 var(--font-mono, ui-monospace, monospace);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #b6ff4d;
+  white-space: nowrap;
+  padding: 6px 8px;
+  border: 1px solid #2c4a25;
+  border-radius: 3px;
+  background: rgba(182, 255, 77, 0.06);
+}
+.skills-home .lane-row .lane-desc {
+  grid-area: desc;
+  align-self: start;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: #9aafb2;
+}
+.skills-home .lane-bar {
+  grid-area: bar;
+  align-self: end;
+  display: flex;
+  gap: 4px;
+  height: 6px;
+  margin-top: 6px;
+}
+.skills-home .lane-bar i {
+  flex: var(--n) 1 0;
+  border-radius: 1px;
+  background: #b6ff4d;
+  transform-origin: left;
+}
+.skills-home .lane-bar i:nth-child(2) { background: #6fae3a; }
+.skills-home .lane-bar i:nth-child(3) { background: #3f6b2a; }
+/* Bars fill from the axis when the list scrolls into view; without JS, or
+   before the observer runs, they render full. */
+.skills-home .lane-bar i { transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1); }
+.js-on .skills-home .lanes-list.reveal:not(.in-view) .lane-bar i { transform: scaleX(0); }
+.js-on .skills-home .lanes-list .lane-row:nth-child(2) .lane-bar i { transition-delay: 0.06s; }
+.js-on .skills-home .lanes-list .lane-row:nth-child(3) .lane-bar i { transition-delay: 0.12s; }
+.js-on .skills-home .lanes-list .lane-row:nth-child(4) .lane-bar i { transition-delay: 0.18s; }
+.js-on .skills-home .lanes-list .lane-row:nth-child(5) .lane-bar i { transition-delay: 0.24s; }
+.js-on .skills-home .lanes-list .lane-row:nth-child(6) .lane-bar i { transition-delay: 0.30s; }
+
+@media (max-width: 980px) {
+  .skills-home .lanes-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .skills-home .lanes-list { grid-template-columns: 1fr; gap: 12px; }
+  .skills-home .lane-row { min-height: 0; padding: 22px 20px 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .skills-home .lane-row, .skills-home .lane-row::before { transition: none; }
+  .skills-home .lane-row:hover { transform: none; }
+  .skills-home .lane-bar i { transition: none !important; transform: none !important; }
+}
+
+/* The hero now shares the 1100px column; give the headline side more of it
+   so the headline keeps its three-line shape. */
+@media (min-width: 981px) {
+  .skills-home #hero-grid { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr) !important; gap: 48px !important; }
+}
+
+/* The AI Instructions link sits in a bare <p> after the footer columns; give
+   it the footer's link treatment instead of browser defaults at x=0. */
+.skills-home footer > p:last-child {
+  max-width: var(--home-col);
+  margin: 4px auto 28px;
+  padding: 0 var(--home-gutter);
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 13px;
+}
+.skills-home footer > p:last-child a { color: #9aafb2; text-decoration: none; transition: color 0.15s; }
+.skills-home footer > p:last-child a:hover { color: #b6ff4d; }
+.skills-home footer > p:last-child a:focus-visible { outline: 2px solid #b6ff4d; outline-offset: 3px; }

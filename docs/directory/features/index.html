@@ -30,7 +30,7 @@
         "name": "Agent Skills by Capability: MCP, Scripts, No Setup",
         "description": "Filter Claude Code skills by capability: official publishers, MCP servers, API keys, bundled scripts, no setup required and 9 more.",
         "url": "https://skills.suedeai.ai/directory/features/",
-        "dateModified": "2026-11-22",
+        "dateModified": "2026-11-26",
         "inLanguage": "en",
         "isPartOf": {
           "@type": "CollectionPage",
@@ -189,6 +189,47 @@
         ]
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://skills.suedeai.ai/directory/features/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does the directory decide a skill has a capability?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each capability is a yes or no fact read from the skill's published files: its SKILL.md frontmatter, the folders that ship with it, and the commands, hosts, credentials and MCP servers its scripts and instructions declare."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does install evidence mean?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "782 listed skills have saved install facts. Those facts record the credentials, MCP servers, outside hosts and commands a skill's files declare. Filters marked install evidence count only those skills, so a skill without saved facts is not counted as needing nothing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does No setup required mean?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The skill's files read no credential, call no outside host, connect to no MCP server and run no command. You install the folder and the agent can use it right away."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I combine capability filters?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Each capability page links to every category directory with that filter already applied, so you can narrow a capability to one kind of work. For cost, use the 4 cost and license lanes."
+            }
+          }
+        ]
+      }
+    </script>
     <meta name="theme-color" content="#000000">
     <link rel="preload" href="../../assets/fonts/geist-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../assets/fonts/geist-mono-var-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -204,7 +245,7 @@
       <nav class="shell nav-inner" aria-label="Main navigation">
         <a href="../" class="nav-logo" aria-label="Suede Skills Directory home">
           <img src="../../assets/suede-ai-logo-transparent.webp" alt="Suede" width="28" height="28" onerror="this.style.display='none'">
-          <span class="nav-logo-wordmark">SuedeAI<span>.directory</span></span>
+          <span class="nav-logo-wordmark">Suede <span>Directory</span></span>
         </a>
         <a class="gh-star gh-star--nav" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" data-gh-star aria-label="Star Suede Skills on GitHub, 121 stars"><svg class="gh-star-icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg><span>Star</span><span class="gh-star-count">121</span></a>
         <details class="nav-disclosure" open>
@@ -230,8 +271,8 @@
     </header>
     <nav class="kind-bar" aria-label="Directory catalogs">
       <div class="shell kind-bar-inner">
-        <a href="../" aria-current="page"><svg class="pix" viewBox="0 0 12 12" width="14" height="14" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M0 0h4v1h-4zM5 0h4v1h-4zM0 1h4v1h-4zM5 1h4v1h-4zM0 2h4v1h-4zM5 2h4v1h-4zM0 4h4v1h-4zM5 4h4v1h-4zM0 5h4v1h-4zM5 5h4v1h-4zM0 6h4v1h-4zM5 6h4v1h-4zM0 8h4v1h-4zM5 8h4v1h-4zM0 9h4v1h-4zM5 9h4v1h-4zM0 10h4v1h-4zM5 10h4v1h-4z"/></svg><span class="kind-label" data-short="Skills">Skills</span><span class="count-chip">3,906</span></a>
-        <a href="../featured/"><svg class="pix" viewBox="0 0 12 12" width="14" height="14" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M5 0h2v1h-2zM5 1h2v1h-2zM4 2h4v1h-4zM4 3h4v1h-4zM0 4h12v1h-12zM1 5h10v1h-10zM2 6h8v1h-8zM3 7h6v1h-6zM3 8h2v1h-2zM7 8h2v1h-2zM2 9h2v1h-2zM8 9h2v1h-2zM1 10h1v1h-1zM10 10h1v1h-1z"/></svg><span class="kind-label" data-short="Featured">Featured Skills</span><span class="count-chip">36</span></a>
+        <a href="../" aria-current="page"><svg class="pix" viewBox="0 0 12 12" width="14" height="14" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M0 0h4v1h-4zM5 0h4v1h-4zM0 1h4v1h-4zM5 1h4v1h-4zM0 2h4v1h-4zM5 2h4v1h-4zM0 4h4v1h-4zM5 4h4v1h-4zM0 5h4v1h-4zM5 5h4v1h-4zM0 6h4v1h-4zM5 6h4v1h-4zM0 8h4v1h-4zM5 8h4v1h-4zM0 9h4v1h-4zM5 9h4v1h-4zM0 10h4v1h-4zM5 10h4v1h-4z"/></svg><span class="kind-label" data-short="Skills">Skills</span><span class="count-chip">3,916</span></a>
+        <a href="../featured/"><svg class="pix" viewBox="0 0 12 12" width="14" height="14" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M5 0h2v1h-2zM5 1h2v1h-2zM4 2h4v1h-4zM4 3h4v1h-4zM0 4h12v1h-12zM1 5h10v1h-10zM2 6h8v1h-8zM3 7h6v1h-6zM3 8h2v1h-2zM7 8h2v1h-2zM2 9h2v1h-2zM8 9h2v1h-2zM1 10h1v1h-1zM10 10h1v1h-1z"/></svg><span class="kind-label" data-short="Featured">Featured Skills</span><span class="count-chip">37</span></a>
         <a href="../agents/"><svg class="pix" viewBox="0 0 12 12" width="14" height="14" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M5 0h2v1h-2zM5 1h2v1h-2zM2 2h8v1h-8zM1 3h1v1h-1zM10 3h1v1h-1zM1 4h1v1h-1zM3 4h2v1h-2zM7 4h2v1h-2zM10 4h1v1h-1zM1 5h1v1h-1zM3 5h2v1h-2zM7 5h2v1h-2zM10 5h1v1h-1zM1 6h1v1h-1zM10 6h1v1h-1zM1 7h1v1h-1zM3 7h6v1h-6zM10 7h1v1h-1zM1 8h1v1h-1zM10 8h1v1h-1zM2 9h8v1h-8zM3 10h1v1h-1zM8 10h1v1h-1zM3 11h1v1h-1zM8 11h1v1h-1z"/></svg><span class="kind-label" data-short="Agents">AI agents</span><span class="count-chip">87</span></a>
         <a href="../plugins/"><svg class="pix" viewBox="0 0 12 12" width="14" height="14" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M3 0h1v1h-1zM8 0h1v1h-1zM3 1h1v1h-1zM8 1h1v1h-1zM2 2h8v1h-8zM2 3h1v1h-1zM9 3h1v1h-1zM2 4h1v1h-1zM9 4h1v1h-1zM2 5h1v1h-1zM9 5h1v1h-1zM3 6h1v1h-1zM8 6h1v1h-1zM4 7h4v1h-4zM5 8h2v1h-2zM5 9h2v1h-2zM5 10h2v1h-2z"/></svg><span class="kind-label" data-short="Plugins">Plugins and mods</span><span class="count-chip">22</span></a>
         <a href="../grok/"><svg class="pix" viewBox="0 0 12 12" width="14" height="14" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M6 0h4v1h-4zM5 1h1v1h-1zM4 2h1v1h-1zM3 3h1v1h-1zM2 4h7v1h-7zM7 5h1v1h-1zM6 6h1v1h-1zM5 7h1v1h-1zM4 8h1v1h-1zM3 9h1v1h-1zM2 10h1v1h-1z"/></svg><span class="kind-label" data-short="Grok">Grok bots</span><span class="count-chip">20</span></a>
@@ -249,20 +290,45 @@
         <h2 id="flags-title">14 capabilities</h2>
         <div class="links">
           <a class="link-row" href="official/"><b>Official publisher (1,940)</b><span>Skills published by the company behind the product, framework or service they work with.</span></a>
-          <a class="link-row" href="full-page/"><b>Full directory page (761)</b><span>Skills with a full page: an editorial summary, the files and commands found in the skill folder, install routes and a downloadable report.</span></a>
-          <a class="link-row" href="badge-eligible/"><b>Quality badge (1,792)</b><span>Skills scoring 80 to 99 on the Suede Skill Check, which offer numeric and letter README badges.</span></a>
+          <a class="link-row" href="full-page/"><b>Full directory page (768)</b><span>Skills with a full page: an editorial summary, the files and commands found in the skill folder, install routes and a downloadable report.</span></a>
+          <a class="link-row" href="badge-eligible/"><b>Quality badge (1,793)</b><span>Skills scoring 80 to 99 on the Suede Skill Check, which offer numeric and letter README badges.</span></a>
           <a class="link-row" href="scripts/"><b>Bundles scripts (674)</b><span>Skills that ship a scripts/ folder, so the agent runs code the author wrote instead of improvising it.</span></a>
-          <a class="link-row" href="references/"><b>Bundles reference files (1,884)</b><span>Skills that ship a references/, reference/ or docs/ folder the agent reads on demand.</span></a>
+          <a class="link-row" href="references/"><b>Bundles reference files (1,887)</b><span>Skills that ship a references/, reference/ or docs/ folder the agent reads on demand.</span></a>
           <a class="link-row" href="assets/"><b>Bundles assets or templates (326)</b><span>Skills that ship templates, assets or other files the agent copies into its work.</span></a>
-          <a class="link-row" href="markdown-only/"><b>SKILL.md only (1,202)</b><span>Skills that are one SKILL.md file: nothing to run, nothing to configure, easy to read before you install.</span></a>
+          <a class="link-row" href="markdown-only/"><b>SKILL.md only (1,207)</b><span>Skills that are one SKILL.md file: nothing to run, nothing to configure, easy to read before you install.</span></a>
           <a class="link-row" href="allowed-tools/"><b>Declares tool permissions (558)</b><span>Skills whose frontmatter declares allowed-tools, so you can see which tools the agent may call before installing.</span></a>
           <a class="link-row" href="compatibility/"><b>Declares compatibility (528)</b><span>Skills whose frontmatter states the agents, versions or services they were written for.</span></a>
-          <a class="link-row" href="mcp/"><b>Uses an MCP server (60 of 772 with install evidence)</b><span>Skills whose files connect to a Model Context Protocol server or name MCP tools.</span></a>
-          <a class="link-row" href="api-key/"><b>Needs an API key or account (127 of 772 with install evidence)</b><span>Skills whose files read an API key or other credential from the environment.</span></a>
-          <a class="link-row" href="network/"><b>Calls outside services (94 of 772 with install evidence)</b><span>Skills whose scripts or instructions call hosts outside your machine.</span></a>
-          <a class="link-row" href="runs-commands/"><b>Runs commands (102 of 772 with install evidence)</b><span>Skills whose files run package managers, CLIs or other commands.</span></a>
-          <a class="link-row" href="no-setup/"><b>No setup required (484 of 772 with install evidence)</b><span>Skills whose files read no credential, call no outside host, connect to no MCP server and run no command: install and go.</span></a>
+          <a class="link-row" href="mcp/"><b>Uses an MCP server (63 of 782 with install evidence)</b><span>Skills whose files connect to a Model Context Protocol server or name MCP tools.</span></a>
+          <a class="link-row" href="api-key/"><b>Needs an API key or account (127 of 782 with install evidence)</b><span>Skills whose files read an API key or other credential from the environment.</span></a>
+          <a class="link-row" href="network/"><b>Calls outside services (97 of 782 with install evidence)</b><span>Skills whose scripts or instructions call hosts outside your machine.</span></a>
+          <a class="link-row" href="runs-commands/"><b>Runs commands (102 of 782 with install evidence)</b><span>Skills whose files run package managers, CLIs or other commands.</span></a>
+          <a class="link-row" href="no-setup/"><b>No setup required (491 of 782 with install evidence)</b><span>Skills whose files read no credential, call no outside host, connect to no MCP server and run no command: install and go.</span></a>
         </div>
+      </section>
+      <section class="panel" aria-labelledby="pick-title">
+        <h2 id="pick-title">Which capabilities to check first</h2>
+        <dl>
+          <dt>A locked-down or offline machine</dt>
+          <dd>Start with skills whose files read no credential, call no outside host and run no command, or with single-file skills you can read in full before installing. <a href="no-setup/">No setup required</a> &middot; <a href="markdown-only/">SKILL.md only</a></dd>
+          <dt>Work inside a product you already use</dt>
+          <dd>Pick skills from the company behind the tool, or skills that connect to that tool through an MCP server. <a href="official/">Official publisher</a> &middot; <a href="mcp/">Uses an MCP server</a></dd>
+          <dt>Repeatable results on real files</dt>
+          <dd>Skills that bundle scripts or templates hand the agent code and files the author wrote instead of asking it to improvise them. <a href="scripts/">Bundles scripts</a> &middot; <a href="assets/">Bundles assets or templates</a></dd>
+          <dt>A security review before install</dt>
+          <dd>See which tools a skill may call, which hosts it reaches and which credentials it reads. <a href="allowed-tools/">Declares tool permissions</a> &middot; <a href="network/">Calls outside services</a> &middot; <a href="api-key/">Needs an API key or account</a></dd>
+        </dl>
+        <p>For what a skill costs to run, browse by <a href="../pricing/">cost and license</a>. For the job it does, browse by <a href="../topics/">topic</a>.</p>
+      </section>
+      <section class="panel faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Questions and answers</h2>
+        <h3>How does the directory decide a skill has a capability?</h3>
+        <p>Each capability is a yes or no fact read from the skill's published files: its SKILL.md frontmatter, the folders that ship with it, and the commands, hosts, credentials and MCP servers its scripts and instructions declare.</p>
+        <h3>What does install evidence mean?</h3>
+        <p>782 listed skills have saved install facts. Those facts record the credentials, MCP servers, outside hosts and commands a skill's files declare. Filters marked install evidence count only those skills, so a skill without saved facts is not counted as needing nothing.</p>
+        <h3>What does No setup required mean?</h3>
+        <p>The skill's files read no credential, call no outside host, connect to no MCP server and run no command. You install the folder and the agent can use it right away.</p>
+        <h3>Can I combine capability filters?</h3>
+        <p>Yes. Each capability page links to every category directory with that filter already applied, so you can narrow a capability to one kind of work. For cost, use the 4 cost and license lanes.</p>
       </section>
       <aside class="panel svc-cta" aria-labelledby="svc-title" data-services-cta="browse-hub">
         <h2 class="svc-kicker" id="svc-title">From Suede, the publisher of this directory</h2>

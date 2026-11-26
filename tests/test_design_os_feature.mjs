@@ -1,0 +1,26 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+const read = p => JSON.parse(fs.readFileSync(p, 'utf8'));
+test('DESIGN:OS is a scoped source-only editorial, never a graded or bundled skill', () => {
+ const p = read('directory/featured-projects.json').projects.find(p => p.id === 'design-os');
+ assert.ok(p);
+ assert.equal(p.repo, 'jangtrinh/design-os');
+ assert.equal(p.commit, '23a21ca27501ae92c37121ae2832ade08d151dd4');
+ assert.match(p.license, /PolyForm Shield 1\.0\.0/);
+ assert.match(p.license, /source-available/i);
+ assert.deepEqual(p.capabilities.map(c => c.title), ['design-os: orient the design workflow', 'design-os-designer: build, check and hand over']);
+ assert.ok(!read('directory/skills.json').skills.some(s => JSON.stringify(s).includes('jangtrinh/design-os')));
+ assert.equal(fs.existsSync('skills/design-os'), false);
+ assert.equal(fs.existsSync('skills/design-os-designer'), false);
+ for (const key of ['skills','score','grade','commands','verified','certified']) assert.equal(key in p, false);
+ assert.match(p.setup, /only design-os-designer/);
+ assert.match(p.setup, /do not include the design-os router/);
+ const review = fs.readFileSync(p.review, 'utf8');
+ for (const path of ['skills/design-os/SKILL.md','skills/design-os-designer/SKILL.md','LICENSE','package.json']) assert.ok(review.includes(`${p.commit}/${path}`));
+ assert.ok(!read('directory/inclusions.json').repositories.includes(p.repo));
+ const app = read('directory/applications.json').applications.find(a => a.issue === 414);
+ assert.deepEqual(app.scope, ['design-os','design-os-designer']);
+ assert.equal(read('directory/application-decisions.json')['414'].scope_version, app.scope_version);
+ assert.equal(read('directory/application-decisions.json')['414'].feature_id, p.id);
+});

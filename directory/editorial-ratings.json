@@ -1,0 +1,20 @@
+{
+  "klingai-tech/claude-plugin/kling-ai": {
+    "score": 88,
+    "date": "2026-11-14",
+    "basis": "Owner editorial assessment",
+    "source_revision": "f470369fb0c275edcd1f10eae23341fb0a8773ec"
+  },
+  "klingai-tech/claude-plugin/kling-ai-generate-image": {
+    "score": 89,
+    "date": "2026-11-14",
+    "basis": "Owner editorial assessment",
+    "source_revision": "f470369fb0c275edcd1f10eae23341fb0a8773ec"
+  },
+  "klingai-tech/claude-plugin/kling-ai-generate-video": {
+    "score": 88,
+    "date": "2026-11-14",
+    "basis": "Owner editorial assessment",
+    "source_revision": "f470369fb0c275edcd1f10eae23341fb0a8773ec"
+  }
+}

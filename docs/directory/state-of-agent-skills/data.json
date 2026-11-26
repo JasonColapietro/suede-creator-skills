@@ -2,21 +2,21 @@
   "snapshot": "2026-10-22",
   "install_snapshot": "2026-11-22",
   "scope": "Third-party listed skills; Suede excluded",
-  "total": 3839,
+  "total": 3849,
   "grades": {
     "A": 120,
-    "B": 1605,
-    "C": 1387,
+    "B": 1606,
+    "C": 1396,
     "D": 727
   },
   "cost_lanes": [
     [
       "free-open-source",
-      3418
+      3425
     ],
     [
       "free-with-service",
-      314
+      317
     ],
     [
       "noncommercial",
@@ -30,7 +30,7 @@
   "categories": [
     [
       "ai-agents-llm",
-      602
+      603
     ],
     [
       "developer-tools",
@@ -42,19 +42,19 @@
     ],
     [
       "marketing-seo",
-      311
+      313
     ],
     [
       "product-management",
       237
     ],
     [
-      "productivity-knowledge",
-      235
+      "media-creative",
+      236
     ],
     [
-      "media-creative",
-      233
+      "productivity-knowledge",
+      236
     ],
     [
       "science-research",
@@ -74,7 +74,7 @@
     ],
     [
       "business-finance",
-      163
+      166
     ],
     [
       "security",
@@ -97,56 +97,56 @@
     {
       "name": "Curated-list citations",
       "max": 7,
-      "missing": 3620,
-      "lost": 17693
+      "missing": 3630,
+      "lost": 17763
     },
     {
       "name": "Boundary clause",
       "max": 4,
-      "missing": 3327,
-      "lost": 13308
+      "missing": 3337,
+      "lost": 13348
     },
     {
       "name": "Structural checks",
       "max": 56,
-      "missing": 1296,
-      "lost": 10368
+      "missing": 1298,
+      "lost": 10384
     },
     {
       "name": "Example request",
       "max": 3,
-      "missing": 2882,
-      "lost": 8646
+      "missing": 2892,
+      "lost": 8676
     },
     {
       "name": "Compatibility declared",
       "max": 2,
-      "missing": 3311,
-      "lost": 6622
+      "missing": 3321,
+      "lost": 6642
     },
     {
       "name": "Tool permissions declared",
       "max": 2,
-      "missing": 3281,
-      "lost": 6562
+      "missing": 3291,
+      "lost": 6582
     },
     {
       "name": "Bundled scripts",
       "max": 2,
-      "missing": 3177,
-      "lost": 6354
+      "missing": 3187,
+      "lost": 6374
     },
     {
       "name": "Reference files",
       "max": 3,
-      "missing": 2022,
-      "lost": 6066
+      "missing": 2029,
+      "lost": 6087
     },
     {
       "name": "Instruction depth",
       "max": 7,
-      "missing": 1056,
-      "lost": 4476
+      "missing": 1057,
+      "lost": 4479
     },
     {
       "name": "Recent maintenance",

@@ -1,7 +1,20 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-22",
+  "updated": "2026-11-26",
   "applications": [
+    {
+      "issue": 445,
+      "applicant": "djmoonlitse-gif",
+      "repo": "moonlitnayeem/fairvalid-ai",
+      "scope_version": "7e59f2e0c9fa5498733a3cb8b773f30e47f3851779409bb0f24374a31ec72011",
+      "kind": "skill",
+      "scope": [
+        "email-verification",
+        "fairmatch-leads"
+      ],
+      "applied_at": "2026-11-25T09:38:12Z",
+      "issue_state": "open"
+    },
     {
       "issue": 430,
       "applicant": "skillsforbots",
