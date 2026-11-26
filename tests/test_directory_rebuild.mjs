@@ -44,7 +44,7 @@ test("the install snapshot is well formed, dated and attributed to skills.sh", (
   for (const [key, n] of Object.entries(published.skills)) assert.equal(n, installs.skills[key].installs, key);
 });
 
-test("the hub leads with a tabbed leaderboard whose rows are in order and never rank a Suede AI skill", () => {
+test("the hub leads with a tabbed leaderboard whose rows are in order and never rank a Suede skill", () => {
   const html = page("directory/");
   const main = mainOf(html);
   assert.ok(main.indexOf('class="board-section"') < main.indexOf('data-directory-browser'), "the leaderboard precedes the search");

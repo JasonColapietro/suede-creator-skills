@@ -2,7 +2,7 @@
 
 <a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55"/></a>
 
-Source data for [skills.suedeai.ai/directory/](https://skills.suedeai.ai/directory/), a curated index of published Agent Skills from independent publishers and the accepted Suede AI Skills distribution. Every page under `docs/directory/` is generated from the files here by `scripts/build-directory.mjs`; never edit that HTML by hand.
+Source data for [skills.suedeai.ai/directory/](https://skills.suedeai.ai/directory/), a curated index of published Agent Skills from independent publishers and the accepted Suede Skills distribution. Every page under `docs/directory/` is generated from the files here by `scripts/build-directory.mjs`; never edit that HTML by hand.
 
 The [Suede Awesome Everything catalog](../awesome/README.md) is the GitHub Markdown view of the same accepted snapshot, with AI agent skills scored on the 0–99 quality scale. `scripts/build-awesome-directory.mjs` generates its category pages, publisher credits and featured-project guidance. See [its contribution guide](../awesome/CONTRIBUTING.md) for regeneration and freshness checks.
 
@@ -12,7 +12,7 @@ The [Suede Awesome Everything catalog](../awesome/README.md) is the GitHub Markd
 | `labels.json` | The editorial layer: a category for every skill and a one-sentence summary, in the directory's own words, for skills with a page | Reviewed by hand or by an agent, keyed by skill id |
 | `featured-projects.json` | Editorial project selections, accepted scopes, pinned intake reviews and project-specific setup for `/directory/featured/`; independent of catalog scores and README-badge verification | Reviewed by hand or by an agent |
 | `categories.json` | The sixteen category directories: slug, title and intro copy | Hand-written |
-| `task-pages.json` | The keyword map behind the task pages (`/for/<job>/`, "What are the best Claude Code skills for <job>?") and the "<skill> alternatives" pages. A job gets a page only when at least 5 listed skills match and at least 3 of them have full pages scoring 80 or more; Suede AI's own skills are never ranked (`scripts/directory/task-pages.mjs`) | Hand-written |
+| `task-pages.json` | The keyword map behind the task pages (`/for/<job>/`, "What are the best Claude Code skills for <job>?") and the "<skill> alternatives" pages. A job gets a page only when at least 5 listed skills match and at least 3 of them have full pages scoring 80 or more; Suede's own skills are never ranked (`scripts/directory/task-pages.mjs`) | Hand-written |
 | `topics.json` | The taxonomy behind the topic pages (`/topics/<id>/`): groups, topics with keyword patterns, and the Futurepedia labels each one stands in for, which the parity audit reads. A topic gets a page when at least 3 listed skills match it (`scripts/directory/topics.mjs`) | Hand-written |
 | `applications.json` | Sanitized public GitHub applications: source issue, requested repository/scope, submission date and issue state; public applicant handles, no private contacts | `node scripts/directory/sync-applications.mjs` |
 | `application-decisions.json` | Explicit links from an application issue to its reviewed feature/member entry or standalone review; independent of GitHub issue state | Reviewed by hand or by an agent |
@@ -22,7 +22,7 @@ The [Suede Awesome Everything catalog](../awesome/README.md) is the GitHub Markd
 | `listed-since.json` | Ledger of the snapshot date that first listed each skill, keyed by skill id. It feeds the "Listed since" row on skill pages and the `/new/` page | `scripts/build-directory.mjs`, which adds new skills at the snapshot date and drops skills that left the dataset |
 | `installs.json` | Snapshot of install counts from skills.sh, keyed by `owner/repo/skill`: the all-time count and, where skills.sh publishes one, the weekly series, with the fetch date and source URL. It feeds the most-installed and rising boards, the Installs row on skill pages, the `installs` sort in search and the Top 100 install chart. Every surface that shows a count names skills.sh and the date | `scripts/directory/installs.mjs` |
 | `kinds.json` | The non-skill kinds (`/plugins/`, `/grok/`, `/mcp-servers/`, `/rules/`): docs links, install commands, sections of entries with verified repositories, and an FAQ. Entries are listed, not graded | Hand-written |
-| `editorial/stacks.json`, `editorial/stacks/*.md` | Jason's recommended stacks at `/stacks/`: one article per task. Each entry names the Suede AI skill that covers the task above the article; the article body recommends third-party skills only, and the build refuses a body that names Suede | Hand-written |
+| `editorial/stacks.json`, `editorial/stacks/*.md` | Jason's recommended stacks at `/stacks/`: one article per task. Each entry names the Suede skill that covers the task above the article; the article body recommends third-party skills only, and the build refuses a body that names Suede | Hand-written |
 
 [DESIGN.md](DESIGN.md) describes the directory's own design system (palette, type, the generated focal graphics) and the font licenses.
 
@@ -120,7 +120,7 @@ The build writes these pages beside the category directories:
 - `/pricing/<lane>/`: one cost lane per skill, from its license and whether its files name a paid or account-based service: free and open source, free skill that needs a service, non-commercial license, restricted license.
 - `/features/<flag>/`: capability flags such as official publisher, bundles scripts, uses an MCP server and no setup required. A skill can carry any number. Flags read from the install record cover skills with full pages only, and those pages say so.
 - `/new/`: skills first listed within the last 30 days, from `listed-since.json`, and skills whose repository was updated in that window.
-- `/top/`: two Top 100 lists in tabs. Most installed ranks listed skills by the skills.sh snapshot in `installs.json`, with an install chart of the top twenty; highest scores ranks the 100 highest-scoring listed skills. A rising pane shows the largest weekly gains where skills.sh publishes a series. Rankings exclude Suede AI's own skills, as the task pages do.
+- `/top/`: two Top 100 lists in tabs. Most installed ranks listed skills by the skills.sh snapshot in `installs.json`, with an install chart of the top twenty; highest scores ranks the 100 highest-scoring listed skills. A rising pane shows the largest weekly gains where skills.sh publishes a series. Rankings exclude Suede's own skills, as the task pages do.
 - `/trust/`: what the directory checks before listing a skill, what it does not (no malware scan, no runtime test), a matrix of every full-page skill by what its files touch, three documented registry attacks with sources, the scanners a reader can run, and a review checklist. No listing carries a security claim; the glance panel on every skill page says `Not scanned by the directory`.
 - `/stacks/` and `/stacks/<id>/`: the recommended-stack articles from `editorial/stacks.json`.
 - `/plugins/`, `/grok/`, `/mcp-servers/`, `/rules/`: the kinds in `kinds.json`.
@@ -295,7 +295,7 @@ publishing. Never hand-mark an unverified publisher as verified.
 Authors below 80 are invited to request help through the listing form, improve
 the failed checks, and request another review.
 
-## Scoped Suede AI Skills source intake
+## Scoped Suede Skills source intake
 
 The accepted first-party distribution is
 `JasonColapietro/suede-creator-skills`, rooted at `skills/` with an explicit
@@ -334,6 +334,22 @@ Retain the independent fetch provenance alongside the review.
 Only actual indexed-list citations earn adoption points. Full third-party
 README copies remain local intake inputs; the public receipt retains revisions,
 document hashes and target links rather than copying their text.
+
+### Replace one reviewed listing in place
+
+For a one-skill source update, run the parser and curator on the pinned source
+in a disposable checkout and retain the matching row in
+`intake/first-party-listing-updates.json`. Keep the original dataset and review
+receipt intact. Record the old and new revisions, assessed date, source
+inventory and unchanged row identity. The builder applies the reviewed row in
+place and binds that row's report to a separate digest. The catalog ID, listing
+URL, original listing date, and all other source pins stay unchanged.
+
+Keep a scoped update active while its predecessor is still the publisher
+snapshot. When a full refresh incorporates the same revision or a later
+reviewed version, reconcile and retire the active update in that refresh;
+retain its commit and receipt in history. Do not turn a single-source review
+into an unverified new publication or security grade.
 
 A scoped review preserves the global external snapshot date and every external
 skill record and repository metadata value. Its dated receipt identifies the

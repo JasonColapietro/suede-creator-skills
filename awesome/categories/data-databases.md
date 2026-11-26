@@ -8,9 +8,9 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 **180 accepted skills · 29 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
-**Compare on the 0–99 quality scale:** this category’s verified scores span **66–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=data-databases&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
+**Compare on the 0–99 quality scale:** this category’s verified scores span **66–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=data-databases&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
-[Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede AI listing.
+[Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede listing.
 
 <details>
 <summary>Browse publishers in this category</summary>
@@ -51,7 +51,7 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 ## avelikiy/great\_cto
 
-[Repository](https://github.com/avelikiy/great_cto) · Publisher: [avelikiy](https://github.com/avelikiy) · [Suede AI listing](https://skills.suedeai.ai/directory/avelikiy/great-cto/)
+[Repository](https://github.com/avelikiy/great_cto) · Publisher: [avelikiy](https://github.com/avelikiy) · [Suede listing](https://skills.suedeai.ai/directory/avelikiy/great-cto/)
 
 - **77/100 · C** · [migration-ready-schema](https://github.com/avelikiy/great_cto/blob/main/skills/migration-ready-schema/SKILL.md): Sets data-model rules, such as provenance and rollback fields on importable entities, so a schema can import customer data from incumbent products. [Suede](https://skills.suedeai.ai/directory/avelikiy/great-cto/migration-ready-schema/)
 
@@ -59,7 +59,7 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 ## aws/agent-toolkit-for-aws
 
-[Repository](https://github.com/aws/agent-toolkit-for-aws) · Publisher: [aws](https://github.com/aws) · [Suede AI listing](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/)
+[Repository](https://github.com/aws/agent-toolkit-for-aws) · Publisher: [aws](https://github.com/aws) · [Suede listing](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/)
 
 - **84/100 · B** · [finding-data-lake-assets](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/analytics-skills/finding-data-lake-assets/SKILL.md): Resolve data lake and lakehouse asset references across Glue Data Catalog, S3, S3 Tables, and Redshift. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#finding-data-lake-assets)
 - **84/100 · B** · [querying-data-lake](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/analytics-skills/querying-data-lake/SKILL.md): Execute and manage Athena SQL queries across default and federated catalogs (Glue, S3 Tables, Redshift). [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#querying-data-lake)
@@ -87,7 +87,7 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 ## cloudflare/skills
 
-[Repository](https://github.com/cloudflare/skills) · Publisher: [cloudflare](https://github.com/cloudflare) · [Suede AI listing](https://skills.suedeai.ai/directory/cloudflare/skills/)
+[Repository](https://github.com/cloudflare/skills) · Publisher: [cloudflare](https://github.com/cloudflare) · [Suede listing](https://skills.suedeai.ai/directory/cloudflare/skills/)
 
 - **78/100 · C** · [basin](https://github.com/cloudflare/skills/blob/main/skills/basin/SKILL.md): Builds and troubleshoots Cloudflare Basin analytics workflows with Basin Pipelines, Catalog, and SQL, such as streaming data into R2 Iceberg tables and querying them. [Suede](https://skills.suedeai.ai/directory/cloudflare/skills/basin/)
 
@@ -95,7 +95,7 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 ## costory-io/costory-finops-mcp-skills
 
-[Repository](https://github.com/costory-io/costory-finops-mcp-skills) · Publisher: [costory-io](https://github.com/costory-io) · [Suede AI listing](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/)
+[Repository](https://github.com/costory-io/costory-finops-mcp-skills) · Publisher: [costory-io](https://github.com/costory-io) · [Suede listing](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/)
 
 - **85/100 · B** · [bigquery](https://github.com/costory-io/costory-finops-mcp-skills/blob/main/plugins/costory/skills/bigquery/SKILL.md): Investigate BigQuery compute and storage costs, compare billing models, and map spend through the hosted Costory MCP. [Suede](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/bigquery/)
 - **81/100 · B** · [virtual-dimensions](https://github.com/costory-io/costory-finops-mcp-skills/blob/main/plugins/costory/skills/virtual-dimensions/SKILL.md): Create and preview custom cost-allocation dimensions with ordered CEL rules, leftover analysis and overlap checks. [Suede](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/virtual-dimensions/)
@@ -104,7 +104,7 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 ## eduardo-sl/go-agent-skills
 
-[Repository](https://github.com/eduardo-sl/go-agent-skills) · Publisher: [eduardo-sl](https://github.com/eduardo-sl) · [Suede AI listing](https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/)
+[Repository](https://github.com/eduardo-sl/go-agent-skills) · Publisher: [eduardo-sl](https://github.com/eduardo-sl) · [Suede listing](https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/)
 
 - **95/100 · A** · [go-database](https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(data)/go-database/SKILL.md): Database patterns for Go services: database/sql, connection management, transactions, migrations, query builders, and ORM usage (sqlc, GORM, ent). [Suede](https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/#go-database)
 
@@ -112,7 +112,7 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 ## firebase/skills
 
-[Repository](https://github.com/firebase/skills) · Publisher: [firebase](https://github.com/firebase) · [Suede AI listing](https://skills.suedeai.ai/directory/firebase/skills/)
+[Repository](https://github.com/firebase/skills) · Publisher: [firebase](https://github.com/firebase) · [Suede listing](https://skills.suedeai.ai/directory/firebase/skills/)
 
 - **81/100 · B** · [firebase-firestore](https://github.com/firebase/skills/blob/main/skills/firebase-firestore/SKILL.md): Sets up, queries, and configures Cloud Firestore databases, including data modeling, security rules, indexes, and SDK integrations for Web, Python, iOS, Android, and Flutter. [Suede](https://skills.suedeai.ai/directory/firebase/skills/firebase-firestore/)
 - **72/100 · C** · [firebase-data-connect](https://github.com/firebase/skills/blob/main/skills/firebase-data-connect-basics/SKILL.md): Builds and deploys Firebase SQL Connect (aka Firebase Data Connect) backends with PostgreSQL securely. [Suede](https://skills.suedeai.ai/directory/firebase/skills/#firebase-data-connect)
@@ -121,7 +121,7 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 ## firecrawl/skills
 
-[Repository](https://github.com/firecrawl/skills) · Publisher: [firecrawl](https://github.com/firecrawl) · [Suede AI listing](https://skills.suedeai.ai/directory/firecrawl/skills/)
+[Repository](https://github.com/firecrawl/skills) · Publisher: [firecrawl](https://github.com/firecrawl) · [Suede listing](https://skills.suedeai.ai/directory/firecrawl/skills/)
 
 - **82/100 · B** · [firecrawl-scrape](https://github.com/firecrawl/skills/blob/main/skills/core/firecrawl-scrape/SKILL.md): Reads a known webpage or executes a discovered workflow or data-provider capability to return page content or structured results. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-scrape/)
 - **79/100 · C** · [firecrawl-agent](https://github.com/firecrawl/skills/blob/main/skills/core/firecrawl-agent/SKILL.md): Autonomously navigate websites and extract structured data across pages. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/#firecrawl-agent)
@@ -137,7 +137,7 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 ## github/awesome-copilot
 
-[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede AI listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
+[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
 
 - **83/100 · B** · [upstash-redis](https://github.com/github/awesome-copilot/blob/main/skills/upstash-redis/SKILL.md): Use Redis over HTTP from serverless and edge runtimes with @upstash/redis, and add rate limiting with @upstash/ratelimit. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#upstash-redis)
 - **82/100 · B** · [sql-object-impact-analysis](https://github.com/github/awesome-copilot/blob/main/skills/sql-object-impact-analysis/SKILL.md): Before modifying a table, column, stored procedure, view, or trigger in a legacy codebase, trace every place that references it — across other SQL objects (procs, views, triggers) AND application code (C#, Angular/TypeScript, JS, or any… [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#sql-object-impact-analysis)
@@ -162,7 +162,7 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 ## google/skills
 
-[Repository](https://github.com/google/skills) · Publisher: [google](https://github.com/google) · [Suede AI listing](https://skills.suedeai.ai/directory/google/skills/)
+[Repository](https://github.com/google/skills) · Publisher: [google](https://github.com/google) · [Suede listing](https://skills.suedeai.ai/directory/google/skills/)
 
 - **92/100 · A** · [cloud-databases-onboarding](https://github.com/google/skills/blob/main/skills/cloud/cloud-databases-onboarding/SKILL.md): Guides users through discovering their database requirements, recommends a Google Cloud database based on a recommendation matrix, and assists in database creation. [Suede](https://skills.suedeai.ai/directory/google/skills/#cloud-databases-onboarding)
 - **89/100 · B** · [dbt-sf-to-bq-translator](https://github.com/google/skills/blob/main/skills/cloud/dbt-sf-to-bq-translator/SKILL.md): Translates Snowflake dbt SQL models to BigQuery SQL, handling SQL compilation, Jinja macro masking, BigQuery Translation Service workflows, config transformations, type casting, and deduplication. [Suede](https://skills.suedeai.ai/directory/google/skills/dbt-sf-to-bq-translator/)
@@ -192,7 +192,7 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 ## gooseworks-ai/goose-skills
 
-[Repository](https://github.com/gooseworks-ai/goose-skills) · Publisher: [gooseworks-ai](https://github.com/gooseworks-ai) · [Suede AI listing](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/)
+[Repository](https://github.com/gooseworks-ai/goose-skills) · Publisher: [gooseworks-ai](https://github.com/gooseworks-ai) · [Suede listing](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/)
 
 - **84/100 · B** · [create-dashboard](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/design/capabilities/create-dashboard/SKILL.md): Create a custom web dashboard (React + Vite + Express) inside your sandbox to visualize the agent's Turso database. [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#create-dashboard)
 - **71/100 · C** · [data-charts-tako](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/design/capabilities/data-charts-tako/SKILL.md): Search and visualize the world's data - get charts, insights, and embeddable knowledge cards for finance, economics, demographics, sports, and more [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#data-charts-tako)
@@ -201,7 +201,7 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 ## honeydew-ai/honeydew-ai-coding-agents-plugins
 
-[Repository](https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins) · Publisher: [honeydew-ai](https://github.com/honeydew-ai) · [Suede AI listing](https://skills.suedeai.ai/directory/honeydew-ai/honeydew-ai-coding-agents-plugins/)
+[Repository](https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins) · Publisher: [honeydew-ai](https://github.com/honeydew-ai) · [Suede listing](https://skills.suedeai.ai/directory/honeydew-ai/honeydew-ai-coding-agents-plugins/)
 
 - **80/100 · B** · [model-exploration](https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/main/skills/model-exploration/SKILL.md): Explores the Honeydew semantic layer by discovering entities and fields, setting workspace and branch context, and running structured queries to spot-check field values. [Suede](https://skills.suedeai.ai/directory/honeydew-ai/honeydew-ai-coding-agents-plugins/model-exploration/)
 - **80/100 · B** · [workspace-branch](https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/main/skills/workspace-branch/SKILL.md): Manages Honeydew workspace and branch context, including switching workspaces, creating or deleting branches, reviewing branch history, and creating pull requests. [Suede](https://skills.suedeai.ai/directory/honeydew-ai/honeydew-ai-coding-agents-plugins/workspace-branch/)
@@ -221,7 +221,7 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 ## huggingface/skills
 
-[Repository](https://github.com/huggingface/skills) · Publisher: [huggingface](https://github.com/huggingface) · [Suede AI listing](https://skills.suedeai.ai/directory/huggingface/skills/)
+[Repository](https://github.com/huggingface/skills) · Publisher: [huggingface](https://github.com/huggingface) · [Suede listing](https://skills.suedeai.ai/directory/huggingface/skills/)
 
 - **77/100 · C** · [huggingface-datasets](https://github.com/huggingface/skills/blob/main/skills/huggingface-datasets/SKILL.md): Use this skill for Hugging Face Dataset Viewer API workflows that fetch subset/split metadata, paginate rows, search text, apply filters, download parquet URLs, and read size or statistics. [Suede](https://skills.suedeai.ai/directory/huggingface/skills/#huggingface-datasets)
 
@@ -229,16 +229,16 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 ## JasonColapietro/suede-creator-skills
 
-[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede AI listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
+[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
 
-- **91/100 · A** · [Suede AI Analytics Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-analytics/SKILL.md): Suede AI Analytics Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-analytics)
-- **91/100 · A** · [Suede AI Revenue Operations Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-revops/SKILL.md): Define lifecycle stages, fit and engagement scores, MQL/SQL handoffs, routing SLAs, pipeline hygiene, CRM automation, deal-desk tiers, and dashboard metrics. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-revops)
+- **91/100 · A** · [Suede Analytics Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-analytics/SKILL.md): Suede Analytics Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-analytics)
+- **91/100 · A** · [Suede Revenue Operations Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-revops/SKILL.md): Define lifecycle stages, fit and engagement scores, MQL/SQL handoffs, routing SLAs, pipeline hygiene, CRM automation, deal-desk tiers, and dashboard metrics. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-revops)
 
 <a id="jeffallan--claude-skills"></a>
 
 ## jeffallan/claude-skills
 
-[Repository](https://github.com/jeffallan/claude-skills) · Publisher: [jeffallan](https://github.com/jeffallan) · [Suede AI listing](https://skills.suedeai.ai/directory/jeffallan/claude-skills/)
+[Repository](https://github.com/jeffallan/claude-skills) · Publisher: [jeffallan](https://github.com/jeffallan) · [Suede listing](https://skills.suedeai.ai/directory/jeffallan/claude-skills/)
 
 - **84/100 · B** · [database-optimizer](https://github.com/jeffallan/claude-skills/blob/main/skills/database-optimizer/SKILL.md): Optimizes database queries and improves performance across PostgreSQL and MySQL systems. [Suede](https://skills.suedeai.ai/directory/jeffallan/claude-skills/#database-optimizer)
 - **84/100 · B** · [pandas-pro](https://github.com/jeffallan/claude-skills/blob/main/skills/pandas-pro/SKILL.md): Performs pandas DataFrame operations for data analysis, such as cleaning, joins, pivots, groupby aggregation, time series resampling, and handling missing values. [Suede](https://skills.suedeai.ai/directory/jeffallan/claude-skills/pandas-pro/)
@@ -250,7 +250,7 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 ## K-Dense-AI/claude-scientific-skills
 
-[Repository](https://github.com/K-Dense-AI/claude-scientific-skills) · Publisher: [K-Dense-AI](https://github.com/K-Dense-AI) · [Suede AI listing](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/)
+[Repository](https://github.com/K-Dense-AI/claude-scientific-skills) · Publisher: [K-Dense-AI](https://github.com/K-Dense-AI) · [Suede listing](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/)
 
 - **87/100 · B** · [dask](https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/skills/dask/SKILL.md): Scales pandas, NumPy, and custom Python research workflows beyond memory or across clusters with Dask. [Suede](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/#dask)
 - **87/100 · B** · [vaex](https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/skills/vaex/SKILL.md): Processes large tabular scientific datasets with Vaex expressions, filtered views, streamed statistics, binned visualizations, and file conversion. [Suede](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/#vaex)
@@ -267,7 +267,7 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 ## mhattingpete/claude-skills-marketplace
 
-[Repository](https://github.com/mhattingpete/claude-skills-marketplace) · Publisher: [mhattingpete](https://github.com/mhattingpete) · [Suede AI listing](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/)
+[Repository](https://github.com/mhattingpete/claude-skills-marketplace) · Publisher: [mhattingpete](https://github.com/mhattingpete) · [Suede listing](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/)
 
 - **75/100 · C** · [dashboard-creator](https://github.com/mhattingpete/claude-skills-marketplace/blob/main/visual-documentation-plugin/skills/dashboard-creator/SKILL.md): Creates HTML dashboards with KPI metric cards, bar, pie, and line charts, progress indicators, and other data visualizations. [Suede](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/dashboard-creator/)
 
@@ -275,7 +275,7 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 ## neondatabase/agent-skills
 
-[Repository](https://github.com/neondatabase/agent-skills) · Publisher: [neondatabase](https://github.com/neondatabase) · [Suede AI listing](https://skills.suedeai.ai/directory/neondatabase/agent-skills/)
+[Repository](https://github.com/neondatabase/agent-skills) · Publisher: [neondatabase](https://github.com/neondatabase) · [Suede listing](https://skills.suedeai.ai/directory/neondatabase/agent-skills/)
 
 - **84/100 · B** · [neon-realtime](https://github.com/neondatabase/agent-skills/blob/main/skills/neon-realtime/SKILL.md): Neon Realtime makes any SQL query live. [Suede](https://skills.suedeai.ai/directory/neondatabase/agent-skills/#neon-realtime)
 - **82/100 · B** · [neon-auth](https://github.com/neondatabase/agent-skills/blob/main/skills/neon-auth/SKILL.md): Add authentication to a new app. [Suede](https://skills.suedeai.ai/directory/neondatabase/agent-skills/#neon-auth)
@@ -288,7 +288,7 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 ## nowork-studio/NotFair
 
-[Repository](https://github.com/nowork-studio/NotFair) · Publisher: [nowork-studio](https://github.com/nowork-studio) · [Suede AI listing](https://skills.suedeai.ai/directory/nowork-studio/notfair/)
+[Repository](https://github.com/nowork-studio/NotFair) · Publisher: [nowork-studio](https://github.com/nowork-studio) · [Suede listing](https://skills.suedeai.ai/directory/nowork-studio/notfair/)
 
 - **73/100 · C** · [google-analytics](https://github.com/nowork-studio/NotFair/blob/main/skills/google-analytics/SKILL.md): Analyze connected Google Analytics 4 traffic, acquisition, engagement, landing pages, ecommerce, events, and conversions, and safely manage supported GA4 key events or custom dimensions through NotFair MCP. [Suede](https://skills.suedeai.ai/directory/nowork-studio/notfair/#google-analytics)
 
@@ -296,7 +296,7 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 ## NVIDIA/skills
 
-[Repository](https://github.com/NVIDIA/skills) · Publisher: [NVIDIA](https://github.com/NVIDIA) · [Suede AI listing](https://skills.suedeai.ai/directory/nvidia/skills/)
+[Repository](https://github.com/NVIDIA/skills) · Publisher: [NVIDIA](https://github.com/NVIDIA) · [Suede listing](https://skills.suedeai.ai/directory/nvidia/skills/)
 
 - **86/100 · B** · [tao-convert-dataset-format](https://github.com/NVIDIA/skills/blob/main/skills/tao-convert-dataset-format/SKILL.md): Run \`tao-daft convert\` to convert NVIDIA TAO DAFT datasets between supported formats. [Suede](https://skills.suedeai.ai/directory/nvidia/skills/#tao-convert-dataset-format)
 - **85/100 · B** · [nvflare-fed-stats](https://github.com/NVIDIA/skills/blob/main/skills/nvflare-fed-stats/SKILL.md): Compute federated statistics over tabular data (count, sum, mean, stddev, var, histogram, quantile, noise-protected min/max) and image data (count, failure\_count, pixel-intensity histogram) across NVFLARE sites via FedStatsRecipe —… [Suede](https://skills.suedeai.ai/directory/nvidia/skills/#nvflare-fed-stats)
@@ -313,7 +313,7 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 ## Orchestra-Research/AI-Research-SKILLs
 
-[Repository](https://github.com/Orchestra-Research/AI-Research-SKILLs) · Publisher: [Orchestra-Research](https://github.com/Orchestra-Research) · [Suede AI listing](https://skills.suedeai.ai/directory/orchestra-research/ai-research-skills/)
+[Repository](https://github.com/Orchestra-Research/AI-Research-SKILLs) · Publisher: [Orchestra-Research](https://github.com/Orchestra-Research) · [Suede listing](https://skills.suedeai.ai/directory/orchestra-research/ai-research-skills/)
 
 - **77/100 · C** · [chroma](https://github.com/Orchestra-Research/AI-Research-SKILLs/blob/main/15-rag/chroma/SKILL.md): Open-source embedding database for AI applications. [Suede](https://skills.suedeai.ai/directory/orchestra-research/ai-research-skills/#chroma)
 - **77/100 · C** · [faiss](https://github.com/Orchestra-Research/AI-Research-SKILLs/blob/main/15-rag/faiss/SKILL.md): Guides fast k-NN search and clustering of dense vectors with Facebook's FAISS, including GPU acceleration and Flat, IVF, and HNSW index types. [Suede](https://skills.suedeai.ai/directory/orchestra-research/ai-research-skills/faiss/)
@@ -325,7 +325,7 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 ## phuryn/pm-skills
 
-[Repository](https://github.com/phuryn/pm-skills) · Publisher: [phuryn](https://github.com/phuryn) · [Suede AI listing](https://skills.suedeai.ai/directory/phuryn/pm-skills/)
+[Repository](https://github.com/phuryn/pm-skills) · Publisher: [phuryn](https://github.com/phuryn) · [Suede listing](https://skills.suedeai.ai/directory/phuryn/pm-skills/)
 
 - **78/100 · C** · [dummy-dataset](https://github.com/phuryn/pm-skills/blob/main/pm-execution/skills/dummy-dataset/SKILL.md): Generate realistic dummy datasets for testing with customizable columns, constraints, and output formats (CSV, JSON, SQL, Python script). [Suede](https://skills.suedeai.ai/directory/phuryn/pm-skills/#dummy-dataset)
 - **78/100 · C** · [sql-queries](https://github.com/phuryn/pm-skills/blob/main/pm-data-analytics/skills/sql-queries/SKILL.md): Generates SQL queries from natural language descriptions for BigQuery, PostgreSQL, MySQL, and other dialects, reading database schemas from uploaded diagrams or documentation. [Suede](https://skills.suedeai.ai/directory/phuryn/pm-skills/sql-queries/)
@@ -334,7 +334,7 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 ## qdrant/skills
 
-[Repository](https://github.com/qdrant/skills) · Publisher: [qdrant](https://github.com/qdrant) · [Suede AI listing](https://skills.suedeai.ai/directory/qdrant/skills/)
+[Repository](https://github.com/qdrant/skills) · Publisher: [qdrant](https://github.com/qdrant) · [Suede listing](https://skills.suedeai.ai/directory/qdrant/skills/)
 
 - **84/100 · B** · [qdrant-edge](https://github.com/qdrant/skills/blob/main/skills/qdrant-edge/SKILL.md): Guides building on Qdrant Edge, the embedded in-process shard, including syncing with the server, BM25 and hybrid search, and snapshots. [Suede](https://skills.suedeai.ai/directory/qdrant/skills/qdrant-edge/)
 - **84/100 · B** · [qdrant-migration-tool](https://github.com/qdrant/skills/blob/main/skills/qdrant-migration-tool/SKILL.md): Guides using the Qdrant Migration Tool CLI to move vectors, metadata, and sparse embeddings from other vector databases into Qdrant, including resuming interrupted runs. [Suede](https://skills.suedeai.ai/directory/qdrant/skills/qdrant-migration-tool/)
@@ -370,7 +370,7 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 ## redis/agent-skills
 
-[Repository](https://github.com/redis/agent-skills) · Publisher: [redis](https://github.com/redis) · [Suede AI listing](https://skills.suedeai.ai/directory/redis/agent-skills/)
+[Repository](https://github.com/redis/agent-skills) · Publisher: [redis](https://github.com/redis) · [Suede listing](https://skills.suedeai.ai/directory/redis/agent-skills/)
 
 - **78/100 · C** · [redis-connections](https://github.com/redis/agent-skills/blob/main/skills/redis-connections/SKILL.md): Guides Redis client and connection setup, covering pooling, multiplexing, pipelining, client-side caching with RESP3, avoiding slow commands, and tuning socket timeouts. [Suede](https://skills.suedeai.ai/directory/redis/agent-skills/redis-connections/)
 - **76/100 · C** · [redis-search](https://github.com/redis/agent-skills/blob/main/skills/redis-search/SKILL.md): Guides Redis Search work, including FT.CREATE schema design, field types, query syntax, command selection, vector similarity, hybrid retrieval, and RAG pipelines. [Suede](https://skills.suedeai.ai/directory/redis/agent-skills/redis-search/)
@@ -381,7 +381,7 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 ## sanjay3290/ai-skills
 
-[Repository](https://github.com/sanjay3290/ai-skills) · Publisher: [sanjay3290](https://github.com/sanjay3290) · [Suede AI listing](https://skills.suedeai.ai/directory/sanjay3290/ai-skills/)
+[Repository](https://github.com/sanjay3290/ai-skills) · Publisher: [sanjay3290](https://github.com/sanjay3290) · [Suede listing](https://skills.suedeai.ai/directory/sanjay3290/ai-skills/)
 
 - **83/100 · B** · [mssql](https://github.com/sanjay3290/ai-skills/blob/main/skills/mssql/SKILL.md): Executes read-only SQL queries against multiple Microsoft SQL Server databases, supporting schema exploration, SELECT queries for data analysis, and checking database contents. [Suede](https://skills.suedeai.ai/directory/sanjay3290/ai-skills/mssql/)
 - **83/100 · B** · [mysql](https://github.com/sanjay3290/ai-skills/blob/main/skills/mysql/SKILL.md): Executes read-only SQL queries against multiple MySQL databases, supporting schema exploration, SELECT queries for data analysis, and checking database contents. [Suede](https://skills.suedeai.ai/directory/sanjay3290/ai-skills/mysql/)
@@ -391,7 +391,7 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 ## shepsci/kaggle-skill
 
-[Repository](https://github.com/shepsci/kaggle-skill) · Publisher: [shepsci](https://github.com/shepsci) · [Suede AI listing](https://skills.suedeai.ai/directory/shepsci/kaggle-skill/kaggle/)
+[Repository](https://github.com/shepsci/kaggle-skill) · Publisher: [shepsci](https://github.com/shepsci) · [Suede listing](https://skills.suedeai.ai/directory/shepsci/kaggle-skill/kaggle/)
 
 - **90/100 · A** · [kaggle](https://github.com/shepsci/kaggle-skill/blob/main/skills/kaggle/SKILL.md): Handles Kaggle tasks when explicitly requested, covering competitions, datasets, models, notebooks, forums, benchmarks, hackathons, badges, and account setup. [Suede](https://skills.suedeai.ai/directory/shepsci/kaggle-skill/kaggle/)
 
@@ -399,7 +399,7 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 ## stripe/ai
 
-[Repository](https://github.com/stripe/ai) · Publisher: [stripe](https://github.com/stripe) · [Suede AI listing](https://skills.suedeai.ai/directory/stripe/ai/)
+[Repository](https://github.com/stripe/ai) · Publisher: [stripe](https://github.com/stripe) · [Suede listing](https://skills.suedeai.ai/directory/stripe/ai/)
 
 - **79/100 · C** · [stripe-projects](https://github.com/stripe/ai/blob/main/skills/stripe-projects/SKILL.md): Use when the user wants to provision infrastructure or third-party services using Stripe Projects. [Suede](https://skills.suedeai.ai/directory/stripe/ai/#stripe-projects)
 - **75/100 · C** · [connect-required-verification-information](https://github.com/stripe/ai/blob/main/skills/connect-required-verification-information/SKILL.md): Use this skill when the user asks what information a Stripe Connect connected account must provide for verification, onboarding, KYC, or account requirements; when they need to compare requirements between connected-account setups; or… [Suede](https://skills.suedeai.ai/directory/stripe/ai/#connect-required-verification-information)
@@ -409,7 +409,7 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 ## supabase/agent-skills
 
-[Repository](https://github.com/supabase/agent-skills) · Publisher: [supabase](https://github.com/supabase) · [Suede AI listing](https://skills.suedeai.ai/directory/supabase/agent-skills/)
+[Repository](https://github.com/supabase/agent-skills) · Publisher: [supabase](https://github.com/supabase) · [Suede listing](https://skills.suedeai.ai/directory/supabase/agent-skills/)
 
 - **81/100 · B** · [supabase](https://github.com/supabase/agent-skills/blob/main/skills/supabase/SKILL.md): Guides work on Supabase projects, including Database, Auth, Edge Functions, Realtime, Storage, client libraries, migrations, security audits, and debugging errors. [Suede](https://skills.suedeai.ai/directory/supabase/agent-skills/supabase/)
 - **67/100 · D** · [supabase-postgres-best-practices](https://github.com/supabase/agent-skills/blob/main/skills/supabase-postgres-best-practices/SKILL.md): Postgres best practices maintained by Supabase, for Postgres running anywhere. [Suede](https://skills.suedeai.ai/directory/supabase/agent-skills/#supabase-postgres-best-practices)
@@ -418,7 +418,7 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 ## tronghieu/agent-skills
 
-[Repository](https://github.com/tronghieu/agent-skills) · Publisher: [tronghieu](https://github.com/tronghieu) · [Suede AI listing](https://skills.suedeai.ai/directory/tronghieu/agent-skills/)
+[Repository](https://github.com/tronghieu/agent-skills) · Publisher: [tronghieu](https://github.com/tronghieu) · [Suede listing](https://skills.suedeai.ai/directory/tronghieu/agent-skills/)
 
 - **86/100 · B** · [data-scientist](https://github.com/tronghieu/agent-skills/blob/main/skills/data-scientist/SKILL.md): Turns business questions into data analysis, validated models, and decision-ready reports, including dataset profiling, A/B test checks, and predictive modeling. [Suede](https://skills.suedeai.ai/directory/tronghieu/agent-skills/data-scientist/)
 
@@ -426,12 +426,12 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 ## wondelai/skills
 
-[Repository](https://github.com/wondelai/skills) · Publisher: [wondelai](https://github.com/wondelai) · [Suede AI listing](https://skills.suedeai.ai/directory/wondelai/skills/)
+[Repository](https://github.com/wondelai/skills) · Publisher: [wondelai](https://github.com/wondelai) · [Suede listing](https://skills.suedeai.ai/directory/wondelai/skills/)
 
 - **81/100 · B** · [ddia-systems](https://github.com/wondelai/skills/blob/main/ddia-systems/SKILL.md): Design data systems by understanding storage engines, replication, partitioning, transactions, and consistency models. [Suede](https://skills.suedeai.ai/directory/wondelai/skills/#ddia-systems)
 
 ---
 
-**Run a team of agents.** Suede AI Agent Studio builds multi-agent automation for businesses. [suedeai.app](https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agent-studio) Listed here? [Add your badge](../README.md#add-your-badge).
+**Run a team of agents.** Suede Agent Studio builds multi-agent automation for businesses. [suedeai.app](https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agent-studio) Listed here? [Add your badge](../README.md#add-your-badge).
 
 [Awesome Everything](../README.md) · [Compare scores](../README.md#compare-099-quality-scores) · [Publishers](../publishers.md) · [Featured projects](../featured.md) · [Guides](../README.md#guides) · [Contribute](../CONTRIBUTING.md) · [Search by score](https://skills.suedeai.ai/directory/?sort=score)

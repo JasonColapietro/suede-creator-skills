@@ -1,6 +1,6 @@
 # Best SEO, AEO and GEO Skills for Claude Code and Codex (2026)
 
-By [Jason Colapietro](https://suedeai.ai/founder), Founder and CEO of Suede AI. Author of *Stake Your Claim*, *Proof as Infrastructure* and *The Human Authenticity Layer*, holder of the VoicePrint patent, and a builder of companies for two decades.
+By [Jason Colapietro](https://suedeai.ai/founder), Founder and CEO of Suede. Author of *Stake Your Claim*, *Proof as Infrastructure* and *The Human Authenticity Layer*, holder of the VoicePrint patent, and a builder of companies for two decades.
 
 Reviewed October 23, 2026. Scores come from the Agent Skills Directory snapshot of October 19, 2026.
 
@@ -71,11 +71,11 @@ So the work that moves AI visibility is ordinary SEO done well, plus pages writt
 
 A skill gives your agent a repeatable method: it runs the checks, drafts the fixes and keeps the output consistent. What it does not bring is a strategy tied to your revenue, implementation across your real stack, and months of measurement in Search Console and in AI answers to see what moved.
 
-That is the work Suede AI's [AEO, GEO and SEO team](https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=guide&utm_campaign=best-seo-skills&utm_content=agency-section) does for clients. If you want the skills above running inside a strategy someone owns, [talk to Suede AI](https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=guide&utm_campaign=best-seo-skills&utm_content=agency-section-cta).
+That is the work Suede's [AEO, GEO and SEO team](https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=guide&utm_campaign=best-seo-skills&utm_content=agency-section) does for clients. If you want the skills above running inside a strategy someone owns, [talk to Suede](https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=guide&utm_campaign=best-seo-skills&utm_content=agency-section-cta).
 
-## Does Suede AI publish its own SEO skills?
+## Does Suede publish its own SEO skills?
 
-Yes. Suede AI's own pack is listed separately from the third-party directory so it never competes for directory rankings:
+Yes. Suede's own pack is listed separately from the third-party directory so it never competes for directory rankings:
 
 - [suede-seo-audit](https://skills.suedeai.ai/skills/suede-seo-audit.html): a nine-lane audit covering access, intent, metadata, structure, supported schema, E-E-A-T, clusters and exact rewrite fixes.
 - [suede-ai-seo](https://skills.suedeai.ai/skills/suede-ai-seo.html): optimization for AI answers in ChatGPT, Perplexity, Claude, Gemini and Google AI Overviews.

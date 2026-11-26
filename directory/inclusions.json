@@ -33,6 +33,7 @@
   "korey2028-prog/resume-claim-guard",
   "inhotel-io/govisit-toolkit",
   "rnthking/redya-skills",
+  "moonlitnayeem/fairvalid-ai",
   "StalkC/stalkchain-plugin",
   "kochetkov-ma/brewpage-publish-plugins",
   "skillsforbots/grok-bot-skills"
@@ -1020,6 +1021,10 @@
   "rnthking/redya-skills": [
    "redya-xiaohongshu"
   ],
+  "moonlitnayeem/fairvalid-ai": [
+   "email-verification",
+   "fairmatch-leads"
+  ],
   "StalkC/stalkchain-plugin": [
    "trader-check",
    "token-check",
@@ -1213,6 +1218,10 @@
   ],
   "rnthking/redya-skills": [
    "skill/redya-xiaohongshu"
+  ],
+  "moonlitnayeem/fairvalid-ai": [
+   "skills/email-verification",
+   "skills/fairmatch-leads"
   ],
   "StalkC/stalkchain-plugin": [
    "skills/trader-check",

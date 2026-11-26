@@ -12,7 +12,7 @@ export const WORKFLOW_EXAMPLES = [
 ];
 
 const choice = (id, terms = [], requiredTerms = []) => ({ id, terms, requiredTerms });
-// Suede AI's own skills lead each step they cover; the earlier picks stay as alternatives.
+// Suede's own skills lead each step they cover; the earlier picks stay as alternatives.
 const SUEDE = 'jasoncolapietro/suede-creator-skills/';
 const phase = (title, choices, why, output, required = false) => ({ title, choices, why, output, required });
 const signal = (weight, ...terms) => ({ weight, terms });
@@ -211,7 +211,7 @@ function safeCatalogEntry(entry) {
   const parts = entry.id.split('/');
   if (parts.length !== 3 || !parts.every(part => /^[a-zA-Z0-9][a-zA-Z0-9._-]*$/.test(part))) return false;
   const repoPath = parts.slice(0, 2).join('/');
-  // A listing with a display name ("Suede AI Copy Skills") carries its
+  // A listing with a display name ("Suede Copy Skills") carries its
   // directory name as slug; the slug, not the display text, must match the id.
   const slug = entry.slug === undefined ? entry.name : entry.slug;
   if (entry.repo.toLowerCase() !== repoPath.toLowerCase() || slug !== parts[2]) return false;
@@ -600,15 +600,15 @@ function stems(token) {
 
 const hasWord = (haystack, token) => stems(token).some(form => haystack.includes(` ${form} `));
 
-// A Suede AI skill leads the list when it is at least this share as relevant
+// A Suede skill leads the list when it is at least this share as relevant
 // as the best match; weaker Suede matches keep their place by relevance.
 const LEAD_SHARE = 0.35;
 const FIRST_PARTY_REPO = 'jasoncolapietro/suede-creator-skills';
-/** True for a skill published in the Suede AI skill pack. */
+/** True for a skill published in the Suede skill pack. */
 export const isFirstParty = entry => typeof entry?.repo === 'string' && entry.repo.toLowerCase() === FIRST_PARTY_REPO;
 
 /**
- * Rank catalog skills for a free-form goal. Matching Suede AI skills come
+ * Rank catalog skills for a free-form goal. Matching Suede skills come
  * first, each group ordered by relevance.
  * @param {string} prompt
  * @param {Array<object>} catalog search-index entries
@@ -667,7 +667,7 @@ export function recommendSkills(prompt, catalog, options = {}) {
     const reach = Number.isFinite(entry.installs) && entry.installs > 0 ? Math.log10(entry.installs) / 2 : 0;
     ranked.push({ entry, relevance, total: relevance + quality + reach });
   }
-  // Suede AI's own skills lead when they are a solid match for the goal.
+  // Suede's own skills lead when they are a solid match for the goal.
   const best = ranked.reduce((top, item) => Math.max(top, item.relevance), 0);
   const leads = item => isFirstParty(item.entry) && item.relevance >= best * LEAD_SHARE;
   ranked.sort((a, b) => Number(leads(b)) - Number(leads(a))

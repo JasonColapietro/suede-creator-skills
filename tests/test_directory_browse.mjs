@@ -4,7 +4,7 @@
 // rows, buttons and sections on skill, category and hub pages. Unit tests
 // cover scripts/directory/topics.mjs, facets.mjs and listed-since.mjs; page
 // tests read the committed output in docs/directory/ and derive every
-// expectation from directory/skills.json the way scripts/build-directory.mjs
+// expectation from the accepted snapshot and scoped reviews, as the directory builder
 // does. Joined to `npm run test:directory` through an import in
 // tests/test_directory_seo.mjs, since package.json is pinned by the
 // first-party intake receipt.
@@ -302,8 +302,13 @@ test("isNewListing excludes the floor date and anything older than 30 days", () 
 // ------------------------------------------------------------ the dataset, expanded like the build
 
 const data = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "skills.json"), "utf8"));
+const updatesPath = path.join(repoRoot, "directory", "intake", "first-party-listing-updates.json");
+const updates = new Map((fs.existsSync(updatesPath) ? JSON.parse(fs.readFileSync(updatesPath, "utf8")) : [])
+  .map(update => [`${update.repository}/${update.listing.slug}`, update]));
 const categories = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "categories.json"), "utf8"));
-const skills = data.skills.map((c) => {
+const skills = data.skills.map((baseline) => {
+  const update = updates.get(`${baseline.repo}/${baseline.slug}`);
+  const c = update?.listing || baseline;
   const meta = data.repos[c.repo];
   const [owner, name] = c.repo.split("/");
   const repoSlug = `${slugify(owner)}/${slugify(name)}`;
@@ -315,8 +320,8 @@ const skills = data.skills.map((c) => {
     featured: Boolean(c.featured),
     lists: meta.lists,
     official: meta.official,
-    commit_date: meta.commit_date,
-    assessment_date: meta.assessment_date || null,
+    commit_date: update?.source_commit_date || update?.assessment_date || meta.commit_date,
+    assessment_date: update?.assessment_date || meta.assessment_date || null,
     file_count: c.size[2],
     has_references: c.kinds.includes("r"),
     has_scripts: c.kinds.includes("s"),
@@ -527,9 +532,9 @@ test("new/ lists exactly the skills first listed after the ledger floor within 3
   const expected = skills.filter((s) => isNewListing(s, snapshotDate, floorDate));
   const listedNew = [...new Set(rows.filter((r) => r["data-listed"] > floorDate).map((r) => r["data-id"]))].sort();
   const thirdParty = expected.filter((s) => !isFirstParty(s)).map((s) => s.id).sort();
-  // Suede AI's own new skills may be shown or held back, but all or nothing.
+  // Suede's own new skills may be shown or held back, but all or nothing.
   const all = expected.map((s) => s.id).sort();
-  assert.ok(JSON.stringify(listedNew) === JSON.stringify(all) || JSON.stringify(listedNew) === JSON.stringify(thirdParty), `new/ lists ${listedNew.length} new skills; expected ${all.length} (or ${thirdParty.length} without Suede AI's own)`);
+  assert.ok(JSON.stringify(listedNew) === JSON.stringify(all) || JSON.stringify(listedNew) === JSON.stringify(thirdParty), `new/ lists ${listedNew.length} new skills; expected ${all.length} (or ${thirdParty.length} without Suede's own)`);
   for (const r of rows) {
     const s = byId.get(r["data-id"]);
     assert.ok(s, `new/: unknown skill ${r["data-id"]}`);
@@ -551,14 +556,14 @@ test("top/ lists 100 third-party skills in non-increasing score order", () => {
   for (const r of rows) {
     const s = byId.get(r["data-id"]);
     assert.ok(s, `top/: unknown skill ${r["data-id"]}`);
-    assert.ok(!isFirstParty(s), `top/: Suede AI skill ${s.id} in a ranking`);
+    assert.ok(!isFirstParty(s), `top/: Suede skill ${s.id} in a ranking`);
     assert.equal(Number(r["data-score"]), s.score, `top/: ${s.id} score`);
   }
   // Every third-party skill scoring above the 100th row's score must be listed.
   const cutoff = scores.at(-1);
   const ids = new Set(rows.map((r) => r["data-id"]));
   for (const s of skills.filter((x) => !isFirstParty(x) && x.score > cutoff)) assert.ok(ids.has(s.id), `top/: ${s.id} (${s.score}) missing`);
-  assert.doesNotMatch(mainOf(html), new RegExp(FIRST_PARTY.replace("/", "\\/"), "i"), "top/ names a Suede AI skill");
+  assert.doesNotMatch(mainOf(html), new RegExp(FIRST_PARTY.replace("/", "\\/"), "i"), "top/ names a Suede skill");
   for (const item of collection(html).mainEntity.itemListElement) assert.doesNotMatch(item.url, /jasoncolapietro\/suede-creator-skills/i);
 });
 
@@ -732,7 +737,7 @@ test("browse page copy avoids em dashes and the banned AI-tell words", () => {
   const banned = /\u2014|\bdelve|game-changer|\bunlock|\belevate|\bseamless|\blandscape\b|\btapestry\b|\bmoreover\b|it's important to note/i;
   for (const rel of [...browsePages, "directory/saved/"]) {
     const main = mainOf(read(rel));
-    // Only Suede AI's own sentences: third-party summaries, skill names and
+    // Only Suede's own sentences: third-party summaries, skill names and
     // repository names sit in table cells.
     const own = main.replace(/<td class="(?:desc|meta|name)">[\s\S]*?<\/td>/g, "").replace(/<[^>]+>/g, " ")
       // Third-party owner/repo names (for example tapestry-skills-for-claude-code) are not our copy.

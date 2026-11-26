@@ -79,7 +79,7 @@ test("keyword lists follow the rules: 3-10 unique, non-empty terms, at most one 
       const key = term.toLowerCase();
       if (seen.has(key)) failures.push(`${rel}: duplicate term "${term}"`);
       seen.add(key);
-      if (/suede labs ai/i.test(term)) failures.push(`${rel}: use "Suede AI", not "${term}"`);
+      if (/suede (?:labs|ai)\b/i.test(term)) failures.push(`${rel}: use "Suede", not "${term}"`);
     }
   }
   assert.deepEqual(failures, [], `\n${failures.join("\n")}`);

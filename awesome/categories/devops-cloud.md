@@ -6,11 +6,11 @@
 
 Skills for deploying, operating and observing software: cloud platforms, infrastructure as code, CI/CD, monitoring and incident response. Many come from the platform vendors themselves, so the agent works from the provider's own guidance.
 
-**360 accepted skills · 38 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**361 accepted skills · 39 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
-**Compare on the 0–99 quality scale:** this category’s verified scores span **53–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=devops-cloud&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
+**Compare on the 0–99 quality scale:** this category’s verified scores span **53–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=devops-cloud&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
-[Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede AI listing.
+[Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede listing.
 
 <details>
 <summary>Browse publishers in this category</summary>
@@ -40,6 +40,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 - [mblode/agent-skills](#mblode--agent-skills)
 - [metalbear-co/skills](#metalbear-co--skills)
 - [microsoft/azure-skills](#microsoft--azure-skills)
+- [mrhy7176/cloudgpu-agent-skills](#mrhy7176--cloudgpu-agent-skills)
 - [NVIDIA/skills](#nvidia--skills)
 - [obra/superpowers-lab](#obra--superpowers-lab)
 - [openai/skills](#openai--skills)
@@ -60,7 +61,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## anthropics/claude-plugins-official
 
-[Repository](https://github.com/anthropics/claude-plugins-official) · Publisher: [anthropics](https://github.com/anthropics) · [Suede AI listing](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/)
+[Repository](https://github.com/anthropics/claude-plugins-official) · Publisher: [anthropics](https://github.com/anthropics) · [Suede listing](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/)
 
 - **75/100 · C** · [project-artifact](https://github.com/anthropics/claude-plugins-official/blob/main/plugins/project-artifact/skills/project-artifact/SKILL.md): Generate and publish a project status artifact — an opinionated, tabbed status page for a project too big for one update (overview &amp; success criteria, the workstream sequence, next steps, plus background, plan, risks &amp; open questions,… [Suede](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/#project-artifact)
 
@@ -68,7 +69,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## antonbabenko/terraform-skill
 
-[Repository](https://github.com/antonbabenko/terraform-skill) · Publisher: [antonbabenko](https://github.com/antonbabenko) · [Suede AI listing](https://skills.suedeai.ai/directory/antonbabenko/terraform-skill/terraform-skill/)
+[Repository](https://github.com/antonbabenko/terraform-skill) · Publisher: [antonbabenko](https://github.com/antonbabenko) · [Suede listing](https://skills.suedeai.ai/directory/antonbabenko/terraform-skill/terraform-skill/)
 
 - **77/100 · C** · [terraform-skill](https://github.com/antonbabenko/terraform-skill/blob/master/skills/terraform-skill/SKILL.md): Guides writing, reviewing, and debugging Terraform and OpenTofu modules, tests, CI, and state operations, diagnosing failure modes such as secrets, blast radius, and drift. [Suede](https://skills.suedeai.ai/directory/antonbabenko/terraform-skill/terraform-skill/)
 
@@ -76,7 +77,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## avelikiy/great\_cto
 
-[Repository](https://github.com/avelikiy/great_cto) · Publisher: [avelikiy](https://github.com/avelikiy) · [Suede AI listing](https://skills.suedeai.ai/directory/avelikiy/great-cto/)
+[Repository](https://github.com/avelikiy/great_cto) · Publisher: [avelikiy](https://github.com/avelikiy) · [Suede listing](https://skills.suedeai.ai/directory/avelikiy/great-cto/)
 
 - **74/100 · C** · [well-architected](https://github.com/avelikiy/great_cto/blob/main/skills/well-architected/SKILL.md): 6-pillar architecture review framework. [Suede](https://skills.suedeai.ai/directory/avelikiy/great-cto/#well-architected)
 - **71/100 · C** · [observability-baseline](https://github.com/avelikiy/great_cto/blob/main/skills/observability-baseline/SKILL.md): Scaffold-time observability so a shipped product is not blind in prod from day one — error capture (Sentry), request-id structured logging, and /healthz + /readyz endpoints. stack-baseline pins Sentry but nothing wires it; this is the… [Suede](https://skills.suedeai.ai/directory/avelikiy/great-cto/#observability-baseline)
@@ -85,7 +86,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## aws/agent-toolkit-for-aws
 
-[Repository](https://github.com/aws/agent-toolkit-for-aws) · Publisher: [aws](https://github.com/aws) · [Suede AI listing](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/)
+[Repository](https://github.com/aws/agent-toolkit-for-aws) · Publisher: [aws](https://github.com/aws) · [Suede listing](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/)
 
 - **89/100 · B** · [agents-deploy](https://github.com/aws/agent-toolkit-for-aws/blob/main/plugins/aws-agents/skills/agents-deploy/SKILL.md): Use when deploying your agent to AWS, or when a deploy has failed. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#agents-deploy)
 - **84/100 · B** · [exploring-data-catalog](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/analytics-skills/exploring-data-catalog/SKILL.md): Full inventory and audit of AWS Glue Data Catalog assets across S3 Tables, Redshift-federated, and remote Iceberg catalogs. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#exploring-data-catalog)
@@ -157,7 +158,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## browserbase/skills
 
-[Repository](https://github.com/browserbase/skills) · Publisher: [browserbase](https://github.com/browserbase) · [Suede AI listing](https://skills.suedeai.ai/directory/browserbase/skills/)
+[Repository](https://github.com/browserbase/skills) · Publisher: [browserbase](https://github.com/browserbase) · [Suede listing](https://skills.suedeai.ai/directory/browserbase/skills/)
 
 - **75/100 · C** · [functions](https://github.com/browserbase/skills/blob/main/skills/functions/SKILL.md): Deploy serverless browser automation as cloud functions using Browserbase. [Suede](https://skills.suedeai.ai/directory/browserbase/skills/#functions)
 
@@ -165,7 +166,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## cloudflare/skills
 
-[Repository](https://github.com/cloudflare/skills) · Publisher: [cloudflare](https://github.com/cloudflare) · [Suede AI listing](https://skills.suedeai.ai/directory/cloudflare/skills/)
+[Repository](https://github.com/cloudflare/skills) · Publisher: [cloudflare](https://github.com/cloudflare) · [Suede listing](https://skills.suedeai.ai/directory/cloudflare/skills/)
 
 - **79/100 · C** · [sandbox-next](https://github.com/cloudflare/skills/blob/main/skills/sandbox-next/SKILL.md): Builds and maintains Cloudflare Sandbox apps on the @cloudflare/sandbox@next package, the SDK 1.0 preview. [Suede](https://skills.suedeai.ai/directory/cloudflare/skills/sandbox-next/)
 - **79/100 · C** · [workers-best-practices](https://github.com/cloudflare/skills/blob/main/skills/workers-best-practices/SKILL.md): Applies Cloudflare Workers best practices for production applications when writing, reviewing, or configuring Workers. [Suede](https://skills.suedeai.ai/directory/cloudflare/skills/workers-best-practices/)
@@ -185,7 +186,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## eduardo-sl/go-agent-skills
 
-[Repository](https://github.com/eduardo-sl/go-agent-skills) · Publisher: [eduardo-sl](https://github.com/eduardo-sl) · [Suede AI listing](https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/)
+[Repository](https://github.com/eduardo-sl/go-agent-skills) · Publisher: [eduardo-sl](https://github.com/eduardo-sl) · [Suede listing](https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/)
 
 - **95/100 · A** · [go-ci](https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(workflow)/go-ci/SKILL.md): Sets up continuous integration for Go projects with GitHub Actions, caching, golangci-lint, test and coverage gates, vulnerability scanning, SAST, Dependabot, and build matrices. [Suede](https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-ci/)
 - **95/100 · A** · [go-observability](https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(safety)/go-observability/SKILL.md): Structured logging, distributed tracing, metrics, and health checks for Go services. [Suede](https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/#go-observability)
@@ -195,7 +196,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## expo/skills
 
-[Repository](https://github.com/expo/skills) · Publisher: [expo](https://github.com/expo) · [Suede AI listing](https://skills.suedeai.ai/directory/expo/skills/)
+[Repository](https://github.com/expo/skills) · Publisher: [expo](https://github.com/expo) · [Suede listing](https://skills.suedeai.ai/directory/expo/skills/)
 
 - **86/100 · B** · [eas-update](https://github.com/expo/skills/blob/main/plugins/expo/skills/eas-update/SKILL.md): Configure and use EAS Update for over-the-air JavaScript and asset updates with expo-updates and EAS CLI. [Suede](https://skills.suedeai.ai/directory/expo/skills/#eas-update)
 - **85/100 · B** · [eas-update-insights](https://github.com/expo/skills/blob/main/plugins/expo/skills/eas-update-insights/SKILL.md): Checks the health of published EAS Updates, including crash rates, launch counts, unique users, payload size, and embedded versus OTA users per channel. [Suede](https://skills.suedeai.ai/directory/expo/skills/eas-update-insights/)
@@ -208,7 +209,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## firebase/skills
 
-[Repository](https://github.com/firebase/skills) · Publisher: [firebase](https://github.com/firebase) · [Suede AI listing](https://skills.suedeai.ai/directory/firebase/skills/)
+[Repository](https://github.com/firebase/skills) · Publisher: [firebase](https://github.com/firebase) · [Suede listing](https://skills.suedeai.ai/directory/firebase/skills/)
 
 - **81/100 · B** · [firebase-app-hosting-basics](https://github.com/firebase/skills/blob/main/skills/firebase-app-hosting-basics/SKILL.md): Deploys and manages full-stack Next.js and Angular apps with server-side rendering on Firebase App Hosting, including apphosting.yaml, secrets, and GitHub CI/CD. [Suede](https://skills.suedeai.ai/directory/firebase/skills/firebase-app-hosting-basics/)
 - **81/100 · B** · [firebase-hosting-basics](https://github.com/firebase/skills/blob/main/skills/firebase-hosting-basics/SKILL.md): Deploys and configures classic Firebase Hosting for static sites, single-page apps, and microservices, including custom domains, redirects, rewrites, headers, multi-site setups, and preview channels. [Suede](https://skills.suedeai.ai/directory/firebase/skills/firebase-hosting-basics/)
@@ -218,7 +219,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## garrytan/gstack
 
-[Repository](https://github.com/garrytan/gstack) · Publisher: [garrytan](https://github.com/garrytan) · [Suede AI listing](https://skills.suedeai.ai/directory/garrytan/gstack/)
+[Repository](https://github.com/garrytan/gstack) · Publisher: [garrytan](https://github.com/garrytan) · [Suede listing](https://skills.suedeai.ai/directory/garrytan/gstack/)
 
 - **64/100 · D** · [landing-report](https://github.com/garrytan/gstack/blob/main/landing-report/SKILL.md): Read-only queue dashboard for workspace-aware ship. (gstack) [Suede](https://skills.suedeai.ai/directory/garrytan/gstack/#landing-report)
 
@@ -226,7 +227,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## github/awesome-copilot
 
-[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede AI listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
+[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
 
 - **82/100 · B** · [azure-pricing](https://github.com/github/awesome-copilot/blob/main/skills/azure-pricing/SKILL.md): Fetches real-time Azure retail pricing using the Azure Retail Prices API (prices.azure.com) and estimates Copilot Studio agent credit consumption. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#azure-pricing)
 - **82/100 · B** · [phoenix-tracing](https://github.com/github/awesome-copilot/blob/main/skills/phoenix-tracing/SKILL.md): OpenInference semantic conventions and instrumentation for Phoenix AI observability. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#phoenix-tracing)
@@ -275,7 +276,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## google/skills
 
-[Repository](https://github.com/google/skills) · Publisher: [google](https://github.com/google) · [Suede AI listing](https://skills.suedeai.ai/directory/google/skills/)
+[Repository](https://github.com/google/skills) · Publisher: [google](https://github.com/google) · [Suede listing](https://skills.suedeai.ai/directory/google/skills/)
 
 - **90/100 · A** · [google-cloud-filestore-log-troubleshooting](https://github.com/google/skills/blob/main/skills/cloud/google-cloud-filestore-log-troubleshooting/SKILL.md): Diagnoses and resolves Filestore client mount failures, EACCES permission errors, and ETIMEDOUT network timeouts on Google Cloud, including NFS mounts that hang or fail. [Suede](https://skills.suedeai.ai/directory/google/skills/google-cloud-filestore-log-troubleshooting/)
 - **89/100 · B** · [agent-platform-alert-configuration](https://github.com/google/skills/blob/main/skills/cloud/agent-platform-alert-configuration/SKILL.md): Configures best-practice alerting policies for AI agents using OpenTelemetry (OTel) metrics, generating output as Terraform (.tf) configuration files. [Suede](https://skills.suedeai.ai/directory/google/skills/#agent-platform-alert-configuration)
@@ -360,7 +361,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## googleworkspace/cli
 
-[Repository](https://github.com/googleworkspace/cli) · Publisher: [googleworkspace](https://github.com/googleworkspace) · [Suede AI listing](https://skills.suedeai.ai/directory/googleworkspace/cli/)
+[Repository](https://github.com/googleworkspace/cli) · Publisher: [googleworkspace](https://github.com/googleworkspace) · [Suede listing](https://skills.suedeai.ai/directory/googleworkspace/cli/)
 
 - **53/100 · D** · [persona-it-admin](https://github.com/googleworkspace/cli/blob/main/skills/persona-it-admin/SKILL.md): Administer IT — monitor security and configure Workspace. [Suede](https://skills.suedeai.ai/directory/googleworkspace/cli/#persona-it-admin)
 
@@ -368,7 +369,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## gooseworks-ai/goose-skills
 
-[Repository](https://github.com/gooseworks-ai/goose-skills) · Publisher: [gooseworks-ai](https://github.com/gooseworks-ai) · [Suede AI listing](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/)
+[Repository](https://github.com/gooseworks-ai/goose-skills) · Publisher: [gooseworks-ai](https://github.com/gooseworks-ai) · [Suede listing](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/)
 
 - **69/100 · D** · [uptime-monitor](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/monitoring/capabilities/uptime-monitor/SKILL.md): Monitor website uptime - check availability, response times, and status [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#uptime-monitor)
 
@@ -376,7 +377,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## hashicorp/agent-skills
 
-[Repository](https://github.com/hashicorp/agent-skills) · Publisher: [hashicorp](https://github.com/hashicorp) · [Suede AI listing](https://skills.suedeai.ai/directory/hashicorp/agent-skills/)
+[Repository](https://github.com/hashicorp/agent-skills) · Publisher: [hashicorp](https://github.com/hashicorp) · [Suede listing](https://skills.suedeai.ai/directory/hashicorp/agent-skills/)
 
 - **85/100 · B** · [terraform-search-import](https://github.com/hashicorp/agent-skills/blob/main/plugins/terraform/skills/terraform-search-import/SKILL.md): Discovers existing cloud resources with Terraform Search queries and bulk imports them so unmanaged infrastructure comes under Terraform control. [Suede](https://skills.suedeai.ai/directory/hashicorp/agent-skills/terraform-search-import/)
 - **83/100 · B** · [terraform-stacks](https://github.com/hashicorp/agent-skills/blob/main/plugins/terraform/skills/terraform-stacks/SKILL.md): Guides creating, modifying, and validating Terraform Stack configurations, including components and deployments, and troubleshooting Stacks syntax and structure. [Suede](https://skills.suedeai.ai/directory/hashicorp/agent-skills/terraform-stacks/)
@@ -391,7 +392,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## huggingface/skills
 
-[Repository](https://github.com/huggingface/skills) · Publisher: [huggingface](https://github.com/huggingface) · [Suede AI listing](https://skills.suedeai.ai/directory/huggingface/skills/)
+[Repository](https://github.com/huggingface/skills) · Publisher: [huggingface](https://github.com/huggingface) · [Suede listing](https://skills.suedeai.ai/directory/huggingface/skills/)
 
 - **85/100 · B** · [hf-cloud-python-env-setup](https://github.com/huggingface/skills/blob/main/skills/hf-cloud-python-env-setup/SKILL.md): Sets up an isolated Python environment with the right Python version and current boto3 for SageMaker and other AWS automation work. [Suede](https://skills.suedeai.ai/directory/huggingface/skills/hf-cloud-python-env-setup/)
 - **84/100 · B** · [hf-cloud-serving-image-selection](https://github.com/huggingface/skills/blob/main/skills/hf-cloud-serving-image-selection/SKILL.md): Picks the right serving container for a SageMaker model deployment and finds its current image URI, preferring HuggingFace Deep Learning Containers. [Suede](https://skills.suedeai.ai/directory/huggingface/skills/hf-cloud-serving-image-selection/)
@@ -405,15 +406,15 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## JasonColapietro/suede-creator-skills
 
-[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede AI listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
+[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
 
-- **91/100 · A** · [Suede AI CI Gate Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-ci-gate/SKILL.md): Suede AI CI Gate Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ci-gate)
+- **91/100 · A** · [Suede CI Gate Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-ci-gate/SKILL.md): Suede CI Gate Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ci-gate)
 
 <a id="jeffallan--claude-skills"></a>
 
 ## jeffallan/claude-skills
 
-[Repository](https://github.com/jeffallan/claude-skills) · Publisher: [jeffallan](https://github.com/jeffallan) · [Suede AI listing](https://skills.suedeai.ai/directory/jeffallan/claude-skills/)
+[Repository](https://github.com/jeffallan/claude-skills) · Publisher: [jeffallan](https://github.com/jeffallan) · [Suede listing](https://skills.suedeai.ai/directory/jeffallan/claude-skills/)
 
 - **84/100 · B** · [chaos-engineer](https://github.com/jeffallan/claude-skills/blob/main/skills/chaos-engineer/SKILL.md): Designs chaos experiments and failure injection frameworks and runs game day exercises for distributed systems, producing runbooks, experiment manifests, rollback procedures, and post-mortem templates. [Suede](https://skills.suedeai.ai/directory/jeffallan/claude-skills/chaos-engineer/)
 - **84/100 · B** · [cloud-architect](https://github.com/jeffallan/claude-skills/blob/main/skills/cloud-architect/SKILL.md): Designs cloud architectures, migration plans, cost optimization recommendations, and disaster recovery strategies across AWS, Azure, and GCP. [Suede](https://skills.suedeai.ai/directory/jeffallan/claude-skills/cloud-architect/)
@@ -427,7 +428,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## K-Dense-AI/claude-scientific-skills
 
-[Repository](https://github.com/K-Dense-AI/claude-scientific-skills) · Publisher: [K-Dense-AI](https://github.com/K-Dense-AI) · [Suede AI listing](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/)
+[Repository](https://github.com/K-Dense-AI/claude-scientific-skills) · Publisher: [K-Dense-AI](https://github.com/K-Dense-AI) · [Suede listing](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/)
 
 - **85/100 · B** · [modal](https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/skills/modal/SKILL.md): Modal is a serverless cloud platform for running Python on demand, including on-demand GPUs. [Suede](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/#modal)
 
@@ -435,7 +436,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## LambdaTest/agent-skills
 
-[Repository](https://github.com/LambdaTest/agent-skills) · Publisher: [LambdaTest](https://github.com/LambdaTest) · [Suede AI listing](https://skills.suedeai.ai/directory/lambdatest/agent-skills/)
+[Repository](https://github.com/LambdaTest/agent-skills) · Publisher: [LambdaTest](https://github.com/LambdaTest) · [Suede listing](https://skills.suedeai.ai/directory/lambdatest/agent-skills/)
 
 - **81/100 · B** · [cicd-pipeline-skill](https://github.com/LambdaTest/agent-skills/blob/main/cicd-pipeline-skill/SKILL.md): Generates CI/CD pipeline configurations for test automation with GitHub Actions, Jenkins, GitLab CI, and Azure DevOps. [Suede](https://skills.suedeai.ai/directory/lambdatest/agent-skills/#cicd-pipeline-skill)
 - **79/100 · C** · [api-health-monitoring](https://github.com/LambdaTest/agent-skills/blob/main/api-skill/api-health-monitoring/SKILL.md): Designs health check endpoints, SLA definitions, alerting rules, observability strategies, and dashboard specs for any API. [Suede](https://skills.suedeai.ai/directory/lambdatest/agent-skills/#api-health-monitoring)
@@ -444,7 +445,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## langchain-ai/langchain-skills
 
-[Repository](https://github.com/langchain-ai/langchain-skills) · Publisher: [langchain-ai](https://github.com/langchain-ai) · [Suede AI listing](https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/)
+[Repository](https://github.com/langchain-ai/langchain-skills) · Publisher: [langchain-ai](https://github.com/langchain-ai) · [Suede listing](https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/)
 
 - **69/100 · D** · [langgraph-cli](https://github.com/langchain-ai/langchain-skills/blob/main/config/skills/langgraph-cli/SKILL.md): INVOKE THIS SKILL when using the langgraph CLI to scaffold, develop, build, or deploy LangGraph applications. [Suede](https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/#langgraph-cli)
 
@@ -452,7 +453,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## mattpocock/skills
 
-[Repository](https://github.com/mattpocock/skills) · Publisher: [mattpocock](https://github.com/mattpocock) · [Suede AI listing](https://skills.suedeai.ai/directory/mattpocock/skills/)
+[Repository](https://github.com/mattpocock/skills) · Publisher: [mattpocock](https://github.com/mattpocock) · [Suede listing](https://skills.suedeai.ai/directory/mattpocock/skills/)
 
 - **78/100 · C** · [wizard](https://github.com/mattpocock/skills/blob/main/skills/engineering/wizard/SKILL.md): Generate an interactive bash wizard that walks a human through steps only they can perform. [Suede](https://skills.suedeai.ai/directory/mattpocock/skills/#wizard)
 
@@ -460,7 +461,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## mblode/agent-skills
 
-[Repository](https://github.com/mblode/agent-skills) · Publisher: [mblode](https://github.com/mblode) · [Suede AI listing](https://skills.suedeai.ai/directory/mblode/agent-skills/)
+[Repository](https://github.com/mblode/agent-skills) · Publisher: [mblode](https://github.com/mblode) · [Suede listing](https://skills.suedeai.ai/directory/mblode/agent-skills/)
 
 - **91/100 · A** · [ci-speedup](https://github.com/mblode/agent-skills/blob/main/skills/ci-speedup/SKILL.md): Cuts CI wait by measuring a pipeline's critical path from run timestamps, then splitting, sharding, and trimming setup, with a before and after ledger. [Suede](https://skills.suedeai.ai/directory/mblode/agent-skills/ci-speedup/)
 - **89/100 · B** · [autoship](https://github.com/mblode/agent-skills/blob/main/skills/autoship/SKILL.md): Runs a changesets npm release through the version PR, CI publish, and registry verification. [Suede](https://skills.suedeai.ai/directory/mblode/agent-skills/#autoship)
@@ -470,7 +471,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## metalbear-co/skills
 
-[Repository](https://github.com/metalbear-co/skills) · Publisher: [metalbear-co](https://github.com/metalbear-co) · [Suede AI listing](https://skills.suedeai.ai/directory/metalbear-co/skills/)
+[Repository](https://github.com/metalbear-co/skills) · Publisher: [metalbear-co](https://github.com/metalbear-co) · [Suede listing](https://skills.suedeai.ai/directory/metalbear-co/skills/)
 
 - **83/100 · B** · [mirrord-ci](https://github.com/metalbear-co/skills/blob/main/skills/mirrord-ci/SKILL.md): Helps set up mirrord in CI pipelines to run end-to-end, integration, or automated tests against real staging or shared Kubernetes clusters. [Suede](https://skills.suedeai.ai/directory/metalbear-co/skills/mirrord-ci/)
 - **83/100 · B** · [mirrord-config](https://github.com/metalbear-co/skills/blob/main/skills/mirrord-config/SKILL.md): Generates, edits, and validates mirrord.json configuration files for connecting a local process to a Kubernetes environment, ensuring the output JSON is valid and schema-conformant. [Suede](https://skills.suedeai.ai/directory/metalbear-co/skills/mirrord-config/)
@@ -488,7 +489,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## microsoft/azure-skills
 
-[Repository](https://github.com/microsoft/azure-skills) · Publisher: [microsoft](https://github.com/microsoft) · [Suede AI listing](https://skills.suedeai.ai/directory/microsoft/azure-skills/)
+[Repository](https://github.com/microsoft/azure-skills) · Publisher: [microsoft](https://github.com/microsoft) · [Suede listing](https://skills.suedeai.ai/directory/microsoft/azure-skills/)
 
 - **86/100 · B** · [python-appservice-deploy](https://github.com/microsoft/azure-skills/blob/main/skills/python-appservice-deploy/SKILL.md): Deploy Python (Flask/Django/FastAPI) code to Azure App Service Linux. [Suede](https://skills.suedeai.ai/directory/microsoft/azure-skills/#python-appservice-deploy)
 - **85/100 · B** · [aks-troubleshooting](https://github.com/microsoft/azure-skills/blob/main/.github/plugins/aks-skills/skills/aks-troubleshooting/SKILL.md): Debug live Azure Kubernetes Service (AKS) incidents with a read-only, evidence-first investigation. [Suede](https://skills.suedeai.ai/directory/microsoft/azure-skills/#aks-troubleshooting)
@@ -535,11 +536,19 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 - **64/100 · D** · [azure-compute](https://github.com/microsoft/azure-skills/blob/main/skills/azure-compute/SKILL.md): Azure VM/VMSS router. [Suede](https://skills.suedeai.ai/directory/microsoft/azure-skills/#azure-compute)
 - **62/100 · D** · [azure-advisor-actionability](https://github.com/microsoft/azure-skills/blob/main/.github/plugins/azure-advisor/skills/azure-advisor-actionability/SKILL.md): Remediate Azure Advisor recommendations. [Suede](https://skills.suedeai.ai/directory/microsoft/azure-skills/#azure-advisor-actionability)
 
+<a id="mrhy7176--cloudgpu-agent-skills"></a>
+
+## mrhy7176/cloudgpu-agent-skills
+
+[Repository](https://github.com/mrhy7176/cloudgpu-agent-skills) · Publisher: [mrhy7176](https://github.com/mrhy7176) · [Suede listing](https://skills.suedeai.ai/directory/mrhy7176/cloudgpu-agent-skills/)
+
+- **77/100 · C** · [cloudgpu-discover-compute](https://github.com/mrhy7176/cloudgpu-agent-skills/blob/main/cloudgpu-discover-compute/SKILL.md): Compare GPU capacity and task costs without creating a paid instance, then prepare a proposal for user approval. [Suede](https://skills.suedeai.ai/directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-discover-compute/)
+
 <a id="nvidia--skills"></a>
 
 ## NVIDIA/skills
 
-[Repository](https://github.com/NVIDIA/skills) · Publisher: [NVIDIA](https://github.com/NVIDIA) · [Suede AI listing](https://skills.suedeai.ai/directory/nvidia/skills/)
+[Repository](https://github.com/NVIDIA/skills) · Publisher: [NVIDIA](https://github.com/NVIDIA) · [Suede listing](https://skills.suedeai.ai/directory/nvidia/skills/)
 
 - **90/100 · A** · [vss-deploy-detection-tracking-2d](https://github.com/NVIDIA/skills/blob/main/skills/vss-deploy-detection-tracking-2d/SKILL.md): Deploys, runs, debugs, tears down, and calls the REST API of the RTVI-CV 2D detection and tracking microservice. [Suede](https://skills.suedeai.ai/directory/nvidia/skills/vss-deploy-detection-tracking-2d/)
 - **88/100 · B** · [tao-run-on-slurm](https://github.com/NVIDIA/skills/blob/main/skills/tao-run-on-slurm/SKILL.md): Remote SLURM GPU cluster execution over SSH with sbatch/srun, Pyxis/Enroot containers, and Lustre-backed results. [Suede](https://skills.suedeai.ai/directory/nvidia/skills/#tao-run-on-slurm)
@@ -578,7 +587,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## obra/superpowers-lab
 
-[Repository](https://github.com/obra/superpowers-lab) · Publisher: [obra](https://github.com/obra) · [Suede AI listing](https://skills.suedeai.ai/directory/obra/superpowers-lab/)
+[Repository](https://github.com/obra/superpowers-lab) · Publisher: [obra](https://github.com/obra) · [Suede listing](https://skills.suedeai.ai/directory/obra/superpowers-lab/)
 
 - **76/100 · C** · [windows-vm](https://github.com/obra/superpowers-lab/blob/main/skills/windows-vm/SKILL.md): Creates, manages, and connects to a headless Windows 11 VM running in Docker with SSH access, including stopping and restarting it. [Suede](https://skills.suedeai.ai/directory/obra/superpowers-lab/windows-vm/)
 
@@ -586,7 +595,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## openai/skills
 
-[Repository](https://github.com/openai/skills) · Publisher: [openai](https://github.com/openai) · [Suede AI listing](https://skills.suedeai.ai/directory/openai/skills/)
+[Repository](https://github.com/openai/skills) · Publisher: [openai](https://github.com/openai) · [Suede listing](https://skills.suedeai.ai/directory/openai/skills/)
 
 - **77/100 · C** · [cloudflare-deploy](https://github.com/openai/skills/blob/main/skills/.curated/cloudflare-deploy/SKILL.md): Deploy applications and infrastructure to Cloudflare using Workers, Pages, and related platform services. [Suede](https://skills.suedeai.ai/directory/openai/skills/#cloudflare-deploy)
 - **77/100 · C** · [netlify-deploy](https://github.com/openai/skills/blob/main/skills/.curated/netlify-deploy/SKILL.md): Deploy web projects to Netlify using the Netlify CLI (\`npx netlify\`). [Suede](https://skills.suedeai.ai/directory/openai/skills/#netlify-deploy)
@@ -597,7 +606,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## Orchestra-Research/AI-Research-SKILLs
 
-[Repository](https://github.com/Orchestra-Research/AI-Research-SKILLs) · Publisher: [Orchestra-Research](https://github.com/Orchestra-Research) · [Suede AI listing](https://skills.suedeai.ai/directory/orchestra-research/ai-research-skills/)
+[Repository](https://github.com/Orchestra-Research/AI-Research-SKILLs) · Publisher: [Orchestra-Research](https://github.com/Orchestra-Research) · [Suede listing](https://skills.suedeai.ai/directory/orchestra-research/ai-research-skills/)
 
 - **69/100 · D** · [modal-serverless-gpu](https://github.com/Orchestra-Research/AI-Research-SKILLs/blob/main/09-infrastructure/modal/SKILL.md): Serverless GPU cloud platform for running ML workloads. [Suede](https://skills.suedeai.ai/directory/orchestra-research/ai-research-skills/#modal-serverless-gpu)
 - **69/100 · D** · [skypilot-multi-cloud-orchestration](https://github.com/Orchestra-Research/AI-Research-SKILLs/blob/main/09-infrastructure/skypilot/SKILL.md): Multi-cloud orchestration for ML workloads with automatic cost optimization. [Suede](https://skills.suedeai.ai/directory/orchestra-research/ai-research-skills/#skypilot-multi-cloud-orchestration)
@@ -606,7 +615,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## product-on-purpose/pm-skills
 
-[Repository](https://github.com/product-on-purpose/pm-skills) · Publisher: [product-on-purpose](https://github.com/product-on-purpose) · [Suede AI listing](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/)
+[Repository](https://github.com/product-on-purpose/pm-skills) · Publisher: [product-on-purpose](https://github.com/product-on-purpose) · [Suede listing](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/)
 
 - **83/100 · B** · [utility-pm-release-conductor](https://github.com/product-on-purpose/pm-skills/blob/main/skills/utility-pm-release-conductor/SKILL.md): Walk the guided 6-gate release runbook (G0 readiness, G1 adversarial review, G2 version bump and CHANGELOG, G2.5 commit and re-verify, G3 tag and push, G4 post-tag hygiene) via the pm-release-conductor sub-agent. [Suede](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/#utility-pm-release-conductor)
 
@@ -614,7 +623,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## qdrant/skills
 
-[Repository](https://github.com/qdrant/skills) · Publisher: [qdrant](https://github.com/qdrant) · [Suede AI listing](https://skills.suedeai.ai/directory/qdrant/skills/)
+[Repository](https://github.com/qdrant/skills) · Publisher: [qdrant](https://github.com/qdrant) · [Suede listing](https://skills.suedeai.ai/directory/qdrant/skills/)
 
 - **80/100 · B** · [qdrant-monitoring](https://github.com/qdrant/skills/blob/main/skills/qdrant-monitoring/SKILL.md): Guides Qdrant monitoring and observability setup, including which metrics to track, Prometheus, Grafana, health checks, alerts, and log centralization. [Suede](https://skills.suedeai.ai/directory/qdrant/skills/qdrant-monitoring/)
 - **79/100 · C** · [qdrant-hybrid-cloud-setup](https://github.com/qdrant/skills/blob/main/skills/qdrant-hybrid-cloud-setup/SKILL.md): Guides installing and running Qdrant Hybrid Cloud on your own Kubernetes cluster, covering storage, backups, the agent and operator, cluster exposure, and secret rotation. [Suede](https://skills.suedeai.ai/directory/qdrant/skills/qdrant-hybrid-cloud-setup/)
@@ -625,7 +634,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## redis/agent-skills
 
-[Repository](https://github.com/redis/agent-skills) · Publisher: [redis](https://github.com/redis) · [Suede AI listing](https://skills.suedeai.ai/directory/redis/agent-skills/)
+[Repository](https://github.com/redis/agent-skills) · Publisher: [redis](https://github.com/redis) · [Suede listing](https://skills.suedeai.ai/directory/redis/agent-skills/)
 
 - **75/100 · C** · [redis-observability](https://github.com/redis/agent-skills/blob/main/skills/redis-observability/SKILL.md): Guides Redis monitoring, covering which metrics to track, built-in commands for incident triage such as SLOWLOG and INFO, and when to use Redis Insight. [Suede](https://skills.suedeai.ai/directory/redis/agent-skills/redis-observability/)
 
@@ -633,7 +642,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## replicate/skills
 
-[Repository](https://github.com/replicate/skills) · Publisher: [replicate](https://github.com/replicate) · [Suede AI listing](https://skills.suedeai.ai/directory/replicate/skills/)
+[Repository](https://github.com/replicate/skills) · Publisher: [replicate](https://github.com/replicate) · [Suede listing](https://skills.suedeai.ai/directory/replicate/skills/)
 
 - **71/100 · C** · [publish-models](https://github.com/replicate/skills/blob/main/skills/publish-models/SKILL.md): Pushes and publishes custom AI models to Replicate and sets up CI/CD for releasing new model versions safely, including cog-safe-push validation. [Suede](https://skills.suedeai.ai/directory/replicate/skills/publish-models/)
 
@@ -641,7 +650,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## sanjay3290/ai-skills
 
-[Repository](https://github.com/sanjay3290/ai-skills) · Publisher: [sanjay3290](https://github.com/sanjay3290) · [Suede AI listing](https://skills.suedeai.ai/directory/sanjay3290/ai-skills/)
+[Repository](https://github.com/sanjay3290/ai-skills) · Publisher: [sanjay3290](https://github.com/sanjay3290) · [Suede listing](https://skills.suedeai.ai/directory/sanjay3290/ai-skills/)
 
 - **85/100 · B** · [apple-container](https://github.com/sanjay3290/ai-skills/blob/main/skills/apple-container/SKILL.md): Guides use of Apple's container CLI to build, run, and manage OCI and Linux containers on Apple-silicon macOS without a Docker daemon. [Suede](https://skills.suedeai.ai/directory/sanjay3290/ai-skills/apple-container/)
 - **83/100 · B** · [azure-devops](https://github.com/sanjay3290/ai-skills/blob/main/skills/azure-devops/SKILL.md): Manages Azure DevOps projects, work items, repos, pull requests, pipelines, wikis, test plans, security alerts, variable groups, environments, branch policies, and attachments. [Suede](https://skills.suedeai.ai/directory/sanjay3290/ai-skills/azure-devops/)
@@ -650,7 +659,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## vercel-labs/agent-skills
 
-[Repository](https://github.com/vercel-labs/agent-skills) · Publisher: [vercel-labs](https://github.com/vercel-labs) · [Suede AI listing](https://skills.suedeai.ai/directory/vercel-labs/agent-skills/)
+[Repository](https://github.com/vercel-labs/agent-skills) · Publisher: [vercel-labs](https://github.com/vercel-labs) · [Suede listing](https://skills.suedeai.ai/directory/vercel-labs/agent-skills/)
 
 - **80/100 · B** · [vercel-optimize](https://github.com/vercel-labs/agent-skills/blob/main/skills/vercel-optimize/SKILL.md): Use for Vercel cost and performance optimization on deployed projects, especially Next.js, SvelteKit, Nuxt, and limited Astro apps. [Suede](https://skills.suedeai.ai/directory/vercel-labs/agent-skills/#vercel-optimize)
 - **78/100 · C** · [vercel-cli-with-tokens](https://github.com/vercel-labs/agent-skills/blob/main/skills/vercel-cli-with-tokens/SKILL.md): Deploy and manage projects on Vercel using token-based authentication. [Suede](https://skills.suedeai.ai/directory/vercel-labs/agent-skills/#vercel-cli-with-tokens)
@@ -659,7 +668,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## wondelai/skills
 
-[Repository](https://github.com/wondelai/skills) · Publisher: [wondelai](https://github.com/wondelai) · [Suede AI listing](https://skills.suedeai.ai/directory/wondelai/skills/)
+[Repository](https://github.com/wondelai/skills) · Publisher: [wondelai](https://github.com/wondelai) · [Suede listing](https://skills.suedeai.ai/directory/wondelai/skills/)
 
 - **81/100 · B** · [release-it](https://github.com/wondelai/skills/blob/main/release-it/SKILL.md): Build production-ready systems with stability patterns: circuit breakers, bulkheads, timeouts, and retry logic. [Suede](https://skills.suedeai.ai/directory/wondelai/skills/#release-it)
 
@@ -667,7 +676,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## ykdojo/claude-code-tips
 
-[Repository](https://github.com/ykdojo/claude-code-tips) · Publisher: [ykdojo](https://github.com/ykdojo) · [Suede AI listing](https://skills.suedeai.ai/directory/ykdojo/claude-code-tips/)
+[Repository](https://github.com/ykdojo/claude-code-tips) · Publisher: [ykdojo](https://github.com/ykdojo) · [Suede listing](https://skills.suedeai.ai/directory/ykdojo/claude-code-tips/)
 
 - **65/100 · D** · [gha](https://github.com/ykdojo/claude-code-tips/blob/main/skills/gha/SKILL.md): Analyze GitHub Actions failures and identify root causes [Suede](https://skills.suedeai.ai/directory/ykdojo/claude-code-tips/#gha) · License: All rights reserved (review terms)
 
@@ -675,7 +684,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ## zxkane/aws-skills
 
-[Repository](https://github.com/zxkane/aws-skills) · Publisher: [zxkane](https://github.com/zxkane) · [Suede AI listing](https://skills.suedeai.ai/directory/zxkane/aws-skills/)
+[Repository](https://github.com/zxkane/aws-skills) · Publisher: [zxkane](https://github.com/zxkane) · [Suede listing](https://skills.suedeai.ai/directory/zxkane/aws-skills/)
 
 - **86/100 · B** · [aws-sst-development](https://github.com/zxkane/aws-skills/blob/main/plugins/aws-iac/skills/aws-sst-development/SKILL.md): Guides managing AWS resources as code with SST v4 and Pulumi, including sst.config.ts, infra modules, resource links, IAM scoping, and sst deploy workflows. [Suede](https://skills.suedeai.ai/directory/zxkane/aws-skills/aws-sst-development/)
 - **85/100 · B** · [aws-cdk-development](https://github.com/zxkane/aws-skills/blob/main/plugins/aws-iac/skills/aws-cdk-development/SKILL.md): Guides building AWS cloud infrastructure with CDK in TypeScript or Python, covering app structure, construct patterns, stack composition, and deployment workflows. [Suede](https://skills.suedeai.ai/directory/zxkane/aws-skills/aws-cdk-development/)
@@ -684,6 +693,6 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 ---
 
-**Run a team of agents.** Suede AI Agent Studio builds multi-agent automation for businesses. [suedeai.app](https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agent-studio) Listed here? [Add your badge](../README.md#add-your-badge).
+**Run a team of agents.** Suede Agent Studio builds multi-agent automation for businesses. [suedeai.app](https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agent-studio) Listed here? [Add your badge](../README.md#add-your-badge).
 
 [Awesome Everything](../README.md) · [Compare scores](../README.md#compare-099-quality-scores) · [Publishers](../publishers.md) · [Featured projects](../featured.md) · [Guides](../README.md#guides) · [Contribute](../CONTRIBUTING.md) · [Search by score](https://skills.suedeai.ai/directory/?sort=score)

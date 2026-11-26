@@ -6,11 +6,11 @@
 
 Skills for everyday knowledge work: email, calendars, notes, workspace apps, project tracking, planning and research assistance. They connect an agent to the tools a team already uses and give it a consistent way to work inside them.
 
-**236 accepted skills · 37 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**238 accepted skills · 39 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
-**Compare on the 0–99 quality scale:** this category’s verified scores span **53–91 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=productivity-knowledge&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
+**Compare on the 0–99 quality scale:** this category’s verified scores span **53–91 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=productivity-knowledge&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
-[Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede AI listing.
+[Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede listing.
 
 <details>
 <summary>Browse publishers in this category</summary>
@@ -20,6 +20,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 - [aws/agent-toolkit-for-aws](#aws--agent-toolkit-for-aws)
 - [bitwize-music-studio/claude-ai-music-skills](#bitwize-music-studio--claude-ai-music-skills)
 - [browserbase/skills](#browserbase--skills)
+- [cwong5/extra-caffeine-mcp](#cwong5--extra-caffeine-mcp)
 - [firecrawl/skills](#firecrawl--skills)
 - [garrytan/gstack](#garrytan--gstack)
 - [github/awesome-copilot](#github--awesome-copilot)
@@ -33,6 +34,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 - [K-Dense-AI/claude-scientific-skills](#k-dense-ai--claude-scientific-skills)
 - [makenotion/notion-cookbook](#makenotion--notion-cookbook)
 - [mblode/agent-skills](#mblode--agent-skills)
+- [MetcalfSolutions/Satori](#metcalfsolutions--satori)
 - [mhattingpete/claude-skills-marketplace](#mhattingpete--claude-skills-marketplace)
 - [michalparkola/tapestry-skills-for-claude-code](#michalparkola--tapestry-skills-for-claude-code)
 - [NeoLabHQ/context-engineering-kit](#neolabhq--context-engineering-kit)
@@ -59,7 +61,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## activeloopai/hivemind
 
-[Repository](https://github.com/activeloopai/hivemind) · Publisher: [activeloopai](https://github.com/activeloopai) · [Suede AI listing](https://skills.suedeai.ai/directory/activeloopai/hivemind/)
+[Repository](https://github.com/activeloopai/hivemind) · Publisher: [activeloopai](https://github.com/activeloopai) · [Suede listing](https://skills.suedeai.ai/directory/activeloopai/hivemind/)
 
 - **85/100 · B** · [hivemind-goals](https://github.com/activeloopai/hivemind/blob/main/harnesses/claude-code/skills/hivemind-goals/SKILL.md): Creates, tracks, and updates team goals and tasks through the Deeplake virtual filesystem, covering objectives, milestones, todos, and other actionable work items. [Suede](https://skills.suedeai.ai/directory/activeloopai/hivemind/hivemind-goals/)
 
@@ -67,7 +69,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## anthropics/skills
 
-[Repository](https://github.com/anthropics/skills) · Publisher: [anthropics](https://github.com/anthropics) · [Suede AI listing](https://skills.suedeai.ai/directory/anthropics/skills/)
+[Repository](https://github.com/anthropics/skills) · Publisher: [anthropics](https://github.com/anthropics) · [Suede listing](https://skills.suedeai.ai/directory/anthropics/skills/)
 
 - **83/100 · B** · [academy-guide](https://github.com/anthropics/skills/blob/main/skills/academy-guide/SKILL.md): Stop and check this skill before finishing any reply to a question about how to use Claude or a Claude product — it recommends matching courses, tutorials, and use cases from Claude Academy (academy.claude.com), Anthropic's learning hub. [Suede](https://skills.suedeai.ai/directory/anthropics/skills/#academy-guide)
 - **80/100 · B** · [discernment-nudge](https://github.com/anthropics/skills/blob/main/skills/discernment-nudge/SKILL.md): Appends two or three short follow-up questions after substantive answers, helping users check key facts, probe reasoning and assumptions, and notice missing context. [Suede](https://skills.suedeai.ai/directory/anthropics/skills/discernment-nudge/)
@@ -76,7 +78,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## aws/agent-toolkit-for-aws
 
-[Repository](https://github.com/aws/agent-toolkit-for-aws) · Publisher: [aws](https://github.com/aws) · [Suede AI listing](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/)
+[Repository](https://github.com/aws/agent-toolkit-for-aws) · Publisher: [aws](https://github.com/aws) · [Suede listing](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/)
 
 - **80/100 · B** · [amazon-ses](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/customer-communications-skills/amazon-ses/SKILL.md): Guides Amazon SES onboarding for domain-based email sending. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#amazon-ses)
 
@@ -84,7 +86,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## bitwize-music-studio/claude-ai-music-skills
 
-[Repository](https://github.com/bitwize-music-studio/claude-ai-music-skills) · Publisher: [bitwize-music-studio](https://github.com/bitwize-music-studio) · [Suede AI listing](https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/)
+[Repository](https://github.com/bitwize-music-studio/claude-ai-music-skills) · Publisher: [bitwize-music-studio](https://github.com/bitwize-music-studio) · [Suede listing](https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/)
 
 - **82/100 · B** · [document-hunter](https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/document-hunter/SKILL.md): Searches and retrieves primary source documents, such as court filings, government reports, and public records, from free public sources using automated browser navigation. [Suede](https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/document-hunter/)
 - **82/100 · B** · [researcher](https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/researcher/SKILL.md): Conducts investigative-grade research with primary source analysis and cross-verification for albums that need factual research, source material, or verification of claims. [Suede](https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/researcher/)
@@ -103,15 +105,23 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## browserbase/skills
 
-[Repository](https://github.com/browserbase/skills) · Publisher: [browserbase](https://github.com/browserbase) · [Suede AI listing](https://skills.suedeai.ai/directory/browserbase/skills/)
+[Repository](https://github.com/browserbase/skills) · Publisher: [browserbase](https://github.com/browserbase) · [Suede listing](https://skills.suedeai.ai/directory/browserbase/skills/)
 
 - **78/100 · C** · [search](https://github.com/browserbase/skills/blob/main/skills/search/SKILL.md): Use this skill when the user wants to search the web without a full browser session: find URLs, titles, and metadata for a query. [Suede](https://skills.suedeai.ai/directory/browserbase/skills/#search)
+
+<a id="cwong5--extra-caffeine-mcp"></a>
+
+## cwong5/extra-caffeine-mcp
+
+[Repository](https://github.com/cwong5/extra-caffeine-mcp) · Publisher: [cwong5](https://github.com/cwong5) · [Suede listing](https://skills.suedeai.ai/directory/cwong5/extra-caffeine-mcp/)
+
+- **69/100 · D** · [extra-caffeine-workflow](https://github.com/cwong5/extra-caffeine-mcp/blob/main/skills/extra-caffeine-workflow/SKILL.md): Use Extra Caffeine to keep a local Mac awake for long AI or file-processing work, check awake state, or manage requested one-time schedules. [Suede](https://skills.suedeai.ai/directory/cwong5/extra-caffeine-mcp/#extra-caffeine-workflow) · License: All rights reserved (review terms)
 
 <a id="firecrawl--skills"></a>
 
 ## firecrawl/skills
 
-[Repository](https://github.com/firecrawl/skills) · Publisher: [firecrawl](https://github.com/firecrawl) · [Suede AI listing](https://skills.suedeai.ai/directory/firecrawl/skills/)
+[Repository](https://github.com/firecrawl/skills) · Publisher: [firecrawl](https://github.com/firecrawl) · [Suede listing](https://skills.suedeai.ai/directory/firecrawl/skills/)
 
 - **82/100 · B** · [firecrawl-monitor](https://github.com/firecrawl/skills/blob/main/skills/core/firecrawl-monitor/SKILL.md): Alert by webhook/email on web changes — use for "monitor/watch/track/alert me when": recurring checks on known URLs (prefer over repeated one-off scrapes) or web-wide watches for new results (queries + goal). [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/#firecrawl-monitor)
 - **80/100 · B** · [firecrawl-deep-research](https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-deep-research/SKILL.md): Produces an intensive, cited analytical report with executive summary, multi-angle findings, contrarian views, open questions, and full sources, for complex topics needing rigorous synthesis. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-deep-research/)
@@ -124,7 +134,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## garrytan/gstack
 
-[Repository](https://github.com/garrytan/gstack) · Publisher: [garrytan](https://github.com/garrytan) · [Suede AI listing](https://skills.suedeai.ai/directory/garrytan/gstack/)
+[Repository](https://github.com/garrytan/gstack) · Publisher: [garrytan](https://github.com/garrytan) · [Suede listing](https://skills.suedeai.ai/directory/garrytan/gstack/)
 
 - **80/100 · B** · [gstack-openclaw-retro](https://github.com/garrytan/gstack/blob/main/openclaw/skills/gstack-openclaw-retro/SKILL.md): Runs a weekly engineering retrospective analyzing commit history, work patterns, and code quality metrics, with trend tracking and per-person contributions, praise, and growth areas. [Suede](https://skills.suedeai.ai/directory/garrytan/gstack/gstack-openclaw-retro/)
 
@@ -132,7 +142,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## github/awesome-copilot
 
-[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede AI listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
+[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
 
 - **77/100 · C** · [email-drafter](https://github.com/github/awesome-copilot/blob/main/skills/email-drafter/SKILL.md): Draft and review professional emails that match your personal writing style. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#email-drafter)
 - **77/100 · C** · [gtm-operating-cadence](https://github.com/github/awesome-copilot/blob/main/skills/gtm-operating-cadence/SKILL.md): Design meeting rhythms, metric reporting, quarterly planning, and decision-making velocity for scaling companies. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#gtm-operating-cadence)
@@ -146,7 +156,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## googleworkspace/cli
 
-[Repository](https://github.com/googleworkspace/cli) · Publisher: [googleworkspace](https://github.com/googleworkspace) · [Suede AI listing](https://skills.suedeai.ai/directory/googleworkspace/cli/)
+[Repository](https://github.com/googleworkspace/cli) · Publisher: [googleworkspace](https://github.com/googleworkspace) · [Suede listing](https://skills.suedeai.ai/directory/googleworkspace/cli/)
 
 - **60/100 · D** · [gws-classroom](https://github.com/googleworkspace/cli/blob/main/skills/gws-classroom/SKILL.md): Google Classroom: Manage classes, rosters, and coursework. [Suede](https://skills.suedeai.ai/directory/googleworkspace/cli/#gws-classroom)
 - **60/100 · D** · [gws-drive](https://github.com/googleworkspace/cli/blob/main/skills/gws-drive/SKILL.md): Google Drive: Manage files, folders, and shared drives. [Suede](https://skills.suedeai.ai/directory/googleworkspace/cli/#gws-drive)
@@ -210,7 +220,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## gooseworks-ai/goose-skills
 
-[Repository](https://github.com/gooseworks-ai/goose-skills) · Publisher: [gooseworks-ai](https://github.com/gooseworks-ai) · [Suede AI listing](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/)
+[Repository](https://github.com/gooseworks-ai/goose-skills) · Publisher: [gooseworks-ai](https://github.com/gooseworks-ai) · [Suede listing](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/)
 
 - **83/100 · B** · [meeting-brief](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/sales/composites/meeting-brief/SKILL.md): Daily meeting preparation system that checks your calendar each morning, deeply researches external attendees (LinkedIn, company info, GitHub, past notes), and sends you personalized briefs via email (1 per person). [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#meeting-brief)
 - **81/100 · B** · [restaurant-booking](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/research-tools/capabilities/restaurant-booking/SKILL.md): Book restaurant reservations via browser automation. [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#restaurant-booking)
@@ -232,7 +242,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## infrasity-labs/dev-gtm-claude-skills
 
-[Repository](https://github.com/infrasity-labs/dev-gtm-claude-skills) · Publisher: [infrasity-labs](https://github.com/infrasity-labs) · [Suede AI listing](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/)
+[Repository](https://github.com/infrasity-labs/dev-gtm-claude-skills) · Publisher: [infrasity-labs](https://github.com/infrasity-labs) · [Suede listing](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/)
 
 - **82/100 · B** · [blog-notebooklm](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/writing-skills/blog-notebooklm/SKILL.md): Queries Google NotebookLM notebooks for source-grounded, citation-backed answers from user-uploaded documents, and manages the notebook library and Google authentication. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/blog-notebooklm/)
 - **78/100 · C** · [capture](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/notion-skills/capture/SKILL.md): Turns messy brain dumps of ideas, tasks, and plans into an organized, actionable structure without losing any information. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/capture/)
@@ -244,7 +254,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## inhotel-io/govisit-toolkit
 
-[Repository](https://github.com/inhotel-io/govisit-toolkit) · Publisher: [GoVisit.ai / inHotel Sàrl](https://github.com/inhotel-io) · [Suede AI listing](https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/)
+[Repository](https://github.com/inhotel-io/govisit-toolkit) · Publisher: [GoVisit.ai / inHotel Sàrl](https://github.com/inhotel-io) · [Suede listing](https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/)
 
 - **80/100 · B** · [govisit-get-category-overview](https://github.com/inhotel-io/govisit-toolkit/blob/main/skills/govisit-get-category-overview/SKILL.md): Category identity, hierarchy and published count within a destination. [Suede](https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-category-overview/) GoVisit.ai by inHotel Sàrl (inhotel-io). MIT skill files; hosted API access and returned data have separate GoVisit terms. [Service and data terms](https://govisit.ai/en/docs/general/data-use-license).
 - **80/100 · B** · [govisit-get-category-section](https://github.com/inhotel-io/govisit-toolkit/blob/main/skills/govisit-get-category-section/SKILL.md): Read one published section for the selected destination category page. [Suede](https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/#govisit-get-category-section) GoVisit.ai by inHotel Sàrl (inhotel-io). MIT skill files; hosted API access and returned data have separate GoVisit terms. [Service and data terms](https://govisit.ai/en/docs/general/data-use-license).
@@ -271,7 +281,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## jakedahn/pomodoro
 
-[Repository](https://github.com/jakedahn/pomodoro) · Publisher: [jakedahn](https://github.com/jakedahn) · [Suede AI listing](https://skills.suedeai.ai/directory/jakedahn/pomodoro/)
+[Repository](https://github.com/jakedahn/pomodoro) · Publisher: [jakedahn](https://github.com/jakedahn) · [Suede listing](https://skills.suedeai.ai/directory/jakedahn/pomodoro/)
 
 - **66/100 · D** · [pomodoro](https://github.com/jakedahn/pomodoro/blob/main/src/SKILL.md): Simple Pomodoro timer for focused work sessions with session tracking and productivity analytics. [Suede](https://skills.suedeai.ai/directory/jakedahn/pomodoro/#pomodoro)
 
@@ -279,17 +289,17 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## JasonColapietro/suede-creator-skills
 
-[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede AI listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
+[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
 
-- **91/100 · A** · [Suede AI Cold Email Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-cold-email/SKILL.md): Use when asked "write a cold email" or to repair B2B outbound to qualified prospects. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-cold-email)
-- **91/100 · A** · [Suede AI Lifecycle Email Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-emails/SKILL.md): Use when asked "build a welcome email sequence" or to design nurture, onboarding, win-back, post-purchase or trigger-based lifecycle email flows. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-emails)
-- **91/100 · A** · [Suede AI Influencer Outreach Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-influencer-outreach/SKILL.md): Use when asked "pitch this creator" or to repair an influencer or B2B creator-program first touch. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-influencer-outreach)
+- **91/100 · A** · [Suede Cold Email Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-cold-email/SKILL.md): Use when asked "write a cold email" or to repair B2B outbound to qualified prospects. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-cold-email)
+- **91/100 · A** · [Suede Lifecycle Email Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-emails/SKILL.md): Use when asked "build a welcome email sequence" or to design nurture, onboarding, win-back, post-purchase or trigger-based lifecycle email flows. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-emails)
+- **91/100 · A** · [Suede Influencer Outreach Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-influencer-outreach/SKILL.md): Use when asked "pitch this creator" or to repair an influencer or B2B creator-program first touch. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-influencer-outreach)
 
 <a id="jeffallan--claude-skills"></a>
 
 ## jeffallan/claude-skills
 
-[Repository](https://github.com/jeffallan/claude-skills) · Publisher: [jeffallan](https://github.com/jeffallan) · [Suede AI listing](https://skills.suedeai.ai/directory/jeffallan/claude-skills/)
+[Repository](https://github.com/jeffallan/claude-skills) · Publisher: [jeffallan](https://github.com/jeffallan) · [Suede listing](https://skills.suedeai.ai/directory/jeffallan/claude-skills/)
 
 - **84/100 · B** · [atlassian-mcp](https://github.com/jeffallan/claude-skills/blob/main/skills/atlassian-mcp/SKILL.md): Integrates with Atlassian products to manage project tracking and documentation via MCP protocol. [Suede](https://skills.suedeai.ai/directory/jeffallan/claude-skills/#atlassian-mcp)
 - **84/100 · B** · [the-fool](https://github.com/jeffallan/claude-skills/blob/main/skills/the-fool/SKILL.md): Use when challenging ideas, plans, decisions, or proposals using structured critical reasoning. [Suede](https://skills.suedeai.ai/directory/jeffallan/claude-skills/#the-fool)
@@ -298,7 +308,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## K-Dense-AI/claude-scientific-skills
 
-[Repository](https://github.com/K-Dense-AI/claude-scientific-skills) · Publisher: [K-Dense-AI](https://github.com/K-Dense-AI) · [Suede AI listing](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/)
+[Repository](https://github.com/K-Dense-AI/claude-scientific-skills) · Publisher: [K-Dense-AI](https://github.com/K-Dense-AI) · [Suede listing](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/)
 
 - **87/100 · B** · [open-notebook](https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/skills/open-notebook/SKILL.md): Organizes research with the self-hosted Open Notebook alternative to NotebookLM. [Suede](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/#open-notebook)
 - **86/100 · B** · [consciousness-council](https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/skills/consciousness-council/SKILL.md): Structures a multi-perspective council exercise for decisions, research trade-offs, and creative challenges. [Suede](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/#consciousness-council)
@@ -308,7 +318,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## makenotion/notion-cookbook
 
-[Repository](https://github.com/makenotion/notion-cookbook) · Publisher: [makenotion](https://github.com/makenotion) · [Suede AI listing](https://skills.suedeai.ai/directory/makenotion/notion-cookbook/)
+[Repository](https://github.com/makenotion/notion-cookbook) · Publisher: [makenotion](https://github.com/makenotion) · [Suede listing](https://skills.suedeai.ai/directory/makenotion/notion-cookbook/)
 
 - **73/100 · C** · [notion-database-designer](https://github.com/makenotion/notion-cookbook/blob/main/skills/mcp-clients/database-designer/SKILL.md): Turns scattered notes and recurring work into useful Notion trackers for requests, content plans, or team work. [Suede](https://skills.suedeai.ai/directory/makenotion/notion-cookbook/#notion-database-designer)
 - **73/100 · C** · [notion-knowledge-capture](https://github.com/makenotion/notion-cookbook/blob/main/skills/mcp-clients/knowledge-capture/SKILL.md): Captures conversations and supplied notes as Notion wiki pages, how-to guides, FAQs, decision records, or retrospectives. [Suede](https://skills.suedeai.ai/directory/makenotion/notion-cookbook/#notion-knowledge-capture)
@@ -321,16 +331,24 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## mblode/agent-skills
 
-[Repository](https://github.com/mblode/agent-skills) · Publisher: [mblode](https://github.com/mblode) · [Suede AI listing](https://skills.suedeai.ai/directory/mblode/agent-skills/)
+[Repository](https://github.com/mblode/agent-skills) · Publisher: [mblode](https://github.com/mblode) · [Suede listing](https://skills.suedeai.ai/directory/mblode/agent-skills/)
 
 - **87/100 · B** · [planning](https://github.com/mblode/agent-skills/blob/main/skills/planning/SKILL.md): Creates and reviews executable implementation plans grounded in repository evidence, with vertical slices, explicit decisions, and verification criteria. [Suede](https://skills.suedeai.ai/directory/mblode/agent-skills/#planning)
 - **84/100 · B** · [save-md](https://github.com/mblode/agent-skills/blob/main/skills/save-md/SKILL.md): Saves a named source to Markdown with provenance and faithful extraction through direct export endpoints. [Suede](https://skills.suedeai.ai/directory/mblode/agent-skills/#save-md)
+
+<a id="metcalfsolutions--satori"></a>
+
+## MetcalfSolutions/Satori
+
+[Repository](https://github.com/MetcalfSolutions/Satori) · Publisher: [MetcalfSolutions](https://github.com/MetcalfSolutions) · [Suede listing](https://skills.suedeai.ai/directory/metcalfsolutions/satori/satori/)
+
+- **87/100 · B** · [satori](https://github.com/MetcalfSolutions/Satori/blob/main/.agents/skills/satori/SKILL.md): Acts as a clinically informed companion for reflecting on emotions, meaning, grief, purpose, relationships, and identity without rushing people toward an answer. [Suede](https://skills.suedeai.ai/directory/metcalfsolutions/satori/satori/)
 
 <a id="mhattingpete--claude-skills-marketplace"></a>
 
 ## mhattingpete/claude-skills-marketplace
 
-[Repository](https://github.com/mhattingpete/claude-skills-marketplace) · Publisher: [mhattingpete](https://github.com/mhattingpete) · [Suede AI listing](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/)
+[Repository](https://github.com/mhattingpete/claude-skills-marketplace) · Publisher: [mhattingpete](https://github.com/mhattingpete) · [Suede listing](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/)
 
 - **81/100 · B** · [feature-planning](https://github.com/mhattingpete/claude-skills-marketplace/blob/main/engineering-workflow-plugin/skills/feature-planning/SKILL.md): Breaks down feature requests into detailed, implementable plans with clear tasks for new features, enhancements, or complex changes. [Suede](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/feature-planning/)
 - **75/100 · C** · [timeline-creator](https://github.com/mhattingpete/claude-skills-marketplace/blob/main/visual-documentation-plugin/skills/timeline-creator/SKILL.md): Creates HTML timelines and project roadmaps with Gantt charts, milestones, phase groupings, and progress indicators. [Suede](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/timeline-creator/)
@@ -339,7 +357,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## michalparkola/tapestry-skills-for-claude-code
 
-[Repository](https://github.com/michalparkola/tapestry-skills-for-claude-code) · Publisher: [michalparkola](https://github.com/michalparkola) · [Suede AI listing](https://skills.suedeai.ai/directory/michalparkola/tapestry-skills-for-claude-code/)
+[Repository](https://github.com/michalparkola/tapestry-skills-for-claude-code) · Publisher: [michalparkola](https://github.com/michalparkola) · [Suede listing](https://skills.suedeai.ai/directory/michalparkola/tapestry-skills-for-claude-code/)
 
 - **77/100 · C** · [learn-this](https://github.com/michalparkola/tapestry-skills-for-claude-code/blob/main/learn-this/SKILL.md): Extracts content from a YouTube video, article, or PDF URL, detecting the content type automatically, and turns it into an action plan. [Suede](https://skills.suedeai.ai/directory/michalparkola/tapestry-skills-for-claude-code/learn-this/)
 - **77/100 · C** · [session-log](https://github.com/michalparkola/tapestry-skills-for-claude-code/blob/main/session-log/SKILL.md): Summarizes the current conversation session and appends the results to the weekly agent-log. [Suede](https://skills.suedeai.ai/directory/michalparkola/tapestry-skills-for-claude-code/session-log/)
@@ -352,7 +370,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## NeoLabHQ/context-engineering-kit
 
-[Repository](https://github.com/NeoLabHQ/context-engineering-kit) · Publisher: [NeoLabHQ](https://github.com/NeoLabHQ) · [Suede AI listing](https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/)
+[Repository](https://github.com/NeoLabHQ/context-engineering-kit) · Publisher: [NeoLabHQ](https://github.com/NeoLabHQ) · [Suede listing](https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/)
 
 - **82/100 · B** · [brainstorm](https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/brainstorm/SKILL.md): Refines rough ideas into fully formed designs through collaborative questioning, alternative exploration, and incremental validation before writing code or implementation plans. [Suede](https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/brainstorm/)
 - **66/100 · D** · [add-task](https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/add-task/SKILL.md): creates draft task file in .specs/tasks/draft/ with original user intent [Suede](https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/#add-task)
@@ -366,7 +384,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## openai/skills
 
-[Repository](https://github.com/openai/skills) · Publisher: [openai](https://github.com/openai) · [Suede AI listing](https://skills.suedeai.ai/directory/openai/skills/)
+[Repository](https://github.com/openai/skills) · Publisher: [openai](https://github.com/openai) · [Suede listing](https://skills.suedeai.ai/directory/openai/skills/)
 
 - **74/100 · C** · [notion-knowledge-capture](https://github.com/openai/skills/blob/main/skills/.curated/notion-knowledge-capture/SKILL.md): Capture conversations and decisions into structured Notion pages; use when turning chats/notes into wiki entries, how-tos, decisions, or FAQs with proper linking. [Suede](https://skills.suedeai.ai/directory/openai/skills/#notion-knowledge-capture)
 - **74/100 · C** · [notion-meeting-intelligence](https://github.com/openai/skills/blob/main/skills/.curated/notion-meeting-intelligence/SKILL.md): Prepare meeting materials with Notion context and Codex research; use when gathering context, drafting agendas/pre-reads, and tailoring materials to attendees. [Suede](https://skills.suedeai.ai/directory/openai/skills/#notion-meeting-intelligence)
@@ -377,7 +395,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## phuryn/pm-skills
 
-[Repository](https://github.com/phuryn/pm-skills) · Publisher: [phuryn](https://github.com/phuryn) · [Suede AI listing](https://skills.suedeai.ai/directory/phuryn/pm-skills/)
+[Repository](https://github.com/phuryn/pm-skills) · Publisher: [phuryn](https://github.com/phuryn) · [Suede listing](https://skills.suedeai.ai/directory/phuryn/pm-skills/)
 
 - **78/100 · C** · [summarize-meeting](https://github.com/phuryn/pm-skills/blob/main/pm-execution/skills/summarize-meeting/SKILL.md): Summarize a meeting transcript into structured notes with date, participants, topic, key decisions, summary points, and action items. [Suede](https://skills.suedeai.ai/directory/phuryn/pm-skills/#summarize-meeting)
 
@@ -385,7 +403,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## PleasePrompto/notebooklm-skill
 
-[Repository](https://github.com/PleasePrompto/notebooklm-skill) · Publisher: [PleasePrompto](https://github.com/PleasePrompto) · [Suede AI listing](https://skills.suedeai.ai/directory/pleaseprompto/notebooklm-skill/)
+[Repository](https://github.com/PleasePrompto/notebooklm-skill) · Publisher: [PleasePrompto](https://github.com/PleasePrompto) · [Suede listing](https://skills.suedeai.ai/directory/pleaseprompto/notebooklm-skill/)
 
 - **74/100 · C** · [notebooklm](https://github.com/PleasePrompto/notebooklm-skill/blob/master/SKILL.md): Use this skill to query your Google NotebookLM notebooks directly from Claude Code for source-grounded, citation-backed answers from Gemini. [Suede](https://skills.suedeai.ai/directory/pleaseprompto/notebooklm-skill/#notebooklm)
 
@@ -393,7 +411,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## praneybehl/llm-wiki-plugin
 
-[Repository](https://github.com/praneybehl/llm-wiki-plugin) · Publisher: [praneybehl](https://github.com/praneybehl) · [Suede AI listing](https://skills.suedeai.ai/directory/praneybehl/llm-wiki-plugin/llm-wiki/)
+[Repository](https://github.com/praneybehl/llm-wiki-plugin) · Publisher: [praneybehl](https://github.com/praneybehl) · [Suede listing](https://skills.suedeai.ai/directory/praneybehl/llm-wiki-plugin/llm-wiki/)
 
 - **80/100 · B** · [llm-wiki](https://github.com/praneybehl/llm-wiki-plugin/blob/main/skills/llm-wiki/SKILL.md): Builds and maintains an LLM-curated knowledge base as linked Markdown from papers, articles, and notes, and answers questions with citations. [Suede](https://skills.suedeai.ai/directory/praneybehl/llm-wiki-plugin/llm-wiki/)
 
@@ -401,7 +419,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## product-on-purpose/pm-skills
 
-[Repository](https://github.com/product-on-purpose/pm-skills) · Publisher: [product-on-purpose](https://github.com/product-on-purpose) · [Suede AI listing](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/)
+[Repository](https://github.com/product-on-purpose/pm-skills) · Publisher: [product-on-purpose](https://github.com/product-on-purpose) · [Suede listing](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/)
 
 - **75/100 · C** · [foundation-meeting-agenda](https://github.com/product-on-purpose/pm-skills/blob/main/skills/foundation-meeting-agenda/SKILL.md): Produces an attendee-facing agenda that sets what will be discussed, who owns each topic, and how time will be spent. [Suede](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/#foundation-meeting-agenda)
 - **75/100 · C** · [foundation-meeting-brief](https://github.com/product-on-purpose/pm-skills/blob/main/skills/foundation-meeting-brief/SKILL.md): Produces a private strategic preparation document for the user before a meeting that matters. [Suede](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/#foundation-meeting-brief)
@@ -412,7 +430,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## sanjay3290/ai-skills
 
-[Repository](https://github.com/sanjay3290/ai-skills) · Publisher: [sanjay3290](https://github.com/sanjay3290) · [Suede AI listing](https://skills.suedeai.ai/directory/sanjay3290/ai-skills/)
+[Repository](https://github.com/sanjay3290/ai-skills) · Publisher: [sanjay3290](https://github.com/sanjay3290) · [Suede listing](https://skills.suedeai.ai/directory/sanjay3290/ai-skills/)
 
 - **83/100 · B** · [atlassian](https://github.com/sanjay3290/ai-skills/blob/main/skills/atlassian/SKILL.md): Manages Jira issues and Confluence wiki pages in Atlassian Cloud, including JQL and CQL searches, workflows, transitions, comments, and browsing spaces. [Suede](https://skills.suedeai.ai/directory/sanjay3290/ai-skills/atlassian/)
 - **83/100 · B** · [gmail](https://github.com/sanjay3290/ai-skills/blob/main/skills/gmail/SKILL.md): Interact with Gmail - search emails, read messages, send emails, create drafts, and manage labels. [Suede](https://skills.suedeai.ai/directory/sanjay3290/ai-skills/#gmail)
@@ -427,7 +445,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## serpapi/skills
 
-[Repository](https://github.com/serpapi/skills) · Publisher: [serpapi](https://github.com/serpapi) · [Suede AI listing](https://skills.suedeai.ai/directory/serpapi/skills/)
+[Repository](https://github.com/serpapi/skills) · Publisher: [serpapi](https://github.com/serpapi) · [Suede listing](https://skills.suedeai.ai/directory/serpapi/skills/)
 
 - **77/100 · C** · [serpapi-web-search](https://github.com/serpapi/skills/blob/master/skills/serpapi-web-search/SKILL.md): Retrieves structured search data from 130+ engines, including Google Scholar citations, local business details, flight and hotel prices, and job listings. [Suede](https://skills.suedeai.ai/directory/serpapi/skills/serpapi-web-search/)
 
@@ -435,7 +453,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## swarmclawai/swarmclaw
 
-[Repository](https://github.com/swarmclawai/swarmclaw) · Publisher: [swarmclawai](https://github.com/swarmclawai) · [Suede AI listing](https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/)
+[Repository](https://github.com/swarmclawai/swarmclaw) · Publisher: [swarmclawai](https://github.com/swarmclawai) · [Suede listing](https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/)
 
 - **74/100 · C** · [swarmvault](https://github.com/swarmclawai/swarmclaw/blob/main/skills/swarmvault/SKILL.md): Establishes schema-first conventions for working with a SwarmVault knowledge vault, and prefers graph queries over broad search. [Suede](https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/swarmvault/)
 - **68/100 · D** · [summarize](https://github.com/swarmclawai/swarmclaw/blob/main/skills/summarize/SKILL.md): Summarizes or extracts text and transcripts from URLs, podcasts, YouTube videos, and local files using the summarize CLI. [Suede](https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/summarize/)
@@ -445,7 +463,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## swarmclawai/swarmvault
 
-[Repository](https://github.com/swarmclawai/swarmvault) · Publisher: [swarmclawai](https://github.com/swarmclawai) · [Suede AI listing](https://skills.suedeai.ai/directory/swarmclawai/swarmvault/swarmvault/)
+[Repository](https://github.com/swarmclawai/swarmvault) · Publisher: [swarmclawai](https://github.com/swarmclawai) · [Suede listing](https://skills.suedeai.ai/directory/swarmclawai/swarmvault/swarmvault/)
 
 - **75/100 · C** · [swarmvault](https://github.com/swarmclawai/swarmvault/blob/main/skills/swarmvault/SKILL.md): Builds a local-first knowledge vault that writes markdown, graph, search, dashboard, and MCP artifacts to disk from books, notes, transcripts, datasets, URLs, and code. [Suede](https://skills.suedeai.ai/directory/swarmclawai/swarmvault/swarmvault/)
 
@@ -453,7 +471,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## tjboudreaux/cc-thinking-skills
 
-[Repository](https://github.com/tjboudreaux/cc-thinking-skills) · Publisher: [tjboudreaux](https://github.com/tjboudreaux) · [Suede AI listing](https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/)
+[Repository](https://github.com/tjboudreaux/cc-thinking-skills) · Publisher: [tjboudreaux](https://github.com/tjboudreaux) · [Suede listing](https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/)
 
 - **77/100 · C** · [thinking-probabilistic](https://github.com/tjboudreaux/cc-thinking-skills/blob/main/skills/thinking-probabilistic/SKILL.md): Guides forecasting, estimating, and risk sizing by anchoring on base rates, giving ranges, and updating prior to posterior on evidence. [Suede](https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-probabilistic/)
 - **74/100 · C** · [thinking-kepner-tregoe](https://github.com/tjboudreaux/cc-thinking-skills/blob/main/skills/thinking-kepner-tregoe/SKILL.md): Applies IS/IS-NOT difference analysis to selective defects, and must/want weighting with adverse-consequence comparison to consequential option choices. [Suede](https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-kepner-tregoe/)
@@ -488,7 +506,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## tronghieu/agent-skills
 
-[Repository](https://github.com/tronghieu/agent-skills) · Publisher: [tronghieu](https://github.com/tronghieu) · [Suede AI listing](https://skills.suedeai.ai/directory/tronghieu/agent-skills/)
+[Repository](https://github.com/tronghieu/agent-skills) · Publisher: [tronghieu](https://github.com/tronghieu) · [Suede listing](https://skills.suedeai.ai/directory/tronghieu/agent-skills/)
 
 - **90/100 · A** · [critical-thinking](https://github.com/tronghieu/agent-skills/blob/main/skills/critical-thinking/SKILL.md): Audits reasoning in a document or argument, covering claims, evidence, unstated assumptions, logical gaps, fallacies, and what would falsify it, anchored to quoted text. [Suede](https://skills.suedeai.ai/directory/tronghieu/agent-skills/critical-thinking/)
 - **90/100 · A** · [deep-reader](https://github.com/tronghieu/agent-skills/blob/main/skills/deep-reader/SKILL.md): Reads and answers questions about long books and papers without loading the whole text into one context window, keeping page-anchored notes. [Suede](https://skills.suedeai.ai/directory/tronghieu/agent-skills/deep-reader/)
@@ -502,7 +520,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## tubeagentkit/youtube-transcript-skills
 
-[Repository](https://github.com/tubeagentkit/youtube-transcript-skills) · Publisher: [tubeagentkit](https://github.com/tubeagentkit) · [Suede AI listing](https://skills.suedeai.ai/directory/tubeagentkit/youtube-transcript-skills/youtube-transcript/)
+[Repository](https://github.com/tubeagentkit/youtube-transcript-skills) · Publisher: [tubeagentkit](https://github.com/tubeagentkit) · [Suede listing](https://skills.suedeai.ai/directory/tubeagentkit/youtube-transcript-skills/youtube-transcript/)
 
 - **80/100 · B** · [youtube-transcript](https://github.com/tubeagentkit/youtube-transcript-skills/blob/main/skills/youtube-transcript/SKILL.md): Fetches YouTube video transcripts through the metered getyoutubetranscript.com API, and also searches YouTube, resolves channel handles, lists playlist videos, and checks credit balance. [Suede](https://skills.suedeai.ai/directory/tubeagentkit/youtube-transcript-skills/youtube-transcript/)
 
@@ -510,7 +528,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## vercel-labs/agent-browser
 
-[Repository](https://github.com/vercel-labs/agent-browser) · Publisher: [vercel-labs](https://github.com/vercel-labs) · [Suede AI listing](https://skills.suedeai.ai/directory/vercel-labs/agent-browser/)
+[Repository](https://github.com/vercel-labs/agent-browser) · Publisher: [vercel-labs](https://github.com/vercel-labs) · [Suede listing](https://skills.suedeai.ai/directory/vercel-labs/agent-browser/)
 
 - **75/100 · C** · [agent-browser](https://github.com/vercel-labs/agent-browser/blob/main/skills/agent-browser/SKILL.md): Browser automation CLI for AI agents. [Suede](https://skills.suedeai.ai/directory/vercel-labs/agent-browser/#agent-browser)
 
@@ -518,7 +536,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## wondelai/skills
 
-[Repository](https://github.com/wondelai/skills) · Publisher: [wondelai](https://github.com/wondelai) · [Suede AI listing](https://skills.suedeai.ai/directory/wondelai/skills/)
+[Repository](https://github.com/wondelai/skills) · Publisher: [wondelai](https://github.com/wondelai) · [Suede listing](https://skills.suedeai.ai/directory/wondelai/skills/)
 
 - **81/100 · B** · [high-output-management](https://github.com/wondelai/skills/blob/main/high-output-management/SKILL.md): Manage for output using Grove's "High Output Management": a manager's output is their organization's output, raised by high-leverage activities. [Suede](https://skills.suedeai.ai/directory/wondelai/skills/#high-output-management)
 - **81/100 · B** · [team-topologies](https://github.com/wondelai/skills/blob/main/team-topologies/SKILL.md): Organize business and technology teams for fast flow using Skelton &amp; Pais's "Team Topologies". [Suede](https://skills.suedeai.ai/directory/wondelai/skills/#team-topologies)
@@ -527,7 +545,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## ykdojo/claude-code-tips
 
-[Repository](https://github.com/ykdojo/claude-code-tips) · Publisher: [ykdojo](https://github.com/ykdojo) · [Suede AI listing](https://skills.suedeai.ai/directory/ykdojo/claude-code-tips/)
+[Repository](https://github.com/ykdojo/claude-code-tips) · Publisher: [ykdojo](https://github.com/ykdojo) · [Suede listing](https://skills.suedeai.ai/directory/ykdojo/claude-code-tips/)
 
 - **80/100 · B** · [hn-summarize](https://github.com/ykdojo/claude-code-tips/blob/main/skills/hn-summarize/SKILL.md): Fetches and summarizes Hacker News and hckrnews.com top stories, articles, and their comment threads. [Suede](https://skills.suedeai.ai/directory/ykdojo/claude-code-tips/hn-summarize/) · License: All rights reserved (review terms)
 
@@ -535,7 +553,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ## ZeroPointRepo/youtube-skills
 
-[Repository](https://github.com/ZeroPointRepo/youtube-skills) · Publisher: [ZeroPointRepo](https://github.com/ZeroPointRepo) · [Suede AI listing](https://skills.suedeai.ai/directory/zeropointrepo/youtube-skills/)
+[Repository](https://github.com/ZeroPointRepo/youtube-skills) · Publisher: [ZeroPointRepo](https://github.com/ZeroPointRepo) · [Suede listing](https://skills.suedeai.ai/directory/zeropointrepo/youtube-skills/)
 
 - **90/100 · A** · [transcriptapi](https://github.com/ZeroPointRepo/youtube-skills/blob/main/clawhub/transcriptapi/SKILL.md): Provides YouTube access for transcripts, video and channel search, channel browsing, playlists, and within-channel search from pasted links, IDs, or handles. [Suede](https://skills.suedeai.ai/directory/zeropointrepo/youtube-skills/transcriptapi/)
 - **90/100 · A** · [youtube-api](https://github.com/ZeroPointRepo/youtube-skills/blob/main/clawhub/youtube-api/SKILL.md): Retrieves YouTube data without Google API quotas or OAuth setup, including transcripts, video metadata, channel info, search results, and playlists. [Suede](https://skills.suedeai.ai/directory/zeropointrepo/youtube-skills/youtube-api/)
@@ -552,6 +570,6 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 ---
 
-**Run a team of agents.** Suede AI Agent Studio builds multi-agent automation for businesses. [suedeai.app](https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agent-studio) Listed here? [Add your badge](../README.md#add-your-badge).
+**Run a team of agents.** Suede Agent Studio builds multi-agent automation for businesses. [suedeai.app](https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agent-studio) Listed here? [Add your badge](../README.md#add-your-badge).
 
 [Awesome Everything](../README.md) · [Compare scores](../README.md#compare-099-quality-scores) · [Publishers](../publishers.md) · [Featured projects](../featured.md) · [Guides](../README.md#guides) · [Contribute](../CONTRIBUTING.md) · [Search by score](https://skills.suedeai.ai/directory/?sort=score)

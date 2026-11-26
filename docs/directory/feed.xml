@@ -6,7 +6,91 @@
     <atom:link href="https://suedeai.directory/feed.xml" rel="self" type="application/rss+xml"/>
     <description>New agent skill listings and guides from the Suede Skills Directory, a graded index of public Agent Skills for Claude Code, Codex and Cursor.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>New listing: agentswarm-work from andrewsiah/agentswarm-work-skill</title>
+      <link>https://suedeai.directory/andrewsiah/agentswarm-work-skill/agentswarm-work/</link>
+      <guid isPermaLink="true">https://suedeai.directory/andrewsiah/agentswarm-work-skill/agentswarm-work/</guid>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 GMT</pubDate>
+      <description>Inspect one agentswarm.space task, reuse an authorized identity when needed, and submit real work evidence within the user’s chosen scope. Suede Skill Check: 79/100, grade C.</description>
+    </item>
+    <item>
+      <title>New listing: cloudgpu-ai-short-drama from mrhy7176/cloudgpu-agent-skills</title>
+      <link>https://suedeai.directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-ai-short-drama/</link>
+      <guid isPermaLink="true">https://suedeai.directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-ai-short-drama/</guid>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 GMT</pubDate>
+      <description>Plan staged GPU-rendered shots with open video models, character LoRA and image workflows, then export reusable assets within an approved budget. Suede Skill Check: 77/100, grade C.</description>
+    </item>
+    <item>
+      <title>New listing: cloudgpu-comfyui-images from mrhy7176/cloudgpu-agent-skills</title>
+      <link>https://suedeai.directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-comfyui-images/</link>
+      <guid isPermaLink="true">https://suedeai.directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-comfyui-images/</guid>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 GMT</pubDate>
+      <description>Run an approved ComfyUI image workflow on rented GPU compute and retrieve images with their workflow metadata. Suede Skill Check: 77/100, grade C.</description>
+    </item>
+    <item>
+      <title>New listing: cloudgpu-discover-compute from mrhy7176/cloudgpu-agent-skills</title>
+      <link>https://suedeai.directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-discover-compute/</link>
+      <guid isPermaLink="true">https://suedeai.directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-discover-compute/</guid>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 GMT</pubDate>
+      <description>Compare GPU capacity and task costs without creating a paid instance, then prepare a proposal for user approval. Suede Skill Check: 77/100, grade C.</description>
+    </item>
+    <item>
+      <title>New listing: cloudgpu-lora-finetune from mrhy7176/cloudgpu-agent-skills</title>
+      <link>https://suedeai.directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-lora-finetune/</link>
+      <guid isPermaLink="true">https://suedeai.directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-lora-finetune/</guid>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 GMT</pubDate>
+      <description>Plan a bounded LoRA or QLoRA training run on rented GPUs and export adapters, checkpoints and metrics. Suede Skill Check: 77/100, grade C.</description>
+    </item>
+    <item>
+      <title>New listing: cloudgpu-open-model-inference from mrhy7176/cloudgpu-agent-skills</title>
+      <link>https://suedeai.directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-open-model-inference/</link>
+      <guid isPermaLink="true">https://suedeai.directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-open-model-inference/</guid>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 GMT</pubDate>
+      <description>Run an approved open-model inference or evaluation workload with protected serving and explicit output retrieval. Suede Skill Check: 77/100, grade C.</description>
+    </item>
+    <item>
+      <title>New listing: datacircle from waynehamadi/datacircle</title>
+      <link>https://suedeai.directory/waynehamadi/datacircle/#datacircle</link>
+      <guid isPermaLink="true">https://suedeai.directory/waynehamadi/datacircle/#datacircle</guid>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 GMT</pubDate>
+      <description>Every plan of every GTM API on datacircle.dev, as one file you download and query. The file covers People, Contact, Companies, Signals, Social media, E-commerce, Real estate and Web. For each plan… Suede Skill Check: 63/100, grade D.</description>
+    </item>
+    <item>
+      <title>New listing: extra-caffeine-workflow from cwong5/extra-caffeine-mcp</title>
+      <link>https://suedeai.directory/cwong5/extra-caffeine-mcp/#extra-caffeine-workflow</link>
+      <guid isPermaLink="true">https://suedeai.directory/cwong5/extra-caffeine-mcp/#extra-caffeine-workflow</guid>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 GMT</pubDate>
+      <description>Use Extra Caffeine to keep a local Mac awake for long AI or file-processing work, check awake state, or manage requested one-time schedules. Applies to Mac-dependent tasks and explicit Extra… Suede Skill Check: 69/100, grade D.</description>
+    </item>
+    <item>
+      <title>New listing: redya-xiaohongshu from rnthking/redya-skills</title>
+      <link>https://suedeai.directory/rnthking/redya-skills/#redya-xiaohongshu</link>
+      <guid isPermaLink="true">https://suedeai.directory/rnthking/redya-skills/#redya-xiaohongshu</guid>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 GMT</pubDate>
+      <description>使用红鸦 API 创作小红书图文、制作 Live 实况图片，或检测和修改文案敏感词；支持商品档案及个人词库。. Suede Skill Check: 65/100, grade D.</description>
+    </item>
+    <item>
+      <title>New listing: resume-claim-guard from korey2028-prog/resume-claim-guard</title>
+      <link>https://suedeai.directory/korey2028-prog/resume-claim-guard/#resume-claim-guard</link>
+      <guid isPermaLink="true">https://suedeai.directory/korey2028-prog/resume-claim-guard/#resume-claim-guard</guid>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 GMT</pubDate>
+      <description>从岗位 JD 出发写一份经得起面试追问的简历：拆解 JD 要求，把要求翻译成生活里的线索反问候选人，挖出简历上没写的相关真实经历，只用候选人确认过的事实贴着 JD 写定向简历，最后逐句做事实体检并预演面试官会怎么追问、该怎么答。也可单独体检已有简历，识别 AI 改写造成的动词升级、无依据数字和把计划或团队成果写成个人成果。用户要求按 JD… Suede Skill Check: 72/100, grade C.</description>
+    </item>
+    <item>
+      <title>New listing: satori from MetcalfSolutions/Satori</title>
+      <link>https://suedeai.directory/metcalfsolutions/satori/satori/</link>
+      <guid isPermaLink="true">https://suedeai.directory/metcalfsolutions/satori/satori/</guid>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 GMT</pubDate>
+      <description>Acts as a clinically informed companion for reflecting on emotions, meaning, grief, purpose, relationships, and identity without rushing people toward an answer. Suede Skill Check: 87/100, grade B.</description>
+    </item>
+    <item>
+      <title>New listing: socratic-story-cartographer from OakcoderX/awesome-agent-skills</title>
+      <link>https://suedeai.directory/oakcoderx/awesome-agent-skills/#socratic-story-cartographer</link>
+      <guid isPermaLink="true">https://suedeai.directory/oakcoderx/awesome-agent-skills/#socratic-story-cartographer</guid>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 GMT</pubDate>
+      <description>Diagnose and iteratively improve novels, screenplays, scenes, characters, and story outlines using competing hypotheses, falsification, counterfactual tests, evidence anchors, minimum-sufficient… Suede Skill Check: 72/100, grade C.</description>
+    </item>
     <item>
       <title>New listing: govisit-get-category-overview from inhotel-io/govisit-toolkit</title>
       <link>https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-get-category-overview/</link>

@@ -6,7 +6,7 @@
 
 Editorial selection highlights a project’s workflow and accepted scope. It is separate from structural quality grades, security certification and README-badge verification. A plugin feature does not add its contents to the scored skill catalog.
 
-Selections updated **2026-11-17**. [View on Suede AI](https://skills.suedeai.ai/directory/featured/).
+Selections updated **2026-11-17**. [View on Suede](https://skills.suedeai.ai/directory/featured/).
 
 - [Appie](#appie)
 - [CoalWash](#coalwash)
@@ -61,7 +61,7 @@ Requires an Appie project, project API key and hosted MCP connection. The select
 
 Accepted scope: **3 skills**. Follow each linked skill’s individual setup instructions.
 
-[Repository](https://github.com/appierun/appie-mcp) · [Intake review](../directory/reviews/2026-10-17-appie-mcp.md) · [Reviewed source 058385a](https://github.com/appierun/appie-mcp/tree/058385aa7dde6d74f84a64f12d4a00a4d03ae981) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#appie)
+[Repository](https://github.com/appierun/appie-mcp) · [Intake review](../directory/reviews/2026-10-17-appie-mcp.md) · [Reviewed source 058385a](https://github.com/appierun/appie-mcp/tree/058385aa7dde6d74f84a64f12d4a00a4d03ae981) · [Suede feature](https://skills.suedeai.ai/directory/featured/#appie)
 
 ---
 
@@ -90,7 +90,7 @@ claude plugin install coalwash@coalwash
 
 **Guard coverage.** The edit guard snapshots supported Edit, Write and MultiEdit changes to memory and governance files and reports tracked-token drops. Shell writes are outside that edit guard. Token checks do not establish semantic preservation; inspect diffs and rollback results.
 
-[Repository](https://github.com/TheColliery/CoalWash) · [Intake review](../directory/reviews/2026-10-18-coalwash.md) · [Reviewed source 9cbe008](https://github.com/TheColliery/CoalWash/tree/9cbe008a90d2a9f25d892de8424852ac142f7909) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#coalwash)
+[Repository](https://github.com/TheColliery/CoalWash) · [Intake review](../directory/reviews/2026-10-18-coalwash.md) · [Reviewed source 9cbe008](https://github.com/TheColliery/CoalWash/tree/9cbe008a90d2a9f25d892de8424852ac142f7909) · [Suede feature](https://skills.suedeai.ai/directory/featured/#coalwash)
 
 ---
 
@@ -113,7 +113,7 @@ Requires a Costory workspace with billing data connected and its hosted MCP at h
 
 Accepted scope: **4 skills**. Follow each linked skill’s individual setup instructions.
 
-[Repository](https://github.com/costory-io/costory-finops-mcp-skills) · [Intake review](../directory/reviews/2026-10-19-costory.md) · [Reviewed source 38438bd](https://github.com/costory-io/costory-finops-mcp-skills/tree/38438bd87c39b1df3f07ca80e6577579c4c039ba) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#costory)
+[Repository](https://github.com/costory-io/costory-finops-mcp-skills) · [Intake review](../directory/reviews/2026-10-19-costory.md) · [Reviewed source 38438bd](https://github.com/costory-io/costory-finops-mcp-skills/tree/38438bd87c39b1df3f07ca80e6577579c4c039ba) · [Suede feature](https://skills.suedeai.ai/directory/featured/#costory)
 
 ---
 
@@ -129,9 +129,9 @@ Give local AI and file-processing work time to finish. The Extra Caffeine workfl
 
 ### Setup
 
-Requires macOS 14+ and the free, separately installed Extra Caffeine 1.2+ app, kept open with AI assistants enabled by the user. The app and adapter are permanently free, with no payment, subscription or expiry. Follow the publisher’s setup and license terms. The skill does not install the app or enable access. It prevents idle sleep, not closed-lid sleep, and does not wake a sleeping Mac. No security scan or runtime execution was performed: not scanned; runtime-unverified. Editorial feature only; scored catalog listing is pending the next directory refresh.
+Requires macOS 14+ and the free, separately installed Extra Caffeine 1.2+ app, kept open with AI assistants enabled by the user. The app and adapter are permanently free, with no payment, subscription or expiry. Follow the publisher’s setup and license terms. The skill does not install the app or enable access. It prevents idle sleep, not closed-lid sleep, and does not wake a sleeping Mac. No security scan or runtime execution was performed: not scanned; runtime-unverified. Listed in the scored catalog as of November 19, 2026.
 
-[Repository](https://github.com/cwong5/extra-caffeine-mcp) · [Intake review](../directory/reviews/2026-10-23-extra-caffeine.md) · [Reviewed source 4e0ac32](https://github.com/cwong5/extra-caffeine-mcp/tree/4e0ac32e685c5366ab487502173168470a42a178) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#extra-caffeine)
+[Repository](https://github.com/cwong5/extra-caffeine-mcp) · [Intake review](../directory/reviews/2026-10-23-extra-caffeine.md) · [Reviewed source 4e0ac32](https://github.com/cwong5/extra-caffeine-mcp/tree/4e0ac32e685c5366ab487502173168470a42a178) · [Suede feature](https://skills.suedeai.ai/directory/featured/#extra-caffeine)
 
 ---
 
@@ -156,7 +156,7 @@ Install one selected skill. TimeToPost needs its hosted MCP and browser OAuth; T
 
 Accepted scope: **6 skills**. Follow each linked skill’s individual setup instructions.
 
-[Repository](https://github.com/MelMayssonOwen/agent-skills) · [Intake review](../directory/reviews/2026-10-22-opsibyte.md) · [Reviewed source aebddbe](https://github.com/MelMayssonOwen/agent-skills/tree/aebddbe40090c99fe0c5a1810536637186335502) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#opsibyte)
+[Repository](https://github.com/MelMayssonOwen/agent-skills) · [Intake review](../directory/reviews/2026-10-22-opsibyte.md) · [Reviewed source aebddbe](https://github.com/MelMayssonOwen/agent-skills/tree/aebddbe40090c99fe0c5a1810536637186335502) · [Suede feature](https://skills.suedeai.ai/directory/featured/#opsibyte)
 
 ---
 
@@ -176,7 +176,7 @@ Inspect skill instructions and bundled code for known prompt-injection, exfiltra
 
 Use the reviewed 2.3.1 release with verified dependency pins. Exclude the hijacked litellm 1.107.0 release and correct the certifi version in Cisco’s attached release lock. For local source review, disable hosted analyzers and behavioral alignment verification, use a network-disabled container, and retain every finding and error. Automated detection is best effort and does not certify a skill.
 
-[Repository](https://github.com/cisco-ai-defense/skill-scanner) · [Intake review](../directory/reviews/2026-10-25-cisco-skill-scanner.md) · [Reviewed source c615acb](https://github.com/cisco-ai-defense/skill-scanner/tree/c615acb70994cdf3f4ba54d955fef2e92ac84437) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#cisco-skill-scanner)
+[Repository](https://github.com/cisco-ai-defense/skill-scanner) · [Intake review](../directory/reviews/2026-10-25-cisco-skill-scanner.md) · [Reviewed source c615acb](https://github.com/cisco-ai-defense/skill-scanner/tree/c615acb70994cdf3f4ba54d955fef2e92ac84437) · [Suede feature](https://skills.suedeai.ai/directory/featured/#cisco-skill-scanner)
 
 ---
 
@@ -196,7 +196,7 @@ Requires a Geekflare account and GEEKFLARE\_API\_KEY. Requests send queries, URL
 
 Accepted scope: **1 skills**. Follow each linked skill’s individual setup instructions.
 
-[Repository](https://github.com/geekflare/geekflare-skills) · [Intake review](../directory/reviews/2026-10-30-geekflare.md) · [Reviewed source b242940](https://github.com/geekflare/geekflare-skills/tree/b2429403c4b7e4f8f2a55773b161ef19643cd12b) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#geekflare)
+[Repository](https://github.com/geekflare/geekflare-skills) · [Intake review](../directory/reviews/2026-10-30-geekflare.md) · [Reviewed source b242940](https://github.com/geekflare/geekflare-skills/tree/b2429403c4b7e4f8f2a55773b161ef19643cd12b) · [Suede feature](https://skills.suedeai.ai/directory/featured/#geekflare)
 
 ---
 
@@ -228,7 +228,7 @@ Install the skills you need one at a time from their directory listings; each li
 
 Accepted scope: **13 skills**. Follow each linked skill’s individual setup instructions.
 
-[Repository](https://github.com/tronghieu/agent-skills) · [Intake review](../directory/reviews/2026-11-02-tronghieu-agent-skills.md) · [Reviewed source 831d1ae](https://github.com/tronghieu/agent-skills/tree/831d1ae5c686a81b10f9c5b9cca04a7b8b97303d) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#trong-hieu)
+[Repository](https://github.com/tronghieu/agent-skills) · [Intake review](../directory/reviews/2026-11-02-tronghieu-agent-skills.md) · [Reviewed source 831d1ae](https://github.com/tronghieu/agent-skills/tree/831d1ae5c686a81b10f9c5b9cca04a7b8b97303d) · [Suede feature](https://skills.suedeai.ai/directory/featured/#trong-hieu)
 
 ---
 
@@ -249,7 +249,7 @@ agent-qa runs natural-language QA tests on web, Android and iOS apps and keeps t
 
 Requires Node.js 24+ and a model connection. Install with npm install -D agent-qa, run npx agent-qa init, then follow the quickstart to connect a model and run the demo. Runs use the model provider you connect. Licensed under FSL-1.1-ALv2, the Functional Source License: any use other than a competing commercial product or service, with Apache-2.0 terms for each release two years after it is made available.
 
-[Repository](https://github.com/vostride/agent-qa) · [Intake review](../directory/reviews/2026-11-02-agent-qa.md) · [Reviewed source 2b848e3](https://github.com/vostride/agent-qa/tree/2b848e3f094c3c81a9004eb63c236c32adc55da6) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#agent-qa)
+[Repository](https://github.com/vostride/agent-qa) · [Intake review](../directory/reviews/2026-11-02-agent-qa.md) · [Reviewed source 2b848e3](https://github.com/vostride/agent-qa/tree/2b848e3f094c3c81a9004eb63c236c32adc55da6) · [Suede feature](https://skills.suedeai.ai/directory/featured/#agent-qa)
 
 ---
 
@@ -270,7 +270,7 @@ Start from one sentence or hand Frametell notes, documents, PDFs, slides and ima
 
 Download the signed and notarized app for macOS on Apple Silicon, with Chrome, Edge or Chromium installed for drawing and rendering pages. Add a model provider key under Settings (Anthropic, OpenAI, Google, OpenRouter or any OpenAI- or Anthropic-compatible endpoint) and an ElevenLabs key for the voiceover. The app runs locally with your own keys, and requests go to the model and voice providers you configure. Windows and Intel Macs run Frametell from source with Node.js 22.19+ and pnpm. AGPL-3.0 covers the app in this repository.
 
-[Repository](https://github.com/sitor-ai/frametell) · [Intake review](../directory/reviews/2026-11-02-frametell.md) · [Reviewed source 63d598f](https://github.com/sitor-ai/frametell/tree/63d598fa9aed1e6fe0cf8ef37a32a5a8eb437e74) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#frametell)
+[Repository](https://github.com/sitor-ai/frametell) · [Intake review](../directory/reviews/2026-11-02-frametell.md) · [Reviewed source 63d598f](https://github.com/sitor-ai/frametell/tree/63d598fa9aed1e6fe0cf8ef37a32a5a8eb437e74) · [Suede feature](https://skills.suedeai.ai/directory/featured/#frametell)
 
 ---
 
@@ -291,7 +291,7 @@ Eight skills connect your assistant to BulkPublish to draft, schedule, publish a
 
 Requires a BulkPublish account and its hosted MCP server at https://mcp.bulkpublish.com/mcp, with OAuth sign-in that asks for your API key once. Posts, media and channel data go to BulkPublish within your plan’s limits; the Inbox is part of the Pro and Business plans. Hosts without OAuth can use the documented key-in-URL connection, which carries your API key, so keep that URL private.
 
-[Repository](https://github.com/azeemkafridi/bulkpublish-ai-toolkit) · **Scan &amp; review pending** · [Source at 256039e](https://github.com/azeemkafridi/bulkpublish-ai-toolkit/tree/256039e578a195aa8fd746deea386575c4e4fc1e) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#bulkpublish)
+[Repository](https://github.com/azeemkafridi/bulkpublish-ai-toolkit) · **Scan &amp; review pending** · [Source at 256039e](https://github.com/azeemkafridi/bulkpublish-ai-toolkit/tree/256039e578a195aa8fd746deea386575c4e4fc1e) · [Suede feature](https://skills.suedeai.ai/directory/featured/#bulkpublish)
 
 ---
 
@@ -310,7 +310,7 @@ Search InkRoom’s public prompt library by keyword and get each prompt with its
 
 inkroom-prompts needs no account, API key or MCP Token; it uses the InkRoom Prompts MCP tools, or its bundled scripts on Node.js 20.3+ with internet access. inkroom-prompt-reverse requires an InkRoom account, an MCP Token and the reverse\_prompt capability, and each analysis uses account credits at the quoted price. MIT applies to the two skill folders, prompts/skills/inkroom-prompts and skills/inkroom-prompt-reverse; the repository has no root license. Prompts and images returned by the library keep their own terms.
 
-[Repository](https://github.com/InkRoom-AI/inkroom-client) · **Scan &amp; review pending** · [Source at e5dace2](https://github.com/InkRoom-AI/inkroom-client/tree/e5dace2bc96e88a9b3eafc81a34c3bed605323a7) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#inkroom)
+[Repository](https://github.com/InkRoom-AI/inkroom-client) · **Scan &amp; review pending** · [Source at e5dace2](https://github.com/InkRoom-AI/inkroom-client/tree/e5dace2bc96e88a9b3eafc81a34c3bed605323a7) · [Suede feature](https://skills.suedeai.ai/directory/featured/#inkroom)
 
 ---
 
@@ -330,7 +330,7 @@ Say or type what you need, and Empacer prepares customer replies, social posts, 
 
 Use Empacer in the browser at app.empacer.com on a computer, phone or tablet, or on Android as Empacer for Business on Google Play. Empacer is a hosted service, so your requests and business details are handled by Empacer.
 
-[Website](https://empacer.com) · **Scan &amp; review pending** · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#empacer)
+[Website](https://empacer.com) · **Scan &amp; review pending** · [Suede feature](https://skills.suedeai.ai/directory/featured/#empacer)
 
 ---
 
@@ -351,7 +351,7 @@ An AI job-search coach that knows how hiring works in Germany, Berlin first and 
 
 Install it as a Claude Code or Codex plugin, or add it to any agent from the repository, then say “Set up my job search.” The bundled scripts need Python 3.9+ (standard library only) and internet access, with no API keys. Your CV, profile and tracker stay on your machine in job-search/. Sources include Bundesagentur für Arbeit, Arbeitnow, Daily Berlin Jobs, company job boards and LinkedIn’s logged-out guest search, which is subject to LinkedIn’s User Agreement. The skill never applies, sends messages or creates accounts for you.
 
-[Repository](https://github.com/umutyesildal/berlin-job-search) · **Scan &amp; review pending** · [Source at 153a417](https://github.com/umutyesildal/berlin-job-search/tree/153a417c09391fac3f23cef1beb012e97bed1f79) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#berlin-job-search)
+[Repository](https://github.com/umutyesildal/berlin-job-search) · **Scan &amp; review pending** · [Source at 153a417](https://github.com/umutyesildal/berlin-job-search/tree/153a417c09391fac3f23cef1beb012e97bed1f79) · [Suede feature](https://skills.suedeai.ai/directory/featured/#berlin-job-search)
 
 ---
 
@@ -371,7 +371,7 @@ One Go binary runs mail for your domains on one small server: mailboxes, and new
 
 Requires a Linux or macOS server you control and a domain whose DNS you manage. The skill installs lfr with curl -fsSL https://lfr.email/install.sh \| sudo sh, which checks the release against its checksums; Homebrew and go install also work. lfr setup creates a hardened systemd service on ports 25, 80 and 443. Where a provider blocks outbound port 25, lfr hands DKIM-signed mail to an SMTP relay such as Amazon SES or SMTP2GO. Your agent asks for explicit approval before sending any message in your name.
 
-[Repository](https://github.com/Anonyfox/lfr) · **Scan &amp; review pending** · [Source at 091fa38](https://github.com/Anonyfox/lfr/tree/091fa38639c1ac2f133b4863135d7851561d25c4) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#lfr)
+[Repository](https://github.com/Anonyfox/lfr) · **Scan &amp; review pending** · [Source at 091fa38](https://github.com/Anonyfox/lfr/tree/091fa38639c1ac2f133b4863135d7851561d25c4) · [Suede feature](https://skills.suedeai.ai/directory/featured/#lfr)
 
 ---
 
@@ -391,7 +391,7 @@ Add Polar subscriptions to an existing app with three focused skills for checkou
 
 Requires Node.js 22+ and a Polar sandbox account. Examples use Next.js App Router, TypeScript, Better Auth and PostgreSQL/Drizzle. Use an email address you control for tests. This free three-skill feature covers Polar; the separate paid pack and Stripe support are outside its scope.
 
-[Repository](https://github.com/shiptopaid/shiptopaid-lite) · [Intake review](../directory/reviews/2026-11-07-shiptopaid-lite.md) · [Reviewed source b508f87](https://github.com/shiptopaid/shiptopaid-lite/tree/b508f878086491518709a2d17761821abfd4b084) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#shiptopaid-lite)
+[Repository](https://github.com/shiptopaid/shiptopaid-lite) · [Intake review](../directory/reviews/2026-11-07-shiptopaid-lite.md) · [Reviewed source b508f87](https://github.com/shiptopaid/shiptopaid-lite/tree/b508f878086491518709a2d17761821abfd4b084) · [Suede feature](https://skills.suedeai.ai/directory/featured/#shiptopaid-lite)
 
 ---
 
@@ -411,7 +411,7 @@ Combine real app screens, editable SVG, AI artwork and procedural 3D into a loca
 
 Requires Node.js 22.20+, FFmpeg/FFprobe and Playwright with Chromium; Three.js supports the 3D starter. The code-only first example needs no paid generation. AI artwork or voice services may charge separately. Original code and docs are MIT; bundled media has separate provenance and rights.
 
-[Repository](https://github.com/aakashH242/video-director) · [Intake review](../directory/reviews/2026-11-07-video-director.md) · [Reviewed source 1d0ed60](https://github.com/aakashH242/video-director/tree/1d0ed60aa9bfffa36302d9042a87a2b1fcb8aeeb) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#video-director)
+[Repository](https://github.com/aakashH242/video-director) · [Intake review](../directory/reviews/2026-11-07-video-director.md) · [Reviewed source 1d0ed60](https://github.com/aakashH242/video-director/tree/1d0ed60aa9bfffa36302d9042a87a2b1fcb8aeeb) · [Suede feature](https://skills.suedeai.ai/directory/featured/#video-director)
 
 ---
 
@@ -431,7 +431,7 @@ Choose from twenty focused skills for campaign copy, lifecycle automation, segme
 
 Read or copy each selected skill directory with its references. The documented Skills CLI requires Node.js 22.20+. A Poptin account is not needed to use the instructions. Live campaigns still need consent checks and authorization. The collection preserves the original standalone skills and is featured once, without duplicate catalog entries.
 
-[Repository](https://github.com/email-marketing-skills-hub/email-marketing-skills) · [Intake review](../directory/reviews/2026-11-07-poptin-email-marketing.md) · [Reviewed source 13ea992](https://github.com/email-marketing-skills-hub/email-marketing-skills/tree/13ea992854c4b3cbd93d2a427b391161be23b033) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#poptin-email-marketing)
+[Repository](https://github.com/email-marketing-skills-hub/email-marketing-skills) · [Intake review](../directory/reviews/2026-11-07-poptin-email-marketing.md) · [Reviewed source 13ea992](https://github.com/email-marketing-skills-hub/email-marketing-skills/tree/13ea992854c4b3cbd93d2a427b391161be23b033) · [Suede feature](https://skills.suedeai.ai/directory/featured/#poptin-email-marketing)
 
 ---
 
@@ -451,9 +451,9 @@ Five workflows cover compute proposals, ComfyUI images, short-drama assets, LoRA
 
 ### Setup
 
-Requires an approved GPU workload, CloudGPU account connection for paid work, spend/time caps and export checks. Public instance tunnels need access protection for private data. Export outputs before disk destruction or balance exhaustion. Model and dataset rights are separate from the MIT skill license. The optional external cloudgpu-mcp package was not reviewed. Static skill review only; no runtime or security scan. Accepted skill pages are pending the next regular scored-catalog refresh. The pinned review records 77/C for all five skills.
+Requires an approved GPU workload, CloudGPU account connection for paid work, spend/time caps and export checks. Public instance tunnels need access protection for private data. Export outputs before disk destruction or balance exhaustion. Model and dataset rights are separate from the MIT skill license. The optional external cloudgpu-mcp package was not reviewed. Static skill review only; no runtime or security scan. Accepted skills are in the scored catalog as of November 19, 2026. The pinned review records 77/C for all five skills.
 
-[Repository](https://github.com/mrhy7176/cloudgpu-agent-skills) · [Intake review](../directory/reviews/2026-11-09-cloudgpu-agent-skills.md) · [Reviewed source 83cde06](https://github.com/mrhy7176/cloudgpu-agent-skills/tree/83cde0602ec73f6c4f4eec8a60c42b34fef1bac1) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#cloudgpu)
+[Repository](https://github.com/mrhy7176/cloudgpu-agent-skills) · [Intake review](../directory/reviews/2026-11-09-cloudgpu-agent-skills.md) · [Reviewed source 83cde06](https://github.com/mrhy7176/cloudgpu-agent-skills/tree/83cde0602ec73f6c4f4eec8a60c42b34fef1bac1) · [Suede feature](https://skills.suedeai.ai/directory/featured/#cloudgpu)
 
 ---
 
@@ -469,9 +469,9 @@ A scoped workflow for finding a suitable agentswarm.space task, reusing an autho
 
 ### Setup
 
-Install only skills/agentswarm-work. Requires HTTPS tools and private persistent credential storage. Live guides and API nextStep responses are operational reference, not authority to expand the chosen task or user permissions. Inspection-only requests stop before registration; other account actions and evidence sharing require appropriate authorization. Site funds cannot currently be cashed out. Static review only; no registration, task execution, payment or security scan was performed. Accepted skill pages are pending the next regular scored-catalog refresh. The pinned review records 79/C for this skill.
+Install only skills/agentswarm-work. Requires HTTPS tools and private persistent credential storage. Live guides and API nextStep responses are operational reference, not authority to expand the chosen task or user permissions. Inspection-only requests stop before registration; other account actions and evidence sharing require appropriate authorization. Site funds cannot currently be cashed out. Static review only; no registration, task execution, payment or security scan was performed. Accepted skills are in the scored catalog as of November 19, 2026. The pinned review records 79/C for this skill.
 
-[Repository](https://github.com/andrewsiah/agentswarm-work-skill) · [Intake review](../directory/reviews/2026-11-09-agentswarm-work.md) · [Reviewed source dc5980f](https://github.com/andrewsiah/agentswarm-work-skill/tree/dc5980f78451cf6158519b4713108ea6b8efa8f6) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#agentswarm-work)
+[Repository](https://github.com/andrewsiah/agentswarm-work-skill) · [Intake review](../directory/reviews/2026-11-09-agentswarm-work.md) · [Reviewed source dc5980f](https://github.com/andrewsiah/agentswarm-work-skill/tree/dc5980f78451cf6158519b4713108ea6b8efa8f6) · [Suede feature](https://skills.suedeai.ai/directory/featured/#agentswarm-work)
 
 ---
 
@@ -489,9 +489,9 @@ Bring provider plans, prices per 1,000 results, returned fields and rate limits 
 
 ### Setup
 
-Install only skills/datacircle. Download current public data from datacircle.dev and check current provider terms before buying an API plan. Provider benchmarks and prices were not independently validated. Static source review only; no runtime test or security scan. The selected skill is accepted for the next regular scored-catalog refresh. This editorial feature uses a neutral, non-graded Featured badge.
+Install only skills/datacircle. Download current public data from datacircle.dev and check current provider terms before buying an API plan. Provider benchmarks and prices were not independently validated. Static source review only; no runtime test or security scan. The selected skill is in the scored catalog as of November 19, 2026. This editorial feature uses a neutral, non-graded Featured badge.
 
-[Website](https://datacircle.dev) · [Repository](https://github.com/waynehamadi/datacircle) · [Intake review](../directory/reviews/2026-11-10-datacircle.md) · [Reviewed source f01f6f7](https://github.com/waynehamadi/datacircle/tree/f01f6f79daecb3b190ee19f49a60cedc6789f354) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#datacircle)
+[Website](https://datacircle.dev) · [Repository](https://github.com/waynehamadi/datacircle) · [Intake review](../directory/reviews/2026-11-10-datacircle.md) · [Reviewed source f01f6f7](https://github.com/waynehamadi/datacircle/tree/f01f6f79daecb3b190ee19f49a60cedc6789f354) · [Suede feature](https://skills.suedeai.ai/directory/featured/#datacircle)
 
 ---
 
@@ -509,9 +509,9 @@ Start with a job description, surface relevant real experience, confirm the fact
 
 ### Setup
 
-The instructions are written in Chinese. Keep candidate information private and confirm facts before external use. The workflow does not submit applications or predict hiring outcomes. The single root skill is accepted for the next regular scored-catalog refresh; translation is not required. Static source review only; no runtime test or security scan. This owner-selected editorial feature uses a neutral, non-graded Featured badge.
+The instructions are written in Chinese. Keep candidate information private and confirm facts before external use. The workflow does not submit applications or predict hiring outcomes. The single root skill is in the scored catalog as of November 19, 2026; translation is not required. Static source review only; no runtime test or security scan. This owner-selected editorial feature uses a neutral, non-graded Featured badge.
 
-[Repository](https://github.com/korey2028-prog/resume-claim-guard) · [Intake review](../directory/reviews/2026-11-10-resume-claim-guard.md) · [Reviewed source 42406b9](https://github.com/korey2028-prog/resume-claim-guard/tree/42406b9d9511705ec798922ac5d8e4b0c4f35505) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#resume-claim-guard)
+[Repository](https://github.com/korey2028-prog/resume-claim-guard) · [Intake review](../directory/reviews/2026-11-10-resume-claim-guard.md) · [Reviewed source 42406b9](https://github.com/korey2028-prog/resume-claim-guard/tree/42406b9d9511705ec798922ac5d8e4b0c4f35505) · [Suede feature](https://skills.suedeai.ai/directory/featured/#resume-claim-guard)
 
 ---
 
@@ -529,9 +529,9 @@ Compare competing explanations for a story problem, anchor each diagnosis in the
 
 ### Setup
 
-Feature scope is only socratic-story-cartographer, credited to Solopup.co, not the whole collection or its promotion operator. Install only that folder. The external Skills CLI was not installed or audited. Static source review only; no runtime, effectiveness test or security scan. The selected skill is accepted for the next regular scored-catalog refresh. This editorial feature uses a neutral, non-graded Featured badge.
+Feature scope is only socratic-story-cartographer, credited to Solopup.co, not the whole collection or its promotion operator. Install only that folder. The external Skills CLI was not installed or audited. Static source review only; no runtime, effectiveness test or security scan. The selected skill is in the scored catalog as of November 19, 2026. This editorial feature uses a neutral, non-graded Featured badge.
 
-[Repository](https://github.com/OakcoderX/awesome-agent-skills) · [Intake review](../directory/reviews/2026-11-10-socratic-story-cartographer.md) · [Reviewed source aa7f5c5](https://github.com/OakcoderX/awesome-agent-skills/tree/aa7f5c5ccc7ea0a3e9122c40d74a7a91d7289b3f) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#socratic-story-cartographer)
+[Repository](https://github.com/OakcoderX/awesome-agent-skills) · [Intake review](../directory/reviews/2026-11-10-socratic-story-cartographer.md) · [Reviewed source aa7f5c5](https://github.com/OakcoderX/awesome-agent-skills/tree/aa7f5c5ccc7ea0a3e9122c40d74a7a91d7289b3f) · [Suede feature](https://skills.suedeai.ai/directory/featured/#socratic-story-cartographer)
 
 ---
 
@@ -551,7 +551,7 @@ Explore destinations, local businesses and experiences with 22 focused agent ski
 
 The 22 canonical skills use public HTTPS reads from govisit.ai without a GoVisit API key. Install the complete skill folders, including their JSON contracts. Toolkit files are MIT licensed; hosted access and returned data follow the GoVisit Data Use License. The listing covers the canonical skills, not duplicated plugin copies or the separate Floating Chat application.
 
-[Repository](https://github.com/inhotel-io/govisit-toolkit) · [Intake review](../directory/reviews/2026-11-11-govisit.md) · [Reviewed source 0b318f8](https://github.com/inhotel-io/govisit-toolkit/tree/0b318f836fe1bb66ea45099d302e24fc0bd11d3d) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#govisit)
+[Repository](https://github.com/inhotel-io/govisit-toolkit) · [Intake review](../directory/reviews/2026-11-11-govisit.md) · [Reviewed source 0b318f8](https://github.com/inhotel-io/govisit-toolkit/tree/0b318f836fe1bb66ea45099d302e24fc0bd11d3d) · [Suede feature](https://skills.suedeai.ai/directory/featured/#govisit)
 
 ---
 
@@ -571,7 +571,7 @@ Match a resume to a specific role using the candidate’s facts, then give a bli
 
 Use the single resume-tribunal skill in a chat assistant or coding agent. Python 3 enables the optional checker and PDF output. Choose the review models, protect personal information with stand-ins, and confirm changed claims before using the final resume.
 
-[Website](https://tribunal.warmhop.com) · [Repository](https://github.com/mohiddin7/resume-tribunal) · [Intake review](../directory/reviews/2026-11-13-resume-tribunal.md) · [Reviewed source 55d830f](https://github.com/mohiddin7/resume-tribunal/tree/55d830f613bdfe9fabf8bed3fa1befb7c2f6b083) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#resume-tribunal)
+[Website](https://tribunal.warmhop.com) · [Repository](https://github.com/mohiddin7/resume-tribunal) · [Intake review](../directory/reviews/2026-11-13-resume-tribunal.md) · [Reviewed source 55d830f](https://github.com/mohiddin7/resume-tribunal/tree/55d830f613bdfe9fabf8bed3fa1befb7c2f6b083) · [Suede feature](https://skills.suedeai.ai/directory/featured/#resume-tribunal)
 
 ---
 
@@ -591,7 +591,7 @@ Guide Node.js and TypeScript integrations across exchange REST and WebSocket API
 
 Install only siebly-crypto-exchange-api. Start with public data, read-only access or mocked execution. Keep credentials outside source control, inspect the selected SDK and exchange documentation, and explicitly configure any write-capable mode.
 
-[Website](https://siebly.io) · [Repository](https://github.com/sieblyio/agent-skills) · [Intake review](../directory/reviews/2026-11-13-siebly-crypto-exchange-api.md) · [Reviewed source a498cc2](https://github.com/sieblyio/agent-skills/tree/a498cc26c37f44f7c813e4692e448f2b9fe1e07a) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#siebly-crypto-exchange-api)
+[Website](https://siebly.io) · [Repository](https://github.com/sieblyio/agent-skills) · [Intake review](../directory/reviews/2026-11-13-siebly-crypto-exchange-api.md) · [Reviewed source a498cc2](https://github.com/sieblyio/agent-skills/tree/a498cc26c37f44f7c813e4692e448f2b9fe1e07a) · [Suede feature](https://skills.suedeai.ai/directory/featured/#siebly-crypto-exchange-api)
 
 ---
 
@@ -611,7 +611,7 @@ Publish a clean HTML file or static build to deed.page, then retain the owner to
 
 Use the deed-page skill with curl and network access; folder uploads also use tar, and larger uploads use Node.js 18+. Publish clean output only, keep the owner token private, and review the service’s current plan limits. Free sites include the publisher’s badge.
 
-[Website](https://deed.page) · [Repository](https://github.com/f-o-x11/deed-page-skill) · [Intake review](../directory/reviews/2026-11-13-deed-page.md) · [Reviewed source 16e00cb](https://github.com/f-o-x11/deed-page-skill/tree/16e00cb963b0770f6a7da20cee52f5d1ea6ea4bf) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#deed-page)
+[Website](https://deed.page) · [Repository](https://github.com/f-o-x11/deed-page-skill) · [Intake review](../directory/reviews/2026-11-13-deed-page.md) · [Reviewed source 16e00cb](https://github.com/f-o-x11/deed-page-skill/tree/16e00cb963b0770f6a7da20cee52f5d1ea6ea4bf) · [Suede feature](https://skills.suedeai.ai/directory/featured/#deed-page)
 
 ---
 
@@ -631,7 +631,7 @@ Run a local Windows multi-agent workspace with shared memory, MCP connections an
 
 Requires 64-bit Windows 10 or 11 and a Cursor API key or supported BYOK provider. Provider usage is billed separately by the chosen provider. Scheduled routines run while the app is open. Configure each connector’s permissions before use.
 
-[Website](https://tecadrise.ai/products/tecadrisebot) · [Repository](https://github.com/tecadrise-ai/TecAdRiseBot) · [Intake review](../directory/reviews/2026-11-13-tecadrise-bot.md) · [Reviewed source 7f67f02](https://github.com/tecadrise-ai/TecAdRiseBot/tree/7f67f0212ae6a5ef623cee30dda6dc0d0ceaa36c) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#tecadrise-bot)
+[Website](https://tecadrise.ai/products/tecadrisebot) · [Repository](https://github.com/tecadrise-ai/TecAdRiseBot) · [Intake review](../directory/reviews/2026-11-13-tecadrise-bot.md) · [Reviewed source 7f67f02](https://github.com/tecadrise-ai/TecAdRiseBot/tree/7f67f0212ae6a5ef623cee30dda6dc0d0ceaa36c) · [Suede feature](https://skills.suedeai.ai/directory/featured/#tecadrise-bot)
 
 ---
 
@@ -649,7 +649,7 @@ A nine-skill App Store and Google Play optimization collection covering setup, k
 
 Connected research requires ASOScan access and may consume credits. Owners can resolve conflicting credit guidance, use Apple’s 100-byte keyword limit and align metadata score scales.
 
-[Repository](https://github.com/ASOScan/aso-skills) · [Intake review](../directory/reviews/2026-11-17-asoscan.md) · [Reviewed source 026a04d](https://github.com/ASOScan/aso-skills/tree/026a04de63174b90ec1c14432dd845e86c1d9d6e) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#asoscan)
+[Repository](https://github.com/ASOScan/aso-skills) · [Intake review](../directory/reviews/2026-11-17-asoscan.md) · [Reviewed source 026a04d](https://github.com/ASOScan/aso-skills/tree/026a04de63174b90ec1c14432dd845e86c1d9d6e) · [Suede feature](https://skills.suedeai.ai/directory/featured/#asoscan)
 
 ---
 
@@ -667,7 +667,7 @@ AIHOT connects assistants to Chinese-language AI news, searches, current topics 
 
 The hosted service has separate commercial-use terms. Owners can constrain redirects to AIHOT and clarify pseudonymous analytics; --no-actor disables its installation identifier.
 
-[Repository](https://github.com/KKKKhazix/khazix-skills) · [Intake review](../directory/reviews/2026-11-17-aihot.md) · [Reviewed source 725ac94](https://github.com/KKKKhazix/khazix-skills/tree/725ac9421901ef7fac6761136969d032737abcf3) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#aihot)
+[Repository](https://github.com/KKKKhazix/khazix-skills) · [Intake review](../directory/reviews/2026-11-17-aihot.md) · [Reviewed source 725ac94](https://github.com/KKKKhazix/khazix-skills/tree/725ac9421901ef7fac6761136969d032737abcf3) · [Suede feature](https://skills.suedeai.ai/directory/featured/#aihot)
 
 ---
 
@@ -685,7 +685,7 @@ Three connected skills route creative requests and prepare image and video gener
 
 Requires the full plugin, Global OAuth and paid generation credits. Owners can sharpen routing triggers; users should confirm final settings before billable generation. Regional accounts and credits remain separate.
 
-[Repository](https://github.com/klingai-tech/claude-plugin) · [Intake review](../directory/reviews/2026-11-17-kling-global.md) · [Reviewed source d4e0b6a](https://github.com/klingai-tech/claude-plugin/tree/d4e0b6a20e85b8b50468b515ef2421fd25d8ceb1) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#kling-global)
+[Repository](https://github.com/klingai-tech/claude-plugin) · [Intake review](../directory/reviews/2026-11-17-kling-global.md) · [Reviewed source d4e0b6a](https://github.com/klingai-tech/claude-plugin/tree/d4e0b6a20e85b8b50468b515ef2421fd25d8ceb1) · [Suede feature](https://skills.suedeai.ai/directory/featured/#kling-global)
 
 ---
 
@@ -703,7 +703,7 @@ Build a shareable OneTag-hosted AI workflow page with inputs, chained steps and 
 
 Pages use OneTag’s hosted allowance. Owners can strengthen private edit-token protection in nested folders and worktrees and reject duplicate input IDs. Keep .go-public.json private.
 
-[Repository](https://github.com/fengyiqicoder/go-public) · [Intake review](../directory/reviews/2026-11-17-go-public.md) · [Reviewed source f16f7b2](https://github.com/fengyiqicoder/go-public/tree/f16f7b25472b7c4829373bb35038ff365fd6c09f) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#go-public)
+[Repository](https://github.com/fengyiqicoder/go-public) · [Intake review](../directory/reviews/2026-11-17-go-public.md) · [Reviewed source f16f7b2](https://github.com/fengyiqicoder/go-public/tree/f16f7b25472b7c4829373bb35038ff365fd6c09f) · [Suede feature](https://skills.suedeai.ai/directory/featured/#go-public)
 
 ---
 
@@ -722,7 +722,7 @@ A collection of Amazon seller workflows for product research, listings, advertis
 
 Owner-fix note: the keyword helper needs safer input handling before use. Live marketplace data tools may require Nexscope access or credits. Featured at collection level; individual skills are not security-verified.
 
-[Repository](https://github.com/nexscope-ai/Amazon-Skills) · [Intake review](../directory/reviews/2026-11-17-nexscope-amazon.md) · [Reviewed source 2bcb8cb](https://github.com/nexscope-ai/Amazon-Skills/tree/2bcb8cb019cfac6a1e420b11f86209df5ea47686) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#nexscope-amazon)
+[Repository](https://github.com/nexscope-ai/Amazon-Skills) · [Intake review](../directory/reviews/2026-11-17-nexscope-amazon.md) · [Reviewed source 2bcb8cb](https://github.com/nexscope-ai/Amazon-Skills/tree/2bcb8cb019cfac6a1e420b11f86209df5ea47686) · [Suede feature](https://skills.suedeai.ai/directory/featured/#nexscope-amazon)
 
 ---
 
@@ -741,7 +741,7 @@ Product research, marketing and operations workflows spanning Amazon, Shopify, e
 
 Owner-fix note: some skill metadata needs repair, and bundled brand-monitoring scrapers are unfinished. Live-data services may require accounts or credits. Featured at collection level; individual skills are not security-verified.
 
-[Repository](https://github.com/nexscope-ai/eCommerce-Skills) · [Intake review](../directory/reviews/2026-11-17-nexscope-ecommerce.md) · [Reviewed source c5ba892](https://github.com/nexscope-ai/eCommerce-Skills/tree/c5ba892a1cc3178626577aed1dbde5e62a82f1ac) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#nexscope-ecommerce)
+[Repository](https://github.com/nexscope-ai/eCommerce-Skills) · [Intake review](../directory/reviews/2026-11-17-nexscope-ecommerce.md) · [Reviewed source c5ba892](https://github.com/nexscope-ai/eCommerce-Skills/tree/c5ba892a1cc3178626577aed1dbde5e62a82f1ac) · [Suede feature](https://skills.suedeai.ai/directory/featured/#nexscope-ecommerce)
 
 ---
 

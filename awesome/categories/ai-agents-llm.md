@@ -6,11 +6,11 @@
 
 Skills that help an agent build, steer and evaluate other AI systems: prompt and context engineering, MCP servers, evals, subagent workflows, and model training and inference. Each one ships as a SKILL.md folder your agent loads only when the task calls for it.
 
-**604 accepted skills · 69 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**607 accepted skills · 71 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
-**Compare on the 0–99 quality scale:** this category’s verified scores span **56–94 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=ai-agents-llm&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
+**Compare on the 0–99 quality scale:** this category’s verified scores span **56–94 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=ai-agents-llm&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
-[Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede AI listing.
+[Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede listing.
 
 **Guide:** [Agent skills vs MCP servers vs plugins: which one do you need?](https://skills.suedeai.ai/directory/guides/skills-vs-mcp-servers/)
 
@@ -18,6 +18,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 <summary>Browse publishers in this category</summary>
 
 - [activeloopai/hivemind](#activeloopai--hivemind)
+- [andrewsiah/agentswarm-work-skill](#andrewsiah--agentswarm-work-skill)
 - [anthropics/claude-plugins-official](#anthropics--claude-plugins-official)
 - [anthropics/skills](#anthropics--skills)
 - [apify/agent-skills](#apify--agent-skills)
@@ -56,6 +57,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 - [mcollina/skills](#mcollina--skills)
 - [mhattingpete/claude-skills-marketplace](#mhattingpete--claude-skills-marketplace)
 - [microsoft/azure-skills](#microsoft--azure-skills)
+- [mrhy7176/cloudgpu-agent-skills](#mrhy7176--cloudgpu-agent-skills)
 - [muratcankoylan/Agent-Skills-for-Context-Engineering](#muratcankoylan--agent-skills-for-context-engineering)
 - [Necmttn/ax](#necmttn--ax)
 - [NeoLabHQ/context-engineering-kit](#neolabhq--context-engineering-kit)
@@ -93,15 +95,23 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## activeloopai/hivemind
 
-[Repository](https://github.com/activeloopai/hivemind) · Publisher: [activeloopai](https://github.com/activeloopai) · [Suede AI listing](https://skills.suedeai.ai/directory/activeloopai/hivemind/)
+[Repository](https://github.com/activeloopai/hivemind) · Publisher: [activeloopai](https://github.com/activeloopai) · [Suede listing](https://skills.suedeai.ai/directory/activeloopai/hivemind/)
 
 - **72/100 · C** · [hivemind-memory](https://github.com/activeloopai/hivemind/blob/main/harnesses/claude-code/skills/hivemind-memory/SKILL.md): Global team and org memory powered by Activeloop. [Suede](https://skills.suedeai.ai/directory/activeloopai/hivemind/#hivemind-memory)
+
+<a id="andrewsiah--agentswarm-work-skill"></a>
+
+## andrewsiah/agentswarm-work-skill
+
+[Repository](https://github.com/andrewsiah/agentswarm-work-skill) · Publisher: [andrewsiah](https://github.com/andrewsiah) · [Suede listing](https://skills.suedeai.ai/directory/andrewsiah/agentswarm-work-skill/agentswarm-work/)
+
+- **79/100 · C** · [agentswarm-work](https://github.com/andrewsiah/agentswarm-work-skill/blob/main/skills/agentswarm-work/SKILL.md): Inspect one agentswarm.space task, reuse an authorized identity when needed, and submit real work evidence within the user’s chosen scope. [Suede](https://skills.suedeai.ai/directory/andrewsiah/agentswarm-work-skill/agentswarm-work/)
 
 <a id="anthropics--claude-plugins-official"></a>
 
 ## anthropics/claude-plugins-official
 
-[Repository](https://github.com/anthropics/claude-plugins-official) · Publisher: [anthropics](https://github.com/anthropics) · [Suede AI listing](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/)
+[Repository](https://github.com/anthropics/claude-plugins-official) · Publisher: [anthropics](https://github.com/anthropics) · [Suede listing](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/)
 
 - **86/100 · B** · [agent-development](https://github.com/anthropics/claude-plugins-official/blob/main/plugins/plugin-dev/skills/agent-development/SKILL.md): This skill should be used when the user asks to "create an agent", "add an agent", "write a subagent", "agent frontmatter", "when to use description", "agent examples", "agent tools", "agent colors", "autonomous agent", or needs… [Suede](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/#agent-development)
 - **84/100 · B** · [build-mcp-app](https://github.com/anthropics/claude-plugins-official/blob/main/plugins/mcp-server-dev/skills/build-mcp-app/SKILL.md): This skill should be used when the user wants to build an "MCP app", add "interactive UI" or "widgets" to an MCP server, "render components in chat", build "MCP UI resources", make a tool that shows a "form", "picker", "dashboard" or… [Suede](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/#build-mcp-app)
@@ -118,7 +128,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## anthropics/skills
 
-[Repository](https://github.com/anthropics/skills) · Publisher: [anthropics](https://github.com/anthropics) · [Suede AI listing](https://skills.suedeai.ai/directory/anthropics/skills/)
+[Repository](https://github.com/anthropics/skills) · Publisher: [anthropics](https://github.com/anthropics) · [Suede listing](https://skills.suedeai.ai/directory/anthropics/skills/)
 
 - **89/100 · B** · [mcp-builder](https://github.com/anthropics/skills/blob/main/skills/mcp-builder/SKILL.md): Guides building MCP servers that let LLMs use external services through tools, in Python with FastMCP or TypeScript with the MCP SDK. [Suede](https://skills.suedeai.ai/directory/anthropics/skills/mcp-builder/)
 - **83/100 · B** · [skill-creator](https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md): Guides creating new skills, improving existing ones, running evals, benchmarking skill performance with variance analysis, and optimizing a skill's description for better triggering. [Suede](https://skills.suedeai.ai/directory/anthropics/skills/skill-creator/)
@@ -127,7 +137,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## apify/agent-skills
 
-[Repository](https://github.com/apify/agent-skills) · Publisher: [apify](https://github.com/apify) · [Suede AI listing](https://skills.suedeai.ai/directory/apify/agent-skills/)
+[Repository](https://github.com/apify/agent-skills) · Publisher: [apify](https://github.com/apify) · [Suede listing](https://skills.suedeai.ai/directory/apify/agent-skills/)
 
 - **80/100 · B** · [apify-integration-development](https://github.com/apify/agent-skills/blob/main/skills/apify-integration-development/SKILL.md): Design and build an official Apify integration for a company's product - workflow-automation apps (Zapier/n8n-style), AI agent plugins (coding-agent skills+MCP bundles or OpenClaw/Hermes-style harnesses), AI framework packages… [Suede](https://skills.suedeai.ai/directory/apify/agent-skills/#apify-integration-development)
 
@@ -135,7 +145,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## apollographql/skills
 
-[Repository](https://github.com/apollographql/skills) · Publisher: [apollographql](https://github.com/apollographql) · [Suede AI listing](https://skills.suedeai.ai/directory/apollographql/skills/)
+[Repository](https://github.com/apollographql/skills) · Publisher: [apollographql](https://github.com/apollographql) · [Suede listing](https://skills.suedeai.ai/directory/apollographql/skills/)
 
 - **84/100 · B** · [apollo-mcp-server](https://github.com/apollographql/skills/blob/main/skills/apollo-mcp-server/SKILL.md): Guide for using Apollo MCP Server to connect AI agents with GraphQL APIs. [Suede](https://skills.suedeai.ai/directory/apollographql/skills/#apollo-mcp-server)
 - **84/100 · B** · [skill-creator](https://github.com/apollographql/skills/blob/main/skills/skill-creator/SKILL.md): Guide for creating effective skills for Apollo GraphQL and GraphQL development. [Suede](https://skills.suedeai.ai/directory/apollographql/skills/#skill-creator)
@@ -144,7 +154,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## appierun/appie-mcp
 
-[Repository](https://github.com/appierun/appie-mcp) · Publisher: [appierun](https://github.com/appierun) · [Suede AI listing](https://skills.suedeai.ai/directory/appierun/appie-mcp/)
+[Repository](https://github.com/appierun/appie-mcp) · Publisher: [appierun](https://github.com/appierun) · [Suede listing](https://skills.suedeai.ai/directory/appierun/appie-mcp/)
 
 - **77/100 · C** · [appie-chatbot](https://github.com/appierun/appie-mcp/blob/master/skills/appie-chatbot/SKILL.md): Create and train chatbots on text, URLs, sitemaps or articles through Appie.run’s hosted MCP service with your own project API key; chatbot messages use 1 credit each. [Suede](https://skills.suedeai.ai/directory/appierun/appie-mcp/appie-chatbot/)
 
@@ -152,7 +162,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## avelikiy/great\_cto
 
-[Repository](https://github.com/avelikiy/great_cto) · Publisher: [avelikiy](https://github.com/avelikiy) · [Suede AI listing](https://skills.suedeai.ai/directory/avelikiy/great-cto/)
+[Repository](https://github.com/avelikiy/great_cto) · Publisher: [avelikiy](https://github.com/avelikiy) · [Suede listing](https://skills.suedeai.ai/directory/avelikiy/great-cto/)
 
 - **82/100 · B** · [skeptical-triage](https://github.com/avelikiy/great_cto/blob/main/skills/skeptical-triage/SKILL.md): Filters false positives from findings and verdicts with a three-round self-challenge and arbiter pattern, when a false-positive block costs more than extra LLM turns. [Suede](https://skills.suedeai.ai/directory/avelikiy/great-cto/skeptical-triage/)
 - **77/100 · C** · [done-blocked](https://github.com/avelikiy/great_cto/blob/main/skills/done-blocked/SKILL.md): Reusable reporting contract for any agent that hands work back to the pipeline. [Suede](https://skills.suedeai.ai/directory/avelikiy/great-cto/#done-blocked)
@@ -164,7 +174,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## aws/agent-toolkit-for-aws
 
-[Repository](https://github.com/aws/agent-toolkit-for-aws) · Publisher: [aws](https://github.com/aws) · [Suede AI listing](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/)
+[Repository](https://github.com/aws/agent-toolkit-for-aws) · Publisher: [aws](https://github.com/aws) · [Suede listing](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/)
 
 - **87/100 · B** · [agents-get-started](https://github.com/aws/agent-toolkit-for-aws/blob/main/plugins/aws-agents/skills/agents-get-started/SKILL.md): Use when a developer wants to create a new agent project or get started with AgentCore. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#agents-get-started)
 - **84/100 · B** · [agents-optimize](https://github.com/aws/agent-toolkit-for-aws/blob/main/plugins/aws-agents/skills/agents-optimize/SKILL.md): Use when measuring or improving agent quality and performance — set up evaluators, online monitoring, CI/CD quality gates, observability, or cost optimization. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#agents-optimize)
@@ -186,7 +196,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## browserbase/skills
 
-[Repository](https://github.com/browserbase/skills) · Publisher: [browserbase](https://github.com/browserbase) · [Suede AI listing](https://skills.suedeai.ai/directory/browserbase/skills/)
+[Repository](https://github.com/browserbase/skills) · Publisher: [browserbase](https://github.com/browserbase) · [Suede listing](https://skills.suedeai.ai/directory/browserbase/skills/)
 
 - **83/100 · B** · [add-webmcp](https://github.com/browserbase/skills/blob/main/skills/add-webmcp/SKILL.md): Analyzes an existing web application for safe user-visible capabilities, implements first-party WebMCP tools, and validates discovery and invocation with Stagehand. [Suede](https://skills.suedeai.ai/directory/browserbase/skills/add-webmcp/)
 - **83/100 · B** · [autobrowse](https://github.com/browserbase/skills/blob/main/skills/autobrowse/SKILL.md): Improves browser automation through an iterative loop that runs a browsing task, reads the trace, and refines the navigation strategy until it reliably passes. [Suede](https://skills.suedeai.ai/directory/browserbase/skills/autobrowse/)
@@ -199,7 +209,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## cloudflare/skills
 
-[Repository](https://github.com/cloudflare/skills) · Publisher: [cloudflare](https://github.com/cloudflare) · [Suede AI listing](https://skills.suedeai.ai/directory/cloudflare/skills/)
+[Repository](https://github.com/cloudflare/skills) · Publisher: [cloudflare](https://github.com/cloudflare) · [Suede listing](https://skills.suedeai.ai/directory/cloudflare/skills/)
 
 - **69/100 · D** · [agents-sdk](https://github.com/cloudflare/skills/blob/main/skills/agents-sdk/SKILL.md): Build, debug, or review Cloudflare Agents SDK applications using the agents package. [Suede](https://skills.suedeai.ai/directory/cloudflare/skills/#agents-sdk)
 
@@ -207,7 +217,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## composiohq/skills
 
-[Repository](https://github.com/composiohq/skills) · Publisher: [composiohq](https://github.com/composiohq) · [Suede AI listing](https://skills.suedeai.ai/directory/composiohq/skills/)
+[Repository](https://github.com/composiohq/skills) · Publisher: [composiohq](https://github.com/composiohq) · [Suede listing](https://skills.suedeai.ai/directory/composiohq/skills/)
 
 - **56/100 · D** · [composio](https://github.com/composiohq/skills/blob/main/skills/composio/SKILL.md): Use 1000+ external apps via Composio - either directly through the CLI or by building AI agents and apps with the SDK [Suede](https://skills.suedeai.ai/directory/composiohq/skills/#composio)
 
@@ -215,7 +225,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## Continuum-AI-Corp/OrcaReplay
 
-[Repository](https://github.com/Continuum-AI-Corp/OrcaReplay) · Publisher: [Continuum-AI-Corp](https://github.com/Continuum-AI-Corp) · [Suede AI listing](https://skills.suedeai.ai/directory/continuum-ai-corp/orcareplay/orca-replay/)
+[Repository](https://github.com/Continuum-AI-Corp/OrcaReplay) · Publisher: [Continuum-AI-Corp](https://github.com/Continuum-AI-Corp) · [Suede listing](https://skills.suedeai.ai/directory/continuum-ai-corp/orcareplay/orca-replay/)
 
 - **86/100 · B** · [orca-replay](https://github.com/Continuum-AI-Corp/OrcaReplay/blob/main/skills/orca-replay/SKILL.md): Answers questions about a past agent run from its recording rather than memory, and replays or forks that run. [Suede](https://skills.suedeai.ai/directory/continuum-ai-corp/orcareplay/orca-replay/)
 
@@ -223,7 +233,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## deanpeters/Product-Manager-Skills
 
-[Repository](https://github.com/deanpeters/Product-Manager-Skills) · Publisher: [deanpeters](https://github.com/deanpeters) · [Suede AI listing](https://skills.suedeai.ai/directory/deanpeters/product-manager-skills/)
+[Repository](https://github.com/deanpeters/Product-Manager-Skills) · Publisher: [deanpeters](https://github.com/deanpeters) · [Suede listing](https://skills.suedeai.ai/directory/deanpeters/product-manager-skills/)
 
 - **81/100 · B** · [autonomous-investigation](https://github.com/deanpeters/Product-Manager-Skills/blob/main/skills/autonomous-investigation/SKILL.md): Defines the protocol behind investigation skills for unattended AI research, using a search-plan gate, Fact, Inference, and Assumption labels, confidence stacking, and diffable outputs. [Suede](https://skills.suedeai.ai/directory/deanpeters/product-manager-skills/autonomous-investigation/) · License: CC-BY-NC-SA-4.0 (review terms)
 - **79/100 · C** · [pm-skill-creator](https://github.com/deanpeters/Product-Manager-Skills/blob/main/skills/pm-skill-creator/SKILL.md): Design a new PM skill through guided conversation. [Suede](https://skills.suedeai.ai/directory/deanpeters/product-manager-skills/#pm-skill-creator) · License: CC-BY-NC-SA-4.0 (review terms)
@@ -235,7 +245,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## fal-ai-community/skills
 
-[Repository](https://github.com/fal-ai-community/skills) · Publisher: [fal-ai-community](https://github.com/fal-ai-community) · [Suede AI listing](https://skills.suedeai.ai/directory/fal-ai-community/skills/)
+[Repository](https://github.com/fal-ai-community/skills) · Publisher: [fal-ai-community](https://github.com/fal-ai-community) · [Suede listing](https://skills.suedeai.ai/directory/fal-ai-community/skills/)
 
 - **76/100 · C** · [fal-prompting](https://github.com/fal-ai-community/skills/blob/main/skills/fal-prompting/SKILL.md): Model-family-specific prompt craft for fal.ai endpoints. [Suede](https://skills.suedeai.ai/directory/fal-ai-community/skills/#fal-prompting)
 
@@ -243,7 +253,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## firebase/skills
 
-[Repository](https://github.com/firebase/skills) · Publisher: [firebase](https://github.com/firebase) · [Suede AI listing](https://skills.suedeai.ai/directory/firebase/skills/)
+[Repository](https://github.com/firebase/skills) · Publisher: [firebase](https://github.com/firebase) · [Suede listing](https://skills.suedeai.ai/directory/firebase/skills/)
 
 - **80/100 · B** · [firebase-ai-logic-basics](https://github.com/firebase/skills/blob/main/skills/firebase-ai-logic-basics/SKILL.md): Integrates Firebase AI Logic into mobile and web apps to call Gemini models from client code for text generation, multimodal input, chat, and streaming. [Suede](https://skills.suedeai.ai/directory/firebase/skills/firebase-ai-logic-basics/)
 
@@ -251,7 +261,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## firecrawl/skills
 
-[Repository](https://github.com/firecrawl/skills) · Publisher: [firecrawl](https://github.com/firecrawl) · [Suede AI listing](https://skills.suedeai.ai/directory/firecrawl/skills/)
+[Repository](https://github.com/firecrawl/skills) · Publisher: [firecrawl](https://github.com/firecrawl) · [Suede listing](https://skills.suedeai.ai/directory/firecrawl/skills/)
 
 - **74/100 · C** · [firecrawl-knowledge-base](https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-knowledge-base/SKILL.md): Build a knowledge base from web content with Firecrawl. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/#firecrawl-knowledge-base)
 
@@ -259,7 +269,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## getsentry/skills
 
-[Repository](https://github.com/getsentry/skills) · Publisher: [getsentry](https://github.com/getsentry) · [Suede AI listing](https://skills.suedeai.ai/directory/getsentry/skills/)
+[Repository](https://github.com/getsentry/skills) · Publisher: [getsentry](https://github.com/getsentry) · [Suede listing](https://skills.suedeai.ai/directory/getsentry/skills/)
 
 - **86/100 · B** · [skill-writer](https://github.com/getsentry/skills/blob/main/skills/skill-writer/SKILL.md): Creates, synthesizes, and iteratively improves agent skills following the Agent Skills specification, including source capture, precision passes, authoring, registration, and validation. [Suede](https://skills.suedeai.ai/directory/getsentry/skills/skill-writer/)
 - **81/100 · B** · [prompt-optimizer](https://github.com/getsentry/skills/blob/main/skills/prompt-optimizer/SKILL.md): Creates and refines agent, system, and developer prompts and reusable prompt templates, including porting prompts between OpenAI, Claude, and Gemini and building prompt evals. [Suede](https://skills.suedeai.ai/directory/getsentry/skills/prompt-optimizer/)
@@ -269,7 +279,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## github/awesome-copilot
 
-[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede AI listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
+[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
 
 - **89/100 · B** · [java-mcp-server-generator](https://github.com/github/awesome-copilot/blob/main/skills/java-mcp-server-generator/SKILL.md): Use this skill when the user wants to create a Model Context Protocol (MCP) server in Java or in a Spring Boot app. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#java-mcp-server-generator)
 - **87/100 · B** · [acquire-codebase-knowledge](https://github.com/github/awesome-copilot/blob/main/skills/acquire-codebase-knowledge/SKILL.md): Use this skill when the user explicitly asks to map, document, or onboard into an existing codebase. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#acquire-codebase-knowledge)
@@ -354,7 +364,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## google-labs-code/stitch-skills
 
-[Repository](https://github.com/google-labs-code/stitch-skills) · Publisher: [google-labs-code](https://github.com/google-labs-code) · [Suede AI listing](https://skills.suedeai.ai/directory/google-labs-code/stitch-skills/)
+[Repository](https://github.com/google-labs-code/stitch-skills) · Publisher: [google-labs-code](https://github.com/google-labs-code) · [Suede listing](https://skills.suedeai.ai/directory/google-labs-code/stitch-skills/)
 
 - **67/100 · D** · [stitch-loop](https://github.com/google-labs-code/stitch-skills/blob/main/plugins/stitch-utilities/skills/stitch-loop/SKILL.md): Teaches agents to iteratively build websites using Stitch with an autonomous baton-passing loop pattern [Suede](https://skills.suedeai.ai/directory/google-labs-code/stitch-skills/#stitch-loop)
 
@@ -362,7 +372,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## google/skills
 
-[Repository](https://github.com/google/skills) · Publisher: [google](https://github.com/google) · [Suede AI listing](https://skills.suedeai.ai/directory/google/skills/)
+[Repository](https://github.com/google/skills) · Publisher: [google](https://github.com/google) · [Suede listing](https://skills.suedeai.ai/directory/google/skills/)
 
 - **90/100 · A** · [agent-platform-deploy](https://github.com/google/skills/blob/main/skills/cloud/agent-platform-deploy/SKILL.md): Deploys open models or custom weights from Model Garden to Agent Platform endpoints, checks deployment status and cost, troubleshoots errors, and undeploys models. [Suede](https://skills.suedeai.ai/directory/google/skills/agent-platform-deploy/)
 - **89/100 · B** · [api-gateway-mcp-server](https://github.com/google/skills/blob/main/skills/cloud/api-gateway-mcp-server/SKILL.md): Configures Google Cloud API Gateway to act as a remote Model Context Protocol (MCP) server (Public Preview) that exposes REST APIs as agent tools over HTTP (POST /mcp). [Suede](https://skills.suedeai.ai/directory/google/skills/#api-gateway-mcp-server)
@@ -393,7 +403,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## gooseworks-ai/goose-skills
 
-[Repository](https://github.com/gooseworks-ai/goose-skills) · Publisher: [gooseworks-ai](https://github.com/gooseworks-ai) · [Suede AI listing](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/)
+[Repository](https://github.com/gooseworks-ai/goose-skills) · Publisher: [gooseworks-ai](https://github.com/gooseworks-ai) · [Suede listing](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/)
 
 - **78/100 · C** · [find-skill](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/research-tools/capabilities/find-skill/SKILL.md): Find and install skills from the Orthogonal skill library. [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#find-skill)
 - **78/100 · C** · [skill-creator](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/research-tools/capabilities/skill-creator/SKILL.md): Create, structure, and package agent skills. [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#skill-creator)
@@ -402,7 +412,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## HeshamFS/materials-simulation-skills
 
-[Repository](https://github.com/HeshamFS/materials-simulation-skills) · Publisher: [HeshamFS](https://github.com/HeshamFS) · [Suede AI listing](https://skills.suedeai.ai/directory/heshamfs/materials-simulation-skills/)
+[Repository](https://github.com/HeshamFS/materials-simulation-skills) · Publisher: [HeshamFS](https://github.com/HeshamFS) · [Suede listing](https://skills.suedeai.ai/directory/heshamfs/materials-simulation-skills/)
 
 - **84/100 · B** · [skill-evaluator](https://github.com/HeshamFS/materials-simulation-skills/blob/main/skills/meta/skill-evaluator/SKILL.md): Rigorously evaluate an Agent Skill end-to-end across ANY coding-agent CLI — verify its scripts emit the documented numbers (deterministic checks), test whether its description triggers on the right prompts, and measure whether an agent… [Suede](https://skills.suedeai.ai/directory/heshamfs/materials-simulation-skills/#skill-evaluator)
 
@@ -410,7 +420,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## hqhq1025/skill-optimizer
 
-[Repository](https://github.com/hqhq1025/skill-optimizer) · Publisher: [hqhq1025](https://github.com/hqhq1025) · [Suede AI listing](https://skills.suedeai.ai/directory/hqhq1025/skill-optimizer/)
+[Repository](https://github.com/hqhq1025/skill-optimizer) · Publisher: [hqhq1025](https://github.com/hqhq1025) · [Suede listing](https://skills.suedeai.ai/directory/hqhq1025/skill-optimizer/)
 
 - **76/100 · C** · [skill-miner](https://github.com/hqhq1025/skill-optimizer/blob/main/skills/skill-miner/SKILL.md): Mines coding-agent session history, archived transcripts, memories, and repeated local work to discover recurring workflows that should become new Agent Skills. [Suede](https://skills.suedeai.ai/directory/hqhq1025/skill-optimizer/skill-miner/)
 - **74/100 · C** · [skill-generalizer](https://github.com/hqhq1025/skill-optimizer/blob/main/skills/skill-generalizer/SKILL.md): Turns local or personal Agent Skills into publishable ones by removing private paths, personal habits, credentials, internal hosts, and user-specific context. [Suede](https://skills.suedeai.ai/directory/hqhq1025/skill-optimizer/skill-generalizer/)
@@ -420,7 +430,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## huggingface/skills
 
-[Repository](https://github.com/huggingface/skills) · Publisher: [huggingface](https://github.com/huggingface) · [Suede AI listing](https://skills.suedeai.ai/directory/huggingface/skills/)
+[Repository](https://github.com/huggingface/skills) · Publisher: [huggingface](https://github.com/huggingface) · [Suede listing](https://skills.suedeai.ai/directory/huggingface/skills/)
 
 - **86/100 · B** · [huggingface-community-evals](https://github.com/huggingface/skills/blob/main/skills/huggingface-community-evals/SKILL.md): Runs evaluations for Hugging Face Hub models on local hardware using inspect-ai and lighteval, including backend selection and choosing between vLLM, Transformers, and accelerate. [Suede](https://skills.suedeai.ai/directory/huggingface/skills/huggingface-community-evals/)
 - **85/100 · B** · [huggingface-zerogpu](https://github.com/huggingface/skills/blob/main/skills/huggingface-zerogpu/SKILL.md): Guides writing and reviewing Gradio code for Hugging Face ZeroGPU Spaces, covering @spaces.GPU usage, requirements configuration, and ZeroGPU-specific constraints like pickle isolation. [Suede](https://skills.suedeai.ai/directory/huggingface/skills/huggingface-zerogpu/)
@@ -441,7 +451,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## infrasity-labs/dev-gtm-claude-skills
 
-[Repository](https://github.com/infrasity-labs/dev-gtm-claude-skills) · Publisher: [infrasity-labs](https://github.com/infrasity-labs) · [Suede AI listing](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/)
+[Repository](https://github.com/infrasity-labs/dev-gtm-claude-skills) · Publisher: [infrasity-labs](https://github.com/infrasity-labs) · [Suede listing](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/)
 
 - **80/100 · B** · [reflect](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/notion-skills/reflect/SKILL.md): Mid-conversation reflection skill that pauses execution and zooms out from detail-mode to honestly reassess direction, assumptions, and bias. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#reflect)
 - **79/100 · C** · [workflow-builder](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/notion-skills/workflow-builder/SKILL.md): Design and write deterministic multi-agent workflow scripts (.js files in .claude/workflows/) for Claude Code's Workflow tool. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#workflow-builder)
@@ -452,19 +462,19 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## JasonColapietro/suede-creator-skills
 
-[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede AI listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
+[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
 
-- **93/100 · A** · [Suede AI Agent Teams Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-agent-teams/SKILL.md): Suede AI Agent Teams Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-agent-teams)
-- **91/100 · A** · [Suede AI Answer Engine Optimization Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-ai-seo/SKILL.md): Suede AI Answer Engine Optimization Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ai-seo)
-- **91/100 · A** · [Suede AI Graph Flo XR Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-graph-flo-xr/SKILL.md): Use when asked "compare implementation plans before building" for one multi-file repository change. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-graph-flo-xr)
-- **91/100 · A** · [Suede AI Operations Architecture Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-ops-architecture/SKILL.md): Suede AI Operations Architecture Skills: simplify workflows, choose bounded automation, define ownership, rollout, and verification. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ops-architecture)
-- **91/100 · A** · [Suede AI Workflow Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-workflow-skills/SKILL.md): Route requests across the full public Suede AI pack to the narrowest specialist and preserve the request verbatim. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-workflow-skills)
+- **93/100 · A** · [Suede Agent Teams Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-agent-teams/SKILL.md): Suede Agent Teams Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-agent-teams)
+- **91/100 · A** · [Suede Answer Engine Optimization Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-ai-seo/SKILL.md): Suede Answer Engine Optimization Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ai-seo)
+- **91/100 · A** · [Suede Graph Flo XR Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-graph-flo-xr/SKILL.md): Use when asked "compare implementation plans before building" for one multi-file repository change. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-graph-flo-xr)
+- **91/100 · A** · [Suede Operations Architecture Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-ops-architecture/SKILL.md): Suede Operations Architecture Skills: simplify workflows, choose bounded automation, define ownership, rollout, and verification. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ops-architecture)
+- **91/100 · A** · [Suede Workflow Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-workflow-skills/SKILL.md): Route requests across the full public Suede pack to the narrowest specialist and preserve the request verbatim. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-workflow-skills)
 
 <a id="jeffallan--claude-skills"></a>
 
 ## jeffallan/claude-skills
 
-[Repository](https://github.com/jeffallan/claude-skills) · Publisher: [jeffallan](https://github.com/jeffallan) · [Suede AI listing](https://skills.suedeai.ai/directory/jeffallan/claude-skills/)
+[Repository](https://github.com/jeffallan/claude-skills) · Publisher: [jeffallan](https://github.com/jeffallan) · [Suede listing](https://skills.suedeai.ai/directory/jeffallan/claude-skills/)
 
 - **84/100 · B** · [fine-tuning-expert](https://github.com/jeffallan/claude-skills/blob/main/skills/fine-tuning-expert/SKILL.md): Use when fine-tuning LLMs, training custom models, or adapting foundation models for specific tasks. [Suede](https://skills.suedeai.ai/directory/jeffallan/claude-skills/#fine-tuning-expert)
 - **84/100 · B** · [mcp-developer](https://github.com/jeffallan/claude-skills/blob/main/skills/mcp-developer/SKILL.md): Use when building, debugging, or extending MCP servers or clients that connect AI systems with external tools and data sources. [Suede](https://skills.suedeai.ai/directory/jeffallan/claude-skills/#mcp-developer)
@@ -476,7 +486,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## K-Dense-AI/claude-scientific-skills
 
-[Repository](https://github.com/K-Dense-AI/claude-scientific-skills) · Publisher: [K-Dense-AI](https://github.com/K-Dense-AI) · [Suede AI listing](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/)
+[Repository](https://github.com/K-Dense-AI/claude-scientific-skills) · Publisher: [K-Dense-AI](https://github.com/K-Dense-AI) · [Suede listing](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/)
 
 - **89/100 · B** · [autoskill](https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/skills/autoskill/SKILL.md): Analyzes user-requested Screenpipe history windows to detect repeated research workflows, match existing scientific skills, and stage new skill drafts or composition recipes for review. [Suede](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/#autoskill)
 - **89/100 · B** · [scikit-learn](https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/skills/scikit-learn/SKILL.md): Supports machine learning in Python with scikit-learn. [Suede](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/#scikit-learn)
@@ -493,7 +503,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## k-kolomeitsev/data-structure-protocol
 
-[Repository](https://github.com/k-kolomeitsev/data-structure-protocol) · Publisher: [k-kolomeitsev](https://github.com/k-kolomeitsev) · [Suede AI listing](https://skills.suedeai.ai/directory/k-kolomeitsev/data-structure-protocol/data-structure-protocol/)
+[Repository](https://github.com/k-kolomeitsev/data-structure-protocol) · Publisher: [k-kolomeitsev](https://github.com/k-kolomeitsev) · [Suede listing](https://skills.suedeai.ai/directory/k-kolomeitsev/data-structure-protocol/data-structure-protocol/)
 
 - **82/100 · B** · [data-structure-protocol](https://github.com/k-kolomeitsev/data-structure-protocol/blob/main/skills/data-structure-protocol/SKILL.md): Builds and navigates a graph-based structural memory of codebases for LLM agents, storing modules, functions, dependencies, public APIs, and the reasons for each connection. [Suede](https://skills.suedeai.ai/directory/k-kolomeitsev/data-structure-protocol/data-structure-protocol/)
 
@@ -501,7 +511,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## LambdaTest/agent-skills
 
-[Repository](https://github.com/LambdaTest/agent-skills) · Publisher: [LambdaTest](https://github.com/LambdaTest) · [Suede AI listing](https://skills.suedeai.ai/directory/lambdatest/agent-skills/)
+[Repository](https://github.com/LambdaTest/agent-skills) · Publisher: [LambdaTest](https://github.com/LambdaTest) · [Suede listing](https://skills.suedeai.ai/directory/lambdatest/agent-skills/)
 
 - **75/100 · C** · [rook-skill](https://github.com/LambdaTest/agent-skills/blob/main/rook-skill/SKILL.md): Use rook to test, evaluate, red-team or regression-check an AI agent the user owns, or to interpret saved Rook results. [Suede](https://skills.suedeai.ai/directory/lambdatest/agent-skills/#rook-skill)
 - **73/100 · C** · [api-ai-augmented](https://github.com/LambdaTest/agent-skills/blob/main/api-skill/ai-based-api/SKILL.md): Designs AI-powered API features, LLM tool/function definitions, MCP server tool schemas, natural language to API conversion, and agentic API workflows. [Suede](https://skills.suedeai.ai/directory/lambdatest/agent-skills/#api-ai-augmented)
@@ -510,7 +520,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## langchain-ai/langchain-skills
 
-[Repository](https://github.com/langchain-ai/langchain-skills) · Publisher: [langchain-ai](https://github.com/langchain-ai) · [Suede AI listing](https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/)
+[Repository](https://github.com/langchain-ai/langchain-skills) · Publisher: [langchain-ai](https://github.com/langchain-ai) · [Suede listing](https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/)
 
 - **82/100 · B** · [eval-engineering](https://github.com/langchain-ai/langchain-skills/blob/main/config/skills/eval-engineering/SKILL.md): Inspect an agent repository and optional traces, interview the user, write reviewed Task Specs, build and audit Harbor tasks, and bootstrap reusable project World Knowledge Skills. [Suede](https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/#eval-engineering)
 - **77/100 · C** · [deep-agents-core](https://github.com/langchain-ai/langchain-skills/blob/main/config/skills/deep-agents-core/SKILL.md): INVOKE THIS SKILL when building ANY Deep Agents application. [Suede](https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/#deep-agents-core)
@@ -532,7 +542,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## luoyuctl/agenttrace
 
-[Repository](https://github.com/luoyuctl/agenttrace) · Publisher: [luoyuctl](https://github.com/luoyuctl) · [Suede AI listing](https://skills.suedeai.ai/directory/luoyuctl/agenttrace/agenttrace-session-audit/)
+[Repository](https://github.com/luoyuctl/agenttrace) · Publisher: [luoyuctl](https://github.com/luoyuctl) · [Suede listing](https://skills.suedeai.ai/directory/luoyuctl/agenttrace/agenttrace-session-audit/)
 
 - **78/100 · C** · [agenttrace-session-audit](https://github.com/luoyuctl/agenttrace/blob/master/skills/agenttrace-session-audit/SKILL.md): Audits local AI coding-agent sessions from tools like Claude Code and Codex CLI with agenttrace, checking cost, tokens, tool failures, latency, and anomalies. [Suede](https://skills.suedeai.ai/directory/luoyuctl/agenttrace/agenttrace-session-audit/)
 
@@ -540,7 +550,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## Maksim-Burtsev/simple-man
 
-[Repository](https://github.com/Maksim-Burtsev/simple-man) · Publisher: [Maksim-Burtsev](https://github.com/Maksim-Burtsev) · [Suede AI listing](https://skills.suedeai.ai/directory/maksim-burtsev/simple-man/simple-man/)
+[Repository](https://github.com/Maksim-Burtsev/simple-man) · Publisher: [Maksim-Burtsev](https://github.com/Maksim-Burtsev) · [Suede listing](https://skills.suedeai.ai/directory/maksim-burtsev/simple-man/simple-man/)
 
 - **78/100 · C** · [simple-man](https://github.com/Maksim-Burtsev/simple-man/blob/master/skills/simple-man/SKILL.md): Switches to a compact communication mode with no filler, giving terse technical answers and short coding-agent status updates without reducing effort or accuracy. [Suede](https://skills.suedeai.ai/directory/maksim-burtsev/simple-man/simple-man/)
 
@@ -548,7 +558,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## massimodeluisa/recursive-decomposition-skill
 
-[Repository](https://github.com/massimodeluisa/recursive-decomposition-skill) · Publisher: [massimodeluisa](https://github.com/massimodeluisa) · [Suede AI listing](https://skills.suedeai.ai/directory/massimodeluisa/recursive-decomposition-skill/recursive-decomposition/)
+[Repository](https://github.com/massimodeluisa/recursive-decomposition-skill) · Publisher: [massimodeluisa](https://github.com/massimodeluisa) · [Suede listing](https://skills.suedeai.ai/directory/massimodeluisa/recursive-decomposition-skill/recursive-decomposition/)
 
 - **78/100 · C** · [recursive-decomposition](https://github.com/massimodeluisa/recursive-decomposition-skill/blob/main/skills/recursive-decomposition/SKILL.md): Decomposes dense codebase-wide, multi-document, and large PDF analysis, following Recursive Language Models research, to aggregate or reason across many scattered sources. [Suede](https://skills.suedeai.ai/directory/massimodeluisa/recursive-decomposition-skill/recursive-decomposition/)
 
@@ -556,7 +566,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## mattpocock/skills
 
-[Repository](https://github.com/mattpocock/skills) · Publisher: [mattpocock](https://github.com/mattpocock) · [Suede AI listing](https://skills.suedeai.ai/directory/mattpocock/skills/)
+[Repository](https://github.com/mattpocock/skills) · Publisher: [mattpocock](https://github.com/mattpocock) · [Suede listing](https://skills.suedeai.ai/directory/mattpocock/skills/)
 
 - **76/100 · C** · [writing-for-agents](https://github.com/mattpocock/skills/blob/main/skills/productivity/writing-for-agents/SKILL.md): Writing documents for agents. [Suede](https://skills.suedeai.ai/directory/mattpocock/skills/#writing-for-agents)
 - **71/100 · C** · [research](https://github.com/mattpocock/skills/blob/main/skills/engineering/research/SKILL.md): Investigate a question against high-trust primary sources and capture the findings as a Markdown file in the repo. [Suede](https://skills.suedeai.ai/directory/mattpocock/skills/#research)
@@ -568,7 +578,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## mblode/agent-skills
 
-[Repository](https://github.com/mblode/agent-skills) · Publisher: [mblode](https://github.com/mblode) · [Suede AI listing](https://skills.suedeai.ai/directory/mblode/agent-skills/)
+[Repository](https://github.com/mblode/agent-skills) · Publisher: [mblode](https://github.com/mblode) · [Suede listing](https://skills.suedeai.ai/directory/mblode/agent-skills/)
 
 - **91/100 · A** · [agent-ready](https://github.com/mblode/agent-skills/blob/main/skills/agent-ready/SKILL.md): Implements agent-readiness on sites and docs from scorecards like Mintlify Agent Score or AFDocs, including llms.txt coverage and agents hitting 404s on guessed URLs. [Suede](https://skills.suedeai.ai/directory/mblode/agent-skills/agent-ready/)
 - **91/100 · A** · [agent-skills-creator](https://github.com/mblode/agent-skills/blob/main/skills/agent-skills-creator/SKILL.md): Creates and improves portable Agent Skills using a validator and routing scenarios, with evidence-based decisions to keep, cut, merge, or retire skills. [Suede](https://skills.suedeai.ai/directory/mblode/agent-skills/agent-skills-creator/)
@@ -580,7 +590,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## mcollina/skills
 
-[Repository](https://github.com/mcollina/skills) · Publisher: [mcollina](https://github.com/mcollina) · [Suede AI listing](https://skills.suedeai.ai/directory/mcollina/skills/)
+[Repository](https://github.com/mcollina/skills) · Publisher: [mcollina](https://github.com/mcollina) · [Suede listing](https://skills.suedeai.ai/directory/mcollina/skills/)
 
 - **75/100 · C** · [init](https://github.com/mcollina/skills/blob/main/skills/init/SKILL.md): Creates, updates, or optimizes a repository's AGENTS.md file with minimal instructions on conventions, tooling quirks, and rules agents cannot infer from the code. [Suede](https://skills.suedeai.ai/directory/mcollina/skills/init/)
 - **74/100 · C** · [skill-optimizer](https://github.com/mcollina/skills/blob/main/skills/skill-optimizer/SKILL.md): Optimizes AI skills for activation, clarity, and cross-model reliability, including diagnosing weak skill uptake, shrinking context cost, and setting benchmark and release gates. [Suede](https://skills.suedeai.ai/directory/mcollina/skills/skill-optimizer/)
@@ -589,7 +599,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## mhattingpete/claude-skills-marketplace
 
-[Repository](https://github.com/mhattingpete/claude-skills-marketplace) · Publisher: [mhattingpete](https://github.com/mhattingpete) · [Suede AI listing](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/)
+[Repository](https://github.com/mhattingpete/claude-skills-marketplace) · Publisher: [mhattingpete](https://github.com/mhattingpete) · [Suede listing](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/)
 
 - **81/100 · B** · [ensemble-solving](https://github.com/mhattingpete/claude-skills-marketplace/blob/main/engineering-workflow-plugin/skills/ensemble-solving/SKILL.md): Generates multiple diverse solutions in parallel and selects the best, for architecture decisions, code generation with several valid approaches, or creative tasks. [Suede](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/ensemble-solving/)
 - **77/100 · C** · [conversation-analyzer](https://github.com/mhattingpete/claude-skills-marketplace/blob/main/productivity-skills-plugin/skills/conversation-analyzer/SKILL.md): Analyzes Claude Code conversation history to identify patterns, common mistakes, and opportunities for workflow improvement and automation. [Suede](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/conversation-analyzer/)
@@ -599,7 +609,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## microsoft/azure-skills
 
-[Repository](https://github.com/microsoft/azure-skills) · Publisher: [microsoft](https://github.com/microsoft) · [Suede AI listing](https://skills.suedeai.ai/directory/microsoft/azure-skills/)
+[Repository](https://github.com/microsoft/azure-skills) · Publisher: [microsoft](https://github.com/microsoft) · [Suede listing](https://skills.suedeai.ai/directory/microsoft/azure-skills/)
 
 - **86/100 · B** · [finetuning](https://github.com/microsoft/azure-skills/blob/main/skills/microsoft-foundry/finetuning/SKILL.md): Fine-tune models on Microsoft Foundry using SFT (supervised), DPO (preference), or RFT (reinforcement with graders). [Suede](https://skills.suedeai.ai/directory/microsoft/azure-skills/#finetuning)
 - **84/100 · B** · [entra-agent-id](https://github.com/microsoft/azure-skills/blob/main/skills/entra-agent-id/SKILL.md): Provision Microsoft Entra Agent Identity Blueprints, BlueprintPrincipals, and per-instance Agent Identities via Microsoft Graph, and configure OAuth 2.0 token exchange (fmi\_path, OBO, cross-tenant) including the Microsoft Entra SDK for… [Suede](https://skills.suedeai.ai/directory/microsoft/azure-skills/#entra-agent-id)
@@ -607,11 +617,20 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 - **71/100 · C** · [azure-aigateway](https://github.com/microsoft/azure-skills/blob/main/skills/azure-aigateway/SKILL.md): Configure Azure API Management as an AI Gateway for AI models, MCP tools, and agents. [Suede](https://skills.suedeai.ai/directory/microsoft/azure-skills/#azure-aigateway)
 - **71/100 · C** · [foundry-iq](https://github.com/microsoft/azure-skills/blob/main/.github/plugins/foundry-iq-skills/skills/foundry-iq/SKILL.md): Foundry IQ knowledge bases. [Suede](https://skills.suedeai.ai/directory/microsoft/azure-skills/#foundry-iq)
 
+<a id="mrhy7176--cloudgpu-agent-skills"></a>
+
+## mrhy7176/cloudgpu-agent-skills
+
+[Repository](https://github.com/mrhy7176/cloudgpu-agent-skills) · Publisher: [mrhy7176](https://github.com/mrhy7176) · [Suede listing](https://skills.suedeai.ai/directory/mrhy7176/cloudgpu-agent-skills/)
+
+- **77/100 · C** · [cloudgpu-lora-finetune](https://github.com/mrhy7176/cloudgpu-agent-skills/blob/main/cloudgpu-lora-finetune/SKILL.md): Plan a bounded LoRA or QLoRA training run on rented GPUs and export adapters, checkpoints and metrics. [Suede](https://skills.suedeai.ai/directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-lora-finetune/)
+- **77/100 · C** · [cloudgpu-open-model-inference](https://github.com/mrhy7176/cloudgpu-agent-skills/blob/main/cloudgpu-open-model-inference/SKILL.md): Run an approved open-model inference or evaluation workload with protected serving and explicit output retrieval. [Suede](https://skills.suedeai.ai/directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-open-model-inference/)
+
 <a id="muratcankoylan--agent-skills-for-context-engineering"></a>
 
 ## muratcankoylan/Agent-Skills-for-Context-Engineering
 
-[Repository](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) · Publisher: [muratcankoylan](https://github.com/muratcankoylan) · [Suede AI listing](https://skills.suedeai.ai/directory/muratcankoylan/agent-skills-for-context-engineering/)
+[Repository](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) · Publisher: [muratcankoylan](https://github.com/muratcankoylan) · [Suede listing](https://skills.suedeai.ai/directory/muratcankoylan/agent-skills-for-context-engineering/)
 
 - **87/100 · B** · [latent-briefing](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/blob/main/skills/latent-briefing/SKILL.md): This skill should be used when the user asks to "share memory between agents", "KV cache compaction for multi-agent", "orchestrator worker context", "latent briefing", "reduce worker tokens", "cross-agent memory without summarization",… [Suede](https://skills.suedeai.ai/directory/muratcankoylan/agent-skills-for-context-engineering/#latent-briefing)
 - **86/100 · B** · [advanced-evaluation](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/blob/main/skills/advanced-evaluation/SKILL.md): Guides advanced LLM evaluation, including LLM-as-judge systems, direct scoring, pairwise comparison, rubric calibration, evaluator bias mitigation, confidence scoring, and automated quality assessment. [Suede](https://skills.suedeai.ai/directory/muratcankoylan/agent-skills-for-context-engineering/advanced-evaluation/)
@@ -637,7 +656,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## Necmttn/ax
 
-[Repository](https://github.com/Necmttn/ax) · Publisher: [Necmttn](https://github.com/Necmttn) · [Suede AI listing](https://skills.suedeai.ai/directory/necmttn/ax/)
+[Repository](https://github.com/Necmttn/ax) · Publisher: [Necmttn](https://github.com/Necmttn) · [Suede listing](https://skills.suedeai.ai/directory/necmttn/ax/)
 
 - **86/100 · B** · [tune](https://github.com/Necmttn/ax/blob/main/skills/tune/SKILL.md): Reviews one coding session and proposes changes to the agent's hooks, checks, steering files, and tool access, filing each as an ax proposal. [Suede](https://skills.suedeai.ai/directory/necmttn/ax/tune/)
 - **84/100 · B** · [ax-extract-workflow](https://github.com/Necmttn/ax/blob/main/skills/ax-extract-workflow/SKILL.md): Reconstructs the workflow behind a past artifact by using ax to find relevant sessions and narrate the ordered skill arcs that produced it. [Suede](https://skills.suedeai.ai/directory/necmttn/ax/ax-extract-workflow/)
@@ -651,7 +670,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## NeoLabHQ/context-engineering-kit
 
-[Repository](https://github.com/NeoLabHQ/context-engineering-kit) · Publisher: [NeoLabHQ](https://github.com/NeoLabHQ) · [Suede AI listing](https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/)
+[Repository](https://github.com/NeoLabHQ/context-engineering-kit) · Publisher: [NeoLabHQ](https://github.com/NeoLabHQ) · [Suede listing](https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/)
 
 - **78/100 · C** · [subagent-driven-development](https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/subagent-driven-development/SKILL.md): Executes implementation plans by dispatching a fresh subagent per independent task, with code review between tasks to enable fast iteration with quality gates. [Suede](https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/subagent-driven-development/)
 - **78/100 · C** · [test-skill](https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/test-skill/SKILL.md): Tests skills before deployment by running a baseline without the skill, writing fixes for failures, and iterating to close loopholes under pressure. [Suede](https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/test-skill/)
@@ -686,7 +705,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## neondatabase/agent-skills
 
-[Repository](https://github.com/neondatabase/agent-skills) · Publisher: [neondatabase](https://github.com/neondatabase) · [Suede AI listing](https://skills.suedeai.ai/directory/neondatabase/agent-skills/)
+[Repository](https://github.com/neondatabase/agent-skills) · Publisher: [neondatabase](https://github.com/neondatabase) · [Suede listing](https://skills.suedeai.ai/directory/neondatabase/agent-skills/)
 
 - **79/100 · C** · [neon-ai-gateway](https://github.com/neondatabase/agent-skills/blob/main/skills/neon-ai-gateway/SKILL.md): One API and one credential for frontier and open-source LLMs and embedding models, built into your Neon branch and powered by Databricks. [Suede](https://skills.suedeai.ai/directory/neondatabase/agent-skills/#neon-ai-gateway)
 
@@ -694,7 +713,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## nowork-studio/NotFair
 
-[Repository](https://github.com/nowork-studio/NotFair) · Publisher: [nowork-studio](https://github.com/nowork-studio) · [Suede AI listing](https://skills.suedeai.ai/directory/nowork-studio/notfair/)
+[Repository](https://github.com/nowork-studio/NotFair) · Publisher: [nowork-studio](https://github.com/nowork-studio) · [Suede listing](https://skills.suedeai.ai/directory/nowork-studio/notfair/)
 
 - **74/100 · C** · [gemini](https://github.com/nowork-studio/NotFair/blob/main/skills/gemini/SKILL.md): Gets a cross-model second opinion from Google Gemini by reviewing changes, stress-testing them, or answering questions about Google Ads, SEO, or implementation. [Suede](https://skills.suedeai.ai/directory/nowork-studio/notfair/gemini/)
 
@@ -702,7 +721,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## NVIDIA/skills
 
-[Repository](https://github.com/NVIDIA/skills) · Publisher: [NVIDIA](https://github.com/NVIDIA) · [Suede AI listing](https://skills.suedeai.ai/directory/nvidia/skills/)
+[Repository](https://github.com/NVIDIA/skills) · Publisher: [NVIDIA](https://github.com/NVIDIA) · [Suede listing](https://skills.suedeai.ai/directory/nvidia/skills/)
 
 - **92/100 · A** · [tao-run-deft-aoi-cosmos3](https://github.com/NVIDIA/skills/blob/main/skills/tao-run-deft-aoi-cosmos3/SKILL.md): Run the disk-backed DEFT AOI improvement loop for NVIDIA Cosmos Reason 3 / Cosmos3 models, using Nano by default and Edge or Super when explicitly requested: evaluate the base model on Proxy and frozen Benchmark splits, mine real image… [Suede](https://skills.suedeai.ai/directory/nvidia/skills/#tao-run-deft-aoi-cosmos3)
 - **92/100 · A** · [tao-run-deft-object-detection](https://github.com/NVIDIA/skills/blob/main/skills/tao-run-deft-object-detection/SKILL.md): Runs the DEFT data augmentation loop for Grounding DINO object detection, with baseline inference, gap analysis, unique-neighbor mining, retraining, and source pool preparation. [Suede](https://skills.suedeai.ai/directory/nvidia/skills/tao-run-deft-object-detection/)
@@ -882,7 +901,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## obra/superpowers
 
-[Repository](https://github.com/obra/superpowers) · Publisher: [obra](https://github.com/obra) · [Suede AI listing](https://skills.suedeai.ai/directory/obra/superpowers/)
+[Repository](https://github.com/obra/superpowers) · Publisher: [obra](https://github.com/obra) · [Suede listing](https://skills.suedeai.ai/directory/obra/superpowers/)
 
 - **90/100 · A** · [diagnosing-superpowers](https://github.com/obra/superpowers/blob/main/skills/diagnosing-superpowers/SKILL.md): Diagnoses why a superpowers session went wrong, such as repeated work or ignored plans, and helps build a bug report for maintainers. [Suede](https://skills.suedeai.ai/directory/obra/superpowers/diagnosing-superpowers/)
 - **84/100 · B** · [using-superpowers](https://github.com/obra/superpowers/blob/main/skills/using-superpowers/SKILL.md): Establishes how to find and use skills at the start of any conversation, requiring skill invocation before any response, including clarifying questions. [Suede](https://skills.suedeai.ai/directory/obra/superpowers/using-superpowers/)
@@ -898,7 +917,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## obra/superpowers-lab
 
-[Repository](https://github.com/obra/superpowers-lab) · Publisher: [obra](https://github.com/obra) · [Suede AI listing](https://skills.suedeai.ai/directory/obra/superpowers-lab/)
+[Repository](https://github.com/obra/superpowers-lab) · Publisher: [obra](https://github.com/obra) · [Suede listing](https://skills.suedeai.ai/directory/obra/superpowers-lab/)
 
 - **64/100 · D** · [mcp-cli](https://github.com/obra/superpowers-lab/blob/main/skills/mcp-cli/SKILL.md): Use MCP servers on-demand via the mcp CLI tool - discover tools, resources, and prompts without polluting context with pre-loaded MCP integrations [Suede](https://skills.suedeai.ai/directory/obra/superpowers-lab/#mcp-cli)
 
@@ -906,7 +925,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## ohad6k/emulo
 
-[Repository](https://github.com/ohad6k/emulo) · Publisher: [ohad6k](https://github.com/ohad6k) · [Suede AI listing](https://skills.suedeai.ai/directory/ohad6k/emulo/)
+[Repository](https://github.com/ohad6k/emulo) · Publisher: [ohad6k](https://github.com/ohad6k) · [Suede listing](https://skills.suedeai.ai/directory/ohad6k/emulo/)
 
 - **77/100 · C** · [work](https://github.com/ohad6k/emulo/blob/main/skills/work/SKILL.md): Guides execution, debugging, verification, planning, and shipping so the work follows the user's Emulo working profile, excluding design, marketing writing, and Emulo setup. [Suede](https://skills.suedeai.ai/directory/ohad6k/emulo/work/)
 - **75/100 · C** · [mine](https://github.com/ohad6k/emulo/blob/main/skills/mine/SKILL.md): Runs, sets up, updates, re-mines, or deepens Emulo from the user's real local AI coding-session history, only when explicitly asked. [Suede](https://skills.suedeai.ai/directory/ohad6k/emulo/mine/)
@@ -915,7 +934,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## openai/skills
 
-[Repository](https://github.com/openai/skills) · Publisher: [openai](https://github.com/openai) · [Suede AI listing](https://skills.suedeai.ai/directory/openai/skills/)
+[Repository](https://github.com/openai/skills) · Publisher: [openai](https://github.com/openai) · [Suede listing](https://skills.suedeai.ai/directory/openai/skills/)
 
 - **79/100 · C** · [openai-docs](https://github.com/openai/skills/blob/main/skills/.curated/openai-docs/SKILL.md): Use when the user asks how to build with OpenAI products or APIs, asks about Codex itself or choosing Codex surfaces, needs up-to-date official documentation with citations, help choosing the latest model for a use case, or model… [Suede](https://skills.suedeai.ai/directory/openai/skills/#openai-docs)
 - **69/100 · D** · [migrate-to-codex](https://github.com/openai/skills/blob/main/skills/.curated/migrate-to-codex/SKILL.md): Migrate supported instruction files, skills, agents, and MCP config into Codex project and global files. [Suede](https://skills.suedeai.ai/directory/openai/skills/#migrate-to-codex)
@@ -925,7 +944,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## Orchestra-Research/AI-Research-SKILLs
 
-[Repository](https://github.com/Orchestra-Research/AI-Research-SKILLs) · Publisher: [Orchestra-Research](https://github.com/Orchestra-Research) · [Suede AI listing](https://skills.suedeai.ai/directory/orchestra-research/ai-research-skills/)
+[Repository](https://github.com/Orchestra-Research/AI-Research-SKILLs) · Publisher: [Orchestra-Research](https://github.com/Orchestra-Research) · [Suede listing](https://skills.suedeai.ai/directory/orchestra-research/ai-research-skills/)
 
 - **77/100 · C** · [clip](https://github.com/Orchestra-Research/AI-Research-SKILLs/blob/main/18-multimodal/clip/SKILL.md): OpenAI's model connecting vision and language. [Suede](https://skills.suedeai.ai/directory/orchestra-research/ai-research-skills/#clip)
 - **77/100 · C** · [gptq](https://github.com/Orchestra-Research/AI-Research-SKILLs/blob/main/10-optimization/gptq/SKILL.md): Post-training 4-bit quantization for LLMs with minimal accuracy loss. [Suede](https://skills.suedeai.ai/directory/orchestra-research/ai-research-skills/#gptq)
@@ -995,7 +1014,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## product-on-purpose/pm-skills
 
-[Repository](https://github.com/product-on-purpose/pm-skills) · Publisher: [product-on-purpose](https://github.com/product-on-purpose) · [Suede AI listing](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/)
+[Repository](https://github.com/product-on-purpose/pm-skills) · Publisher: [product-on-purpose](https://github.com/product-on-purpose) · [Suede listing](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/)
 
 - **83/100 · B** · [utility-pm-skill-auditor](https://github.com/product-on-purpose/pm-skills/blob/main/skills/utility-pm-skill-auditor/SKILL.md): Run a repo-wide cross-cutting governance audit via the pm-skill-auditor sub-agent. [Suede](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/#utility-pm-skill-auditor)
 - **83/100 · B** · [utility-pm-skill-iterate](https://github.com/product-on-purpose/pm-skills/blob/main/skills/utility-pm-skill-iterate/SKILL.md): Applies targeted improvements to an existing pm-skills skill based on feedback or validation reports, previews changes, writes on confirmation, and suggests a version bump. [Suede](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/utility-pm-skill-iterate/)
@@ -1009,7 +1028,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## Qiuner/birdview
 
-[Repository](https://github.com/Qiuner/birdview) · Publisher: [Qiuner](https://github.com/Qiuner) · [Suede AI listing](https://skills.suedeai.ai/directory/qiuner/birdview/)
+[Repository](https://github.com/Qiuner/birdview) · Publisher: [Qiuner](https://github.com/Qiuner) · [Suede listing](https://skills.suedeai.ai/directory/qiuner/birdview/)
 
 - **73/100 · C** · [birdview-compatibility](https://github.com/Qiuner/birdview/blob/main/compatibility-audit/SKILL.md): Audit the installed AI skill environment for duplicate installations, broad triggers and possible instruction conflicts. [Suede](https://skills.suedeai.ai/directory/qiuner/birdview/#birdview-compatibility)
 
@@ -1017,7 +1036,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## redis/agent-skills
 
-[Repository](https://github.com/redis/agent-skills) · Publisher: [redis](https://github.com/redis) · [Suede AI listing](https://skills.suedeai.ai/directory/redis/agent-skills/)
+[Repository](https://github.com/redis/agent-skills) · Publisher: [redis](https://github.com/redis) · [Suede listing](https://skills.suedeai.ai/directory/redis/agent-skills/)
 
 - **75/100 · C** · [iris-development](https://github.com/redis/agent-skills/blob/main/skills/iris-development/SKILL.md): Guides work with the Iris Redis Agent Memory data plane on Redis Cloud, covering session events, long-term memories, store configuration, and memory promotion. [Suede](https://skills.suedeai.ai/directory/redis/agent-skills/iris-development/)
 - **75/100 · C** · [redis-semantic-cache](https://github.com/redis/agent-skills/blob/main/skills/redis-semantic-cache/SKILL.md): Guides semantic caching of LLM responses with Redis LangCache on Redis Cloud, including search and set calls, similarity threshold tuning, and per-task caches. [Suede](https://skills.suedeai.ai/directory/redis/agent-skills/redis-semantic-cache/)
@@ -1026,7 +1045,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## replicate/skills
 
-[Repository](https://github.com/replicate/skills) · Publisher: [replicate](https://github.com/replicate) · [Suede AI listing](https://skills.suedeai.ai/directory/replicate/skills/)
+[Repository](https://github.com/replicate/skills) · Publisher: [replicate](https://github.com/replicate) · [Suede listing](https://skills.suedeai.ai/directory/replicate/skills/)
 
 - **71/100 · C** · [build-models](https://github.com/replicate/skills/blob/main/skills/build-models/SKILL.md): Packages and builds custom AI models with Cog for deployment on Replicate, including cog.yaml, predict.py, model inputs and outputs, and Docker images. [Suede](https://skills.suedeai.ai/directory/replicate/skills/build-models/)
 - **60/100 · D** · [run-models](https://github.com/replicate/skills/blob/main/skills/run-models/SKILL.md): Run AI models on Replicate via predictions, webhooks, and streaming. [Suede](https://skills.suedeai.ai/directory/replicate/skills/#run-models)
@@ -1037,7 +1056,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## resend/resend-skills
 
-[Repository](https://github.com/resend/resend-skills) · Publisher: [resend](https://github.com/resend) · [Suede AI listing](https://skills.suedeai.ai/directory/resend/resend-skills/)
+[Repository](https://github.com/resend/resend-skills) · Publisher: [resend](https://github.com/resend) · [Suede listing](https://skills.suedeai.ai/directory/resend/resend-skills/)
 
 - **86/100 · B** · [agent-email-inbox](https://github.com/resend/resend-skills/blob/main/skills/agent-email-inbox/SKILL.md): Guides building email-triggered systems like AI agent inboxes, using sender allowlists, content filtering, and sandboxed processing to keep untrusted email from controlling the system. [Suede](https://skills.suedeai.ai/directory/resend/resend-skills/agent-email-inbox/)
 
@@ -1045,7 +1064,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## sanjay3290/ai-skills
 
-[Repository](https://github.com/sanjay3290/ai-skills) · Publisher: [sanjay3290](https://github.com/sanjay3290) · [Suede AI listing](https://skills.suedeai.ai/directory/sanjay3290/ai-skills/)
+[Repository](https://github.com/sanjay3290/ai-skills) · Publisher: [sanjay3290](https://github.com/sanjay3290) · [Suede listing](https://skills.suedeai.ai/directory/sanjay3290/ai-skills/)
 
 - **87/100 · B** · [grok-build](https://github.com/sanjay3290/ai-skills/blob/main/skills/grok-build/SKILL.md): Delegates well-specified implementation tasks to xAI's Grok Build CLI running headlessly while the assistant writes task specs, reviews every diff, and owns the result. [Suede](https://skills.suedeai.ai/directory/sanjay3290/ai-skills/grok-build/)
 - **87/100 · B** · [manus](https://github.com/sanjay3290/ai-skills/blob/main/skills/manus/SKILL.md): Delegates complex, long-running tasks to the Manus AI agent for autonomous execution, such as deep web research, market analysis, product comparisons, and stock analysis. [Suede](https://skills.suedeai.ai/directory/sanjay3290/ai-skills/manus/)
@@ -1055,7 +1074,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## serpapi/skills
 
-[Repository](https://github.com/serpapi/skills) · Publisher: [serpapi](https://github.com/serpapi) · [Suede AI listing](https://skills.suedeai.ai/directory/serpapi/skills/)
+[Repository](https://github.com/serpapi/skills) · Publisher: [serpapi](https://github.com/serpapi) · [Suede listing](https://skills.suedeai.ai/directory/serpapi/skills/)
 
 - **63/100 · D** · [agent-usability-test](https://github.com/serpapi/skills/blob/master/skills/agent-usability-test/SKILL.md): Test whether agents can discover and use your tool — not whether agents are capable. [Suede](https://skills.suedeai.ai/directory/serpapi/skills/#agent-usability-test)
 
@@ -1063,7 +1082,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## stripe/ai
 
-[Repository](https://github.com/stripe/ai) · Publisher: [stripe](https://github.com/stripe) · [Suede AI listing](https://skills.suedeai.ai/directory/stripe/ai/)
+[Repository](https://github.com/stripe/ai) · Publisher: [stripe](https://github.com/stripe) · [Suede listing](https://skills.suedeai.ai/directory/stripe/ai/)
 
 - **80/100 · B** · [stripe-pay](https://github.com/stripe/ai/blob/main/skills/stripe-pay/SKILL.md): Helps users send funds to another Stripe business, transfer money to a Stripe Profile handle or network ID, or ask whether an agent can pay a Stripe business. [Suede](https://skills.suedeai.ai/directory/stripe/ai/#stripe-pay)
 - **74/100 · C** · [stripe-docs](https://github.com/stripe/ai/blob/main/skills/stripe-docs/SKILL.md): Use when the user or agent needs to read, search, or look up Stripe documentation or API reference. [Suede](https://skills.suedeai.ai/directory/stripe/ai/#stripe-docs)
@@ -1072,7 +1091,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## swarmclawai/swarmclaw
 
-[Repository](https://github.com/swarmclawai/swarmclaw) · Publisher: [swarmclawai](https://github.com/swarmclawai) · [Suede AI listing](https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/)
+[Repository](https://github.com/swarmclawai/swarmclaw) · Publisher: [swarmclawai](https://github.com/swarmclawai) · [Suede listing](https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/)
 
 - **79/100 · C** · [skill-creator](https://github.com/swarmclawai/swarmclaw/blob/main/skills/skill-creator/SKILL.md): Creates, edits, improves, and audits skills for SwarmClaw agents, including restructuring a skill directory or tidying an existing SKILL.md file. [Suede](https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/skill-creator/)
 - **75/100 · C** · [coding-agent](https://github.com/swarmclawai/swarmclaw/blob/main/skills/coding-agent/SKILL.md): Delegates coding tasks to external coding agents such as Claude Code, Codex, Pi, and OpenCode via shell, including new features, PR reviews, and refactoring. [Suede](https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/coding-agent/)
@@ -1083,7 +1102,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## trailofbits/skills
 
-[Repository](https://github.com/trailofbits/skills) · Publisher: [trailofbits](https://github.com/trailofbits) · [Suede AI listing](https://skills.suedeai.ai/directory/trailofbits/skills/)
+[Repository](https://github.com/trailofbits/skills) · Publisher: [trailofbits](https://github.com/trailofbits) · [Suede listing](https://skills.suedeai.ai/directory/trailofbits/skills/)
 
 - **94/100 · A** · [let-fate-decide](https://github.com/trailofbits/skills/blob/main/plugins/let-fate-decide/skills/let-fate-decide/SKILL.md): Draws a Tarot spread to inject entropy into planning when prompts are vague or casually delegated, and interprets the spread to guide next steps. [Suede](https://skills.suedeai.ai/directory/trailofbits/skills/let-fate-decide/)
 - **93/100 · A** · [skill-improver](https://github.com/trailofbits/skills/blob/main/plugins/code-improver/skills/skill-improver/SKILL.md): Runs an autonomous review-and-fix improvement loop over a Claude Code skill until a review comes back clean, with a cross-round findings ledger, escalation when fixes stop converging, and a mechanical scope guard. [Suede](https://skills.suedeai.ai/directory/trailofbits/skills/#skill-improver)
@@ -1096,7 +1115,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## tronghieu/agent-skills
 
-[Repository](https://github.com/tronghieu/agent-skills) · Publisher: [tronghieu](https://github.com/tronghieu) · [Suede AI listing](https://skills.suedeai.ai/directory/tronghieu/agent-skills/)
+[Repository](https://github.com/tronghieu/agent-skills) · Publisher: [tronghieu](https://github.com/tronghieu) · [Suede listing](https://skills.suedeai.ai/directory/tronghieu/agent-skills/)
 
 - **90/100 · A** · [bmad-run-inspector](https://github.com/tronghieu/agent-skills/blob/main/skills/bmad-run-inspector/SKILL.md): Inspects and explains bmad-loop run artifacts for live health checks and post-run forensics, such as why a story failed or where tokens went. [Suede](https://skills.suedeai.ai/directory/tronghieu/agent-skills/bmad-run-inspector/)
 - **84/100 · B** · [system-prompt-creator](https://github.com/tronghieu/agent-skills/blob/main/skills/system-prompt-creator/SKILL.md): Create high-quality, model-aware system prompts for any LLM (Claude, GPT, Gemini, open-source, etc.). [Suede](https://skills.suedeai.ai/directory/tronghieu/agent-skills/#system-prompt-creator)
@@ -1105,7 +1124,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## unbrowse-ai/unbrowse
 
-[Repository](https://github.com/unbrowse-ai/unbrowse) · Publisher: [unbrowse-ai](https://github.com/unbrowse-ai) · [Suede AI listing](https://skills.suedeai.ai/directory/unbrowse-ai/unbrowse/unbrowse/)
+[Repository](https://github.com/unbrowse-ai/unbrowse) · Publisher: [unbrowse-ai](https://github.com/unbrowse-ai) · [Suede listing](https://skills.suedeai.ai/directory/unbrowse-ai/unbrowse/unbrowse/)
 
 - **83/100 · B** · [unbrowse](https://github.com/unbrowse-ai/unbrowse/blob/main/plugins/claude-code/skills/unbrowse/SKILL.md): Searches and calls websites through Unbrowse's API or remote MCP, reusing indexed site tools, reading pages, and learning missing routes in its cloud browser. [Suede](https://skills.suedeai.ai/directory/unbrowse-ai/unbrowse/unbrowse/)
 
@@ -1113,7 +1132,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## veniceai/skills
 
-[Repository](https://github.com/veniceai/skills) · Publisher: [veniceai](https://github.com/veniceai) · [Suede AI listing](https://skills.suedeai.ai/directory/veniceai/skills/)
+[Repository](https://github.com/veniceai/skills) · Publisher: [veniceai](https://github.com/veniceai) · [Suede listing](https://skills.suedeai.ai/directory/veniceai/skills/)
 
 - **80/100 · B** · [venice-text-routing](https://github.com/veniceai/skills/blob/main/skills/venice-text-routing/SKILL.md): Routes a prompt to the right Venice text model based on privacy tier, modality, capability, uncensored needs, and cost, when a local agent escalates. [Suede](https://skills.suedeai.ai/directory/veniceai/skills/venice-text-routing/)
 - **78/100 · C** · [venice-models](https://github.com/veniceai/skills/blob/main/skills/venice-models/SKILL.md): Discovers Venice models, their capabilities, constraints, and pricing through the models endpoints, so the right model can be picked programmatically. [Suede](https://skills.suedeai.ai/directory/veniceai/skills/venice-models/)
@@ -1126,7 +1145,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## vercel-labs/skills
 
-[Repository](https://github.com/vercel-labs/skills) · Publisher: [vercel-labs](https://github.com/vercel-labs) · [Suede AI listing](https://skills.suedeai.ai/directory/vercel-labs/skills/find-skills/)
+[Repository](https://github.com/vercel-labs/skills) · Publisher: [vercel-labs](https://github.com/vercel-labs) · [Suede listing](https://skills.suedeai.ai/directory/vercel-labs/skills/find-skills/)
 
 - **81/100 · B** · [find-skills](https://github.com/vercel-labs/skills/blob/main/skills/find-skills/SKILL.md): Helps users discover and install agent skills when they ask how to do something or look for a skill that extends capabilities. [Suede](https://skills.suedeai.ai/directory/vercel-labs/skills/find-skills/)
 
@@ -1134,7 +1153,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## VoltAgent/skills
 
-[Repository](https://github.com/VoltAgent/skills) · Publisher: [VoltAgent](https://github.com/VoltAgent) · [Suede AI listing](https://skills.suedeai.ai/directory/voltagent/skills/)
+[Repository](https://github.com/VoltAgent/skills) · Publisher: [VoltAgent](https://github.com/VoltAgent) · [Suede listing](https://skills.suedeai.ai/directory/voltagent/skills/)
 
 - **68/100 · D** · [create-voltagent](https://github.com/VoltAgent/skills/blob/main/skills/create-voltagent/SKILL.md): Guides creating AI agent projects with the VoltAgent framework, using either CLI setup or manual bootstrapping. [Suede](https://skills.suedeai.ai/directory/voltagent/skills/create-voltagent/)
 - **62/100 · D** · [voltagent-docs-bundle](https://github.com/VoltAgent/skills/blob/main/skills/voltagent-docs-bundle/SKILL.md): Looks up VoltAgent documentation embedded in node\_modules for version-matched API signatures, guides, and examples. [Suede](https://skills.suedeai.ai/directory/voltagent/skills/voltagent-docs-bundle/)
@@ -1144,7 +1163,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## ykdojo/claude-code-tips
 
-[Repository](https://github.com/ykdojo/claude-code-tips) · Publisher: [ykdojo](https://github.com/ykdojo) · [Suede AI listing](https://skills.suedeai.ai/directory/ykdojo/claude-code-tips/)
+[Repository](https://github.com/ykdojo/claude-code-tips) · Publisher: [ykdojo](https://github.com/ykdojo) · [Suede listing](https://skills.suedeai.ai/directory/ykdojo/claude-code-tips/)
 
 - **65/100 · D** · [review-claudemd](https://github.com/ykdojo/claude-code-tips/blob/main/skills/review-claudemd/SKILL.md): Review recent conversations to find improvements for CLAUDE.md files. [Suede](https://skills.suedeai.ai/directory/ykdojo/claude-code-tips/#review-claudemd) · License: All rights reserved (review terms)
 - **64/100 · D** · [half-clone](https://github.com/ykdojo/claude-code-tips/blob/main/skills/half-clone/SKILL.md): Clone the later half of the current conversation, discarding earlier context to reduce token usage while preserving recent work. [Suede](https://skills.suedeai.ai/directory/ykdojo/claude-code-tips/#half-clone) · License: All rights reserved (review terms)
@@ -1155,7 +1174,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## yusufkaraaslan/Skill\_Seekers
 
-[Repository](https://github.com/yusufkaraaslan/Skill_Seekers) · Publisher: [yusufkaraaslan](https://github.com/yusufkaraaslan) · [Suede AI listing](https://skills.suedeai.ai/directory/yusufkaraaslan/skill-seekers/skill-builder/)
+[Repository](https://github.com/yusufkaraaslan/Skill_Seekers) · Publisher: [yusufkaraaslan](https://github.com/yusufkaraaslan) · [Suede listing](https://skills.suedeai.ai/directory/yusufkaraaslan/skill-seekers/skill-builder/)
 
 - **81/100 · B** · [skill-builder](https://github.com/yusufkaraaslan/Skill_Seekers/blob/development/distribution/claude-plugin/skills/skill-builder/SKILL.md): Detects source types automatically and builds AI skills with Skill Seekers from documentation, repos, PDFs, videos, or other knowledge sources. [Suede](https://skills.suedeai.ai/directory/yusufkaraaslan/skill-seekers/skill-builder/)
 
@@ -1163,7 +1182,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## yzfly/Mind-Cloning-Engineering
 
-[Repository](https://github.com/yzfly/Mind-Cloning-Engineering) · Publisher: [yzfly](https://github.com/yzfly) · [Suede AI listing](https://skills.suedeai.ai/directory/yzfly/mind-cloning-engineering/)
+[Repository](https://github.com/yzfly/Mind-Cloning-Engineering) · Publisher: [yzfly](https://github.com/yzfly) · [Suede listing](https://skills.suedeai.ai/directory/yzfly/mind-cloning-engineering/)
 
 - **61/100 · D** · [mind-clone](https://github.com/yzfly/Mind-Cloning-Engineering/blob/main/skills/mind-clone/SKILL.md): Activate a Cognitive Digital Twin. [Suede](https://skills.suedeai.ai/directory/yzfly/mind-cloning-engineering/#mind-clone)
 
@@ -1171,13 +1190,13 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 ## zxkane/aws-skills
 
-[Repository](https://github.com/zxkane/aws-skills) · Publisher: [zxkane](https://github.com/zxkane) · [Suede AI listing](https://skills.suedeai.ai/directory/zxkane/aws-skills/)
+[Repository](https://github.com/zxkane/aws-skills) · Publisher: [zxkane](https://github.com/zxkane) · [Suede listing](https://skills.suedeai.ai/directory/zxkane/aws-skills/)
 
 - **83/100 · B** · [aws-agentic-ai](https://github.com/zxkane/aws-skills/blob/main/plugins/aws-agentic-ai/skills/aws-agentic-ai/SKILL.md): Guides deploying and managing AI agents on AWS Bedrock AgentCore, covering Gateway, Runtime, Memory, Identity, Observability, Evaluations, MCP tool integration, and governance workflows. [Suede](https://skills.suedeai.ai/directory/zxkane/aws-skills/aws-agentic-ai/)
 - **80/100 · B** · [aws-mcp-setup](https://github.com/zxkane/aws-skills/blob/main/plugins/aws-common/skills/aws-mcp-setup/SKILL.md): Configures AWS MCP servers for documentation search and API access, covering both the full AWS MCP Server and the lightweight Documentation MCP. [Suede](https://skills.suedeai.ai/directory/zxkane/aws-skills/aws-mcp-setup/)
 
 ---
 
-**Run a team of agents.** Suede AI Agent Studio builds multi-agent automation for businesses. [suedeai.app](https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agent-studio) Listed here? [Add your badge](../README.md#add-your-badge).
+**Run a team of agents.** Suede Agent Studio builds multi-agent automation for businesses. [suedeai.app](https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agent-studio) Listed here? [Add your badge](../README.md#add-your-badge).
 
 [Awesome Everything](../README.md) · [Compare scores](../README.md#compare-099-quality-scores) · [Publishers](../publishers.md) · [Featured projects](../featured.md) · [Guides](../README.md#guides) · [Contribute](../CONTRIBUTING.md) · [Search by score](https://skills.suedeai.ai/directory/?sort=score)

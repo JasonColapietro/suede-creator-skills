@@ -4,9 +4,12 @@ import fs from 'node:fs';
 
 const read = (file) => fs.readFileSync(new URL('../' + file, import.meta.url), 'utf8');
 const data = JSON.parse(read('directory/skills.json'));
+const updatesPath = 'directory/intake/first-party-listing-updates.json';
+const updates = new Map((fs.existsSync(new URL('../' + updatesPath, import.meta.url)) ? JSON.parse(read(updatesPath)) : [])
+  .map(update => [`${update.repository}/${update.listing.slug}`, update]));
 const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 const escape = (s) => s.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
-const groups = Map.groupBy(data.skills, (s) => s.repo);
+const groups = Map.groupBy(data.skills.map(s => updates.get(`${s.repo}/${s.slug}`)?.listing || s), (s) => s.repo);
 const published = [...groups].flatMap(([repo, skills]) => {
   const route = `directory/${repo.split('/').map(slug).join('/')}/`;
   try { return [{ repo, skills, route, html: read('docs/' + route + 'index.html') }]; }
@@ -33,7 +36,7 @@ test('small collections expose every complete description, exact score evidence 
       assert.ok(html.includes(`id="choice-${skill.slug}"`), `${repo}: no decision card for ${skill.slug}`);
       assert.ok(html.includes(`${skill.score}/100`));
       assert.ok(html.includes(`>${skill.slug}/report.json</a>`) || html.includes(`href="${skill.slug}/report.json"`), `${repo}: no exact report`);
-      const rev = data.repos[repo].commit_sha;
+      const rev = updates.get(`${repo}/${skill.slug}`)?.source_revision || data.repos[repo].commit_sha;
       if (rev) assert.ok(html.includes(`/blob/${rev}/`), `${repo}: source revision absent`);
     }
     // Generated HTML must not introduce duplicate controls or fragment targets.
@@ -76,7 +79,8 @@ test('collection downloads cover every listed skill with exact evidence and usab
       assert.ok(record, `${repo}/${s.slug}`);
       assert.equal(record.description, s.description);
       assert.equal(record.quality.score, s.score);
-      assert.equal(record.source.revision, data.repos[repo].commit_sha || null);
+      const update = updates.get(`${repo}/${s.slug}`);
+      assert.equal(record.source.revision, update?.source_revision || data.repos[repo].commit_sha || null);
       assert.ok(record.report_url.endsWith('/' + s.slug + '/report.json'));
       if (/proprietary|all rights reserved/i.test(s.license)) assert.equal(record.install.skills_cli, null);
       else {
@@ -85,6 +89,7 @@ test('collection downloads cover every listed skill with exact evidence and usab
         const target = argument.startsWith("'") ? argument.slice(1, -1).replaceAll("'\\''", "'") : argument;
         assert.ok(target.startsWith('https://github.com/' + repo), `${repo}: wrong source repository`);
         if (s.dir !== '.') assert.ok(target.endsWith('/' + s.dir), `${repo}: wrong skill folder`);
+        if (update) assert.equal(target, `https://github.com/${repo}/tree/${update.source_branch || 'main'}/${s.dir}`);
       }
     }
   }

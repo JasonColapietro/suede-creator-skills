@@ -235,10 +235,10 @@ test("listings keep the third-party publisher credit", () => {
   }
 });
 
-test("the hub declares Suede AI with sameAs, and the methodology names its author", () => {
+test("the hub declares Suede with sameAs, and the methodology names its author", () => {
   const hub = parsed(byRel.get("directory/"))[0];
   assert.equal(hub.publisher["@id"], "https://suedeai.ai/#organization");
-  assert.equal(hub.publisher.name, "Suede AI");
+  assert.equal(hub.publisher.name, "Suede");
   for (const u of ["https://www.wikidata.org/wiki/Q141169484", "https://suedeai.org/", "https://github.com/Suede-AI"]) assert.ok(hub.publisher.sameAs.includes(u), `hub sameAs lacks ${u}`);
   for (const rel of ["directory/", "directory/methodology/"]) {
     const graph = parsed(byRel.get(rel));
@@ -356,7 +356,7 @@ test("robots.txt allows search, answer and user-triggered AI fetchers", () => {
 test("llms.txt points answer engines at every category directory", () => {
   const llms = fs.readFileSync(path.join(docs, "llms.txt"), "utf8");
   for (const c of categories) assert.ok(llms.includes(`](${BASE}/directory/${c.slug}/)`), `llms.txt lacks ${c.slug}`);
-  assert.doesNotMatch(llms, /Suede Labs/);
+  assert.doesNotMatch(llms.replace("Suede was formerly known as Suede Labs AI and Suede AI.", ""), /Suede Labs|Suede AI\b/);
 });
 
 test("the 404 page stays out of the index", () => {

@@ -1,6 +1,6 @@
 // Page-template guarantees for SuedeAI.directory skill, task and category
 // pages: the article in task Q&A questions, the skill page title template,
-// one Suede AI call-to-action aside below each skill page's own content, and
+// one Suede call-to-action aside below each skill page's own content, and
 // category ItemLists that match the table they describe. Reads the committed
 // output in docs/directory/. Joined to `npm run test:directory` through an
 // import in tests/test_directory_seo.mjs, since package.json is pinned by the
@@ -86,7 +86,7 @@ test("skill page titles read '<skill>: Claude Code Skill by <Publisher> (<score>
   assert.match(title(pdf), /^pdf: Claude Code Skill by Anthropic \(\d+\/100\)$/);
 });
 
-test("skill pages carry one Suede AI aside, below the listing's own content", () => {
+test("skill pages carry one Suede aside, below the listing's own content", () => {
   for (const { rel } of featuredRels) {
     const html = read(rel);
     const main = html.match(/<main\b[\s\S]*<\/main>/)[0];
@@ -97,7 +97,7 @@ test("skill pages carry one Suede AI aside, below the listing's own content", ()
     // The publisher note joined the aside; no standalone publisher panel remains.
     assert.match(aside, /class="svc-publisher" data-cta-placement="publisher-claim"/, `${rel}: publisher note`);
     assert.doesNotMatch(main, /<aside class="panel cta-placement"/, `${rel}: standalone placement panel`);
-    // Every Suede AI link sits in the aside, after the listing's own sections.
+    // Every Suede link sits in the aside, after the listing's own sections.
     const before = main.slice(0, asides[0].index);
     assert.doesNotMatch(before, /data-cta="|suedeai\.(?:agency|app)\//, `${rel}: call to action above the aside`);
     for (const id of ["facts-title", "install-title", "author-title", "check-title", "cited-title"]) {

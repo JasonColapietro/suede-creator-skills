@@ -1,22 +1,22 @@
 {
   "snapshot": "2026-10-22",
-  "install_snapshot": "2026-11-15",
-  "scope": "Third-party listed skills; Suede AI excluded",
-  "total": 3827,
+  "install_snapshot": "2026-11-22",
+  "scope": "Third-party listed skills; Suede excluded",
+  "total": 3839,
   "grades": {
     "A": 120,
-    "B": 1604,
-    "C": 1379,
-    "D": 724
+    "B": 1605,
+    "C": 1387,
+    "D": 727
   },
   "cost_lanes": [
     [
       "free-open-source",
-      3412
+      3418
     ],
     [
       "free-with-service",
-      309
+      314
     ],
     [
       "noncommercial",
@@ -24,25 +24,25 @@
     ],
     [
       "restricted",
-      26
+      27
     ]
   ],
   "categories": [
     [
       "ai-agents-llm",
-      599
+      602
     ],
     [
       "developer-tools",
-      544
+      545
     ],
     [
       "devops-cloud",
-      359
+      360
     ],
     [
       "marketing-seo",
-      310
+      311
     ],
     [
       "product-management",
@@ -50,11 +50,11 @@
     ],
     [
       "productivity-knowledge",
-      233
+      235
     ],
     [
       "media-creative",
-      231
+      233
     ],
     [
       "science-research",
@@ -82,7 +82,7 @@
     ],
     [
       "writing-content",
-      112
+      114
     ],
     [
       "code-review-quality",
@@ -97,56 +97,56 @@
     {
       "name": "Curated-list citations",
       "max": 7,
-      "missing": 3609,
-      "lost": 17617
+      "missing": 3620,
+      "lost": 17693
     },
     {
       "name": "Boundary clause",
       "max": 4,
-      "missing": 3315,
-      "lost": 13260
+      "missing": 3327,
+      "lost": 13308
     },
     {
       "name": "Structural checks",
       "max": 56,
-      "missing": 1291,
-      "lost": 10328
+      "missing": 1296,
+      "lost": 10368
     },
     {
       "name": "Example request",
       "max": 3,
-      "missing": 2871,
-      "lost": 8613
+      "missing": 2882,
+      "lost": 8646
     },
     {
       "name": "Compatibility declared",
       "max": 2,
-      "missing": 3300,
-      "lost": 6600
+      "missing": 3311,
+      "lost": 6622
     },
     {
       "name": "Tool permissions declared",
       "max": 2,
-      "missing": 3269,
-      "lost": 6538
+      "missing": 3281,
+      "lost": 6562
     },
     {
       "name": "Bundled scripts",
       "max": 2,
-      "missing": 3166,
-      "lost": 6332
+      "missing": 3177,
+      "lost": 6354
     },
     {
       "name": "Reference files",
       "max": 3,
-      "missing": 2012,
-      "lost": 6036
+      "missing": 2022,
+      "lost": 6066
     },
     {
       "name": "Instruction depth",
       "max": 7,
-      "missing": 1054,
-      "lost": 4467
+      "missing": 1056,
+      "lost": 4476
     },
     {
       "name": "Recent maintenance",
@@ -157,8 +157,8 @@
     {
       "name": "Description length",
       "max": 5,
-      "missing": 1272,
-      "lost": 3647
+      "missing": 1273,
+      "lost": 3651
     }
   ],
   "top_ten_overlap": 0

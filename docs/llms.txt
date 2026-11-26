@@ -1,8 +1,8 @@
-# Suede AI Skills
+# Suede Skills
 
-> Suede AI Skills gives founders, marketers, and small teams reusable workflows for SEO audits, AI search visibility, conversion copy, and business operations. Run them in Claude Code or OpenAI Codex, with instructions you can inspect and adapt to your business. Start with a page or business brief to get prioritized audit findings, positioning and campaign plans, or a map of operational bottlenecks. The pack also includes code review, app delivery, and creator-rights tools. Original work is MIT licensed; adapted components retain their upstream notices. Every skill is a plain Markdown SKILL.md folder. Read the skill-specific inputs, outputs, and scope before running it.
+> Suede Skills gives founders, marketers, and small teams reusable workflows for SEO audits, AI search visibility, conversion copy, and business operations. Run them in Claude Code or OpenAI Codex, with instructions you can inspect and adapt to your business. Start with a page or business brief to get prioritized audit findings, positioning and campaign plans, or a map of operational bottlenecks. The pack also includes code review, app delivery, and creator-rights tools. Original work is MIT licensed; adapted components retain their upstream notices. Every skill is a plain Markdown SKILL.md folder. Read the skill-specific inputs, outputs, and scope before running it.
 
-Maintained by Jason Colapietro (Suede AI, https://suedeai.ai), one author. These are the same skill folders that run the estate day to day, published as they are: open the folder and read the file. Repository: https://github.com/JasonColapietro/suede-creator-skills. License and attribution details: https://github.com/JasonColapietro/suede-creator-skills/blob/main/NOTICE.md. The GitHub Pages site is generated from the same repo, so the docs, the install commands, and the MCP source sit beside the skills they describe. October 2026: Suede AI is a member of Claude for Startups, Anthropic's startup program (https://claude.com/programs/startups).
+Maintained by Jason Colapietro (Suede, https://suedeai.ai), one author. These are the same skill folders that run the estate day to day, published as they are: open the folder and read the file. Repository: https://github.com/JasonColapietro/suede-creator-skills. License and attribution details: https://github.com/JasonColapietro/suede-creator-skills/blob/main/NOTICE.md. The GitHub Pages site is generated from the same repo, so the docs, the install commands, and the MCP source sit beside the skills they describe. October 2026: Suede is a member of Claude for Startups, Anthropic's startup program (https://claude.com/programs/startups). Suede was formerly known as Suede Labs AI and Suede AI.
 
 Install for Claude Code: `/plugin marketplace add JasonColapietro/suede-creator-skills` then `/plugin install suede-skills@suede`. Two commands, about thirty seconds. Focused subsets exist for narrower work, and they cost the same per skill because an unmatched skill never loads its body: `suede-marketing@suede` (41 skills for paid acquisition, outbound, pricing, offers, lifecycle, social growth, AI search optimization, attribution, and analytics), `suede-agent-workflows@suede` (orchestration, workflows, evals), and `suede-code@suede` (review, grade, ship-gate).
 
@@ -19,21 +19,21 @@ Runner for Suede Graph Flo XR: the bundled Suede Thought Graph workflow runs on 
 - [Overview](https://skills.suedeai.ai/): The landing page. Two commands to install, the whole catalog, the FAQ, and the proof links behind each claim.
 - [Full guide](https://skills.suedeai.ai/guide.html): The chain end to end. Plan the change, build it in lanes, grade the diff A to F where the weakest lane caps the grade, strip the slop out of the copy, then ship. Also covers the MCP server, install paths, and the FAQ; the complete list is on the skill index above.
 - [Skill index](https://skills.suedeai.ai/skills/): Browse every skill.
-- [Agent Skills Directory](https://skills.suedeai.ai/directory/): A curated index of 3,894 public Agent Skills (97% under an open-source or open-content license) from 163 other GitHub repositories, in 16 category directories. Every listing links to the author's repository, passes the Suede Skill Check's structural listing gate, shows a 0–99 quality score and letter grade, and states its license; the 1,791 skills scoring 80–99 offer numeric and letter README badges (either valid linked badge can qualify for verified promotion); security scan status is separately marked not scanned; full skill pages summarize the scripts, credentials and network calls found in the skill's files; [how skills are listed](https://skills.suedeai.ai/directory/methodology/). Edited by Jason Colapietro, Suede AI. Category directories:
-  - [AI Agent and LLM Engineering Skills for Claude and Codex](https://skills.suedeai.ai/directory/ai-agents-llm/): 604 listed AI agent skills.
-  - [Developer Tool and Framework Skills for Claude and Codex](https://skills.suedeai.ai/directory/developer-tools/): 548 listed developer tools skills.
-  - [Marketing and SEO Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/marketing-seo/): 340 listed marketing and SEO skills.
+- [Agent Skills Directory](https://skills.suedeai.ai/directory/): A curated index of 3,906 public Agent Skills (97% under an open-source or open-content license) from 171 other GitHub repositories, in 16 category directories. Every listing links to the author's repository, passes the Suede Skill Check's structural listing gate, shows a 0–99 quality score and letter grade, and states its license; the 1,792 skills scoring 80–99 offer numeric and letter README badges (either valid linked badge can qualify for verified promotion); security scan status is separately marked not scanned; full skill pages summarize the scripts, credentials and network calls found in the skill's files; [how skills are listed](https://skills.suedeai.ai/directory/methodology/). Edited by Jason Colapietro, Suede. Category directories:
+  - [AI Agent and LLM Engineering Skills for Claude and Codex](https://skills.suedeai.ai/directory/ai-agents-llm/): 607 listed AI agent skills.
+  - [Developer Tool and Framework Skills for Claude and Codex](https://skills.suedeai.ai/directory/developer-tools/): 549 listed developer tools skills.
+  - [Marketing and SEO Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/marketing-seo/): 341 listed marketing and SEO skills.
   - [Product Management Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/product-management/): 239 listed product management skills.
   - [Science and Research Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/science-research/): 210 listed science and research skills.
-  - [DevOps and Cloud Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/devops-cloud/): 360 listed DevOps and cloud skills.
-  - [Video, Image and Audio Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/media-creative/): 235 listed video, image and audio skills.
-  - [Productivity and Knowledge Work Skills for Claude and Codex](https://skills.suedeai.ai/directory/productivity-knowledge/): 236 listed productivity skills.
+  - [DevOps and Cloud Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/devops-cloud/): 361 listed DevOps and cloud skills.
+  - [Video, Image and Audio Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/media-creative/): 237 listed video, image and audio skills.
+  - [Productivity and Knowledge Work Skills for Claude and Codex](https://skills.suedeai.ai/directory/productivity-knowledge/): 238 listed productivity skills.
   - [Business, Sales and Finance Skills for Claude and Codex](https://skills.suedeai.ai/directory/business-finance/): 169 listed business and finance skills.
   - [Testing and QA Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/testing-qa/): 192 listed testing and QA skills.
   - [Data, Analytics and Database Skills for Claude and Codex](https://skills.suedeai.ai/directory/data-databases/): 180 listed data and database skills.
   - [Security Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/security/): 115 listed security skills.
   - [Frontend and Design Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/frontend-design/): 201 listed frontend and design skills.
-  - [Writing and Editing Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/writing-content/): 116 listed writing and editing skills.
+  - [Writing and Editing Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/writing-content/): 118 listed writing and editing skills.
   - [Code Review and Code Quality Skills for Claude and Codex](https://skills.suedeai.ai/directory/code-review-quality/): 94 listed code review skills.
   - [Document and Office File Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/documents-office/): 55 listed document and office file skills.
 - [Claude Code skills by task](https://skills.suedeai.ai/directory/for/): 21 graded shortlists, one per task, each with a comparison table and answers on install, licenses and agent support:
@@ -64,7 +64,7 @@ Runner for Suede Graph Flo XR: the bundled Suede Thought Graph workflow runs on 
   - [CRM skills](https://skills.suedeai.ai/directory/topics/crm/): 11 listed skills.
   - [Finance and Accounting skills](https://skills.suedeai.ai/directory/topics/finance/): 30 listed skills.
   - [Legal skills](https://skills.suedeai.ai/directory/topics/legal/): 5 listed skills.
-  - [HR and Recruiting skills](https://skills.suedeai.ai/directory/topics/hr-recruiting/): 33 listed skills.
+  - [HR and Recruiting skills](https://skills.suedeai.ai/directory/topics/hr-recruiting/): 34 listed skills.
   - [Project Management skills](https://skills.suedeai.ai/directory/topics/project-management/): 27 listed skills.
   - [E-commerce skills](https://skills.suedeai.ai/directory/topics/e-commerce/): 19 listed skills.
   - [Startup Tools skills](https://skills.suedeai.ai/directory/topics/startup-tools/): 24 listed skills.
@@ -72,7 +72,7 @@ Runner for Suede Graph Flo XR: the bundled Suede Thought Graph workflow runs on 
   - [Spreadsheets skills](https://skills.suedeai.ai/directory/topics/spreadsheets/): 14 listed skills.
   - [Note Taking skills](https://skills.suedeai.ai/directory/topics/note-taking/): 24 listed skills.
   - [Personal Assistant skills](https://skills.suedeai.ai/directory/topics/personal-assistant/): 15 listed skills.
-  - [Scheduling and Calendar skills](https://skills.suedeai.ai/directory/topics/scheduling/): 19 listed skills.
+  - [Scheduling and Calendar skills](https://skills.suedeai.ai/directory/topics/scheduling/): 20 listed skills.
   - [Meeting Assistant skills](https://skills.suedeai.ai/directory/topics/meeting-assistant/): 26 listed skills.
   - [Task Management skills](https://skills.suedeai.ai/directory/topics/task-management/): 15 listed skills.
   - [Summarizer skills](https://skills.suedeai.ai/directory/topics/summarizer/): 16 listed skills.
@@ -83,7 +83,7 @@ Runner for Suede Graph Flo XR: the bundled Suede Thought Graph workflow runs on 
   - [Documents skills](https://skills.suedeai.ai/directory/topics/documents/): 19 listed skills.
   - [PDF skills](https://skills.suedeai.ai/directory/topics/pdf/): 12 listed skills.
   - [SEO skills](https://skills.suedeai.ai/directory/topics/seo/): 103 listed skills.
-  - [AI Search Visibility skills](https://skills.suedeai.ai/directory/topics/ai-search-visibility/): 26 listed skills.
+  - [AI Search Visibility skills](https://skills.suedeai.ai/directory/topics/ai-search-visibility/): 25 listed skills.
   - [Email skills](https://skills.suedeai.ai/directory/topics/email/): 36 listed skills.
   - [Social Media skills](https://skills.suedeai.ai/directory/topics/social-media/): 40 listed skills.
   - [Advertising skills](https://skills.suedeai.ai/directory/topics/ads/): 59 listed skills.
@@ -99,15 +99,15 @@ Runner for Suede Graph Flo XR: the bundled Suede Thought Graph workflow runs on 
   - [Marketing Strategy skills](https://skills.suedeai.ai/directory/topics/marketing-strategy/): 28 listed skills.
   - [Copywriting skills](https://skills.suedeai.ai/directory/topics/copywriting/): 13 listed skills.
   - [Rewriting and Paraphrasing skills](https://skills.suedeai.ai/directory/topics/paraphrasing/): 8 listed skills.
-  - [Storytelling and Fiction skills](https://skills.suedeai.ai/directory/topics/storytelling/): 22 listed skills.
+  - [Storytelling and Fiction skills](https://skills.suedeai.ai/directory/topics/storytelling/): 23 listed skills.
   - [Grammar and Proofreading skills](https://skills.suedeai.ai/directory/topics/grammar-checker/): 6 listed skills.
   - [AI Detection and Humanizing skills](https://skills.suedeai.ai/directory/topics/ai-humanizer/): 21 listed skills.
   - [General Writing skills](https://skills.suedeai.ai/directory/topics/general-writing/): 12 listed skills.
-  - [Resumes and Cover Letters skills](https://skills.suedeai.ai/directory/topics/resume-builder/): 15 listed skills.
+  - [Resumes and Cover Letters skills](https://skills.suedeai.ai/directory/topics/resume-builder/): 16 listed skills.
   - [Essays and Academic Writing skills](https://skills.suedeai.ai/directory/topics/essay-writing/): 6 listed skills.
   - [Blog Writing skills](https://skills.suedeai.ai/directory/topics/blog-writing/): 34 listed skills.
-  - [Scriptwriting skills](https://skills.suedeai.ai/directory/topics/scriptwriting/): 3 listed skills.
-  - [Books and Publishing skills](https://skills.suedeai.ai/directory/topics/books-publishing/): 7 listed skills.
+  - [Scriptwriting skills](https://skills.suedeai.ai/directory/topics/scriptwriting/): 4 listed skills.
+  - [Books and Publishing skills](https://skills.suedeai.ai/directory/topics/books-publishing/): 8 listed skills.
   - [Technical Writing and Documentation skills](https://skills.suedeai.ai/directory/topics/technical-writing/): 35 listed skills.
   - [Code Assistants skills](https://skills.suedeai.ai/directory/topics/code-assistant/): 21 listed skills.
   - [SQL and Databases skills](https://skills.suedeai.ai/directory/topics/sql/): 116 listed skills.
@@ -180,8 +180,8 @@ Runner for Suede Graph Flo XR: the bundled Suede Thought Graph workflow runs on 
   - [Evals and Benchmarks skills](https://skills.suedeai.ai/directory/topics/evals/): 27 listed skills.
   - [Agent Tracing and Observability skills](https://skills.suedeai.ai/directory/topics/agent-observability/): 41 listed skills.
   - [RAG and Retrieval skills](https://skills.suedeai.ai/directory/topics/rag-retrieval/): 32 listed skills.
-  - [Fine-Tuning and Model Training skills](https://skills.suedeai.ai/directory/topics/fine-tuning/): 127 listed skills.
-  - [Inference and Model Serving skills](https://skills.suedeai.ai/directory/topics/inference-serving/): 39 listed skills.
+  - [Fine-Tuning and Model Training skills](https://skills.suedeai.ai/directory/topics/fine-tuning/): 128 listed skills.
+  - [Inference and Model Serving skills](https://skills.suedeai.ai/directory/topics/inference-serving/): 40 listed skills.
   - [LLM APIs and SDKs skills](https://skills.suedeai.ai/directory/topics/llm-apis/): 28 listed skills.
   - [Browser Agents and Computer Use skills](https://skills.suedeai.ai/directory/topics/browser-agents/): 29 listed skills.
   - [Voice Agents skills](https://skills.suedeai.ai/directory/topics/voice-agents/): 4 listed skills.
@@ -240,7 +240,7 @@ Runner for Suede Graph Flo XR: the bundled Suede Thought Graph workflow runs on 
   - [Lyrics and Songwriting skills](https://skills.suedeai.ai/directory/topics/lyrics-songwriting/): 9 listed skills.
   - [Music Release and Rights skills](https://skills.suedeai.ai/directory/topics/music-release-rights/): 5 listed skills.
   - [Tutoring and Courses skills](https://skills.suedeai.ai/directory/topics/tutoring-courses/): 5 listed skills.
-  - [Health and Medical skills](https://skills.suedeai.ai/directory/topics/health-medical/): 15 listed skills.
+  - [Health and Medical skills](https://skills.suedeai.ai/directory/topics/health-medical/): 16 listed skills.
   - [Personal Finance skills](https://skills.suedeai.ai/directory/topics/personal-finance/): 5 listed skills.
   - [Fun Tools skills](https://skills.suedeai.ai/directory/topics/fun-tools/): 5 listed skills.
   - [Experiments and Playgrounds skills](https://skills.suedeai.ai/directory/topics/experiments-playgrounds/): 3 listed skills.
@@ -251,12 +251,12 @@ Runner for Suede Graph Flo XR: the bundled Suede Thought Graph workflow runs on 
   - [Market Research skills](https://skills.suedeai.ai/directory/topics/market-research/): 12 listed skills.
   - [Press Releases and PR skills](https://skills.suedeai.ai/directory/topics/press-releases/): 4 listed skills.
   - [Newsletters skills](https://skills.suedeai.ai/directory/topics/newsletters/): 6 listed skills.
-- [Skills by cost and license](https://skills.suedeai.ai/directory/pricing/): free and open source (3,478), free skill, needs a service (310), non-commercial license (80), restricted license (26).
+- [Skills by cost and license](https://skills.suedeai.ai/directory/pricing/): free and open source (3,484), free skill, needs a service (315), non-commercial license (80), restricted license (27).
 - [Skills by capability](https://skills.suedeai.ai/directory/features/): 14 capability filters, including official publishers, MCP servers, API keys and no-setup skills.
-- [New agent skills](https://skills.suedeai.ai/directory/new/): 29 new listings and 2,335 updated in the 30 days through November 14, 2026; the global source snapshot remains October 22, 2026.
+- [New agent skills](https://skills.suedeai.ai/directory/new/): 41 new listings and 41 updated in the 30 days through November 19, 2026; the global source snapshot remains October 22, 2026.
 - [Top 100 agent skills](https://skills.suedeai.ai/directory/top/): the highest Suede Skill Check scores among third-party skills.
-- [Security](https://skills.suedeai.ai/directory/trust/): What the directory checks before listing a skill (structure, license, policy, what the files touch on 754 full pages), three documented registry attacks with sources, and a review checklist.
-- [Recommended stacks by task](https://skills.suedeai.ai/directory/stacks/): 10 stacks by Jason Colapietro, each naming the Suede AI skill for the task and recommending third-party skills only:
+- [Security](https://skills.suedeai.ai/directory/trust/): What the directory checks before listing a skill (structure, license, policy, what the files touch on 761 full pages), three documented registry attacks with sources, and a review checklist.
+- [Recommended stacks by task](https://skills.suedeai.ai/directory/stacks/): 10 stacks by Jason Colapietro, each naming the Suede skill for the task and recommending third-party skills only:
   - [What is the best agent skill stack for shipping a landing page?](https://skills.suedeai.ai/directory/stacks/landing-page/): Six scored agent skills for shipping a landing page that converts, led by auteur at 89/100, with install commands and pre-install checks.
   - [Which agent skills help you rank in Google and get cited by AI?](https://skills.suedeai.ai/directory/stacks/seo-and-ai-search/): Four agent skills for ranking in Google and getting cited by AI answers, led by the seo skill at 87/100, with install commands and checks.
   - [What is the best agent skill stack for code review?](https://skills.suedeai.ai/directory/stacks/code-review/): Five agent skills for code review, led by go-coding-standards at 95/100 and tidy at 87/100, with install commands and what to check first.
@@ -271,10 +271,10 @@ Runner for Suede Graph Flo XR: the bundled Suede Thought Graph workflow runs on 
 - [Grok bots and Grok Build plugins](https://skills.suedeai.ai/directory/grok/): Grok Build plugins and marketplaces, bots built on the Grok API, and xAI's official SDKs and prompts, with install commands and documentation links. 20 repositories, listed and not graded.
 - [MCP servers](https://skills.suedeai.ai/directory/mcp-servers/): Model Context Protocol servers: the reference implementations, the official registry, popular official servers, and the MCP projects featured here. 7 projects, listed and not graded.
 - [Rules, instruction files and prompts](https://skills.suedeai.ai/directory/rules/): Instruction files and prompts for coding agents: AGENTS.md, CLAUDE.md templates, Cursor rules, Copilot instructions, persona files and prompt libraries. 18 repositories, listed and not graded.
-- [Publishers](https://skills.suedeai.ai/directory/publishers/): 163 repositories with skill counts, best scores and official status.
+- [Publishers](https://skills.suedeai.ai/directory/publishers/): 171 repositories with skill counts, best scores and official status.
 - [Compare](https://skills.suedeai.ai/directory/compare/): compare listed skills side by side, and the Suede Skills Directory compared with other agent skill directories:
   - [Suede Skills Directory vs skills.sh](https://skills.suedeai.ai/directory/compare/suede-vs-skills-sh/): Suede Skills Directory vs skills.sh: graded skills with licenses and file summaries next to Vercel's install leaderboard. Facts and sources inside.
-  - [skills.sh alternatives](https://skills.suedeai.ai/directory/compare/skills-sh-alternatives/): The best skills.sh alternatives for finding agent skills, compared: who runs each directory, what it lists and how it ranks. Suede AI grades each listing.
+  - [skills.sh alternatives](https://skills.suedeai.ai/directory/compare/skills-sh-alternatives/): The best skills.sh alternatives for finding agent skills, compared: who runs each directory, what it lists and how it ranks. Suede grades each listing.
   - [Suede Skills Directory vs SkillsMP](https://skills.suedeai.ai/directory/compare/suede-vs-skillsmp/): Suede Skills Directory vs SkillsMP: every listed skill graded 0 to 99 with its license and install command, next to SkillsMP's GitHub-wide index.
   - [SkillsMP alternatives](https://skills.suedeai.ai/directory/compare/skillsmp-alternatives/): The best SkillsMP alternatives for agent skills, compared side by side: who runs each directory, what it lists, how it ranks skills and the install route.
   - [Suede Skills Directory vs Claude Marketplaces](https://skills.suedeai.ai/directory/compare/suede-vs-claude-marketplaces/): Suede Skills Directory vs Claude Marketplaces: skills graded 0 to 99 from their own files, next to a Claude Code directory ranked by installs.
@@ -284,12 +284,12 @@ Runner for Suede Graph Flo XR: the bundled Suede Thought Graph workflow runs on 
   - [Suede Skills Directory vs awesome-claude-skills](https://skills.suedeai.ai/directory/compare/suede-vs-awesome-claude-skills/): Suede Skills Directory vs awesome-claude-skills lists: each listed skill graded 0 to 99 with license, install command and a verifiable report.
   - [awesome-claude-skills alternatives](https://skills.suedeai.ai/directory/compare/awesome-claude-skills-alternatives/): The best awesome-claude-skills alternatives: graded, searchable agent skill directories compared by owner, what they list and how they rank skills.
 - [API and data](https://skills.suedeai.ai/directory/api/): the search index, per-skill reports, badges, the install snapshot from skills.sh, the RSS feed and the sitemap, all static files.
-- [Agent skills guides](https://skills.suedeai.ai/directory/guides/): Guides by Jason Colapietro, Suede AI, built on the directory's published data:
+- [Agent skills guides](https://skills.suedeai.ai/directory/guides/): Guides by Jason Colapietro, Suede, built on the directory's published data:
   - [Best SEO, AEO and GEO skills for Claude Code and Codex](https://skills.suedeai.ai/directory/guides/best-seo-skills/): The highest-scoring SEO skills for Claude Code and Codex, by job: audits, schema, AI search (AEO and GEO), keywords, local and programmatic SEO.
   - [How to install agent skills in Claude Code, Codex and Cursor](https://skills.suedeai.ai/directory/guides/install-agent-skills/): Where Claude Code and Codex load skills, how to install from GitHub with one command, how plugin marketplaces work, and what to check before you install.
   - [Agent skills vs MCP servers vs plugins: which one do you need?](https://skills.suedeai.ai/directory/guides/skills-vs-mcp-servers/): A skill adds method, an MCP server adds access, a plugin packages both. When to use each, how they combine, and what each costs in context and risk.
   - [How to get your agent skill found in search and cited by AI assistants](https://skills.suedeai.ai/directory/guides/skill-ai-visibility/): How skill publishers get picked by agents, found in search and cited by AI assistants: descriptions that trigger, READMEs that answer, listings and badges.
-- [Skill AI-visibility check](https://skills.suedeai.ai/directory/check/): A free, in-browser check for skill publishers that shows a listed skill's 0–99 score by component and its largest open points. It sends nothing to Suede AI.
+- [Skill AI-visibility check](https://skills.suedeai.ai/directory/check/): A free, in-browser check for skill publishers that shows a listed skill's 0–99 score by component and its largest open points. It sends nothing to Suede.
 - [AI Agents](https://skills.suedeai.ai/directory/agents/): 3 products and 3 runnable repository and hosted editions, with separate documentation, repository evidence and hosted disclosure ratings /10. Browse [84 ungraded agents](https://skills.suedeai.ai/directory/agents/ungraded/) with official sources.
 - [Security](https://skills.suedeai.ai/directory/security/): What the directory checks before listing a skill (structure, license, policy, what the files touch on 742 full pages), three documented registry attacks with sources, and a review checklist.
 - [Claude Code plugins and mods](https://skills.suedeai.ai/directory/plugins/): Claude Code plugins, mods, marketplaces, hooks and status lines: the official catalogs, the install commands and reviewed community repositories. 22 repositories, listed and not graded.
@@ -298,14 +298,14 @@ Runner for Suede Graph Flo XR: the bundled Suede Thought Graph workflow runs on 
 - [Rules, instruction files and prompts](https://skills.suedeai.ai/directory/rules/): Instruction files and prompts for coding agents: AGENTS.md, CLAUDE.md templates, Cursor rules, Copilot instructions, persona files and prompt libraries. 18 repositories, listed and not graded.
 - [Publishers](https://skills.suedeai.ai/directory/publishers/): 162 repositories with skill counts, best scores and official status.
 - [API and data](https://skills.suedeai.ai/directory/api/): the search index, per-skill reports, badges, the install snapshot from skills.sh, the RSS feed and the sitemap, all static files.
-- [Agent skills guides](https://skills.suedeai.ai/directory/guides/): Guides by Jason Colapietro, Suede AI, built on the directory's published data:
+- [Agent skills guides](https://skills.suedeai.ai/directory/guides/): Guides by Jason Colapietro, Suede, built on the directory's published data:
   - [Best SEO, AEO and GEO skills for Claude Code and Codex](https://skills.suedeai.ai/directory/guides/best-seo-skills/): The highest-scoring SEO skills for Claude Code and Codex, by job: audits, schema, AI search (AEO and GEO), keywords, local and programmatic SEO.
   - [How to install agent skills in Claude Code, Codex and Cursor](https://skills.suedeai.ai/directory/guides/install-agent-skills/): Where Claude Code and Codex load skills, how to install from GitHub with one command, how plugin marketplaces work, and what to check before you install.
   - [Agent skills vs MCP servers vs plugins: which one do you need?](https://skills.suedeai.ai/directory/guides/skills-vs-mcp-servers/): A skill adds method, an MCP server adds access, a plugin packages both. When to use each, how they combine, and what each costs in context and risk.
   - [How to get your agent skill found in search and cited by AI assistants](https://skills.suedeai.ai/directory/guides/skill-ai-visibility/): How skill publishers get picked by agents, found in search and cited by AI assistants: descriptions that trigger, READMEs that answer, listings and badges.
-- [Skill AI-visibility check](https://skills.suedeai.ai/directory/check/): A free, in-browser check for skill publishers that shows a listed skill's 0–99 score by component and its largest open points. It sends nothing to Suede AI.
+- [Skill AI-visibility check](https://skills.suedeai.ai/directory/check/): A free, in-browser check for skill publishers that shows a listed skill's 0–99 score by component and its largest open points. It sends nothing to Suede.
 - [AI Agents](https://skills.suedeai.ai/directory/agents/): 3 products and 3 runnable repository and hosted editions, with separate documentation, repository evidence and hosted disclosure ratings /10. Browse [83 ungraded agents](https://skills.suedeai.ai/directory/agents/ungraded/) with official sources.
-- [Installs and MCP](https://skills.suedeai.ai/plugins.html): Install commands for Claude Code and Codex, plus the optional Suede AI Skills MCP server.
+- [Installs and MCP](https://skills.suedeai.ai/plugins.html): Install commands for Claude Code and Codex, plus the optional Suede Skills MCP server.
 - [Listings](https://skills.suedeai.ai/listings.html): Every third-party directory, registry and curated list that carries the pack, including skills.sh, SkillsMP, the official MCP Registry, npm and MCP Market, with each link verified on the date shown.
 - [Copy bank](https://skills.suedeai.ai/copy.html): Public-safe explainer copy and reusable launch language.
 - [Cracked devs only](https://skills.suedeai.ai/cracked.html): The Agentic Adderall Stack, three skills for the runs that have to finish. Instant release is one continuous subagent-driven pass with adversarial review inside it. Extended release scores the next move and hands it back as a runnable prompt. The plan search caps at 55, 110, or 200 agent calls.
@@ -313,11 +313,11 @@ Runner for Suede Graph Flo XR: the bundled Suede Thought Graph workflow runs on 
 
 ## Workflow skills: from planning a change to grading whether it ships
 
-- [Suede AI Workflow Skills](https://skills.suedeai.ai/skills/suede-workflow-skills.html): Umbrella router that loads the full Suede AI pack from one install path, picks the specialist for each request, and hands back one scored next move as a runnable prompt.
+- [Suede Workflow Skills](https://skills.suedeai.ai/skills/suede-workflow-skills.html): Umbrella router that loads the full Suede pack from one install path, picks the specialist for each request, and hands back one scored next move as a runnable prompt.
 - [Suede Agent Teams](https://skills.suedeai.ai/skills/suede-agent-teams.html): Coordinate complex changes and public-repository contribution programs with collision checks, atomic issue leases, review gates, authority boundaries, and a signed handoff.
 - [Suede Ops Architecture](https://skills.suedeai.ai/skills/suede-ops-architecture.html): Fix the shape of a system before anyone builds it: entity schema, one write path per entity, every unit of work routed to an automation, an agent, or a human, and each tool marked absorb, keep, or kill with a proof path.
 - [Suede Ops Assessment](https://skills.suedeai.ai/skills/suede-ops-assessment.html): Map how work actually happens before anyone designs a system: floor-level interviews with the people doing the work, an inventory of every silo, friction quantified in the operation's own numbers, and opportunities ranked by value against build complexity.
-- [Suede AI Eval](https://skills.suedeai.ai/skills/suede-ai-eval.html): Design AI evaluation strategy, failure-mode rubrics, test cases, and acceptance gates.
+- [Suede Eval](https://skills.suedeai.ai/skills/suede-ai-eval.html): Design AI evaluation strategy, failure-mode rubrics, test cases, and acceptance gates.
 - [Suede Code](https://skills.suedeai.ai/skills/suede-code.html): Review and grade code in one pass: P0-P3 findings with file:line evidence, an A-F ship grade across seven lanes with instant-F triggers, plus findings-only and grade-only modes.
 - [Suede Graph Flo XR](https://skills.suedeai.ai/skills/suede-graph-flo-xr.html): Claude Code/macOS Suede Thought Graph shipping search: generate competing plans, score and prune, refute and improve survivors, aggregate compatible lanes, then mutate only the selected plan. Light/standard/deep cap at 55/110/200 calls. Production reads only; never deploys. Other supported agents load the contract and route to direct implementation.
 - [Suede Ship Copy](https://skills.suedeai.ai/skills/suede-ship-copy.html): A separate copy-only DAG: blind research lenses, an audit of every agent-generated claim, one message per section, adversarial review, deslop pass, and a publish-readiness gate. Never audits what the requester supplied.
@@ -342,7 +342,7 @@ Runner for Suede Graph Flo XR: the bundled Suede Thought Graph workflow runs on 
 - [Suede A/B Testing](https://skills.suedeai.ai/skills/suede-ab-testing.html): Test so the result means something.
 - [Suede Ad Creative](https://skills.suedeai.ai/skills/suede-ad-creative.html): Produce ad creative at volume.
 - [Suede Ads](https://skills.suedeai.ai/skills/suede-ads.html): Run paid acquisition that pays back.
-- [Suede AI SEO](https://skills.suedeai.ai/skills/suede-ai-seo.html): Get cited in AI-generated answers on ChatGPT, Perplexity, Google AI Overviews, and Claude.
+- [Suede SEO](https://skills.suedeai.ai/skills/suede-ai-seo.html): Get cited in AI-generated answers on ChatGPT, Perplexity, Google AI Overviews, and Claude.
 - [Suede Analytics](https://skills.suedeai.ai/skills/suede-analytics.html): Know whether any of it worked.
 - [Suede ASO](https://skills.suedeai.ai/skills/suede-aso.html): Optimize an App Store or Play listing.
 - [Suede Attribution](https://skills.suedeai.ai/skills/suede-attribution.html): Know which marketing actually drove revenue.
@@ -389,7 +389,7 @@ Runner for Suede Graph Flo XR: the bundled Suede Thought Graph workflow runs on 
 
 ## MCP server
 
-- Suede AI Skills MCP: Optional Model Context Protocol server for skill routing and workflow plans, live A-F page audits for Google and AI search, copy checks against the house rules, install guidance, and grading and QA checklists. 12 tools, 7 resources, 5 prompts, a suede://skill/{name} template for every SKILL.md, dependency-free stdio. Source: https://github.com/JasonColapietro/suede-creator-skills/blob/main/mcp/suede-skills-mcp.mjs
+- Suede Skills MCP: Optional Model Context Protocol server for skill routing and workflow plans, live A-F page audits for Google and AI search, copy checks against the house rules, install guidance, and grading and QA checklists. 12 tools, 7 resources, 5 prompts, a suede://skill/{name} template for every SKILL.md, dependency-free stdio. Source: https://github.com/JasonColapietro/suede-creator-skills/blob/main/mcp/suede-skills-mcp.mjs
 
 ## What the skills deliver
 
@@ -406,9 +406,9 @@ Individual course awards and Microsoft Learn module achievements: https://seo.su
 
 ## Founder record and coverage
 
-- [Suede AI SEO on The Manifest](https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida): #1 in Palm Beach County and Top 25 in Florida for AI deployment, October 31, 2026.
-- [Suede AI SEO on Clutch](https://clutch.co/profile/suede-ai-seo): 5.0/5 client rating.
+- [Suede SEO on The Manifest](https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida): #1 in Palm Beach County and Top 25 in Florida for AI deployment, October 31, 2026.
+- [Suede SEO on Clutch](https://clutch.co/profile/suede-ai-seo): 5.0/5 client rating.
 - [IA Práctica](https://goyohernandez.com/ia/caso/despide-a-la-agencia-y-lleva-el-seo-dentro-con-claude-el-playbook-de-s/): Spanish-language coverage of Jason Colapietro’s six-step playbook for bringing SEO in-house with Claude, November 4, 2026.
-- [NeuralAdX: The Three Pillars of AI Visibility](https://neuraladx.com/the-three-pillars-of-ai-platform-visibility/): Updated October 28, 2026; cites Suede AI SEO’s comparison of AI visibility tools and managed GEO implementation.
+- [NeuralAdX: The Three Pillars of AI Visibility](https://neuraladx.com/the-three-pillars-of-ai-platform-visibility/): Updated October 28, 2026; cites Suede SEO’s comparison of AI visibility tools and managed GEO implementation.
 - [Glama](https://glama.ai/mcp/servers/JasonColapietro/suede-creator-skills): Suede Creator Skills MCP server listing.
 - [Complete app catalog](https://jasoncolapietro.com/apps/): 9 iOS apps, 6 Android apps and 2 Chrome extensions across AI agents, music, guitar tools, vocal training and children’s stories.

@@ -1,7 +1,20 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-21",
+  "updated": "2026-11-26",
   "applications": [
+    {
+      "issue": 445,
+      "applicant": "djmoonlitse-gif",
+      "repo": "moonlitnayeem/fairvalid-ai",
+      "scope_version": "7e59f2e0c9fa5498733a3cb8b773f30e47f3851779409bb0f24374a31ec72011",
+      "kind": "skill",
+      "scope": [
+        "email-verification",
+        "fairmatch-leads"
+      ],
+      "applied_at": "2026-11-25T09:38:12Z",
+      "issue_state": "open"
+    },
     {
       "issue": 430,
       "applicant": "skillsforbots",
@@ -58,11 +71,9 @@
       "issue": 408,
       "applicant": "xiaoxuux",
       "repo": "rnthking/redya-skills",
-      "scope_version": "2b037acd228b6b2ebba1970e5051fe72beb30c101d3b87149a84dca3c41612ab",
+      "scope_version": "43cd223413f4b6f31ad31ca0ddd4c014e173fcaa7114f1dc465d290072d2c03e",
       "kind": "skill",
-      "scope": [
-        "redya-xiaohongshu"
-      ],
+      "scope": null,
       "applied_at": "2026-11-18T04:15:12Z",
       "issue_state": "open"
     },

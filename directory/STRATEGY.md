@@ -1,8 +1,8 @@
 # Agent Skills Directory: growth and editorial strategy
 
-Owner: Suede AI growth. Written October 23, 2026. Data snapshot referenced: October 19, 2026.
+Owner: Suede growth. Written October 23, 2026. Data snapshot referenced: October 19, 2026.
 
-The directory at [skills.suedeai.ai/directory/](https://skills.suedeai.ai/directory/) is a public good with a business job. It should earn search and AI-answer visibility on agent-skill topics, convert the right readers into leads for Suede AI's AEO/GEO/SEO services ([suedeai.agency](https://suedeai.agency)) and Agent Studio ([suedeai.app](https://suedeai.app)), and build links and citations that raise every Suede AI property.
+The directory at [skills.suedeai.ai/directory/](https://skills.suedeai.ai/directory/) is a public good with a business job. It should earn search and AI-answer visibility on agent-skill topics, convert the right readers into leads for Suede's AEO/GEO/SEO services ([suedeai.agency](https://suedeai.agency)) and Agent Studio ([suedeai.app](https://suedeai.app)), and build links and citations that raise every Suede property.
 
 The rule that protects all of it: **commercial relationships never touch scores, listings or rankings.** The score is recomputable from published fields. That independence is the asset other directories lack, and it is what makes the directory worth linking to.
 
@@ -32,10 +32,10 @@ Research ran on October 23, 2026 with web search. The live directory and suedeai
 
 ### Where the directory is invisible
 
-- Neither 2026 roundup of skill directories (claudemarket.ai, July 4, modified Oct 23; localskills.sh, July 8) mentions Suede AI or the directory.
-- A search for "skills.suedeai.ai" returns third-party pages about the Suede AI skills pack (claudskills.com, mcpmarket.com, skillsllm.com, Trendshift), not the directory.
+- Neither 2026 roundup of skill directories (claudemarket.ai, July 4, modified Oct 23; localskills.sh, July 8) mentions Suede or the directory.
+- A search for "skills.suedeai.ai" returns third-party pages about the Suede skills pack (claudskills.com, mcpmarket.com, skillsllm.com, Trendshift), not the directory.
 - The directory has no guide or "learn" pages. Competitors rank informational queries ("how to install Claude skills", "skills vs MCP", "are Claude skills safe") with exactly those pages.
-- No page on the directory links to suedeai.agency or suedeai.app today. The only Suede AI links are to suedeai.ai and its contact page.
+- No page on the directory links to suedeai.agency or suedeai.app today. The only Suede links are to suedeai.ai and its contact page.
 - There is no analytics on the site, so traffic and CTA clicks cannot be measured on-site yet (see section 7).
 
 Not verified: actual rankings, impressions or keyword volumes. No Search Console export or keyword tool was available in this session. Every priority below rests on competitor investment, query evidence from search results, and business value, not on volume numbers.
@@ -102,7 +102,7 @@ Outreach must be approved before anything is sent. Draft for approval:
 
 > Subject: Your skill is listed in the Agent Skills Directory
 >
-> Hi {name}, {skill} from {repo} is listed in the Agent Skills Directory at {listing URL} with a score of {score}/100 on our published rubric. The listing credits you and links to your source. If you want readers to find it, the page has a badge snippet for your README, and the free Skill AI-visibility check shows the points still open. Corrections or removal are one form away. Jason Colapietro, Suede AI
+> Hi {name}, {skill} from {repo} is listed in the Agent Skills Directory at {listing URL} with a score of {score}/100 on our published rubric. The listing credits you and links to your source. If you want readers to find it, the page has a badge snippet for your README, and the free Skill AI-visibility check shows the points still open. Corrections or removal are one form away. Jason Colapietro, Suede
 
 ### Roundup and press inclusion
 
@@ -124,7 +124,7 @@ Targets, status and copy for this section live in [DISTRIBUTION.md](DISTRIBUTION
 2. Look up matches in `/directory/search-index.json` (already published). If found, fetch the skill's `report.json` (already published per skill) and show: listing status, score and grade, the score components with points earned and open, and the three largest open points (the same logic as `improveBlock` in the template).
 3. Show a short checklist for the skill's README and home page, each item answerable by the publisher: one-sentence answer at the top; install commands; example prompts; what the skill reads and sends; license; badge linked to the listing; the page is indexable and snippet-eligible (Google's only stated requirement for AI features).
 4. Results CTA: if listed, `check-result:a-listed` routes to suedeai.agency; if not found, `check-result:b-not-found` routes to the submit page.
-5. Nothing typed into the check leaves the browser except fetches for Suede AI's own static files. If a later version queries the GitHub API from the browser, say so on the page.
+5. Nothing typed into the check leaves the browser except fetches for Suede's own static files. If a later version queries the GitHub API from the browser, say so on the page.
 
 **Version 2 (needs approval):** an optional "email me this report" step with explicit consent, sent to the agency's CRM. Requires a backend, a privacy notice update and an approved destination. Not part of the current build.
 
@@ -138,7 +138,7 @@ Guardrails:
 
 - Never place a CTA inside third-party content: descriptions, install commands, publisher credit, intake reviews.
 - No CTA on correction or removal flows.
-- Suede AI's own skills stay in their own clearly labeled section and never enter third-party rankings.
+- Suede's own skills stay in their own clearly labeled section and never enter third-party rankings.
 - Copy makes no claims about results, prices or availability. Variants that describe a specific agency offer carry a `confirm_offer` note until that offer is confirmed on suedeai.agency.
 
 ## 7. KPIs and measurement
