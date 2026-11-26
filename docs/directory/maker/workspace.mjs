@@ -7,7 +7,7 @@ let busy = false, canWithdraw=false, editVersion=null;
 const helpPanel=get('help'), helpStatus=get('help-status'), helpBody=get('help-body');
 const errors = {
   maker_unavailable:'Maker access is not available right now. Try again, or open the offline demo to see how it works.',
-  listing_not_found:'This project is not eligible for a maker profile. Choose a featured project from the directory.',
+  listing_not_found:'This project is not eligible for a maker profile. Choose a listing from the directory.',
   ownership_not_verified:'This GitHub account could not verify ownership for this listing. Use the repository owner account or contact Suede about organization access.',
   listing_already_claimed:'This listing already has a verified maker.',
   invalid_posts:'Use up to three different post permalinks from the supported sites. Remove tracking, fragments and share parameters.',
@@ -50,7 +50,7 @@ async function run(work) {
   lockControls(true);
   try { await work(); } catch(error) { if(error.message==='sign_in_required')await load(true);else problem(error); } finally { lockControls(false); }
 }
-function directoryLink() { return link('Browse featured projects','/featured/','small-action'); }
+function directoryLink() { return link('Browse the directory','/','small-action'); }
 function renderListing(listing) {
   listingPanel.hidden=false; get('listing-title').textContent=listing.name;
   const facts=get('facts'); facts.replaceChildren();
@@ -242,7 +242,7 @@ async function load(focus=false) {
   catch(error) {
     listingPanel.hidden=true; helpPanel.hidden=true; helpBody.replaceChildren();
     if(error.message==='sign_in_required') {signedOut(focus); return;}
-    screen(error.message==='listing_not_found'?'Choose a featured listing':'Maker access unavailable',errors[error.message]||errors.maker_unavailable,focus);
+    screen(error.message==='listing_not_found'?'Choose a directory listing':'Maker access unavailable',errors[error.message]||errors.maker_unavailable,focus);
     actions.append(directoryLink(),link('Open offline demo','./demo/','small-action')); return;
   }
   canWithdraw=value.canWithdraw;editVersion=value.editVersion;renderListing(value.listing); showHelp(value);
@@ -258,6 +258,6 @@ if(validId(id)) {
   screen('Opening maker workspace','Looking up the listing.');
   void load();
 } else {
-  screen('Choose your featured listing','Open a project’s maker link from the featured directory to manage that listing.');
+  screen('Choose your listing','Open the claim link on your skill or featured project to manage its listing.');
   actions.append(directoryLink());
 }

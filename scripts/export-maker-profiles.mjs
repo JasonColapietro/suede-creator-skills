@@ -2,7 +2,7 @@
 // Read-only remote operation. Redirect stdout to a local file for editorial
 // diff/review; never add an automatic deployment or email from this exporter.
 import { readFile } from 'node:fs/promises';
-import catalog from '../directory/featured-projects.json' with { type: 'json' };
+import { makerCatalog } from './directory/maker-catalog.mjs';
 import { createMakerOwnerService } from './directory/maker-owner-v2.mjs';
 import { fetchPublicMakerRepository, fetchMakerRepositoryById } from './directory/maker-runtime-v2.mjs';
 import { createMakerStore } from './directory/maker-store-v2.mjs';
@@ -13,11 +13,11 @@ async function main(env) {
   const store = createMakerStore({ endpoint: env.MAKER_V2_DB_URL, key: env.MAKER_V2_DB_SECRET_KEY });
   if (!store) throw Error('Maker export store not configured');
   const approvals = createMakerOwnerService({
-    store, site: 'directory', enabled: true, projects: catalog.projects,
+    store, site: 'directory', enabled: true, projects: makerCatalog,
     github: { user: () => null, repository: (name,opts) => fetchPublicMakerRepository(name,fetch,opts), repositoryById: id=>fetchMakerRepositoryById(id) },
     isModerator: () => false, hasReviewedClaim: record => store.hasReviewedClaim(record),
   });
-  const collect=()=>buildFeaturedMakerProjection(catalog.projects,id=>approvals.getApproved(id));
+  const collect = async () => buildFeaturedMakerProjection(makerCatalog, id => approvals.getApproved(id), new Set(await store.approvedListings()));
   const first=JSON.stringify(await collect(),null,2)+'\n';
   const verified=JSON.stringify(await collect(),null,2)+'\n';
   if(first!==verified)throw Error('Maker projection changed during export');

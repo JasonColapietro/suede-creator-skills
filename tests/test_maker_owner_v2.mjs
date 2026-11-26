@@ -145,3 +145,21 @@ test('moderator cannot approve their own maker submission', async () => {
   await expectError(s.review('owner', 'project-a', revision.version, 'approve'), 'self_review_forbidden');
   assert.equal((await s.review('mod', 'project-a', revision.version, 'approve')).status, 'approved');
 });
+
+test('a catalog skill can be claimed and edited independently of sibling skills', async () => {
+  const { makerCatalog, skillTargets } = await import('../scripts/directory/maker-catalog.mjs');
+  const { buildFeaturedMakerProjection } = await import('../scripts/directory/maker-projection-v2.mjs');
+  const [skill, sibling] = skillTargets.filter(entry => entry.repo === 'anthropics/skills');
+  const { s, repo } = fixture({ projects: makerCatalog });
+  repo({ ...valid, full_name: skill.repo });
+  await expectError(s.claim('outsider', skill.id), 'ownership_not_verified');
+  await s.claim('owner', skill.id);
+  const submitted = await s.submit('owner', skill.id, draft, 0);
+  assert.equal((await s.get('owner', sibling.id)).claimed, false);
+  assert.equal(await s.getApproved(skill.id), null);
+  await s.review('mod', skill.id, submitted.version, 'approve');
+  const projection = await buildFeaturedMakerProjection(makerCatalog, id => s.getApproved(id), new Set([skill.id]));
+  assert.deepEqual(projection.profiles.map(p => [p.listing, p.repository, p.statement]), [
+    ['skill:' + skill.id, skill.repo, draft.statement],
+  ]);
+});

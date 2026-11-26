@@ -2,7 +2,7 @@
 
 ## Set up protected staging
 
-Use an isolated database and a dedicated GitHub OAuth app for each environment. Do not share a database or OAuth client between staging, production or the sibling Skills site. As database owner, apply `deployment/migrations/20261123-maker-v2.sql` followed by `deployment/migrations/20261124-maker-recovery.sql`. Do not expose the private schema.
+Use an isolated database and a dedicated GitHub OAuth app for each environment. Do not share a database or OAuth client between staging, production or the sibling Skills site. As database owner, apply `deployment/migrations/20261123-maker-v2.sql`, then `deployment/migrations/20261124-maker-recovery.sql` and `deployment/migrations/20261126-maker-approved-listings.sql`. Do not expose the private schema.
 
 | Directory setting | Staging value |
 | --- | --- |
@@ -14,7 +14,7 @@ Use an isolated database and a dedicated GitHub OAuth app for each environment. 
 | `MAKER_V2_GITHUB_CLIENT_SECRET` | The matching server-side OAuth credential |
 | `MAKER_V2_MODERATOR_IDS` | Verified numeric GitHub IDs, separated by commas |
 | `MAKER_V2_ENABLED` | Set to `true` only after migrations and runtime configuration |
-| `MAKER_V2_FEATURED_LINKS` | Set to `true` at build time only after testing claim access |
+| `MAKER_V2_FEATURED_LINKS` | Set to `true` at build time only after testing claim access on featured projects, standalone skills and compact repository rows |
 | `MAKER_V2_PUBLISH_PROFILES` | Unset until the publishing and removal drill passes |
 
 Register `<MAKER_V2_ORIGIN>/api/maker/?action=callback` with the OAuth app. The sign-in must request no GitHub scopes. Make the protected callback reachable in an authenticated staging browser. Store secrets on the server only. Before public access, configure limits for auth and write requests, purge expired login and session rows, and keep OAuth callback parameters, cookies, tokens and secrets out of logs.

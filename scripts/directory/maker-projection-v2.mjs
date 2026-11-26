@@ -1,7 +1,7 @@
 import { featuredWebsite, loadMakerProfiles, makerProfileHtml, PLATFORMS } from './maker-profiles.mjs';
 
 function eligible(items) {
-  return new Map(items.filter(p => p.status !== 'pending' && (p.canonical_repo || p.repo)).map(p => ['featured:' + p.id, p.canonical_repo || p.repo]));
+  return new Map(items.filter(p => p.status !== 'pending' && (p.canonical_repo || p.repo)).map(p => [(p.kind === 'skill' ? 'skill:' : 'featured:') + p.id, p.canonical_repo || p.repo]));
 }
 
 export function publicationRow(listing, repository, profile) {
@@ -24,10 +24,12 @@ export function publicationRow(listing, repository, profile) {
   return row;
 }
 
-export async function buildFeaturedMakerProjection(projects, getApproved) {
+export async function buildFeaturedMakerProjection(projects, getApproved, approvedIds = null) {
   const profiles = [];
   for (const [listing, repository] of eligible(projects)) {
-    const approved = await getApproved(listing.slice('featured:'.length));
+    const id = listing.slice(listing.indexOf(':') + 1);
+    if (approvedIds && !approvedIds.has(id)) continue;
+    const approved = await getApproved(id);
     if (approved !== null) profiles.push(publicationRow(listing, repository, approved));
   }
   return { schema_version: 1, profiles };
@@ -48,4 +50,46 @@ export function renderFeaturedMakerProfiles(html, projection, projects) {
   });
   if (rendered.size !== profiles.size) throw new Error('Missing approved featured maker target');
   return renderedHtml;
+}
+
+// A compact skill shares its repository page with sibling skills.
+// Place its controls and profile inside its own named table row.
+export function skillMakerRenderer(targets, profiles, showLinks) {
+  const pages = new Map();
+  const expected = new Set();
+  for (const target of targets) {
+    const profile = profiles.get('skill:' + target.id);
+    if (!showLinks && !profile) continue;
+    const [page, fragment] = target.href.slice('/directory/'.length).split('#');
+    const key = page + 'index.html';
+    if (!pages.has(key)) pages.set(key, new Map());
+    pages.get(key).set(fragment || '', target);
+    expected.add(target.id);
+  }
+
+  function content(target, compact) {
+    expected.delete(target.id);
+    const profile = makerProfileHtml(profiles.get('skill:' + target.id), { esc: escape, headingLevel: compact ? 3 : 2 });
+    const action = showLinks ? '<p><a href="/maker/?id=' + target.id + '" data-maker-claim>Claim or manage this skill</a></p>' : '';
+    return profile + action;
+  }
+
+  return {
+    render(key, html) {
+      const page = pages.get(key);
+      if (!page) return html;
+      const full = page.get('');
+      if (full) {
+        const pageHtml = showLinks ? html.replace(/<p class="svc-publisher"[^>]*>[\s\S]*?<\/p>/, '') : html;
+        return pageHtml.replace(/<aside\b[^>]*data-services-cta="skill"[^>]*>|<\/main>/, anchor => content(full, false) + anchor);
+      }
+      return html.replace(/(<tr id="([^"]+)" data-id="([^"]+)"[^>]*>[\s\S]*?<td class="name">[\s\S]*?)(<\/td>)/g, (whole, cell, fragment, id, end) => {
+        const target = page.get(fragment);
+        return target?.listingPath === id ? cell + content(target, true) + end : whole;
+      });
+    },
+    verify() {
+      if (expected.size) throw new Error('Missing maker listing on generated page: ' + [...expected][0]);
+    },
+  };
 }

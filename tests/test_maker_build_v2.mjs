@@ -1,12 +1,15 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { randomBytes } from 'node:crypto';
+import { createHash, randomBytes } from 'node:crypto';
 import fs from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { build, NEW } from '../scripts/build-directory-site.mjs';
 import catalog from '../directory/featured-projects.json' with { type: 'json' };
 
+import searchIndex from '../docs/directory/search-index.json' with { type: 'json' };
+
+const claimId = entry => 'skill-' + createHash('sha256').update(entry.id).digest('hex');
 const enabled = {
   SUEDE_SITE: 'directory', MAKER_V2_ENABLED: 'true', MAKER_V2_FEATURED_LINKS: 'true', MAKER_V2_ORIGIN: NEW,
   MAKER_V2_DB_URL: 'https://fixture.supabase.co', MAKER_V2_DB_SECRET_KEY: 'sb_secret_' + randomBytes(24).toString('base64url'),
@@ -29,25 +32,40 @@ test('maker routes build without injected third-party scripts, stay private, and
     assert.doesNotMatch(read(dir, 'sitemap.xml'), /<loc>[^<]+\/maker\//);
   });
 });
-test('config plus explicit rollout adds exactly one link to every featured project, no pending entries or secret output', () => {
+test('configured rollout links every skill and eligible featured project without exposing secrets', () => {
   output(enabled, dir => {
     const html = read(dir, 'featured/index.html');
     const linked = [...html.matchAll(/href="\/maker\/\?id=([a-z0-9-]+)" data-maker-claim/g)].map(match => match[1]).sort();
     assert.deepEqual(linked, catalog.projects.filter(entry => entry.status !== 'pending').map(entry => entry.id).sort());
+    const pages = new Map();
+    for (const entry of searchIndex) {
+      const [page] = entry.href.slice('/directory/'.length).split('#');
+      if (!pages.has(page)) pages.set(page, read(dir, page + 'index.html'));
+      assert.ok(pages.get(page).includes('href="/maker/?id=' + claimId(entry) + '"'), entry.id);
+    }
     assert.equal(html.includes(enabled.MAKER_V2_DB_SECRET_KEY), false, 'database fixture key must not enter the built page');
     assert.equal(html.includes(enabled.MAKER_V2_GITHUB_CLIENT_SECRET), false, 'OAuth fixture secret must not enter the built page');
   });
   output({ ...enabled, MAKER_V2_GITHUB_CLIENT_SECRET: '' }, dir => assert.doesNotMatch(read(dir, 'featured/index.html'), /data-maker-claim/));
 });
 
-test('reviewed overlay reaches static featured edition without changing the editorial card', () => {
+test('approved profiles render on featured cards, standalone skills and compact rows', () => {
   const dir = fs.mkdtempSync(path.join(tmpdir(), 'maker-reviewed-build-'));
   try {
     const makerProjection = { schema_version: 1, profiles: [{
       listing: 'featured:appie', repository: 'appierun/appie-mcp', statement: 'A reviewed fixture statement.',
     }] };
+    const compact = searchIndex.find(entry => !entry.full);
+    const full = searchIndex.find(entry => entry.full);
+    for (const entry of [compact, full]) {
+      makerProjection.profiles.push({ listing: 'skill:' + claimId(entry), repository: entry.repo, statement: 'Reviewed ' + entry.id });
+    }
     build(dir, { env: { MAKER_V2_PUBLISH_PROFILES: 'true' }, makerProjection });
     const html = read(dir, 'featured/index.html');
+    for (const entry of [compact, full]) {
+      const [page] = entry.href.slice('/directory/'.length).split('#');
+      assert.ok(read(dir, page + 'index.html').includes('Reviewed ' + entry.id));
+    }
     assert.match(html, /A reviewed fixture statement\./);
     assert.match(html, /data-maker-profile/);
     assert.match(html, /Explore Appie on GitHub/);

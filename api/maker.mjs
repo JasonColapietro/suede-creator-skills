@@ -1,4 +1,4 @@
-import catalog from '../directory/featured-projects.json' with { type: 'json' };
+import { makerCatalog } from '../scripts/directory/maker-catalog.mjs';
 import { createMakerRuntime } from '../scripts/directory/maker-runtime-v2.mjs';
 import { createMakerOwnerService } from '../scripts/directory/maker-owner-v2.mjs';
 import { makerSettings } from '../scripts/directory/maker-settings-v2.mjs';
@@ -12,7 +12,7 @@ export function buildMakerHandler(env, fetcher = fetch) {
     enabled, site: env.SUEDE_SITE, origin: settings?.origin,
     clientId: env.MAKER_V2_GITHUB_CLIENT_ID, clientSecret: env.MAKER_V2_GITHUB_CLIENT_SECRET,
     store, fetch: fetcher, makeService: github => createMakerOwnerService({
-      enabled, site: env.SUEDE_SITE, projects: catalog.projects, github, store,
+      enabled, site: env.SUEDE_SITE, projects: makerCatalog, github, store,
       isModerator: id => settings.moderators.has(id), hasReviewedClaim: record => store.hasReviewedClaim(record),
     }),
   });

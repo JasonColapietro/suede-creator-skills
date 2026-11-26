@@ -16,6 +16,11 @@ export function createMakerStore({ endpoint, key, fetch: fetcher = fetch } = {})
 
   return Object.freeze({
     durable: true,
+    async approvedListings() {
+      const ids = await invoke('approved_listings', {});
+      if (!Array.isArray(ids) || !ids.every(id => typeof id === 'string')) throw new Error('Invalid approved listings');
+      return ids;
+    },
     saveFlow: (key, value) => invoke('flow_save', { p_key: key, p_value: value }),
     consumeFlow: key => invoke('flow_consume', { p_key: key }),
     saveSession: (key, value) => invoke('session_save', { p_key: key, p_value: value }),

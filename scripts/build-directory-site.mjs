@@ -27,7 +27,9 @@ import { fileURLToPath } from "node:url";
 import featuredCatalog from "../directory/featured-projects.json" with { type: "json" };
 import { makerSettings } from "./directory/maker-settings-v2.mjs";
 import makerProfiles from "../directory/maker-profiles.json" with { type: "json" };
-import { renderFeaturedMakerProfiles } from "./directory/maker-projection-v2.mjs";
+import { skillTargets } from "./directory/maker-catalog.mjs";
+import { loadMakerProfiles } from "./directory/maker-profiles.mjs";
+import { renderFeaturedMakerProfiles, skillMakerRenderer } from "./directory/maker-projection-v2.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 export const OLD = "https://skills.suedeai.ai";
@@ -234,6 +236,15 @@ export function build(out, { env = process.env, makerProjection = makerProfiles 
   fs.mkdirSync(out, { recursive: true });
 
   const showMakerLinks = env.MAKER_V2_FEATURED_LINKS === "true" && Boolean(makerSettings(env));
+  const publish = env.MAKER_V2_PUBLISH_PROFILES === "true";
+  let featuredProjection = makerProjection;
+  let skills = new Map();
+  if (publish) {
+    const skillRows = makerProjection.profiles.filter(row => row.listing.startsWith("skill:"));
+    skills = loadMakerProfiles({ ...makerProjection, profiles: skillRows }, new Map(skillTargets.map(t => ["skill:" + t.id, t.repo])));
+    featuredProjection = { ...makerProjection, profiles: makerProjection.profiles.filter(row => !row.listing.startsWith("skill:")) };
+  }
+  const skillMaker = skillMakerRenderer(skillTargets, skills, showMakerLinks);
   const reports = [];
   copyTree(dirSrc, out, (text, ext, file) => {
     const rel = path.relative(dirSrc, file).split(path.sep).join("/");
@@ -241,10 +252,11 @@ export function build(out, { env = process.env, makerProjection = makerProfiles 
     const rewritten = ext === ".html" ? compactNavigation(original) : original;
     if (rel === "index.html") return addCrackedDevs(rewritten);
     if (rel === "featured/index.html") {
-      const featured = env.MAKER_V2_PUBLISH_PROFILES === 'true'
-        ? renderFeaturedMakerProfiles(rewritten, makerProjection, featuredCatalog.projects) : rewritten;
+      const featured = publish
+        ? renderFeaturedMakerProfiles(rewritten, featuredProjection, featuredCatalog.projects) : rewritten;
       return showMakerLinks ? addMakerLinks(featured) : featured;
     }
+    if (ext === ".html") return skillMaker.render(rel, rewritten);
     if (path.basename(file) !== "report.json") return rewritten;
     const { report_version: previousVersion, ...evidence } = JSON.parse(rewritten);
     // Match the original directory report verifier: hash compact evidence in
@@ -253,6 +265,7 @@ export function build(out, { env = process.env, makerProjection = makerProfiles 
     reports.push({ rel, previousVersion, report_version });
     return JSON.stringify({ ...evidence, report_version }, null, 2) + "\n";
   });
+  skillMaker.verify();
   for (const { rel, previousVersion, report_version } of reports) {
     const listing = path.join(out, path.dirname(rel), "index.html");
     // Compact repository rows link reports without displaying a version.

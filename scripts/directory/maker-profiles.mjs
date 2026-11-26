@@ -35,7 +35,7 @@ export function loadMakerProfiles(input, knownListings) {
     if (!obj(row) || Object.keys(row).some((k) => !["listing", "repository", "statement", "website", "socials","demo","posts"].includes(k))) fail();
     const { listing, repository, statement, website, socials } = row;
     if (!knownListings.has(listing) || out.has(listing)) fail();
-    if (listing.startsWith("featured:") ? repository !== knownListings.get(listing) : repository !== undefined) fail();
+    if (/^(?:featured|skill):/.test(listing) ? repository !== knownListings.get(listing) : repository !== undefined) fail();
     if (statement !== undefined && (typeof statement !== "string" || !statement || statement !== statement.trim() ||
         [...statement].length > 320 || nonText.test(statement))) fail();
     const links = [];

@@ -54,7 +54,7 @@ export function createMakerOwnerService({ site, enabled, projects, github, store
   for (const item of projects) {
     if (item?.status === 'pending') continue;
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(item?.id ?? '') || targets.has(item.id)) throw new Error('Invalid or duplicate maker listing ID');
-    targets.set(item.id, Object.freeze({ id: item.id, name: item.name || item.id, repo: item.canonical_repo || item.repo || '', website: item.site || '', reviewUrl: /^directory\/reviews\/[a-zA-Z0-9._-]+\.md$/.test(item.review || '')
+    targets.set(item.id, Object.freeze({ id: item.id, kind: item.kind === 'skill' ? 'skill' : 'featured', name: item.name || item.id, repo: item.canonical_repo || item.repo || '', website: item.site || '', reviewUrl: /^directory\/reviews\/[a-zA-Z0-9._-]+\.md$/.test(item.review || '')
       ? 'https://github.com/JasonColapietro/suede-creator-skills/blob/main/' + item.review : null }));
   }
   const context = async (session, listingId) => {
@@ -141,7 +141,7 @@ export function createMakerOwnerService({ site, enabled, projects, github, store
         if (!activeOwner(state, user, fact)) return deny('ownership_not_verified');
         expectEdit(state,expected);
         const values = profile(input);
-        try { publicationRow('featured:' + listing.id, listing.repo, values); } catch { return deny('invalid_profile'); }
+        try { publicationRow(listing.kind + ':' + listing.id, listing.repo, values); } catch { return deny('invalid_profile'); }
         const revision = { version: nextSequence(state), status: 'pending', profile: values };
         return { write: { ...state, revision, editVersion: revision.version }, result: revision };
       });
