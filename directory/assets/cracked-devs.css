@@ -67,7 +67,7 @@ a.cracked-devs-link:focus-visible { outline: 2px solid var(--focus); outline-off
    button reads like the links beside it, and its panel opens below the bar. */
 .directory-more { position: relative; }
 .directory-more summary {
-  display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 6px 9px;
+  display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 6px 9px;
   border-radius: var(--radius-sm); list-style: none; cursor: pointer; white-space: nowrap;
   font: 500 12.5px/1 var(--mono); letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted);
   transition: color 0.15s, background 0.15s;
@@ -85,15 +85,15 @@ a.cracked-devs-link:focus-visible { outline: 2px solid var(--focus); outline-off
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
 }
 .directory-more:not([open]) .directory-more-links { display: none; }
-.nav-links .directory-more-links a { justify-content: space-between; min-height: 40px; padding: 8px 10px; }
+.nav-links .directory-more-links a { justify-content: space-between; min-height: 44px; padding: 8px 10px; }
 
 /* Desktop and tablet: one tidy row. Brand and star on the left; links, the
-   Cracked Devs button and List your skill on the right, all 40px tall. */
+   Cracked Devs button and List your skill on the right, all 44px tall. */
 @media (min-width: 769px) {
   .nav-links { flex-wrap: nowrap; gap: 4px; }
-  .nav-links a.nav-cta { margin-left: 0; min-height: 40px; padding: 0 16px; border-radius: var(--radius); }
+  .nav-links a.nav-cta { margin-left: 0; min-height: 44px; padding: 0 16px; border-radius: var(--radius); }
   .cracked-devs-desktop { flex-wrap: nowrap; gap: 8px; margin-left: 12px; padding-left: 16px; border-left: 1px solid var(--line); }
-  .cracked-devs-desktop > a.cracked-devs-link { min-height: 40px; padding: 0 14px; font-size: 13px; }
+  .cracked-devs-desktop > a.cracked-devs-link { min-height: 44px; padding: 0 14px; font-size: 13px; }
   .cracked-devs-link > span { font-size: 15px; }
   /* The joke stays the button's description for screen readers and still
      shows on phones; on wide screens it no longer pushes the bar to two rows. */
@@ -104,10 +104,11 @@ a.cracked-devs-link:focus-visible { outline: 2px solid var(--focus); outline-off
 
 /* Too narrow for the button and the links on one row: the button moves to
    the strip under the catalog bar, as on phones. */
+/* Between 769 and 1080px one row cannot hold everything at 44px, so the bar
+   wraps: the actions drop to a second row and stay side by side. */
 @media (min-width: 769px) and (max-width: 1080px) {
+  .nav-links { flex-wrap: wrap; row-gap: 8px; }
   .cracked-devs-desktop { margin-left: 4px; padding-left: 0; border-left: 0; }
-  .cracked-devs-desktop > a.cracked-devs-link { display: none; }
-  .cracked-devs-mobile { display: flex; align-items: center; gap: 8px 12px; padding-top: 12px; padding-bottom: 4px; }
 }
 
 /* Phone menu: More becomes a full-width row like the others, and its links
