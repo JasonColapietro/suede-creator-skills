@@ -5,7 +5,7 @@
 By Jason Colapietro, Suede
 
 Companion to [suede-creator-skills](https://github.com/JasonColapietro/suede-creator-skills),
-a 67-skill open-source pack for Claude Code and OpenAI Codex.
+a 79-skill open-source pack for Claude Code and OpenAI Codex.
 
 The `suede-graph-flo-xr` workflow discussed in this book adapts BSD-licensed
 code. Its copyright and license notice is in `NOTICE.md`.
@@ -22,7 +22,7 @@ writing the procedure down once, in a form an agent could run, and never
 re-explaining it.
 
 That is what a skill is. A folder, a markdown file, a procedure with a defined
-output. Sixty-seven public skills, readable before you install them and editable
+output. Seventy-nine public skills, readable before you install them and editable
 after.
 
 This book is the reasoning underneath. Half of it is how the machinery works:
@@ -63,7 +63,7 @@ the operating rules the book keeps returning to, collected in one page.
 
 **Progressive disclosure.** An agent reads every skill's description and almost
 none of their bodies. The description is the router. The body is the payload,
-loaded only on a match. This is why a pack can grow to sixty-seven skills
+loaded only on a match. This is why a pack can grow to seventy-nine skills
 without drowning the context window, and why a badly written description is a
 broken feature rather than a cosmetic one.
 
@@ -178,7 +178,7 @@ not reusable across a hundred tasks.
 Mechanically, a skill is boring, which is the best thing about it.
 
 It is a folder with a `SKILL.md` file inside. In this repo they live at
-`skills/<name>/SKILL.md`, 67 of them, under documented open-source licenses. The file opens with YAML
+`skills/<name>/SKILL.md`, 79 of them, under documented open-source licenses. The file opens with YAML
 frontmatter carrying a `name` and a `description`. Everything after the closing
 `---` is the body: the procedure the agent reads when the skill fires.
 
@@ -203,22 +203,22 @@ phrases with replacements, ten formulaic structures with their fixes, and a
 is clever. All of it is written down, which means it runs the same way on a
 Tuesday afternoon as it does at midnight.
 
-## Progressive disclosure, or why 67 skills fit
+## Progressive disclosure, or why 79 skills fit
 
-Here is the objection that arrives immediately. The 67 `SKILL.md` files in this
-repo total 953,080 bytes. Loading all of them into every conversation would
+Here is the objection that arrives immediately. The 79 `SKILL.md` files in this
+repo total 996,918 bytes. Loading all of them into every conversation would
 crowd out the thing you actually came to do.
 
 They are not all loaded. Only the frontmatter descriptions stay resident, and
-all 67 descriptions together come to 29,575 bytes. That is roughly a
-thirty-second of the corpus. The agent holds a catalog of what exists and reads
+all 79 descriptions together come to 33,465 bytes. That is roughly a
+thirtieth of the corpus. The agent holds a catalog of what exists and reads
 a body only when a description matches the task in front of it.
 
 This is progressive disclosure, and it changes what a description is for. The
 description is not marketing copy for the skill. It is the router. It carries
 the entire burden of deciding whether 400 lines of procedure load or stay on
 disk. Chapter 2 takes that apart in detail, including the `NOT FOR:` convention
-that 67 of the 67 descriptions in this repo use to push work toward a better
+that 79 of the 79 descriptions in this repo use to push work toward a better
 match.
 
 The consequence for you is direct: a skill you install and never trigger costs
@@ -327,8 +327,8 @@ description: "Suede code review and A-F ship grade for a diff, PR, branch, or co
 ---
 ```
 
-Across all 67 skills, the frontmatter carries `name` 67 times and `description`
-67 times. Sixty-seven of them add a `metadata` block with a version string, a
+Across all 79 skills, the frontmatter carries `name` 79 times and `description`
+79 times. Seventy-nine of them add a `metadata` block with a version string, a
 convention the marketing and growth skills brought with them. Nothing else appears. The schema is small on
 purpose, because everything the frontmatter does happens before the body is
 read.
@@ -342,8 +342,8 @@ you.
 ## The description carries the routing burden
 
 The description is the only part of a skill that stays in the agent's context
-when the skill is not running. In this repo the 67 files total 953,080 bytes;
-the 67 descriptions together are 29,575. The agent holds the small number and
+when the skill is not running. In this repo the 79 files total 996,918 bytes;
+the 79 descriptions together are 33,465. The agent holds the small number and
 reaches for the large one only when a description matches.
 
 That makes the description a router, not a summary. It has to answer two
@@ -382,7 +382,7 @@ actually types ("strip AI tells", "deslop"), and then the boundary.
 
 ## The `NOT FOR:` convention
 
-Sixty-seven of the 67 descriptions in this repo end with a `NOT FOR:` clause,
+Seventy-nine of the 79 descriptions in this repo end with a `NOT FOR:` clause,
 and it is the highest-leverage sentence in the file. That count is measured,
 not asserted: the validator checks this sentence against the files on every run.
 
@@ -629,7 +629,7 @@ regrettable answer to an unclear question.
 
 ## NOT FOR is the other half of the contract
 
-Forty-eight of the 67 public skills carry a `NOT FOR:` clause in their
+Forty-eight of the 79 public skills carry a `NOT FOR:` clause in their
 description. It always has the same shape: the condition under which a sibling
 wins, then the sibling's exact name in parentheses.
 
@@ -740,7 +740,7 @@ demonstrates itself by finding a real bug in the pack's release gate.
 
 ## A pack is a namespace
 
-Ten skills have forty-five possible pairwise collisions. Sixty-seven have more
+Ten skills have forty-five possible pairwise collisions. Seventy-nine have more
 than two thousand six hundred. You cannot write your way out of that with better
 positive descriptions, because none of the descriptions are inaccurate. They are
 all true. Truth about what a skill does says nothing about whether it should
@@ -1810,7 +1810,7 @@ Four things change in the artifact when you optimize for the second one.
 
 Claims carry sources. A page that says "faster than the alternatives" gives a
 model nothing to quote, because quoting it would be quoting an opinion with a
-confident font. A page that says "the pack ships 67 skill folders, MIT
+confident font. A page that says "the pack ships 79 skill folders, MIT
 licensed" and links the repo gives the model a fact with a provenance trail
 attached.
 
@@ -3056,7 +3056,7 @@ before this is rehearsal with a friendly judge.
 Things not to do in ninety days, each of which will eat the whole quarter if you
 let it.
 
-1. **Do not read all 67 skills.** You will use eight. Find those eight by
+1. **Do not read all 79 skills.** You will use eight. Find those eight by
    working, not by studying the catalog.
 2. **Do not build a personal framework in month one.** You have not earned the
    opinions yet. Frameworks written before the practice encode your current
@@ -3192,6 +3192,8 @@ match, and the page must list exactly these three.
 | `suede-deslop` | Prose is finished and about to go public, and it still sounds generated |
 | `suede-image` | You need marketing images: generation prompts, hero and social graphics, mockups, export sizing |
 | `suede-video` | You need format choice, scripting, storyboarding, generation, or editing for marketing video |
+| `suede-release-to-marketing` | Turn changes that users can actually access into accurate channel-ready drafts. |
+| `suede-media-transcript` | Produce a timecoded transcript and usable captions from media you can access and use. |
 
 ## I want people to find it
 
@@ -3206,6 +3208,13 @@ match, and the page must list exactly these three.
 | `suede-newsroom` | You want a content pipeline staffed as six roles, with a handoff record and one argument per asset |
 | `suede-competitors` | You are writing honest alternative, versus, and comparison pages for evaluators |
 | `suede-directory-submissions` | You are selecting listings, sequencing submissions, and verifying backlinks |
+| `suede-serp-research` | Compare matched search results and decide which queries need one page or separate pages. |
+| `suede-seo-sprint` | Run a bounded SEO sprint around one page, one query cluster, and one conversion. |
+| `suede-seo-proof-kb` | Track the source, permission, and expiry behind every published statement. |
+| `suede-search-titles` | Use Search Console and live page evidence to test better search titles. |
+| `suede-organic-gap-research` | Find organic content and editorial backlink gaps that are worth pursuing. |
+| `suede-internal-linking` | Find orphaned pages and add useful contextual links without turning navigation into clutter. |
+| `suede-domain-migration` | Plan a domain move with a verified redirect map and rollback triggers. |
 | `suede-free-tools` | You want engineering-as-marketing: calculators, graders, generators, scored and scoped |
 | `suede-clip-to-guide` | A clip, talk moment, or transcript should become a funnel package with rights routing |
 
@@ -3219,6 +3228,9 @@ match, and the page must list exactly these three.
 | `suede-play-release` | You are uploading or promoting an Android build and want proof of what production is actually serving |
 | `suede-aso` | You need store keyword fields, titles, subtitles, descriptions, screenshots, and competitor listings |
 | `suede-public-relations` | You need a media list, a validated story angle, a pitch, or a press kit |
+| `suede-syndication` | Adapt one verified story for distinct audiences without blurring canonicals or permissions. |
+| `suede-reddit-serp` | Study real Reddit threads that surface in search without treating communities as link inventory. |
+| `suede-link-outreach` | Find an editorial reason to pitch a specific source a useful, verifiable resource. |
 | `suede-campaign-in-a-box` | A song or release needs a full rollout: hooks, rituals, visuals, merch, calendar, email, site copy |
 
 ## I want to grow it

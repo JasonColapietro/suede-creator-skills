@@ -4,7 +4,7 @@
 
 <br><br>
 
-[![Skills: 67](https://img.shields.io/badge/skills-67-c8a96e?labelColor=080808)](#the-skills)
+[![Skills: 79](https://img.shields.io/badge/skills-79-c8a96e?labelColor=080808)](#the-skills)
 [![Licenses: MIT + BSD](https://img.shields.io/badge/licenses-MIT_%2B_BSD-c8a96e?labelColor=080808)](NOTICE.md)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-c8a96e?labelColor=080808)](#install-in-30-seconds)
 [![Codex](https://img.shields.io/badge/Codex-plugin-c8a96e?labelColor=080808)](#install-in-30-seconds)
@@ -346,7 +346,7 @@ Yes. A dependency-free stdio MCP server ships in [`mcp/`](mcp/) and is published
 
 ### Which skills help with SEO, AEO and GEO?
 
-Start with `suede-seo-audit` to audit a page for search visibility, and `suede-ai-seo` to plan content for AI search and answer engines. The [skill catalog](https://skills.suedeai.ai/skills/) lists the rest.
+Start with `suede-seo-audit` to audit a page for search visibility, and `suede-ai-seo` to plan content for AI search and answer engines. Browse the [skill catalog](https://skills.suedeai.ai/skills/) or see the [SEO workflow crosswalk](docs/seo-workflow-crosswalk.md) for the individual research, migration, measurement, and distribution skills.
 
 ## About the creator
 

@@ -93,38 +93,50 @@
         "suede-aso",
         "suede-attribution",
         "suede-churn-prevention",
+        "suede-clip-to-guide",
         "suede-co-marketing",
         "suede-cold-email",
         "suede-community-marketing",
         "suede-competitor-profiling",
         "suede-competitors",
-        "suede-clip-to-guide",
         "suede-content-strategy",
         "suede-customer-research",
         "suede-directory-submissions",
+        "suede-domain-migration",
         "suede-emails",
         "suede-free-tools",
         "suede-image",
         "suede-influencer-outreach",
+        "suede-internal-linking",
         "suede-lead-magnets",
+        "suede-link-outreach",
         "suede-marketing-council",
         "suede-marketing-loops",
         "suede-marketing-plan",
+        "suede-media-transcript",
         "suede-newsroom",
         "suede-offers",
         "suede-onboarding",
+        "suede-organic-gap-research",
         "suede-paywalls",
         "suede-pricing",
         "suede-product-marketing",
         "suede-programmatic-seo",
         "suede-prospecting",
         "suede-public-relations",
+        "suede-reddit-serp",
         "suede-referrals",
+        "suede-release-to-marketing",
         "suede-reverse-engineer-anyone",
         "suede-revops",
         "suede-sales-enablement",
+        "suede-search-titles",
+        "suede-seo-proof-kb",
+        "suede-seo-sprint",
+        "suede-serp-research",
         "suede-sms",
         "suede-social",
+        "suede-syndication",
         "suede-video"
       ],
       "mcpServer": "suede_skills_mcp",
@@ -157,7 +169,7 @@
       "key": "craft",
       "label": "Craft",
       "summary": "Make the thing look and read like someone built it on purpose.",
-      "count": 9,
+      "count": 11,
       "lanes": [
         {
           "label": "Design & copy",
@@ -165,7 +177,7 @@
         },
         {
           "label": "Creative assets",
-          "count": 4
+          "count": 6
         }
       ]
     },
@@ -173,15 +185,15 @@
       "key": "found",
       "label": "Get found",
       "summary": "Be discoverable by search, by AI answers, and by an audience.",
-      "count": 12,
+      "count": 22,
       "lanes": [
         {
           "label": "Search & AI visibility",
-          "count": 6
+          "count": 13
         },
         {
           "label": "Content & audience",
-          "count": 6
+          "count": 9
         }
       ]
     },
@@ -867,6 +879,114 @@
       "description": "Route requests across the full public Suede pack to the narrowest specialist and preserve the request verbatim. Use when asked \"which Suede skill should I use?\", when work crosses lanes, or when only the umbrella is installed. For next-action help: what’s next, recommend the next move, give me the prompt, expand prompt, or make it granular. NOT FOR: one clear lane (use its specialist), one multi-file implementation graph (use suede-graph-flo-xr), or parallel file ownership (use suede-agent-teams).",
       "useWhen": "Load the full public Suede workflow pack from one GitHub skill path with the quality gates intact.",
       "displayName": "Suede Workflow Skills"
+    },
+    {
+      "name": "suede-domain-migration",
+      "area": "marketing",
+      "specialty": "found",
+      "lane": "Search & AI visibility",
+      "description": "Plan or verify an SEO domain migration, URL move, rebrand, or folder consolidation. Match old sources to new equivalents, prove redirects and canonical parity, and prepare release monitoring. NOT FOR: changing DNS or deploying without approval, or a general SEO audit (suede-seo-audit).",
+      "useWhen": "Plan a domain move with a verified redirect map and rollback triggers.",
+      "displayName": "Suede Domain Migration Skills"
+    },
+    {
+      "name": "suede-internal-linking",
+      "area": "marketing",
+      "specialty": "found",
+      "lane": "Search & AI visibility",
+      "description": "Repair and improve crawlable internal links: find orphan pages, reduce click depth, and connect useful resources to relevant product or service pages. NOT FOR: off-site backlinks, or broad technical SEO triage (suede-seo-audit).",
+      "useWhen": "Find orphaned pages and add useful contextual links without turning navigation into clutter.",
+      "displayName": "Suede Internal Linking Skills"
+    },
+    {
+      "name": "suede-link-outreach",
+      "area": "marketing",
+      "specialty": "found",
+      "lane": "Content & audience",
+      "description": "Qualify editorial link opportunities and draft individual outreach for a specific resource, with a reason to include it and a record of every skipped prospect. Use for resource-page, partner, integration or editorial link pitches. NOT FOR: generic sales cold email (use suede-cold-email) or journalist pitches (use suede-public-relations).",
+      "useWhen": "Find an editorial reason to pitch a specific source a useful, verifiable resource.",
+      "displayName": "Suede Link Outreach Skills"
+    },
+    {
+      "name": "suede-media-transcript",
+      "area": "marketing",
+      "specialty": "craft",
+      "lane": "Creative assets",
+      "description": "Transcribe authorized recordings, produce checked captions, or turn a time-coded transcript into chapters and show notes. Use when asked for verbatim speech, speaker labels, on-screen text, SRT or VTT. NOT FOR: editing footage (suede-video), building clip campaigns (suede-clip-to-guide), or publishing media.",
+      "useWhen": "Produce a timecoded transcript and usable captions from media you can access and use.",
+      "displayName": "Suede Media Transcript Skills"
+    },
+    {
+      "name": "suede-organic-gap-research",
+      "area": "marketing",
+      "specialty": "found",
+      "lane": "Search & AI visibility",
+      "description": "Find competitor organic-search content gaps and qualified backlink prospects using comparable exports or approved provider access. Convert findings into a prioritized worklist. NOT FOR: general competitor profiles (suede-competitor-profiling), or outbound messaging (suede-influencer-outreach).",
+      "useWhen": "Find organic content and editorial backlink gaps that are worth pursuing.",
+      "displayName": "Suede Organic Gap Research Skills"
+    },
+    {
+      "name": "suede-reddit-serp",
+      "area": "marketing",
+      "specialty": "found",
+      "lane": "Content & audience",
+      "description": "Research Reddit threads that appear in search results or AI citations for a real buyer question, then decide whether a useful disclosed practitioner reply is appropriate. Produces a sourced thread review and optional drafts. NOT FOR: operating a community (use suede-community-marketing) or publishing replies (use suede-social).",
+      "useWhen": "Study real Reddit threads that surface in search without treating communities as link inventory.",
+      "displayName": "Suede Reddit SERP Skills"
+    },
+    {
+      "name": "suede-release-to-marketing",
+      "area": "marketing",
+      "specialty": "craft",
+      "lane": "Creative assets",
+      "description": "Turn Git changes and confirmed deployments into accurate release messaging, changelog entries, and channel-specific drafts. Use when asked what shipped or how to announce changes from a PR, commit range, or release. NOT FOR: deploying releases (suede-launch-packaging), ongoing editorial production (suede-newsroom), or publishing posts.",
+      "useWhen": "Turn changes that users can actually access into accurate channel-ready drafts.",
+      "displayName": "Suede Release to Marketing Skills"
+    },
+    {
+      "name": "suede-search-titles",
+      "area": "marketing",
+      "specialty": "found",
+      "lane": "Search & AI visibility",
+      "description": "Audit or rewrite title tags, H1 alignment, and displayed search titles, including bulk changes and CTR diagnosis. NOT FOR: wider technical SEO scoring (suede-seo-audit) or ad headline production (suede-ad-creative).",
+      "useWhen": "Use Search Console and live page evidence to test better search titles.",
+      "displayName": "Suede Search Titles Skills"
+    },
+    {
+      "name": "suede-seo-proof-kb",
+      "area": "marketing",
+      "specialty": "found",
+      "lane": "Search & AI visibility",
+      "description": "Build a searchable library of first-hand claims, benchmarks, customer outcomes and demonstrations, tied to publication permission and the pages that use them. Use to replace thin SEO copy with traceable evidence or update stale claims across a site. NOT FOR: collecting new interviews (use suede-customer-research) or writing the finished page (use suede-copy).",
+      "useWhen": "Track the source, permission, and expiry behind every published statement.",
+      "displayName": "Suede SEO Proof Library Skills"
+    },
+    {
+      "name": "suede-seo-sprint",
+      "area": "marketing",
+      "specialty": "found",
+      "lane": "Search & AI visibility",
+      "description": "Plan a focused month of SEO work for one high-value landing page and its query cluster. Establish a search and conversion baseline, assign weekly changes, and measure whether the targeted page gained useful visibility. NOT FOR: site-wide diagnosis (use suede-seo-audit) or broad publishing calendars (use suede-content-strategy).",
+      "useWhen": "Run a bounded SEO sprint around one page, one query cluster, and one conversion.",
+      "displayName": "Suede SEO Sprint Skills"
+    },
+    {
+      "name": "suede-serp-research",
+      "area": "marketing",
+      "specialty": "found",
+      "lane": "Search & AI visibility",
+      "description": "Research current search result pages, query intent, SERP overlap, keyword clusters, and source citations. Ground page mapping in comparable returned results rather than semantic similarity alone. NOT FOR: drafting comparison pages (suede-competitors) or a full prompt-panel program (suede-ai-seo).",
+      "useWhen": "Compare matched search results and decide which queries need one page or separate pages.",
+      "displayName": "Suede SERP Research Skills"
+    },
+    {
+      "name": "suede-syndication",
+      "area": "marketing",
+      "specialty": "found",
+      "lane": "Content & audience",
+      "description": "Prepare a channel-specific distribution packet for an owned launch, benchmark or report, with publication metadata, privacy checks, and canonical decisions. Use when adapting a flagship asset to trade media, a developer publication or an external article. NOT FOR: journalist relationship work (use suede-public-relations) or building an editorial team (use suede-newsroom).",
+      "useWhen": "Adapt one verified story for distinct audiences without blurring canonicals or permissions.",
+      "displayName": "Suede Syndication Skills"
     }
   ],
   "mcp": {
