@@ -1,0 +1,22 @@
+{
+  "assessment_date": "2026-11-26",
+  "ingested": "2026-11-26",
+  "previous_snapshot_id": "acbbe538b5e14482b3ed6569cd6c892d",
+  "new_snapshot_id": "929dcf97e9ed44db9c6487396d8f3d57",
+  "unchanged_existing_skills": 3913,
+  "unchanged_existing_repositories": 174,
+  "existing_before_sha256": "1fcbc067a0224b242c06869a494b8640a8cba7d1750b2b444d23cb3f7d284b1a",
+  "existing_after_sha256": "1fcbc067a0224b242c06869a494b8640a8cba7d1750b2b444d23cb3f7d284b1a",
+  "added_repositories": [
+    "klingai-tech/claude-plugin"
+  ],
+  "added_skills": [
+    "klingai-tech/claude-plugin/kling-ai",
+    "klingai-tech/claude-plugin/kling-ai-generate-image",
+    "klingai-tech/claude-plugin/kling-ai-generate-video"
+  ],
+  "not_listed_by_policy": [],
+  "security_scan_status": "not_scanned",
+  "runtime_tested": false,
+  "numeric_scores": "computed by existing parser, curator and graded-v2 rubric"
+}
