@@ -92,8 +92,9 @@ Each skill appears in one category. A repository can contribute to several categ
 - **[go-public](featured.md#go-public)** by [fengyiqicoder](https://github.com/fengyiqicoder). Build a shareable OneTag-hosted AI workflow page with inputs, chained steps and streamed results. Visitors need no account or API key.
 - **[Nexscope Amazon Skills](featured.md#nexscope-amazon)** by [nexscope-ai](https://github.com/nexscope-ai). A collection of Amazon seller workflows for product research, listings, advertising and operations.
 - **[Nexscope eCommerce Skills](featured.md#nexscope-ecommerce)** by [nexscope-ai](https://github.com/nexscope-ai). Product research, marketing and operations workflows spanning Amazon, Shopify, eBay, Etsy, TikTok Shop and Walmart.
+- **[DESIGN:OS CLI](featured.md#design-os)** by [jangtrinh](https://github.com/jangtrinh). Two source workflows connect design setup with a repeatable concept, build, check and handover loop. Review rendered UI at three widths and keep artifact hashes alongside the result.
 
-These 29 editorial selections have [reviewed scope and setup guidance](featured.md); 5 more are featured with scan &amp; review pending. Editorial selection is separate from quality scores, security certification and README-badge verification. Featured plugins outside the scored skill snapshot are not included in the skill or repository counts above.
+These 30 editorial selections have [reviewed scope and setup guidance](featured.md); 5 more are featured with scan &amp; review pending. Editorial selection is separate from quality scores, security certification and README-badge verification. Featured plugins outside the scored skill snapshot are not included in the skill or repository counts above.
 
 ## Guides
 
