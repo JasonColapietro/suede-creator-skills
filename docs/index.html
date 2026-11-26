@@ -3992,7 +3992,7 @@
     }
 
     /* Cracked Devs tab: the one hot door in the nav */
-    .nav-cracked { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: #61e6ed; border: 1px solid rgba(198, 98, 90, 0.45); border-radius: 3px; padding: 4px 9px; background: rgba(23,106,115, 0.1); white-space: nowrap; animation: cracked-breathe 2.8s ease-in-out infinite; }
+    .nav-cracked, .nav-links a.nav-cracked { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: #61e6ed; border: 1px solid rgba(198, 98, 90, 0.45); border-radius: 3px; padding: 4px 9px; background: rgba(23,106,115, 0.1); white-space: nowrap; animation: cracked-breathe 2.8s ease-in-out infinite; }
     .nav-cracked:hover { color: #ffb3ab; border-color: #61e6ed; }
     @keyframes cracked-breathe { 0%, 100% { box-shadow: 0 0 0 rgba(198, 98, 90, 0); } 50% { box-shadow: 0 0 14px rgba(198, 98, 90, 0.35); } }
     @media (prefers-reduced-motion: reduce) { .nav-cracked { animation: none; } }
@@ -4044,6 +4044,7 @@
   </style>
   <link rel="stylesheet" href="assets/skills-premium.css">
   <link rel="stylesheet" href="assets/cypherpunk.css">
+  <link rel="stylesheet" href="assets/home-refresh.css">
 </head>
 <body class="skills-home premium-skills">
 
@@ -4423,31 +4424,37 @@ codex plugin add suede-skills@suede-codex</code>
         <span class="lane-name">Ship</span>
         <span class="lane-desc">Orchestration &amp; routing, Code review &amp; CI, Apps: iOS &amp; Android</span>
         <span class="lane-count">13 skills</span>
+        <span class="lane-bar" aria-hidden="true"><i style="--n:6"></i><i style="--n:4"></i><i style="--n:3"></i></span>
       </a>
       <a class="lane-row" href="#lane-craft">
         <span class="lane-name">Craft</span>
         <span class="lane-desc">Design &amp; copy, Creative assets</span>
         <span class="lane-count">9 skills</span>
+        <span class="lane-bar" aria-hidden="true"><i style="--n:5"></i><i style="--n:4"></i></span>
       </a>
       <a class="lane-row" href="#lane-found">
         <span class="lane-name">Get found</span>
         <span class="lane-desc">Search &amp; AI visibility, Content &amp; audience</span>
         <span class="lane-count">12 skills</span>
+        <span class="lane-bar" aria-hidden="true"><i style="--n:6"></i><i style="--n:6"></i></span>
       </a>
       <a class="lane-row" href="#lane-demand">
         <span class="lane-name">Demand channels</span>
         <span class="lane-desc">Paid &amp; outbound, Lifecycle messaging, Acquisition assets</span>
         <span class="lane-count">9 skills</span>
+        <span class="lane-bar" aria-hidden="true"><i style="--n:4"></i><i style="--n:2"></i><i style="--n:3"></i></span>
       </a>
       <a class="lane-row" href="#lane-revenue">
         <span class="lane-name">Revenue &amp; retention</span>
-        <span class="lane-desc">Money &amp; funnel, Measure &amp; operate, Consumer recovery</span>
+        <span class="lane-desc">Money &amp; funnel, Measure &amp; operate</span>
         <span class="lane-count">12 skills</span>
+        <span class="lane-bar" aria-hidden="true"><i style="--n:7"></i><i style="--n:5"></i></span>
       </a>
       <a class="lane-row" href="#lane-position">
         <span class="lane-name">Strategy &amp; rights</span>
         <span class="lane-desc">Strategy &amp; research, Creator toolkit</span>
         <span class="lane-count">12 skills</span>
+        <span class="lane-bar" aria-hidden="true"><i style="--n:8"></i><i style="--n:4"></i></span>
       </a>
     </div>
   </div>
