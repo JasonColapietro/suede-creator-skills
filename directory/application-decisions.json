@@ -127,5 +127,21 @@
   "445": {
     "review": "directory/reviews/2026-11-25-fairvalid.md",
     "scope_version": "7e59f2e0c9fa5498733a3cb8b773f30e47f3851779409bb0f24374a31ec72011"
+  },
+  "413": {
+    "review": "directory/reviews/2026-11-21-stalkchain.md",
+    "scope_version": "f2985f3b0bf5ed7a1b8b0f8b19594bb236f39515e76856aacc2721a777a06b1f"
+  },
+  "414": {
+    "review": "directory/reviews/2026-11-21-design-os-editorial.md",
+    "scope_version": "ba6a5004ff31065ad6015ddeb9c4f11ae3ef107e93ec8f1a0662c349aab2adb1"
+  },
+  "428": {
+    "review": "directory/reviews/2026-11-21-brewpage-publish.md",
+    "scope_version": "f41742bc4a026eb52c3a738934783a25179cb7a422f6a1bf688998b03154cc24"
+  },
+  "430": {
+    "review": "directory/reviews/2026-11-21-skills-for-bots.md",
+    "scope_version": "a47b09cbf12be5c990d5641f6c22d6c23ff85fed7b17071f6d784ea598ef6ca1"
   }
 }
