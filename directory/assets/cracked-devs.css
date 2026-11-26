@@ -62,3 +62,23 @@ a.cracked-devs-link:focus-visible { outline: 2px solid var(--focus); outline-off
 @media (forced-colors: active) {
   a.cracked-devs-link { border-color: LinkText; }
 }
+
+/* Secondary links sit under More rather than wrapping the primary row. */
+.directory-more { position: relative; }
+.directory-more summary {
+  display: flex; align-items: center; gap: 5px; min-height: 44px;
+  font-size: 13px; font-weight: 500; line-height: 1.4; color: var(--muted); cursor: pointer;
+  list-style: none; white-space: nowrap;
+}
+.directory-more summary::-webkit-details-marker { display: none; }
+.directory-more summary:hover, .directory-more[open] summary { color: var(--cream); }
+.directory-more-links {
+  position: absolute; inset: 100% 0 auto auto; display: grid; min-width: 155px;
+  padding: 6px 12px; background: #121212; border: 1px solid var(--border);
+  border-radius: 4px; z-index: 2;
+}
+.directory-more:not([open]) .directory-more-links { display: none; }
+.directory-more-links a { white-space: nowrap; }
+@media (max-width: 768px) {
+  .directory-more-links { position: static; min-width: 0; }
+}

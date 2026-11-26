@@ -66,6 +66,14 @@ test("the built site has no old directory URLs and no broken internal links", ()
     assert.ok(sitemap.includes(`<loc>${NEW}/</loc>`));
     assert.ok(!sitemap.includes(OLD));
     const home = fs.readFileSync(path.join(out, 'index.html'), 'utf8');
+    const menu = home.match(/<details class="directory-more">[\s\S]*?<\/details>/)?.[0];
+    assert.ok(menu, 'the standalone directory groups secondary navigation');
+    for (const label of ['Top 100', 'New', 'Topics', 'Stacks', 'Security', 'Saved']) {
+      assert.ok(menu.includes('>' + label), label + ' is reachable from More');
+    }
+    for (const label of ['Skills', 'Featured Skills', 'Agents']) {
+      assert.ok(!menu.includes('>' + label + '<'), label + ' remains in the primary navigation');
+    }
     const crackedLink = /<a class="cracked-devs-link" href="https:\/\/skills\.suedeai\.ai\/cracked\.html" aria-describedby="(cracked-devs-(?:desktop|mobile)-note)">/g;
     assert.deepEqual([...home.matchAll(crackedLink)].map(match => match[1]), ['cracked-devs-desktop-note', 'cracked-devs-mobile-note']);
     for (const id of ['cracked-devs-desktop-note', 'cracked-devs-mobile-note']) {

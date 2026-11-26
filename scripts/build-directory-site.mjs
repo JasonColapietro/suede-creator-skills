@@ -120,6 +120,24 @@ export function rewriteText(text, ext, pageUrl, { assetExists = shippedAsset } =
   return out;
 }
 
+// Compact only the standalone directory chrome. Secondary destinations stay
+// reachable by keyboard and with JavaScript off using a native disclosure.
+function compactNavigation(page) {
+  const nav = /(<div class="nav-links">)([\s\S]*?)(<\/div>\s*<\/details>)/;
+  return page.replace(nav, (whole, open, body, close) => {
+    const main = [], secondary = [], action = [];
+    for (const match of body.matchAll(/<a\b[^>]*>[\s\S]*?<\/a>/g)) {
+      const link = match[0];
+      if (link.includes('class="nav-cta"')) action.push(link);
+      else if (/>\s*(Skills|Featured Skills|Agents)\s*<\/a>$/.test(link)) main.push(link);
+      else secondary.push(link);
+    }
+    if (main.length < 2 || !secondary.length || action.length !== 1) return whole;
+    const more = `<details class="directory-more"><summary>More <span aria-hidden="true">▾</span></summary><div class="directory-more-links">${secondary.join("")}</div></details>`;
+    return open + [...main, more, ...action].join("\n") + close;
+  }).replace("</head>", '    <link rel="stylesheet" href="/assets/cracked-devs.css">\n</head>');
+}
+
 // Keep the editorial CTA on the standalone homepage, not on every generated
 // directory page or on the linked feature itself.
 function addCrackedDevs(home) {
@@ -138,7 +156,6 @@ function addCrackedDevs(home) {
     throw new Error("The standalone directory homepage CTA anchors have changed");
   }
   return home
-    .replace("</head>", '    <link rel="stylesheet" href="/assets/cracked-devs.css">\n</head>')
     .replace(submit, (link) => `<div class="cracked-devs-desktop">
           ${cta("desktop")}
           ${link}
@@ -174,7 +191,8 @@ export function build(out) {
   const reports = [];
   copyTree(dirSrc, out, (text, ext, file) => {
     const rel = path.relative(dirSrc, file).split(path.sep).join("/");
-    const rewritten = rewriteText(text, ext, `${OLD}/directory/${rel}`);
+    const original = rewriteText(text, ext, `${OLD}/directory/${rel}`);
+    const rewritten = ext === ".html" ? compactNavigation(original) : original;
     if (rel === "index.html") return addCrackedDevs(rewritten);
     if (path.basename(file) !== "report.json") return rewritten;
     const { report_version: previousVersion, ...evidence } = JSON.parse(rewritten);
