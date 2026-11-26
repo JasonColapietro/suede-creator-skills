@@ -745,7 +745,7 @@ function nav(here, absolute = false) {
       <nav class="shell nav-inner" aria-label="Main navigation">
         <a href="${rel(here, "directory/")}" class="nav-logo" aria-label="Suede Skills Directory home">
           <img src="${rel(here, "assets/")}suede-ai-logo-transparent.webp" alt="Suede" width="28" height="28" onerror="this.style.display='none'">
-          <span class="nav-logo-wordmark">SuedeAI<span>.directory</span></span>
+          <span class="nav-logo-wordmark">Suede <span>Directory</span></span>
         </a>
         ${starButton("nav")}
         <details class="nav-disclosure" open>

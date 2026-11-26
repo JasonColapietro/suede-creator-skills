@@ -120,6 +120,21 @@ export function rewriteText(text, ext, pageUrl, { assetExists = shippedAsset } =
   return out;
 }
 
+// The More menu closes on Escape (focus returns to its button), on a click
+// outside it, and when focus leaves it, like any other dropdown.
+const MORE_MENU_SCRIPT = `  <script>
+  (function () {
+    var more = document.querySelector('.directory-more');
+    if (!more) return;
+    var summary = more.querySelector('summary');
+    more.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && more.open) { more.open = false; summary.focus(); }
+    });
+    document.addEventListener('click', function (e) { if (more.open && !more.contains(e.target)) more.open = false; });
+    more.addEventListener('focusout', function (e) { if (more.open && e.relatedTarget && !more.contains(e.relatedTarget)) more.open = false; });
+  })();
+</script>`;
+
 // Compact only the standalone directory chrome. Secondary destinations stay
 // reachable by keyboard and with JavaScript off using a native disclosure.
 function compactNavigation(page) {
@@ -133,9 +148,10 @@ function compactNavigation(page) {
       else secondary.push(link);
     }
     if (main.length < 2 || !secondary.length || action.length !== 1) return whole;
-    const more = `<details class="directory-more"><summary>More <span aria-hidden="true">▾</span></summary><div class="directory-more-links">${secondary.join("")}</div></details>`;
+    const more = `<details class="directory-more"><summary aria-label="More pages">More <span class="directory-more-caret" aria-hidden="true">▾</span></summary><div class="directory-more-links">${secondary.join("")}</div></details>`;
     return open + [...main, more, ...action].join("\n") + close;
-  }).replace("</head>", '    <link rel="stylesheet" href="/assets/cracked-devs.css">\n</head>');
+  }).replace("</head>", '    <link rel="stylesheet" href="/assets/cracked-devs.css">\n</head>')
+    .replace("</body>", `${MORE_MENU_SCRIPT}\n</body>`);
 }
 
 // Keep the editorial CTA on the standalone homepage, not on every generated
