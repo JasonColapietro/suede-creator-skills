@@ -13,7 +13,8 @@ const read = relative => fs.readFileSync(path.join(root, relative), 'utf8');
 const repo = 'JasonColapietro/suede-creator-skills';
 const datasetText = read('directory/skills.json');
 const data = JSON.parse(datasetText);
-const receiptText = read('directory/intake/2026-10-31-interface-quality.json');
+const historicalReceipt = read('directory/intake/2026-10-31-interface-quality.json');
+const receiptText = read('directory/intake/2026-11-26-suede-skills.json');
 const receipt = JSON.parse(receiptText);
 const updatePath = 'directory/intake/first-party-listing-updates.json';
 const updates = fs.existsSync(path.join(root, updatePath)) ? JSON.parse(read(updatePath)) : [];
@@ -39,7 +40,7 @@ test('every maintained first-party package has an actual directory score above 9
     assert.ok(skill.score >= 91, `${skill.name}: ${skill.score}`);
     assert.equal(skill.grade, 'A');
     assert.equal(skill.checks, '11111111', skill.name);
-    if (skill.slug === 'suede-graph-flo-xr' && updated.has(skill.slug)) {
+    if (skill.slug === 'suede-graph-flo-xr') {
       assert.equal(skill.display_name, 'Suede Graph Flo XR');
     } else {
       assert.match(skill.display_name, /^Suede(?! AI\b| Labs\b)(?: .+)? Skills$/);
@@ -51,7 +52,11 @@ test('first-party reports and retained source inventories describe the exact rev
   assert.ok(own.length > 0, 'first-party reports require actual listings');
   // This is dated evidence, not a manifest that gets rehashed against HEAD.
   // Its detached source commit may not be retained in ordinary CI checkouts.
-  assert.equal(sha256(receiptText), '6083c907b8c72c9f609e5938c28d7fb2672ba29d226e20a14fcd05347b18107f');
+  assert.equal(sha256(historicalReceipt), '6083c907b8c72c9f609e5938c28d7fb2672ba29d226e20a14fcd05347b18107f');
+  assert.equal(sha256(receiptText), 'db40ed8a26881c2fc09be69f681f7a2b4b768605cadb301f2c6ac883ecddd57b');
+  assert.equal(receipt.external_before_sha256, receipt.external_after_sha256);
+  assert.deepEqual(receipt.scope, active);
+  assert.equal(git(['rev-parse', '--verify', receipt.source_revision + '^{commit}']).toString().trim(), receipt.source_revision);
   assert.equal(receipt.source_revision, data.repos[repo].commit_sha);
   assert.equal(receipt.assessment_date, data.repos[repo].assessment_date);
   assert.equal(updated.size, updates.length, 'each accepted listing may have only one active update');

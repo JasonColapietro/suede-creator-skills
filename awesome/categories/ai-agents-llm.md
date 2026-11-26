@@ -6,9 +6,9 @@
 
 Skills that help an agent build, steer and evaluate other AI systems: prompt and context engineering, MCP servers, evals, subagent workflows, and model training and inference. Each one ships as a SKILL.md folder your agent loads only when the task calls for it.
 
-**607 accepted skills · 71 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**608 accepted skills · 71 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
-**Compare on the 0–99 quality scale:** this category’s verified scores span **56–94 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=ai-agents-llm&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
+**Compare on the 0–99 quality scale:** this category’s verified scores span **56–96 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=ai-agents-llm&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
 [Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede listing.
 
@@ -464,11 +464,12 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 [Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
 
-- **93/100 · A** · [Suede Agent Teams Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-agent-teams/SKILL.md): Suede Agent Teams Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-agent-teams)
-- **91/100 · A** · [Suede Answer Engine Optimization Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-ai-seo/SKILL.md): Suede Answer Engine Optimization Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ai-seo)
-- **91/100 · A** · [Suede Graph Flo XR Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-graph-flo-xr/SKILL.md): Use when asked "compare implementation plans before building" for one multi-file repository change. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-graph-flo-xr)
-- **91/100 · A** · [Suede Operations Architecture Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-ops-architecture/SKILL.md): Suede Operations Architecture Skills: simplify workflows, choose bounded automation, define ownership, rollout, and verification. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ops-architecture)
-- **91/100 · A** · [Suede Workflow Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-workflow-skills/SKILL.md): Route requests across the full public Suede pack to the narrowest specialist and preserve the request verbatim. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-workflow-skills)
+- **96/100 · A** · [Suede Agent Teams Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-agent-teams/SKILL.md): Suede Agent Teams Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-agent-teams)
+- **94/100 · A** · [Suede Answer Engine Optimization Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-ai-seo/SKILL.md): Suede Answer Engine Optimization Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ai-seo)
+- **94/100 · A** · [Suede Graph Flo XR](https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-graph-flo-xr/SKILL.md): Use when a consequential multi-file task needs serious compute and independent testing. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-graph-flo-xr)
+- **94/100 · A** · [Suede Operations Architecture Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-ops-architecture/SKILL.md): Suede Operations Architecture Skills: simplify workflows, choose bounded automation, define ownership, rollout, and verification. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ops-architecture)
+- **94/100 · A** · [Suede SERP Research Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-serp-research/SKILL.md): Use when asked "cluster keywords by live SERP overlap" or to research query intent, result composition, and citations from comparable returned results. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-serp-research)
+- **94/100 · A** · [Suede Workflow Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-workflow-skills/SKILL.md): Route requests across the full public Suede pack to the narrowest specialist and preserve the request verbatim. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-workflow-skills)
 
 <a id="jeffallan--claude-skills"></a>
 
