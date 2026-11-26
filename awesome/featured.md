@@ -6,7 +6,7 @@
 
 Editorial selection highlights a project’s workflow and accepted scope. It is separate from structural quality grades, security certification and README-badge verification. A plugin feature does not add its contents to the scored skill catalog.
 
-Selections updated **2026-11-17**. [View on Suede](https://skills.suedeai.ai/directory/featured/).
+Selections updated **2026-11-26**. [View on Suede](https://skills.suedeai.ai/directory/featured/).
 
 - [Appie](#appie)
 - [CoalWash](#coalwash)
@@ -42,6 +42,7 @@ Selections updated **2026-11-17**. [View on Suede](https://skills.suedeai.ai/dir
 - [go-public](#go-public)
 - [Nexscope Amazon Skills](#nexscope-amazon)
 - [Nexscope eCommerce Skills](#nexscope-ecommerce)
+- [DESIGN:OS CLI](#design-os)
 
 <a id="appie"></a>
 
@@ -742,6 +743,25 @@ Product research, marketing and operations workflows spanning Amazon, Shopify, e
 Owner-fix note: some skill metadata needs repair, and bundled brand-monitoring scrapers are unfinished. Live-data services may require accounts or credits. Featured at collection level; individual skills are not security-verified.
 
 [Repository](https://github.com/nexscope-ai/eCommerce-Skills) · [Intake review](../directory/reviews/2026-11-17-nexscope-ecommerce.md) · [Reviewed source c5ba892](https://github.com/nexscope-ai/eCommerce-Skills/tree/c5ba892a1cc3178626577aed1dbde5e62a82f1ac) · [Suede feature](https://skills.suedeai.ai/directory/featured/#nexscope-ecommerce)
+
+---
+
+<a id="design-os"></a>
+
+## DESIGN:OS CLI
+
+**Source-reviewed editorial · UI design workflows** · License: PolyForm Shield 1.0.0 · source-available · Publisher: [jangtrinh](https://github.com/jangtrinh)
+
+Two source workflows connect design setup with a repeatable concept, build, check and handover loop. Review rendered UI at three widths and keep artifact hashes alongside the result.
+
+- **design-os: orient the design workflow.** Route design setup and diagnostics from the repository entry skill.
+- **design-os-designer: build, check and hand over.** Prepare a dedicated UI evidence folder, run deterministic checks and inspect responsive screenshots.
+
+### Setup
+
+Source review covers skills/design-os/SKILL.md and skills/design-os-designer/SKILL.md only. PolyForm Shield includes a noncompete restriction and redistribution notices. Node.js 20+ is required; screenshot checks use an existing Playwright/Chromium setup. The pinned ease-design 0.8.0 package files include only design-os-designer and do not include the design-os router. Use the reviewed source links for the exact scope; package installation was not tested.
+
+[Repository](https://github.com/jangtrinh/design-os) · [Intake review](../directory/reviews/2026-11-19-design-os.md) · [Reviewed source 23a21ca](https://github.com/jangtrinh/design-os/tree/23a21ca27501ae92c37121ae2832ade08d151dd4) · [Suede feature](https://skills.suedeai.ai/directory/featured/#design-os)
 
 ---
 
