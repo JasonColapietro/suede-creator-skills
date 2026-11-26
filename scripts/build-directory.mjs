@@ -585,8 +585,9 @@ const LISTED_FILE = path.join(repoRoot, "directory", "listed-since.json");
 const LISTED_NEXT = applyListedSince(loadListedSince(LISTED_FILE), data.skills, data.generated).next;
 const LISTED_FLOOR = Object.values(LISTED_NEXT.dates).reduce((m, d) => (d < m ? d : m), data.generated);
 const byScore = (a, b) => b.score - a.score || b.lists.length - a.lists.length || a.id.localeCompare(b.id);
-// One source reassessment must not move the browsing clock for the entire catalog.
+// A Suede-only reassessment must not advance third-party browse windows.
 const BROWSE_DATE = data.skills.reduce((latest, s) => {
+  if (isFirstParty(s)) return latest;
   const assessed = data.repos[s.repo].assessment_date;
   return assessed && assessed > latest ? assessed : latest;
 }, data.generated);
