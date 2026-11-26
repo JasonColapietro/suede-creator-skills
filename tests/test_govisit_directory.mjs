@@ -72,7 +72,7 @@ test('scoped intake preserves every existing publisher record', () => {
   const firstParty = 'JasonColapietro/suede-creator-skills';
   const firstPartyAtIntake = 66;
   // Later scoped ingestions add accepted repositories; their receipts list them.
-  const later = new Set(['2026-11-20', '2026-11-26'].flatMap((d) => JSON.parse(read(`directory/reviews/${d}-accepted-skills/scoped-ingestion.json`)).added_repositories));
+  const later = new Set(['2026-11-20-accepted-skills', '2026-11-26-accepted-skills', '2026-11-26-kling'].flatMap((d) => JSON.parse(read(`directory/reviews/${d}/scoped-ingestion.json`)).added_repositories));
   const thirdParty = data.skills.filter((s) => s.repo !== repo && s.repo !== firstParty && !later.has(s.repo)).length;
   assert.equal(receipt.unchanged_existing_skills, thirdParty + firstPartyAtIntake);
   assert.equal(receipt.unchanged_existing_repositories, Object.keys(data.repos).filter((r) => !later.has(r)).length - 1);

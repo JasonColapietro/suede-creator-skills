@@ -61,6 +61,7 @@
     "coreyhaines31/marketingskills/ads"
   ],
   "new_listings": [
+    "klingai-tech/claude-plugin/kling-ai-generate-image",
     "moonlitnayeem/fairvalid-ai/email-verification",
     "moonlitnayeem/fairvalid-ai/fairmatch-leads",
     "skillsforbots/grok-bot-skills/bot-safety-rules-starter",
@@ -68,6 +69,8 @@
     "stalkc/stalkchain-plugin/token-check",
     "stalkc/stalkchain-plugin/trader-check",
     "stalkc/stalkchain-plugin/smart-money-radar",
+    "klingai-tech/claude-plugin/kling-ai",
+    "klingai-tech/claude-plugin/kling-ai-generate-video",
     "metcalfsolutions/satori/satori",
     "andrewsiah/agentswarm-work-skill/agentswarm-work",
     "mrhy7176/cloudgpu-agent-skills/cloudgpu-ai-short-drama",
@@ -107,10 +110,7 @@
     "melmayssonowen/agent-skills/timetopost-autoseo-blog",
     "melmayssonowen/agent-skills/clef-music-tools",
     "melmayssonowen/agent-skills/toolfound-launch-kit",
-    "melmayssonowen/agent-skills/amazon-listing-checker",
-    "melmayssonowen/agent-skills/sheetfolk-budget-builder",
-    "eduardo-sl/go-agent-skills/go-api-design",
-    "eduardo-sl/go-agent-skills/go-ci"
+    "melmayssonowen/agent-skills/amazon-listing-checker"
   ],
   "topics": [
     {
@@ -1676,7 +1676,7 @@
     {
       "id": "image-editing",
       "name": "Image Editing",
-      "skills": 11,
+      "skills": 12,
       "weekly_installs": 0,
       "change_pct": null,
       "best": [
@@ -1688,7 +1688,7 @@
     {
       "id": "image-generation",
       "name": "Image Generation",
-      "skills": 16,
+      "skills": 17,
       "weekly_installs": 0,
       "change_pct": null,
       "best": [
@@ -1998,7 +1998,7 @@
     {
       "id": "prompt-engineering",
       "name": "Prompt Engineering",
-      "skills": 28,
+      "skills": 29,
       "weekly_installs": 0,
       "change_pct": null,
       "best": [
@@ -2310,7 +2310,7 @@
     {
       "id": "video-generation",
       "name": "AI Video Generation",
-      "skills": 18,
+      "skills": 21,
       "weekly_installs": 0,
       "change_pct": null,
       "best": [
@@ -2322,7 +2322,7 @@
     {
       "id": "video-scripts",
       "name": "Video Scripts and Storyboards",
-      "skills": 6,
+      "skills": 7,
       "weekly_installs": 0,
       "change_pct": null,
       "best": [
@@ -9259,6 +9259,55 @@
       "license": "MIT",
       "cost_lane": "free-with-service",
       "listing": "https://suedeai.directory/k-dense-ai/claude-scientific-skills/#zarr-python"
+    },
+    "klingai-tech/claude-plugin/kling-ai": {
+      "id": "klingai-tech/claude-plugin/kling-ai",
+      "name": "kling-ai",
+      "repo": "klingai-tech/claude-plugin",
+      "description": "Handle Kling AI / 可灵 requests in Claude Code, including prompt-only planning, missing-asset next steps, generation preparation and approved image/video creation. Route creative work to the dedicated Skills; manage Elemen",
+      "score": 72,
+      "grade": "C",
+      "category": "media-creative",
+      "topics": [
+        "video-generation"
+      ],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/klingai-tech/claude-plugin/#kling-ai"
+    },
+    "klingai-tech/claude-plugin/kling-ai-generate-image": {
+      "id": "klingai-tech/claude-plugin/kling-ai-generate-image",
+      "name": "kling-ai-generate-image",
+      "repo": "klingai-tech/claude-plugin",
+      "description": "Write or refine Kling AI image prompts, including prompt-only requests, or generate and edit images through the Kling AI MCP in Claude Code. Use for posters, product photography, portraits, covers, advertising stills, vi",
+      "score": 80,
+      "grade": "B",
+      "category": "media-creative",
+      "topics": [
+        "prompt-engineering",
+        "image-generation",
+        "image-editing",
+        "video-generation"
+      ],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/klingai-tech/claude-plugin/#kling-ai-generate-image"
+    },
+    "klingai-tech/claude-plugin/kling-ai-generate-video": {
+      "id": "klingai-tech/claude-plugin/kling-ai-generate-video",
+      "name": "kling-ai-generate-video",
+      "repo": "klingai-tech/claude-plugin",
+      "description": "Write Kling AI / 可灵 video prompts and storyboards, prepare video settings including HDR for approval, and submit authorized text-to-video, image-to-video, omni reference, keyframe, or motion-control requests in Claude Co",
+      "score": 72,
+      "grade": "C",
+      "category": "media-creative",
+      "topics": [
+        "video-generation",
+        "video-scripts"
+      ],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/klingai-tech/claude-plugin/#kling-ai-generate-video"
     },
     "korey2028-prog/resume-claim-guard/resume-claim-guard": {
       "id": "korey2028-prog/resume-claim-guard/resume-claim-guard",

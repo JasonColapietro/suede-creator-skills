@@ -459,7 +459,13 @@ if (browser) {
       shield.width = 80; shield.height = 88; shield.loading = 'lazy';
       quality.append(shield);
     }
-    quality.append(node('span', 'grade grade-' + skill.grade.toLowerCase(), skill.score + '/100 · ' + skill.grade));
+    if (skill.editorial_rating) {
+      const rating = skill.editorial_rating;
+      quality.append(node('span', 'grade grade-' + rating.grade.toLowerCase(), rating.score + '/100 · ' + rating.grade + ' · Editorial'));
+      quality.append(node('small', 'muted', 'Skill Check: ' + skill.score + '/100 · ' + skill.grade));
+    } else {
+      quality.append(node('span', 'grade grade-' + skill.grade.toLowerCase(), skill.score + '/100 · ' + skill.grade));
+    }
     // Save toggle for records that carry a directory id; older index records have none.
     if (skill.id) {
       const pressed = savedItems().some((item) => item.id === skill.id);

@@ -10072,5 +10072,14 @@
  "skillsforbots/grok-bot-skills/reminder-basics": {
   "category": "productivity-knowledge",
   "summary": "Set one daily reminder that repeats until the owner clearly says the task is done."
+ },
+ "klingai-tech/claude-plugin/kling-ai": {
+  "category": "media-creative"
+ },
+ "klingai-tech/claude-plugin/kling-ai-generate-image": {
+  "category": "media-creative"
+ },
+ "klingai-tech/claude-plugin/kling-ai-generate-video": {
+  "category": "media-creative"
  }
 }

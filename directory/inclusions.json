@@ -36,7 +36,8 @@
   "moonlitnayeem/fairvalid-ai",
   "StalkC/stalkchain-plugin",
   "kochetkov-ma/brewpage-publish-plugins",
-  "skillsforbots/grok-bot-skills"
+  "skillsforbots/grok-bot-skills",
+  "klingai-tech/claude-plugin"
  ],
  "skills": {
   "appierun/appie-mcp": [
@@ -1036,6 +1037,11 @@
   "skillsforbots/grok-bot-skills": [
    "bot-safety-rules-starter",
    "reminder-basics"
+  ],
+  "klingai-tech/claude-plugin": [
+   "kling-ai",
+   "kling-ai-generate-image",
+   "kling-ai-generate-video"
   ]
  },
  "skill_roots": {
@@ -1234,6 +1240,40 @@
   "skillsforbots/grok-bot-skills": [
    "skills/bot-safety-rules-starter",
    "skills/reminder-basics"
+  ],
+  "klingai-tech/claude-plugin": [
+   "skills/kling-ai",
+   "skills/kling-ai-generate-image",
+   "skills/kling-ai-generate-video"
   ]
+ },
+ "install_contexts": {
+  "klingai-tech/claude-plugin/kling-ai": {
+   "mcp": true,
+   "net": true,
+   "hosts": [
+    "kling.ai"
+   ],
+   "source": "https://github.com/klingai-tech/claude-plugin/blob/5f666eb73567a40db598db54627b99324341ccd2/.mcp.json",
+   "note": "Full plugin required; image and video skills inherit the core Global OAuth MCP connection."
+  },
+  "klingai-tech/claude-plugin/kling-ai-generate-image": {
+   "mcp": true,
+   "net": true,
+   "hosts": [
+    "kling.ai"
+   ],
+   "source": "https://github.com/klingai-tech/claude-plugin/blob/5f666eb73567a40db598db54627b99324341ccd2/.mcp.json",
+   "note": "Full plugin required; image and video skills inherit the core Global OAuth MCP connection."
+  },
+  "klingai-tech/claude-plugin/kling-ai-generate-video": {
+   "mcp": true,
+   "net": true,
+   "hosts": [
+    "kling.ai"
+   ],
+   "source": "https://github.com/klingai-tech/claude-plugin/blob/5f666eb73567a40db598db54627b99324341ccd2/.mcp.json",
+   "note": "Full plugin required; image and video skills inherit the core Global OAuth MCP connection."
+  }
  }
 }
