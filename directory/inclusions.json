@@ -31,7 +31,12 @@
   "waynehamadi/datacircle",
   "OakcoderX/awesome-agent-skills",
   "korey2028-prog/resume-claim-guard",
-  "inhotel-io/govisit-toolkit"
+  "inhotel-io/govisit-toolkit",
+  "rnthking/redya-skills",
+  "moonlitnayeem/fairvalid-ai",
+  "StalkC/stalkchain-plugin",
+  "kochetkov-ma/brewpage-publish-plugins",
+  "skillsforbots/grok-bot-skills"
  ],
  "skills": {
   "appierun/appie-mcp": [
@@ -1012,6 +1017,25 @@
    "govisit-search-destinations",
    "govisit-search-documentation",
    "govisit-search-places"
+  ],
+  "rnthking/redya-skills": [
+   "redya-xiaohongshu"
+  ],
+  "moonlitnayeem/fairvalid-ai": [
+   "email-verification",
+   "fairmatch-leads"
+  ],
+  "StalkC/stalkchain-plugin": [
+   "trader-check",
+   "token-check",
+   "smart-money-radar"
+  ],
+  "kochetkov-ma/brewpage-publish-plugins": [
+   "brewpage-publish"
+  ],
+  "skillsforbots/grok-bot-skills": [
+   "bot-safety-rules-starter",
+   "reminder-basics"
   ]
  },
  "skill_roots": {
@@ -1155,6 +1179,13 @@
     "path": ".",
     "approval": "https://github.com/JasonColapietro/suede-creator-skills/issues/374#issuecomment-6779995466"
    }
+  ],
+  "rnthking/redya-skills": [
+   {
+    "name": "redya-xiaohongshu",
+    "path": "skill/redya-xiaohongshu",
+    "approval": "https://github.com/JasonColapietro/suede-creator-skills/issues/408#issuecomment-7022652379"
+   }
   ]
  },
  "skill_paths": {
@@ -1184,6 +1215,25 @@
    "skills/govisit-search-destinations",
    "skills/govisit-search-documentation",
    "skills/govisit-search-places"
+  ],
+  "rnthking/redya-skills": [
+   "skill/redya-xiaohongshu"
+  ],
+  "moonlitnayeem/fairvalid-ai": [
+   "skills/email-verification",
+   "skills/fairmatch-leads"
+  ],
+  "StalkC/stalkchain-plugin": [
+   "skills/trader-check",
+   "skills/token-check",
+   "skills/smart-money-radar"
+  ],
+  "kochetkov-ma/brewpage-publish-plugins": [
+   "skills/brewpage-publish"
+  ],
+  "skillsforbots/grok-bot-skills": [
+   "skills/bot-safety-rules-starter",
+   "skills/reminder-basics"
   ]
  }
 }

@@ -7,17 +7,17 @@
     "@id": "https://suedeai.ai/founder#person",
     "name": "Jason Colapietro",
     "url": "https://suedeai.ai/founder",
-    "jobTitle": "Founder and CEO, Suede AI",
-    "byline": "By Jason Colapietro, Founder and CEO of Suede AI. Author of Stake Your Claim, Proof as Infrastructure and The Human Authenticity Layer, holder of the VoicePrint patent, and a builder of companies for two decades.",
+    "jobTitle": "Founder and CEO, Suede",
+    "byline": "By Jason Colapietro, Founder and CEO of Suede. Author of Stake Your Claim, Proof as Infrastructure and The Human Authenticity Layer, holder of the VoicePrint patent, and a builder of companies for two decades.",
     "worksFor": {
       "@type": "Organization",
       "@id": "https://suedeai.ai/#organization",
-      "name": "Suede AI",
+      "name": "Suede",
       "url": "https://suedeai.ai/",
       "alternateName": [
         "Suede Labs AI",
         "Suede Labs",
-        "Suede"
+        "Suede AI"
       ],
       "parentOrganization": {
         "@type": "Organization",
@@ -55,10 +55,11 @@
     "title": "Agent Skills Guides: Install, Compare and Get Found",
     "meta_description": "Guides to agent skills for Claude Code, Codex and Cursor: the best SEO skills, how to install skills, skills vs MCP servers, and how publishers get found.",
     "h1": "Agent skills guides",
-    "intro": "Practical guides from Suede AI, built on the Agent Skills Directory's published data. Every figure names the snapshot it comes from.",
+    "intro": "Practical guides from Suede, built on the Agent Skills Directory's published data. Every figure names the snapshot it comes from.",
     "schema_types": [
       "CollectionPage",
-      "BreadcrumbList"
+      "BreadcrumbList",
+      "FAQPage"
     ]
   },
   "pages": [
@@ -147,7 +148,7 @@
       "source": "directory/editorial/skills-vs-mcp-servers.md",
       "category": "ai-agents-llm",
       "path": "directory/guides/skills-vs-mcp-servers/",
-      "title": "Agent Skills vs MCP Servers vs Plugins | Suede AI",
+      "title": "Agent Skills vs MCP Servers vs Plugins | Suede",
       "meta_description": "A skill adds method, an MCP server adds access, a plugin packages both. When to use each, how they combine, and what each costs in context and risk.",
       "h1": "Agent skills vs MCP servers vs plugins: which one do you need?",
       "primary_keyword": "claude skills vs mcp",

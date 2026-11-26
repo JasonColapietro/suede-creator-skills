@@ -8,9 +8,9 @@ Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an
 
 **55 accepted skills · 22 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
-**Compare on the 0–99 quality scale:** this category’s verified scores span **53–91 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=documents-office&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
+**Compare on the 0–99 quality scale:** this category’s verified scores span **53–91 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=documents-office&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
-[Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede AI listing.
+[Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede listing.
 
 <details>
 <summary>Browse publishers in this category</summary>
@@ -44,7 +44,7 @@ Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an
 
 ## anthropics/claude-plugins-official
 
-[Repository](https://github.com/anthropics/claude-plugins-official) · Publisher: [anthropics](https://github.com/anthropics) · [Suede AI listing](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/)
+[Repository](https://github.com/anthropics/claude-plugins-official) · Publisher: [anthropics](https://github.com/anthropics) · [Suede listing](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/)
 
 - **84/100 · B** · [math-olympiad](https://github.com/anthropics/claude-plugins-official/blob/main/plugins/math-olympiad/skills/math-olympiad/SKILL.md): Solve competition math problems (IMO, Putnam, USAMO, AIME) with adversarial verification that catches the errors self-verification misses. [Suede](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/#math-olympiad)
 
@@ -52,7 +52,7 @@ Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an
 
 ## anthropics/skills
 
-[Repository](https://github.com/anthropics/skills) · Publisher: [anthropics](https://github.com/anthropics) · [Suede AI listing](https://skills.suedeai.ai/directory/anthropics/skills/)
+[Repository](https://github.com/anthropics/skills) · Publisher: [anthropics](https://github.com/anthropics) · [Suede listing](https://skills.suedeai.ai/directory/anthropics/skills/)
 
 - **91/100 · A** · [docx](https://github.com/anthropics/skills/blob/main/skills/docx/SKILL.md): Creates, reads, edits, and manipulates Word documents and templates, including formatting, tables of contents, tracked changes, comments, images, and find-and-replace. [Suede](https://skills.suedeai.ai/directory/anthropics/skills/docx/) · License: Proprietary (review terms)
 - **87/100 · B** · [pptx](https://github.com/anthropics/skills/blob/main/skills/pptx/SKILL.md): Creates, reads, edits, and combines PowerPoint decks and templates, including speaker notes, comments, and layouts, for any task involving a .pptx or .potx file. [Suede](https://skills.suedeai.ai/directory/anthropics/skills/pptx/) · License: Proprietary (review terms)
@@ -63,7 +63,7 @@ Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an
 
 ## firecrawl/skills
 
-[Repository](https://github.com/firecrawl/skills) · Publisher: [firecrawl](https://github.com/firecrawl) · [Suede AI listing](https://skills.suedeai.ai/directory/firecrawl/skills/)
+[Repository](https://github.com/firecrawl/skills) · Publisher: [firecrawl](https://github.com/firecrawl) · [Suede listing](https://skills.suedeai.ai/directory/firecrawl/skills/)
 
 - **71/100 · C** · [firecrawl-parse](https://github.com/firecrawl/skills/blob/main/skills/core/firecrawl-parse/SKILL.md): Convert a local file (PDF, DOCX, XLSX, HTML, …) to markdown, or answer questions about its content. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/#firecrawl-parse)
 
@@ -71,7 +71,7 @@ Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an
 
 ## garrytan/gstack
 
-[Repository](https://github.com/garrytan/gstack) · Publisher: [garrytan](https://github.com/garrytan) · [Suede AI listing](https://skills.suedeai.ai/directory/garrytan/gstack/)
+[Repository](https://github.com/garrytan/gstack) · Publisher: [garrytan](https://github.com/garrytan) · [Suede listing](https://skills.suedeai.ai/directory/garrytan/gstack/)
 
 - **70/100 · C** · [make-pdf](https://github.com/garrytan/gstack/blob/main/make-pdf/SKILL.md): Turn any markdown file into a publication-quality PDF. (gstack) [Suede](https://skills.suedeai.ai/directory/garrytan/gstack/#make-pdf)
 
@@ -79,7 +79,7 @@ Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an
 
 ## getsentry/skills
 
-[Repository](https://github.com/getsentry/skills) · Publisher: [getsentry](https://github.com/getsentry) · [Suede AI listing](https://skills.suedeai.ai/directory/getsentry/skills/)
+[Repository](https://github.com/getsentry/skills) · Publisher: [getsentry](https://github.com/getsentry) · [Suede listing](https://skills.suedeai.ai/directory/getsentry/skills/)
 
 - **84/100 · B** · [presentation-creator](https://github.com/getsentry/skills/blob/main/skills/presentation-creator/SKILL.md): Creates data-driven presentation slides with React, Vite, and Recharts in Sentry branding, scaffolding a slide-based app with charts, animations, and single-file HTML output. [Suede](https://skills.suedeai.ai/directory/getsentry/skills/presentation-creator/)
 
@@ -87,7 +87,7 @@ Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an
 
 ## github/awesome-copilot
 
-[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede AI listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
+[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
 
 - **81/100 · B** · [convert-excel-to-md](https://github.com/github/awesome-copilot/blob/main/skills/convert-excel-to-md/SKILL.md): Converts Excel (.xlsx) workbooks into Markdown so their contents can be accurately analyzed, summarized, searched, or extracted from. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#convert-excel-to-md)
 - **81/100 · B** · [convert-pdf-to-md](https://github.com/github/awesome-copilot/blob/main/skills/convert-pdf-to-md/SKILL.md): Converts PDF (.pdf) documents into Markdown so their contents can be accurately analyzed, summarized, searched, or extracted from. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#convert-pdf-to-md)
@@ -105,7 +105,7 @@ Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an
 
 ## googleworkspace/cli
 
-[Repository](https://github.com/googleworkspace/cli) · Publisher: [googleworkspace](https://github.com/googleworkspace) · [Suede AI listing](https://skills.suedeai.ai/directory/googleworkspace/cli/)
+[Repository](https://github.com/googleworkspace/cli) · Publisher: [googleworkspace](https://github.com/googleworkspace) · [Suede listing](https://skills.suedeai.ai/directory/googleworkspace/cli/)
 
 - **54/100 · D** · [recipe-create-doc-from-template](https://github.com/googleworkspace/cli/blob/main/skills/recipe-create-doc-from-template/SKILL.md): Copy a Google Docs template, fill in content, and share with collaborators. [Suede](https://skills.suedeai.ai/directory/googleworkspace/cli/#recipe-create-doc-from-template)
 - **54/100 · D** · [recipe-create-expense-tracker](https://github.com/googleworkspace/cli/blob/main/skills/recipe-create-expense-tracker/SKILL.md): Set up a Google Sheets spreadsheet for tracking expenses with headers and initial entries. [Suede](https://skills.suedeai.ai/directory/googleworkspace/cli/#recipe-create-expense-tracker)
@@ -120,7 +120,7 @@ Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an
 
 ## gooseworks-ai/goose-skills
 
-[Repository](https://github.com/gooseworks-ai/goose-skills) · Publisher: [gooseworks-ai](https://github.com/gooseworks-ai) · [Suede AI listing](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/)
+[Repository](https://github.com/gooseworks-ai/goose-skills) · Publisher: [gooseworks-ai](https://github.com/gooseworks-ai) · [Suede listing](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/)
 
 - **66/100 · D** · [pdf-processor](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/research-tools/capabilities/pdf-processor/SKILL.md): Process PDFs - extract text, tables, and structured data from documents [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#pdf-processor)
 
@@ -128,7 +128,7 @@ Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an
 
 ## infrasity-labs/dev-gtm-claude-skills
 
-[Repository](https://github.com/infrasity-labs/dev-gtm-claude-skills) · Publisher: [infrasity-labs](https://github.com/infrasity-labs) · [Suede AI listing](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/)
+[Repository](https://github.com/infrasity-labs/dev-gtm-claude-skills) · Publisher: [infrasity-labs](https://github.com/infrasity-labs) · [Suede listing](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/)
 
 - **59/100 · D** · [presentation-deck](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/product-designers/presentation-deck/SKILL.md): Structure compelling design presentations for stakeholders, reviews, and showcases. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#presentation-deck)
 
@@ -136,7 +136,7 @@ Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an
 
 ## K-Dense-AI/claude-scientific-skills
 
-[Repository](https://github.com/K-Dense-AI/claude-scientific-skills) · Publisher: [K-Dense-AI](https://github.com/K-Dense-AI) · [Suede AI listing](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/)
+[Repository](https://github.com/K-Dense-AI/claude-scientific-skills) · Publisher: [K-Dense-AI](https://github.com/K-Dense-AI) · [Suede listing](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/)
 
 - **89/100 · B** · [liteparse](https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/skills/liteparse/SKILL.md): Local document and PDF parsing that returns spatial text with bounding boxes. [Suede](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/#liteparse)
 - **81/100 · B** · [pptx-posters](https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/skills/pptx-posters/SKILL.md): Creates and audits editable scientific posters in macro-free PowerPoint (.pptx) from author-approved local content and assets. [Suede](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/#pptx-posters)
@@ -147,7 +147,7 @@ Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an
 
 ## mattpocock/skills
 
-[Repository](https://github.com/mattpocock/skills) · Publisher: [mattpocock](https://github.com/mattpocock) · [Suede AI listing](https://skills.suedeai.ai/directory/mattpocock/skills/)
+[Repository](https://github.com/mattpocock/skills) · Publisher: [mattpocock](https://github.com/mattpocock) · [Suede listing](https://skills.suedeai.ai/directory/mattpocock/skills/)
 
 - **70/100 · C** · [setup-matt-pocock-skills](https://github.com/mattpocock/skills/blob/main/skills/engineering/setup-matt-pocock-skills/SKILL.md): Configure this repo for the engineering skills: set up its issue tracker, triage label vocabulary, and domain doc layout. [Suede](https://skills.suedeai.ai/directory/mattpocock/skills/#setup-matt-pocock-skills)
 
@@ -155,7 +155,7 @@ Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an
 
 ## mblode/agent-skills
 
-[Repository](https://github.com/mblode/agent-skills) · Publisher: [mblode](https://github.com/mblode) · [Suede AI listing](https://skills.suedeai.ai/directory/mblode/agent-skills/)
+[Repository](https://github.com/mblode/agent-skills) · Publisher: [mblode](https://github.com/mblode) · [Suede listing](https://skills.suedeai.ai/directory/mblode/agent-skills/)
 
 - **87/100 · B** · [presentation-creator](https://github.com/mblode/agent-skills/blob/main/skills/presentation-creator/SKILL.md): Builds decks with a story spine, house visual system, setting-specific density, and speaker notes. [Suede](https://skills.suedeai.ai/directory/mblode/agent-skills/#presentation-creator)
 
@@ -163,7 +163,7 @@ Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an
 
 ## MiniMax-AI/skills
 
-[Repository](https://github.com/MiniMax-AI/skills) · Publisher: [MiniMax-AI](https://github.com/MiniMax-AI) · [Suede AI listing](https://skills.suedeai.ai/directory/minimax-ai/skills/)
+[Repository](https://github.com/MiniMax-AI/skills) · Publisher: [MiniMax-AI](https://github.com/MiniMax-AI) · [Suede listing](https://skills.suedeai.ai/directory/minimax-ai/skills/)
 
 - **76/100 · C** · [minimax-docx](https://github.com/MiniMax-AI/skills/blob/main/skills/minimax-docx/SKILL.md): Creates, edits, and formats Word DOCX documents with the OpenXML SDK for .NET, including filling existing documents and applying templates with XSD validation. [Suede](https://skills.suedeai.ai/directory/minimax-ai/skills/minimax-docx/)
 - **76/100 · C** · [minimax-xlsx](https://github.com/MiniMax-AI/skills/blob/main/skills/minimax-xlsx/SKILL.md): Opens, creates, reads, analyzes, edits, and validates Excel and CSV spreadsheet files, including formula recalculation, editing without format loss, and financial formatting standards. [Suede](https://skills.suedeai.ai/directory/minimax-ai/skills/minimax-xlsx/)
@@ -179,7 +179,7 @@ Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an
 
 ## nextlevelbuilder/ui-ux-pro-max-skill
 
-[Repository](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) · Publisher: [nextlevelbuilder](https://github.com/nextlevelbuilder) · [Suede AI listing](https://skills.suedeai.ai/directory/nextlevelbuilder/ui-ux-pro-max-skill/)
+[Repository](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) · Publisher: [nextlevelbuilder](https://github.com/nextlevelbuilder) · [Suede listing](https://skills.suedeai.ai/directory/nextlevelbuilder/ui-ux-pro-max-skill/)
 
 - **65/100 · D** · [slides](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/slides/SKILL.md): Create strategic HTML presentations with Chart.js, design tokens, responsive layouts, copywriting formulas, and contextual slide strategies. [Suede](https://skills.suedeai.ai/directory/nextlevelbuilder/ui-ux-pro-max-skill/#slides)
 
@@ -187,7 +187,7 @@ Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an
 
 ## openai/skills
 
-[Repository](https://github.com/openai/skills) · Publisher: [openai](https://github.com/openai) · [Suede AI listing](https://skills.suedeai.ai/directory/openai/skills/)
+[Repository](https://github.com/openai/skills) · Publisher: [openai](https://github.com/openai) · [Suede listing](https://skills.suedeai.ai/directory/openai/skills/)
 
 - **71/100 · C** · [pdf](https://github.com/openai/skills/blob/main/skills/.curated/pdf/SKILL.md): Use when tasks involve reading, creating, or reviewing PDF files where rendering and layout matter; prefer visual checks by rendering pages (Poppler) and use Python tools such as \`reportlab\`, \`pdfplumber\`, and \`pypdf\` for generation and… [Suede](https://skills.suedeai.ai/directory/openai/skills/#pdf)
 
@@ -195,7 +195,7 @@ Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an
 
 ## Orchestra-Research/AI-Research-SKILLs
 
-[Repository](https://github.com/Orchestra-Research/AI-Research-SKILLs) · Publisher: [Orchestra-Research](https://github.com/Orchestra-Research) · [Suede AI listing](https://skills.suedeai.ai/directory/orchestra-research/ai-research-skills/)
+[Repository](https://github.com/Orchestra-Research/AI-Research-SKILLs) · Publisher: [Orchestra-Research](https://github.com/Orchestra-Research) · [Suede listing](https://skills.suedeai.ai/directory/orchestra-research/ai-research-skills/)
 
 - **77/100 · C** · [presenting-conference-talks](https://github.com/Orchestra-Research/AI-Research-SKILLs/blob/main/20-ml-paper-writing/presenting-conference-talks/SKILL.md): Generates conference presentation slides (Beamer LaTeX PDF and editable PPTX) from a compiled paper with speaker notes and talk script. [Suede](https://skills.suedeai.ai/directory/orchestra-research/ai-research-skills/#presenting-conference-talks)
 
@@ -203,7 +203,7 @@ Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an
 
 ## product-on-purpose/pm-skills
 
-[Repository](https://github.com/product-on-purpose/pm-skills) · Publisher: [product-on-purpose](https://github.com/product-on-purpose) · [Suede AI listing](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/)
+[Repository](https://github.com/product-on-purpose/pm-skills) · Publisher: [product-on-purpose](https://github.com/product-on-purpose) · [Suede listing](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/)
 
 - **75/100 · C** · [utility-slideshow-creator](https://github.com/product-on-purpose/pm-skills/blob/main/skills/utility-slideshow-creator/SKILL.md): Generates professional presentations from a JSON deck specification using 18 slide types with dark/light variants, content-to-layout decision logic, and calibrated character limits. [Suede](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/#utility-slideshow-creator)
 
@@ -211,7 +211,7 @@ Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an
 
 ## PSPDFKit-labs/nutrient-agent-skill
 
-[Repository](https://github.com/PSPDFKit-labs/nutrient-agent-skill) · Publisher: [PSPDFKit-labs](https://github.com/PSPDFKit-labs) · [Suede AI listing](https://skills.suedeai.ai/directory/pspdfkit-labs/nutrient-agent-skill/nutrient-document-processing/)
+[Repository](https://github.com/PSPDFKit-labs/nutrient-agent-skill) · Publisher: [PSPDFKit-labs](https://github.com/PSPDFKit-labs) · [Suede listing](https://skills.suedeai.ai/directory/pspdfkit-labs/nutrient-agent-skill/nutrient-document-processing/)
 
 - **82/100 · B** · [nutrient-document-processing](https://github.com/PSPDFKit-labs/nutrient-agent-skill/blob/main/nutrient-document-processing/SKILL.md): Processes documents with Nutrient DWS Processor for PDF generation and conversion, OCR, redaction, watermarking, signing, password protection, optimization, and PDF/A or PDF/UA output. [Suede](https://skills.suedeai.ai/directory/pspdfkit-labs/nutrient-agent-skill/nutrient-document-processing/)
 
@@ -219,7 +219,7 @@ Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an
 
 ## sanjay3290/ai-skills
 
-[Repository](https://github.com/sanjay3290/ai-skills) · Publisher: [sanjay3290](https://github.com/sanjay3290) · [Suede AI listing](https://skills.suedeai.ai/directory/sanjay3290/ai-skills/)
+[Repository](https://github.com/sanjay3290/ai-skills) · Publisher: [sanjay3290](https://github.com/sanjay3290) · [Suede listing](https://skills.suedeai.ai/directory/sanjay3290/ai-skills/)
 
 - **80/100 · B** · [google-docs](https://github.com/sanjay3290/ai-skills/blob/main/skills/google-docs/SKILL.md): Interact with Google Docs - create documents, search by title, read content, and edit text. [Suede](https://skills.suedeai.ai/directory/sanjay3290/ai-skills/#google-docs)
 - **80/100 · B** · [google-sheets](https://github.com/sanjay3290/ai-skills/blob/main/skills/google-sheets/SKILL.md): Reads and writes Google Sheets spreadsheets, including getting content, updating cells, appending rows, fetching ranges, searching for spreadsheets, and viewing metadata. [Suede](https://skills.suedeai.ai/directory/sanjay3290/ai-skills/google-sheets/)
@@ -229,7 +229,7 @@ Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an
 
 ## swarmclawai/swarmclaw
 
-[Repository](https://github.com/swarmclawai/swarmclaw) · Publisher: [swarmclawai](https://github.com/swarmclawai) · [Suede AI listing](https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/)
+[Repository](https://github.com/swarmclawai/swarmclaw) · Publisher: [swarmclawai](https://github.com/swarmclawai) · [Suede listing](https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/)
 
 - **68/100 · D** · [nano-pdf](https://github.com/swarmclawai/swarmclaw/blob/main/skills/nano-pdf/SKILL.md): Edits or creates PDFs from natural-language instructions with the nano-pdf CLI, including adding pages, changing text, and converting content to PDF. [Suede](https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/nano-pdf/)
 
@@ -237,7 +237,7 @@ Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an
 
 ## tronghieu/agent-skills
 
-[Repository](https://github.com/tronghieu/agent-skills) · Publisher: [tronghieu](https://github.com/tronghieu) · [Suede AI listing](https://skills.suedeai.ai/directory/tronghieu/agent-skills/)
+[Repository](https://github.com/tronghieu/agent-skills) · Publisher: [tronghieu](https://github.com/tronghieu) · [Suede listing](https://skills.suedeai.ai/directory/tronghieu/agent-skills/)
 
 - **90/100 · A** · [slidewright](https://github.com/tronghieu/agent-skills/blob/main/skills/slidewright/SKILL.md): Builds interactive presentation websites for slide decks projected to a room, including slide editing, deck restyling, phone remote control, and PDF export. [Suede](https://skills.suedeai.ai/directory/tronghieu/agent-skills/slidewright/)
 
@@ -245,12 +245,12 @@ Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an
 
 ## zarazhangrui/frontend-slides
 
-[Repository](https://github.com/zarazhangrui/frontend-slides) · Publisher: [zarazhangrui](https://github.com/zarazhangrui) · [Suede AI listing](https://skills.suedeai.ai/directory/zarazhangrui/frontend-slides/frontend-slides/)
+[Repository](https://github.com/zarazhangrui/frontend-slides) · Publisher: [zarazhangrui](https://github.com/zarazhangrui) · [Suede listing](https://skills.suedeai.ai/directory/zarazhangrui/frontend-slides/frontend-slides/)
 
 - **73/100 · C** · [frontend-slides](https://github.com/zarazhangrui/frontend-slides/blob/main/SKILL.md): Creates animation-rich HTML presentations from scratch or by converting PowerPoint files, helping non-designers discover their aesthetic through visual exploration. [Suede](https://skills.suedeai.ai/directory/zarazhangrui/frontend-slides/frontend-slides/)
 
 ---
 
-**Run a team of agents.** Suede AI Agent Studio builds multi-agent automation for businesses. [suedeai.app](https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agent-studio) Listed here? [Add your badge](../README.md#add-your-badge).
+**Run a team of agents.** Suede Agent Studio builds multi-agent automation for businesses. [suedeai.app](https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agent-studio) Listed here? [Add your badge](../README.md#add-your-badge).
 
 [Awesome Everything](../README.md) · [Compare scores](../README.md#compare-099-quality-scores) · [Publishers](../publishers.md) · [Featured projects](../featured.md) · [Guides](../README.md#guides) · [Contribute](../CONTRIBUTING.md) · [Search by score](https://skills.suedeai.ai/directory/?sort=score)

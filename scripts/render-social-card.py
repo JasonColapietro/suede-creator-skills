@@ -14,6 +14,7 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 SVG = ROOT / "docs/assets/og-image-v2.svg"
 OUTPUT = ROOT / "docs/assets/og-image-v2.png"
+PUBLIC_OUTPUT = ROOT / "docs/assets/og-image-cypherpunk.png"
 APPROVED_MARK = ROOT / "docs/assets/suede-ai-logo-transparent.png"
 APPROVED_SHA256 = "83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa"
 MARK_BOX = (76, 70, 64, 64)
@@ -51,9 +52,10 @@ def main() -> None:
     mark = Image.open(APPROVED_MARK).convert("RGBA")
     x, y, width, height = MARK_BOX
     mark = mark.resize((width, height), Image.Resampling.LANCZOS)
-    card.paste((17, 17, 17, 255), (x, y, x + width, y + height))
+    card.paste((12, 21, 25, 255), (x, y, x + width, y + height))
     card.alpha_composite(mark, (x, y))
-    card.convert("RGB").save(OUTPUT, format="PNG", optimize=True)
+    for output in (OUTPUT, PUBLIC_OUTPUT):
+        card.convert("RGB").save(output, format="PNG", optimize=True)
 
 
 if __name__ == "__main__":

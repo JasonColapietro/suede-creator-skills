@@ -1,6 +1,6 @@
 # Which agent skills should you stack for documents and data?
 
-By [Jason Colapietro](https://suedeai.ai/founder), Founder and CEO of Suede AI. Author of *Stake Your Claim*, *Proof as Infrastructure* and *The Human Authenticity Layer*, holder of the VoicePrint patent, and a builder of companies for two decades.
+By [Jason Colapietro](https://suedeai.ai/founder), Founder and CEO of Suede. Author of *Stake Your Claim*, *Proof as Infrastructure* and *The Human Authenticity Layer*, holder of the VoicePrint patent, and a builder of companies for two decades.
 
 Reviewed November 2, 2026.
 

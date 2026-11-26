@@ -252,7 +252,7 @@ const printHtml = `<!doctype html>
   <body>
     <section class="cover">
       <div>
-        <p class="cover-mark">Suede AI Skills &middot; ${SKILL_COUNT} open-source agent skills</p>
+        <p class="cover-mark">Suede Skills &middot; ${SKILL_COUNT} open-source agent skills</p>
       </div>
       <div>
         <p class="cover-title">S-Tier</p>
@@ -262,14 +262,14 @@ const printHtml = `<!doctype html>
       </div>
       <div>
         <div class="cover-rule"></div>
-        <p class="cover-foot"><span><b>Jason Colapietro</b> &middot; Suede AI</span><span>${totalWords.toLocaleString()} words &middot; book prose MIT</span></p>
+        <p class="cover-foot"><span><b>Jason Colapietro</b> &middot; Suede</span><span>${totalWords.toLocaleString()} words &middot; book prose MIT</span></p>
       </div>
     </section>
 
     <section class="front">
       <h2>Colophon</h2>
       <div class="colophon-row"><b>Title</b><span>S-Tier: The Builder's Book Behind the Suede Skills</span></div>
-      <div class="colophon-row"><b>Author</b><span>Jason Colapietro, founder of Suede AI</span></div>
+      <div class="colophon-row"><b>Author</b><span>Jason Colapietro, founder of Suede</span></div>
       <div class="colophon-row"><b>Edition</b><span>First, ${editionDate}</span></div>
       <div class="colophon-row"><b>Length</b><span>${totalWords.toLocaleString()} words across ${chapters.length} chapters, front matter, and ${appendices.length} appendices</span></div>
       <div class="colophon-row"><b>License</b><span>Book prose is MIT. Adapted third-party material keeps its upstream license; see NOTICE.md.</span></div>

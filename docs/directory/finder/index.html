@@ -30,12 +30,12 @@
         "name": "Find Graded Agent Skills from Claude Code or Codex",
         "description": "Install the Suede directory finder for Claude Code, Codex or Cursor. Search by task and compare quality scores, licenses, reports and install commands.",
         "url": "https://skills.suedeai.ai/directory/finder/",
-        "dateModified": "2026-11-19",
+        "dateModified": "2026-11-26",
         "publisher": {
           "alternateName": [
             "Suede Labs AI",
             "Suede Labs",
-            "Suede"
+            "Suede AI"
           ],
           "parentOrganization": {
             "@type": "Organization",
@@ -63,7 +63,7 @@
           },
           "@type": "Organization",
           "@id": "https://suedeai.ai/#organization",
-          "name": "Suede AI",
+          "name": "Suede",
           "url": "https://suedeai.ai"
         },
         "isPartOf": {
@@ -98,6 +98,55 @@
         ]
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://skills.suedeai.ai/directory/finder/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is the finder free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The finder is a free skill under the MIT license, and the directory index it searches is a public file with no key, account or rate limit."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the finder install the skills it finds?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Discovery is read-only: it returns a shortlist with each skill’s score, license, report and install command for you to inspect. Your agent installs a skill only when you ask it to."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which agents can run the finder?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Claude Code, Codex and Cursor, or any agent that reads the Agent Skills format. Install it with the skills CLI and choose your agent when it asks. It needs Node.js 22 or later and HTTPS access to the directory."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where do the results come from?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "From the directory’s published search index: every listed skill with its Suede Skill Check score, grade, license, cost lane, topics and report link from the dated snapshot. Install counts, when shown, come from skills.sh. Suede’s own skills are excluded from the rankings."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What can I ask it?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Name the task in plain words, such as React testing or PostgreSQL performance. Add a minimum score, ask for free and open-source skills only, or ask it to compare two or three skills by their score components."
+            }
+          }
+        ]
+      }
+    </script>
     <meta name="theme-color" content="#000000">
     <link rel="preload" href="../../assets/fonts/geist-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../assets/fonts/geist-mono-var-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -112,10 +161,10 @@
     <header class="nav">
       <nav class="shell nav-inner" aria-label="Main navigation">
         <a href="../" class="nav-logo" aria-label="Suede Skills Directory home">
-          <img src="../../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <img src="../../assets/suede-ai-logo-transparent.webp" alt="Suede" width="28" height="28" onerror="this.style.display='none'">
           <span class="nav-logo-wordmark">SuedeAI<span>.directory</span></span>
         </a>
-        <a class="gh-star gh-star--nav" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" data-gh-star aria-label="Star Suede AI Skills on GitHub, 124 stars"><svg class="gh-star-icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg><span>Star</span><span class="gh-star-count">124</span></a>
+        <a class="gh-star gh-star--nav" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" data-gh-star aria-label="Star Suede Skills on GitHub, 121 stars"><svg class="gh-star-icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg><span>Star</span><span class="gh-star-count">121</span></a>
         <details class="nav-disclosure" open>
       <summary class="nav-hamburger" aria-label="Open navigation menu">
         <span></span>
@@ -139,7 +188,7 @@
     </header>
     <nav class="kind-bar" aria-label="Directory catalogs">
       <div class="shell kind-bar-inner">
-        <a href="../" aria-current="page"><svg class="pix" viewBox="0 0 12 12" width="14" height="14" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M0 0h4v1h-4zM5 0h4v1h-4zM0 1h4v1h-4zM5 1h4v1h-4zM0 2h4v1h-4zM5 2h4v1h-4zM0 4h4v1h-4zM5 4h4v1h-4zM0 5h4v1h-4zM5 5h4v1h-4zM0 6h4v1h-4zM5 6h4v1h-4zM0 8h4v1h-4zM5 8h4v1h-4zM0 9h4v1h-4zM5 9h4v1h-4zM0 10h4v1h-4zM5 10h4v1h-4z"/></svg><span class="kind-label" data-short="Skills">Skills</span><span class="count-chip">3,894</span></a>
+        <a href="../" aria-current="page"><svg class="pix" viewBox="0 0 12 12" width="14" height="14" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M0 0h4v1h-4zM5 0h4v1h-4zM0 1h4v1h-4zM5 1h4v1h-4zM0 2h4v1h-4zM5 2h4v1h-4zM0 4h4v1h-4zM5 4h4v1h-4zM0 5h4v1h-4zM5 5h4v1h-4zM0 6h4v1h-4zM5 6h4v1h-4zM0 8h4v1h-4zM5 8h4v1h-4zM0 9h4v1h-4zM5 9h4v1h-4zM0 10h4v1h-4zM5 10h4v1h-4z"/></svg><span class="kind-label" data-short="Skills">Skills</span><span class="count-chip">3,906</span></a>
         <a href="../featured/"><svg class="pix" viewBox="0 0 12 12" width="14" height="14" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M5 0h2v1h-2zM5 1h2v1h-2zM4 2h4v1h-4zM4 3h4v1h-4zM0 4h12v1h-12zM1 5h10v1h-10zM2 6h8v1h-8zM3 7h6v1h-6zM3 8h2v1h-2zM7 8h2v1h-2zM2 9h2v1h-2zM8 9h2v1h-2zM1 10h1v1h-1zM10 10h1v1h-1z"/></svg><span class="kind-label" data-short="Featured">Featured Skills</span><span class="count-chip">37</span></a>
         <a href="../agents/"><svg class="pix" viewBox="0 0 12 12" width="14" height="14" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M5 0h2v1h-2zM5 1h2v1h-2zM2 2h8v1h-8zM1 3h1v1h-1zM10 3h1v1h-1zM1 4h1v1h-1zM3 4h2v1h-2zM7 4h2v1h-2zM10 4h1v1h-1zM1 5h1v1h-1zM3 5h2v1h-2zM7 5h2v1h-2zM10 5h1v1h-1zM1 6h1v1h-1zM10 6h1v1h-1zM1 7h1v1h-1zM3 7h6v1h-6zM10 7h1v1h-1zM1 8h1v1h-1zM10 8h1v1h-1zM2 9h8v1h-8zM3 10h1v1h-1zM8 10h1v1h-1zM3 11h1v1h-1zM8 11h1v1h-1z"/></svg><span class="kind-label" data-short="Agents">AI agents</span><span class="count-chip">87</span></a>
         <a href="../plugins/"><svg class="pix" viewBox="0 0 12 12" width="14" height="14" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M3 0h1v1h-1zM8 0h1v1h-1zM3 1h1v1h-1zM8 1h1v1h-1zM2 2h8v1h-8zM2 3h1v1h-1zM9 3h1v1h-1zM2 4h1v1h-1zM9 4h1v1h-1zM2 5h1v1h-1zM9 5h1v1h-1zM3 6h1v1h-1zM8 6h1v1h-1zM4 7h4v1h-4zM5 8h2v1h-2zM5 9h2v1h-2zM5 10h2v1h-2z"/></svg><span class="kind-label" data-short="Plugins">Plugins and mods</span><span class="count-chip">22</span></a>
@@ -154,20 +203,22 @@
       <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Directory</a> <span class="crumb-sep" aria-hidden="true">/</span> <span aria-current="page">Find graded skills inside your agent</span></nav>
 <p class="lead">Ask “find a graded skill for React testing” and get a shortlist with scores, licenses, source reports and install commands.</p>
 <section class="panel"><h2>Install the finder</h2><pre><code id="finder-install">npx skills add https://github.com/JasonColapietro/suede-creator-skills/tree/main/directory/suede-directory</code></pre><button class="button" type="button" data-copy-target="finder-install">Copy install command</button><p>Choose your agent when the skills CLI asks. The finder requires Node.js 22 or later and reads the public index over HTTPS.</p><p><a href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/directory/suede-directory">Inspect the source and SKILL.md</a> · <a href="SKILL.md" download>Download SKILL.md</a> · <a href="search.mjs" download>Download the search script</a></p></section>
-<section class="panel"><h2>Try these requests</h2><ul><li>Find a free, graded skill for React testing.</li><li>Compare the best-scoring PostgreSQL skills and show their licenses.</li><li>Find a security-review skill scoring at least 80 and show its report.</li></ul><p>Searches run locally against the downloaded index. The finder returns commands for you to inspect; it does not install or execute a discovered skill. Suede AI’s own skills are excluded from its rankings.</p></section>
+<section class="panel"><h2>Try these requests</h2><ul><li>Find a free, graded skill for React testing.</li><li>Compare the best-scoring PostgreSQL skills and show their licenses.</li><li>Find a security-review skill scoring at least 80 and show its report.</li></ul><p>Searches run locally against the downloaded index. The finder returns commands for you to inspect; it does not install or execute a discovered skill. Suede’s own skills are excluded from its rankings.</p></section>
 <section class="panel" id="briefing"><h2>Get a weekly briefing on what you care about</h2><p>Tell your agent your interests once, and it summarizes each week’s rising skills, fastest-growing topics, new listings and repository stars for just those areas.</p><p>Try: “Brief me on agent skills for marketing, sales and video, and remember those interests.”</p><p>The finder saves your interests on your own machine and reads the public <a href="../weekly.json">weekly feed</a>. To get it every week, ask your agent to schedule the briefing, for example with <code>/loop 7d brief me on agent skills</code> in Claude Code or a scheduled task in Codex or Cursor.</p><pre><code>node brief.mjs --interests "marketing, sales, video" --save</code></pre><p><a href="brief.mjs" download>Download the briefing script</a></p></section>
 <section class="panel"><h2>Use it without an agent</h2><p>Save the search script, then run:</p><pre><code>node search.mjs "react testing" --min-score 80 --limit 5</code></pre><p>Scores describe structural quality in the dated snapshot. They do not certify runtime performance or security. <a href="../api/">Read the API documentation</a>.</p></section>
+<section class="panel"><h2>What a shortlist includes</h2><ul><li><b>Three to five options</b> that match the task, each with a short reason it fits.</li><li><b>The evidence:</b> publisher, Suede Skill Check score and grade, license, cost lane and the snapshot date.</li><li><b>Links</b> to each listing and its score report, so you can read the components behind the score.</li><li><b>An install command</b> as text, for you to run when you choose a skill.</li></ul><p>Prefer to browse? Start with <a href="../for/">shortlists by task</a>, <a href="../topics/">skills by topic</a> or the <a href="../top/">top 100</a>.</p></section>
+<section class="panel faq" aria-labelledby="faq-title"><h2 id="faq-title">Questions and answers</h2><h3>Is the finder free?</h3><p>Yes. The finder is a free skill under the MIT license, and the directory index it searches is a public file with no key, account or rate limit.</p><h3>Does the finder install the skills it finds?</h3><p>No. Discovery is read-only: it returns a shortlist with each skill’s score, license, report and install command for you to inspect. Your agent installs a skill only when you ask it to.</p><h3>Which agents can run the finder?</h3><p>Claude Code, Codex and Cursor, or any agent that reads the Agent Skills format. Install it with the skills CLI and choose your agent when it asks. It needs Node.js 22 or later and HTTPS access to the directory.</p><h3>Where do the results come from?</h3><p>From the directory’s published search index: every listed skill with its Suede Skill Check score, grade, license, cost lane, topics and report link from the dated snapshot. Install counts, when shown, come from skills.sh. Suede’s own skills are excluded from the rankings.</p><h3>What can I ask it?</h3><p>Name the task in plain words, such as React testing or PostgreSQL performance. Add a minimum score, ask for free and open-source skills only, or ask it to compare two or three skills by their score components.</p></section>
 
-<section class="panel star-panel" aria-labelledby="star-title"><div><h2 id="star-title">Star Suede AI Skills on GitHub</h2><p>Free, graded agent skills for Claude Code, Codex and Cursor. Every star puts them in front of more builders.</p></div><a class="gh-star gh-star--lg" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" data-gh-star aria-label="Star Suede AI Skills on GitHub, 124 stars"><svg class="gh-star-icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg><span>Star</span><span class="gh-star-count">124</span></a></section>
+<section class="panel star-panel" aria-labelledby="star-title"><div><h2 id="star-title">Star Suede Skills on GitHub</h2><p>Free, graded agent skills for Claude Code, Codex and Cursor. Every star puts them in front of more builders.</p></div><a class="gh-star gh-star--lg" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" data-gh-star aria-label="Star Suede Skills on GitHub, 121 stars"><svg class="gh-star-icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg><span>Star</span><span class="gh-star-count">121</span></a></section>
     </main>
     <footer>
       <div class="shell">
-        <p class="footer-note">Published by Suede AI from the 2026-10-22 directory snapshot. Source repositories belong to their publishers.</p>
-        <div class="footer-star"><p>Star Suede AI Skills on GitHub so more builders find graded skills.</p><a class="gh-star gh-star--lg" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" data-gh-star aria-label="Star Suede AI Skills on GitHub, 124 stars"><svg class="gh-star-icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg><span>Star</span><span class="gh-star-count">124</span></a></div>
+        <p class="footer-note">Published by Suede from the 2026-10-22 directory snapshot. Source repositories belong to their publishers.</p>
+        <div class="footer-star"><p>Star Suede Skills on GitHub so more builders find graded skills.</p><a class="gh-star gh-star--lg" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" data-gh-star aria-label="Star Suede Skills on GitHub, 121 stars"><svg class="gh-star-icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg><span>Star</span><span class="gh-star-count">121</span></a></div>
         <div class="footer-inner">
           <div class="footer-brand">
-            <img src="../../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">
-            <span>Built by <strong>Jason Colapietro</strong> / Suede AI</span>
+            <img src="../../assets/suede-ai-logo-transparent.webp" alt="Suede" width="24" height="24" onerror="this.style.display='none'">
+            <span>Built by <strong>Jason Colapietro</strong> / Suede</span>
           </div>
           <div class="footer-links">
             <a href="./">Find skills in your agent</a>
@@ -214,7 +265,7 @@
             <span class="footer-divider" aria-hidden="true">|</span>
             <a href="../feed.xml">RSS feed</a>
             <span class="footer-divider" aria-hidden="true">|</span>
-            <a href="../../skills/">Suede AI skills pack</a>
+            <a href="../../skills/">Suede skills pack</a>
             <span class="footer-divider" aria-hidden="true">|</span>
             <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
             <span class="footer-divider" aria-hidden="true">|</span>
@@ -226,7 +277,7 @@
           </div>
         </div>
       </div>
-    <div class="trendshift-recognition" style="width:250px;max-width:100%;margin:24px auto;text-align:center"><p style="margin:0 0 8px;font-size:13px">Suede AI Skills on Trendshift</p><a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55" loading="lazy" style="display:block;max-width:100%;height:auto"/></a></div>
+    <div class="trendshift-recognition" style="width:250px;max-width:100%;margin:24px auto;text-align:center"><p style="margin:0 0 8px;font-size:13px">Suede Skills on Trendshift</p><a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55" loading="lazy" style="display:block;max-width:100%;height:auto"/></a></div>
 </footer>
   <script>
   // Mobile nav disclosure. The markup ships <details open> so a no-JS visit

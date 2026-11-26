@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "repository": "OakcoderX/awesome-agent-skills",
+  "listing_url": "https://skills.suedeai.ai/directory/oakcoderx/awesome-agent-skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "176044f4b49e4c4f8168396e3fa66419",
+    "dataset_sha256": "9d179955d9810cbf16cc51f27e61f1c28a17d3c68a608978e342b73ba00f4c87"
+  },
+  "listed_skill_count": 1,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "oakcoderx/awesome-agent-skills/socratic-story-cartographer",
+      "name": "socratic-story-cartographer",
+      "description": "Diagnose and iteratively improve novels, screenplays, scenes, characters, and story outlines using competing hypotheses, falsification, counterfactual tests, evidence anchors, minimum-sufficient intervention, blind re-check, and loop-delta stopping. Use for story diagnosis, screenplay review, outline triage, novel critique, story-engine analysis, producer review, or multi-loop revision.",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/OakcoderX/awesome-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "aa7f5c5ccc7ea0a3e9122c40d74a7a91d7289b3f",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-09",
+        "assessment_date": "2026-11-19",
+        "skill_md_url": "https://github.com/OakcoderX/awesome-agent-skills/blob/aa7f5c5ccc7ea0a3e9122c40d74a7a91d7289b3f/socratic-story-cartographer/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/oakcoderx/awesome-agent-skills/socratic-story-cartographer/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/OakcoderX/awesome-agent-skills/tree/main/socratic-story-cartographer",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/OakcoderX/awesome-agent-skills/tree/main/socratic-story-cartographer",
+        "publisher_setup_url": "https://github.com/OakcoderX/awesome-agent-skills/blob/main/socratic-story-cartographer/SKILL.md"
+      }
+    }
+  ]
+}

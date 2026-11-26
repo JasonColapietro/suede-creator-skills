@@ -60,6 +60,23 @@ unpublished content, error pages and retired redirects. When changing public
 page eligibility, test the affected published pages directly rather than
 testing only the subset already marked indexable.
 
+## The company name is "Suede"
+
+Owner direction (2026-11-16, restated 2026-11-21): the company is **Suede**,
+never "Suede AI" or "Suede Labs". The pack is "Suede Skills", each first-party
+display name is "Suede <X> Skills" (machine `name:` slugs and folder names do
+not change), and sub-brands read "Suede SEO", "Suede GEO", "Suede Agent
+Studio". Domains (suedeai.ai, SuedeAI.directory), package names, registry ids
+and the GitHub org are not brand copy and keep their spelling.
+
+"Suede AI" and "Suede Labs" appear in public copy only as schema.org
+`alternateName` aliases and in the single "Suede was formerly known as Suede AI
+and Suede Labs." line in `docs/llms.txt`. The guard is
+`test_public_copy_names_the_company_suede` in
+`tests/test_neutral_oss_positioning.py` (run by `npm test`); when it fails,
+write "Suede", do not add an exemption. Dated blog posts keep their frozen
+counts but use the current name.
+
 ## Adding or removing a skill: run `npm run fix:counts`
 
 The book quotes measurements of the pack in prose — how many `SKILL.md` files

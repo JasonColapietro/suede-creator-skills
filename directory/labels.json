@@ -10040,5 +10040,17 @@
  "inhotel-io/govisit-toolkit/govisit-search-places": {
   "category": "productivity-knowledge",
   "summary": "Indexed place search by name/intent, with explicit country, destination or proximity constraints."
+ },
+ "rnthking/redya-skills/redya-xiaohongshu": {
+  "category": "marketing-seo",
+  "summary": "Drafts Xiaohongshu (RedNote) posts with titles, body copy and page images, builds product posts, turns photos into Live Photos and checks copy for sensitive words, through the RedYA API."
+ },
+ "moonlitnayeem/fairvalid-ai/email-verification": {
+  "category": "marketing-seo",
+  "summary": "Verifies email addresses you supply, reads verification jobs and results, and checks workspace credits through FairValid's hosted MCP server."
+ },
+ "moonlitnayeem/fairvalid-ai/fairmatch-leads": {
+  "category": "marketing-seo",
+  "summary": "Searches FairMatch business leads, quotes a selection and unlocks verified work emails only after you confirm a credit maximum, through FairValid's hosted MCP server."
  }
 }

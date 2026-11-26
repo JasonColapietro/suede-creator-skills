@@ -1,12 +1,12 @@
-# Suede AI Skills
+# Suede Skills
 
 ## Product
 
-Suede AI Skills gives founders, marketers, and small teams reusable workflows for SEO audits, AI search visibility, conversion copy, and business operations. Run them in Claude Code or OpenAI Codex, with instructions you can inspect and adapt to your business. The pack also includes code review and app delivery workflows.
+Suede Skills gives founders, marketers, and small teams reusable workflows for SEO audits, AI search visibility, conversion copy, and business operations. Run them in Claude Code or OpenAI Codex, with instructions you can inspect and adapt to your business. The pack also includes code review and app delivery workflows.
 
 ## Founder
 
-Built by Jason Colapietro (Suede AI), a solo founder who spent years
+Built by Jason Colapietro (Suede), a solo founder who spent years
 watching hired marketing firms skip basic fundamentals on his own products.
 This pack turns those misses into reusable, inspectable agent workflows
 instead of one-off fixes. The public site and repo carry his name and
@@ -34,7 +34,7 @@ workflows for Claude Code and Codex.
 - Near-black surfaces, warm off-white type, restrained Suede gold, and a small
   red risk accent.
 - Bold system typography with compact technical labels and terminal details.
-- Suede AI mark and direct, proof-led language.
+- Suede mark and direct, proof-led language.
 
 ## Constraints
 

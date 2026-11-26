@@ -129,8 +129,8 @@ ${JSON.stringify(jsonLd, null, 2)}
 
     <header class="nav">
       <nav class="nav-inner" aria-label="Main navigation">
-        <a href="${up}" class="nav-logo" aria-label="Suede AI Skills home">
-          <img src="${up}assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+        <a href="${up}" class="nav-logo" aria-label="Suede Skills home">
+          <img src="${up}assets/suede-ai-logo-transparent.webp" alt="Suede" width="28" height="28" onerror="this.style.display='none'">
           <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
         </a>
         <details class="nav-disclosure" open>
@@ -168,18 +168,18 @@ ${body}
     </section>
     <footer>
       <div class="footer-shell">
-        <p class="footer-note">Suede AI Skills is a ${SKILL_COUNT}-skill, open-source pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep. Original work is MIT licensed; adapted components retain their upstream notices.</p>
+        <p class="footer-note">Suede Skills is a ${SKILL_COUNT}-skill, open-source pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep. Original work is MIT licensed; adapted components retain their upstream notices.</p>
         <div class="footer-inner">
           <div class="footer-brand">
-            <img src="${up}assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">
-            <span>Built by <strong>Jason Colapietro</strong> / Suede AI</span>
+            <img src="${up}assets/suede-ai-logo-transparent.webp" alt="Suede" width="24" height="24" onerror="this.style.display='none'">
+            <span>Built by <strong>Jason Colapietro</strong> / Suede</span>
           </div>
           <div class="footer-links">
             <a href="https://x.com/johnnysuede" target="_blank" rel="noopener">@johnnysuede</a>
             <span class="footer-divider" aria-hidden="true">|</span>
             <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
             <span class="footer-divider" aria-hidden="true">|</span>
-            <a href="${REPO}" target="_blank" rel="noopener">★ Star Suede AI Skills on GitHub</a>
+            <a href="${REPO}" target="_blank" rel="noopener">★ Star Suede Skills on GitHub</a>
             <span class="footer-divider" aria-hidden="true">|</span>
             <a href="https://suedeai.ai/privacy" target="_blank" rel="noopener">Privacy</a>
             <span class="footer-divider" aria-hidden="true">|</span>
@@ -187,7 +187,7 @@ ${body}
           </div>
         </div>
       </div>
-    <div class="trendshift-recognition" style="width:250px;max-width:100%;margin:24px auto;text-align:center"><p style="margin:0 0 8px;font-size:13px">Suede AI Skills on Trendshift</p><a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55" loading="lazy" style="display:block;max-width:100%;height:auto"/></a></div>
+    <div class="trendshift-recognition" style="width:250px;max-width:100%;margin:24px auto;text-align:center"><p style="margin:0 0 8px;font-size:13px">Suede Skills on Trendshift</p><a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55" loading="lazy" style="display:block;max-width:100%;height:auto"/></a></div>
 </footer>
     <script>
       // Mobile nav disclosure. The markup ships <details open> so a no-JS
@@ -281,11 +281,11 @@ sources.forEach((page, index) => {
       isPartOf: { "@type": "Book", "@id": `${BASE}/book/#book`, name: "S-Tier: The Builder's Book Behind the Suede Skills" },
       author: { "@type": "Person", "@id": "https://suedeai.ai/founder#person", name: "Jason Colapietro" },
       publisher: {
-        "alternateName": ["Suede Labs AI","Suede Labs","Suede"],
+        "alternateName": ["Suede Labs AI","Suede Labs","Suede AI"],
         "parentOrganization": {"@type":"Organization","@id":"https://jcinvestmentgroup.ventures/#organization","name":"JC Investment Group LLC","url":"https://jcinvestmentgroup.ventures/"},
         "address": {"@type":"PostalAddress","streetAddress":"138 Victorian Lane","addressLocality":"Jupiter","addressRegion":"FL","postalCode":"33458","addressCountry":"US"},
         "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","@id":"https://suedeai.ai/terms#money-back-policy","name":"90-day money-back policy","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":90,"returnFees":"https://schema.org/FreeReturn","refundType":"https://schema.org/FullRefund","merchantReturnLink":"https://suedeai.ai/terms#money-back-policy"},
- "@type": "Organization", "@id": "https://suedeai.ai/#organization", name: "Suede AI", url: "https://suedeai.ai" },
+ "@type": "Organization", "@id": "https://suedeai.ai/#organization", name: "Suede", url: "https://suedeai.ai" },
       mainEntityOfPage: canonical,
     },
     body,
@@ -405,11 +405,11 @@ written.set(
       datePublished: PUBLISHED,
       author: { "@type": "Person", "@id": "https://suedeai.ai/founder#person", name: "Jason Colapietro" },
       publisher: {
-        "alternateName": ["Suede Labs AI","Suede Labs","Suede"],
+        "alternateName": ["Suede Labs AI","Suede Labs","Suede AI"],
         "parentOrganization": {"@type":"Organization","@id":"https://jcinvestmentgroup.ventures/#organization","name":"JC Investment Group LLC","url":"https://jcinvestmentgroup.ventures/"},
         "address": {"@type":"PostalAddress","streetAddress":"138 Victorian Lane","addressLocality":"Jupiter","addressRegion":"FL","postalCode":"33458","addressCountry":"US"},
         "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","@id":"https://suedeai.ai/terms#money-back-policy","name":"90-day money-back policy","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":90,"returnFees":"https://schema.org/FreeReturn","refundType":"https://schema.org/FullRefund","merchantReturnLink":"https://suedeai.ai/terms#money-back-policy"},
- "@type": "Organization", "@id": "https://suedeai.ai/#organization", name: "Suede AI", url: "https://suedeai.ai" },
+ "@type": "Organization", "@id": "https://suedeai.ai/#organization", name: "Suede", url: "https://suedeai.ai" },
       hasPart: sources.map((p, i) => ({
         "@type": "Chapter",
         "@id": `${BASE}/book/${p.slug}.html#chapter`,

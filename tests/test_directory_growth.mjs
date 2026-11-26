@@ -127,7 +127,7 @@ import { starGains, validateStars } from '../scripts/directory/github-stars.mjs'
 
 const feed = JSON.parse(read('docs/directory/weekly.json'));
 
-test('weekly feed excludes Suede AI, links only to the directory and reconciles topic installs', () => {
+test('weekly feed excludes Suede, links only to the directory and reconciles topic installs', () => {
   const own = /^jasoncolapietro\/suede-creator-skills$|^suede-ai\//i;
   assert.ok(Object.values(feed.skills).every(s => !own.test(s.repo) && s.listing.startsWith('https://suedeai.directory/')));
   assert.ok(feed.repositories.every(r => !own.test(r.repo)));
@@ -305,19 +305,20 @@ test('GitHub star buttons appear on every directory page and in every outgoing m
   for (const page of ['index', 'finder/index', 'badges/index', 'rising/index', 'state-of-agent-skills/index', 'submit/index'])
     assert.equal(count(read(`docs/directory/${page}.html`)), 3, `${page}: nav + panel + footer`);
   assert.ok(read(`directory/growth/issues/${breakout.date}.md`).includes(repo) || issue.includes(repo));
-  assert.ok(issue.includes(`[Star Suede AI Skills on GitHub](${repo})`));
-  assert.ok(read('directory/growth/badge-outreach.md').includes(`P.S. Suede AI Skills and the grading rubric are open source. A star on GitHub puts graded skills in front of more builders: ${repo}`));
+  assert.ok(issue.includes(`[Star Suede Skills on GitHub](${repo})`));
+  assert.ok(read('directory/growth/badge-outreach.md').includes(`P.S. Suede Skills and the grading rubric are open source. A star on GitHub puts graded skills in front of more builders: ${repo}`));
   assert.equal(brief(feed, ['sales']).star, repo);
-  assert.match(read('directory/suede-directory/SKILL.md'), /star Suede AI Skills on\nGitHub/);
+  assert.match(read('directory/suede-directory/SKILL.md'), /star Suede Skills on\nGitHub/);
 });
 
-test('every star call to action names Suede AI Skills and points at its repository', () => {
+test('each star call to action names the project and points at its repository', () => {
   const repo = 'https://github.com/JasonColapietro/suede-creator-skills';
-  assert.equal((issue.match(/Suede AI Skills.{0,40}on GitHub|star it on GitHub/g) || []).length, 3, 'newsletter: three star lines');
-  for (const page of ['docs/index.html', 'docs/guide.html', 'docs/skills/android-app-factory.html', 'docs/listings.html'])
-    assert.ok(read(page).includes(`href="${repo}" target="_blank" rel="noopener">★ Star Suede AI Skills on GitHub</a>`), page);
+  assert.equal((issue.match(/Suede Skills.{0,40}on GitHub|star it on GitHub/g) || []).length, 3, 'newsletter: three star lines');
+  assert.ok(read('docs/index.html').includes(`href="${repo}" target="_blank" rel="noopener">★ Star Suede Skills on GitHub</a>`));
+  for (const page of ['docs/guide.html', 'docs/skills/android-app-factory.html', 'docs/listings.html'])
+    assert.ok(read(page).includes(`href="${repo}" target="_blank" rel="noopener">★ Star Suede Skills on GitHub</a>`), page);
   assert.doesNotMatch(read('docs/directory/finder/index.html'), /Star the directory/);
-  assert.ok(read('docs/directory/finder/index.html').includes('Star Suede AI Skills on GitHub'));
+  assert.ok(read('docs/directory/finder/index.html').includes('Star Suede Skills on GitHub'));
   assert.equal(JSON.parse(read('docs/directory/weekly.json')).star, repo);
   assert.match(read('directory/suede-directory/scripts/search.mjs'), new RegExp(`star: '${repo}'`));
   assert.match(read('README.md'), /img\.shields\.io\/github\/stars\/JasonColapietro\/suede-creator-skills/);
@@ -326,10 +327,10 @@ test('every star call to action names Suede AI Skills and points at its reposito
 test('every issue explains its terms, welcomes first readers once and renders lists cleanly', () => {
   const later = buildIssue({ index: nlIndex, feed: nlFeed, breakout, playbook, date: breakout.date });
   const first = buildIssue({ index: nlIndex, feed: nlFeed, breakout, playbook, date: breakout.date, firstIssue: true });
-  assert.match(first, /Welcome to the first issue of Suede AI Rising Skills/);
+  assert.match(first, /Welcome to the first issue of Suede Rising Skills/);
   for (const md of [first, later]) {
-    assert.match(md, /^\*\*Subject \(A\):\*\* .+ \| Suede AI$/m);
-    assert.match(md, /^# Suede AI Rising Skills$/m);
+    assert.match(md, /^\*\*Subject \(A\):\*\* .+ \| Suede$/m);
+    assert.match(md, /^# Suede Rising Skills$/m);
   }
   assert.match(first, /\*\*New to agent skills\?\*\*/);
   assert.doesNotMatch(later, /Welcome to the first issue/);

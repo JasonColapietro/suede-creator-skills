@@ -1,10 +1,10 @@
 # Contribute to Suede Awesome Everything
 
-[Awesome Everything](README.md) · [Directory on Suede AI](https://skills.suedeai.ai/directory/)
+[Awesome Everything](README.md) · [Directory on Suede](https://skills.suedeai.ai/directory/)
 
 ## Request a listing, correction or removal
 
-Open a [Directory listing request](https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml). Include the source repository, exact skill names and paths, license, intended use, and any required services or installation components. For corrections or removal, link the existing Suede AI listing and explain the change.
+Open a [Directory listing request](https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml). Include the source repository, exact skill names and paths, license, intended use, and any required services or installation components. For corrections or removal, link the existing Suede listing and explain the change.
 
 Maintainers review requests under the [directory methodology](https://skills.suedeai.ai/directory/methodology/) and record accepted scope in [inclusions.json](../directory/inclusions.json). Partial acceptance uses an explicit skill-name allowlist. Removals and policy exclusions go in [exclusions.json](../directory/exclusions.json). A repository’s future additions do not expand an existing allowlist.
 
@@ -29,7 +29,7 @@ The Markdown catalog reads the same accepted snapshot as the website. It does no
 | Category titles and introductions | [directory/categories.json](../directory/categories.json) |
 | Featured projects, reviews and setup | [directory/featured-projects.json](../directory/featured-projects.json) |
 | Guides listed in the index and category pages | [directory/editorial/pages.json](../directory/editorial/pages.json) and the Markdown files beside it |
-| Suede AI service links in the catalog | [directory/services-cta.json](../directory/services-cta.json), campaign `awesome-readme` |
+| Suede service links in the catalog | [directory/services-cta.json](../directory/services-cta.json), campaign `awesome-readme` |
 | Catalog layout and excerpt formatting | [scripts/build-awesome-directory.mjs](../scripts/build-awesome-directory.mjs) |
 
 From the repository root with Node.js 22 or newer:
@@ -66,4 +66,4 @@ git diff --check
 
 ## Credits and licenses
 
-Credit the original repository owner or team. Preserve source and Suede AI listing links when correcting an entry. Saved publisher descriptions are quoted as short excerpts when no editorial summary is available; an ellipsis marks shortening. Each skill keeps its source license, including non-commercial or other restricted terms. This catalog’s inclusion is not permission to redistribute an upstream skill.
+Credit the original repository owner or team. Preserve source and Suede listing links when correcting an entry. Saved publisher descriptions are quoted as short excerpts when no editorial summary is available; an ellipsis marks shortening. Each skill keeps its source license, including non-commercial or other restricted terms. This catalog’s inclusion is not permission to redistribute an upstream skill.

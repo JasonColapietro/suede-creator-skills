@@ -74,17 +74,17 @@ test("the gate decides which task pages exist", () => {
   assert.deepEqual(TASK_GATE, { minListed: 5, minStrongPages: 3, strongScore: 80 });
 });
 
-test("no Suede AI skill reaches a task ranking or an alternatives list", () => {
+test("no Suede skill reaches a task ranking or an alternatives list", () => {
   const own = skills.find((s) => s.repo.toLowerCase() === FIRST_PARTY);
-  assert.ok(own, "the dataset should list Suede AI's own skills to exercise this rule");
+  assert.ok(own, "the dataset should list Suede's own skills to exercise this rule");
   assert.ok(isFirstParty(own));
-  for (const job of config.jobs) assert.equal(matchReason(job, { ...own, name: job.id, display_name: job.job }), null, `${job.id} matched a Suede AI skill`);
+  for (const job of config.jobs) assert.equal(matchReason(job, { ...own, name: job.id, display_name: job.job }), null, `${job.id} matched a Suede skill`);
   for (const rel of newPages) {
     const html = read(rel);
     const main = (html.match(/<main\b[\s\S]*<\/main>/) || [""])[0];
-    assert.doesNotMatch(main, /JasonColapietro\/suede-creator-skills|jasoncolapietro\/suede-creator-skills/i, `${rel}: lists a Suede AI skill`);
+    assert.doesNotMatch(main, /JasonColapietro\/suede-creator-skills|jasoncolapietro\/suede-creator-skills/i, `${rel}: lists a Suede skill`);
     for (const node of jsonld(html)) {
-      for (const item of node.mainEntity?.itemListElement || []) assert.doesNotMatch(item.url, /jasoncolapietro\/suede-creator-skills/i, `${rel}: ItemList names a Suede AI skill`);
+      for (const item of node.mainEntity?.itemListElement || []) assert.doesNotMatch(item.url, /jasoncolapietro\/suede-creator-skills/i, `${rel}: ItemList names a Suede skill`);
     }
   }
 });
@@ -250,7 +250,7 @@ test("new page copy avoids em dashes and the banned AI-tell words", () => {
   for (const rel of newPages) {
     const html = read(rel);
     const main = (html.match(/<main\b[\s\S]*<\/main>/) || [""])[0];
-    // Only Suede AI's own sentences: quoted third-party summaries and the
+    // Only Suede's own sentences: quoted third-party summaries and the
     // publisher and repository names (michalparkola/tapestry-skills-for-claude-code)
     // sit in table cells.
     const own = main.replace(/<td class="(?:desc|meta)">[\s\S]*?<\/td>/g, "").replace(/<[^>]+>/g, " ");

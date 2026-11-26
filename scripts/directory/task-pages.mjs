@@ -13,7 +13,7 @@
 
 import fs from "node:fs";
 
-// Suede AI publishes the directory, so its own skills never appear in a
+// Suede publishes the directory, so its own skills never appear in a
 // ranking or as an alternative: the directory promises neutrality.
 export const FIRST_PARTY_REPOS = new Set(["jasoncolapietro/suede-creator-skills"]);
 export const isFirstParty = (s) => FIRST_PARTY_REPOS.has(String(s.repo).toLowerCase()) || /^suede-ai\//i.test(String(s.repo));

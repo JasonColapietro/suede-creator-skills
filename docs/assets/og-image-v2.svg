@@ -1,42 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
-  <title id="title">Suede AI Skills</title>
-  <desc id="desc">Open-source agent skills for Claude Code and Codex.</desc>
-  <rect width="1200" height="630" fill="#080808"/>
-  <rect x="32" y="32" width="1136" height="566" rx="16" fill="#111111" stroke="#28251f" stroke-width="2"/>
-  <path d="M32 168H1168" stroke="#28251f" stroke-width="2"/>
-  <path d="M424 168V598" stroke="#28251f" stroke-width="2"/>
-
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Suede Skills</title>
+  <desc id="desc">Open-source agent skills for Claude Code and OpenAI Codex, with a lime and cyan wireframe knot.</desc>
   <defs>
-    <clipPath id="suede-mark-clip">
-      <rect width="64" height="64" rx="10"/>
-    </clipPath>
+    <radialGradient id="glow"><stop stop-color="#20433f"/><stop offset="1" stop-color="#0c1519"/></radialGradient>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1.25" fill="#355651"/></pattern>
   </defs>
-
+  <rect width="1200" height="630" fill="#0c1519"/>
+  <ellipse cx="922" cy="263" rx="440" ry="300" fill="url(#glow)"/>
+  <rect x="650" width="550" height="486" fill="url(#dots)"/>
+  <image x="633" y="83" width="534" height="334" xlink:href="cipher-knot.png"/>
   <g transform="translate(76 70)">
-    <g id="suede-mark" clip-path="url(#suede-mark-clip)">
-      <image data-approved-suede-mark="true" href="suede-ai-logo-transparent.png" width="64" height="64" preserveAspectRatio="xMidYMid slice"/>
+    <g id="suede-mark">
+      <image data-approved-suede-mark="true" href="suede-ai-logo-transparent.png" width="64" height="64"/>
     </g>
-    <text x="86" y="28" fill="#f0ece4" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="800" letter-spacing="4">SUEDE</text>
-    <text x="86" y="56" fill="#888880" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="3">CREATOR SKILLS</text>
+    <text x="84" y="41" fill="#e6f3ee" font-family="Arial, sans-serif" font-size="25" font-weight="bold" letter-spacing="3">SUEDE SKILLS</text>
   </g>
-
-  <g transform="translate(76 208)">
-    <text x="0" y="225" fill="#c8a96e" font-family="Arial, Helvetica, sans-serif" font-size="250" font-weight="900" letter-spacing="-18">67</text>
-    <text x="6" y="280" fill="#888880" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="4">INSTALLABLE SKILLS</text>
+  <g font-family="Georgia, 'Liberation Serif', serif" font-weight="bold" letter-spacing="-4">
+    <text x="72" y="275" font-size="100" fill="#e6f3ee">Open-source</text>
+    <text x="72" y="382" font-size="108" fill="#b6ff4d" font-style="italic">agent skills.</text>
   </g>
-
-  <g transform="translate(476 214)">
-    <text x="0" y="58" fill="#f0ece4" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="900" letter-spacing="-1">OPEN-SOURCE</text>
-    <text x="0" y="119" fill="#f0ece4" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="900" letter-spacing="-1">AGENT SKILLS</text>
-    <text x="2" y="169" fill="#c8a96e" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700">Claude Code + OpenAI Codex</text>
-
-    <g fill="#888880" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="600">
-      <text x="2" y="225">CODE REVIEW  ·  SHIP GATES  ·  AI EVALS</text>
-      <text x="2" y="260">DESIGN  ·  SEO  ·  iOS  ·  CREATOR WORKFLOWS</text>
-    </g>
-
-    <rect x="0" y="309" width="362" height="62" rx="6" fill="#c8a96e"/>
-    <text x="28" y="350" fill="#080808" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="900" letter-spacing="2">STAR THE REPO  →</text>
-    <text x="388" y="348" fill="#888880" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">MIT LICENSED</text>
-  </g>
+  <path d="M76 476H1124" stroke="#395559" stroke-width="2"/>
+  <text x="76 127" y="558" fill="#b6ff4d" font-family="Arial, sans-serif" font-size="83" font-weight="bold" letter-spacing="-18">67</text>
+  <text x="174" y="545" fill="#d5e2df" font-family="Arial, sans-serif" font-size="20" font-weight="bold" letter-spacing="2">INSTALLABLE SKILLS</text>
+  <text x="1124" y="545" text-anchor="end" fill="#a5dbd8" font-family="Arial, sans-serif" font-size="24">Claude Code + OpenAI Codex</text>
 </svg>

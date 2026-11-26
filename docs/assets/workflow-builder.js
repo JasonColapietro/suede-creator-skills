@@ -108,7 +108,7 @@ if (root) {
     const badge = element('span', 'workflow-suede-badge');
     const mark = element('img', 'workflow-suede-mark');
     mark.src = '/assets/suede-ai-logo-transparent.png'; mark.alt = ''; mark.width = 28; mark.height = 28;
-    badge.append(mark, element('span', '', 'Suede AI pick'));
+    badge.append(mark, element('span', '', 'Suede pick'));
     return badge;
   }
   function skillItem(skill) {
@@ -135,7 +135,7 @@ if (root) {
     get('[data-workflow-skill-list]').hidden = !skills.length;
     get('#workflow-suggestions-title').textContent = skills.length ? 'Skills that fit your goal' : 'Reading for your goal';
     get('[data-workflow-suggestions-summary]').textContent = skills.length
-      ? `${skills.length} graded skills match what you described${skills.some(isFirstParty) ? ', Suede AI’s own skills first' : ', strongest match first'}. For a step-by-step workflow, pick a goal above or add more detail.`
+      ? `${skills.length} graded skills match what you described${skills.some(isFirstParty) ? ', Suede’s own skills first' : ', strongest match first'}. For a step-by-step workflow, pick a goal above or add more detail.`
       : 'No listed skill matches those words closely yet. These articles cover the ground, or pick a goal above for a step-by-step workflow.';
     renderReading(get('[data-workflow-suggest-reading]'), articles);
     suggestions.hidden = false;
