@@ -120,6 +120,18 @@ export function rewriteText(text, ext, pageUrl, { assetExists = shippedAsset } =
   return out;
 }
 
+// The directory's own icon set (directory/assets/favicon/): a bold S that
+// stays legible at 16px, the full ringed mark from 32px up, and a home-screen
+// icon. The shared 64px icon's thin rings blur to a pale square in a tab.
+const SHARED_ICON = '<link rel="icon" href="/assets/favicon-64.png" type="image/png">';
+const DIRECTORY_ICONS = [
+  '<link rel="icon" href="/favicon.ico" sizes="48x48">',
+  '<link rel="icon" href="/assets/favicon/favicon-16.png" type="image/png" sizes="16x16">',
+  '<link rel="icon" href="/assets/favicon/favicon-32.png" type="image/png" sizes="32x32">',
+  '<link rel="icon" href="/assets/favicon/favicon-192.png" type="image/png" sizes="192x192">',
+  '<link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png" sizes="180x180">',
+].join("\n    ");
+
 // The More menu closes on Escape (focus returns to its button), on a click
 // outside it, and when focus leaves it, like any other dropdown.
 const MORE_MENU_SCRIPT = `  <script>
@@ -150,7 +162,8 @@ function compactNavigation(page) {
     if (main.length < 2 || !secondary.length || action.length !== 1) return whole;
     const more = `<details class="directory-more"><summary aria-label="More pages">More <span class="directory-more-caret" aria-hidden="true">▾</span></summary><div class="directory-more-links">${secondary.join("")}</div></details>`;
     return open + [...main, more, ...action].join("\n") + close;
-  }).replace("</head>", '    <link rel="stylesheet" href="/assets/cracked-devs.css">\n</head>')
+  }).replace(SHARED_ICON, DIRECTORY_ICONS)
+    .replace("</head>", '    <link rel="stylesheet" href="/assets/cracked-devs.css">\n</head>')
     .replace("</body>", `${MORE_MENU_SCRIPT}\n</body>`);
 }
 
@@ -228,14 +241,18 @@ export function build(out) {
     fs.writeFileSync(listing, html.replaceAll(previous, `Report version <code>${report_version.slice(0, 12)}</code>`));
   }
   fs.mkdirSync(path.join(out, "assets"), { recursive: true });
-  fs.copyFileSync(path.join(docs, "favicon.ico"), path.join(out, "favicon.ico"));
+  const icons = path.join(ROOT, "directory", "assets", "favicon");
+  fs.copyFileSync(path.join(icons, "favicon.ico"), path.join(out, "favicon.ico"));
   copyTree(path.join(docs, "assets"), path.join(out, "assets"), null);
   fs.copyFileSync(path.join(ROOT, "directory", "assets", "cracked-devs.css"), path.join(out, "assets", "cracked-devs.css"));
+  fs.mkdirSync(path.join(out, "assets", "favicon"), { recursive: true });
+  for (const f of fs.readdirSync(icons)) fs.copyFileSync(path.join(icons, f), path.join(out, "assets", "favicon", f));
 
   const notFound = path.join(docs, "404.html");
   // The shared 404 says which host the visitor missed; on this host, say this one.
   if (fs.existsSync(notFound)) fs.writeFileSync(path.join(out, "404.html"), rewriteText(fs.readFileSync(notFound, "utf8"), ".html", `${OLD}/404.html`)
-    .replaceAll("This page is not on skills.suedeai.ai.", "This page is not on suedeai.directory."));
+    .replaceAll("This page is not on skills.suedeai.ai.", "This page is not on suedeai.directory.")
+    .replace(SHARED_ICON, DIRECTORY_ICONS));
 
   const sitemap = fs.readFileSync(path.join(docs, "directory-sitemap.xml"), "utf8");
   const urls = [...sitemap.matchAll(/  <url>[\s\S]*?<\/url>\n/g)].map((m) => m[0]).filter((u) => u.includes(`<loc>${OLD}/directory/`));

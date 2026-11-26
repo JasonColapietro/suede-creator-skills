@@ -80,6 +80,13 @@ test("the built site has no old directory URLs and no broken internal links", ()
       assert.match(home, new RegExp(`id="${id}">Don’t click\\. They’re already insufferable\\.<`));
     }
     assert.match(home, /<nav class="kind-bar"[\s\S]*?<\/nav>\s*<div class="shell cracked-devs-mobile"/);
+    // The directory ships its own legible icon set, not the shared thin-ring 64px icon.
+    assert.doesNotMatch(home, /favicon-64\.png/);
+    for (const icon of ['/favicon.ico', '/assets/favicon/favicon-16.png', '/assets/favicon/favicon-32.png', '/assets/favicon/apple-touch-icon.png']) {
+      assert.ok(home.includes(`href="${icon}"`), `${icon} is linked from the homepage`);
+      assert.ok(fs.existsSync(path.join(out, icon)), `${icon} ships with the site`);
+    }
+    assert.ok(fs.readFileSync(path.join(out, 'favicon.ico')).equals(fs.readFileSync(new URL('../directory/assets/favicon/favicon.ico', import.meta.url))));
     const sharedHome = fs.readFileSync(new URL('../docs/directory/index.html', import.meta.url), 'utf8');
     assert.doesNotMatch(sharedHome, /class="cracked-devs-link"/, 'the old host does not get the new CTA');
     const featured = fs.readFileSync(path.join(out, 'featured/index.html'), 'utf8');
