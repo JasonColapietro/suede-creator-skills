@@ -356,7 +356,7 @@ test("robots.txt allows search, answer and user-triggered AI fetchers", () => {
 test("llms.txt points answer engines at every category directory", () => {
   const llms = fs.readFileSync(path.join(docs, "llms.txt"), "utf8");
   for (const c of categories) assert.ok(llms.includes(`](${BASE}/directory/${c.slug}/)`), `llms.txt lacks ${c.slug}`);
-  assert.doesNotMatch(llms.replace("Suede was formerly known as Suede AI and Suede Labs.", ""), /Suede Labs|Suede AI\b/);
+  assert.doesNotMatch(llms.replace("Suede was formerly known as Suede Labs AI and Suede AI.", ""), /Suede Labs|Suede AI\b/);
 });
 
 test("the 404 page stays out of the index", () => {

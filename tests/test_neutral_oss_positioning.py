@@ -157,7 +157,7 @@ class NeutralOssPositioningTests(unittest.TestCase):
         copyright/license notices are not brand copy and are not scanned."""
         old_name = re.compile(r"suede\s+(?:ai|labs)\b", re.IGNORECASE)
         alias_array = re.compile(r'"?alternateName"?\s*:\s*\[[^\]]*\]')
-        alias_line = "formerly known as Suede AI and Suede Labs"
+        alias_line = "formerly known as Suede Labs AI and Suede AI"
         exempt = (
             "LICENSE", "licenses/", "tests/", "AGENTS.md", "CLAUDE.md", ".agents/docs/", "docs/plans/", "docs/superpowers/",
             "directory/intake/", "directory/reviews/", "directory/agents/evidence/",
