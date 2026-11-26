@@ -4,7 +4,7 @@
 
 Maintained by Jason Colapietro (Suede, https://suedeai.ai), one author. These are the same skill folders that run the estate day to day, published as they are: open the folder and read the file. Repository: https://github.com/JasonColapietro/suede-creator-skills. License and attribution details: https://github.com/JasonColapietro/suede-creator-skills/blob/main/NOTICE.md. The GitHub Pages site is generated from the same repo, so the docs, the install commands, and the MCP source sit beside the skills they describe. October 2026: Suede is a member of Claude for Startups, Anthropic's startup program (https://claude.com/programs/startups). Suede was formerly known as Suede Labs AI and Suede AI.
 
-Install for Claude Code: `/plugin marketplace add JasonColapietro/suede-creator-skills` then `/plugin install suede-skills@suede`. Two commands, about thirty seconds. Focused subsets exist for narrower work, and they cost the same per skill because an unmatched skill never loads its body: `suede-marketing@suede` (41 skills for paid acquisition, outbound, pricing, offers, lifecycle, social growth, AI search optimization, attribution, and analytics), `suede-agent-workflows@suede` (orchestration, workflows, evals), and `suede-code@suede` (review, grade, ship-gate).
+Install for Claude Code: `/plugin marketplace add JasonColapietro/suede-creator-skills` then `/plugin install suede-skills@suede`. Two commands, about thirty seconds. Focused subsets exist for narrower work, and they cost the same per skill because an unmatched skill never loads its body: `suede-marketing@suede` (53 skills for paid acquisition, outbound, pricing, offers, lifecycle, social growth, AI search optimization, attribution, and analytics), `suede-agent-workflows@suede` (orchestration, workflows, evals), and `suede-code@suede` (review, grade, ship-gate).
 
 Install the full pack for Codex: `codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main` then `codex plugin add suede-skills@suede-codex`. The plugin registers 1 read-only MCP server with 12 tools. For one skill only, use the built-in skill installer with `--repo JasonColapietro/suede-creator-skills --path skills/<name>`.
 
@@ -412,3 +412,15 @@ Individual course awards and Microsoft Learn module achievements: https://seo.su
 - [NeuralAdX: The Three Pillars of AI Visibility](https://neuraladx.com/the-three-pillars-of-ai-platform-visibility/): Updated October 28, 2026; cites Suede SEO’s comparison of AI visibility tools and managed GEO implementation.
 - [Glama](https://glama.ai/mcp/servers/JasonColapietro/suede-creator-skills): Suede Creator Skills MCP server listing.
 - [Complete app catalog](https://jasoncolapietro.com/apps/): 9 iOS apps, 6 Android apps and 2 Chrome extensions across AI agents, music, guitar tools, vocal training and children’s stories.
+- [Suede Domain Migration Skills](https://skills.suedeai.ai/skills/suede-domain-migration.html): Plan a domain move with a verified redirect map and rollback triggers.
+- [Suede Internal Linking Skills](https://skills.suedeai.ai/skills/suede-internal-linking.html): Find orphaned pages and add useful contextual links without turning navigation into clutter.
+- [Suede Link Outreach Skills](https://skills.suedeai.ai/skills/suede-link-outreach.html): Find an editorial reason to pitch a specific source a useful, verifiable resource.
+- [Suede Media Transcript Skills](https://skills.suedeai.ai/skills/suede-media-transcript.html): Produce a timecoded transcript and usable captions from media you can access and use.
+- [Suede Organic Gap Research Skills](https://skills.suedeai.ai/skills/suede-organic-gap-research.html): Find organic content and editorial backlink gaps that are worth pursuing.
+- [Suede Reddit SERP Skills](https://skills.suedeai.ai/skills/suede-reddit-serp.html): Study real Reddit threads that surface in search without treating communities as link inventory.
+- [Suede Release to Marketing Skills](https://skills.suedeai.ai/skills/suede-release-to-marketing.html): Turn changes that users can actually access into accurate channel-ready drafts.
+- [Suede Search Titles Skills](https://skills.suedeai.ai/skills/suede-search-titles.html): Use Search Console and live page evidence to test better search titles.
+- [Suede SEO Proof Library Skills](https://skills.suedeai.ai/skills/suede-seo-proof-kb.html): Track the source, permission, and expiry behind every published statement.
+- [Suede SEO Sprint Skills](https://skills.suedeai.ai/skills/suede-seo-sprint.html): Run a bounded SEO sprint around one page, one query cluster, and one conversion.
+- [Suede SERP Research Skills](https://skills.suedeai.ai/skills/suede-serp-research.html): Compare matched search results and decide which queries need one page or separate pages.
+- [Suede Syndication Skills](https://skills.suedeai.ai/skills/suede-syndication.html): Adapt one verified story for distinct audiences without blurring canonicals or permissions.
