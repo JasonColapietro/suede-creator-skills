@@ -334,6 +334,11 @@ const skills = data.skills.map((baseline) => {
 });
 const byId = new Map(skills.map((s) => [s.id, s]));
 const snapshotDate = data.generated;
+// The build dates new/ by the latest source assessment, not the global snapshot.
+const browseDate = data.skills.reduce((latest, s) => {
+  const assessed = data.repos[s.repo].assessment_date;
+  return assessed && assessed > latest ? assessed : latest;
+}, snapshotDate);
 const ledger = loadListedSince(path.join(repoRoot, "directory", "listed-since.json"));
 // The floor is the first recorded snapshot: the earliest date in the ledger.
 const floorDate = Object.values(ledger.dates).sort()[0];
@@ -529,7 +534,7 @@ test("flag pages exist for every flag with skills and list only flagged skills",
 test("new/ lists exactly the skills first listed after the ledger floor within 30 days", () => {
   built();
   const rows = tableRows(read("directory/new/"));
-  const expected = skills.filter((s) => isNewListing(s, snapshotDate, floorDate));
+  const expected = skills.filter((s) => isNewListing(s, browseDate, floorDate));
   const listedNew = [...new Set(rows.filter((r) => r["data-listed"] > floorDate).map((r) => r["data-id"]))].sort();
   const thirdParty = expected.filter((s) => !isFirstParty(s)).map((s) => s.id).sort();
   // Suede's own new skills may be shown or held back, but all or nothing.
@@ -539,7 +544,7 @@ test("new/ lists exactly the skills first listed after the ledger floor within 3
     const s = byId.get(r["data-id"]);
     assert.ok(s, `new/: unknown skill ${r["data-id"]}`);
     assert.equal(r["data-listed"], s.listed_since, `new/: ${s.id} listed date`);
-    assert.ok(isNewListing(s, snapshotDate, floorDate) || isRecentlyUpdated(s, snapshotDate), `new/: ${s.id} is neither new nor recently updated`);
+    assert.ok(isNewListing(s, browseDate, floorDate) || isRecentlyUpdated(s, browseDate), `new/: ${s.id} is neither new nor recently updated`);
   }
 });
 

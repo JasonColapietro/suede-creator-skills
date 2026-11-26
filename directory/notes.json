@@ -251,5 +251,17 @@
  "moonlitnayeem/fairvalid-ai/fairmatch-leads": {
   "text": "Requires a FairValid account. Connect the hosted FairValid MCP at https://mcp.fairvalid.com/mcp and approve the workspace in the browser. Installing the skill folder alone does not configure that connection. Lead unlocks spend workspace credits, and the skill asks you to confirm a maximum before any unlock. It does not send outreach. Skill files are MIT; the FairValid service has its own terms. Static review only; no runtime or security scan.",
   "source": "https://github.com/moonlitnayeem/fairvalid-ai/blob/40cac2883dc74f50f7bc8562b380782c4c6a4379/skills/fairmatch-leads/SKILL.md"
+ },
+ "stalkc/stalkchain-plugin/trader-check": {
+  "text": "Requires a StalkChain account with credits. The skill calls the hosted StalkChain connector, and every lookup spends credits. Installing the skill folder alone does not configure that connection. It researches and does not place trades. Skill files are MIT; the StalkChain service has its own terms. Static review only; no runtime or security scan.",
+  "source": "https://github.com/StalkC/stalkchain-plugin/blob/b69be0f9eac83d26ec37699ee31bdc4d643635c2/skills/trader-check/SKILL.md"
+ },
+ "stalkc/stalkchain-plugin/token-check": {
+  "text": "Requires a StalkChain account with credits. The skill calls the hosted StalkChain connector, and every lookup spends credits. Installing the skill folder alone does not configure that connection. It researches and does not place trades. Skill files are MIT; the StalkChain service has its own terms. Static review only; no runtime or security scan.",
+  "source": "https://github.com/StalkC/stalkchain-plugin/blob/b69be0f9eac83d26ec37699ee31bdc4d643635c2/skills/token-check/SKILL.md"
+ },
+ "stalkc/stalkchain-plugin/smart-money-radar": {
+  "text": "Requires a StalkChain account with credits. The skill calls the hosted StalkChain connector, and every lookup spends credits. Installing the skill folder alone does not configure that connection. It researches and does not place trades. Skill files are MIT; the StalkChain service has its own terms. Static review only; no runtime or security scan.",
+  "source": "https://github.com/StalkC/stalkchain-plugin/blob/b69be0f9eac83d26ec37699ee31bdc4d643635c2/skills/smart-money-radar/SKILL.md"
  }
 }

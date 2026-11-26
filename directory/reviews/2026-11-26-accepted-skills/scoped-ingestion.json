@@ -1,0 +1,30 @@
+{
+  "assessment_date": "2026-11-26",
+  "ingested": "2026-11-26",
+  "previous_snapshot_id": "176044f4b49e4c4f8168396e3fa66419",
+  "new_snapshot_id": "acbbe538b5e14482b3ed6569cd6c892d",
+  "unchanged_existing_skills": 3906,
+  "unchanged_existing_repositories": 171,
+  "existing_before_sha256": "b8f79c1b90cfc8a3112ab5281d0d61838b84d0a319c1aad62ae76a4e13466d42",
+  "existing_after_sha256": "b8f79c1b90cfc8a3112ab5281d0d61838b84d0a319c1aad62ae76a4e13466d42",
+  "added_repositories": [
+    "StalkC/stalkchain-plugin",
+    "moonlitnayeem/fairvalid-ai",
+    "skillsforbots/grok-bot-skills"
+  ],
+  "added_skills": [
+    "moonlitnayeem/fairvalid-ai/email-verification",
+    "moonlitnayeem/fairvalid-ai/fairmatch-leads",
+    "skillsforbots/grok-bot-skills/bot-safety-rules-starter",
+    "skillsforbots/grok-bot-skills/reminder-basics",
+    "StalkC/stalkchain-plugin/smart-money-radar",
+    "StalkC/stalkchain-plugin/token-check",
+    "StalkC/stalkchain-plugin/trader-check"
+  ],
+  "not_listed_by_policy": [
+    "kochetkov-ma/brewpage-publish-plugins/brewpage-publish"
+  ],
+  "security_scan_status": "not_scanned",
+  "runtime_tested": false,
+  "numeric_scores": "computed by existing parser, curator and graded-v2 rubric"
+}

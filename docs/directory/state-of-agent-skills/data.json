@@ -2,17 +2,17 @@
   "snapshot": "2026-10-22",
   "install_snapshot": "2026-11-22",
   "scope": "Third-party listed skills; Suede excluded",
-  "total": 3839,
+  "total": 3846,
   "grades": {
     "A": 120,
     "B": 1605,
-    "C": 1387,
+    "C": 1394,
     "D": 727
   },
   "cost_lanes": [
     [
       "free-open-source",
-      3418
+      3425
     ],
     [
       "free-with-service",
@@ -30,7 +30,7 @@
   "categories": [
     [
       "ai-agents-llm",
-      602
+      603
     ],
     [
       "developer-tools",
@@ -42,7 +42,7 @@
     ],
     [
       "marketing-seo",
-      311
+      313
     ],
     [
       "product-management",
@@ -50,7 +50,7 @@
     ],
     [
       "productivity-knowledge",
-      235
+      236
     ],
     [
       "media-creative",
@@ -74,7 +74,7 @@
     ],
     [
       "business-finance",
-      163
+      166
     ],
     [
       "security",
@@ -97,14 +97,14 @@
     {
       "name": "Curated-list citations",
       "max": 7,
-      "missing": 3620,
-      "lost": 17693
+      "missing": 3627,
+      "lost": 17742
     },
     {
       "name": "Boundary clause",
       "max": 4,
-      "missing": 3327,
-      "lost": 13308
+      "missing": 3334,
+      "lost": 13336
     },
     {
       "name": "Structural checks",
@@ -115,38 +115,38 @@
     {
       "name": "Example request",
       "max": 3,
-      "missing": 2882,
-      "lost": 8646
+      "missing": 2889,
+      "lost": 8667
     },
     {
       "name": "Compatibility declared",
       "max": 2,
-      "missing": 3311,
-      "lost": 6622
+      "missing": 3318,
+      "lost": 6636
     },
     {
       "name": "Tool permissions declared",
       "max": 2,
-      "missing": 3281,
-      "lost": 6562
+      "missing": 3288,
+      "lost": 6576
     },
     {
       "name": "Bundled scripts",
       "max": 2,
-      "missing": 3177,
-      "lost": 6354
+      "missing": 3184,
+      "lost": 6368
     },
     {
       "name": "Reference files",
       "max": 3,
-      "missing": 2022,
-      "lost": 6066
+      "missing": 2029,
+      "lost": 6087
     },
     {
       "name": "Instruction depth",
       "max": 7,
-      "missing": 1056,
-      "lost": 4476
+      "missing": 1057,
+      "lost": 4479
     },
     {
       "name": "Recent maintenance",
