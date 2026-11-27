@@ -771,6 +771,13 @@ main .share a:hover { border-color: var(--accent); color: var(--accent); text-sh
 .skill-head .lead { margin-bottom: 12px; }
 .skill-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .skill-actions .button { margin: 0; }
+/* Featured listings: lighter, sentence-case claim + badge actions with room below. */
+.featured-project .skill-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 8px 0 24px; }
+.featured-project .skill-actions .button { min-height: 42px; padding: 0 18px; font-size: 13px; font-weight: 600; letter-spacing: .01em; text-transform: none; border-radius: 6px; }
+.featured-project .skill-actions [data-maker-claim] { background: var(--accent); color: var(--on-accent); border-color: var(--accent); box-shadow: 0 1px 0 rgba(0,0,0,.25); }
+.featured-project .skill-actions [data-maker-claim]:hover { background: var(--accent); opacity: .88; color: var(--on-accent); }
+.featured-project .skill-actions .button.secondary { background: transparent; color: var(--ink); border-color: var(--line); font-weight: 500; }
+.featured-project .skill-actions .button.secondary:hover { border-color: var(--accent); background: var(--accent-soft); }
 .score-card { position: relative; display: grid; grid-template-columns: auto auto minmax(0, 1fr); gap: 4px 14px; align-items: center; min-width: 250px; padding: 16px 18px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
 .score-card .shield { grid-row: 1 / 4; width: 54px; height: 60px; }
 .score-card .score { grid-row: 1 / 4; font-family: var(--mono); font-size: 46px; font-weight: 600; line-height: 1; color: var(--accent); font-variant-numeric: tabular-nums; }
