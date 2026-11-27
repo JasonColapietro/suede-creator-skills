@@ -919,7 +919,7 @@ ${head.join("\n")}
 <a class="skip-link" href="#main">Skip to content</a>
 
 ${nav(here, absolute)}
-${kindBar(here, absolute)}
+${here === "directory/" ? "" : kindBar(here, absolute)}
     <main id="main" tabindex="-1" class="shell directory">
 ${h1Html}
 ${body}
@@ -2826,6 +2826,7 @@ ${guideLinksPanel(here, GUIDES, "Guides")}${GUIDES.length ? `
       <p><a href="${rel(here, GUIDES_PATH)}">All agent skills guides</a></p>` : ""}
       </details>
       <details class="home-disclosure"><summary>Catalogs, publishers and scoring</summary>
+${kindBar(here)}
 ${kindsHtml}
 ${securityHtml}
 ${browseWaysPanel(here)}
@@ -2890,7 +2891,7 @@ ${FAQ.map(([q, a]) => `        <h3>${esc(q)}</h3>\n        <p>${esc(a)}${q === "
         <div>
           <h1><span class="home-wordmark">Suede</span> <span class="home-directory-name">Skills Directory</span></h1>
           <p class="lead">Find graded skills for Claude Code, Codex and Cursor. Check the source, compare scores and get the install command.</p>
-          <div class="home-actions"><a class="button" href="#browse">Browse skills</a><a href="${rel(here, "skills/")}">Explore Suede’s own skills <span aria-hidden="true">↗</span></a></div>
+          <div class="home-actions"><a class="button" href="#browse">Browse skills</a><a id="pack-title" href="${rel(here, "skills/")}">Explore Suede’s own skills <span aria-hidden="true">↗</span></a></div>
         </div>
         <figure class="hero-figure home-snapshot">
           <figcaption><strong>${fmt(data.skills.length)}</strong> graded skills</figcaption>

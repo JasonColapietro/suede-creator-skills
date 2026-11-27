@@ -47,7 +47,11 @@ test("every catalog page carries the kind bar with every catalog linked", () => 
     const pageUrl = new URL(`https://x/${path.relative(dirRoot, path.dirname(file)).split(path.sep).join("/")}/`.replace(/\/\/$/, "/"));
     const hrefs = new Set([...bar.matchAll(/href="([^"]+)"/g)].map((m) => new URL(m[1], pageUrl).pathname.replace(/^\//, "")));
     for (const t of targets) assert.ok(hrefs.has(t), `${rel}: kind bar misses ${t} (has ${[...hrefs].join(", ")})`);
-    assert.ok(html.indexOf(bar) < html.indexOf('<main id="main"'), `${rel}: kind bar must sit above the page content`);
+    if (rel === "index.html") {
+      assert.match(html, /<summary>Catalogs, publishers and scoring<\/summary>\s*<nav class="kind-bar"/);
+    } else {
+      assert.ok(html.indexOf(bar) < html.indexOf('<main id="main"'), `${rel}: kind bar must sit above the page content`);
+    }
     n++;
   }
   assert.ok(n > 1000, `fixture: walked ${n} pages`);
