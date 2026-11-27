@@ -82,7 +82,7 @@ class VerificationTests(unittest.TestCase):
             self.assertTrue(mod.with_page_selection(skill, root)['full_page'])
             self.assertFalse(skill['featured'])
 
-    def verify(self, rendered, concurrent_refresh=False, fail_fetch=False):
+    def verify(self, rendered, concurrent_refresh=False, fail_fetch=False, website=False):
         with tempfile.TemporaryDirectory(prefix='directory-verification-') as tmp:
             root = Path(tmp)
             (root / 'directory').mkdir()
@@ -102,15 +102,32 @@ class VerificationTests(unittest.TestCase):
                     raise mod.subprocess.CalledProcessError(1, ['gh', 'api'])
                 return next(responses)
 
+            args = ['verify_badges.py', 'example/skills/sample']
+            if website:
+                capture = root / 'reviewed.html'
+                capture.write_text(rendered)
+                args += ['--website', 'https://publisher.example/sample', '--reviewed-html', str(capture)]
             contract = SimpleNamespace(stdout=json.dumps({'target': TARGET, 'badges': IMAGES}))
             with mock.patch.object(mod, 'ROOT', root), mock.patch.object(mod, 'gh', side_effect=fetch), \
                  mock.patch.object(mod.subprocess, 'run', return_value=contract), \
-                 mock.patch('sys.argv', ['verify_badges.py', 'example/skills/sample']), \
+                 mock.patch('sys.argv', args), \
                  contextlib.redirect_stdout(io.StringIO()):
                 result = mod.main()
             record = json.loads(ledger.read_text())['verifications']['example/skills/sample']
             self.assertEqual(record['dataset_sha256'], hashlib.sha256(original).hexdigest())
             return result, record, hashlib.sha256(dataset.read_bytes()).hexdigest()
+
+    def test_website_capture_requires_a_displayed_badge_linked_to_the_listing(self):
+        for html, expected in [(HTML, 'verified'), ('<pre>' + HTML + '</pre>', 'missing_badges'),
+                               (HTML.replace(TARGET, 'https://wrong.example/'), 'missing_badges')]:
+            with self.subTest(expected=expected):
+                code, record, _ = self.verify(html, website=True)
+                self.assertEqual(record['status'], expected)
+                self.assertEqual(code, int(expected != 'verified'))
+                self.assertEqual(record['website_url'], 'https://publisher.example/sample')
+                self.assertEqual(record['rendered_sha256'], hashlib.sha256(html.encode()).hexdigest())
+                self.assertNotIn('readme_path', record)
+                self.assertNotIn('commit', record)
 
     def test_numeric_letter_or_both_valid_badges_verify(self):
         for images in [IMAGES[:1], IMAGES[1:], IMAGES]:

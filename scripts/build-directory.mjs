@@ -106,8 +106,8 @@ if (typeof PROMOTION.enabled !== "boolean" || !PROMOTION.verifications || typeof
 // Template copy lives in promotion.json; a file without it (a test fixture)
 // falls back to the same facts in plain words.
 PROMOTION.copy = {
-  offer_long: "Display either quality badge in your repository or skill README, linked to your listing, then request verification. Eligible skills scoring 80–99 with a verified badge can receive a featured placement while the offer is open.",
-  partners_intro: "Publishers who show their quality badge in their README, verified by Suede against the rendered page. Scores follow the published rubric.",
+  offer_long: "Add either quality badge to your official website and link it to your Suede listing. A repository or skill README also qualifies. Send us the page URL or README path. Once Suede verifies the badge, skills scoring 80–99 can receive a featured placement while the offer is open.",
+  partners_intro: "These publishers display a quality badge linked to their listing on their website or in their README. Suede verified each placement.",
   button: "Request badge verification",
   ...(PROMOTION.copy || {}),
 };
@@ -1014,14 +1014,14 @@ function qualityBadgeContent(s, suffix = "") {
   const id = `badge${suffix}`;
   return `<div class="shield-pair">${badgePair(s).map((b) => `<a href="${listingTarget(s)}"><img src="${b.src.replace(BASE, "")}" alt="${esc(b.alt)}" width="160" height="175" loading="lazy"></a>`).join("")}</div>
         <p>Choose the numeric badge, the letter badge, or both. Each links to this skill’s Suede listing; either valid linked badge can qualify for the feature offer.</p>
-        <div class="snippet"><div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="${id}-md">Copy both badges</button></div><pre><code id="${id}-md">${esc(badgeMarkdown(s))}</code></pre></div>
-        <div class="snippet"><div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="${id}-html">Copy both badges</button></div><pre><code id="${id}-html">${esc(badgeHtml(s))}</code></pre></div>`;
+        <div class="snippet"><div class="snippet-head"><span>Website HTML</span><button type="button" class="snippet-copy" data-copy-target="${id}-html">Copy both badges</button></div><pre><code id="${id}-html">${esc(badgeHtml(s))}</code></pre></div>
+        <div class="snippet"><div class="snippet-head"><span>README Markdown</span><button type="button" class="snippet-copy" data-copy-target="${id}-md">Copy both badges</button></div><pre><code id="${id}-md">${esc(badgeMarkdown(s))}</code></pre></div>`;
 }
 function promotionOffer(here) {
   const ended = PROMOTION.ends_at && Date.now() >= Date.parse(PROMOTION.ends_at);
   if (!PROMOTION.enabled || ended) return "";
   // Copy from promotion.json; no end date is shown until ends_at is set.
-  return `<p class="badge-offer" data-promotion-end="${esc(PROMOTION.ends_at || "")}">Limited-time feature offer: ${esc(PROMOTION.copy.offer_long)} <a href="${rel(here, "directory/submit/")}">${esc(PROMOTION.copy.button)}</a>.${PROMOTION.ends_at ? ` Available until ${esc(PROMOTION.ends_at)}.` : ""}</p>`;
+  return `<p class="badge-offer" data-promotion-end="${esc(PROMOTION.ends_at || "")}">Limited-time feature offer: ${esc(PROMOTION.copy.offer_long)} <a href="${rel(here, "directory/submit/")}#badge-verification">${esc(PROMOTION.copy.button)}</a>.${PROMOTION.ends_at ? ` Available until ${esc(PROMOTION.ends_at)}.` : ""}</p>`;
 }
 // The route for a listed skill below 80: the general listing badge (the same
 // SVG its per-skill badge.svg and score.svg URLs serve) and a review request.
@@ -3044,10 +3044,10 @@ ${gradeRows}
         <p>External directory skills are marked <b>not scanned</b>. The HOL/Cisco CI scanners run on Suede’s own repository; their results do not certify the external repositories listed here. The shields’ “Suede Certified” label refers to the published structural quality check. A security result needs its own per-skill scan evidence.</p>
       </section>
       <section class="panel" aria-labelledby="authors-title">
-        <h2 id="authors-title">Two README badges and a limited-time feature offer</h2>
+        <h2 id="authors-title">Website and README badges for the feature offer</h2>
         <p>Some listings also show a separately labeled owner editorial rating. It does not replace the reproducible Skill Check score, change its component totals, or establish badge verification.</p>
         <p>Skills scoring 80–${SCORE_CAP} receive separate numeric and A/B shields, each linking to their actual Suede listing. Scores from 90–${SCORE_CAP} and grade A use gold; scores from 80–89 and grade B use cool metallic styling. The Suede S remains the main mark on both shields. Every listed skill, at any score, keeps its listing badge, and its existing <code>badge.svg</code> and <code>score.svg</code> links keep working.</p>
-        <p>Display either the numeric or letter badge in your repository or skill README, linked to your Suede listing, then request verification. Displaying both also qualifies. Suede checks the rendered README at a recorded commit before a feature placement is activated. An unverified request, no valid linked badge or failed fetch cannot activate promotion. Verification is checked again after a dataset refresh. Existing editorial full pages keep their separate rules.</p>
+        <p>Display the numeric or letter badge on your official website or in a repository or skill README. Link it to your Suede listing. Suede checks that the badge is visible and links to the right listing before activating a placement. An unverified request, no valid linked badge or failed fetch cannot activate promotion. Verification is checked again after a dataset refresh. Existing editorial full pages keep their separate rules.</p>
         ${promotionOffer(here)}
         <p><b>Scored below 80?</b> We welcome authors who want help improving their skills. Each full skill page lists its points by component. <a href="${rel(here, "directory/submit/")}#improve">Send your repository and the points you want to raise</a>, then request a new review after updating the skill.</p>
       </section>
@@ -3147,8 +3147,13 @@ function renderSubmit() {
           <li><b>Publish the skill</b> in a public GitHub repository as a folder with a SKILL.md, a license and a description that says when to use it.</li>
           <li><b>Open a listing request</b> with the repository URL. One request can cover the repository or specific named skills; a request naming selected skills covers only those accepted names.</li>
           <li><b>The request is reviewed by hand.</b> An accepted repository is read at the next directory refresh and runs through the <a href="${rel(here, "directory/methodology/")}">Suede Skill Check</a> and the listing rules. Skills that pass the frontmatter check, declare a license and pass at least six of seven graded checks are listed with their quality score and grade.</li>
-          <li><b>Add either badge.</b> Listed skills scoring 80–99 get two shields: a numeric score and an A/B grade, each linking to their Suede listing. Choose either badge or both from the listing${GROWTH ? ` (<a href="${rel(here, "directory/badges/")}">how badges work</a>)` : ""} and request README verification for the limited-time feature offer.</li>
+          <li><b>Add either badge.</b> Listed skills scoring 80–99 get two shields: a numeric score and an A/B grade, each linking to their Suede listing. Choose either badge or both from the listing${GROWTH ? ` (<a href="${rel(here, "directory/badges/")}">how badges work</a>)` : ""} and embed it on your website or in your README. Include the live page URL or README path when you request verification.</li>
         </ol>
+      </section>
+      <section class="panel" id="badge-verification" aria-labelledby="verify-badge-title">
+        <h2 id="verify-badge-title">Request badge verification</h2>
+        <p>Send the page on your official website where the badge links to your Suede listing, or the path to the repository or skill README that displays it.</p>
+        <a class="button" href="${ISSUE_URL}&amp;request=Verify%20my%20website%20or%20README%20badge%20for%20featured%20placement">Open verification request</a>
       </section>
       <section class="panel" id="improve" aria-labelledby="pass-title">
         <h2 id="pass-title">Improve your score</h2>
