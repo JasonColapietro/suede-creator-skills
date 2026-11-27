@@ -137,6 +137,7 @@
 .home-actions a { display: inline-flex; gap: 6px; align-items: center; min-height: 44px; }
 .home-snapshot { width: 100%; max-width: 380px; justify-self: end; }
 .home-snapshot figcaption { display: flex; align-items: baseline; gap: 10px; margin-bottom: 14px; color: var(--muted); }
+.home-snapshot figcaption a { margin-left: auto; font-size: 14px; }
 .home-snapshot strong { font: 500 clamp(28px, 3vw, 44px)/1 var(--sans); letter-spacing: -.05em; color: var(--ink); }
 .home-snapshot .matrix { display: block; border: 0; border-radius: 0; background: transparent; padding: 0; }
 .home-topics { margin-bottom: 32px; }

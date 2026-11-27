@@ -2894,7 +2894,7 @@ ${FAQ.map(([q, a]) => `        <h3>${esc(q)}</h3>\n        <p>${esc(a)}${q === "
           <div class="home-actions"><a class="button" href="#browse">Browse skills</a><a id="pack-title" href="${rel(here, "skills/")}">Explore Suede’s own skills <span aria-hidden="true">↗</span></a></div>
         </div>
         <figure class="hero-figure home-snapshot">
-          <figcaption><strong>${fmt(data.skills.length)}</strong> graded skills</figcaption>
+          <figcaption><strong>${fmt(data.skills.length)}</strong> graded skills <a href="${rel(here, "directory/featured/")}">Featured skills</a></figcaption>
           <img class="matrix" src="skill-matrix.svg" width="960" height="${Math.ceil(data.skills.length / 96) * 10}" alt="Each dot represents one listed skill, sorted by score and colored by grade" decoding="async">
           ${matrixCaption(`Grades across ${fmt(repos.size)} repositories`)}
         </figure>
