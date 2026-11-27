@@ -82,14 +82,15 @@ test('first-party reports and retained source inventories describe the exact rev
     // The README also changes for presentation alone after a pin: the
     // 2026-11-26 visual refresh regenerated its artwork and skill catalog
     // from mcp/catalog.json without touching any skill package, so its bytes
-    // are pinned here rather than rewriting the reviewed receipt.
+    // are pinned here rather than rewriting the reviewed receipt. The Nov 27
+    // listing refresh changes only the generated listings block in that README.
     const integrated = {
       '7ed35b1c61bd86f0ec7490ff976000e9ddf7d24d': {
         'README.md': '8bd8a7e858d4737023004c4f831f14fd66ab2d9d5a37f1bc49f9dfba7702d927',
         'skills/suede-graph-flo-xr/CARD.md': 'e32ce4ae7c6f6b06c19a5dc9a1d6910a263e9234ecce6edb98b12b2f92757c3e',
       },
       '323547f6bf0253069e2a846d74d8fa07d523780e': {
-        'README.md': 'f9768bac700f64dabd07cb521b3eb2578a70c14616b98d6db190a3ed1de5d784',
+        'README.md': 'a0d400373f812703087912a66b2e80cf6330a08b530d043798d27de456e459be',
       },
     }[revision] || {};
     for (const [relative, digest] of Object.entries(integrated)) {
