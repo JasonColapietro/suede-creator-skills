@@ -44,10 +44,12 @@ test("the install snapshot is well formed, dated and attributed to skills.sh", (
   for (const [key, n] of Object.entries(published.skills)) assert.equal(n, installs.skills[key].installs, key);
 });
 
-test("the hub leads with a tabbed leaderboard whose rows are in order and never rank a Suede skill", () => {
+test("the hub puts browsing before the tabbed leaderboard and keeps Suede skills out of rankings", () => {
   const html = page("directory/");
   const main = mainOf(html);
-  assert.ok(main.indexOf('class="board-section"') < main.indexOf('data-directory-browser'), "the leaderboard precedes the search");
+  assert.match(main, /<h1><span class="home-wordmark">Suede<\/span> <span class="home-directory-name">Skills Directory<\/span><\/h1>/);
+  assert.match(main, /class="home-actions"[\s\S]*?href="#browse">Browse skills<\/a>[\s\S]*?Explore Suede’s own skills/);
+  assert.ok(main.indexOf('data-directory-browser') < main.indexOf('class="board-section"'), "browsing precedes the rankings");
   const tabs = [...main.matchAll(/<a class="tab" href="#([^"]+)"/g)].map((m) => m[1]);
   assert.deepEqual(tabs.slice(0, 2), ["most-installed", "highest-scores"]);
   for (const id of tabs) assert.ok(main.includes(`<section class="board-pane" id="${id}"`), `pane ${id}`);

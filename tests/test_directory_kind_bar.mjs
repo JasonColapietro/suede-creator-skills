@@ -94,14 +94,22 @@ test("Best of topics are published topics", () => {
 
 const tiles = (html) => [...html.matchAll(/<a class="topic-tile[^"]*"[\s\S]*?<\/a>/g)].map((m) => m[0]);
 
-test("the home page shows a Best of wall of data tiles, in best-of.json order", () => {
+test("the homepage links to six featured topics and the full topic catalog", () => {
   const html = read("");
+  const section = html.match(/<section class="home-topics"[\s\S]*?<\/section>/)[0];
+  const links = [...section.matchAll(/href="topics\/([a-z0-9-]+)\/"/g)].map(match => match[1]);
+  assert.deepEqual(links, bestOf.slice(0, 6));
+  assert.match(section, /href="topics\/">All topics/);
+});
+
+test("the topics hub keeps the complete Best of charts in editorial order", () => {
+  const html = read("topics");
   const wall = (html.match(/<section class="panel best-of"[\s\S]*?<\/section>/) || [""])[0];
-  assert.ok(wall, "no Best of wall on the home page");
+  assert.ok(wall, "no Best of charts on the topics hub");
   const found = tiles(wall);
   assert.equal(found.length, bestOf.length);
   found.forEach((tile, i) => {
-    assert.match(tile, new RegExp(`href="topics/${bestOf[i]}/"`), `tile ${i + 1} should link ${bestOf[i]}`);
+    assert.match(tile, new RegExp(`href="${bestOf[i]}/"`), `tile ${i + 1} should link ${bestOf[i]}`);
     const count = Number((tile.match(/data-count="(\d+)"/) || [])[1]);
     assert.match(read(`topics/${bestOf[i]}`), new RegExp(`<b>${count}</b>\\s*listed skills`), `${bestOf[i]}: tile count ${count} does not match its page`);
     assert.match(tile, /<svg class="tile-matrix"[^>]*role="img"[^>]*aria-label="[^"]+"/, `${bestOf[i]}: no labelled dot matrix`);

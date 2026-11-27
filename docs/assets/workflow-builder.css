@@ -3,7 +3,6 @@
 .workflow-intro { display: flex; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
 .workflow-intro h2 { font-size: clamp(28px, 3vw, 42px); letter-spacing: -.045em; line-height: 1.1; }
 .workflow-intro p:not(.eyebrow) { max-width: 64ch; color: var(--muted); font-size: 15px; }
-.workflow-mark { flex: none; font: 12px var(--mono); color: var(--gold-text); padding-top: 10px; letter-spacing: .08em; }
 .workflow-builder label { display: block; color: var(--ink); font-weight: 600; margin-bottom: 10px; }
 .workflow-composer { background: var(--canvas); border: 1px solid var(--line-strong); border-radius: var(--radius); overflow: hidden; }
 .workflow-composer:focus-within { border-color: var(--gold-text); box-shadow: 0 0 0 1px var(--gold-text); }
@@ -121,31 +120,51 @@
 .workflow-suede-mark { flex: none; width: 28px; height: 28px; object-fit: contain; }
 .workflow-skill-box > .workflow-suede-badge { display: flex; width: max-content; max-width: 100%; margin-top: 8px; }
 .workflow-more h4 { font-size: 15px; margin-bottom: 12px; }
-/* The finder and the Best of tiles share the first screen on wide displays.
-   Once recommendations appear they take the full width and the tiles move
-   below them. */
-@media (min-width: 1100px) {
-  .directory-start { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 0 28px; align-items: start; margin-bottom: 44px; }
-  .directory-start > .workflow-builder { margin: 0; padding: 28px; }
-  .directory-start .workflow-intro { margin-bottom: 18px; }
-  .directory-start .workflow-intro h2 { font-size: 34px; }
-  .directory-start .workflow-mark { display: none; }
-  .directory-start > .best-of { margin: 0; padding: 4px 0 0; border-top: 0; }
-  .directory-start > .best-of > .muted, .directory-start .workflow-explore { display: none; }
-  .directory-start > .best-of .tile-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
-  .directory-start > .best-of a.topic-tile { gap: 8px; padding: 12px 14px 13px; }
-  .directory-start > .best-of .tile-name { font-size: 19px; }
-  .directory-start > .best-of .tile-field { min-height: 40px; padding: 6px; }
-  .directory-start > .best-of .topic-tile:nth-child(n+9) { display: none; }
-  .directory-start:has(.workflow-results:not([hidden]), .workflow-suggestions:not([hidden])) { display: block; }
-  .directory-start:has(.workflow-results:not([hidden]), .workflow-suggestions:not([hidden])) > .best-of { margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--hairline); }
-  .directory-start:has(.workflow-results:not([hidden]), .workflow-suggestions:not([hidden])) > .best-of .tile-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); }
-  .directory-start:has(.workflow-results:not([hidden]), .workflow-suggestions:not([hidden])) > .best-of .topic-tile:nth-child(n+9) { display: grid; }
-  .directory-start:has(.workflow-results:not([hidden]), .workflow-suggestions:not([hidden])) > .best-of > .muted { display: block; }
+/* Directory landing page */
+.home-masthead {
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: clamp(32px, 6vw, 92px);
+  padding: clamp(24px, 4vw, 60px) 0;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: clamp(28px, 4vw, 54px);
+}
+.home-masthead h1 { max-width: none; margin: 0 0 20px; }
+.home-masthead h1::after { content: none; }
+.home-wordmark { display: block; font: 600 clamp(68px, 10vw, 136px)/.82 var(--display); letter-spacing: -.055em; }
+.home-directory-name { display: block; margin-top: 12px; font: 500 clamp(25px, 3vw, 42px)/1.1 var(--sans); letter-spacing: -.045em; }
+.home-masthead .lead { max-width: 46ch; color: var(--muted); line-height: 1.55; }
+.home-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 22px; }
+.home-actions a { display: inline-flex; gap: 6px; align-items: center; min-height: 44px; }
+.home-snapshot { width: 100%; max-width: 380px; justify-self: end; }
+.home-snapshot figcaption { display: flex; align-items: baseline; gap: 10px; margin-bottom: 14px; color: var(--muted); }
+.home-snapshot strong { font: 500 clamp(28px, 3vw, 44px)/1 var(--sans); letter-spacing: -.05em; color: var(--ink); }
+.home-snapshot .matrix { display: block; border: 0; border-radius: 0; background: transparent; padding: 0; }
+.home-topics { margin-bottom: 32px; }
+.home-topics ul { list-style: none; padding: 0; margin: 12px 0 0; }
+.home-topics li { margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.home-topics li a { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; padding: 12px 0; color: var(--ink); text-decoration: none; }
+.home-topics li a:is(:hover, :focus-visible) span:first-child { text-decoration: underline; }
+.home-topics li span:last-child { font: 12px var(--mono); white-space: nowrap; color: var(--muted); }
+.home-disclosure { margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.home-disclosure > summary { cursor: pointer; padding: 18px 2px; font: 550 clamp(16px, 2vw, 21px)/1.35 var(--sans); }
+.home-disclosure > summary::marker { color: var(--muted); font-size: .7em; }
+@media (min-width: 900px) {
+  .directory-start { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 72px); align-items: start; margin-bottom: 44px; }
+  .directory-start > .workflow-builder { margin: 0; padding: 24px; }
+  .directory-start .workflow-intro { margin-bottom: 16px; }
+  .directory-start .workflow-intro h2 { font-size: 30px; }
+  .directory-start .workflow-explore { display: none; }
+  .directory-start:has(.workflow-results:not([hidden]), .workflow-suggestions:not([hidden])) { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+  .home-masthead { grid-template-columns: 1fr; gap: 18px; }
+  .home-snapshot { max-width: none; }
+  .home-snapshot figcaption { margin: 0; font-size: 13px; }
+  .home-snapshot strong { font-size: inherit; letter-spacing: normal; }
+  .home-snapshot .matrix, .home-snapshot .matrix-caption { display: none; }
 }
 @media (max-width: 700px) {
   .workflow-intro { margin-bottom: 20px; }
-  .workflow-mark { display: none; }
   .workflow-submit-row { flex-direction: column; align-items: stretch; gap: 14px; padding: 8px 14px 14px; }
   .workflow-submit { justify-content: space-between; width: 100%; }
   .workflow-examples { align-items: flex-start; flex-direction: column; gap: 8px; }
