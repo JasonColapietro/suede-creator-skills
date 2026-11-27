@@ -1,7 +1,7 @@
 {
   "$comment": "Single source for every third-party page that lists Suede Skills or its MCP server. scripts/build-listings.mjs renders docs/listings.html, the README block and the homepage strip from this file, and --check (run by npm run validate) fails when any of them drift. Add a URL only after loading it and seeing the entry. Mark sameAs:true only for a page identifying this exact software pack; author profiles, individual skills, MCP components and multi-project collections remain editorial links.",
   "verified": "2026-10-08",
-  "updated": "2026-11-05",
+  "updated": "2026-11-27",
   "groups": [
     {
       "id": "directories",
@@ -19,7 +19,9 @@
         { "name": "ClaudSkills: suede-seo-audit", "url": "https://claudskills.com/skills/suede-seo-audit/", "note": "Skill page for the SEO, AEO and AI EO audit" },
         { "name": "SkillHub: suede-seo-audit", "url": "https://www.skillhub.club/skills/jasoncolapietro-suede-creator-skills-suede-seo-audit", "note": "Skill page on SkillHub" },
         { "name": "SkillHub: suede-code", "url": "https://www.skillhub.club/skills/jasoncolapietro-suede-creator-skills-suede-code", "note": "Skill page for review plus the A-F ship grade" },
-        { "name": "Build with Claude", "url": "https://github.com/davepoon/buildwithclaude", "note": "suede-skills plugin in the Build with Claude marketplace" }
+        { "name": "Build with Claude", "url": "https://github.com/davepoon/buildwithclaude", "note": "suede-skills plugin in the Build with Claude marketplace" },
+        { "name": "Awesome Claude Plugins", "url": "https://awesomeclaudeplugins.com/JasonColapietro/suede-creator-skills", "sameAs": true, "note": "Marketplace page for the Suede Skills repository", "featured": true },
+        { "name": "HostedMCP: Suede Marketing Loops", "url": "https://hostedmcp.org/skills/jasoncolapietro/suede-marketing-loops", "note": "Marketing workflow skill with installation guidance" }
       ]
     },
     {
@@ -42,7 +44,8 @@
         { "name": "MCP Market", "url": "https://mcpmarket.com/server/suede-creator-skills", "note": "MCP server listing", "featured": true },
         { "name": "npmx", "url": "https://npmx.dev/package/suede-skills-mcp", "note": "Package page" },
         { "name": "Libraries.io", "url": "https://libraries.io/npm/suede-skills-mcp", "note": "Package and dependency page" },
-        { "name": "Socket", "url": "https://socket.dev/npm/package/suede-skills-mcp", "note": "Supply-chain security report for the package" }
+        { "name": "Socket", "url": "https://socket.dev/npm/package/suede-skills-mcp", "note": "Supply-chain security report for the package" },
+        { "name": "Ext Ops Panel", "url": "https://extops.dev/plugins/mcp/io.github.JasonColapietro/suede-skills-mcp", "note": "MCP registry and npm package tracking", "featured": true }
       ]
     },
     {
