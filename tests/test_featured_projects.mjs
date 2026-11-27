@@ -327,7 +327,8 @@ test('editorial projects preserve accepted scopes and resolve their reviewed evi
   assert.deepEqual(data.projects.map((p) => p.repo), ['appierun/appie-mcp', 'TheColliery/CoalWash', 'costory-io/costory-finops-mcp-skills', 'cwong5/extra-caffeine-mcp', 'MelMayssonOwen/agent-skills', 'cisco-ai-defense/skill-scanner', 'geekflare/geekflare-skills', 'tronghieu/agent-skills', 'vostride/agent-qa', 'sitor-ai/frametell', 'azeemkafridi/bulkpublish-ai-toolkit', 'InkRoom-AI/inkroom-client', undefined, 'umutyesildal/berlin-job-search', 'Anonyfox/lfr', 'shiptopaid/shiptopaid-lite', 'aakashH242/video-director', 'email-marketing-skills-hub/email-marketing-skills', 'mrhy7176/cloudgpu-agent-skills', 'andrewsiah/agentswarm-work-skill', 'waynehamadi/datacircle', 'korey2028-prog/resume-claim-guard', 'OakcoderX/awesome-agent-skills', 'inhotel-io/govisit-toolkit', 'mohiddin7/resume-tribunal', 'sieblyio/agent-skills', 'f-o-x11/deed-page-skill', 'tecadrise-ai/TecAdRiseBot', 'ASOScan/aso-skills', 'KKKKhazix/khazix-skills', 'klingai-tech/claude-plugin', 'fengyiqicoder/go-public', 'nexscope-ai/Amazon-Skills', 'nexscope-ai/eCommerce-Skills', 'jangtrinh/design-os']);
   const page = published();
   const appie = page.split('id="appie"')[1].split('</article>')[0];
-  const links = [...appie.matchAll(/href="(\.\.\/appierun\/appie-mcp\/[^"/]+\/)"/g)].map((m) => m[1]);
+  const work = appie.match(/<ul class="featured-work">([\s\S]*?)<\/ul>/)[1];
+  const links = [...work.matchAll(/href="(\.\.\/appierun\/appie-mcp\/[^"/]+\/)"/g)].map((m) => m[1]);
   assert.deepEqual(links, [
     '../appierun/appie-mcp/appie-article-writer/',
     '../appierun/appie-mcp/appie-chatbot/',

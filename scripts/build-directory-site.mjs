@@ -221,10 +221,9 @@ function copyTree(src, dest, transform) {
 
 const makerTargets = new Set(featuredCatalog.projects.filter(item => item.status !== "pending").map(item => item.id));
 function addMakerLinks(html) {
-  return html.replace(/(<article class="featured-project" id="([a-z0-9-]+)"[^>]*>[\s\S]*?)(<\/article>)/g, (whole, card, id, close) => {
-    if (!makerTargets.has(id)) return whole;
-    if (!card.includes("</header>")) throw new Error("Missing featured heading for maker listing " + id);
-    return card.replace("</header>", `</header><div class="skill-actions"><a class="button" href="/maker/?id=${id}" data-maker-claim>Claim or manage →</a> <a class="button secondary" href="#featured-badge-${id}">Get badge</a></div>`) + close;
+  return html.replace(/<a\b[^>]* href="#featured-badge-([a-z0-9-]+)">Get badge<\/a>/g, (badge, id) => {
+    if (!makerTargets.has(id)) return badge;
+    return badge + ` <a href="/maker/?id=${id}" data-maker-claim>Maintainer? Claim this listing</a>`;
   });
 }
 

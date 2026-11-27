@@ -2947,6 +2947,11 @@ function renderFeaturedProjects() {
   let description = describe(listPhrase(entries.map((p) => p.name)));
   for (let k = entries.length - 1; k > 0 && description.length > 155; k--) description = describe(`${entries.slice(0, k).map((p) => p.name).join(", ")} and ${entries.length - k} more`);
   const catalogSkill = (project, item) => data.skills.find((s) => s.repo === project.repo && s.slug === item.id);
+  function projectListingHref(project) {
+    const skill = project.skills?.map(item => catalogSkill(project, item)).find(Boolean)
+      ?? data.skills.find(s => s.repo.toLowerCase() === project.repo?.toLowerCase());
+    return skill && listingHref(here, skill);
+  }
   const keywords = setKeywords(here, ["featured agent projects", ...entries.map((p) => `${p.name} agent workflows`), "Suede Skills Directory"]);
   const badge = FEATURED_BADGE;
   const nominate = copy.nominate
@@ -2975,7 +2980,7 @@ ${projects.map((p) => isPending(p)
     body: `${bc.html}
       <div class="featured-intro"><p class="lead">${esc(copy.lede || "Good tools deserve a closer look.")}</p>${copy.intro ? `<p>${esc(copy.intro)}</p>` : ""}</div>
       <nav class="featured-jump" aria-label="Featured project navigation"><a href="../">← Browse all skills</a>${entries.map((p) => `<a href="#${p.id}">${esc(p.name)} <span aria-hidden="true">↓</span></a>`).join("")}</nav>
-      ${featuredProjectsHtml(projects, { esc, rel, here, slugify, skillHref: (project, item) => { const s = catalogSkill(project, item); return s ? listingHref(here, s) : null; } })}
+      ${featuredProjectsHtml(projects, { esc, rel, here, slugify, projectListingHref, skillHref: (project, item) => { const s = catalogSkill(project, item); return s ? listingHref(here, s) : null; } })}
 ${members.length ? `      <section id="directory-members" aria-label="Directory members"><h2>Directory members</h2><p>Publisher membership with a defined skill scope. Linked reviews retain quality scores and scan findings.</p>${directoryMembersHtml(members, { esc, start: projects.length })}</section>` : ""}
 ${copy.services_cta ? campaignPanel(here, campaignVariant(copy.services_cta, here)) : ""}
 ${nominate}
