@@ -648,9 +648,9 @@ A nine-skill App Store and Google Play optimization collection covering setup, k
 
 ### Setup
 
-Connected research requires ASOScan access and may consume credits. Owners can resolve conflicting credit guidance, use Apple’s 100-byte keyword limit and align metadata score scales.
+ASO Fundamentals and ASOScan Setup work without an API key. For live ASO data, connect the ASOScan connector or use an API key on a supported plan or seven-day trial. Standard reads do not use credits; live research and some other actions do.
 
-[Repository](https://github.com/ASOScan/aso-skills) · [Intake review](../directory/reviews/2026-11-17-asoscan.md) · [Reviewed source 026a04d](https://github.com/ASOScan/aso-skills/tree/026a04de63174b90ec1c14432dd845e86c1d9d6e) · [Suede feature](https://skills.suedeai.ai/directory/featured/#asoscan)
+[Website](https://asoscan.com/) · [Repository](https://github.com/ASOScan/aso-skills) · [Intake review](../directory/reviews/2026-11-17-asoscan.md) · [Reviewed source 9981e4e](https://github.com/ASOScan/aso-skills/tree/9981e4e96fd36983dccb1c768191393cdd06a789) · [Suede feature](https://skills.suedeai.ai/directory/featured/#asoscan)
 
 ---
 
