@@ -8,7 +8,7 @@ Reviewed November 2, 2026.
 
 ## The stack
 
-Seven skills, in score order. Scores come from the directory snapshot of October 22, 2026, and install counts are the figures skills.sh published on November 2, 2026.
+Seven skills, in score order. Scores come from the directory snapshot of October 22, 2026, and install counts are the figures the Vercel Skills CLI published on November 2, 2026.
 
 | Skill | Repository | Score | What it does |
 | --- | --- | --- | --- |
@@ -41,7 +41,7 @@ npx skills add https://github.com/smixs/creative-director-skill/tree/main/creati
 npx skills add https://github.com/HUANGCHIHHUNGLeo/claude-real-video/tree/master/skills/claude-real-video-for-agents
 ```
 
-The [skills CLI](https://skills.sh/) works for Claude Code, Codex, Cursor and other agents, and each skill's page in the directory lists the copy-by-hand routes if you would rather not run npx.
+The [skills CLI](https://github.com/vercel-labs/skills) works for Claude Code, Codex, Cursor and other agents, and each skill's page in the directory lists the copy-by-hand routes if you would rather not run npx.
 
 ## What to check before you install
 
@@ -61,4 +61,4 @@ Yes. All seven use the [Agent Skills](https://agentskills.io/) format, so the sa
 
 ### What about music?
 
-vox-director adds music as part of its automated pipeline. None of the seven picks composes music on its own, so if you need a specific track, bring it to the edit in capcut-edit, which handles volume and timing. image, at about 91,000 installs recorded by skills.sh, is the most installed pick here; the video skills have far fewer installs recorded, so read their SKILL.md files with that in mind.
+vox-director adds music as part of its automated pipeline. None of the seven picks composes music on its own, so if you need a specific track, bring it to the edit in capcut-edit, which handles volume and timing. image, at about 91,000 installs recorded by the Vercel Skills CLI, is the most installed pick here; the video skills have far fewer installs recorded, so read their SKILL.md files with that in mind.

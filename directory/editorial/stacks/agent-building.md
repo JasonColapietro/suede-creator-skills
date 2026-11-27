@@ -4,11 +4,11 @@ By [Jason Colapietro](https://suedeai.ai/founder), Founder and CEO of Suede. Aut
 
 Reviewed November 2, 2026.
 
-**Short answer:** [mcp-builder](https://skills.suedeai.ai/directory/anthropics/skills/mcp-builder/) from anthropics/skills (89/100), with about 136,000 installs recorded by skills.sh, guides MCP servers in Python with FastMCP or TypeScript with the MCP SDK. [prompt-optimizer](https://skills.suedeai.ai/directory/getsentry/skills/prompt-optimizer/) from getsentry/skills (81/100) writes the agent, system and developer prompts and the evals, and [context-optimization](https://skills.suedeai.ai/directory/muratcankoylan/agent-skills-for-context-engineering/context-optimization/) from muratcankoylan/Agent-Skills-for-Context-Engineering (86/100) keeps the context budget under control. For multi-agent work, slicing-code-context, grok-build and executing-plans cover delegation, and aws-agentic-ai covers deployment on Bedrock AgentCore.
+**Short answer:** [mcp-builder](https://skills.suedeai.ai/directory/anthropics/skills/mcp-builder/) from anthropics/skills (89/100), with about 136,000 installs recorded by the Vercel Skills CLI, guides MCP servers in Python with FastMCP or TypeScript with the MCP SDK. [prompt-optimizer](https://skills.suedeai.ai/directory/getsentry/skills/prompt-optimizer/) from getsentry/skills (81/100) writes the agent, system and developer prompts and the evals, and [context-optimization](https://skills.suedeai.ai/directory/muratcankoylan/agent-skills-for-context-engineering/context-optimization/) from muratcankoylan/Agent-Skills-for-Context-Engineering (86/100) keeps the context budget under control. For multi-agent work, slicing-code-context, grok-build and executing-plans cover delegation, and aws-agentic-ai covers deployment on Bedrock AgentCore.
 
 ## The stack
 
-Seven skills, in score order. Scores come from the directory snapshot of October 22, 2026, and install counts are the figures skills.sh published on November 2, 2026.
+Seven skills, in score order. Scores come from the directory snapshot of October 22, 2026, and install counts are the figures the Vercel Skills CLI published on November 2, 2026.
 
 | Skill | Repository | Score | What it does |
 | --- | --- | --- | --- |
@@ -41,7 +41,7 @@ npx skills add https://github.com/zxkane/aws-skills/tree/main/plugins/aws-agenti
 npx skills add https://github.com/getsentry/skills/tree/main/skills/prompt-optimizer
 ```
 
-The [skills CLI](https://skills.sh/) works for Claude Code, Codex, Cursor and other agents, and each skill's page in the directory lists the copy-by-hand routes if you would rather not run npx.
+The [skills CLI](https://github.com/vercel-labs/skills) works for Claude Code, Codex, Cursor and other agents, and each skill's page in the directory lists the copy-by-hand routes if you would rather not run npx.
 
 ## What to check before you install
 
@@ -61,4 +61,4 @@ Yes. All seven use the [Agent Skills](https://agentskills.io/) format, so the sa
 
 ### How do I stop a multi-agent setup from eating the context budget?
 
-Three of the picks exist for that: context-optimization budgets and masks, slicing-code-context hands a subagent a bounded slice, and grok-build moves implementation out of the main session entirely. Measure the token cost before and after each one; the summaries describe what the skills do, not what they will save you. executing-plans, at about 250,000 installs recorded by skills.sh, is the most installed pick here.
+Three of the picks exist for that: context-optimization budgets and masks, slicing-code-context hands a subagent a bounded slice, and grok-build moves implementation out of the main session entirely. Measure the token cost before and after each one; the summaries describe what the skills do, not what they will save you. executing-plans, at about 250,000 installs recorded by the Vercel Skills CLI, is the most installed pick here.

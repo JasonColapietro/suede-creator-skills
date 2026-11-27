@@ -112,8 +112,9 @@ test("the built site has no old directory URLs and no broken internal links", ()
       for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
         const p = path.join(dir, e.name);
         if (e.isDirectory()) { walk(p); continue; }
-        if (!/\.(html|json|xml|txt|js)$/.test(e.name)) continue;
+        if (!/\.(html|json|xml|txt|js|mjs|md|css|svg)$/.test(e.name)) continue;
         const text = fs.readFileSync(p, "utf8");
+        assert.ok(!/\bskills\.sh\b/i.test(text), `${path.relative(out, p)} mentions a removed directory`);
         assert.ok(!text.includes(`${OLD}/directory`), `${path.relative(out, p)} still links to ${OLD}/directory`);
         if (!e.name.endsWith(".html")) continue;
         const rel = path.relative(out, p).split(path.sep).join("/");

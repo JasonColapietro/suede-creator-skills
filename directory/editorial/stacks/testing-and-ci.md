@@ -8,7 +8,7 @@ Reviewed November 2, 2026.
 
 ## The stack
 
-Seven skills, in score order. Two of them share the name playwright-skill; the repository column tells them apart. Scores come from the directory snapshot of October 22, 2026, and install counts are the figures skills.sh published on November 2, 2026.
+Seven skills, in score order. Two of them share the name playwright-skill; the repository column tells them apart. Scores come from the directory snapshot of October 22, 2026, and install counts are the figures the Vercel Skills CLI published on November 2, 2026.
 
 | Skill | Repository | Score | What it does |
 | --- | --- | --- | --- |
@@ -41,7 +41,7 @@ npx skills add https://github.com/cypress-io/ai-toolkit/tree/main/skills/cypress
 npx skills add https://github.com/metalbear-co/skills/tree/main/skills/mirrord-chaos
 ```
 
-The [skills CLI](https://skills.sh/) works for Claude Code, Codex, Cursor and other agents, and each skill's page in the directory lists the copy-by-hand routes if you would rather not run npx.
+The [skills CLI](https://github.com/vercel-labs/skills) works for Claude Code, Codex, Cursor and other agents, and each skill's page in the directory lists the copy-by-hand routes if you would rather not run npx.
 
 ## What to check before you install
 
@@ -53,7 +53,7 @@ The [skills CLI](https://skills.sh/) works for Claude Code, Codex, Cursor and ot
 
 ### Which playwright-skill should I pick?
 
-LambdaTest's (86/100) if you want generated end-to-end test suites in one of five languages, with the option to run them on TestMu AI cloud. lackeyjb's (85/100, about 7,200 installs recorded by skills.sh) if you want quick browser checks against a dev server: screenshots, responsive checks, login flows, link checks. Install one; two skills with the same name in one project invites confusion.
+LambdaTest's (86/100) if you want generated end-to-end test suites in one of five languages, with the option to run them on TestMu AI cloud. lackeyjb's (85/100, about 7,200 installs recorded by the Vercel Skills CLI) if you want quick browser checks against a dev server: screenshots, responsive checks, login flows, link checks. Install one; two skills with the same name in one project invites confusion.
 
 ### Do these skills work in Codex and Cursor?
 

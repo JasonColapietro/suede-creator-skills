@@ -749,7 +749,7 @@
     {
       "id": "necmttn/ax/setup",
       "name": "setup",
-      "description": "Install + verify ax (the agent experience layer). Triggers when the user says \"install ax\", \"set up ax\", \"ax not found\", \"ax doctor\", \"is ax running\", \"fix ax install\", \"first-time ax setup\", or any setup question about the ax CLI / skills / daemon. Walks the install via the install.sh + skills.sh + first ingest, validates with `ax doctor`, and points the user at ax:retro (experiment loop) and ax:extract-workflow (reconstruct workflow behind shipped artifacts).",
+      "description": "Install + verify ax (the agent experience layer). Triggers when the user says \"install ax\", \"set up ax\", \"ax not found\", \"ax doctor\", \"is ax running\", \"fix ax install\", \"first-time ax setup\", or any setup question about the ax CLI / skills / daemon. Walks the install via the install.sh + … + first ingest, validates with `ax doctor`, and points the user at ax:retro (experiment loop) and ax:extract-workflow (reconstruct workflow behind shipped artifacts).",
       "category": "developer-tools",
       "license": "AGPL-3.0",
       "license_url": "https://github.com/Necmttn/ax/blob/main/LICENSE",

@@ -4,11 +4,11 @@ By [Jason Colapietro](https://suedeai.ai/founder), Founder and CEO of Suede. Aut
 
 Reviewed November 2, 2026.
 
-**Short answer:** [docx](https://skills.suedeai.ai/directory/anthropics/skills/docx/) from anthropics/skills (91/100), with about 211,000 installs recorded by skills.sh, handles Word documents end to end, and [deep-reader](https://skills.suedeai.ai/directory/tronghieu/agent-skills/deep-reader/) from tronghieu/agent-skills (90/100) reads long books and papers without loading the whole text into one context window. For data, [mssql](https://skills.suedeai.ai/directory/sanjay3290/ai-skills/mssql/) from sanjay3290/ai-skills (83/100) runs read-only SQL against SQL Server, and dbt-sf-to-bq-translator moves dbt models from Snowflake to BigQuery. This stack has no spreadsheet editor; tabular work goes in through SQL and comes out as a document or a slide.
+**Short answer:** [docx](https://skills.suedeai.ai/directory/anthropics/skills/docx/) from anthropics/skills (91/100), with about 211,000 installs recorded by the Vercel Skills CLI, handles Word documents end to end, and [deep-reader](https://skills.suedeai.ai/directory/tronghieu/agent-skills/deep-reader/) from tronghieu/agent-skills (90/100) reads long books and papers without loading the whole text into one context window. For data, [mssql](https://skills.suedeai.ai/directory/sanjay3290/ai-skills/mssql/) from sanjay3290/ai-skills (83/100) runs read-only SQL against SQL Server, and dbt-sf-to-bq-translator moves dbt models from Snowflake to BigQuery. This stack has no spreadsheet editor; tabular work goes in through SQL and comes out as a document or a slide.
 
 ## The stack
 
-Six skills, in score order. Scores come from the directory snapshot of October 22, 2026, and install counts are the figures skills.sh published on November 2, 2026.
+Six skills, in score order. Scores come from the directory snapshot of October 22, 2026, and install counts are the figures the Vercel Skills CLI published on November 2, 2026.
 
 | Skill | Repository | Score | What it does |
 | --- | --- | --- | --- |
@@ -39,7 +39,7 @@ npx skills add https://github.com/getsentry/skills/tree/main/skills/presentation
 npx skills add https://github.com/sanjay3290/ai-skills/tree/main/skills/mssql
 ```
 
-The [skills CLI](https://skills.sh/) works for Claude Code, Codex, Cursor and other agents, and each skill's page in the directory lists the copy-by-hand routes if you would rather not run npx.
+The [skills CLI](https://github.com/vercel-labs/skills) works for Claude Code, Codex, Cursor and other agents, and each skill's page in the directory lists the copy-by-hand routes if you would rather not run npx.
 
 ## What to check before you install
 
