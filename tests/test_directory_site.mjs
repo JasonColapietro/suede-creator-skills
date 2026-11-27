@@ -87,7 +87,7 @@ test("the built site has no old directory URLs and no broken internal links", ()
     for (const id of ['cracked-devs-desktop-note', 'cracked-devs-mobile-note']) {
       assert.match(home, new RegExp(`id="${id}">Don’t click\\. They’re already insufferable\\.<`));
     }
-    assert.match(home, /<nav class="kind-bar"[\s\S]*?<\/nav>\s*<div class="shell cracked-devs-mobile"/);
+    assert.match(home, /<\/nav>\s*<\/header>\s*<div class="shell cracked-devs-mobile"/);
     // The directory ships its own legible icon set, not the shared thin-ring 64px icon.
     assert.doesNotMatch(home, /favicon-64\.png/);
     for (const icon of ['/favicon.ico', '/assets/favicon/favicon-16.png', '/assets/favicon/favicon-32.png', '/assets/favicon/apple-touch-icon.png']) {
