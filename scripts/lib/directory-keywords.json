@@ -1411,13 +1411,6 @@
   "compare claude code skills",
   "skill comparison"
  ],
- "directory/compare/skills-sh-alternatives/index.html": [
-  "skills.sh alternatives",
-  "skills.sh alternative",
-  "sites like skills.sh",
-  "skills.sh competitors",
-  "agent skill directories"
- ],
  "directory/compare/skills/azure-app-onboard-prereq-vs-vercel-cli-with-tokens-bac28173/index.html": [
   "microsoft/azure-skills/azure-app-onboard-prereq vs vercel-labs/agent-skills/vercel-cli-with-tokens",
   "compare agent skills",
@@ -1693,13 +1686,6 @@
   "claude-plugins.dev comparison",
   "claude-plugins.dev vs suede skills directory",
   "claude-plugins.dev features",
-  "agent skill directory comparison",
-  "graded agent skills directory"
- ],
- "directory/compare/suede-vs-skills-sh/index.html": [
-  "skills.sh comparison",
-  "skills.sh vs suede skills directory",
-  "skills.sh features",
   "agent skill directory comparison",
   "graded agent skills directory"
  ],

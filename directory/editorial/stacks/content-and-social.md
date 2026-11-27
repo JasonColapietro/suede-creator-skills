@@ -8,7 +8,7 @@ Reviewed November 2, 2026.
 
 ## The stack
 
-Six skills, in score order. Scores come from the directory snapshot of October 22, 2026, and install counts are the figures skills.sh published on November 2, 2026.
+Six skills, in score order. Scores come from the directory snapshot of October 22, 2026, and install counts are the figures the Vercel Skills CLI published on November 2, 2026.
 
 | Skill | Repository | Score | What it does |
 | --- | --- | --- | --- |
@@ -39,7 +39,7 @@ npx skills add https://github.com/coreyhaines31/marketingskills/tree/main/skills
 npx skills add https://github.com/wondelai/skills/tree/main/contagious
 ```
 
-The [skills CLI](https://skills.sh/) works for Claude Code, Codex, Cursor and other agents, and each skill's page in the directory lists the copy-by-hand routes if you would rather not run npx.
+The [skills CLI](https://github.com/vercel-labs/skills) works for Claude Code, Codex, Cursor and other agents, and each skill's page in the directory lists the copy-by-hand routes if you would rather not run npx.
 
 ## What to check before you install
 
@@ -59,4 +59,4 @@ Yes. All six use the [Agent Skills](https://agentskills.io/) format, so the same
 
 ### Do any of these skills publish the posts?
 
-No. None of the six summaries mentions scheduling or posting; they produce text. Publish through whatever tool you already use, and keep the drafts in your repository so you have a record of what went out and what it did. content-strategy, with about 169,000 installs recorded by skills.sh, is the most installed skill here, and co-marketing follows at about 84,000. That says something about where the hard part of content really is: not the writing, but deciding what to say and getting it seen.
+No. None of the six summaries mentions scheduling or posting; they produce text. Publish through whatever tool you already use, and keep the drafts in your repository so you have a record of what went out and what it did. content-strategy, with about 169,000 installs recorded by the Vercel Skills CLI, is the most installed skill here, and co-marketing follows at about 84,000. That says something about where the hard part of content really is: not the writing, but deciding what to say and getting it seen.

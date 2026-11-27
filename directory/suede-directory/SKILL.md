@@ -34,7 +34,7 @@ Scores use the published graded-v2 rubric: 0–99 for structural and documentati
 quality, with A at 90+, B at 80+, C at 70+, and D below 70. They are not runtime
 benchmarks or security certification. Report the returned snapshot date; do not
 describe a stored assessment as a new scan. Install counts, when present, come
-from skills.sh and are separate from the quality score.
+from the Vercel Skills CLI and are separate from the quality score.
 
 The directory's own publisher is excluded from this search's rankings. Do not
 substitute a first-party recommendation when the directory has no match.

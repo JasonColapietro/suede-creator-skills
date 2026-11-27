@@ -40,7 +40,7 @@ test("the install snapshot is well formed, dated and attributed to skills.sh", (
   for (const key of keys) assert.ok(repos.has(key.split("/").slice(0, 2).join("/")), `installs.json names a repository the directory does not list: ${key}`);
   const published = JSON.parse(read("docs/directory/installs.json"));
   assert.equal(published.fetched, installs.fetched);
-  assert.equal(published.source.url, installs.source.url);
+  assert.equal(published.source.url, "https://github.com/vercel-labs/skills");
   for (const [key, n] of Object.entries(published.skills)) assert.equal(n, installs.skills[key].installs, key);
 });
 
@@ -60,7 +60,7 @@ test("the hub leads with a tabbed leaderboard whose rows are in order and never 
   const raw = rows.map((r) => installs.skills[`${decode(r[4])}/${decode(r[3])}`.toLowerCase()]?.installs);
   for (let i = 1; i < raw.length; i++) assert.ok(raw[i] <= raw[i - 1], `row ${i + 1} out of install order`);
   assert.doesNotMatch(pane, new RegExp(FIRST_PARTY, "i"));
-  assert.match(main, /Installs recorded by skills\.sh/);
+  assert.match(main, /Installs recorded by the Vercel Skills CLI/);
   assert.match(html, /name="sort"[^>]*>[\s\S]*?<option value="installs">Most installed<\/option>/);
 });
 
@@ -146,7 +146,7 @@ test("the trust page states what is and is not checked, cites its three incident
   assert.match(page("directory/security/"), /<h2 id="all-title">All /, "the Security category page is a category page");
 });
 
-test("full skill pages carry a glance panel that repeats the install record and links skills.sh audits only when tracked", () => {
+test("full skill pages carry a glance panel that repeats the install record and separates recorded installs from security scans", () => {
   let tracked = 0;
   let untracked = 0;
   for (const s of data.skills.filter((x) => x.featured).slice(0, 400)) {
@@ -156,13 +156,14 @@ test("full skill pages carry a glance panel that repeats the install record and 
     const main = mainOf(page(rel));
     const glance = (main.match(/<dl class="glance"[\s\S]*?<\/dl>/) || [])[0];
     assert.ok(glance, `${rel}: glance panel`);
-    assert.match(glance, /<dt>Security scan<\/dt><dd>Not scanned by the directory/, rel);
+    assert.match(glance, /<dt>Verified third-party security scan report<\/dt><dd>No<\/dd>/, rel);
     assert.match(main, /class="score-card grade-[a-d]"/, rel);
     const key = `${s.repo}/${s.name}`.toLowerCase();
-    if (installs.skills[key]) { tracked++; assert.ok(glance.includes(`https://skills.sh/${s.repo}/${s.name}`), `${rel}: skills.sh link`); }
-    else { untracked++; assert.ok(!glance.includes("skills.sh/"), `${rel}: no skills.sh link for an untracked skill`); }
+    if (installs.skills[key]) { tracked++; assert.ok(glance.includes("Recorded CLI installs"), `${rel}: install count`); }
+    else { untracked++; assert.ok(!glance.includes("Recorded CLI installs"), `${rel}: no recorded installs`); }
   }
   assert.ok(tracked > 0 && untracked >= 0);
+  assert.match(mainOf(page("directory/anthropics/skills/frontend-design/")), /<th scope="row">Verified third-party security scan report<\/th><td>No<\/td>/);
 });
 
 // ----------------------------------------------------- compare, api, publishers

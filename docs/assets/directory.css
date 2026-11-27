@@ -5,12 +5,11 @@
  * navigation, footer and every catalog component live here, so the directory
  * reads as its own product and never inherits the skills site's chrome.
  *
- * Design system (directory/DESIGN.md): the Vercel scheme, as skills.sh wears
- * it. A pure black page, near-black panels, gray hairlines, white for text
+ * Design system (directory/DESIGN.md): the Vercel scheme. A pure black page, near-black panels, gray hairlines, white for text
  * and action, four status colors from the same scale that mean the same thing
  * on every page. Geist for prose and headings, Geist Mono for labels, numbers
  * and commands, and Pixelify Sans, a pixel display face, for the wordmark and
- * the hub headline, as skills.sh keeps its bitmap logo. Each page type
+ * the hub headline. Each page type
  * owns one focal graphic: the skill matrix, the install chart, the score
  * card, a pixel glyph.
  */
@@ -56,7 +55,7 @@
   --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --display: "Pixelify Sans", "Geist Mono", ui-monospace, monospace;
 
-  /* Surfaces: Vercel's dark scale, as skills.sh uses it. A pure black page,
+  /* Surfaces: Vercel's dark scale. A pure black page,
      near-black panels, gray hairlines. */
   --canvas: #000000;
   --paper: #0a0a0a;
@@ -71,7 +70,7 @@
   --muted: #a0a0a0;
   --faint: #7d7d7d;
 
-  /* Action is white, as on skills.sh: links, active tabs, the primary button.
+  /* Action is white, for links, active tabs, the primary button.
      Status colors come from the same scale. The Suede gold marks only the
      Suede-owned modules. */
   --accent: #ededed;

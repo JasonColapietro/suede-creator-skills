@@ -245,7 +245,7 @@
       <p class="answer guide-answer"><strong>Short answer:</strong> <a href="../../mblode/agent-skills/tidy/">tidy</a> from mblode/agent-skills (87/100) is the reviewer: it reads a local diff, a branch diff or a PR and returns file and line findings in confirmed and plausible tiers, and it can apply the fixes. Pair it with <a href="../../getsentry/skills/security-review/">security-review</a> from getsentry/skills (86/100) for a separate pass on injection, XSS, authentication, authorization and cryptography, and with <a href="../../obra/superpowers/verification-before-completion/">verification-before-completion</a> from obra/superpowers (84/100) so nothing gets called done without a verification command actually run. If you write Go, add go-coding-standards, the highest-scoring skill in the set.</p>
       <section class="panel" aria-labelledby="the-stack">
         <h2 id="the-stack">The stack</h2>
-        <p>Five skills, in score order. Scores come from the directory snapshot of October 22, 2026, and install counts are the figures skills.sh published on November 2, 2026.</p>
+        <p>Five skills, in score order. Scores come from the directory snapshot of October 22, 2026, and install counts are the figures the Vercel Skills CLI published on November 2, 2026.</p>
         <div class="table-wrap">
           <table class="guide-table">
             <thead><tr><th scope="col">Skill</th><th scope="col">Repository</th><th scope="col">Score</th><th scope="col">What it does</th></tr></thead>
@@ -276,7 +276,7 @@ npx skills add https://github.com/mblode/agent-skills/tree/main/skills/tidy
 npx skills add https://github.com/getsentry/skills/tree/main/skills/security-review
 npx skills add https://github.com/obra/superpowers/tree/main/skills/verification-before-completion
 npx skills add https://github.com/MohamedAbdallah-14/unslop/tree/main/skills/unslop-review</code></pre></div>
-        <p>The <a href="https://skills.sh/" target="_blank" rel="noopener">skills CLI</a> works for Claude Code, Codex, Cursor and other agents, and each skill's page in the directory lists the copy-by-hand routes if you would rather not run npx.</p>
+        <p>The <a href="https://github.com/vercel-labs/skills" target="_blank" rel="noopener">skills CLI</a> works for Claude Code, Codex, Cursor and other agents, and each skill's page in the directory lists the copy-by-hand routes if you would rather not run npx.</p>
       </section>
       <section class="panel" aria-labelledby="what-to-check-before-you-install">
         <h2 id="what-to-check-before-you-install">What to check before you install</h2>
@@ -293,7 +293,7 @@ npx skills add https://github.com/MohamedAbdallah-14/unslop/tree/main/skills/uns
         <h3 id="do-these-skills-work-in-codex-and-cursor">Do these skills work in Codex and Cursor?</h3>
         <p>Yes. All five use the <a href="https://agentskills.io/" target="_blank" rel="noopener">Agent Skills</a> format, so the same folder works in Claude Code, Codex, Cursor and any other agent that reads a SKILL.md. The skills CLI installs for each of them, and every skill page in the directory shows the commands.</p>
         <h3 id="why-include-a-go-only-skill-in-a-general-stack">Why include a Go-only skill in a general stack?</h3>
-        <p>Because at 95/100 it is the highest score in the set, and the other four are language-agnostic, so the stack costs nothing extra for a team that does not write Go: drop it. For a team that does, it is the most specific reviewer here. It has about 210 installs recorded by skills.sh against about 261,000 for verification-before-completion and about 22,000 for security-review, which tells you where adoption sits today.</p>
+        <p>Because at 95/100 it is the highest score in the set, and the other four are language-agnostic, so the stack costs nothing extra for a team that does not write Go: drop it. For a team that does, it is the most specific reviewer here. It has about 210 installs recorded by the Vercel Skills CLI against about 261,000 for verification-before-completion and about 22,000 for security-review, which tells you where adoption sits today.</p>
       </section>
       </div>
       <aside class="panel cta-placement" aria-labelledby="cta-guide-footer-agency" data-cta-placement="guide-footer" data-cta-variant="agency">

@@ -1,9 +1,9 @@
 {
  "source": {
-  "name": "skills.sh",
-  "url": "https://skills.sh/",
-  "about": "https://skills.sh/about",
-  "method": "Install counts published by skills.sh for installs made with the skills CLI (npx skills add), from anonymous, deduplicated telemetry as skills.sh documents it. Read from its public search endpoint and the leaderboard on its home page."
+  "name": "Vercel Skills CLI",
+  "url": "https://github.com/vercel-labs/skills",
+  "about": "https://github.com/vercel-labs/skills#readme",
+  "method": "Recorded installs from anonymous CLI telemetry, read from the public install snapshot."
  },
  "fetched": "2026-11-22",
  "all_time_total": 1500031,

@@ -77,7 +77,7 @@ test('collection downloads cover every listed skill with exact evidence and usab
     for (const s of skills) {
       const record = manifest.skills.find((r) => r.id.endsWith('/' + s.slug));
       assert.ok(record, `${repo}/${s.slug}`);
-      assert.equal(record.description, s.description);
+      assert.equal(record.description, s.description.replace(/\bskills\.sh\b/gi, "…"));
       assert.equal(record.quality.score, s.score);
       const update = updates.get(`${repo}/${s.slug}`);
       assert.equal(record.source.revision, update?.source_revision || data.repos[repo].commit_sha || null);

@@ -238,7 +238,7 @@
               "url": "https://github.com/mattpocock/skills",
               "publisher": "mattpocock",
               "official": false,
-              "summary": "Skills for test-driven development, grilling a plan, writing specs, handoffs and retros, among the most installed skill collections on skills.sh.",
+              "summary": "Skills for test-driven development, grilling a plan, writing specs, handoffs and retros, among the most installed skill collections in the CLI snapshot.",
               "install": "claude plugin install mattpocock-skills@claude-plugins-official",
               "tags": [
                 "plugin",

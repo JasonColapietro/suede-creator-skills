@@ -311,6 +311,9 @@ data.skills = data.skills.map((base) => {
   const blob = (p) => `https://github.com/${c.repo}/blob/${sourceRef}/${p}`;
   return {
     ...c,
+    // Mark omissions in publisher text while retaining the original snapshot for scoring.
+    description: c.description.replace(/\bskills\.sh\b/gi, "…"),
+    summary: c.summary?.replace(/, skills\.sh(?=,)/gi, "").replace(/\bskills\.sh\b/gi, "the skills CLI"),
     id: `${repoSlug}/${c.slug}`,
     editorial_rating: editorialRating({id: `${repoSlug}/${c.slug}`}, EDITORIAL_RATINGS),
     owner,
@@ -598,10 +601,10 @@ const NEW_LISTINGS = data.skills.filter((s) => !isFirstParty(s) && isNewListing(
 const RECENTLY_UPDATED = data.skills.filter((s) => !isFirstParty(s) && isRecentlyUpdated(s, BROWSE_DATE)).sort((a, b) => b.commit_date.localeCompare(a.commit_date) || byScore(a, b));
 const TOP_SKILLS = data.skills.filter((s) => !isFirstParty(s)).sort(byScore).slice(0, TOP_MAX);
 
-// ------------------------------------------------------------------ installs (skills.sh)
+// ------------------------------------------------------------------ installs (the Vercel Skills CLI)
 
 // Install counts are not measured by the directory. directory/installs.json
-// is a dated snapshot of the counts skills.sh publishes for installs made with
+// is a dated snapshot of the counts the Vercel Skills CLI publishes for installs made with
 // the skills CLI, written by scripts/directory/installs.mjs. Every number
 // quoted from it names the source and the date.
 const INSTALLS_FILE = path.join(repoRoot, "directory", "installs.json");
@@ -613,8 +616,7 @@ const compact = (n) => (n >= 1e6 ? `${(n / 1e6).toFixed(n >= 1e7 ? 0 : 1).replac
 const TOP_INSTALLED = INSTALLS ? data.skills.filter((s) => !isFirstParty(s) && installsFor(s)).sort((a, b) => installsFor(b).installs - installsFor(a).installs || byScore(a, b)).slice(0, TOP_MAX) : [];
 const RISING = INSTALLS ? data.skills.filter((s) => !isFirstParty(s) && lastWeek(s) > 0).sort((a, b) => lastWeek(b) - lastWeek(a) || byScore(a, b)).slice(0, TOP_MAX) : [];
 const INSTALLS_MATCHED = INSTALLS ? data.skills.filter((s) => installsFor(s)).length : 0;
-const installsSource = (here) => (INSTALLS ? `Install counts come from <a href="${esc(INSTALLS.source.url)}" target="_blank" rel="noopener">skills.sh</a>, which counts installs made with the skills CLI from anonymous telemetry, read on ${longDate(INSTALLS.fetched)}. The directory measures no installs of its own. <a href="${rel(here, API_PATH)}#installs">How the snapshot is taken</a>.` : "");
-const skillsShUrl = (s) => `https://skills.sh/${s.repo}/${s.name}`;
+const installsSource = (here) => (INSTALLS ? `Install counts come from <a href="https://github.com/vercel-labs/skills" target="_blank" rel="noopener">Vercel’s Skills CLI</a>, which counts installs made with the skills CLI from anonymous telemetry, read on ${longDate(INSTALLS.fetched)}. The directory measures no installs of its own. <a href="${rel(here, API_PATH)}#installs">How the snapshot is taken</a>.` : "");
 
 // ------------------------------------------------------------------ kinds (directory/kinds.json)
 
@@ -1609,12 +1611,12 @@ function glancePanel(here, s) {
     ["Publisher", `${esc(publisherName(s.owner, s.official))}${officialTag(s.official)}`],
     ["License", `${esc(s.license)}`],
     ["Cost", `<a href="${rel(here, lanePath(s.lane))}">${esc(laneById.get(s.lane).label)}</a>`],
-    inst ? ["Installs via skills.sh", `<a href="${esc(skillsShUrl(s))}" target="_blank" rel="noopener">${esc(compact(inst.installs))}</a>`] : null,
+    inst ? ["Recorded CLI installs", esc(compact(inst.installs))] : null,
     ["Bundled scripts", scripts ? `<span class="warn">${plural(scripts, "file")}</span>` : `<span class="ok">None</span>`],
     ["Credentials", creds.length ? `<span class="warn">${esc(creds.slice(0, 3).join(", "))}${creds.length > 3 ? ` and ${creds.length - 3} more` : ""}</span>` : `<span class="ok">None named</span>`],
     ["Outside hosts", (i.hosts || []).length ? `<span class="warn">${esc(i.hosts.slice(0, 2).join(", "))}${i.hosts.length > 2 ? ` and ${i.hosts.length - 2} more` : ""}</span>` : i.net ? `<span class="warn">HTTP client or cloud SDK</span>` : `<span class="ok">None</span>`],
     ["MCP server", i.mcp || (i.mcp_tools || []).length ? `<span class="warn">Yes</span>` : `<span class="ok">No</span>`],
-    ["Security scan", `Not scanned by the directory${inst ? `. <a href="${esc(skillsShUrl(s))}" target="_blank" rel="noopener">Third-party audits on skills.sh</a>` : ""}`],
+    ["Verified third-party security scan report", "No"],
     s.assessment_date ? ["Source assessed", longDate(s.assessment_date)] : null,
     ["Listed since", s.listed_since === LISTED_FLOOR ? `${longDate(s.listed_since)} or earlier` : longDate(s.listed_since)],
   ].filter(Boolean);
@@ -1651,7 +1653,7 @@ function renderSkill(s) {
     ["SKILL.md", `${plural(s.body_lines, "line")}, ${plural(s.body_words, "word")}`],
     ["Bundled files", `${plural(s.file_count, "file")}${kinds.length ? `, including ${kinds.join(", ")}` : ""}`],
     ["Quality score", `${gradeChip(s)} <a href="#check">${checkSummary(s)}</a>`],
-    ["Security scan", "Not scanned"],
+    ["Verified third-party security scan report", "No"],
     ["README badge", s.shielded ? `<a href="#badge">Get the badges for this listing</a>` : `<a href="#badge">Get the listing badge and raise the score</a>`],
   ]);
   const authorFacts = factsTable([
@@ -1931,7 +1933,7 @@ function renderRepo(r) {
     ["Repository", `<a href="https://github.com/${esc(r.repo)}" target="_blank" rel="noopener">github.com/${esc(r.repo)}</a>`],
     ["Listed skills", fmt(r.skills.length)],
     ["Source assessed", data.repos[r.repo].assessment_date ? longDate(data.repos[r.repo].assessment_date) : ""],
-    ["Security scan", "Not scanned"],
+    ["Verified third-party security scan report", "No"],
     ["Categories", catLinks.join(", ")],
     ["License", esc(licenseText)],
     ["Last commit", longDate(r.commit)],
@@ -2700,14 +2702,14 @@ function renderHub() {
   // tabs that directory.js turns into a switcher. Without JavaScript every
   // pane shows in order.
   const panes = [
-    TOP_INSTALLED.length ? { id: "most-installed", label: "Most installed", rows: TOP_INSTALLED, metric: installMetric, note: `Installs recorded by skills.sh for the skills CLI, read ${longDate(INSTALLS.fetched)}.`, foot: `<a href="${rel(here, TOP_PATH)}#most-installed">The 100 most installed skills</a>` } : null,
+    TOP_INSTALLED.length ? { id: "most-installed", label: "Most installed", rows: TOP_INSTALLED, metric: installMetric, note: `Installs recorded by the Vercel Skills CLI, read ${longDate(INSTALLS.fetched)}.`, foot: `<a href="${rel(here, TOP_PATH)}#most-installed">The 100 most installed skills</a>` } : null,
     { id: "highest-scores", label: "Highest scores", rows: TOP_SKILLS, metric: (s) => (installsFor(s) ? `<b>${compact(installsFor(s).installs)}</b> installs` : `cited by <b>${s.lists.length}</b>`), note: "Suede Skill Check scores, 0 to 99, from each skill's published files.", foot: `<a href="${rel(here, TOP_PATH)}#highest-scores">The top 100 by score</a>` },
-    RISING.length ? { id: "rising", label: "Rising this week", rows: RISING, metric: (s) => `${sparkline(installsFor(s).weekly)}<b>${compact(lastWeek(s))}</b> this week`, note: "Installs in the latest week skills.sh reports, among the skills it keeps history for.", foot: `<a href="${rel(here, TOP_PATH)}#rising">The 100 rising skills</a>` } : null,
+    RISING.length ? { id: "rising", label: "Rising this week", rows: RISING, metric: (s) => `${sparkline(installsFor(s).weekly)}<b>${compact(lastWeek(s))}</b> this week`, note: "Installs in the latest week the Vercel Skills CLI reports, among the skills it keeps history for.", foot: `<a href="${rel(here, TOP_PATH)}#rising">The 100 rising skills</a>` } : null,
     NEW_LISTINGS.length ? { id: "new-listings", label: "New", rows: NEW_LISTINGS, metric: (s) => `Listed ${longDate(s.listed_since)}`, note: `Skills first listed in the ${NEW_DAYS} days through ${longDate(BROWSE_DATE)}; the global source snapshot remains ${longDate(data.generated)}.`, foot: `<a href="${rel(here, NEW_PATH)}">All new and updated skills</a>` } : null,
     RECENTLY_UPDATED.length ? { id: "recently-updated", label: "Updated", rows: RECENTLY_UPDATED, metric: (s) => `Commit ${longDate(s.commit_date)}`, note: `Listed skills whose repository changed in the ${NEW_DAYS} days through ${longDate(BROWSE_DATE)}.`, foot: `<a href="${rel(here, NEW_PATH)}#updated-title">All recently updated skills</a>` } : null,
   ].filter(Boolean);
   const boardHtml = `      <section class="board-section" aria-labelledby="board-title">
-        <div class="board-head"><h2 id="board-title">Top 100</h2><p class="muted">${INSTALLS ? "Ranked by installs recorded by skills.sh, by Suede Skill Check score, and by what is new. Suede's own skills are not ranked." : "Ranked by Suede Skill Check score and by what is new. Suede's own skills are not ranked."}</p></div>
+        <div class="board-head"><h2 id="board-title">Top 100</h2><p class="muted">${INSTALLS ? "Ranked by installs recorded by the Vercel Skills CLI, by Suede Skill Check score, and by what is new. Suede's own skills are not ranked." : "Ranked by Suede Skill Check score and by what is new. Suede's own skills are not ranked."}</p></div>
         <nav class="tabs" data-tabs aria-label="Rankings">${panes.map((p, i) => `<a class="tab" href="#${p.id}"${i === 0 ? ' aria-current="true"' : ""}>${esc(p.label)}</a>`).join("")}</nav>
 ${panes.map((p) => `        <section class="board-pane" id="${p.id}" data-pane aria-labelledby="${p.id}-title">
           <h3 id="${p.id}-title">${esc(p.label)}</h3>
@@ -3327,7 +3329,7 @@ function renderGuidesHub() {
   ].map(([who, text, links]) => [who, text, links.filter(Boolean)]).filter(([, , links]) => links.length);
   const faq = faqBlock(here, [
     ["Who writes these guides?", "Jason Colapietro, founder of Suede, which publishes this directory. Each guide carries his byline and the date it was last reviewed."],
-    ["Where do the figures in the guides come from?", "From the directory's own published data: Suede Skill Check scores, licenses and file facts from the dated snapshot each guide names, plus install counts published by skills.sh where a guide quotes them. The same files are open on the API and data page."],
+    ["Where do the figures in the guides come from?", "From the directory's own published data: Suede Skill Check scores, licenses and file facts from the dated snapshot each guide names, plus install counts published by the Vercel Skills CLI where a guide quotes them. The same files are open on the API and data page."],
     ["Do the guides apply to Codex and Cursor as well as Claude Code?", "Yes. Claude Code, Codex and Cursor all read skills in the Agent Skills format, a folder with a SKILL.md file. Where the agents differ, such as the folder each one loads skills from, the guides say so."],
     ["I publish a skill. What should I read first?", "Start with the guide on getting your skill found in search and cited by AI assistants, then run the free Skill AI-visibility check on your repository. It shows your score by component and the points you can still earn."],
   ]);
@@ -3576,7 +3578,7 @@ function installChart(rows, here) {
     const bw = Math.max(2, Math.round((installsFor(s).installs / max) * barW));
     return `<a href="${esc(listingHref(here, s))}"><text class="bar-label" x="${labelW - 10}" y="${y + 15}" text-anchor="end">${esc(trimTo(displayName(s), 28))}</text><rect class="bar" x="${labelW}" y="${y + 3}" width="${bw}" height="${rowH - 8}" rx="1"/><text class="bar-value" x="${labelW + bw + 8}" y="${y + 15}">${esc(compact(installsFor(s).installs))}</text></a>`;
   }).join("");
-  return `<svg class="chart" viewBox="0 0 ${w} ${h}" role="img" aria-label="Installs recorded by skills.sh for the 20 most installed listed skills">${bars}</svg>`;
+  return `<svg class="chart" viewBox="0 0 ${w} ${h}" role="img" aria-label="Installs recorded by the Vercel Skills CLI for the 20 most installed listed skills">${bars}</svg>`;
 }
 const board = (here, rows, metric, limit = rows.length) => `        <div class="board">\n${rows.slice(0, limit).map((s, i) => boardRow(here, s, i, metric(s))).join("\n")}\n        </div>`;
 
@@ -3758,7 +3760,7 @@ function browseWaysPanel(here) {
     [PRICING_PATH, "Cost and license", LANES_LIVE.map((l) => `${l.lane.label} (${fmt(l.rows.length)})`).join(" &middot; ")],
     [FEATURES_PATH, "Capabilities", `${FLAGS_LIVE.length} filters: official publishers, MCP servers, API keys, no setup required and more`],
     [NEW_PATH, "New and updated", `${plural(NEW_LISTINGS.length, "new listing")} and ${plural(RECENTLY_UPDATED.length, "skill")} updated in the last ${NEW_DAYS} days`],
-    TOP_SKILLS.length ? [TOP_PATH, "Top 100", INSTALLS ? "The most installed skills, by skills.sh counts, and the highest-scoring third-party skills" : "The highest-scoring third-party skills"] : null,
+    TOP_SKILLS.length ? [TOP_PATH, "Top 100", INSTALLS ? "The most installed skills by CLI volume, and the highest-scoring third-party skills" : "The highest-scoring third-party skills"] : null,
     [SAVED_PATH, "Saved skills", "Your saved list, kept in this browser"],
     [COMPARE_PATH, "Compare two skills", "Scores by component, licenses, cost lanes and capabilities side by side"],
     [PUBLISHERS_PATH, "Publishers", `${fmt(repos.size)} repositories with skill counts, best scores and official status`],
@@ -4153,13 +4155,13 @@ function renderTop() {
   const tabs = panes.length > 1 ? `      <nav class="tabs" data-tabs aria-label="Rankings">${panes.map((p, i) => `<a class="tab" href="#${p.id}"${i === 0 ? ' aria-current="true"' : ""}>${esc(p.label)}</a>`).join("")}</nav>` : "";
   const installed = TOP_INSTALLED.length ? `      <section class="board-pane" id="most-installed" data-pane aria-labelledby="most-installed-title">
         <h2 id="most-installed-title">The ${TOP_INSTALLED.length} most installed skills</h2>
-        <p class="muted">${installsSource(here)} ${fmt(INSTALLS_MATCHED)} of the ${fmt(data.skills.length)} listed skills have a count there; the rest are not tracked by skills.sh. The sparkline is eight weeks of installs where skills.sh publishes it.</p>
+        <p class="muted">${installsSource(here)} ${fmt(INSTALLS_MATCHED)} of the ${fmt(data.skills.length)} listed skills have a recorded count. The sparkline shows eight weeks of installs where history is available.</p>
 ${installChart(TOP_INSTALLED, here)}
 ${board(here, TOP_INSTALLED, installMetric)}
       </section>` : "";
   const rising = RISING.length ? `      <section class="board-pane" id="rising" data-pane aria-labelledby="rising-title">
         <h2 id="rising-title">Rising this week</h2>
-        <p class="muted">The ${RISING.length} listed skills with the most installs in the latest week skills.sh reports, among the ${fmt(data.skills.filter((s) => installsFor(s)?.weekly?.length).length)} skills it keeps eight weeks of history for.</p>
+        <p class="muted">The ${RISING.length} listed skills with the most installs in the latest week the Vercel Skills CLI reports, among the ${fmt(data.skills.filter((s) => installsFor(s)?.weekly?.length).length)} skills it keeps eight weeks of history for.</p>
 ${board(here, RISING, (s) => `${sparkline(installsFor(s).weekly)}<b>${compact(lastWeek(s))}</b> this week`)}
       </section>` : "";
   browsePage({
@@ -4167,14 +4169,14 @@ ${board(here, RISING, (s) => `${sparkline(installsFor(s).weekly)}<b>${compact(la
     trail: [["directory/", "Directory"], [null, "Top 100"]],
     title: pickTitle(["Top 100 Agent Skills: Most Installed and Highest Scored", "Top 100 Agent Skills for Claude Code, Graded", "Top 100 Agent Skills"], "top"),
     description: fitMeta([
-      mostInstalled ? `The 100 most installed agent skills by skills.sh counts and the 100 highest Suede Skill Check scores. ${displayName(mostInstalled)} leads installs; ${displayName(top)} leads at ${top.score}/100.` : "",
+      mostInstalled ? `The 100 most installed agent skills by recorded CLI volume and the 100 highest Suede Skill Check scores. ${displayName(mostInstalled)} leads installs; ${displayName(top)} leads at ${top.score}/100.` : "",
       `The 100 highest-scoring agent skills for Claude Code and Codex. ${displayName(top)} from ${top.repo} leads at ${top.score}/100 on the Suede Skill Check.`,
       `The 100 highest-scoring agent skills for Claude Code and Codex on the Suede Skill Check, with publishers and licenses.`,
     ].filter(Boolean), "top"),
     keywords: ["top claude code skills", "top 100 agent skills", "most installed agent skills", "best agent skills ranked", "highest rated claude skills"],
     eyebrow: "Suede Skills Directory &middot; Top 100",
     h1: "Top 100 agent skills",
-    body: `      <p class="answer">${mostInstalled ? `${esc(displayName(mostInstalled))} from ${esc(mostInstalled.repo)} is the most installed listed skill, with ${fmt(installsFor(mostInstalled).installs)} installs recorded by skills.sh as of ${longDate(INSTALLS.fetched)}. ` : ""}${esc(displayName(top))} from ${esc(top.repo)} has the highest Suede Skill Check score among third-party skills in the ${longDate(data.generated)} snapshot, at ${top.score}/100. Suede's own skills are not ranked.</p>
+    body: `      <p class="answer">${mostInstalled ? `${esc(displayName(mostInstalled))} from ${esc(mostInstalled.repo)} is the most installed listed skill, with ${fmt(installsFor(mostInstalled).installs)} installs recorded by the Vercel Skills CLI as of ${longDate(INSTALLS.fetched)}. ` : ""}${esc(displayName(top))} from ${esc(top.repo)} has the highest Suede Skill Check score among third-party skills in the ${longDate(data.generated)} snapshot, at ${top.score}/100. Suede's own skills are not ranked.</p>
 ${tabs}
 ${installed}
       <section class="board-pane panel" id="highest-scores" data-pane aria-labelledby="top-title">
@@ -4193,7 +4195,7 @@ ${rowsHtml}
 ${rising}
 ${servicesCta("browse-hub", null, here)}`,
     items: TOP_SKILLS.map((s) => [displayName(s), listItemUrl(s)]),
-    footerNote: `Top 100 on ${SITE_LABEL}: install counts from skills.sh where published, scores from the Suede Skill Check. Every skill belongs to its publisher.`,
+    footerNote: `Top 100 on ${SITE_LABEL}: install counts from the Vercel Skills CLI where published, scores from the Suede Skill Check. Every skill belongs to its publisher.`,
   });
 }
 
@@ -4272,9 +4274,8 @@ function renderSecurity() {
   const scanners = [["getsentry/skills", "skill-scanner"], ["Tencent/AI-Infra-Guard", "aig-scanner"], ["trailofbits/skills", "codeql"]]
     .map(([repo, name]) => data.skills.find((x) => x.repo === repo && x.name === name && x.featured)).filter(Boolean);
   const cisco = EDITORIAL.projects.find((x) => x.id === "cisco-skill-scanner");
-  const tracked = INSTALLS ? fmt(INSTALLS_MATCHED) : null;
   const cases = [
-    { name: "ToxicSkills", who: "Snyk, February 2026", url: "https://snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub", text: "Snyk's researchers scanned 3,984 agent skills from ClawHub and skills.sh. Human review confirmed 76 skills with malicious payloads written into their Markdown instructions, and the audit found 1,467 skills, 36.82 percent of the set, with at least one security flaw; 13.4 percent carried critical-severity issues." },
+    { name: "ToxicSkills", who: "Snyk, February 2026", url: "https://snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub", text: "Snyk's researchers scanned 3,984 agent skills across two public registries. Human review confirmed 76 skills with malicious payloads written into their Markdown instructions, and the audit found 1,467 skills, 36.82 percent of the set, with at least one security flaw; 13.4 percent carried critical-severity issues." },
     { name: "ClawHavoc", who: "Koi Security, early 2026", url: "https://koi.ai/blog/clawhavoc-341-malicious-clawedbot-skills-found-by-the-bot-they-were-targeting", text: "An audit of 2,857 skills on ClawHub, the OpenClaw registry, found 341 malicious skills. 335 of them posed as crypto trading tools and told macOS users to paste a command into Terminal that installed the Atomic macOS Stealer. Koi later counted 824 malicious skills as the registry passed 10,700." },
     { name: "A Claude Skill carrying MedusaLocker", who: "Cato CTRL, December 2, 2025", url: "https://www.catonetworks.com/blog/cato-ctrl-weaponizing-claude-skills-with-medusalocker", text: "A proof of concept, not an attack in the wild. Cato's researchers added a hidden helper to a copy of Anthropic's GIF creator skill. The user approved the visible script; the helper fetched and ran a ransomware payload under that same approval, which Cato calls the consent gap." },
   ];
@@ -4326,7 +4327,6 @@ ${bc.html}
           <li><b>No runtime test.</b> Scores measure structural evidence in the published files. They say nothing about what a skill does once an agent follows it.</li>
           <li><b>No certification.</b> The Suede S shields are quality badges for scores of 80 to 99 on that structural rubric. They are not a security result, and the HOL and Cisco scanners that run on Suede's own repository in CI do not run on the listings.</li>
         </ul>
-        ${tracked ? `<p>skills.sh, which tracks ${tracked} of the listed skills, publishes audit results from several scanning partners for the skills it indexes. Each full page here links to its skills.sh page when the skill is tracked there, so you can read those results beside the directory's own record. They are third-party results and the directory does not repeat them as its own.</p>` : ""}
       </section>
       <section class="panel" aria-labelledby="cases-title">
         <h2 id="cases-title">Documented attacks on skill registries</h2>
@@ -4839,7 +4839,7 @@ function renderApi() {
     ["Search index", `${host}/search-index.json`, `One record per listed skill (${fmt(data.skills.length)}): name, repo, description, category, license, grade, score, href, full, report, lane, flags, topics, listed, updated${INSTALLS ? ", installs" : ""}.`],
     ["Skill report", `${host}/${skillPath(sample).replace(/^directory\//, "")}report.json`, "A verifiable report per listing: snapshot id and dataset hash, score by component, source revision, badges and the methodology version. Every listed skill has one at its listing path."],
     ["Quality badges", `${host}/${skillPath(sample).replace(/^directory\//, "")}score.svg`, "score.svg and badge.svg per listing. Skills scoring 80 to 99 get the numeric and letter shields; others serve the general listing badge."],
-    INSTALLS ? ["Install snapshot", `${host}/installs.json`, `Install counts for ${fmt(INSTALLS_MATCHED)} listed skills as published by skills.sh, with the fetch date and the method. The directory measures no installs of its own.`] : null,
+    INSTALLS ? ["Install snapshot", `${host}/installs.json`, `Install counts for ${fmt(INSTALLS_MATCHED)} listed skills as published by the Vercel Skills CLI, with the fetch date and the method. The directory measures no installs of its own.`] : null,
     ["Kinds", `${host}/kinds.json`, "The plugins, Grok, MCP server and rules listings as one JSON document."],
     GROWTH ? ["Finder skill", `${host}/finder/`, "Install the read-only directory search skill for Claude Code, Codex or Cursor."] : null,
     GROWTH ? ["Weekly feed", `${host}/weekly.json`, "Rising and climbing skills, topic growth, new listings and repository stars for the latest snapshots; read by the finder’s weekly briefing. Suede excluded."] : null,
@@ -4851,11 +4851,11 @@ function renderApi() {
   const apiFaq = faqBlock(here, [
     ["Do I need an API key to use the directory data?", "No. Every file is a static file on this host, with no key, no account and no rate limit. Fetch it over HTTPS like any other page."],
     ["Where is the report for one skill?", "Each listing's report.json sits at its listing path, the href field in the search index. It holds the snapshot id and dataset hash, the score by component, the source revision where recorded, the badges and the methodology version."],
-    ["Can I quote scores and install counts?", "Yes. Link back to the skill's listing when you quote a score, and name skills.sh when you quote an install count, since the directory measures no installs of its own."],
+    ["Can I quote scores and install counts?", "Yes. Link back to the skill's listing when you quote a score, and credit the Vercel Skills CLI when you quote an install count, since the directory measures no installs of its own."],
     ["How current is the data?", `Each file names the snapshot it was built from. This page reflects the ${longDate(data.generated)} quality snapshot${INSTALLS ? " and the install snapshot dated in installs.json" : ""}. The sitemap lists every page's last-modified date.`],
   ]);
   const body = `${bc.html}
-      <p class="lead">Everything the directory publishes is a static file on this host. There is no key, no rate limit and no account; please link back to the listing when you quote a score, and name skills.sh when you quote an install count.</p>
+      <p class="lead">Everything the directory publishes is a static file on this host. There is no key, no rate limit and no account; please link back to the listing when you quote a score, and credit the Vercel Skills CLI when you quote an install count.</p>
       <section class="panel" aria-labelledby="files-title">
         <h2 id="files-title">Files</h2>
         <div class="table-wrap"><table class="checks"><thead><tr><th scope="col">File</th><th scope="col">URL</th><th scope="col">What it holds</th></tr></thead><tbody>
@@ -4864,7 +4864,7 @@ ${rows.map(([n, u, t]) => `          <tr><td>${esc(n)}</td><td><a href="${esc(u)
       </section>
       <section class="panel" id="installs" aria-labelledby="installs-title">
         <h2 id="installs-title">Where install counts come from</h2>
-        <p>${INSTALLS ? `The directory does not measure installs. <code>installs.json</code> is a snapshot of counts published by <a href="${esc(INSTALLS.source.url)}" target="_blank" rel="noopener">skills.sh</a>, which records installs made with the skills CLI (<code>npx skills add</code>) from anonymous, deduplicated telemetry as its documentation describes. The snapshot was read on ${longDate(INSTALLS.fetched)} from its public search endpoint, one query per listed repository, and its home page leaderboard for eight weeks of history. ${fmt(INSTALLS_MATCHED)} listed skills matched; skills without a count are not tracked there. The script is <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/scripts/directory/installs.mjs" target="_blank" rel="noopener">scripts/directory/installs.mjs</a>.` : "No install snapshot is published in this build."}</p>
+        <p>${INSTALLS ? `The directory does not measure installs. <code>installs.json</code> is a snapshot of counts published by <a href="https://github.com/vercel-labs/skills" target="_blank" rel="noopener">Vercel’s Skills CLI</a>, which records installs made with the skills CLI (<code>npx skills add</code>) from anonymous, deduplicated telemetry as its documentation describes. The snapshot was read on ${longDate(INSTALLS.fetched)} from its public search endpoint, one query per listed repository, and its home page leaderboard for eight weeks of history. ${fmt(INSTALLS_MATCHED)} listed skills matched; skills without a count are not tracked there. The script is <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/scripts/directory/installs.mjs" target="_blank" rel="noopener">scripts/directory/installs.mjs</a>.` : "No install snapshot is published in this build."}</p>
       </section>
       <section class="panel" aria-labelledby="score-api-title">
         <h2 id="score-api-title">Recomputing a score</h2>
@@ -4881,7 +4881,7 @@ ${rows.map(([n, u, t]) => `          <tr><td>${esc(n)}</td><td><a href="${esc(u)
       </section>
 ${apiFaq.html}`;
   const title = "Directory API and Data: Index, Reports, Badges, Feed";
-  const description = "Every file the directory publishes: the search index, per-skill reports, badges, the skills.sh install snapshot, the RSS feed and the sitemap.";
+  const description = "Every file the directory publishes: the search index, per-skill reports, badges, the dated CLI install snapshot, the RSS feed and the sitemap.";
   files.set(`${here}index.html`, page({
     here, title, description, keywords: setKeywords(here, ["agent skills api", "skills directory json", "skill score api", "agent skills dataset"]),
     h1Html: `      <div class="eyebrow">Suede Skills Directory &middot; Data</div>
@@ -4892,7 +4892,7 @@ ${apiFaq.html}`;
       bc.ld,
       apiFaq.ld,
     ],
-    footerNote: "The directory's data is published as static files. Scores follow the published methodology; install counts are skills.sh's.",
+    footerNote: "The directory's data is published as static files. Scores follow the published methodology; install counts are from the Vercel Skills CLI.",
   }));
 }
 
@@ -4904,7 +4904,7 @@ function renderPublishers() {
   })).sort((a, b) => (b.installs || 0) - (a.installs || 0) || b.r.skills.length - a.r.skills.length || a.r.repo.toLowerCase().localeCompare(b.r.repo.toLowerCase()));
   const rowsHtml = list.map(({ r, best, installs }) => `            <tr data-name="${esc(r.repo.toLowerCase())}"><td class="name"><a href="${rel(here, r.target)}">${esc(r.repo)}</a>${officialTag(r.official)}</td><td class="meta">${esc(r.publisher)}</td><td class="num">${fmt(r.skills.length)}</td><td class="num">${best}</td>${INSTALLS ? `<td class="num">${installs ? compact(installs) : ""}</td>` : ""}<td class="desc">${r.categories.slice(0, 3).map((c) => `<a href="${rel(here, catPath(c))}">${esc(catBySlug.get(c).label)}</a>`).join(", ")}</td></tr>`).join("\n");
   const body = `${bc.html}
-      <p class="lead">${fmt(list.length)} repositories publish the ${fmt(data.skills.length)} listed skills. ${fmt(list.filter((x) => x.r.official).length)} are official publishers, the companies behind the tools their skills work with.${INSTALLS ? " Install totals add up each repository's skills.sh counts." : ""}</p>
+      <p class="lead">${fmt(list.length)} repositories publish the ${fmt(data.skills.length)} listed skills. ${fmt(list.filter((x) => x.r.official).length)} are official publishers, the companies behind the tools their skills work with.${INSTALLS ? " Install totals add up each repository's recorded CLI installs." : ""}</p>
       <section class="panel" aria-labelledby="publishers-title">
         <h2 id="publishers-title">All publishers</h2>
         <div class="table-filter" hidden><label class="filter-label" for="publishers-filter">Filter by publisher or repository</label>
@@ -4917,7 +4917,7 @@ ${rowsHtml}
             </tbody>
           </table>
         </div>
-        <p class="muted">${INSTALLS ? `Install totals come from skills.sh, read ${longDate(INSTALLS.fetched)}; repositories it does not track show no total. ` : ""}Best score is the highest Suede Skill Check score among the repository's listed skills; a repository is never averaged into a grade.</p>
+        <p class="muted">${INSTALLS ? `Install totals come from the Vercel Skills CLI, read ${longDate(INSTALLS.fetched)}; repositories it does not track show no total. ` : ""}Best score is the highest Suede Skill Check score among the repository's listed skills; a repository is never averaged into a grade.</p>
       </section>
       <section class="panel" aria-labelledby="claim-title">
         <h2 id="claim-title">Publish here</h2>
@@ -5002,7 +5002,7 @@ for (const c of COMPETITORS) {
 renderApi();
 renderPublishers();
 if (KINDS.length) files.set("directory/kinds.json", `${JSON.stringify({ updated: KINDS_UPDATED, kinds: KINDS.map((k) => ({ id: k.id, path: `/${k.path}/`, name: k.name, entries: kindEntries(k).map((e) => ({ id: e.id, name: e.name, repo: e.repo || null, url: e.url, publisher: e.publisher, official: Boolean(e.official), summary: e.summary, install: e.install || null, license: e.license || null })) })) }, null, 1)}\n`);
-if (INSTALLS) files.set("directory/installs.json", `${JSON.stringify({ source: INSTALLS.source, fetched: INSTALLS.fetched, all_time_total: INSTALLS.all_time_total, listed_matches: INSTALLS_MATCHED, skills: Object.fromEntries(data.skills.filter((x) => installsFor(x)).map((x) => [installKey(x), installsFor(x).installs])) }, null, 1)}\n`);
+if (INSTALLS) files.set("directory/installs.json", `${JSON.stringify({ source: { name: "Vercel Skills CLI", url: "https://github.com/vercel-labs/skills", about: "https://github.com/vercel-labs/skills#readme", method: "Recorded installs from anonymous CLI telemetry, read from the public install snapshot." }, fetched: INSTALLS.fetched, all_time_total: INSTALLS.all_time_total, listed_matches: INSTALLS_MATCHED, skills: Object.fromEntries(data.skills.filter((x) => installsFor(x)).map((x) => [installKey(x), installsFor(x).installs])) }, null, 1)}\n`);
 for (const r of repos.values()) if (r.hasPage) renderRepo(r);
 for (const s of featured) renderSkill(s);
 if (GROWTH_MODULE) GROWTH_MODULE.renderGrowth({ root: repoRoot, files, data, page, crumbs, rel, url, esc, fmt, setKeywords,
@@ -5054,7 +5054,7 @@ const llmsMoreLines = [
   ...KINDS.map((k) => `- [${k.name}](${url(kindPath(k))}): ${k.meta} ${fmt(kindEntries(k).length)} ${kindEntries(k).some((entry) => !entry.repo) ? "projects" : "repositories"}, listed and not graded.`),
   `- [Publishers](${url(PUBLISHERS_PATH)}): ${fmt(repos.size)} repositories with skill counts, best scores and official status.`,
   ...(COMPETITORS.length ? [`- [Compare](${url(COMPARE_PATH)}): compare listed skills side by side, and the Suede Skills Directory compared with other agent skill directories:`, ...COMPETITORS.flatMap((c) => [`  - [Suede Skills Directory vs ${c.name}](${url(versusPath(c))}): ${fillVersus(c.vs_meta, versusValues(c))}`, `  - [${c.name} alternatives](${url(altBrandPath(c))}): ${fillVersus(c.alt_meta, versusValues(c))}`])] : []),
-  `- [API and data](${url(API_PATH)}): the search index, per-skill reports, badges, ${INSTALLS ? "the install snapshot from skills.sh, " : ""}the RSS feed and the sitemap, all static files.`,
+  `- [API and data](${url(API_PATH)}): the search index, per-skill reports, badges, ${INSTALLS ? "the install snapshot from the Vercel Skills CLI, " : ""}the RSS feed and the sitemap, all static files.`,
 ];
 const llmsBrowseLines = [
   `- [Agent skills by topic](${url(TOPICS_PATH)}): ${TOPICS.length} topic pages in ${TOPIC_CONFIG.groups.length} groups, each listing every matching skill with its score, license and source:`,

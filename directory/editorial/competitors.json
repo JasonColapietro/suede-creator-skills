@@ -3,38 +3,6 @@
   "about": "Source data for the brand comparison pages under directory/compare/: one \"Suede Skills Directory vs <name>\" page and one \"<name> alternatives\" page per entry, both listed on the compare hub. scripts/build-directory.mjs renders them; scripts/directory/versus.mjs validates this file. Every competitor fact names a source in that entry's sources list, fetched on the entry's checked date; re-check each source before changing a fact. Suede's own figures are never written here: {skills}, {repos}, {categories}, {full}, {shielded}, {tasks}, {alternatives}, {snapshot}, {installs_matched} and {installs_date} are filled from the live directory data at build time. A null fact renders as not stated by the cited sources. Competitor pricing is never written here (owner direction, 2026-11-05): every competitor's price row renders as \"Pricing varies\" linked to the competitor's site, and scripts/directory/versus.mjs rejects a price fact or any price wording in competitor copy.",
   "competitors": [
     {
-      "id": "skills-sh",
-      "name": "skills.sh",
-      "url": "https://skills.sh/",
-      "checked": "2026-11-03",
-      "summary": "skills.sh is the agent skills leaderboard Vercel runs. It ranks skills by installs counted from anonymous telemetry in the open-source skills CLI (github.com/vercel-labs/skills), with All Time, Trending (24h) and Hot views, and it runs routine security audits that check skills for malicious content. The leading skill, find-skills, showed 4.2M installs on November 3, 2026.",
-      "facts": {
-        "operator": "Vercel",
-        "lists": "Agent skills installed with the skills CLI, ranked on a public leaderboard",
-        "ranking": "Install counts from anonymous skills CLI telemetry, with All Time, Trending (24h) and Hot views",
-        "signals": "Routine security audits that check skills for malicious content",
-        "install": "npx skills add <owner/repo>"
-      },
-      "vs_answer": "skills.sh ranks agent skills by how often people install them with Vercel's skills CLI. The Suede Skills Directory grades {skills} skills from {repos} repositories on a published 0 to 99 rubric and shows skills.sh install counts beside each score where they exist, so you see quality and adoption on one page.",
-      "angle": "An install count tells you what other people picked. The Suede Skills Directory tells you what is inside the skill before you pick it: a score built from the skill's own files, the points behind that score, its license, and on {full} full pages, the scripts, credentials and network calls found in its folder.",
-      "together": "Yes. Every listing on the Suede Skills Directory gives the npx skills add command that the skills CLI runs, and {installs_matched} listings show the install count skills.sh published on {installs_date}, credited to skills.sh. Choose by score here and install with the same CLI.",
-      "vs_meta": "Suede Skills Directory vs skills.sh: graded skills with licenses and file summaries next to Vercel's install leaderboard. Facts and sources inside.",
-      "alt_answer": "The best skills.sh alternative is the Suede Skills Directory. It lists {skills} agent skills from {repos} GitHub repositories, grades each one from 0 to 99 on a published rubric, and gives the same npx skills add install command. Other skills.sh alternatives are {others}.",
-      "alt_meta": "The best skills.sh alternatives for finding agent skills, compared: who runs each directory, what it lists and how it ranks. Suede grades each listing.",
-      "faq": [
-        ["Who runs skills.sh?", "Vercel. The skills CLI that feeds its leaderboard is open source at github.com/vercel-labs/skills, and the site footer reads Made with care by Vercel."],
-        ["Does the Suede Skills Directory show install counts?", "Yes. {installs_matched} listings show the install count skills.sh published for installs made with the skills CLI, read on {installs_date} and credited to skills.sh, next to the Suede Skill Check score."]
-      ],
-      "alt_faq": [
-        ["Is there a skills.sh alternative that uses the same install command?", "Yes. Every listing on the Suede Skills Directory gives the npx skills add command for the skills CLI, plus a project-level copy into .claude/skills for Claude Code and .agents/skills for Codex on each full skill page."]
-      ],
-      "sources": [
-        { "title": "skills.sh home page and leaderboard", "url": "https://skills.sh/" },
-        { "title": "skills.sh documentation", "url": "https://skills.sh/docs" },
-        { "title": "vercel-labs/skills on GitHub", "url": "https://github.com/vercel-labs/skills" }
-      ]
-    },
-    {
       "id": "skillsmp",
       "name": "SkillsMP",
       "url": "https://skillsmp.com/",

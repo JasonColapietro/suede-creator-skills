@@ -386,7 +386,7 @@ test("repository H1s read owner/repo with a graded skill count", () => {
 // per competing directory, both linked from the compare hub and llms.txt.
 test("every competitor in competitors.json has a vs page and an alternatives page on the compare hub", () => {
   const competitors = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "editorial", "competitors.json"), "utf8")).competitors;
-  assert.ok(competitors.length >= 5, "expected at least five competing directories");
+  assert.ok(competitors.length >= 4, "expected at least four competing directories");
   const hub = byRel.get("directory/compare/");
   const llms = fs.readFileSync(path.join(docs, "llms.txt"), "utf8");
   const banned = /—|\bmoreover\b|\bdelve|game-changer|\bunlock|\belevate|\bseamless|\blandscape\b|\btapestry\b|it's important to note/i;

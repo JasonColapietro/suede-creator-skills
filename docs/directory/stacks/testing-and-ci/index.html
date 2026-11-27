@@ -257,7 +257,7 @@
       <p class="answer guide-answer"><strong>Short answer:</strong> <a href="../../mblode/agent-skills/ci-speedup/">ci-speedup</a> from mblode/agent-skills (91/100) measures the pipeline's critical path from run timestamps, then splits, shards and trims setup with a before and after ledger, and <a href="../../tronghieu/agent-skills/manual-tester/">manual-tester</a> from tronghieu/agent-skills (92/100) plans and runs manual sessions against the running app in five modes. Go teams get <a href="../../eduardo-sl/go-agent-skills/go-ci/">go-ci</a> from eduardo-sl/go-agent-skills (95/100), the top score in the set. For browser tests, pick one of the two playwright-skill listings or cypress-tap if you are on Cypress, and add mirrord-chaos for chaos testing.</p>
       <section class="panel" aria-labelledby="the-stack">
         <h2 id="the-stack">The stack</h2>
-        <p>Seven skills, in score order. Two of them share the name playwright-skill; the repository column tells them apart. Scores come from the directory snapshot of October 22, 2026, and install counts are the figures skills.sh published on November 2, 2026.</p>
+        <p>Seven skills, in score order. Two of them share the name playwright-skill; the repository column tells them apart. Scores come from the directory snapshot of October 22, 2026, and install counts are the figures the Vercel Skills CLI published on November 2, 2026.</p>
         <div class="table-wrap">
           <table class="guide-table">
             <thead><tr><th scope="col">Skill</th><th scope="col">Repository</th><th scope="col">Score</th><th scope="col">What it does</th></tr></thead>
@@ -293,7 +293,7 @@ npx skills add https://github.com/LambdaTest/agent-skills/tree/main/playwright-s
 npx skills add https://github.com/lackeyjb/playwright-skill/tree/main/skills/playwright-skill
 npx skills add https://github.com/cypress-io/ai-toolkit/tree/main/skills/cypress-tap
 npx skills add https://github.com/metalbear-co/skills/tree/main/skills/mirrord-chaos</code></pre></div>
-        <p>The <a href="https://skills.sh/" target="_blank" rel="noopener">skills CLI</a> works for Claude Code, Codex, Cursor and other agents, and each skill's page in the directory lists the copy-by-hand routes if you would rather not run npx.</p>
+        <p>The <a href="https://github.com/vercel-labs/skills" target="_blank" rel="noopener">skills CLI</a> works for Claude Code, Codex, Cursor and other agents, and each skill's page in the directory lists the copy-by-hand routes if you would rather not run npx.</p>
       </section>
       <section class="panel" aria-labelledby="what-to-check-before-you-install">
         <h2 id="what-to-check-before-you-install">What to check before you install</h2>
@@ -306,7 +306,7 @@ npx skills add https://github.com/metalbear-co/skills/tree/main/skills/mirrord-c
       <section class="panel faq" aria-labelledby="faq">
         <h2 id="faq">FAQ</h2>
         <h3 id="which-playwright-skill-should-i-pick">Which playwright-skill should I pick?</h3>
-        <p>LambdaTest's (86/100) if you want generated end-to-end test suites in one of five languages, with the option to run them on TestMu AI cloud. lackeyjb's (85/100, about 7,200 installs recorded by skills.sh) if you want quick browser checks against a dev server: screenshots, responsive checks, login flows, link checks. Install one; two skills with the same name in one project invites confusion.</p>
+        <p>LambdaTest's (86/100) if you want generated end-to-end test suites in one of five languages, with the option to run them on TestMu AI cloud. lackeyjb's (85/100, about 7,200 installs recorded by the Vercel Skills CLI) if you want quick browser checks against a dev server: screenshots, responsive checks, login flows, link checks. Install one; two skills with the same name in one project invites confusion.</p>
         <h3 id="do-these-skills-work-in-codex-and-cursor">Do these skills work in Codex and Cursor?</h3>
         <p>Yes. All seven use the <a href="https://agentskills.io/" target="_blank" rel="noopener">Agent Skills</a> format, so the same folder works in Claude Code, Codex, Cursor and any other agent that reads a SKILL.md. The skills CLI installs for each of them, and every skill page in the directory shows the commands.</p>
         <h3 id="does-ci-speedup-change-my-pipeline-on-its-own">Does ci-speedup change my pipeline on its own?</h3>

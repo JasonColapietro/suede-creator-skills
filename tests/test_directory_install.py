@@ -101,7 +101,7 @@ class DirectoryInstallTests(unittest.TestCase):
         self.assertIn(f'{self.score}/100 · A', page)
         self.assertIn('Two badges for Suede Example Skills', page)
         self.assertIn('Security scan: not scanned.', page)
-        self.assertIn('Not scanned', page)
+        self.assertIn('<dt>Verified third-party security scan report</dt><dd>No</dd>', page)
         # The feature offer renders its copy from directory/promotion.json.
         offer = json.loads((ROOT / 'directory/promotion.json').read_text())['copy']['offer_long']
         self.assertIn(f'Limited-time feature offer: {offer}', page)

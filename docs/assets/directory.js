@@ -448,7 +448,7 @@ if (browser) {
     const link = node('a', '', skill.name);
     link.href = skill.href;
     heading.append(link);
-    const installs = Number.isFinite(skill.installs) && skill.installs > 0 ? ' · ' + compactCount(skill.installs) + ' installs via skills.sh' : '';
+    const installs = Number.isFinite(skill.installs) && skill.installs > 0 ? ' · ' + compactCount(skill.installs) + ' recorded CLI installs' : '';
     body.append(meta, heading, node('p', '', skill.description), node('p', 'result-foot', skill.license + ' · ' + (skill.full ? 'Full skill page' : 'Repository listing') + installs));
     const quality = node('div', 'result-quality');
     // Quality shields exist only for listed skills scoring 80-99.
@@ -646,7 +646,7 @@ if (compareForm && compareForm.elements && typeof compareForm.getAttribute === '
       ['Category', (s) => s.label],
       ['Listed since', (s) => s.listed || ''],
       ['Last commit', (s) => s.updated || ''],
-      ['Installs via skills.sh', (s) => (Number.isFinite(s.installs) && s.installs > 0 ? compactCount(s.installs) : 'no count')],
+      ['Recorded CLI installs', (s) => (Number.isFinite(s.installs) && s.installs > 0 ? compactCount(s.installs) : 'no count')],
     ];
     const components = reports[0] && reports[0].quality && reports[0].quality.components ? reports[0].quality.components.map((c) => c.label || c.id) : [];
     const table = document.createElement('table');
