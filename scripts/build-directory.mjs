@@ -5088,7 +5088,10 @@ for (const [abs, c] of expected) expected.set(abs, dated(abs, c));
 expected.set(keywordsPath, keywordsJson);
 expected.set(llmsPath, llmsNext);
 expected.set(LISTED_FILE, serializeLedger(LISTED_NEXT));
-const onDisk = walk(outRoot);
+// The opted-in, hand-authored maker shell is not generated from directory listings.
+const makerSourceFiles = new Set(['client.mjs','post-links.mjs','workspace.mjs','maker.css','index.html',
+  'guide/index.html','demo/index.html','demo/demo.js','demo/flow.js'].map(rel=>path.join(outRoot,'maker',rel)));
+const onDisk = walk(outRoot).filter(file=>!makerSourceFiles.has(file));
 
 if (checkOnly) {
   const problems = [];

@@ -24,6 +24,12 @@ import fs from "node:fs";
 import { createHash } from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import featuredCatalog from "../directory/featured-projects.json" with { type: "json" };
+import { makerSettings } from "./directory/maker-settings-v2.mjs";
+import makerProfiles from "../directory/maker-profiles.json" with { type: "json" };
+import { skillTargets } from "./directory/maker-catalog.mjs";
+import { loadMakerProfiles } from "./directory/maker-profiles.mjs";
+import { renderFeaturedMakerProfiles, skillMakerRenderer } from "./directory/maker-projection-v2.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 export const OLD = "https://skills.suedeai.ai";
@@ -110,11 +116,14 @@ export function rehomeSocialImages(html, assetExists = shippedAsset) {
   return html.replace(SOCIAL_IMAGE_RE, (whole, open, rel, rest) => (assetExists(rel) ? `${open}${NEW}/assets/${rel}${rest}` : whole));
 }
 
-export function rewriteText(text, ext, pageUrl, { assetExists = shippedAsset } = {}) {
+export function rewriteText(text, ext, pageUrl, { assetExists = shippedAsset, agentView = true } = {}) {
   let out = text;
   if (ext === ".html" || ext === ".svg") out = out.replace(ATTR_RE, (_, attr, v) => `${attr}="${rewriteUrl(v, pageUrl)}"`);
   out = out.replace(OLD_DIR_RE, NEW);
-  if (ext === ".html") out = injectAgentView(rehomeSocialImages(retagUtmSource(rehomeWebsite(out)), assetExists));
+  if (ext === ".html") {
+    out = rehomeSocialImages(retagUtmSource(rehomeWebsite(out)), assetExists);
+    if (agentView) out = injectAgentView(out);
+  }
   // The search index and report files carry root-absolute listing paths.
   if (ext === ".json" || ext === ".js") out = out.replace(/(["'])\/directory\//g, "$1/");
   return out;
@@ -210,19 +219,44 @@ function copyTree(src, dest, transform) {
   }
 }
 
-export function build(out) {
+const makerTargets = new Set(featuredCatalog.projects.filter(item => item.status !== "pending").map(item => item.id));
+function addMakerLinks(html) {
+  return html.replace(/(<article class="featured-project" id="([a-z0-9-]+)"[^>]*>[\s\S]*?)(<\/article>)/g, (whole, card, id, close) => {
+    if (!makerTargets.has(id)) return whole;
+    if (!card.includes("</footer>")) throw new Error("Missing featured footer for maker listing " + id);
+    return card.replace("</footer>", `<a href="/maker/?id=${id}" data-maker-claim>Manage this listing ↗</a></footer>`) + close;
+  });
+}
+
+export function build(out, { env = process.env, makerProjection = makerProfiles } = {}) {
   const docs = path.join(ROOT, "docs");
   const dirSrc = path.join(docs, "directory");
   if (!fs.existsSync(path.join(dirSrc, "index.html"))) throw new Error("docs/directory is missing; run node scripts/build-directory.mjs first");
   fs.rmSync(out, { recursive: true, force: true });
   fs.mkdirSync(out, { recursive: true });
 
+  const showMakerLinks = env.MAKER_V2_FEATURED_LINKS === "true" && Boolean(makerSettings(env));
+  const publish = env.MAKER_V2_PUBLISH_PROFILES === "true";
+  let featuredProjection = makerProjection;
+  let skills = new Map();
+  if (publish) {
+    const skillRows = makerProjection.profiles.filter(row => row.listing.startsWith("skill:"));
+    skills = loadMakerProfiles({ ...makerProjection, profiles: skillRows }, new Map(skillTargets.map(t => ["skill:" + t.id, t.repo])));
+    featuredProjection = { ...makerProjection, profiles: makerProjection.profiles.filter(row => !row.listing.startsWith("skill:")) };
+  }
+  const skillMaker = skillMakerRenderer(skillTargets, skills, showMakerLinks);
   const reports = [];
   copyTree(dirSrc, out, (text, ext, file) => {
     const rel = path.relative(dirSrc, file).split(path.sep).join("/");
-    const original = rewriteText(text, ext, `${OLD}/directory/${rel}`);
+    const original = rewriteText(text, ext, `${OLD}/directory/${rel}`, { agentView: !rel.startsWith("maker/") });
     const rewritten = ext === ".html" ? compactNavigation(original) : original;
     if (rel === "index.html") return addCrackedDevs(rewritten);
+    if (rel === "featured/index.html") {
+      const featured = publish
+        ? renderFeaturedMakerProfiles(rewritten, featuredProjection, featuredCatalog.projects) : rewritten;
+      return showMakerLinks ? addMakerLinks(featured) : featured;
+    }
+    if (ext === ".html") return skillMaker.render(rel, rewritten);
     if (path.basename(file) !== "report.json") return rewritten;
     const { report_version: previousVersion, ...evidence } = JSON.parse(rewritten);
     // Match the original directory report verifier: hash compact evidence in
@@ -231,6 +265,7 @@ export function build(out) {
     reports.push({ rel, previousVersion, report_version });
     return JSON.stringify({ ...evidence, report_version }, null, 2) + "\n";
   });
+  skillMaker.verify();
   for (const { rel, previousVersion, report_version } of reports) {
     const listing = path.join(out, path.dirname(rel), "index.html");
     // Compact repository rows link reports without displaying a version.

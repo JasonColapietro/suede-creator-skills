@@ -1,3 +1,11 @@
+import './test_maker_lifecycle.mjs';
+import './test_maker_showcase.mjs';
+import './test_maker_projection_v2.mjs';
+import './test_maker_owner_v2.mjs';
+import './test_maker_runtime_v2.mjs';
+import './test_maker_store_v2.mjs';
+import './test_maker_frontend_v2.mjs';
+import './test_maker_build_v2.mjs';
 import './test_agents_model.mjs';
 import './test_agents_site.mjs';
 import './test_agents_ungraded.mjs';
