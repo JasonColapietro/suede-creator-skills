@@ -919,7 +919,7 @@ ${head.join("\n")}
 <a class="skip-link" href="#main">Skip to content</a>
 
 ${nav(here, absolute)}
-${kindBar(here, absolute)}
+${here === "directory/" ? "" : kindBar(here, absolute)}
     <main id="main" tabindex="-1" class="shell directory">
 ${h1Html}
 ${body}
@@ -2760,11 +2760,11 @@ ${kindCards.map(([p, name, text, count, icon]) => `          <a class="kind-card
       </section>`;
 
   const workflowHtml = `      <section class="workflow-builder" id="workflow-builder" aria-labelledby="workflow-title" data-workflow-builder>
-        <div class="workflow-intro"><div><p class="eyebrow">Ask the directory</p><h2 id="workflow-title">What are you working on?</h2><p>Tell us what you’re doing or trying to achieve. We’ll recommend the skills that fit, a step-by-step workflow and articles to read next.</p></div><span class="workflow-mark" aria-hidden="true">01 → 02 → 03</span></div>
+        <div class="workflow-intro"><div><h2 id="workflow-title">What are you working on?</h2><p>Describe a task to get matching skills and a step-by-step plan.</p></div></div>
         <form data-workflow-form hidden novalidate>
           <label class="visually-hidden" for="workflow-brief">What are you doing, or trying to achieve?</label>
-          <div class="workflow-composer"><textarea id="workflow-brief" rows="3" maxlength="2000" placeholder="I run a small bakery and want more customers to find us on Google…" aria-describedby="workflow-help workflow-status"></textarea><div class="workflow-submit-row"><span id="workflow-help">Matched against ${fmt(data.skills.length)} graded skills right in your browser. What you type stays on this page. No AI API call.</span><button type="submit" class="button workflow-submit">Get recommendations <span aria-hidden="true">↗</span></button></div></div>
-          <div class="workflow-options"><label for="workflow-mode">Plan depth <select id="workflow-mode" data-workflow-mode><option value="full">Complete workflow</option><option value="simple">Essential steps</option></select></label><label class="workflow-check"><input type="checkbox" data-workflow-free> Open-source licenses only</label><span>Keep setup and service costs visible.</span></div>
+          <div class="workflow-composer"><textarea id="workflow-brief" rows="3" maxlength="2000" placeholder="I run a small bakery and want more customers to find us on Google…" aria-describedby="workflow-help workflow-status"></textarea><div class="workflow-submit-row"><span id="workflow-help">Your description stays in your browser.</span><button type="submit" class="button workflow-submit">Get recommendations <span aria-hidden="true">↗</span></button></div></div>
+          <div class="workflow-options"><label for="workflow-mode">Plan depth <select id="workflow-mode" data-workflow-mode><option value="full">Complete workflow</option><option value="simple">Essential steps</option></select></label><label class="workflow-check"><input type="checkbox" data-workflow-free> Open-source licenses only</label></div>
           <div class="workflow-examples"><span>Or try</span><div data-workflow-examples></div></div>
           <p class="workflow-explore"><a href="#best-of-title">Explore the best skills by topic <span aria-hidden="true">↓</span></a></p>
         </form>
@@ -2790,13 +2790,12 @@ ${kindCards.map(([p, name, text, count, icon]) => `          <a class="kind-card
         </section>
         <noscript><p><a href="stacks/">Explore recommended stacks</a> for step-by-step skill combinations. Turn on JavaScript to get recommendations for your goal here.</p></noscript>
       </section>`;
-  // The finder and the Best of topic tiles share the first screen: side by
-  // side on wide screens, stacked on narrow ones.
+  // Keep the workflow finder and topic shortcuts together.
   const body = `      <div class="directory-start">
 ${workflowHtml}
 ${bestOfSection(here)}
       </div>
-${boardHtml}
+${featuredHtml}
       <section class="directory-browser" id="browse" aria-labelledby="browse-title" data-directory-browser>
         <div class="browse-heading"><h2 id="browse-title">Find your next skill</h2><a class="shortlist-jump" href="#task-shortlist" hidden>Your shortlist <span aria-hidden="true">↓</span></a></div>
         <form class="discovery-controls" role="search" hidden>
@@ -2819,15 +2818,19 @@ ${boardHtml}
           <details data-shortlist-export hidden><summary>Copy your shortlist as Markdown</summary><div class="snippet"><div class="snippet-head"><span>Task, scores and report links</span><button type="button" data-copy-target="shortlist-markdown">Copy shortlist</button></div><pre><code id="shortlist-markdown"></code></pre></div></details>
         </section>
       </section>
-${featuredHtml}
+      <details class="home-disclosure"><summary>Rankings, stacks and guides</summary>
+${boardHtml}
 ${stacksHtml}
+${tasksPanel(here, TASKS, "Best Claude Code skills by task")}
+${guideLinksPanel(here, GUIDES, "Guides")}${GUIDES.length ? `
+      <p><a href="${rel(here, GUIDES_PATH)}">All agent skills guides</a></p>` : ""}
+      </details>
+      <details class="home-disclosure"><summary>Catalogs, publishers and scoring</summary>
+${kindBar(here)}
 ${kindsHtml}
 ${securityHtml}
 ${browseWaysPanel(here)}
       <aside class="directory-scoring" aria-label="Suede quality grades"><p><b>Structure. Description. Depth. Maintenance.</b> Every skill has a published quality score from 0–99.</p><a href="methodology/">What the scores measure →</a></aside>
-${campaignPanel(here, campaignVariant("home-hero-secondary", here), { quiet: true })}
-${tasksPanel(here, TASKS, "Best Claude Code skills by task")}
-${guideLinksPanel(here, GUIDES, "Guides")}${GUIDES.length ? `\n      <p><a href="${rel(here, GUIDES_PATH)}">All agent skills guides</a></p>` : ""}
       <section class="panel" aria-labelledby="cited-title">
         <h2 id="cited-title">Most-cited skill collections</h2>
         <p>Repositories that appear in the most curated skill lists.</p>
@@ -2846,6 +2849,13 @@ ${official.slice(0, 24).map(repoRow).join("\n")}
         <h2 id="how-title">How a skill gets listed</h2>
         <p>The directory reads every SKILL.md in the repositories cited by at least two of ${plural(data.sources.length, "curated list")}, including ${data.sources.slice(0, 3).map(listLink).join(", ")}, plus the official collections those lists name and accepted listing requests. Each skill runs through the Suede Skill Check. Skills that pass the required frontmatter check, declare a license and pass at least six of seven graded checks are listed with a quality score from 0 to 99, one listing per skill: when a copy of a skill appears in several repositories, the copy in the most-cited repository keeps the listing. <a href="${rel(here, "directory/methodology/")}">Read the full method</a>.</p>
       </section>
+      <section class="panel" aria-labelledby="all-repos-title">
+        <div class="board-head"><h2 id="all-repos-title">All listed repositories</h2><a href="${rel(here, PUBLISHERS_PATH)}">Publishers, with skill counts and best scores</a></div>
+        <p class="repo-index">${allRepos.map((r) => `<a href="${rel(here, r.target)}">${esc(r.repo)}</a>`).join(" &middot; ")}</p>
+      </section>
+      </details>
+      <details class="home-disclosure"><summary>List a skill, get a badge or work with Suede</summary>
+${campaignPanel(here, campaignVariant("home-hero-secondary", here), { quiet: true })}
 ${servicesCta("hub", null, here)}
       <a class="florida-recognition" href="https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida">
         <strong>#1 in Palm Beach County</strong>
@@ -2863,21 +2873,13 @@ ${badgeBlock(here, {
 })}
 ${promotionOffer(here)}
 ${promotionSection(here, promoted)}
-      <section class="panel" aria-labelledby="all-repos-title">
-        <div class="board-head"><h2 id="all-repos-title">All listed repositories</h2><a href="${rel(here, PUBLISHERS_PATH)}">Publishers, with skill counts and best scores</a></div>
-        <p class="repo-index">${allRepos.map((r) => `<a href="${rel(here, r.target)}">${esc(r.repo)}</a>`).join(" &middot; ")}</p>
-      </section>
-      <section class="panel" aria-labelledby="pack-title">
-        <h2 id="pack-title">Suede's own skills</h2>
-        <p>The <a href="${rel(here, "skills/")}">Suede Skills</a> pack offers a page per skill and a one-command install for the whole pack. Its accepted directory entries use the same published scoring method.</p>
-      </section>
-      <section class="panel faq" aria-labelledby="faq-title">
-        <h2 id="faq-title">Questions</h2>
+      </details>
+      <details class="home-disclosure faq"><summary id="faq-title">Questions about the directory</summary>
 ${FAQ.map(([q, a]) => `        <h3>${esc(q)}</h3>\n        <p>${esc(a)}${q === "How do I install a skill from this directory?" && guideLinksTo.hubFaqInstall ? ` Step by step: ${guideAnchor(here, guideLinksTo.hubFaqInstall)}.` : ""}</p>`).join("\n")}
-      </section>`;
+      </details>`;
   // Led by the phrases people search for ("Claude Code skills directory",
   // "best Claude skills"); the counts come from the live dataset.
-  const title = "Claude Code Skills Directory: Best Agent Skills, Graded";
+  const title = "Suede Skills Directory | Graded Claude Code and Agent Skills";
   const description = trimTo(`Find the best Claude Code skills: ${fmt(data.skills.length)} agent skills for Claude, Codex and Cursor from ${fmt(repos.size)} GitHub repositories, graded and linked to source.`, 158);
   const keywords = setKeywords(here, ["claude code skills directory", "agent skills directory", "claude skills directory", "best claude skills", "SKILL.md directory", "ai agent skills list", "most installed agent skills", "Suede Skills Directory"]);
   files.set(`${here}index.html`, page({
@@ -2885,16 +2887,16 @@ ${FAQ.map(([q, a]) => `        <h3>${esc(q)}</h3>\n        <p>${esc(a)}${q === "
     title,
     description,
     keywords,
-    h1Html: `      <header class="directory-hero">
+    h1Html: `      <header class="directory-hero home-masthead">
         <div>
-          <p class="eyebrow">SuedeAI.directory, by Suede</p>
-          <h1>Claude Code skills, graded and ready to install</h1>
-          <p class="lead">${fmt(data.skills.length)} skills for Claude Code, Codex, Cursor and other agents, scored 0 to 99 from their published files and linked to source, with the install command for each.</p>
-          <p class="directory-snapshot"><span><b>${fmt(repos.size)}</b> repositories</span><span><b>${categories.length}</b> categories</span><span><b>${openPct}%</b> openly licensed</span><span>Snapshot <b>${longDate(data.generated)}</b></span></p>
+          <h1><span class="home-wordmark">Suede</span> <span class="home-directory-name">Skills Directory</span></h1>
+          <p class="lead">Find graded skills for Claude Code, Codex and Cursor. Check the source, compare scores and get the install command.</p>
+          <div class="home-actions"><a class="button" href="#browse">Browse skills</a><a id="pack-title" href="${rel(here, "skills/")}">Explore Suede Skills</a></div>
         </div>
-        <figure class="hero-figure">
-          <img class="matrix" src="skill-matrix.svg" width="960" height="${Math.ceil(data.skills.length / 96) * 10}" alt="${fmt(data.skills.length)} listed skills as a grid of dots, one per skill, sorted by score and colored by grade" loading="eager" decoding="async">
-          ${matrixCaption(`Every dot is a listed skill, sorted by score.`)}
+        <figure class="hero-figure home-snapshot">
+          <figcaption><strong>${fmt(data.skills.length)}</strong> graded skills <a href="${rel(here, "directory/featured/")}">Featured skills</a></figcaption>
+          <img class="matrix" src="skill-matrix.svg" width="960" height="${Math.ceil(data.skills.length / 96) * 10}" alt="Each dot represents one listed skill, sorted by score and colored by grade" decoding="async">
+          ${matrixCaption(`Grades across ${fmt(repos.size)} repositories`)}
         </figure>
       </header>`,
     body,
@@ -3735,9 +3737,14 @@ function gradeMix(rows) {
 const compactTile = (here, t) => `<a class="topic-tile is-compact" href="${rel(here, topicPath(t))}" data-count="${t.rows.length}"><b class="tile-name">${esc(t.topic.name)}</b><span class="tile-count">${fmt(t.rows.length)}<span class="visually-hidden"> skills</span></span><span class="tile-mix" style="${gradeMix(t.rows)}" title="${esc(gradeSummary(t.rows))}" aria-hidden="true"></span></a>`;
 function bestOfSection(here) {
   if (!BEST_OF.length) return "";
-  const onHub = here === TOPICS_PATH;
+  if (here === "directory/") {
+    return `      <section class="home-topics" aria-labelledby="best-of-title">
+        <div class="board-head"><h2 id="best-of-title">Browse by topic</h2><a href="${rel(here, TOPICS_PATH)}">All topics</a></div>
+        <ul>${BEST_OF.slice(0, 6).map(t => `<li><a href="${rel(here, topicPath(t))}"><span>${esc(t.topic.name)}</span><span>${plural(t.rows.length, "skill")}</span></a></li>`).join("")}</ul>
+      </section>`;
+  }
   return `      <section class="panel best-of" aria-labelledby="best-of-title">
-        <div class="board-head"><h2 id="best-of-title">Best of</h2>${onHub ? "" : `<a href="${rel(here, TOPICS_PATH)}">All ${fmt(TOPICS.length)} topics</a>`}</div>
+        <div class="board-head"><h2 id="best-of-title">Best of</h2></div>
         <p class="muted">Each tile charts its topic: one dot per listed skill, best score first, colored by grade, with the top pick named. Suede's own skills are not ranked.</p>
         <div class="tile-grid">
 ${BEST_OF.map((t) => topicTile(here, t)).join("\n")}
