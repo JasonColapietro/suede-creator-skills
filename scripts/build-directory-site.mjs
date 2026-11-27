@@ -224,7 +224,7 @@ function addMakerLinks(html) {
   return html.replace(/(<article class="featured-project" id="([a-z0-9-]+)"[^>]*>[\s\S]*?)(<\/article>)/g, (whole, card, id, close) => {
     if (!makerTargets.has(id)) return whole;
     if (!card.includes("</header>")) throw new Error("Missing featured heading for maker listing " + id);
-    return card.replace("</header>", `</header><div class="skill-actions"><a class="button" href="/maker/?id=${id}" data-maker-claim>Claim or manage this listing</a> <a class="button secondary" href="#featured-badge-${id}">Get badge</a></div>`) + close;
+    return card.replace("</header>", `</header><div class="skill-actions"><a class="button" href="/maker/?id=${id}" data-maker-claim>Claim or manage →</a> <a class="button secondary" href="#featured-badge-${id}">Get badge</a></div>`) + close;
   });
 }
 
