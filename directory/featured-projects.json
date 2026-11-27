@@ -888,12 +888,13 @@
       "name": "ASOScan",
       "kind": "Featured project",
       "repo": "ASOScan/aso-skills",
-      "commit": "026a04de63174b90ec1c14432dd845e86c1d9d6e",
+      "site": "https://asoscan.com/",
+      "commit": "9981e4e96fd36983dccb1c768191393cdd06a789",
       "license": "MIT \u00b7 source files",
       "review": "directory/reviews/2026-11-17-asoscan.md",
       "headline": "Plan app-store growth with connected ASO research.",
       "summary": "A nine-skill App Store and Google Play optimization collection covering setup, keywords, competitors, metadata and reviews.",
-      "setup": "Connected research requires ASOScan access and may consume credits. Owners can resolve conflicting credit guidance, use Apple\u2019s 100-byte keyword limit and align metadata score scales.",
+      "setup": "ASO Fundamentals and ASOScan Setup work without an API key. For live ASO data, connect the ASOScan connector or use an API key on a supported plan or seven-day trial. Standard reads do not use credits; live research and some other actions do.",
       "capabilities": [
         {
           "title": "ASO workflows",
