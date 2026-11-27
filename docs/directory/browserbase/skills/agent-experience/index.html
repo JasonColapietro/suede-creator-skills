@@ -239,7 +239,7 @@
     </nav>
     <main id="main" tabindex="-1" class="shell directory">
       <div class="eyebrow">Agent skill &middot; AI agents &middot; browserbase</div>
-      <h1>agent-experience <span class="h1-sub">agent skill by browserbase</span></h1>
+      <h1>agent-experience <span class="h1-sub">agent skill by browserbase</span></h1><div class="skill-actions listing-actions"><a class="button secondary" href="#badge">Get badges</a></div>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="../../../">Directory</a> <span class="crumb-sep" aria-hidden="true">/</span> <a href="../../../ai-agents-llm/">AI Agents and LLM Engineering</a> <span class="crumb-sep" aria-hidden="true">/</span> <a href="../">browserbase/skills</a> <span class="crumb-sep" aria-hidden="true">/</span> <span aria-current="page">agent-experience</span></nav>
       <div class="skill-head">
         <div>
@@ -248,6 +248,19 @@
         </div>
         <div class="score-card grade-c" role="img" aria-label="Suede Skill Check 74 out of 100, grade C"><span class="score">74<small>/100</small></span><span class="score-label">Suede Skill Check</span><span class="score-meter"><span style="width:74%"></span></span><span class="grade grade-c">Grade C</span></div>
       </div>
+      <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
+        <h2 id="badge-title">Show the listing and raise the score</h2>
+        <p>agent-experience is listed with 74/100 · C. This badge links to its Suede listing. Skills scoring 80–99 add a numeric and a letter quality shield; the largest open points for agent-experience are instruction depth (6), boundary clause (4) and description length (4). <a href="../../../submit/#improve">Send your repository and the points you want to raise</a>, then request a fresh review after updating the skill. Publishers: read <a href="../../../guides/skill-ai-visibility/">How to get your agent skill found in search and cited by AI assistants</a>.</p>
+        <p class="badge-preview"><img src="../../../badge.svg" alt="Suede Skills Directory: listed" width="193" height="20"></p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy</button></div>
+          <pre><code id="badge-md">[![Suede Skills Directory: listed](https://skills.suedeai.ai/directory/badge.svg)](https://skills.suedeai.ai/directory/browserbase/skills/agent-experience/)</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy</button></div>
+          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/browserbase/skills/agent-experience/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/badge.svg&quot; alt=&quot;Suede Skills Directory: listed&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
+        </div>
+      </section>
       <dl class="glance" aria-label="At a glance">
         <div><dt>Publisher</dt><dd>Browserbase <span class="tag">Official</span></dd></div>
         <div><dt>License</dt><dd>MIT</dd></div>
@@ -293,32 +306,6 @@
           <li><b>Tool permissions requested:</b> <code>Read WebFetch Write Bash AskUserQuestion Agent</code> (the <code>allowed-tools</code> field of SKILL.md).</li>
           <li><b>License:</b> <a href="https://github.com/browserbase/skills/blob/main/skills/agent-experience/LICENSE.txt" target="_blank" rel="noopener">MIT</a>, an open-source or open-content license.</li>
         </ul>
-      </section>
-      <section class="panel" aria-labelledby="install-title">
-        <h2 id="install-title">Install agent-experience</h2>
-        <p>The skills CLI works with Claude Code, Codex, Cursor and other agents; the other routes copy the folder by hand.</p>
-        <div class="snippet">
-          <div class="snippet-head"><span>Skills CLI</span><button type="button" class="snippet-copy" data-copy-target="install-cli">Copy</button></div>
-          <pre><code id="install-cli">npx skills add https://github.com/browserbase/skills/tree/main/skills/agent-experience</code></pre>
-        </div>
-        <div class="snippet">
-          <div class="snippet-head"><span>Claude Code, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-claude">Copy</button></div>
-          <pre><code id="install-claude">tmp=&quot;$(mktemp -d)&quot;
-git clone --depth 1 https://github.com/browserbase/skills.git &quot;$tmp/repo&quot;
-mkdir -p .claude/skills
-cp -R &quot;$tmp/repo/&quot;skills/agent-experience .claude/skills/
-rm -rf &quot;$tmp&quot;</code></pre>
-        </div>
-        <div class="snippet">
-          <div class="snippet-head"><span>Codex, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
-          <pre><code id="install-codex">tmp=&quot;$(mktemp -d)&quot;
-git clone --depth 1 https://github.com/browserbase/skills.git &quot;$tmp/repo&quot;
-mkdir -p .agents/skills
-cp -R &quot;$tmp/repo/&quot;skills/agent-experience .agents/skills/
-rm -rf &quot;$tmp&quot;</code></pre>
-        </div>
-        <p class="muted">For a user-level install, copy the folder to <code>~/.claude/skills/</code> (Claude Code) or <code>~/.agents/skills/</code> (Codex). Inside Codex, <code>$skill-installer</code> can also fetch a skill from GitHub. New to skills? Read <a href="../../../guides/install-agent-skills/">How to install agent skills in Claude Code, Codex and Cursor</a>.</p>
-        <p class="muted">browserbase/skills is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" id="summary" aria-labelledby="summary-title">
         <h2 id="summary-title">Directory summary</h2>
@@ -366,6 +353,32 @@ rm -rf &quot;$tmp&quot;</code></pre>
           <li><code>references/prompt-variants.md</code></li>
           <li><code>references/subagent-brief.md</code></li>
         </ul>
+      </section>
+      <section class="panel" aria-labelledby="install-title">
+        <h2 id="install-title">Install agent-experience</h2>
+        <p>The skills CLI works with Claude Code, Codex, Cursor and other agents; the other routes copy the folder by hand.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Skills CLI</span><button type="button" class="snippet-copy" data-copy-target="install-cli">Copy</button></div>
+          <pre><code id="install-cli">npx skills add https://github.com/browserbase/skills/tree/main/skills/agent-experience</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Claude Code, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-claude">Copy</button></div>
+          <pre><code id="install-claude">tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/browserbase/skills.git &quot;$tmp/repo&quot;
+mkdir -p .claude/skills
+cp -R &quot;$tmp/repo/&quot;skills/agent-experience .claude/skills/
+rm -rf &quot;$tmp&quot;</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Codex, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
+          <pre><code id="install-codex">tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/browserbase/skills.git &quot;$tmp/repo&quot;
+mkdir -p .agents/skills
+cp -R &quot;$tmp/repo/&quot;skills/agent-experience .agents/skills/
+rm -rf &quot;$tmp&quot;</code></pre>
+        </div>
+        <p class="muted">For a user-level install, copy the folder to <code>~/.claude/skills/</code> (Claude Code) or <code>~/.agents/skills/</code> (Codex). Inside Codex, <code>$skill-installer</code> can also fetch a skill from GitHub. New to skills? Read <a href="../../../guides/install-agent-skills/">How to install agent skills in Claude Code, Codex and Cursor</a>.</p>
+        <p class="muted">browserbase/skills is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" id="check" aria-labelledby="check-title">
         <h2 id="check-title">Suede Skill Check: 74/100 · C</h2>
@@ -482,19 +495,6 @@ rm -rf &quot;$tmp&quot;</code></pre>
           <a class="link-row" href="../company-research/"><b>company-research</b><span>browserbase/skills</span></a>
         </div>
         <p><a href="../">All 18 skills in browserbase/skills</a></p>
-      </section>
-      <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
-        <h2 id="badge-title">Show the listing and raise the score</h2>
-        <p>agent-experience is listed with 74/100 · C. This badge links to its Suede listing. Skills scoring 80–99 add a numeric and a letter quality shield; the largest open points for agent-experience are instruction depth (6), boundary clause (4) and description length (4). <a href="../../../submit/#improve">Send your repository and the points you want to raise</a>, then request a fresh review after updating the skill. Publishers: read <a href="../../../guides/skill-ai-visibility/">How to get your agent skill found in search and cited by AI assistants</a>.</p>
-        <p class="badge-preview"><img src="../../../badge.svg" alt="Suede Skills Directory: listed" width="193" height="20"></p>
-        <div class="snippet">
-          <div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy</button></div>
-          <pre><code id="badge-md">[![Suede Skills Directory: listed](https://skills.suedeai.ai/directory/badge.svg)](https://skills.suedeai.ai/directory/browserbase/skills/agent-experience/)</code></pre>
-        </div>
-        <div class="snippet">
-          <div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy</button></div>
-          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/browserbase/skills/agent-experience/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/badge.svg&quot; alt=&quot;Suede Skills Directory: listed&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
-        </div>
       </section>
       <aside class="panel svc-cta svc-compact" aria-labelledby="svc-title" data-services-cta="skill">
         <h2 class="svc-kicker" id="svc-title">From Suede, the publisher of this directory</h2>

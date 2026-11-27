@@ -1036,6 +1036,8 @@ function improveBlock(here, s) {
     lede: `${esc(displayName(s))} is listed with ${s.score}/100 · ${s.grade}. This badge links to its Suede listing. Skills scoring 80–99 add a numeric and a letter quality shield${open.length ? `; the largest open points for ${esc(displayName(s))} are ${listPhrase(open.map((p) => `${esc(p.label.toLowerCase())} (${p.max - p.points})`))}` : ""}. <a href="${rel(here, "directory/submit/")}#improve">Send your repository and the points you want to raise</a>, then request a fresh review after updating the skill.${publisherGuideLine(here)}`,
   });
 }
+const listingActions = '<div class="skill-actions listing-actions"><a class="button secondary" href="#badge">Get badges</a></div>';
+
 function qualityBadgeBlock(here, s) {
   if (!s.shielded) return improveBlock(here, s);
   return `<section class="panel badge-panel" id="badge" aria-labelledby="badge-title"><h2 id="badge-title">Two badges for ${esc(displayName(s))}</h2>
@@ -1320,7 +1322,7 @@ function skillRow(here, s, { showRepo, showLicense = false }) {
   const note = NOTES[s.id];
   const assessed = s.assessment_date ? `<p class="muted">Source assessed ${esc(longDate(s.assessment_date))}.</p>` : "";
   const notice = note?.notice ? `<p class="muted">${esc(note.notice)} <a href="${esc(note.source)}" target="_blank" rel="noopener">Service and data terms</a>.</p>` : "";
-  return `            <tr${id} ${rowData(s)}><td class="name">${nameCell} ${gradeChip(s)}</td><td class="meta">${second}</td><td class="desc">${esc(desc)}${assessed}${notice}${badges}${report}</td></tr>`;
+  return `            <tr${id} ${rowData(s)}><td class="name">${nameCell} ${gradeChip(s)}</td><td class="meta">${second}</td><td class="desc">${badges}${esc(desc)}${assessed}${notice}${report}</td></tr>`;
 }
 
 function skillTable(here, rows, { id, showRepo, caption, showLicense = false }) {
@@ -1685,6 +1687,7 @@ ${fileNames.map((f) => `          <li><code>${esc(f)}</code></li>`).join("\n")}
         </div>
 ${scoreCard(s)}
       </div>
+${qualityBadgeBlock(here, s)}
 ${glancePanel(here, s)}
 ${shareRow(here, `${displayName(s)}: agent skill by ${publisherName(s.owner, s.official)}`)}
       <section class="panel" aria-labelledby="facts-title">
@@ -1692,7 +1695,6 @@ ${shareRow(here, `${displayName(s)}: agent skill by ${publisherName(s.owner, s.o
 ${facts}
       </section>
 ${beforeInstall(s)}
-${installSection(here, s)}
 ${directorySummary(here, s)}
       <section class="panel" aria-labelledby="author-title">
         <h2 id="author-title">How the author describes it</h2>
@@ -1704,6 +1706,7 @@ ${s.compatibility ? `        <h3>Compatibility, from SKILL.md</h3>\n${authorFact
 ${outline}
 ${fileList}
       </section>
+${installSection(here, s)}
       <section class="panel" id="check" aria-labelledby="check-title">
         <h2 id="check-title">Suede Skill Check: ${s.score}/100 · ${s.grade}</h2>
 ${reportPanel(here, s)}
@@ -1751,7 +1754,6 @@ ${relatedRows(here, siblings)}
         </div>
         <p><a href="${rel(here, r.target)}">All ${plural(r.skills.length, "skill")} in ${esc(s.repo)}</a></p>
       </section>` : ""}
-${qualityBadgeBlock(here, s)}
 ${servicesCta("skill", s.category, here, { compact: true, publisher: publisherClaim(here) })}`;
   const description = skillDescription(s, descriptionNeedsName.has(s.id));
   const ownSkill = s.repo.toLowerCase() === "jasoncolapietro/suede-creator-skills";
@@ -1792,7 +1794,7 @@ ${servicesCta("skill", s.category, here, { compact: true, publisher: publisherCl
     keywords,
     ogType: "article",
     h1Html: `      <div class="eyebrow">Agent skill &middot; ${esc(cat.label)} &middot; ${esc(s.owner)}</div>
-      <h1>${esc(displayName(s))} <span class="h1-sub">agent skill ${esc(sharedName(s) ? `in ${s.repo}` : `by ${s.owner}`)}</span></h1>`,
+      <h1>${esc(displayName(s))} <span class="h1-sub">agent skill ${esc(sharedName(s) ? `in ${s.repo}` : `by ${s.owner}`)}</span></h1>${listingActions}`,
     body,
     jsonld: [
       {
@@ -5000,7 +5002,7 @@ for (const r of repos.values()) if (r.hasPage) renderRepo(r);
 for (const s of featured) renderSkill(s);
 if (GROWTH_MODULE) GROWTH_MODULE.renderGrowth({ root: repoRoot, files, data, page, crumbs, rel, url, esc, fmt, setKeywords,
   pageDate: PAGE_DATE, publisher: PUBLISHER_REF, directoryRef: DIRECTORY_REF, skillPath, listingTarget, reportPanel,
-  qualityBadgeBlock, installSection, factsTable, skillTitle, servicesCta, publisherClaim, installsFor, installsDate: INSTALLS?.fetched,
+  qualityBadgeBlock, listingActions, installSection, factsTable, skillTitle, servicesCta, publisherClaim, installsFor, installsDate: INSTALLS?.fetched,
   topics: TOPICS, comparisonPlan: COMPARISON_PLAN, newsletter: NEWSLETTER, skillReport });
 for (const s of data.skills) files.set(`${skillPath(s)}report.json`, JSON.stringify(skillReport(s)) + "\n");
 // Quality shields only for listed skills scoring 80-99. A listed skill below

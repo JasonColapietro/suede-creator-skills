@@ -226,7 +226,7 @@
     </nav>
     <main id="main" tabindex="-1" class="shell directory">
       <div class="eyebrow">Agent skill &middot; Data &middot; avelikiy</div>
-      <h1>migration-ready-schema <span class="h1-sub">agent skill by avelikiy</span></h1>
+      <h1>migration-ready-schema <span class="h1-sub">agent skill by avelikiy</span></h1><div class="skill-actions listing-actions"><a class="button secondary" href="#badge">Get badges</a></div>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="../../../">Directory</a> <span class="crumb-sep" aria-hidden="true">/</span> <a href="../../../data-databases/">Data, Analytics and Databases</a> <span class="crumb-sep" aria-hidden="true">/</span> <a href="../">avelikiy/great_cto</a> <span class="crumb-sep" aria-hidden="true">/</span> <span aria-current="page">migration-ready-schema</span></nav>
       <div class="skill-head">
         <div>
@@ -235,6 +235,19 @@
         </div>
         <div class="score-card grade-c" role="img" aria-label="Suede Skill Check 77 out of 100, grade C"><span class="score">77<small>/100</small></span><span class="score-label">Suede Skill Check</span><span class="score-meter"><span style="width:77%"></span></span><span class="grade grade-c">Grade C</span></div>
       </div>
+      <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
+        <h2 id="badge-title">Show the listing and raise the score</h2>
+        <p>migration-ready-schema is listed with 77/100 · C. This badge links to its Suede listing. Skills scoring 80–99 add a numeric and a letter quality shield; the largest open points for migration-ready-schema are boundary clause (4), example request (3) and instruction depth (3). <a href="../../../submit/#improve">Send your repository and the points you want to raise</a>, then request a fresh review after updating the skill. Publishers: read <a href="../../../guides/skill-ai-visibility/">How to get your agent skill found in search and cited by AI assistants</a>.</p>
+        <p class="badge-preview"><img src="../../../badge.svg" alt="Suede Skills Directory: listed" width="193" height="20"></p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy</button></div>
+          <pre><code id="badge-md">[![Suede Skills Directory: listed](https://skills.suedeai.ai/directory/badge.svg)](https://skills.suedeai.ai/directory/avelikiy/great-cto/migration-ready-schema/)</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy</button></div>
+          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/avelikiy/great-cto/migration-ready-schema/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/badge.svg&quot; alt=&quot;Suede Skills Directory: listed&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
+        </div>
+      </section>
       <dl class="glance" aria-label="At a glance">
         <div><dt>Publisher</dt><dd>avelikiy</dd></div>
         <div><dt>License</dt><dd>MIT</dd></div>
@@ -279,6 +292,31 @@
           <li><b>License:</b> <a href="https://github.com/avelikiy/great_cto/blob/main/LICENSE" target="_blank" rel="noopener">MIT</a>, an open-source or open-content license.</li>
         </ul>
       </section>
+      <section class="panel" id="summary" aria-labelledby="summary-title">
+        <h2 id="summary-title">Directory summary</h2>
+        <p>migration-ready-schema sets data-model rules, such as provenance and rollback fields on importable entities, so a schema can import customer data from incumbent products. Listed in Data, Analytics and Databases, it is built for Claude Code users working on data, analytics and databases. It scores 77/100, grade C, on the Suede Skill Check, with full points for structural checks, recent maintenance and tool permissions declared. avelikiy publishes it under MIT, an open-source or open-content license, so you can use and adapt it at no cost under those terms. It installs in Claude Code, Codex, Cursor and other agents that read the Agent Skills format.</p>
+      </section>
+      <section class="panel" aria-labelledby="author-title">
+        <h2 id="author-title">How the author describes it</h2>
+        <blockquote class="author-quote" cite="https://github.com/avelikiy/great_cto/blob/main/skills/migration-ready-schema/SKILL.md">
+          <p>Data-model rules that make a schema importable from day one, so the migration-import-engineer is never blocked on missing columns. Every SMB Product-Builder product must let a customer bring their data from an incumbent (ServiceTitan/Toast/Mindbody/Shopify) — that requires provenance (source_ref) and rollback (import_batch_id) on importable entities, and modelling real-world actors as entities rather than inline fields. Applied by architect when writing the data model in ARCH-{slug}.md, and checked by migration-import-engineer. One cheap rule set prevents the migration↔architecture seam gap from recurring across all 40 products.</p>
+        </blockquote>
+        <p class="muted">From the <code>description</code> field of <a href="https://github.com/avelikiy/great_cto/blob/main/skills/migration-ready-schema/SKILL.md" target="_blank" rel="noopener">SKILL.md</a>. Agents read this line to decide when to load the skill.</p>
+
+        <h3>Sections in SKILL.md</h3>
+        <ul class="outline">
+          <li class="lvl-2">The three rules (the ones that actually block imports)</li>
+          <li class="lvl-3">1. Importable entities carry sourceref (provenance)</li>
+          <li class="lvl-3">2. Importable entities carry importbatchid (rollback)</li>
+          <li class="lvl-3">3. Model real-world actors as entities, not inline fields</li>
+          <li class="lvl-2">Supporting rules (cheap, prevent silent data loss)</li>
+          <li class="lvl-2">Checklist (architect runs this before finalizing the data model)</li>
+        </ul>
+        <h3>Files in the skill folder</h3>
+        <ul class="file-list">
+          <li><code>SKILL.md</code></li>
+        </ul>
+      </section>
       <section class="panel" aria-labelledby="install-title">
         <h2 id="install-title">Install migration-ready-schema</h2>
         <p>The skills CLI works with Claude Code, Codex, Cursor and other agents; the other routes copy the folder by hand.</p>
@@ -304,31 +342,6 @@ rm -rf &quot;$tmp&quot;</code></pre>
         </div>
         <p class="muted">For a user-level install, copy the folder to <code>~/.claude/skills/</code> (Claude Code) or <code>~/.agents/skills/</code> (Codex). Inside Codex, <code>$skill-installer</code> can also fetch a skill from GitHub. New to skills? Read <a href="../../../guides/install-agent-skills/">How to install agent skills in Claude Code, Codex and Cursor</a>.</p>
         <p class="muted">avelikiy/great_cto is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
-      </section>
-      <section class="panel" id="summary" aria-labelledby="summary-title">
-        <h2 id="summary-title">Directory summary</h2>
-        <p>migration-ready-schema sets data-model rules, such as provenance and rollback fields on importable entities, so a schema can import customer data from incumbent products. Listed in Data, Analytics and Databases, it is built for Claude Code users working on data, analytics and databases. It scores 77/100, grade C, on the Suede Skill Check, with full points for structural checks, recent maintenance and tool permissions declared. avelikiy publishes it under MIT, an open-source or open-content license, so you can use and adapt it at no cost under those terms. It installs in Claude Code, Codex, Cursor and other agents that read the Agent Skills format.</p>
-      </section>
-      <section class="panel" aria-labelledby="author-title">
-        <h2 id="author-title">How the author describes it</h2>
-        <blockquote class="author-quote" cite="https://github.com/avelikiy/great_cto/blob/main/skills/migration-ready-schema/SKILL.md">
-          <p>Data-model rules that make a schema importable from day one, so the migration-import-engineer is never blocked on missing columns. Every SMB Product-Builder product must let a customer bring their data from an incumbent (ServiceTitan/Toast/Mindbody/Shopify) — that requires provenance (source_ref) and rollback (import_batch_id) on importable entities, and modelling real-world actors as entities rather than inline fields. Applied by architect when writing the data model in ARCH-{slug}.md, and checked by migration-import-engineer. One cheap rule set prevents the migration↔architecture seam gap from recurring across all 40 products.</p>
-        </blockquote>
-        <p class="muted">From the <code>description</code> field of <a href="https://github.com/avelikiy/great_cto/blob/main/skills/migration-ready-schema/SKILL.md" target="_blank" rel="noopener">SKILL.md</a>. Agents read this line to decide when to load the skill.</p>
-
-        <h3>Sections in SKILL.md</h3>
-        <ul class="outline">
-          <li class="lvl-2">The three rules (the ones that actually block imports)</li>
-          <li class="lvl-3">1. Importable entities carry sourceref (provenance)</li>
-          <li class="lvl-3">2. Importable entities carry importbatchid (rollback)</li>
-          <li class="lvl-3">3. Model real-world actors as entities, not inline fields</li>
-          <li class="lvl-2">Supporting rules (cheap, prevent silent data loss)</li>
-          <li class="lvl-2">Checklist (architect runs this before finalizing the data model)</li>
-        </ul>
-        <h3>Files in the skill folder</h3>
-        <ul class="file-list">
-          <li><code>SKILL.md</code></li>
-        </ul>
       </section>
       <section class="panel" id="check" aria-labelledby="check-title">
         <h2 id="check-title">Suede Skill Check: 77/100 · C</h2>
@@ -432,19 +445,6 @@ rm -rf &quot;$tmp&quot;</code></pre>
           <a class="link-row" href="../outcome-roadmap/"><b>outcome-roadmap</b><span>avelikiy/great_cto</span></a>
         </div>
         <p><a href="../">All 30 skills in avelikiy/great_cto</a></p>
-      </section>
-      <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
-        <h2 id="badge-title">Show the listing and raise the score</h2>
-        <p>migration-ready-schema is listed with 77/100 · C. This badge links to its Suede listing. Skills scoring 80–99 add a numeric and a letter quality shield; the largest open points for migration-ready-schema are boundary clause (4), example request (3) and instruction depth (3). <a href="../../../submit/#improve">Send your repository and the points you want to raise</a>, then request a fresh review after updating the skill. Publishers: read <a href="../../../guides/skill-ai-visibility/">How to get your agent skill found in search and cited by AI assistants</a>.</p>
-        <p class="badge-preview"><img src="../../../badge.svg" alt="Suede Skills Directory: listed" width="193" height="20"></p>
-        <div class="snippet">
-          <div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy</button></div>
-          <pre><code id="badge-md">[![Suede Skills Directory: listed](https://skills.suedeai.ai/directory/badge.svg)](https://skills.suedeai.ai/directory/avelikiy/great-cto/migration-ready-schema/)</code></pre>
-        </div>
-        <div class="snippet">
-          <div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy</button></div>
-          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/avelikiy/great-cto/migration-ready-schema/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/badge.svg&quot; alt=&quot;Suede Skills Directory: listed&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
-        </div>
       </section>
       <aside class="panel svc-cta svc-compact" aria-labelledby="svc-title" data-services-cta="skill">
         <h2 class="svc-kicker" id="svc-title">From Suede, the publisher of this directory</h2>

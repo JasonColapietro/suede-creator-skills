@@ -78,7 +78,7 @@ function faqParts(here, faq, esc, url) {
 
 export function renderGrowth(c) {
   const { root, files, data, page, crumbs, rel, url, esc, fmt, setKeywords, pageDate, publisher, directoryRef,
-    skillPath, listingTarget, reportPanel, qualityBadgeBlock, installSection, factsTable, skillTitle, servicesCta, publisherClaim,
+    skillPath, listingTarget, reportPanel, qualityBadgeBlock, listingActions, installSection, factsTable, skillTitle, servicesCta, publisherClaim,
     installsFor, installsDate, topics, comparisonPlan, newsletter, skillReport } = c;
   const name = s => s.display_name || s.name;
   const link = (here, s) => `<a href="${rel(here, listingTarget(s).replace('https://skills.suedeai.ai/', ''))}">${esc(name(s))}</a>`;
@@ -102,8 +102,9 @@ export function renderGrowth(c) {
     const description = `${name(s)} by ${s.owner}: ${s.score}/100 (${s.grade}). Read the score breakdown, source, license and installation route.`;
     const meta = description.length > 160 ? `${name(s).slice(0, 65)}: ${s.score}/100 (${s.grade}). ${s.repo.slice(0, 45)}. Read the score, license and source report.` : description;
     emit({ here, title, description: meta, heading: name(s), keywords: [`${s.name} skill by ${s.repo}`, `${s.category} skills`, "agent skill assessment"], trail: [[`directory/${s.category}/`, s.category]],
-      h1Html: `<div class="eyebrow">Agent skill &middot; ${esc(s.category)} &middot; ${esc(s.owner)}</div><h1>${esc(name(s))} <span class="h1-sub">agent skill by ${esc(s.owner)}</span></h1>`,
+      h1Html: `<div class="eyebrow">Agent skill &middot; ${esc(s.category)} &middot; ${esc(s.owner)}</div><h1>${esc(name(s))} <span class="h1-sub">agent skill by ${esc(s.owner)}</span></h1>${listingActions}`,
       body: `<p class="lead">${esc(s.description)}</p>
+${qualityBadgeBlock(here, s)}
 <section class="panel"><h2>Source and license</h2>${factsTable([
         ['Publisher', `<a href="https://github.com/${esc(s.owner)}">${esc(s.owner)}</a>`],
         ['Repository', `<a href="${esc(s.folder_url)}">${esc(s.repo)}</a>`],
@@ -114,7 +115,7 @@ export function renderGrowth(c) {
 <section class="panel" id="check"><h2>Suede Skill Check: ${s.score}/100 · ${s.grade}</h2>${reportPanel(here, s)}
 ${table(['Component', 'Points earned', 'Available'], s.score_parts.map(p => [esc(p.label), p.points, p.max]))}
 <p>The published score is capped at 99. It measures the published files, documentation and maintenance signals. Security scan: not scanned. This assessment does not include a runtime test or a full installation-dependency review.</p></section>
-${installSection(here, s)}${qualityBadgeBlock(here, s)}${servicesCta("skill", s.category, here, { compact: true, publisher: publisherClaim(here) })}
+${installSection(here, s)}${servicesCta("skill", s.category, here, { compact: true, publisher: publisherClaim(here) })}
 <section class="panel"><h2>Compare skills for this task</h2><p><a href="${rel(here, `directory/${s.category}/`)}">Browse ${esc(s.category)} skills</a> or <a href="${rel(here, 'directory/compare/')}">compare scores side by side</a>.</p></section>`,
       mainEntity: { '@type': 'SoftwareSourceCode', name: name(s), description: s.description, codeRepository: s.folder_url, license: s.license_url, programmingLanguage: 'Markdown' },
     });
