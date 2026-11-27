@@ -37,9 +37,31 @@ test('configured rollout links every skill and eligible featured project without
     const html = read(dir, 'featured/index.html');
     const linked = [...html.matchAll(/href="\/maker\/\?id=([a-z0-9-]+)" data-maker-claim/g)].map(match => match[1]).sort();
     assert.deepEqual(linked, catalog.projects.filter(entry => entry.status !== 'pending').map(entry => entry.id).sort());
-    for (const card of html.matchAll(/<article class="featured-project"[^>]*>[\s\S]*?<\/article>/g)) {
-      if (!card[0].includes('data-maker-claim')) continue;
-      assert.ok(card[0].indexOf('data-maker-claim') < card[0].indexOf('class="featured-project-body"'));
+    for (const [, id, card] of html.matchAll(/<article class="featured-project" id="([^"]+)"[^>]*>([\s\S]*?)<\/article>/g)) {
+      const actions = card.match(/<div class="skill-actions">([\s\S]*?)<\/div>/)?.[1];
+      const buttons = [...(actions || '').matchAll(/<a\b[^>]*class="[^"]*\bbutton\b[^"]*"[^>]*>([^<]+)<\/a>/g)];
+      assert.ok(buttons.length, id + ' primary action');
+      const project = catalog.projects.find(entry => entry.id === id);
+      const href = buttons[0][0].match(/href="([^"]+)"/)[1];
+      const listings = searchIndex.filter(entry => entry.repo.toLowerCase() === project.repo?.toLowerCase());
+      const destination = new URL(href, NEW + '/featured/');
+      if (listings.length) {
+        assert.equal(buttons[0][1], 'View skill', id);
+        assert.ok(listings.some(entry => destination.href === NEW + entry.href.slice('/directory'.length)), id + ' listing');
+      } else {
+        assert.equal(buttons[0][1], project.repo ? 'View on GitHub ↗' : 'View project ↗', id);
+        assert.equal(destination.href, new URL(project.repo ? 'https://github.com/' + project.repo : project.site).href);
+      }
+      assert.ok(card.includes('<h2 id="' + id + '-title"><a class="featured-title-link" href="#' + id + '">'), id + ' permalink');
+      if (project.status === 'pending') continue;
+      assert.equal(buttons[1]?.[1], 'Get badge', id + ' secondary action');
+      assert.ok(buttons[1][0].includes('href="#featured-badge-' + id + '"'), id + ' badge target');
+      const claim = card.match(/<a\b[^>]*data-maker-claim[^>]*>[^<]*<\/a>/)?.[0];
+      assert.ok(claim?.includes('Maintainer? Claim this listing'), id + ' maintainer link');
+      assert.match(claim, /class="claim-link"/);
+      assert.doesNotMatch(claim, /\bbutton\b/);
+      assert.ok(card.indexOf(claim) > card.indexOf(buttons[1][0]), id + ' claim follows badge');
+      assert.ok(card.indexOf(claim) < card.indexOf('class="featured-project-body"'));
     }
     const sample = read(dir, 'jasoncolapietro/suede-creator-skills/suede-component-lab/index.html');
     const markers = ['</h1>', 'data-maker-claim', 'href="#badge"', 'id="badge-title"', 'id="summary-title"', 'id="author-title"', 'id="install-title"'];
