@@ -223,7 +223,7 @@ const makerTargets = new Set(featuredCatalog.projects.filter(item => item.status
 function addMakerLinks(html) {
   return html.replace(/<a\b[^>]* href="#featured-badge-([a-z0-9-]+)">Get badge<\/a>/g, (badge, id) => {
     if (!makerTargets.has(id)) return badge;
-    return badge + ` <a href="/maker/?id=${id}" data-maker-claim>Maintainer? Claim this listing</a>`;
+    return badge + ` <a class="claim-link" href="/maker/?id=${id}" data-maker-claim>Maintainer? Claim this listing</a>`;
   });
 }
 
