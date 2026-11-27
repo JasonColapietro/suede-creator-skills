@@ -176,8 +176,8 @@ async function verifyCrackedDevs(page, base, output) {
       const other = await submit.boundingBox();
       assert.ok(other && box.x + box.width <= other.x && Math.abs(box.y - other.y) <= 2, `${width}: desktop actions remain side by side`);
     } else {
-      const catalog = await page.getByRole('navigation', { name: 'Directory catalogs' }).boundingBox();
-      assert.ok(box.y >= catalog.y + catalog.height, `${width}: the CTA sits below the catalogs`);
+      const nav = await page.getByRole('navigation', { name: 'Main navigation' }).boundingBox();
+      assert.ok(box.y >= nav.y + nav.height, `${width}: the CTA sits below the main navigation`);
       await menu.click();
       assert.ok(await submit.isVisible(), 'List your skill remains in the mobile menu');
       await menu.click();
