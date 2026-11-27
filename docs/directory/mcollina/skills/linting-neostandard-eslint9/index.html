@@ -234,7 +234,7 @@
     </nav>
     <main id="main" tabindex="-1" class="shell directory">
       <div class="eyebrow">Agent skill &middot; Code quality &middot; mcollina</div>
-      <h1>linting-neostandard-eslint9 <span class="h1-sub">agent skill by mcollina</span></h1>
+      <h1>linting-neostandard-eslint9 <span class="h1-sub">agent skill by mcollina</span></h1><div class="skill-actions listing-actions"><a class="button secondary" href="#badge">Get badges</a></div>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="../../../">Directory</a> <span class="crumb-sep" aria-hidden="true">/</span> <a href="../../../code-review-quality/">Code Review and Code Quality</a> <span class="crumb-sep" aria-hidden="true">/</span> <a href="../">mcollina/skills</a> <span class="crumb-sep" aria-hidden="true">/</span> <span aria-current="page">linting-neostandard-eslint9</span></nav>
       <div class="skill-head">
         <div>
@@ -243,6 +243,19 @@
         </div>
         <div class="score-card grade-c" role="img" aria-label="Suede Skill Check 77 out of 100, grade C"><span class="score">77<small>/100</small></span><span class="score-label">Suede Skill Check</span><span class="score-meter"><span style="width:77%"></span></span><span class="grade grade-c">Grade C</span></div>
       </div>
+      <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
+        <h2 id="badge-title">Show the listing and raise the score</h2>
+        <p>linting-neostandard-eslint9 is listed with 77/100 · C. This badge links to its Suede listing. Skills scoring 80–99 add a numeric and a letter quality shield; the largest open points for linting-neostandard-eslint9 are boundary clause (4), example request (3) and instruction depth (3). <a href="../../../submit/#improve">Send your repository and the points you want to raise</a>, then request a fresh review after updating the skill. Publishers: read <a href="../../../guides/skill-ai-visibility/">How to get your agent skill found in search and cited by AI assistants</a>.</p>
+        <p class="badge-preview"><img src="../../../badge.svg" alt="Suede Skills Directory: listed" width="193" height="20"></p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy</button></div>
+          <pre><code id="badge-md">[![Suede Skills Directory: listed](https://skills.suedeai.ai/directory/badge.svg)](https://skills.suedeai.ai/directory/mcollina/skills/linting-neostandard-eslint9/)</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy</button></div>
+          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/mcollina/skills/linting-neostandard-eslint9/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/badge.svg&quot; alt=&quot;Suede Skills Directory: listed&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
+        </div>
+      </section>
       <dl class="glance" aria-label="At a glance">
         <div><dt>Publisher</dt><dd>mcollina</dd></div>
         <div><dt>License</dt><dd>MIT</dd></div>
@@ -288,32 +301,6 @@
           <li><b>License:</b> <a href="https://github.com/mcollina/skills/blob/main/LICENSE" target="_blank" rel="noopener">MIT</a>, an open-source or open-content license.</li>
         </ul>
       </section>
-      <section class="panel" aria-labelledby="install-title">
-        <h2 id="install-title">Install linting-neostandard-eslint9</h2>
-        <p>The skills CLI works with Claude Code, Codex, Cursor and other agents; the other routes copy the folder by hand.</p>
-        <div class="snippet">
-          <div class="snippet-head"><span>Skills CLI</span><button type="button" class="snippet-copy" data-copy-target="install-cli">Copy</button></div>
-          <pre><code id="install-cli">npx skills add https://github.com/mcollina/skills/tree/main/skills/linting-neostandard-eslint9</code></pre>
-        </div>
-        <div class="snippet">
-          <div class="snippet-head"><span>Claude Code, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-claude">Copy</button></div>
-          <pre><code id="install-claude">tmp=&quot;$(mktemp -d)&quot;
-git clone --depth 1 https://github.com/mcollina/skills.git &quot;$tmp/repo&quot;
-mkdir -p .claude/skills
-cp -R &quot;$tmp/repo/&quot;skills/linting-neostandard-eslint9 .claude/skills/
-rm -rf &quot;$tmp&quot;</code></pre>
-        </div>
-        <div class="snippet">
-          <div class="snippet-head"><span>Codex, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
-          <pre><code id="install-codex">tmp=&quot;$(mktemp -d)&quot;
-git clone --depth 1 https://github.com/mcollina/skills.git &quot;$tmp/repo&quot;
-mkdir -p .agents/skills
-cp -R &quot;$tmp/repo/&quot;skills/linting-neostandard-eslint9 .agents/skills/
-rm -rf &quot;$tmp&quot;</code></pre>
-        </div>
-        <p class="muted">For a user-level install, copy the folder to <code>~/.claude/skills/</code> (Claude Code) or <code>~/.agents/skills/</code> (Codex). Inside Codex, <code>$skill-installer</code> can also fetch a skill from GitHub. New to skills? Read <a href="../../../guides/install-agent-skills/">How to install agent skills in Claude Code, Codex and Cursor</a>.</p>
-        <p class="muted">mcollina/skills is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
-      </section>
       <section class="panel" id="summary" aria-labelledby="summary-title">
         <h2 id="summary-title">Directory summary</h2>
         <p>linting-neostandard-eslint9 configures ESLint v9 flat config and neostandard for JavaScript and TypeScript projects, including migrating from legacy .eslintrc files or the standard package. Listed in Code Review and Code Quality, it is built for Claude Code users working on code review and code quality. It scores 77/100, grade C, on the Suede Skill Check, with full points for structural checks, recent maintenance and description length. mcollina publishes it under MIT, an open-source or open-content license, so you can use and adapt it at no cost under those terms. It installs in Claude Code, Codex, Cursor and other agents that read the Agent Skills format.</p>
@@ -343,6 +330,32 @@ rm -rf &quot;$tmp&quot;</code></pre>
           <li><code>rules/neostandard.md</code></li>
           <li><code>tile.json</code></li>
         </ul>
+      </section>
+      <section class="panel" aria-labelledby="install-title">
+        <h2 id="install-title">Install linting-neostandard-eslint9</h2>
+        <p>The skills CLI works with Claude Code, Codex, Cursor and other agents; the other routes copy the folder by hand.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Skills CLI</span><button type="button" class="snippet-copy" data-copy-target="install-cli">Copy</button></div>
+          <pre><code id="install-cli">npx skills add https://github.com/mcollina/skills/tree/main/skills/linting-neostandard-eslint9</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Claude Code, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-claude">Copy</button></div>
+          <pre><code id="install-claude">tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/mcollina/skills.git &quot;$tmp/repo&quot;
+mkdir -p .claude/skills
+cp -R &quot;$tmp/repo/&quot;skills/linting-neostandard-eslint9 .claude/skills/
+rm -rf &quot;$tmp&quot;</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Codex, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
+          <pre><code id="install-codex">tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/mcollina/skills.git &quot;$tmp/repo&quot;
+mkdir -p .agents/skills
+cp -R &quot;$tmp/repo/&quot;skills/linting-neostandard-eslint9 .agents/skills/
+rm -rf &quot;$tmp&quot;</code></pre>
+        </div>
+        <p class="muted">For a user-level install, copy the folder to <code>~/.claude/skills/</code> (Claude Code) or <code>~/.agents/skills/</code> (Codex). Inside Codex, <code>$skill-installer</code> can also fetch a skill from GitHub. New to skills? Read <a href="../../../guides/install-agent-skills/">How to install agent skills in Claude Code, Codex and Cursor</a>.</p>
+        <p class="muted">mcollina/skills is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" id="check" aria-labelledby="check-title">
         <h2 id="check-title">Suede Skill Check: 77/100 · C</h2>
@@ -459,19 +472,6 @@ rm -rf &quot;$tmp&quot;</code></pre>
           <a class="link-row" href="../octocat/"><b>octocat</b><span>mcollina/skills</span></a>
         </div>
         <p><a href="../">All 11 skills in mcollina/skills</a></p>
-      </section>
-      <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
-        <h2 id="badge-title">Show the listing and raise the score</h2>
-        <p>linting-neostandard-eslint9 is listed with 77/100 · C. This badge links to its Suede listing. Skills scoring 80–99 add a numeric and a letter quality shield; the largest open points for linting-neostandard-eslint9 are boundary clause (4), example request (3) and instruction depth (3). <a href="../../../submit/#improve">Send your repository and the points you want to raise</a>, then request a fresh review after updating the skill. Publishers: read <a href="../../../guides/skill-ai-visibility/">How to get your agent skill found in search and cited by AI assistants</a>.</p>
-        <p class="badge-preview"><img src="../../../badge.svg" alt="Suede Skills Directory: listed" width="193" height="20"></p>
-        <div class="snippet">
-          <div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy</button></div>
-          <pre><code id="badge-md">[![Suede Skills Directory: listed](https://skills.suedeai.ai/directory/badge.svg)](https://skills.suedeai.ai/directory/mcollina/skills/linting-neostandard-eslint9/)</code></pre>
-        </div>
-        <div class="snippet">
-          <div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy</button></div>
-          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/mcollina/skills/linting-neostandard-eslint9/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/badge.svg&quot; alt=&quot;Suede Skills Directory: listed&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
-        </div>
       </section>
       <aside class="panel svc-cta svc-compact" aria-labelledby="svc-title" data-services-cta="skill">
         <h2 class="svc-kicker" id="svc-title">From Suede, the publisher of this directory</h2>

@@ -128,3 +128,14 @@ test('a later same-day dataset snapshot invalidates earlier README verification'
   }
   assert.equal(promotionActive(skill, undefined, config, refreshed, now), false);
 });
+
+test('reviewed website placements use the same score, target and snapshot rules as READMEs', () => {
+  const { commit, readme_path, ...website } = verified;
+  website.website_url = 'https://publisher.example/docs/sample';
+  assert.equal(promotionActive(skill, website, config, snapshot, now), true);
+  for (const patch of [{ website_url: 'README.md' }, { website_url: 'http://publisher.example/' },
+    { website_url: 'https://owner:password@publisher.example/' }, { readme_path }, { commit }, { rendered_sha256: '' },
+    { target: 'https://other.example/' }, { badges: [] }, { dataset_sha256: '' }]) {
+    assert.equal(promotionActive(skill, { ...website, ...patch }, config, snapshot, now), false);
+  }
+});

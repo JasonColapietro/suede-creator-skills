@@ -2,10 +2,10 @@
   "enabled": true,
   "ends_at": null,
   "copy": {
-    "about": "Template copy for the feature offer and the badge-partner section. Keep the facts: either linked badge qualifies, eligibility is 80–99, verification checks the rendered README. Show no end date until ends_at is set.",
-    "offer_short": "Show your badge, get featured. Add the numeric or letter badge to your README, request verification, and an eligible skill scoring 80–99 can earn a featured placement.",
-    "offer_long": "Display either quality badge in your repository or skill README, linked to your listing, then request verification. Suede checks the rendered README at a recorded commit. Eligible skills scoring 80–99 with a verified badge can receive a featured placement while the offer is open.",
-    "partners_intro": "Publishers who show their quality badge in their README, verified by Suede against the rendered page. Scores follow the published rubric.",
+    "about": "Either badge linked to the listing qualifies for review on the official website or in a README. Eligibility is 80–99. Show an end date only when ends_at is set.",
+    "offer_short": "Add your badge to your website or README. Verified listings scoring 80–99 can earn a featured placement.",
+    "offer_long": "Add either quality badge to your official website and link it to your Suede listing. A repository or skill README also qualifies. Send us the page URL or README path. Once Suede verifies the badge, skills scoring 80–99 can receive a featured placement while the offer is open.",
+    "partners_intro": "These publishers display a quality badge linked to their listing on their website or in their README. Suede verified each placement.",
     "button": "Request badge verification"
   },
   "outreach_priority": {

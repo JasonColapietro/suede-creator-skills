@@ -37,6 +37,18 @@ test('configured rollout links every skill and eligible featured project without
     const html = read(dir, 'featured/index.html');
     const linked = [...html.matchAll(/href="\/maker\/\?id=([a-z0-9-]+)" data-maker-claim/g)].map(match => match[1]).sort();
     assert.deepEqual(linked, catalog.projects.filter(entry => entry.status !== 'pending').map(entry => entry.id).sort());
+    for (const card of html.matchAll(/<article class="featured-project"[^>]*>[\s\S]*?<\/article>/g)) {
+      if (!card[0].includes('data-maker-claim')) continue;
+      assert.ok(card[0].indexOf('data-maker-claim') < card[0].indexOf('class="featured-project-body"'));
+    }
+    const sample = read(dir, 'jasoncolapietro/suede-creator-skills/suede-component-lab/index.html');
+    const markers = ['</h1>', 'data-maker-claim', 'href="#badge"', 'id="badge-title"', 'id="summary-title"', 'id="author-title"', 'id="install-title"'];
+    let previous = -1;
+    for (const marker of markers) {
+      const position = sample.indexOf(marker);
+      assert.ok(position > previous, marker + ' should appear in listing order');
+      previous = position;
+    }
     const pages = new Map();
     for (const entry of searchIndex) {
       const [page] = entry.href.slice('/directory/'.length).split('#');

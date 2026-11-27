@@ -67,11 +67,13 @@ export function skillMakerRenderer(targets, profiles, showLinks) {
     expected.add(target.id);
   }
 
+  function claimButton(target) {
+    return '<a class="button" href="/maker/?id=' + target.id + '" data-maker-claim>Claim or manage this skill</a>';
+  }
+
   function content(target, compact) {
     expected.delete(target.id);
-    const profile = makerProfileHtml(profiles.get('skill:' + target.id), { esc: escape, headingLevel: compact ? 3 : 2 });
-    const action = showLinks ? '<p><a href="/maker/?id=' + target.id + '" data-maker-claim>Claim or manage this skill</a></p>' : '';
-    return profile + action;
+    return makerProfileHtml(profiles.get('skill:' + target.id), { esc: escape, headingLevel: compact ? 3 : 2 });
   }
 
   return {
@@ -80,12 +82,17 @@ export function skillMakerRenderer(targets, profiles, showLinks) {
       if (!page) return html;
       const full = page.get('');
       if (full) {
-        const pageHtml = showLinks ? html.replace(/<p class="svc-publisher"[^>]*>[\s\S]*?<\/p>/, '') : html;
+        const pageHtml = showLinks
+          ? html.replace('<div class="skill-actions listing-actions">', actions => actions + claimButton(full) + ' ')
+            .replace(/<p class="svc-publisher"[^>]*>[\s\S]*?<\/p>/, '')
+          : html;
         return pageHtml.replace(/<aside\b[^>]*data-services-cta="skill"[^>]*>|<\/main>/, anchor => content(full, false) + anchor);
       }
       return html.replace(/(<tr id="([^"]+)" data-id="([^"]+)"[^>]*>[\s\S]*?<td class="name">[\s\S]*?)(<\/td>)/g, (whole, cell, fragment, id, end) => {
         const target = page.get(fragment);
-        return target?.listingPath === id ? cell + content(target, true) + end : whole;
+        if (target?.listingPath !== id) return whole;
+        const action = showLinks ? '<p>' + claimButton(target) + '</p>' : '';
+        return cell + action + content(target, true) + end;
       });
     },
     verify() {

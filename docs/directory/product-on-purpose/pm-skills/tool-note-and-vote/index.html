@@ -226,7 +226,7 @@
     </nav>
     <main id="main" tabindex="-1" class="shell directory">
       <div class="eyebrow">Agent skill &middot; Product &middot; product-on-purpose</div>
-      <h1>tool-note-and-vote <span class="h1-sub">agent skill by product-on-purpose</span></h1>
+      <h1>tool-note-and-vote <span class="h1-sub">agent skill by product-on-purpose</span></h1><div class="skill-actions listing-actions"><a class="button secondary" href="#badge">Get badges</a></div>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="../../../">Directory</a> <span class="crumb-sep" aria-hidden="true">/</span> <a href="../../../product-management/">Product Management</a> <span class="crumb-sep" aria-hidden="true">/</span> <a href="../">product-on-purpose/pm-skills</a> <span class="crumb-sep" aria-hidden="true">/</span> <span aria-current="page">tool-note-and-vote</span></nav>
       <div class="skill-head">
         <div>
@@ -235,6 +235,16 @@
         </div>
         <div class="score-card grade-b" role="img" aria-label="Suede Skill Check 83 out of 100, grade B"><img class="shield" src="score.svg" alt="" width="54" height="60"><span class="score">83<small>/100</small></span><span class="score-label">Suede Skill Check</span><span class="score-meter"><span style="width:83%"></span></span><span class="grade grade-b">Grade B</span></div>
       </div>
+<section class="panel badge-panel" id="badge" aria-labelledby="badge-title"><h2 id="badge-title">Two badges for tool-note-and-vote</h2>
+        <div class="shield-pair"><a href="https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/tool-note-and-vote/"><img src="/directory/product-on-purpose/pm-skills/tool-note-and-vote/score.svg" alt="Suede Skill Check: 83/100" width="160" height="175" loading="lazy"></a><a href="https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/tool-note-and-vote/"><img src="/directory/product-on-purpose/pm-skills/tool-note-and-vote/badge.svg" alt="Suede Skill Check: Grade B" width="160" height="175" loading="lazy"></a></div>
+        <p>Choose the numeric badge, the letter badge, or both. Each links to this skill’s Suede listing; either valid linked badge can qualify for the feature offer.</p>
+        <div class="snippet"><div class="snippet-head"><span>Website HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy both badges</button></div><pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/tool-note-and-vote/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/tool-note-and-vote/score.svg&quot; alt=&quot;Suede Skill Check: 83/100&quot; width=&quot;160&quot; height=&quot;175&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/tool-note-and-vote/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/tool-note-and-vote/badge.svg&quot; alt=&quot;Suede Skill Check: Grade B&quot; width=&quot;160&quot; height=&quot;175&quot;&gt;&lt;/a&gt;</code></pre></div>
+        <div class="snippet"><div class="snippet-head"><span>README Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy both badges</button></div><pre><code id="badge-md">[![Suede Skill Check: 83/100](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/tool-note-and-vote/score.svg)](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/tool-note-and-vote/)
+[![Suede Skill Check: Grade B](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/tool-note-and-vote/badge.svg)](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/tool-note-and-vote/)</code></pre></div>
+        <p class="muted">Suede Certified on the shield refers to this published structural quality check. Security scan: not scanned. Read the <a href="../../../methodology/">methodology</a>.</p>
+        <p class="badge-offer" data-promotion-end="">Limited-time feature offer: Add either quality badge to your official website and link it to your Suede listing. A repository or skill README also qualifies. Send us the page URL or README path. Once Suede verifies the badge, skills scoring 80–99 can receive a featured placement while the offer is open. <a href="../../../submit/#badge-verification">Request badge verification</a>.</p>
+        <p>Publishers: read <a href="../../../guides/skill-ai-visibility/">How to get your agent skill found in search and cited by AI assistants</a>.</p></section>
       <dl class="glance" aria-label="At a glance">
         <div><dt>Publisher</dt><dd>product-on-purpose</dd></div>
         <div><dt>License</dt><dd>Apache-2.0</dd></div>
@@ -278,32 +288,6 @@
           <li><b>License:</b> <a href="https://github.com/product-on-purpose/pm-skills/blob/main/LICENSE" target="_blank" rel="noopener">Apache-2.0</a>, an open-source or open-content license.</li>
         </ul>
       </section>
-      <section class="panel" aria-labelledby="install-title">
-        <h2 id="install-title">Install tool-note-and-vote</h2>
-        <p>The skills CLI works with Claude Code, Codex, Cursor and other agents; the other routes copy the folder by hand.</p>
-        <div class="snippet">
-          <div class="snippet-head"><span>Skills CLI</span><button type="button" class="snippet-copy" data-copy-target="install-cli">Copy</button></div>
-          <pre><code id="install-cli">npx skills add https://github.com/product-on-purpose/pm-skills/tree/main/skills/tool-note-and-vote</code></pre>
-        </div>
-        <div class="snippet">
-          <div class="snippet-head"><span>Claude Code, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-claude">Copy</button></div>
-          <pre><code id="install-claude">tmp=&quot;$(mktemp -d)&quot;
-git clone --depth 1 https://github.com/product-on-purpose/pm-skills.git &quot;$tmp/repo&quot;
-mkdir -p .claude/skills
-cp -R &quot;$tmp/repo/&quot;skills/tool-note-and-vote .claude/skills/
-rm -rf &quot;$tmp&quot;</code></pre>
-        </div>
-        <div class="snippet">
-          <div class="snippet-head"><span>Codex, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
-          <pre><code id="install-codex">tmp=&quot;$(mktemp -d)&quot;
-git clone --depth 1 https://github.com/product-on-purpose/pm-skills.git &quot;$tmp/repo&quot;
-mkdir -p .agents/skills
-cp -R &quot;$tmp/repo/&quot;skills/tool-note-and-vote .agents/skills/
-rm -rf &quot;$tmp&quot;</code></pre>
-        </div>
-        <p class="muted">For a user-level install, copy the folder to <code>~/.claude/skills/</code> (Claude Code) or <code>~/.agents/skills/</code> (Codex). Inside Codex, <code>$skill-installer</code> can also fetch a skill from GitHub. New to skills? Read <a href="../../../guides/install-agent-skills/">How to install agent skills in Claude Code, Codex and Cursor</a>.</p>
-        <p class="muted">product-on-purpose/pm-skills is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
-      </section>
       <section class="panel" id="summary" aria-labelledby="summary-title">
         <h2 id="summary-title">Directory summary</h2>
         <p>tool-note-and-vote captures silent ideation, voting summaries, and Decider sign-off in one artifact, helping small teams make fast group decisions when groupthink is a risk. Listed in Product Management, it is built for Claude Code users working on product management. It scores 83/100, grade B, on the Suede Skill Check, with full points for structural checks, recent maintenance and instruction depth. product-on-purpose publishes it under Apache-2.0, an open-source or open-content license, so you can use and adapt it at no cost under those terms. It installs in Claude Code, Codex, Cursor and other agents that read the Agent Skills format.</p>
@@ -338,6 +322,32 @@ rm -rf &quot;$tmp&quot;</code></pre>
           <li><code>references/EXAMPLE.md</code></li>
           <li><code>references/TEMPLATE.md</code></li>
         </ul>
+      </section>
+      <section class="panel" aria-labelledby="install-title">
+        <h2 id="install-title">Install tool-note-and-vote</h2>
+        <p>The skills CLI works with Claude Code, Codex, Cursor and other agents; the other routes copy the folder by hand.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Skills CLI</span><button type="button" class="snippet-copy" data-copy-target="install-cli">Copy</button></div>
+          <pre><code id="install-cli">npx skills add https://github.com/product-on-purpose/pm-skills/tree/main/skills/tool-note-and-vote</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Claude Code, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-claude">Copy</button></div>
+          <pre><code id="install-claude">tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/product-on-purpose/pm-skills.git &quot;$tmp/repo&quot;
+mkdir -p .claude/skills
+cp -R &quot;$tmp/repo/&quot;skills/tool-note-and-vote .claude/skills/
+rm -rf &quot;$tmp&quot;</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Codex, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
+          <pre><code id="install-codex">tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/product-on-purpose/pm-skills.git &quot;$tmp/repo&quot;
+mkdir -p .agents/skills
+cp -R &quot;$tmp/repo/&quot;skills/tool-note-and-vote .agents/skills/
+rm -rf &quot;$tmp&quot;</code></pre>
+        </div>
+        <p class="muted">For a user-level install, copy the folder to <code>~/.claude/skills/</code> (Claude Code) or <code>~/.agents/skills/</code> (Codex). Inside Codex, <code>$skill-installer</code> can also fetch a skill from GitHub. New to skills? Read <a href="../../../guides/install-agent-skills/">How to install agent skills in Claude Code, Codex and Cursor</a>.</p>
+        <p class="muted">product-on-purpose/pm-skills is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" id="check" aria-labelledby="check-title">
         <h2 id="check-title">Suede Skill Check: 83/100 · B</h2>
@@ -442,16 +452,6 @@ rm -rf &quot;$tmp&quot;</code></pre>
         </div>
         <p><a href="../">All 68 skills in product-on-purpose/pm-skills</a></p>
       </section>
-<section class="panel badge-panel" id="badge" aria-labelledby="badge-title"><h2 id="badge-title">Two badges for tool-note-and-vote</h2>
-        <div class="shield-pair"><a href="https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/tool-note-and-vote/"><img src="/directory/product-on-purpose/pm-skills/tool-note-and-vote/score.svg" alt="Suede Skill Check: 83/100" width="160" height="175" loading="lazy"></a><a href="https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/tool-note-and-vote/"><img src="/directory/product-on-purpose/pm-skills/tool-note-and-vote/badge.svg" alt="Suede Skill Check: Grade B" width="160" height="175" loading="lazy"></a></div>
-        <p>Choose the numeric badge, the letter badge, or both. Each links to this skill’s Suede listing; either valid linked badge can qualify for the feature offer.</p>
-        <div class="snippet"><div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy both badges</button></div><pre><code id="badge-md">[![Suede Skill Check: 83/100](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/tool-note-and-vote/score.svg)](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/tool-note-and-vote/)
-[![Suede Skill Check: Grade B](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/tool-note-and-vote/badge.svg)](https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/tool-note-and-vote/)</code></pre></div>
-        <div class="snippet"><div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy both badges</button></div><pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/tool-note-and-vote/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/tool-note-and-vote/score.svg&quot; alt=&quot;Suede Skill Check: 83/100&quot; width=&quot;160&quot; height=&quot;175&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/tool-note-and-vote/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/tool-note-and-vote/badge.svg&quot; alt=&quot;Suede Skill Check: Grade B&quot; width=&quot;160&quot; height=&quot;175&quot;&gt;&lt;/a&gt;</code></pre></div>
-        <p class="muted">Suede Certified on the shield refers to this published structural quality check. Security scan: not scanned. Read the <a href="../../../methodology/">methodology</a>.</p>
-        <p class="badge-offer" data-promotion-end="">Limited-time feature offer: Display either quality badge in your repository or skill README, linked to your listing, then request verification. Suede checks the rendered README at a recorded commit. Eligible skills scoring 80–99 with a verified badge can receive a featured placement while the offer is open. <a href="../../../submit/">Request badge verification</a>.</p>
-        <p>Publishers: read <a href="../../../guides/skill-ai-visibility/">How to get your agent skill found in search and cited by AI assistants</a>.</p></section>
       <aside class="panel svc-cta svc-compact" aria-labelledby="svc-title" data-services-cta="skill">
         <h2 class="svc-kicker" id="svc-title">From Suede, the publisher of this directory</h2>
         <div class="svc-cards">

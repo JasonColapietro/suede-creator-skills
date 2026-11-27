@@ -103,8 +103,8 @@ test("skill pages carry one Suede aside, below the listing's own content", () =>
     for (const id of ["facts-title", "install-title", "author-title", "check-title", "cited-title"]) {
       if (main.includes(`id="${id}"`)) assert.ok(main.indexOf(`id="${id}"`) < asides[0].index, `${rel}: ${id} should lead the aside`);
     }
-    for (const id of ["related-title", "siblings-title"]) {
-      if (main.includes(`id="${id}"`)) assert.ok(main.indexOf(`id="${id}"`) < main.indexOf('id="badge"'), `${rel}: ${id} should lead the badge panel`);
+    for (const id of ["facts-title", "install-title", "related-title", "siblings-title"]) {
+      if (main.includes(`id="${id}"`)) assert.ok(main.indexOf('id="badge"') < main.indexOf(`id="${id}"`), `${rel}: badge panel should lead ${id}`);
     }
     assert.ok(main.indexOf('id="badge"') < asides[0].index, `${rel}: badge panel sits above the aside`);
     assert.ok(main.slice(asides[0].index).replace(/<\/main>$/, "").trim().endsWith("</aside>"), `${rel}: the aside closes the page`);
