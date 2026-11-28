@@ -286,7 +286,13 @@ function packMap() {
   const cols = 2;
   const gap = 20;
   const cardW = (W - x0 * 2 - gap * (cols - 1)) / cols;
-  const cardH = 380;
+  const skillLines = specialties.map(s => wrapTokens(
+    skills.filter(k => k.specialty === s.key).map(k => k.name.replace(/^suede-/, "")).sort(),
+    52
+  ));
+  const cardH = Math.max(380, ...specialties.map((s, i) =>
+    194 + s.lanes.length * 28 + 14 + (skillLines[i].length - 1) * 23 + 20
+  ));
   const top = 196;
   const rows = Math.ceil(specialties.length / cols);
   const H = top + rows * cardH + (rows - 1) * gap + 48;
@@ -317,12 +323,8 @@ function packMap() {
       ${cv.text("mono", { x: cx + cardW - 28, y: ly, fill: C.dim, "font-size": 15, "text-anchor": "end" }, String(lane.count))}`;
         })
         .join("");
-      const slugs = skills
-        .filter((k) => k.specialty === s.key)
-        .map((k) => k.name.replace(/^suede-/, ""))
-        .sort();
       const slugTop = cy + 194 + s.lanes.length * 28 + 14;
-      const slugLines = wrapTokens(slugs, 52)
+      const slugLines = skillLines[i]
         .map((line, li) => cv.text("mono", { x: cx + 28, y: slugTop + li * 23, fill: C.dim, "font-size": 14 }, line))
         .join("\n      ");
       return `

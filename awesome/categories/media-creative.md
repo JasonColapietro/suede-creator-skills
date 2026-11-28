@@ -8,7 +8,7 @@ Skills for making and editing media: video production, image generation and edit
 
 **240 accepted skills · 41 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
-**Compare on the 0–99 quality scale:** this category’s verified scores span **56–93 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=media-creative&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
+**Compare on the 0–99 quality scale:** this category’s verified scores span **56–96 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=media-creative&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
 [Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede listing.
 
@@ -366,10 +366,10 @@ Skills for making and editing media: video production, image generation and edit
 
 [Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
 
-- **93/100 · A** · [Suede Clip to Guide Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-clip-to-guide/SKILL.md): Suede Clip to Guide Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-clip-to-guide)
-- **93/100 · A** · [Suede Release Linter Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-release-linter/SKILL.md): Find missing files, malformed metadata, artwork and stem issues, split gaps, AI involvement, and delivery blockers in local music or media release folders. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-release-linter)
-- **91/100 · A** · [Suede Image Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-image/SKILL.md): Use when asked "create an Open Graph image" or to produce marketing heroes, banners, social graphics, mockups or image workflows. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-image)
-- **91/100 · A** · [Suede Video Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-video/SKILL.md): Plan or produce marketing video with scripts, storyboards, shot and asset lists, consent-aware AI or avatar choices, programmatic rendering, edit decisions, pacing, export specs, and video-search metadata. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-video)
+- **96/100 · A** · [Suede Clip to Guide Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-clip-to-guide/SKILL.md): Suede Clip to Guide Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-clip-to-guide)
+- **96/100 · A** · [Suede Release Linter Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-release-linter/SKILL.md): Find missing files, malformed metadata, artwork and stem issues, split gaps, AI involvement, and delivery blockers in local music or media release folders. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-release-linter)
+- **94/100 · A** · [Suede Image Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-image/SKILL.md): Use when asked "create an Open Graph image" or to produce marketing heroes, banners, social graphics, mockups or image workflows. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-image)
+- **91/100 · A** · [Suede Video Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-video/SKILL.md): Plan or produce marketing video with scripts, storyboards, shot and asset lists, consent-aware AI or avatar choices, programmatic rendering, edit decisions, pacing, export specs, and video-search metadata. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-video)
 
 <a id="k-dense-ai--claude-scientific-skills"></a>
 

@@ -6,9 +6,9 @@
 
 Skills for everyday knowledge work: email, calendars, notes, workspace apps, project tracking, planning and research assistance. They connect an agent to the tools a team already uses and give it a consistent way to work inside them.
 
-**239 accepted skills · 40 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**240 accepted skills · 40 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
-**Compare on the 0–99 quality scale:** this category’s verified scores span **53–91 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=productivity-knowledge&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
+**Compare on the 0–99 quality scale:** this category’s verified scores span **53–94 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=productivity-knowledge&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
 [Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede listing.
 
@@ -292,9 +292,10 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 
 [Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
 
-- **91/100 · A** · [Suede Cold Email Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-cold-email/SKILL.md): Use when asked "write a cold email" or to repair B2B outbound to qualified prospects. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-cold-email)
-- **91/100 · A** · [Suede Lifecycle Email Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-emails/SKILL.md): Use when asked "build a welcome email sequence" or to design nurture, onboarding, win-back, post-purchase or trigger-based lifecycle email flows. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-emails)
-- **91/100 · A** · [Suede Influencer Outreach Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-influencer-outreach/SKILL.md): Use when asked "pitch this creator" or to repair an influencer or B2B creator-program first touch. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-influencer-outreach)
+- **94/100 · A** · [Suede Cold Email Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-cold-email/SKILL.md): Use when asked "write a cold email" or to repair B2B outbound to qualified prospects. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-cold-email)
+- **94/100 · A** · [Suede Lifecycle Email Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-emails/SKILL.md): Use when asked "build a welcome email sequence" or to design nurture, onboarding, win-back, post-purchase or trigger-based lifecycle email flows. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-emails)
+- **94/100 · A** · [Suede Influencer Outreach Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-influencer-outreach/SKILL.md): Use when asked "pitch this creator" or to repair an influencer or B2B creator-program first touch. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-influencer-outreach)
+- **94/100 · A** · [Suede Link Outreach Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-link-outreach/SKILL.md): Qualify editorial link opportunities and draft individual pitches for a useful reference. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-link-outreach)
 
 <a id="jeffallan--claude-skills"></a>
 
