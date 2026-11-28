@@ -100,10 +100,13 @@ test('first-party reports and retained source inventories describe the exact rev
     const skillSource = read(`${listing.dir}/SKILL.md`).match(/^---\r?\n([\s\S]+?)\r?\n---(?:\r?\n|$)/);
     assert.equal(load(skillSource?.[1] || '').description, listing.description, 'use the pinned skill metadata, not an invented listing description');
   }
-  // LICENSE changed after the pins only to name the holder as Suede
-  // (2026-11-27); the MIT terms are unchanged, so its bytes are pinned here
-  // rather than rewriting the reviewed receipts.
-  const postPin = { LICENSE: "390c500d0f8982eb7da3e40aa2c69568c633e0bf248ba2e3f00d093afd0706a1" };
+  // Post-pin presentation edits (2026-11-27): LICENSE names the holder as
+  // Suede with unchanged MIT terms, and COPY.md corrects its skill count.
+  // Their bytes are pinned here rather than rewriting the reviewed receipts.
+  const postPin = {
+    LICENSE: "390c500d0f8982eb7da3e40aa2c69568c633e0bf248ba2e3f00d093afd0706a1",
+    "COPY.md": "6127af77b879c2badba38896b523504730f9333ced37a42ca0d2ca5f2bca2e16",
+  };
   for (const [relative, digest] of Object.entries(postPin)) {
     if (Object.hasOwn(expected, relative)) expected[relative] = digest;
   }
