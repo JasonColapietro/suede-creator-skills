@@ -49,6 +49,8 @@ match, and the page must list exactly these three.
 | `suede-deslop` | Prose is finished and about to go public, and it still sounds generated |
 | `suede-image` | You need marketing images: generation prompts, hero and social graphics, mockups, export sizing |
 | `suede-video` | You need format choice, scripting, storyboarding, generation, or editing for marketing video |
+| `suede-release-to-marketing` | Turn changes that users can actually access into accurate channel-ready drafts. |
+| `suede-media-transcript` | Produce a timecoded transcript and usable captions from media you can access and use. |
 
 ## I want people to find it
 
@@ -63,6 +65,13 @@ match, and the page must list exactly these three.
 | `suede-newsroom` | You want a content pipeline staffed as six roles, with a handoff record and one argument per asset |
 | `suede-competitors` | You are writing honest alternative, versus, and comparison pages for evaluators |
 | `suede-directory-submissions` | You are selecting listings, sequencing submissions, and verifying backlinks |
+| `suede-serp-research` | Compare matched search results and decide which queries need one page or separate pages. |
+| `suede-seo-sprint` | Run a bounded SEO sprint around one page, one query cluster, and one conversion. |
+| `suede-seo-proof-kb` | Track the source, permission, and expiry behind every published statement. |
+| `suede-search-titles` | Use Search Console and live page evidence to test better search titles. |
+| `suede-organic-gap-research` | Find organic content and editorial backlink gaps that are worth pursuing. |
+| `suede-internal-linking` | Find orphaned pages and add useful contextual links without turning navigation into clutter. |
+| `suede-domain-migration` | Plan a domain move with a verified redirect map and rollback triggers. |
 | `suede-free-tools` | You want engineering-as-marketing: calculators, graders, generators, scored and scoped |
 | `suede-clip-to-guide` | A clip, talk moment, or transcript should become a funnel package with rights routing |
 
@@ -76,6 +85,9 @@ match, and the page must list exactly these three.
 | `suede-play-release` | You are uploading or promoting an Android build and want proof of what production is actually serving |
 | `suede-aso` | You need store keyword fields, titles, subtitles, descriptions, screenshots, and competitor listings |
 | `suede-public-relations` | You need a media list, a validated story angle, a pitch, or a press kit |
+| `suede-syndication` | Adapt one verified story for distinct audiences without blurring canonicals or permissions. |
+| `suede-reddit-serp` | Study real Reddit threads that surface in search without treating communities as link inventory. |
+| `suede-link-outreach` | Find an editorial reason to pitch a specific source a useful, verifiable resource. |
 | `suede-campaign-in-a-box` | A song or release needs a full rollout: hooks, rituals, visuals, merch, calendar, email, site copy |
 
 ## I want to grow it

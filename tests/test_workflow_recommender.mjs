@@ -669,6 +669,19 @@ test('Suede skills lead the recommendations when they match the goal', () => {
   assert.ok(!recommendSkills('I want to automate my email inbox', catalog).some(isFirstParty));
 });
 
+test('a multi-result list keeps one independent match without ignoring limit or exclusions', () => {
+  const make = (repo, i) => ({
+    repo, id: `${repo.toLowerCase()}/seo-audit-${i}`, slug: `seo-audit-${i}`, name: `SEO Audit ${i}`,
+    href: `/directory/${repo.toLowerCase()}/seo-audit-${i}/`, description: 'Audit SEO issues.', score: 90,
+  });
+  const pack = Array.from({ length: 7 }, (_, i) => make('JasonColapietro/suede-creator-skills', i));
+  const independent = make('other/skills', 9);
+  const rows = [...pack, independent];
+  assert.deepEqual(recommendSkills('seo audit', rows, { limit: 2 }).map(isFirstParty), [true, false]);
+  assert.deepEqual(recommendSkills('seo audit', rows, { limit: 1 }).map(isFirstParty), [true]);
+  assert.deepEqual(recommendSkills('seo audit', rows, { limit: 2, exclude: [independent.id] }).map(isFirstParty), [true, true]);
+});
+
 test('display-named listings match on their slug, and a NOT FOR clause is never a match', () => {
   const listing = (over = {}) => ({ id: 'acme/pack/inbox-tool', name: 'Acme Inbox Tool Skills', slug: 'inbox-tool', repo: 'acme/pack',
     href: '/directory/acme/pack/inbox-tool/', description: 'Triages an email inbox and drafts replies.', score: 80, ...over });

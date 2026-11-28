@@ -13,7 +13,8 @@ const read = relative => fs.readFileSync(path.join(root, relative), 'utf8');
 const repo = 'JasonColapietro/suede-creator-skills';
 const datasetText = read('directory/skills.json');
 const data = JSON.parse(datasetText);
-const receiptText = read('directory/intake/2026-10-31-interface-quality.json');
+const historicalReceipt = read('directory/intake/2026-10-31-interface-quality.json');
+const receiptText = read('directory/intake/2026-11-26-suede-skills.json');
 const receipt = JSON.parse(receiptText);
 const updatePath = 'directory/intake/first-party-listing-updates.json';
 const updates = fs.existsSync(path.join(root, updatePath)) ? JSON.parse(read(updatePath)) : [];
@@ -39,7 +40,7 @@ test('every maintained first-party package has an actual directory score above 9
     assert.ok(skill.score >= 91, `${skill.name}: ${skill.score}`);
     assert.equal(skill.grade, 'A');
     assert.equal(skill.checks, '11111111', skill.name);
-    if (skill.slug === 'suede-graph-flo-xr' && updated.has(skill.slug)) {
+    if (skill.slug === 'suede-graph-flo-xr') {
       assert.equal(skill.display_name, 'Suede Graph Flo XR');
     } else {
       assert.match(skill.display_name, /^Suede(?! AI\b| Labs\b)(?: .+)? Skills$/);
@@ -51,7 +52,11 @@ test('first-party reports and retained source inventories describe the exact rev
   assert.ok(own.length > 0, 'first-party reports require actual listings');
   // This is dated evidence, not a manifest that gets rehashed against HEAD.
   // Its detached source commit may not be retained in ordinary CI checkouts.
-  assert.equal(sha256(receiptText), '6083c907b8c72c9f609e5938c28d7fb2672ba29d226e20a14fcd05347b18107f');
+  assert.equal(sha256(historicalReceipt), '6083c907b8c72c9f609e5938c28d7fb2672ba29d226e20a14fcd05347b18107f');
+  assert.equal(sha256(receiptText), 'db40ed8a26881c2fc09be69f681f7a2b4b768605cadb301f2c6ac883ecddd57b');
+  assert.equal(receipt.external_before_sha256, receipt.external_after_sha256);
+  assert.deepEqual(receipt.scope, active);
+  assert.equal(git(['rev-parse', '--verify', receipt.source_revision + '^{commit}']).toString().trim(), receipt.source_revision);
   assert.equal(receipt.source_revision, data.repos[repo].commit_sha);
   assert.equal(receipt.assessment_date, data.repos[repo].assessment_date);
   assert.equal(updated.size, updates.length, 'each accepted listing may have only one active update');
@@ -100,12 +105,12 @@ test('first-party reports and retained source inventories describe the exact rev
     const skillSource = read(`${listing.dir}/SKILL.md`).match(/^---\r?\n([\s\S]+?)\r?\n---(?:\r?\n|$)/);
     assert.equal(load(skillSource?.[1] || '').description, listing.description, 'use the pinned skill metadata, not an invented listing description');
   }
-  // Post-pin presentation edits (2026-11-27): LICENSE names the holder as
-  // Suede with unchanged MIT terms, and COPY.md corrects its skill count.
-  // Their bytes are pinned here rather than rewriting the reviewed receipts.
+  // The integrated README includes the current catalog and keywords. COPY.md
+  // advertises the same count, and LICENSE retains the updated holder.
   const postPin = {
     LICENSE: "390c500d0f8982eb7da3e40aa2c69568c633e0bf248ba2e3f00d093afd0706a1",
-    "COPY.md": "6127af77b879c2badba38896b523504730f9333ced37a42ca0d2ca5f2bca2e16",
+    "COPY.md": "03a6ccf9b75a44181d56636419515f4862c0b31a950da9de3025a1d814326844",
+    "README.md": "79d5f13a4665c45fcb8b96338c93c758f9b428ec4623023ea48cdabbb1bc3541",
   };
   for (const [relative, digest] of Object.entries(postPin)) {
     if (Object.hasOwn(expected, relative)) expected[relative] = digest;

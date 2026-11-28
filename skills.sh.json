@@ -51,7 +51,9 @@
         "suede-ad-creative",
         "suede-clip-to-guide",
         "suede-image",
-        "suede-video"
+        "suede-video",
+        "suede-media-transcript",
+        "suede-release-to-marketing"
       ]
     },
     {
@@ -63,7 +65,14 @@
         "suede-directory-submissions",
         "suede-programmatic-seo",
         "suede-seo-audit",
-        "suede-visibility-grader"
+        "suede-visibility-grader",
+        "suede-domain-migration",
+        "suede-internal-linking",
+        "suede-organic-gap-research",
+        "suede-search-titles",
+        "suede-seo-proof-kb",
+        "suede-seo-sprint",
+        "suede-serp-research"
       ]
     },
     {
@@ -75,7 +84,10 @@
         "suede-content-strategy",
         "suede-newsroom",
         "suede-public-relations",
-        "suede-social"
+        "suede-social",
+        "suede-link-outreach",
+        "suede-reddit-serp",
+        "suede-syndication"
       ]
     },
     {

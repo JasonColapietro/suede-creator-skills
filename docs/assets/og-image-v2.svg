@@ -20,7 +20,7 @@
     <text x="72" y="382" font-size="108" fill="#b6ff4d" font-style="italic">agent skills.</text>
   </g>
   <path d="M76 476H1124" stroke="#395559" stroke-width="2"/>
-  <text x="76 127" y="558" fill="#b6ff4d" font-family="Arial, sans-serif" font-size="83" font-weight="bold" letter-spacing="-18">67</text>
+  <text x="76 127" y="558" fill="#b6ff4d" font-family="Arial, sans-serif" font-size="83" font-weight="bold" letter-spacing="-18">79</text>
   <text x="174" y="545" fill="#d5e2df" font-family="Arial, sans-serif" font-size="20" font-weight="bold" letter-spacing="2">INSTALLABLE SKILLS</text>
   <text x="1124" y="545" text-anchor="end" fill="#a5dbd8" font-family="Arial, sans-serif" font-size="24">Claude Code + OpenAI Codex</text>
 </svg>
