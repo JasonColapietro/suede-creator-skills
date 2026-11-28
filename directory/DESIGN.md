@@ -8,6 +8,18 @@ else.
 
 ## Register and scene
 
+**Restyle of 2026-11-28 (owner direction):** Linear's surface ladder and
+hairlines with Suede lime. The page floor is `#010102`, panels step up
+`#0f1011` → `#141516`, hairlines run `#23252a` / `#34343a` / `#3e3e44`, text is
+`#f7f8f8` / `#d0d6e0` / `#8a8f98`. Suede lime `#d9ff5c` replaces the gold on
+every Suede-owned module, colors the H1 cursor and the focus ring, and fills
+the Cracked Devs button, which carries a raised edge, a slow pulse and a press
+state (no motion under reduced motion). "List your skill" stays white so the
+two calls to action never look alike. Headings and the wordmark are Geist 600
+with tight tracking (`--display` now names Geist; the Pixelify face stays
+declared but unused). Radii are 8px (controls) and 6px (chips). Grade colors
+are unchanged. Where the tables below disagree, this paragraph wins.
+
 The Vercel scheme, as skills.sh wears it: a pure black page, near-black
 panels, gray hairlines, white for text and action, and nothing that glows. A
 builder is deciding, in under a minute, which skill to install: compare the

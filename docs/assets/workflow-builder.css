@@ -1,8 +1,17 @@
 /* Keep the directory's dark base, with quiet section accents for scanning. */
 .workflow-builder { --workflow-step-accent: #8dcbb5; --workflow-step-surface: color-mix(in srgb, var(--workflow-step-accent) 5%, var(--canvas)); margin: 0 0 44px; border: 1px solid var(--line-strong); border-radius: var(--radius); background: var(--paper); padding: clamp(20px, 3vw, 34px); }
 .workflow-intro { display: flex; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
-.workflow-intro h2 { font-size: clamp(28px, 3vw, 42px); letter-spacing: -.045em; line-height: 1.1; }
-.workflow-intro p:not(.eyebrow) { max-width: 64ch; color: var(--muted); font-size: 15px; }
+.workflow-intro h2 { font-size: clamp(30px, 3.4vw, 48px); font-weight: 600; letter-spacing: -.04em; line-height: 1.08; color: var(--ink); }
+/* The homepage chat is the first thing to do on the page: lime edge, kicker and action. */
+#workflow-builder { border-color: rgba(217, 255, 92, 0.45); box-shadow: 0 0 0 4px rgba(217, 255, 92, 0.06); }
+#workflow-builder .workflow-composer:focus-within { border-color: #d9ff5c; box-shadow: 0 0 0 3px rgba(217, 255, 92, 0.18); }
+#workflow-builder .workflow-submit { background: #d9ff5c; color: #0f1011; border-color: #d9ff5c; font-weight: 700; }
+#workflow-builder .workflow-submit:hover { background: #e6ff8f; border-color: #e6ff8f; color: #0f1011; }
+.workflow-kicker { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 12px; padding: 4px 10px; border-radius: 9999px; background: #171c08; color: #d9ff5c; font: 600 12px/1.3 var(--mono); letter-spacing: .02em; }
+.workflow-kicker-dot { width: 6px; height: 6px; border-radius: 9999px; background: #d9ff5c; animation: workflow-kicker-pulse 1.8s cubic-bezier(.16, 1, .3, 1) infinite; }
+@keyframes workflow-kicker-pulse { 0% { box-shadow: 0 0 0 0 rgba(217, 255, 92, .6); } 100% { box-shadow: 0 0 0 7px rgba(217, 255, 92, 0); } }
+@media (prefers-reduced-motion: reduce) { .workflow-kicker-dot { animation: none; } }
+.workflow-intro p:not(.eyebrow):not(.workflow-kicker) { max-width: 64ch; color: var(--muted); font-size: 15px; }
 .workflow-builder label { display: block; color: var(--ink); font-weight: 600; margin-bottom: 10px; }
 .workflow-composer { background: var(--canvas); border: 1px solid var(--line-strong); border-radius: var(--radius); overflow: hidden; }
 .workflow-composer:focus-within { border-color: var(--gold-text); box-shadow: 0 0 0 1px var(--gold-text); }
@@ -128,10 +137,15 @@
   border-bottom: 1px solid var(--line);
   margin-bottom: clamp(28px, 4vw, 54px);
 }
-.home-masthead h1 { max-width: none; margin: 0 0 20px; }
+/* The H1 keeps the brand name for search and reads as a Suede pill; the
+   large line under it carries the page's promise. */
+.home-masthead h1 { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 10px; max-width: none; margin: 0 0 24px; padding: 4px 14px 4px 4px; border: 1px solid var(--hairline); border-radius: 9999px; background: var(--paper); }
 .home-masthead h1::after { content: none; }
-.home-wordmark { display: block; font: 600 clamp(68px, 10vw, 136px)/.82 var(--display); letter-spacing: -.055em; }
-.home-directory-name { display: block; margin-top: 12px; font: 500 clamp(25px, 3vw, 42px)/1.1 var(--sans); letter-spacing: -.045em; }
+.home-wordmark { display: inline-flex; align-items: center; gap: 8px; padding: 3px 12px 3px 4px; border-radius: 9999px; background: var(--gold-fill); color: #0f1011; font: 700 15px/1.2 var(--sans); letter-spacing: -.01em; }
+.home-wordmark::before { content: ""; width: 22px; height: 22px; border-radius: 9999px; background: #1b1b1d url("suede-ai-logo-transparent.webp") center / 16px no-repeat; }
+.home-directory-name { font: 500 15px/1.2 var(--sans); letter-spacing: -.01em; color: var(--text); }
+.home-headline { margin: 0 0 20px; max-width: 18ch; font: 600 clamp(40px, 5vw, 76px)/1.05 var(--display); letter-spacing: -.0375em; color: var(--ink); }
+.home-headline span { display: block; color: var(--muted); }
 .home-masthead .lead { max-width: 46ch; color: var(--muted); line-height: 1.55; }
 .home-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 22px; }
 .home-actions a { display: inline-flex; gap: 6px; align-items: center; min-height: 44px; }
@@ -162,7 +176,8 @@
   .home-snapshot { max-width: none; }
   .home-snapshot figcaption { margin: 0; font-size: 13px; }
   .home-snapshot strong { font-size: inherit; letter-spacing: normal; }
-  .home-snapshot .matrix, .home-snapshot .matrix-caption { display: none; }
+  .home-snapshot figcaption { margin-bottom: 10px; }
+  .home-headline { max-width: none; }
 }
 @media (max-width: 700px) {
   .workflow-intro { margin-bottom: 20px; }

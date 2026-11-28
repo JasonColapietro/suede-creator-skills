@@ -10,7 +10,7 @@ export async function verifyWorkflowBuilder(page, base, output, route = '/direct
   await page.goto(base + route + '?utm_source=workflow-test');
   const brief = page.getByRole('textbox', { name: 'What are you doing, or trying to achieve?' });
   await brief.waitFor({ state: 'visible', timeout: 5000 });
-  const submit = page.getByRole('button', { name: 'Get recommendations', exact: true });
+  const submit = page.getByRole('button', { name: 'Build my plan', exact: true });
   await submit.click();
   assert.match(await page.locator('[data-workflow-status]').textContent(), /Describe/);
   assert.equal(await brief.evaluate(el => el === document.activeElement), true);
