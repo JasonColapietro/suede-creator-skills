@@ -183,8 +183,8 @@ function addCrackedDevs(home) {
   const cta = (layout) => {
     const id = `cracked-devs-${layout}-note`;
     return `<a class="cracked-devs-link" href="${OLD}/cracked.html" aria-describedby="${id}">
-            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M9.2 0 2 9h5l-1 7 8-10H9l.2-6Z"/></svg>
-            Cracked Devs <span aria-hidden="true">→</span>
+            <span class="cracked-devs-rx" aria-hidden="true">Rx</span>
+            Cracked Devs <span class="cracked-devs-dot" aria-hidden="true"></span>
           </a>
           <span class="cracked-devs-note" id="${id}">${note}</span>`;
   };

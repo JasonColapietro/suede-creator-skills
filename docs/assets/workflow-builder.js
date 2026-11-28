@@ -260,7 +260,7 @@ if (root) {
       }
       render(plan, prompt, token, catalog);
     } catch {
-      if (token === revision) say('The skill catalog could not load. What you wrote is still here. Select Get recommendations to try again, or browse the recommended stacks.');
+      if (token === revision) say('The skill catalog could not load. What you wrote is still here. Select Build my plan to try again, or browse the recommended stacks.');
     } finally { if (token === revision) { submit.disabled = false; form.removeAttribute('aria-busy'); } }
   }
   form.addEventListener('submit', event => { event.preventDefault(); void build(); });

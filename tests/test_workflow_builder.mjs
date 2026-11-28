@@ -48,7 +48,7 @@ test('best-of topic charts appear before rankings and have a direct builder shor
 });
 
 test('the homepage chat asks what the visitor is working on and shares the first screen with Best of', () => {
-  assert.match(home, /<h2 id="workflow-title">What are you working on\?<\/h2>/);
+  assert.match(home, /<h2 id="workflow-title">What are we building today\?<\/h2>/);
   assert.match(home, /<label[^>]+for="workflow-brief">What are you doing, or trying to achieve\?<\/label>/);
   assert.ok(home.includes('data-workflow-suggestions hidden'), 'goal-based skill suggestions start hidden');
   assert.ok(home.includes('data-workflow-more hidden'), 'extra skills for a workflow start hidden');

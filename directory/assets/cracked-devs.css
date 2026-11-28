@@ -23,38 +23,42 @@ a.cracked-devs-link {
   gap: 8px;
   flex-shrink: 0;
   min-height: 44px;
-  padding: 6px 12px;
-  border: 1px solid transparent;
-  border-radius: var(--radius);
-  background: #d9ff5c;
-  color: #0f1011;
-  font: 700 14px/1 var(--mono);
-  letter-spacing: 0;
+  padding: 6px 14px 6px 6px;
+  border: 1.5px dashed #d9ff5c;
+  border-radius: 9999px;
+  background: #0f1011;
+  color: #d9ff5c;
+  font: 600 14px/1 var(--sans);
+  letter-spacing: -0.01em;
   text-transform: none;
   text-decoration: none;
   white-space: nowrap;
-  /* A raised edge so it reads as a button you press, not another link. */
-  box-shadow: 0 3px 0 #7f9a2a, 0 0 0 0 rgba(217, 255, 92, 0);
-  transform: translateY(-1px);
   transition: transform 160ms cubic-bezier(.2, 0, 0, 1), box-shadow 160ms cubic-bezier(.2, 0, 0, 1), background 160ms;
-  animation: cracked-devs-pulse 2.4s cubic-bezier(.16, 1, .3, 1) infinite;
 }
 
-a.cracked-devs-link:hover, a.cracked-devs-link:active { animation: none; }
-a.cracked-devs-link:hover { background: #e6ff8f; color: #0f1011; transform: translateY(-2px); box-shadow: 0 4px 0 #7f9a2a, 0 0 0 5px rgba(217, 255, 92, 0.16); }
-a.cracked-devs-link:active { transform: translateY(2px); box-shadow: 0 0 0 #7f9a2a, 0 0 0 3px rgba(217, 255, 92, 0.2); }
-
+/* The Rx chip and a pulsing dot make it the one thing on the bar that asks to be pressed. */
+.cracked-devs-rx {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 30px; height: 26px; padding: 0 8px; border-radius: 9999px;
+  background: #d9ff5c; color: #0f1011; font: 700 12px/1 var(--mono);
+}
+.cracked-devs-dot {
+  width: 7px; height: 7px; border-radius: 9999px; background: #d9ff5c;
+  animation: cracked-devs-pulse 1.6s cubic-bezier(.16, 1, .3, 1) infinite;
+}
 @keyframes cracked-devs-pulse {
-  0%, 60% { box-shadow: 0 3px 0 #7f9a2a, 0 0 0 0 rgba(217, 255, 92, 0.45); }
-  100% { box-shadow: 0 3px 0 #7f9a2a, 0 0 0 10px rgba(217, 255, 92, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(217, 255, 92, 0.6); }
+  100% { box-shadow: 0 0 0 8px rgba(217, 255, 92, 0); }
 }
+
+a.cracked-devs-link:hover { background: #171c08; color: #e6ff8f; transform: translateY(-1px); box-shadow: 0 0 0 4px rgba(217, 255, 92, 0.16); }
+a.cracked-devs-link:active { transform: translateY(1px); box-shadow: 0 0 0 2px rgba(217, 255, 92, 0.24); }
+a.cracked-devs-link:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
 
 @media (prefers-reduced-motion: reduce) {
-  a.cracked-devs-link { animation: none; transition: none; }
+  .cracked-devs-dot { animation: none; }
+  a.cracked-devs-link { transition: none; }
 }
-a.cracked-devs-link:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
-.cracked-devs-link svg { flex-shrink: 0; }
-.cracked-devs-link > span { font-size: 17px; }
 
 @media (max-width: 768px) {
   .cracked-devs-desktop { display: contents; }
@@ -78,6 +82,10 @@ a.cracked-devs-link:focus-visible { outline: 2px solid var(--focus); outline-off
 @media (forced-colors: active) {
   a.cracked-devs-link { border-color: LinkText; }
 }
+
+/* List your skill is the solid lime action beside the dashed Cracked Devs pill. */
+.nav-links a.nav-cta { background: #d9ff5c; color: #0f1011; }
+.nav-links a.nav-cta:hover { background: #e6ff8f; color: #0f1011; }
 
 /* Secondary links sit under More rather than wrapping the primary row. The
    button reads like the links beside it, and its panel opens below the bar. */
@@ -109,8 +117,7 @@ a.cracked-devs-link:focus-visible { outline: 2px solid var(--focus); outline-off
   .nav-links { flex-wrap: nowrap; gap: 4px; }
   .nav-links a.nav-cta { margin-left: 0; min-height: 44px; padding: 0 16px; border-radius: var(--radius); }
   .cracked-devs-desktop { flex-wrap: nowrap; gap: 8px; margin-left: 12px; padding-left: 16px; border-left: 1px solid var(--line); }
-  .cracked-devs-desktop > a.cracked-devs-link { min-height: 44px; padding: 0 14px; font-size: 13px; }
-  .cracked-devs-link > span { font-size: 15px; }
+  .cracked-devs-desktop > a.cracked-devs-link { min-height: 44px; padding: 0 14px 0 6px; font-size: 14px; }
   /* The joke stays the button's description for screen readers and still
      shows on phones; on wide screens it no longer pushes the bar to two rows. */
   .cracked-devs-desktop > .cracked-devs-note {
