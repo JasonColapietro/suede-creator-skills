@@ -101,6 +101,14 @@ try {
 
   for (const width of [1440, 390]) {
     await page.setViewportSize({ width, height: width === 390 ? 844 : 1000 });
+    await page.goto(base + '/directory/');
+    await page.evaluate(() => document.fonts.ready);
+    await noOverflow();
+    const matrix = page.locator('.directory-hero .hero-figure');
+    assert.ok(await matrix.locator('img').evaluate(img => img.complete && img.naturalWidth > 0), 'score matrix rendered');
+    assert.ok(await matrix.locator('.matrix-caption').isVisible(), 'score legend stays visible');
+    assert.ok(await page.getByRole('heading', { name: 'What are you working on?' }).isVisible(), 'directory prompt stays available');
+    await page.screenshot({ path: path.join(output, '00-directory-home-' + width + '.png'), animations: 'disabled' });
     for (const [name, route] of [['02-category', '/directory/frontend-design/'], ['03-featured', '/directory/featured/'], ['04-submission', '/directory/submit/']]) {
       await page.goto(base + route); await page.evaluate(() => document.fonts.ready);
       await noOverflow();

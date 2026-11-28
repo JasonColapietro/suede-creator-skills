@@ -186,3 +186,126 @@
   .workflow-ai-handoff > span { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .workflow-builder * { scroll-behavior: auto; } }
+
+/* Directory home: put the real score matrix first, then carry its quiet
+   instrument-panel treatment into the existing finder, topics and rankings.
+   Scoped to the directory; the standalone workflow builder shares this file. */
+.directory > .directory-hero:not(.page-hero) {
+  row-gap: 18px;
+}
+.directory > .directory-hero:not(.page-hero) .eyebrow {
+  color: var(--text);
+}
+.directory > .directory-hero:not(.page-hero) .lead {
+  color: var(--text);
+}
+.directory > .directory-hero:not(.page-hero) .directory-snapshot {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 16px;
+  max-inline-size: 420px;
+  margin: 18px 0 0;
+}
+.directory > .directory-hero:not(.page-hero) .directory-snapshot > span {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 3px 6px;
+  min-width: 0;
+  padding-block: 6px;
+  border-top: 1px solid var(--hairline);
+}
+.directory > .directory-hero:not(.page-hero) .hero-figure {
+  position: relative;
+  padding: clamp(10px, 1.35vw, 17px);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: linear-gradient(160deg, var(--paper-2), var(--paper) 72%);
+  box-shadow: 0 10px 24px #0009, inset 0 1px #ffffff12;
+}
+.directory > .directory-hero:not(.page-hero) .hero-figure::before,
+.directory > .directory-hero:not(.page-hero) .hero-figure::after {
+  content: "";
+  position: absolute;
+  inline-size: 13px;
+  block-size: 13px;
+  border-style: solid;
+  border-color: var(--muted);
+  pointer-events: none;
+}
+.directory > .directory-hero:not(.page-hero) .hero-figure::before {
+  inset: -1px auto auto -1px;
+  border-width: 2px 0 0 2px;
+}
+.directory > .directory-hero:not(.page-hero) .hero-figure::after {
+  inset: auto -1px -1px auto;
+  border-width: 0 2px 2px 0;
+}
+.directory > .directory-hero:not(.page-hero) .matrix {
+  display: block;
+  padding: 8px;
+  border-color: var(--line);
+  background: var(--canvas);
+}
+.directory > .directory-hero:not(.page-hero) .matrix-caption {
+  margin-block-start: 8px;
+  padding-block-start: 7px;
+  border-block-start: 1px solid var(--line);
+  gap: 5px 12px;
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1.55;
+}
+.directory .directory-start > .workflow-builder {
+  background: linear-gradient(154deg, #161612, var(--paper) 56%);
+  border-color: #454139;
+  box-shadow: inset 0 2px 0 var(--gold-fill);
+}
+.directory .directory-start .workflow-intro .eyebrow {
+  color: var(--gold-text);
+}
+.directory .directory-start .workflow-composer {
+  box-shadow: inset 0 1px 0 #ffffff10;
+}
+.directory .directory-start .workflow-composer:focus-within {
+  box-shadow: 0 0 0 2px var(--gold-text);
+}
+.directory .directory-start .workflow-submit-row {
+  border-top: 1px solid var(--hairline);
+}
+.directory .directory-start .best-of a.topic-tile:not(:hover, :focus-visible) {
+  background: linear-gradient(155deg, var(--paper-2), var(--paper) 62%);
+}
+.directory .directory-start .best-of :is(.tile-head, .tile-top-label) {
+  color: var(--muted);
+}
+.directory .directory-start .best-of .tile-top {
+  padding-top: 7px;
+  border-top: 1px solid var(--hairline);
+}
+.directory .directory-start .best-of a.topic-tile:focus-visible,
+.directory > .board-section .board-row:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: -2px;
+}
+.directory > .board-section .board-row:nth-child(-n + 3):not(:hover, :focus-visible) {
+  background: linear-gradient(90deg, var(--paper-2), var(--paper) 62%);
+}
+@media (max-width: 600px) {
+  .directory > .directory-hero:not(.page-hero) h1 {
+    max-inline-size: 22ch;
+  }
+  .directory > .directory-hero:not(.page-hero) .directory-snapshot b {
+    font-size: 15px;
+  }
+  .directory > .directory-hero:not(.page-hero) .directory-snapshot {
+    gap: 0 10px;
+    font-size: 12px;
+  }
+}
+@media (forced-colors: active) {
+  .directory .directory-start .workflow-composer:focus-within {
+    outline: 2px solid Highlight;
+    outline-offset: 1px;
+  }
+}
