@@ -122,9 +122,12 @@ function removePathsMissingFromSource(sourceRoot, targetRoot, relative = "") {
 }
 
 function cloneWithCurrentValidator(targetRoot, extraArgs = []) {
+  // A local clone reuses immutable Git objects. The shallow-history test
+  // needs the file transport because local clones ignore --depth.
+  const source = extraArgs.includes("--depth") ? pathToFileURL(repoRoot).href : repoRoot;
   const clone = spawnSync(
     "git",
-    ["clone", "--quiet", ...extraArgs, pathToFileURL(repoRoot).href, targetRoot],
+    ["clone", "--quiet", ...extraArgs, source, targetRoot],
     { encoding: "utf8" }
   );
   assert.equal(clone.status, 0, clone.stderr);

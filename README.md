@@ -1,8 +1,14 @@
 <div align="center">
 
-<img src="docs/assets/readme/hero.svg" alt="Suede Skills — the ship discipline your agent is missing. Open-source skills for Claude Code and Codex." width="100%">
+<img src="docs/assets/readme/hero.svg" alt="Suede Skills by Jason Colapietro and Suede: 67 open-source Claude Code skills and Codex skills for SEO, AI search, marketing, code review and app delivery, with an MCP server. The ship discipline your agent is missing." width="100%">
 
 <br><br>
+
+**Suede Skills is an open-source pack of agent skills for Claude Code and OpenAI Codex, created by Jason Colapietro and Suede.** Install it as a Claude Code plugin or a Codex plugin and your agent gets inspectable `SKILL.md` workflows for SEO audits, AI search visibility (GEO and AEO), marketing, AI code review, iOS and Android app delivery and creator releases, plus a dependency-free MCP server on npm and a PyPI installer.
+
+**These are the same skills Suede and Jason Colapietro use for multimillion-dollar clients.**
+
+<br>
 
 [![Skills: 67](https://img.shields.io/badge/skills-67-c8a96e?labelColor=080808)](#the-skills)
 [![Licenses: MIT + BSD](https://img.shields.io/badge/licenses-MIT_%2B_BSD-c8a96e?labelColor=080808)](NOTICE.md)
@@ -43,7 +49,7 @@ Suede SEO, the company’s AI search visibility practice, is **#1 among Palm Bea
 
 The SEO skill is [listed on seoskills.sh](https://seoskills.sh/jasoncolapietro/suede-creator-skills/suede-ai-seo), updated October 24, 2026. The project’s Hysen Labs, Skills Directory and Trendshift badges link directly to their reports above.
 
-## Suede Skills for SEO and business growth
+## Claude Code skills for SEO, marketing and business growth
 
 Suede Skills gives founders, marketers, and small teams reusable workflows for SEO audits, AI search visibility, conversion copy, and business operations. Run them in Claude Code or OpenAI Codex, with instructions you can inspect and adapt to your business.
 
@@ -151,7 +157,7 @@ Exposes 12 tools (`list_suede_skills`, `list_suede_specialties`, `search_suede_s
 
 </details>
 
-## Find it on
+## Find it on skills marketplaces and MCP registries
 
 <!-- listings:start -->
 Listed on [skills.sh](https://www.skills.sh/jasoncolapietro/suede-creator-skills) · [SkillsMP](https://skillsmp.com/creators/jasoncolapietro/suede-creator-skills) · [SkillsLLM](https://skillsllm.com/skill/suede-creator-skills) · [HOL Plugin Registry](https://hol.org/registry/plugins/suede-ai%2Fsuede-skills) · [Skills Directory](https://www.skillsdirectory.com/authors/jasoncolapietro) · [ClaudSkills](https://claudskills.com/author/jasoncolapietro/) · [PyPI](https://pypi.org/project/suede-creator-skills/) · [Official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.JasonColapietro%2Fsuede-skills-mcp/versions/latest) · [npm](https://www.npmjs.com/package/suede-skills-mcp) · [Glama](https://glama.ai/mcp/servers/JasonColapietro/suede-creator-skills) · [MCP Market](https://mcpmarket.com/server/suede-creator-skills) · [Awesome Claude Skills (awesomeclaude.ai)](https://awesomeclaude.ai/awesome-claude-skills) · [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) · [Trendshift](https://trendshift.io/repositories/82031).
@@ -159,7 +165,7 @@ Listed on [skills.sh](https://www.skills.sh/jasoncolapietro/suede-creator-skills
 All 34 directories, registries and curated lists: [skills.suedeai.ai/listings.html](https://skills.suedeai.ai/listings.html)
 <!-- listings:end -->
 
-## Try it right now
+## Try a skill in Claude Code or Codex right now
 
 <img src="docs/assets/readme/how-it-works.svg" alt="How a request runs: you describe the job in plain words, each skill's NOT FOR clause routes it to exactly one specialist, that skill loads its references on demand, and it returns evidence such as A to F lanes and exact fixes." width="100%">
 
@@ -177,7 +183,7 @@ Use suede-graph-flo-xr on /absolute/path/to/my-app to stop duplicate bookings wi
 
 If the pack saves you an hour, [star the repo](https://github.com/JasonColapietro/suede-creator-skills/stargazers) — stars are how other builders find it.
 
-## Orchestration: broad outcomes, adversarial review
+## Claude Code subagent orchestration: broad outcomes, adversarial review
 
 Tell your agent "max effort, spare no compute, fix everything" and most of the time you get enthusiasm, not engineering. The orchestration lane turns that intent into structure:
 
@@ -185,9 +191,9 @@ Tell your agent "max effort, spare no compute, fix everything" and most of the t
 - [`suede-agent-teams`](skills/suede-agent-teams) wires complex changes into coordinated agent lanes with WIP collision detection, RFC mode, feature-flag strategy, rollback trees, and a handoff checklist that won't close without evidence. Its public-contribution mode adds scored issue queues, atomic leases, isolated worktrees, and authority-gated contribution packets.
 - [`suede-ship-copy`](skills/suede-ship-copy) is a separate copy-only orchestration DAG for one high-stakes piece of writing: five blind research lenses, a claim audit that closes the set of assertable facts, disjoint section writers, adversarial refutation, a deslop pass, and a publish-readiness gate.
 
-## The A–F ship grade
+## AI code review with an A–F ship grade
 
-[`suede-code`](skills/suede-code) runs a findings pass (TypeScript, React, Next.js, OWASP, and database checklists), then returns a grade card scoring seven lanes: Correctness, Security and permissions, Data and state, Domain truth, UX and release behavior, Tests and verification, and Deploy readiness. The weakest lane caps the grade, and auth and payment surfaces carry grade caps of their own.
+[`suede-code`](skills/suede-code) turns Claude Code or Codex into a code reviewer. It runs a findings pass (TypeScript, React, Next.js, OWASP, and database checklists), then returns a grade card scoring seven lanes: Correctness, Security and permissions, Data and state, Domain truth, UX and release behavior, Tests and verification, and Deploy readiness. The weakest lane caps the grade, and auth and payment surfaces carry grade caps of their own.
 
 <img src="docs/assets/readme/ship-grade.svg" alt="The ship grade: seven graded lanes and one verdict. Instant-F triggers such as a hardcoded secret lock the grade to F with the exact file and line." width="100%">
 
@@ -357,7 +363,7 @@ CLI flags on the creator scripts: `--include-hidden`, `--include-other`, `--incl
 
 Every skill ships with a [skill card](SKILL-CARDS.md) — a release record following the [NVIDIA skill-card template](https://docs.nvidia.com/skills/skill-cards) that states the skill's purpose, owner, license, dependencies, known risks and mitigations, output, and release evidence, so a reviewer can evaluate it without opening the source first.
 
-## Status
+## Requirements
 
 The creator scripts are dependency-light Python and run on the standard library. Optional enhancements use installed packages when available — Pillow for artwork dimension checks, PyYAML for YAML metadata:
 
@@ -365,7 +371,29 @@ The creator scripts are dependency-light Python and run on the standard library.
 python3 -m pip install PyYAML
 ```
 
-## Frequently asked questions
+## Claude skills FAQ
+
+### What are Claude skills?
+
+Claude skills, also called Agent Skills, are folders with a `SKILL.md` file that teach an agent one repeatable workflow. Claude Code reads only each skill's name and description until a request matches, then loads the full instructions and bundled references. Suede Skills uses the same format, so every skill also runs in Codex.
+
+### What are the best Claude Code skills for SEO and marketing?
+
+For SEO and AI search, start with `suede-seo-audit` for A–F lanes with exact fixes, and `suede-ai-seo` for AI citations, GEO and AEO. For marketing, `suede-copy` rewrites landing pages, `suede-product-marketing` defines your audience and offer, and `suede-marketing-plan` picks the next channel to try. The focused `suede-marketing@suede` plugin installs the marketing and growth lane on its own.
+
+### How do I install Claude skills from GitHub?
+
+In Claude Code, run `/plugin marketplace add JasonColapietro/suede-creator-skills`, then `/plugin install suede-skills@suede`. For any agent, run `npx skills add JasonColapietro/suede-creator-skills`. To install one skill by hand, copy its folder into `~/.claude/skills/`. [Install in 30 seconds](#install-in-30-seconds) lists every route.
+
+### What is the difference between Claude skills and an MCP server?
+
+A skill teaches the agent how to do a job: instructions, references and scripts it reads on demand. An MCP server gives the agent tools it can call. Suede Skills ships both: the skill folders and the `suede-skills-mcp` server, whose read-only tools search the pack, audit live pages and grade code.
+
+### Can Claude Code review my code?
+
+Yes. `suede-code` runs a findings pass with TypeScript, React, Next.js, OWASP and database checklists, then grades seven lanes A–F. A hardcoded secret or a bypassable permission check locks the grade to F with the exact file and line. The focused `suede-code@suede` plugin installs review, grading and the ship gate on their own.
+
+## Suede Skills FAQ
 
 ### What is Suede Skills?
 
