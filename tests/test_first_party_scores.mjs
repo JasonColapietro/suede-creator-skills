@@ -90,7 +90,7 @@ test('first-party reports and retained source inventories describe the exact rev
         'skills/suede-graph-flo-xr/CARD.md': 'e32ce4ae7c6f6b06c19a5dc9a1d6910a263e9234ecce6edb98b12b2f92757c3e',
       },
       '323547f6bf0253069e2a846d74d8fa07d523780e': {
-        'README.md': 'a0d400373f812703087912a66b2e80cf6330a08b530d043798d27de456e459be',
+        'README.md': '8aef71011bfe735ba1241888436039bb33a8778d80479e669fb8a693b77e16d8',
       },
     }[revision] || {};
     for (const [relative, digest] of Object.entries(integrated)) {
@@ -100,6 +100,16 @@ test('first-party reports and retained source inventories describe the exact rev
     }
     const skillSource = read(`${listing.dir}/SKILL.md`).match(/^---\r?\n([\s\S]+?)\r?\n---(?:\r?\n|$)/);
     assert.equal(load(skillSource?.[1] || '').description, listing.description, 'use the pinned skill metadata, not an invented listing description');
+  }
+  // Post-pin presentation edits (2026-11-27): LICENSE names the holder as
+  // Suede with unchanged MIT terms, and COPY.md corrects its skill count.
+  // Their bytes are pinned here rather than rewriting the reviewed receipts.
+  const postPin = {
+    LICENSE: "390c500d0f8982eb7da3e40aa2c69568c633e0bf248ba2e3f00d093afd0706a1",
+    "COPY.md": "6127af77b879c2badba38896b523504730f9333ced37a42ca0d2ca5f2bca2e16",
+  };
+  for (const [relative, digest] of Object.entries(postPin)) {
+    if (Object.hasOwn(expected, relative)) expected[relative] = digest;
   }
   for (const [relative, digest] of Object.entries(expected)) {
     assert.equal(sha256(fs.readFileSync(path.join(root, relative))), digest, relative);

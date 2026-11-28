@@ -6,23 +6,13 @@ name: IndexNow
 # Search Console covers Google.
 #
 # skills.suedeai.ai is served by GitHub Pages from docs/, so a deploy is the
-# pages-build-deployment run, not a Vercel event. Four triggers, because no
-# single one is guaranteed to fire:
-#   workflow_run       pages-build-deployment completed successfully
-#   deployment_status  the github-pages deployment reached success
-#   schedule           weekly safety net, in case neither deploy event arrives
-#   workflow_dispatch  run it by hand from the Actions tab
-# The two deploy triggers usually both fire for one deploy. Whichever runs
-# second resubmits the same URLs, which IndexNow treats as a no-op.
-#
-# scripts/indexnow-submit.mjs reads the LIVE sitemap and checks the LIVE key
-# file before it posts, so a run that fires early or twice cannot submit
-# anything wrong; at worst it resubmits unchanged URLs, which IndexNow ignores.
+# pages-build-deployment run. The same deploy also emits a deployment_status
+# event. Submit once after the Pages workflow succeeds, with the weekly
+# schedule and manual dispatch available if a deploy event is missed.
 on:
   workflow_run:
     workflows: ["pages-build-deployment"]
     types: [completed]
-  deployment_status:
   schedule:
     - cron: "41 8 * * 3"
   workflow_dispatch:
@@ -40,7 +30,6 @@ jobs:
     # and manual runs always submit.
     if: >-
       (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') ||
-      (github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success' && github.event.deployment_status.environment == 'github-pages') ||
       github.event_name == 'schedule' ||
       github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
