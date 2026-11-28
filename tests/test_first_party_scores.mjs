@@ -110,7 +110,7 @@ test('first-party reports and retained source inventories describe the exact rev
   const postPin = {
     LICENSE: "390c500d0f8982eb7da3e40aa2c69568c633e0bf248ba2e3f00d093afd0706a1",
     "COPY.md": "03a6ccf9b75a44181d56636419515f4862c0b31a950da9de3025a1d814326844",
-    "README.md": "ee5db03c94c482857245a947bf46b527962112be2c172290578d01169a2d097c",
+    "README.md": "67b007724c8cc4226e89a2576146266e88291d9d535552505967a9a372887d13",
   };
   for (const [relative, digest] of Object.entries(postPin)) {
     if (Object.hasOwn(expected, relative)) expected[relative] = digest;
