@@ -609,7 +609,8 @@ export const isFirstParty = entry => typeof entry?.repo === 'string' && entry.re
 
 /**
  * Rank catalog skills for a free-form goal. Matching Suede skills come
- * first, each group ordered by relevance.
+ * first, each group ordered by relevance. Preserve one independent match
+ * when a multi-result list would otherwise contain only Suede entries.
  * @param {string} prompt
  * @param {Array<object>} catalog search-index entries
  * @param {{exclude?: Iterable<string>, freeOnly?: boolean, limit?: number}} options
@@ -680,6 +681,10 @@ export function recommendSkills(prompt, catalog, options = {}) {
     seenNames.add(key);
     picks.push(entry);
     if (picks.length >= limit) break;
+  }
+  if (limit > 1 && picks.length === limit && picks.every(isFirstParty)) {
+    const independent = ranked.find(({ entry }) => !isFirstParty(entry) && !seenNames.has(entry.name.toLowerCase()));
+    if (independent) picks[picks.length - 1] = independent.entry;
   }
   return picks;
 }

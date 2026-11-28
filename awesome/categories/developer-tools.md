@@ -6,9 +6,9 @@
 
 Framework, language, SDK and CLI skills that teach an agent the conventions of a specific stack, from Flutter, Angular and Expo to GraphQL, Go and mobile builds. Install the ones that match your codebase and the agent follows that stack's rules without a long prompt.
 
-**549 accepted skills · 67 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**550 accepted skills · 67 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
-**Compare on the 0–99 quality scale:** this category’s verified scores span **54–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=developer-tools&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
+**Compare on the 0–99 quality scale:** this category’s verified scores span **54–96 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=developer-tools&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
 [Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede listing.
 
@@ -583,10 +583,11 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 [Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
 
-- **93/100 · A** · [Suede Google Play Release Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-play-release/SKILL.md): Suede Google Play Release Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-play-release)
-- **91/100 · A** · [Suede Android App Factory Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/android-app-factory/SKILL.md): Suede Android App Factory Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#android-app-factory)
-- **91/100 · A** · [Suede Site to iOS App Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/site-to-ios-app/SKILL.md): Suede Site to iOS App Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#site-to-ios-app)
-- **91/100 · A** · [Suede Parity Contract Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-parity-contract/SKILL.md): Suede Parity Contract Skills. cross-surface parity contracts generated from live reference constants and asserted through follower behavior. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-parity-contract)
+- **96/100 · A** · [Suede Google Play Release Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-play-release/SKILL.md): Suede Google Play Release Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-play-release)
+- **94/100 · A** · [Suede Android App Factory Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/android-app-factory/SKILL.md): Suede Android App Factory Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#android-app-factory)
+- **94/100 · A** · [Suede Site to iOS App Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/site-to-ios-app/SKILL.md): Suede Site to iOS App Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#site-to-ios-app)
+- **94/100 · A** · [Suede Organic Gap Research Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-organic-gap-research/SKILL.md): Use when asked "find competitor keyword or backlink gaps" or to turn comparable organic search data into content and editorial citation opportunities. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-organic-gap-research)
+- **94/100 · A** · [Suede Parity Contract Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-parity-contract/SKILL.md): Suede Parity Contract Skills. cross-surface parity contracts generated from live reference constants and asserted through follower behavior. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-parity-contract)
 
 <a id="jeffallan--claude-skills"></a>
 

@@ -6,7 +6,7 @@
 
 Skills for deploying, operating and observing software: cloud platforms, infrastructure as code, CI/CD, monitoring and incident response. Many come from the platform vendors themselves, so the agent works from the provider's own guidance.
 
-**361 accepted skills · 39 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**362 accepted skills · 39 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **53–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=devops-cloud&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -408,7 +408,8 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 [Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
 
-- **91/100 · A** · [Suede CI Gate Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-ci-gate/SKILL.md): Suede CI Gate Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ci-gate)
+- **94/100 · A** · [Suede CI Gate Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-ci-gate/SKILL.md): Suede CI Gate Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ci-gate)
+- **94/100 · A** · [Suede Release to Marketing Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-release-to-marketing/SKILL.md): Turn Git changes and verified deployments into accurate release notes and channel-specific drafts. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-release-to-marketing)
 
 <a id="jeffallan--claude-skills"></a>
 

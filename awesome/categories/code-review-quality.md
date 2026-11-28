@@ -8,7 +8,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 **94 accepted skills · 29 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
-**Compare on the 0–99 quality scale:** this category’s verified scores span **58–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=code-review-quality&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
+**Compare on the 0–99 quality scale:** this category’s verified scores span **58–96 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=code-review-quality&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
 [Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede listing.
 
@@ -183,7 +183,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 [Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
 
-- **93/100 · A** · [Suede Code Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/fix/security-suede-creator-skills-20261114/skills/suede-code/SKILL.md): Use when explicitly asked "review this PR" or to grade a diff, branch, or commit range. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-code)
+- **96/100 · A** · [Suede Code Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-code/SKILL.md): Use when explicitly asked "review this PR" or to grade a diff, branch, or commit range. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-code)
 
 <a id="jeffallan--claude-skills"></a>
 
