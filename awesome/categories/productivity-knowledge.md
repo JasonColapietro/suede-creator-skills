@@ -6,7 +6,7 @@
 
 Skills for everyday knowledge work: email, calendars, notes, workspace apps, project tracking, planning and research assistance. They connect an agent to the tools a team already uses and give it a consistent way to work inside them.
 
-**239 accepted skills · 39 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**240 accepted skills · 40 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **53–94 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=productivity-knowledge&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -45,6 +45,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 - [product-on-purpose/pm-skills](#product-on-purpose--pm-skills)
 - [sanjay3290/ai-skills](#sanjay3290--ai-skills)
 - [serpapi/skills](#serpapi--skills)
+- [skillsforbots/grok-bot-skills](#skillsforbots--grok-bot-skills)
 - [swarmclawai/swarmclaw](#swarmclawai--swarmclaw)
 - [swarmclawai/swarmvault](#swarmclawai--swarmvault)
 - [tjboudreaux/cc-thinking-skills](#tjboudreaux--cc-thinking-skills)
@@ -449,6 +450,14 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 [Repository](https://github.com/serpapi/skills) · Publisher: [serpapi](https://github.com/serpapi) · [Suede listing](https://skills.suedeai.ai/directory/serpapi/skills/)
 
 - **77/100 · C** · [serpapi-web-search](https://github.com/serpapi/skills/blob/master/skills/serpapi-web-search/SKILL.md): Retrieves structured search data from 130+ engines, including Google Scholar citations, local business details, flight and hotel prices, and job listings. [Suede](https://skills.suedeai.ai/directory/serpapi/skills/serpapi-web-search/)
+
+<a id="skillsforbots--grok-bot-skills"></a>
+
+## skillsforbots/grok-bot-skills
+
+[Repository](https://github.com/skillsforbots/grok-bot-skills) · Publisher: [skillsforbots](https://github.com/skillsforbots) · [Suede listing](https://skills.suedeai.ai/directory/skillsforbots/grok-bot-skills/)
+
+- **77/100 · C** · [reminder-basics](https://github.com/skillsforbots/grok-bot-skills/blob/main/skills/reminder-basics/SKILL.md): Set one daily reminder that repeats until the owner clearly says the task is done. [Suede](https://skills.suedeai.ai/directory/skillsforbots/grok-bot-skills/reminder-basics/)
 
 <a id="swarmclawai--swarmclaw"></a>
 

@@ -1,0 +1,130 @@
+/* Standalone directory homepage: the editorial CTA is distinct from the catalog. */
+.cracked-devs-desktop {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px 10px;
+  max-width: 100%;
+}
+
+.cracked-devs-desktop > .cracked-devs-note { order: -1; }
+.cracked-devs-mobile { display: none; }
+
+.cracked-devs-note {
+  color: var(--muted);
+  font: 400 12px/1.4 var(--mono);
+}
+
+a.cracked-devs-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+  min-height: 44px;
+  padding: 6px 12px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  background: #d9fb76;
+  color: #101800;
+  font: 700 14px/1 var(--mono);
+  letter-spacing: 0;
+  text-transform: none;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+a.cracked-devs-link:hover { background: #e5ff9a; color: #101800; }
+a.cracked-devs-link:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.cracked-devs-link svg { flex-shrink: 0; }
+.cracked-devs-link > span { font-size: 17px; }
+
+@media (max-width: 768px) {
+  .cracked-devs-desktop { display: contents; }
+  .cracked-devs-desktop > .cracked-devs-link,
+  .cracked-devs-desktop > .cracked-devs-note { display: none; }
+  .cracked-devs-desktop > .nav-cta {
+    min-height: 46px;
+    font-size: 14px;
+    border-top: 1px solid var(--hairline);
+    border-radius: 0;
+  }
+  .cracked-devs-mobile {
+    display: flex;
+    align-items: center;
+    gap: 8px 12px;
+    padding-top: 8px;
+    padding-bottom: 4px;
+  }
+}
+
+@media (forced-colors: active) {
+  a.cracked-devs-link { border-color: LinkText; }
+}
+
+/* Secondary links sit under More rather than wrapping the primary row. The
+   button reads like the links beside it, and its panel opens below the bar. */
+.directory-more { position: relative; }
+.directory-more summary {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 6px 9px;
+  border-radius: var(--radius-sm); list-style: none; cursor: pointer; white-space: nowrap;
+  font: 500 12.5px/1 var(--mono); letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted);
+  transition: color 0.15s, background 0.15s;
+}
+.directory-more summary::-webkit-details-marker { display: none; }
+.directory-more summary::marker { content: ""; }
+.directory-more summary:hover, .directory-more[open] summary { color: var(--ink); background: var(--paper-2); }
+.directory-more summary:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.directory-more-caret { font-size: 10px; transition: transform 0.15s ease; }
+.directory-more[open] .directory-more-caret { transform: rotate(180deg); }
+.directory-more-links {
+  position: absolute; top: calc(100% + 10px); right: 0; z-index: 60;
+  display: grid; min-width: 200px; padding: 6px;
+  background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+}
+.directory-more:not([open]) .directory-more-links { display: none; }
+.nav-links .directory-more-links a { justify-content: space-between; min-height: 44px; padding: 8px 10px; }
+
+/* Desktop and tablet: one tidy row. Brand and star on the left; links, the
+   Cracked Devs button and List your skill on the right, all 44px tall. */
+@media (min-width: 769px) {
+  .nav-links { flex-wrap: nowrap; gap: 4px; }
+  .nav-links a.nav-cta { margin-left: 0; min-height: 44px; padding: 0 16px; border-radius: var(--radius); }
+  .cracked-devs-desktop { flex-wrap: nowrap; gap: 8px; margin-left: 12px; padding-left: 16px; border-left: 1px solid var(--line); }
+  .cracked-devs-desktop > a.cracked-devs-link { min-height: 44px; padding: 0 14px; font-size: 13px; }
+  .cracked-devs-link > span { font-size: 15px; }
+  /* The joke stays the button's description for screen readers and still
+     shows on phones; on wide screens it no longer pushes the bar to two rows. */
+  .cracked-devs-desktop > .cracked-devs-note {
+    position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+  }
+}
+
+/* Too narrow for the button and the links on one row: the button moves to
+   the strip under the catalog bar, as on phones. */
+/* Between 769 and 1080px one row cannot hold everything at 44px, so the bar
+   wraps: the actions drop to a second row and stay side by side. */
+@media (min-width: 769px) and (max-width: 1080px) {
+  .nav-links { flex-wrap: wrap; row-gap: 8px; }
+  .cracked-devs-desktop { margin-left: 4px; padding-left: 0; border-left: 0; }
+}
+
+/* Phone menu: More becomes a full-width row like the others, and its links
+   open indented beneath it instead of as a floating panel. */
+@media (max-width: 768px) {
+  .directory-more { border-top: 1px solid var(--hairline); }
+  .directory-more summary { display: flex; width: 100%; min-height: 46px; font-size: 14px; justify-content: space-between; border-radius: 0; }
+  .directory-more-links {
+    position: static; min-width: 0; padding: 0 0 6px 14px;
+    background: transparent; border: 0; border-left: 1px solid var(--line); border-radius: 0; box-shadow: none; margin-left: 9px;
+  }
+  .nav-links .directory-more-links a { min-height: 44px; font-size: 13px; }
+  .nav-disclosure > .nav-links > .cracked-devs-desktop > .nav-cta,
+  .nav-disclosure > .nav-links > .nav-cta { margin-top: 10px; justify-content: center; border-top: 0; border-radius: var(--radius); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .directory-more-caret, .directory-more summary { transition: none; }
+}

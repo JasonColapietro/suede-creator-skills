@@ -265,14 +265,21 @@ partner placement merely by scoring 80–99 or receiving an editorial page.
 - `verifications` starts empty. No external publisher has been verified by this
   change, and no promotional placement is active.
 
-After a maintainer requests verification, run:
+For a website request, a Suede reviewer opens the public page and confirms it belongs to the publisher using the listed repository or its official documentation. Check the badge is visibly rendered, loads, and opens the exact skill listing. Capture the rendered badge link HTML yourself from the live page. Use the final public URL and your own DOM capture, never markup supplied by the applicant. The verifier checks that capture against the catalog's badge URLs and records the page URL, verification time and content hash.
+
+```sh
+python3 scripts/directory/verify_badges.py owner/repository/skill-slug --website https://publisher.example/skill --reviewed-html /tmp/reviewed-badge.html
+npm run build:directory
+```
+
+For a README request, run:
 
 ```sh
 python3 scripts/directory/verify_badges.py owner/repository/skill-slug --readme README.md
 npm run build:directory
 ```
 
-The verifier uses the already configured `gh` CLI for read-only requests. It
+For READMEs the verifier uses the already configured `gh` CLI for read-only requests. It
 fetches only that accepted repository's metadata, current default-branch commit,
 and rendered README at that commit. GitHub renders Markdown and HTML embeds;
 code examples, comments, hidden images and links to other pages do not qualify.

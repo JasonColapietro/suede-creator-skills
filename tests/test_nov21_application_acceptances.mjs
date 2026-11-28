@@ -15,7 +15,7 @@ for (const [issue,repo,names] of cases) test('accepted scope #'+issue,()=>{
   const app=register.applications.find(a=>a.issue===issue);
   assert.equal(app?.repo,repo); assert.deepEqual(app.scope,names);
   const decision=decisions[issue]; assert.equal(decision?.scope_version,app.scope_version);
-  assert.ok(decision.review); assert.ok(applicationStatus(app,decision).review);
+  assert.ok(decision.review); assert.ok(applicationStatus(app,decision,{editorial:read('directory/featured-projects.json')}).review);
   const review=readFileSync(new URL('../'+decision.review, import.meta.url),'utf8');
   for(const n of names) assert.ok(review.includes('/skills/'+n+'/SKILL.md'),n);
   if(issue===414) {

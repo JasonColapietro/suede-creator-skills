@@ -84,10 +84,19 @@ test('first-party reports and retained source inventories describe the exact rev
     // These two files combine the pinned Graph work and the independent Suede
     // brand refresh. Keep both historical receipts intact; verify their merged
     // bytes separately. The remaining Graph files must be byte-exact to the pin.
-    const integrated = revision === '7ed35b1c61bd86f0ec7490ff976000e9ddf7d24d' ? {
-      'README.md': '8bd8a7e858d4737023004c4f831f14fd66ab2d9d5a37f1bc49f9dfba7702d927',
-      'skills/suede-graph-flo-xr/CARD.md': 'e32ce4ae7c6f6b06c19a5dc9a1d6910a263e9234ecce6edb98b12b2f92757c3e',
-    } : {};
+    // The README also changes for presentation alone after a pin: the
+    // 2026-11-26 visual refresh regenerated its artwork and skill catalog
+    // from mcp/catalog.json without touching any skill package, so its bytes
+    // are pinned here rather than rewriting the reviewed receipt.
+    const integrated = {
+      '7ed35b1c61bd86f0ec7490ff976000e9ddf7d24d': {
+        'README.md': '8bd8a7e858d4737023004c4f831f14fd66ab2d9d5a37f1bc49f9dfba7702d927',
+        'skills/suede-graph-flo-xr/CARD.md': 'e32ce4ae7c6f6b06c19a5dc9a1d6910a263e9234ecce6edb98b12b2f92757c3e',
+      },
+      '323547f6bf0253069e2a846d74d8fa07d523780e': {
+        'README.md': '64b0a87ec1bb262f8a1e195e45543e20ef4eb7afc2e97cfff9288c4c86a8d32f',
+      },
+    }[revision] || {};
     for (const [relative, digest] of Object.entries(integrated)) {
       if (!Object.hasOwn(files, relative)) continue;
       assert.ok(receipt.source_file_refreshes?.[relative], 'branding refresh must be recorded: ' + relative);
@@ -95,6 +104,16 @@ test('first-party reports and retained source inventories describe the exact rev
     }
     const skillSource = read(`${listing.dir}/SKILL.md`).match(/^---\r?\n([\s\S]+?)\r?\n---(?:\r?\n|$)/);
     assert.equal(load(skillSource?.[1] || '').description, listing.description, 'use the pinned skill metadata, not an invented listing description');
+  }
+  // The integrated README includes the current catalog and keywords. COPY.md
+  // advertises the same count, and LICENSE retains the updated holder.
+  const postPin = {
+    LICENSE: "390c500d0f8982eb7da3e40aa2c69568c633e0bf248ba2e3f00d093afd0706a1",
+    "COPY.md": "03a6ccf9b75a44181d56636419515f4862c0b31a950da9de3025a1d814326844",
+    "README.md": "ee5db03c94c482857245a947bf46b527962112be2c172290578d01169a2d097c",
+  };
+  for (const [relative, digest] of Object.entries(postPin)) {
+    if (Object.hasOwn(expected, relative)) expected[relative] = digest;
   }
   for (const [relative, digest] of Object.entries(expected)) {
     assert.equal(sha256(fs.readFileSync(path.join(root, relative))), digest, relative);

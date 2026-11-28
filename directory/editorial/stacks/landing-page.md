@@ -8,7 +8,7 @@ Reviewed November 2, 2026.
 
 ## The stack
 
-Six skills, in score order. Scores come from the directory snapshot of October 22, 2026, and install counts are the figures skills.sh published on November 2, 2026.
+Six skills, in score order. Scores come from the directory snapshot of October 22, 2026, and install counts are the figures the Vercel Skills CLI published on November 2, 2026.
 
 | Skill | Repository | Score | What it does |
 | --- | --- | --- | --- |
@@ -39,7 +39,7 @@ npx skills add https://github.com/tronghieu/agent-skills/tree/main/skills/data-s
 npx skills add https://github.com/mblode/agent-skills/tree/main/skills/ui-design
 ```
 
-The [skills CLI](https://skills.sh/) works for Claude Code, Codex, Cursor and other agents, and each skill's page in the directory lists the copy-by-hand routes if you would rather not run npx.
+The [skills CLI](https://github.com/vercel-labs/skills) works for Claude Code, Codex, Cursor and other agents, and each skill's page in the directory lists the copy-by-hand routes if you would rather not run npx.
 
 ## What to check before you install
 
@@ -59,4 +59,4 @@ Yes. All six use the [Agent Skills](https://agentskills.io/) format, so the same
 
 ### Which one should I install first if I only install one?
 
-auteur, because it produces the page and it is the highest-scoring pick here at 89/100. impeccable is the most installed of the six, with about 379,000 installs recorded by skills.sh, and it is the one I would add second: a built page with a weak hierarchy still loses the visitor. analytics, at about 88,000 installs, is the one to add before you buy traffic.
+auteur, because it produces the page and it is the highest-scoring pick here at 89/100. impeccable is the most installed of the six, with about 379,000 installs recorded by the Vercel Skills CLI, and it is the one I would add second: a built page with a weak hierarchy still loses the visitor. analytics, at about 88,000 installs, is the one to add before you buy traffic.

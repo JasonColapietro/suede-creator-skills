@@ -8,7 +8,7 @@ Reviewed November 2, 2026.
 
 ## The stack
 
-Five skills, in score order. Scores come from the directory snapshot of October 22, 2026, and install counts are the figures skills.sh published on November 2, 2026.
+Five skills, in score order. Scores come from the directory snapshot of October 22, 2026, and install counts are the figures the Vercel Skills CLI published on November 2, 2026.
 
 | Skill | Repository | Score | What it does |
 | --- | --- | --- | --- |
@@ -36,7 +36,7 @@ npx skills add https://github.com/obra/superpowers/tree/main/skills/verification
 npx skills add https://github.com/MohamedAbdallah-14/unslop/tree/main/skills/unslop-review
 ```
 
-The [skills CLI](https://skills.sh/) works for Claude Code, Codex, Cursor and other agents, and each skill's page in the directory lists the copy-by-hand routes if you would rather not run npx.
+The [skills CLI](https://github.com/vercel-labs/skills) works for Claude Code, Codex, Cursor and other agents, and each skill's page in the directory lists the copy-by-hand routes if you would rather not run npx.
 
 ## What to check before you install
 
@@ -56,4 +56,4 @@ Yes. All five use the [Agent Skills](https://agentskills.io/) format, so the sam
 
 ### Why include a Go-only skill in a general stack?
 
-Because at 95/100 it is the highest score in the set, and the other four are language-agnostic, so the stack costs nothing extra for a team that does not write Go: drop it. For a team that does, it is the most specific reviewer here. It has about 210 installs recorded by skills.sh against about 261,000 for verification-before-completion and about 22,000 for security-review, which tells you where adoption sits today.
+Because at 95/100 it is the highest score in the set, and the other four are language-agnostic, so the stack costs nothing extra for a team that does not write Go: drop it. For a team that does, it is the most specific reviewer here. It has about 210 installs recorded by the Vercel Skills CLI against about 261,000 for verification-before-completion and about 22,000 for security-review, which tells you where adoption sits today.

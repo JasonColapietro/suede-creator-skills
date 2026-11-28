@@ -4,11 +4,11 @@ By [Jason Colapietro](https://suedeai.ai/founder), Founder and CEO of Suede. Aut
 
 Reviewed November 2, 2026.
 
-**Short answer:** [impeccable](https://skills.suedeai.ai/directory/pbakaus/impeccable/impeccable/) from pbakaus/impeccable (86/100) is the backbone, with playbooks for hierarchy, typography, accessibility, responsive layouts, motion and UX copy, and about 379,000 installs recorded by skills.sh. [auteur](https://skills.suedeai.ai/directory/agiwhitelist/auteur/auteur/) from agiwhitelist/auteur (89/100) builds the whole experience as one design system, and [ui-animation](https://skills.suedeai.ai/directory/mblode/agent-skills/ui-animation/) from mblode/agent-skills (86/100) handles motion. Add anydesign to pull a token system out of a reference, superdesign to compare variants, and web-artifacts-builder when the target is a claude.ai artifact.
+**Short answer:** [impeccable](https://skills.suedeai.ai/directory/pbakaus/impeccable/impeccable/) from pbakaus/impeccable (86/100) is the backbone, with playbooks for hierarchy, typography, accessibility, responsive layouts, motion and UX copy, and about 379,000 installs recorded by the Vercel Skills CLI. [auteur](https://skills.suedeai.ai/directory/agiwhitelist/auteur/auteur/) from agiwhitelist/auteur (89/100) builds the whole experience as one design system, and [ui-animation](https://skills.suedeai.ai/directory/mblode/agent-skills/ui-animation/) from mblode/agent-skills (86/100) handles motion. Add anydesign to pull a token system out of a reference, superdesign to compare variants, and web-artifacts-builder when the target is a claude.ai artifact.
 
 ## The stack
 
-Six skills, in score order. Scores come from the directory snapshot of October 22, 2026, and install counts are the figures skills.sh published on November 2, 2026.
+Six skills, in score order. Scores come from the directory snapshot of October 22, 2026, and install counts are the figures the Vercel Skills CLI published on November 2, 2026.
 
 | Skill | Repository | Score | What it does |
 | --- | --- | --- | --- |
@@ -39,7 +39,7 @@ npx skills add https://github.com/avelikiy/great_cto/tree/main/skills/anydesign
 npx skills add https://github.com/superdesigndev/superdesign-skill/tree/main/skills/superdesign
 ```
 
-The [skills CLI](https://skills.sh/) works for Claude Code, Codex, Cursor and other agents, and each skill's page in the directory lists the copy-by-hand routes if you would rather not run npx.
+The [skills CLI](https://github.com/vercel-labs/skills) works for Claude Code, Codex, Cursor and other agents, and each skill's page in the directory lists the copy-by-hand routes if you would rather not run npx.
 
 ## What to check before you install
 
@@ -51,7 +51,7 @@ The [skills CLI](https://skills.sh/) works for Claude Code, Codex, Cursor and ot
 
 ### Is impeccable alone enough?
 
-For an interface that already exists, often yes: it is a set of playbooks for fixing what is there, and at about 379,000 installs recorded by skills.sh it is the most installed skill in this stack by a wide margin. Run its playbooks in order and you will fix most of what a visitor notices first. For a new product you still need something to build with, which is where auteur or web-artifacts-builder come in.
+For an interface that already exists, often yes: it is a set of playbooks for fixing what is there, and at about 379,000 installs recorded by the Vercel Skills CLI it is the most installed skill in this stack by a wide margin. Run its playbooks in order and you will fix most of what a visitor notices first. For a new product you still need something to build with, which is where auteur or web-artifacts-builder come in.
 
 ### Do these skills work in Codex and Cursor?
 

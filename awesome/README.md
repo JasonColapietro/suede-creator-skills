@@ -8,7 +8,7 @@
 
 Compare agent skills with **0–99 quality scores**, verified against [Suede’s published rubric](https://skills.suedeai.ai/directory/methodology/). Find the workflow for your task, compare the evidence behind its score, then inspect the source before you install.
 
-Browse **3,918 scored skills from 171 repositories** across **16 categories**, with publisher credits and direct source links.
+Browse **3,928 scored skills from 175 repositories** across **16 categories**, with publisher credits and direct source links.
 
 The GitHub companion to the [Agent Skills Directory](https://skills.suedeai.ai/directory/), maintained by [Jason Colapietro / Suede](https://suedeai.ai/founder). Coverage follows the directory’s accepted snapshot and editorial rules. The [Suede Skills pack](../README.md) has its own installation guide.
 
@@ -27,8 +27,8 @@ The published quality scale is **0–99**. The rubric totals **100 points**; pub
 | Quality score / 100 | Accepted skills | Browse |
 | --- | ---: | --- |
 | **90–99 · A** | 199 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=A) |
-| **80–89 · B** | 1,605 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=B) |
-| **70–79 · C** | 1,387 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=C) |
+| **80–89 · B** | 1,606 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=B) |
+| **70–79 · C** | 1,396 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=C) |
 | **0–69 · D** | 727 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=D) |
 
 For GitHub browsing, choose a category below. Numeric scores lead every listing, with higher-scoring skills first within each publisher. The category ranges describe individual skill scores, not a repository grade.
@@ -37,15 +37,15 @@ For GitHub browsing, choose a category below. Numeric scores lead every listing,
 
 | Category | Quality scores / 100 | Accepted skills | Repositories |
 | --- | ---: | ---: | ---: |
-| [AI Agents and LLM Engineering](categories/ai-agents-llm.md) | **56–96 / 100** | 608 | 71 |
+| [AI Agents and LLM Engineering](categories/ai-agents-llm.md) | **56–96 / 100** | 609 | 72 |
 | [Developer Tools and Frameworks](categories/developer-tools.md) | **54–96 / 100** | 550 | 67 |
-| [Marketing and SEO](categories/marketing-seo.md) | **62–96 / 100** | 348 | 26 |
+| [Marketing and SEO](categories/marketing-seo.md) | **62–96 / 100** | 350 | 27 |
 | [Product Management](categories/product-management.md) | **56–96 / 100** | 239 | 17 |
 | [Science and Research](categories/science-research.md) | **66–93 / 100** | 210 | 8 |
 | [DevOps and Cloud](categories/devops-cloud.md) | **53–95 / 100** | 362 | 39 |
-| [Video, Image, Audio and Creative](categories/media-creative.md) | **56–96 / 100** | 237 | 40 |
-| [Productivity and Knowledge Work](categories/productivity-knowledge.md) | **53–94 / 100** | 239 | 39 |
-| [Business, Sales and Finance](categories/business-finance.md) | **53–96 / 100** | 169 | 28 |
+| [Video, Image, Audio and Creative](categories/media-creative.md) | **56–96 / 100** | 240 | 41 |
+| [Productivity and Knowledge Work](categories/productivity-knowledge.md) | **53–94 / 100** | 240 | 40 |
+| [Business, Sales and Finance](categories/business-finance.md) | **53–96 / 100** | 172 | 29 |
 | [Testing and QA](categories/testing-qa.md) | **56–95 / 100** | 192 | 35 |
 | [Data, Analytics and Databases](categories/data-databases.md) | **66–95 / 100** | 180 | 29 |
 | [Security](categories/security.md) | **54–93 / 100** | 115 | 22 |
@@ -92,8 +92,9 @@ Each skill appears in one category. A repository can contribute to several categ
 - **[go-public](featured.md#go-public)** by [fengyiqicoder](https://github.com/fengyiqicoder). Build a shareable OneTag-hosted AI workflow page with inputs, chained steps and streamed results. Visitors need no account or API key.
 - **[Nexscope Amazon Skills](featured.md#nexscope-amazon)** by [nexscope-ai](https://github.com/nexscope-ai). A collection of Amazon seller workflows for product research, listings, advertising and operations.
 - **[Nexscope eCommerce Skills](featured.md#nexscope-ecommerce)** by [nexscope-ai](https://github.com/nexscope-ai). Product research, marketing and operations workflows spanning Amazon, Shopify, eBay, Etsy, TikTok Shop and Walmart.
+- **[DESIGN:OS CLI](featured.md#design-os)** by [jangtrinh](https://github.com/jangtrinh). Two source workflows connect design setup with a repeatable concept, build, check and handover loop. Review rendered UI at three widths and keep artifact hashes alongside the result.
 
-These 29 editorial selections have [reviewed scope and setup guidance](featured.md); 5 more are featured with scan &amp; review pending. Editorial selection is separate from quality scores, security certification and README-badge verification. Featured plugins outside the scored skill snapshot are not included in the skill or repository counts above.
+These 30 editorial selections have [reviewed scope and setup guidance](featured.md); 5 more are featured with scan &amp; review pending. Editorial selection is separate from quality scores, security certification and README-badge verification. Featured plugins outside the scored skill snapshot are not included in the skill or repository counts above.
 
 ## Guides
 
@@ -145,7 +146,7 @@ The [publisher index](publishers.md) credits every listed repository and its own
 
 Accepted listing requests also enter through the [inclusion register](../directory/inclusions.json). Descriptions and scores come from [the saved dataset](../directory/skills.json); category copy comes from [the category definitions](../directory/categories.json). Upstream skills retain their own licenses and authorship.
 
-Dataset SHA-256: `3ba4c2191a7713e1cadc4637ddb40fb7968cc58ddb5e785f0a34937825df1fd4`.
+Dataset SHA-256: `ae96a7694b59ee9d68890e5c6901deb0ba7feebd5ef121ef094c0a68abd2907d`.
 
 ## Contribute and update
 

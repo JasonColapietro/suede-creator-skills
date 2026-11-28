@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Verify a displayed numeric or letter README badge before a feature placement.
+"""Verify a displayed numeric or letter badge before a feature placement.
 
 Fetches one accepted repository's README through GitHub's HTML renderer at a
-pinned commit. No clone, publisher code execution, or security claim is involved.
+pinned commit, or checks HTML captured by a Suede reviewer on the official live website.
 An unsuccessful attempt replaces any old verification with a non-active status.
 """
 import argparse
@@ -13,6 +13,7 @@ import subprocess
 from datetime import datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import quote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[2]
 BASE = 'https://skills.suedeai.ai/directory/'
@@ -33,9 +34,10 @@ def with_page_selection(skill, root):
 class BadgeParser(HTMLParser):
     """Read rendered HTML only: code examples are text, never image evidence."""
     VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'}
-    def __init__(self, target, expected):
+    def __init__(self, target, expected, github_camo):
         super().__init__(convert_charrefs=True)
         self.target, self.expected = target, set(expected)
+        self.github_camo = github_camo
         self.stack, self.found = [], set()
 
     def handle_starttag(self, tag, attrs):
@@ -52,7 +54,7 @@ class BadgeParser(HTMLParser):
         if tag == 'img' and not hidden:
             anchor = next((a for t, a, _ in reversed(self.stack) if t == 'a'), {})
             source = attrs.get('src')
-            if (source or '').startswith('https://camo.githubusercontent.com/'):
+            if self.github_camo and (source or '').startswith('https://camo.githubusercontent.com/'):
                 source = attrs.get('data-canonical-src')
             source = contract_url(source)
             if contract_url(anchor.get('href')) == self.target and source in self.expected:
@@ -67,8 +69,8 @@ class BadgeParser(HTMLParser):
                 break
 
 
-def embedded_badges(rendered, target, expected):
-    parser = BadgeParser(target, expected)
+def embedded_badges(rendered, target, expected, *, github_camo=True):
+    parser = BadgeParser(target, expected, github_camo)
     parser.feed(rendered)
     return sorted(parser.found)
 
@@ -81,9 +83,20 @@ def gh(endpoint, accept='application/vnd.github+json'):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('skill_id', help='Directory id: owner/repository/skill-slug')
-    parser.add_argument('--readme', default='README.md', help='Repository or skill README path')
+    source = parser.add_mutually_exclusive_group()
+    source.add_argument('--readme', help='Repository or skill README path (default: README.md)')
+    source.add_argument('--website', help='Public HTTPS page checked by the reviewer')
+    parser.add_argument('--reviewed-html', type=Path,
+                        help='Rendered DOM captured by the reviewer after checking the visible, clickable badge')
     args = parser.parse_args()
-    if not re.fullmatch(r'(?:[^/]+/)*README(?:\.(?:md|markdown|rst))?', args.readme, re.I) or any(p in ('.', '..') for p in args.readme.split('/')):
+    if bool(args.website) != bool(args.reviewed_html):
+        parser.error('--website and --reviewed-html must be used together')
+    if args.website:
+        site = urlsplit(args.website)
+        if site.scheme != 'https' or not site.hostname or '.' not in site.hostname or site.username or site.password:
+            parser.error('--website must identify a public HTTPS page')
+    readme = args.readme or 'README.md'
+    if not re.fullmatch(r'(?:[^/]+/)*README(?:\.(?:md|markdown|rst))?', readme, re.I) or any(p in ('.', '..') for p in readme.split('/')):
         parser.error('--readme must name a README inside the repository')
     dataset_bytes = (ROOT / 'directory/skills.json').read_bytes()
     data = json.loads(dataset_bytes)
@@ -98,24 +111,29 @@ def main():
         cwd=ROOT, check=True, capture_output=True, text=True).stdout)
     config_path = ROOT / 'directory/promotion.json'
     config = json.loads(config_path.read_text())
-    record = {'repo': skill['repo'], 'score': skill['score'], 'target': contract['target'], 'readme_path': args.readme,
+    record = {'repo': skill['repo'], 'score': skill['score'], 'target': contract['target'],
               'dataset_sha256': hashlib.sha256(dataset_bytes).hexdigest(),
               'verified_at': datetime.now(timezone.utc).isoformat(), 'status': 'fetch_failed', 'badges': []}
-    from urllib.parse import quote
     try:
-        meta = json.loads(gh(f"repos/{skill['repo']}"))
-        commit = json.loads(gh(f"repos/{skill['repo']}/commits/{quote(meta['default_branch'], safe='')}"))['sha']
-        if not re.fullmatch('[a-f0-9]{40}', commit):
-            raise ValueError('Invalid source commit')
-        rendered = gh(f"repos/{skill['repo']}/contents/{quote(args.readme, safe='/')}?ref={commit}", 'application/vnd.github.html+json')
-        record.update(commit=commit, rendered_sha256=hashlib.sha256(rendered.encode()).hexdigest(),
-                      badges=embedded_badges(rendered, contract['target'], contract['badges']))
+        if args.website:
+            record['website_url'] = args.website
+            rendered = args.reviewed_html.read_text(encoding='utf-8')
+        else:
+            record['readme_path'] = readme
+            meta = json.loads(gh(f"repos/{skill['repo']}"))
+            commit = json.loads(gh(f"repos/{skill['repo']}/commits/{quote(meta['default_branch'], safe='')}"))['sha']
+            if not re.fullmatch('[a-f0-9]{40}', commit):
+                raise ValueError('Invalid source commit')
+            rendered = gh(f"repos/{skill['repo']}/contents/{quote(readme, safe='/')}?ref={commit}", 'application/vnd.github.html+json')
+            record['commit'] = commit
+        record.update(rendered_sha256=hashlib.sha256(rendered.encode()).hexdigest(),
+                      badges=embedded_badges(rendered, contract['target'], contract['badges'], github_camo=not args.website))
         # The parser only returns expected badge images linked to this listing.
         record['status'] = 'verified' if record['badges'] else 'missing_badges'
-    except (subprocess.SubprocessError, ValueError, KeyError) as exc:
+    except (OSError, subprocess.SubprocessError, ValueError, KeyError) as exc:
         # Do not copy upstream error content, credentials or README text into
         # the public ledger. A failed fetch cannot retain a prior promotion.
-        print(f'Readme verification failed ({type(exc).__name__}); promotion disabled.')
+        print(f'Badge verification failed ({type(exc).__name__}); promotion disabled.')
     config.setdefault('verifications', {})[args.skill_id] = record
     config_path.write_text(json.dumps(config, indent=2) + '\n')
     print(f"{args.skill_id}: {record['status']}. Rebuild the directory to apply.")

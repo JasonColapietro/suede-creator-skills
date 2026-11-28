@@ -24,6 +24,12 @@ import fs from "node:fs";
 import { createHash } from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import featuredCatalog from "../directory/featured-projects.json" with { type: "json" };
+import { makerSettings } from "./directory/maker-settings-v2.mjs";
+import makerProfiles from "../directory/maker-profiles.json" with { type: "json" };
+import { skillTargets } from "./directory/maker-catalog.mjs";
+import { loadMakerProfiles } from "./directory/maker-profiles.mjs";
+import { renderFeaturedMakerProfiles, skillMakerRenderer } from "./directory/maker-projection-v2.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 export const OLD = "https://skills.suedeai.ai";
@@ -110,14 +116,92 @@ export function rehomeSocialImages(html, assetExists = shippedAsset) {
   return html.replace(SOCIAL_IMAGE_RE, (whole, open, rel, rest) => (assetExists(rel) ? `${open}${NEW}/assets/${rel}${rest}` : whole));
 }
 
-export function rewriteText(text, ext, pageUrl, { assetExists = shippedAsset } = {}) {
+export function rewriteText(text, ext, pageUrl, { assetExists = shippedAsset, agentView = true } = {}) {
   let out = text;
   if (ext === ".html" || ext === ".svg") out = out.replace(ATTR_RE, (_, attr, v) => `${attr}="${rewriteUrl(v, pageUrl)}"`);
   out = out.replace(OLD_DIR_RE, NEW);
-  if (ext === ".html") out = injectAgentView(rehomeSocialImages(retagUtmSource(rehomeWebsite(out)), assetExists));
+  if (ext === ".html") {
+    out = rehomeSocialImages(retagUtmSource(rehomeWebsite(out)), assetExists);
+    if (agentView) out = injectAgentView(out);
+  }
   // The search index and report files carry root-absolute listing paths.
   if (ext === ".json" || ext === ".js") out = out.replace(/(["'])\/directory\//g, "$1/");
   return out;
+}
+
+// The directory's own icon set (directory/assets/favicon/): a bold S that
+// stays legible at 16px, the full ringed mark from 32px up, and a home-screen
+// icon. The shared 64px icon's thin rings blur to a pale square in a tab.
+const SHARED_ICON = '<link rel="icon" href="/assets/favicon-64.png" type="image/png">';
+const DIRECTORY_ICONS = [
+  '<link rel="icon" href="/favicon.ico" sizes="48x48">',
+  '<link rel="icon" href="/assets/favicon/favicon-16.png" type="image/png" sizes="16x16">',
+  '<link rel="icon" href="/assets/favicon/favicon-32.png" type="image/png" sizes="32x32">',
+  '<link rel="icon" href="/assets/favicon/favicon-192.png" type="image/png" sizes="192x192">',
+  '<link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png" sizes="180x180">',
+].join("\n    ");
+
+// The More menu closes on Escape (focus returns to its button), on a click
+// outside it, and when focus leaves it, like any other dropdown.
+const MORE_MENU_SCRIPT = `  <script>
+  (function () {
+    var more = document.querySelector('.directory-more');
+    if (!more) return;
+    var summary = more.querySelector('summary');
+    more.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && more.open) { more.open = false; summary.focus(); }
+    });
+    document.addEventListener('click', function (e) { if (more.open && !more.contains(e.target)) more.open = false; });
+    more.addEventListener('focusout', function (e) { if (more.open && e.relatedTarget && !more.contains(e.relatedTarget)) more.open = false; });
+  })();
+</script>`;
+
+// Compact only the standalone directory chrome. Secondary destinations stay
+// reachable by keyboard and with JavaScript off using a native disclosure.
+function compactNavigation(page) {
+  const nav = /(<div class="nav-links">)([\s\S]*?)(<\/div>\s*<\/details>)/;
+  return page.replace(nav, (whole, open, body, close) => {
+    const main = [], secondary = [], action = [];
+    for (const match of body.matchAll(/<a\b[^>]*>[\s\S]*?<\/a>/g)) {
+      const link = match[0];
+      if (link.includes('class="nav-cta"')) action.push(link);
+      else if (/>\s*(Skills|Featured Skills|Agents)\s*<\/a>$/.test(link)) main.push(link);
+      else secondary.push(link);
+    }
+    if (main.length < 2 || !secondary.length || action.length !== 1) return whole;
+    const more = `<details class="directory-more"><summary aria-label="More pages">More <span class="directory-more-caret" aria-hidden="true">▾</span></summary><div class="directory-more-links">${secondary.join("")}</div></details>`;
+    return open + [...main, more, ...action].join("\n") + close;
+  }).replace(SHARED_ICON, DIRECTORY_ICONS)
+    .replace("</head>", '    <link rel="stylesheet" href="/assets/cracked-devs.css">\n</head>')
+    .replace("</body>", `${MORE_MENU_SCRIPT}\n</body>`);
+}
+
+// Keep the editorial CTA on the standalone homepage, not on every generated
+// directory page or on the linked feature itself.
+function addCrackedDevs(home) {
+  const note = 'Don’t click. They’re already insufferable.';
+  const cta = (layout) => {
+    const id = `cracked-devs-${layout}-note`;
+    return `<a class="cracked-devs-link" href="${OLD}/cracked.html" aria-describedby="${id}">
+            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M9.2 0 2 9h5l-1 7 8-10H9l.2-6Z"/></svg>
+            Cracked Devs <span aria-hidden="true">→</span>
+          </a>
+          <span class="cracked-devs-note" id="${id}">${note}</span>`;
+  };
+  const submit = /<a href="submit\/" class="nav-cta">[^<]+<\/a>/;
+  const main = '<main id="main"';
+  if (!submit.test(home) || !home.includes(main)) {
+    throw new Error("The standalone directory homepage CTA anchors have changed");
+  }
+  return home
+    .replace(submit, (link) => `<div class="cracked-devs-desktop">
+          ${cta("desktop")}
+          ${link}
+        </div>`)
+    .replace(main, `<div class="shell cracked-devs-mobile">
+      ${cta("mobile")}
+    </div>
+    ${main}`);
 }
 
 function copyTree(src, dest, transform) {
@@ -135,17 +219,43 @@ function copyTree(src, dest, transform) {
   }
 }
 
-export function build(out) {
+const makerTargets = new Set(featuredCatalog.projects.filter(item => item.status !== "pending").map(item => item.id));
+function addMakerLinks(html) {
+  return html.replace(/<a\b[^>]* href="#featured-badge-([a-z0-9-]+)">Get badge<\/a>/g, (badge, id) => {
+    if (!makerTargets.has(id)) return badge;
+    return badge + ` <a class="claim-link" href="/maker/?id=${id}" data-maker-claim>Maintainer? Claim this listing</a>`;
+  });
+}
+
+export function build(out, { env = process.env, makerProjection = makerProfiles } = {}) {
   const docs = path.join(ROOT, "docs");
   const dirSrc = path.join(docs, "directory");
   if (!fs.existsSync(path.join(dirSrc, "index.html"))) throw new Error("docs/directory is missing; run node scripts/build-directory.mjs first");
   fs.rmSync(out, { recursive: true, force: true });
   fs.mkdirSync(out, { recursive: true });
 
+  const showMakerLinks = env.MAKER_V2_FEATURED_LINKS === "true" && Boolean(makerSettings(env));
+  const publish = env.MAKER_V2_PUBLISH_PROFILES === "true";
+  let featuredProjection = makerProjection;
+  let skills = new Map();
+  if (publish) {
+    const skillRows = makerProjection.profiles.filter(row => row.listing.startsWith("skill:"));
+    skills = loadMakerProfiles({ ...makerProjection, profiles: skillRows }, new Map(skillTargets.map(t => ["skill:" + t.id, t.repo])));
+    featuredProjection = { ...makerProjection, profiles: makerProjection.profiles.filter(row => !row.listing.startsWith("skill:")) };
+  }
+  const skillMaker = skillMakerRenderer(skillTargets, skills, showMakerLinks);
   const reports = [];
   copyTree(dirSrc, out, (text, ext, file) => {
     const rel = path.relative(dirSrc, file).split(path.sep).join("/");
-    const rewritten = rewriteText(text, ext, `${OLD}/directory/${rel}`);
+    const original = rewriteText(text, ext, `${OLD}/directory/${rel}`, { agentView: !rel.startsWith("maker/") });
+    const rewritten = ext === ".html" ? compactNavigation(original) : original;
+    if (rel === "index.html") return addCrackedDevs(rewritten);
+    if (rel === "featured/index.html") {
+      const featured = publish
+        ? renderFeaturedMakerProfiles(rewritten, featuredProjection, featuredCatalog.projects) : rewritten;
+      return showMakerLinks ? addMakerLinks(featured) : featured;
+    }
+    if (ext === ".html") return skillMaker.render(rel, rewritten);
     if (path.basename(file) !== "report.json") return rewritten;
     const { report_version: previousVersion, ...evidence } = JSON.parse(rewritten);
     // Match the original directory report verifier: hash compact evidence in
@@ -154,6 +264,7 @@ export function build(out) {
     reports.push({ rel, previousVersion, report_version });
     return JSON.stringify({ ...evidence, report_version }, null, 2) + "\n";
   });
+  skillMaker.verify();
   for (const { rel, previousVersion, report_version } of reports) {
     const listing = path.join(out, path.dirname(rel), "index.html");
     // Compact repository rows link reports without displaying a version.
@@ -164,13 +275,18 @@ export function build(out) {
     fs.writeFileSync(listing, html.replaceAll(previous, `Report version <code>${report_version.slice(0, 12)}</code>`));
   }
   fs.mkdirSync(path.join(out, "assets"), { recursive: true });
-  fs.copyFileSync(path.join(docs, "favicon.ico"), path.join(out, "favicon.ico"));
+  const icons = path.join(ROOT, "directory", "assets", "favicon");
+  fs.copyFileSync(path.join(icons, "favicon.ico"), path.join(out, "favicon.ico"));
   copyTree(path.join(docs, "assets"), path.join(out, "assets"), null);
+  fs.copyFileSync(path.join(ROOT, "directory", "assets", "cracked-devs.css"), path.join(out, "assets", "cracked-devs.css"));
+  fs.mkdirSync(path.join(out, "assets", "favicon"), { recursive: true });
+  for (const f of fs.readdirSync(icons)) fs.copyFileSync(path.join(icons, f), path.join(out, "assets", "favicon", f));
 
   const notFound = path.join(docs, "404.html");
   // The shared 404 says which host the visitor missed; on this host, say this one.
   if (fs.existsSync(notFound)) fs.writeFileSync(path.join(out, "404.html"), rewriteText(fs.readFileSync(notFound, "utf8"), ".html", `${OLD}/404.html`)
-    .replaceAll("This page is not on skills.suedeai.ai.", "This page is not on suedeai.directory."));
+    .replaceAll("This page is not on skills.suedeai.ai.", "This page is not on suedeai.directory.")
+    .replace(SHARED_ICON, DIRECTORY_ICONS));
 
   const sitemap = fs.readFileSync(path.join(docs, "directory-sitemap.xml"), "utf8");
   const urls = [...sitemap.matchAll(/  <url>[\s\S]*?<\/url>\n/g)].map((m) => m[0]).filter((u) => u.includes(`<loc>${OLD}/directory/`));

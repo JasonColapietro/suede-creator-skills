@@ -448,7 +448,7 @@ if (browser) {
     const link = node('a', '', skill.name);
     link.href = skill.href;
     heading.append(link);
-    const installs = Number.isFinite(skill.installs) && skill.installs > 0 ? ' · ' + compactCount(skill.installs) + ' installs via skills.sh' : '';
+    const installs = Number.isFinite(skill.installs) && skill.installs > 0 ? ' · ' + compactCount(skill.installs) + ' recorded CLI installs' : '';
     body.append(meta, heading, node('p', '', skill.description), node('p', 'result-foot', skill.license + ' · ' + (skill.full ? 'Full skill page' : 'Repository listing') + installs));
     const quality = node('div', 'result-quality');
     // Quality shields exist only for listed skills scoring 80-99.
@@ -459,7 +459,13 @@ if (browser) {
       shield.width = 80; shield.height = 88; shield.loading = 'lazy';
       quality.append(shield);
     }
-    quality.append(node('span', 'grade grade-' + skill.grade.toLowerCase(), skill.score + '/100 · ' + skill.grade));
+    if (skill.editorial_rating) {
+      const rating = skill.editorial_rating;
+      quality.append(node('span', 'grade grade-' + rating.grade.toLowerCase(), rating.score + '/100 · ' + rating.grade + ' · Editorial'));
+      quality.append(node('small', 'muted', 'Skill Check: ' + skill.score + '/100 · ' + skill.grade));
+    } else {
+      quality.append(node('span', 'grade grade-' + skill.grade.toLowerCase(), skill.score + '/100 · ' + skill.grade));
+    }
     // Save toggle for records that carry a directory id; older index records have none.
     if (skill.id) {
       const pressed = savedItems().some((item) => item.id === skill.id);
@@ -640,7 +646,7 @@ if (compareForm && compareForm.elements && typeof compareForm.getAttribute === '
       ['Category', (s) => s.label],
       ['Listed since', (s) => s.listed || ''],
       ['Last commit', (s) => s.updated || ''],
-      ['Installs via skills.sh', (s) => (Number.isFinite(s.installs) && s.installs > 0 ? compactCount(s.installs) : 'no count')],
+      ['Recorded CLI installs', (s) => (Number.isFinite(s.installs) && s.installs > 0 ? compactCount(s.installs) : 'no count')],
     ];
     const components = reports[0] && reports[0].quality && reports[0].quality.components ? reports[0].quality.components.map((c) => c.label || c.id) : [];
     const table = document.createElement('table');

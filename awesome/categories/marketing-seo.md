@@ -6,7 +6,7 @@
 
 Skills for search, ads, launches and growth: SEO audits, keyword and content briefs, ad creative, social posts and conversion work. They turn a marketing request into a repeatable procedure your agent runs the same way every time.
 
-**348 accepted skills · 26 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**350 accepted skills · 27 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **62–96 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=marketing-seo&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -34,6 +34,7 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 - [mailtrap/mailtrap-skills](#mailtrap--mailtrap-skills)
 - [mblode/agent-skills](#mblode--agent-skills)
 - [MelMayssonOwen/agent-skills](#melmayssonowen--agent-skills)
+- [moonlitnayeem/fairvalid-ai](#moonlitnayeem--fairvalid-ai)
 - [nextlevelbuilder/ui-ux-pro-max-skill](#nextlevelbuilder--ui-ux-pro-max-skill)
 - [nowork-studio/NotFair](#nowork-studio--notfair)
 - [ohad6k/emulo](#ohad6k--emulo)
@@ -424,6 +425,15 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 - **77/100 · C** · [timetopost-autoseo-blog](https://github.com/MelMayssonOwen/agent-skills/blob/main/skills/timetopost-autoseo-blog/SKILL.md): Connect a publishing destination, explore article topics, and prepare blog drafts for human review. [Suede](https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/timetopost-autoseo-blog/)
 - **74/100 · C** · [toolfound-launch-kit](https://github.com/MelMayssonOwen/agent-skills/blob/main/skills/toolfound-launch-kit/SKILL.md): Research a product category, prepare an approved Toolfound submission, and track owner verification and launch status. [Suede](https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/toolfound-launch-kit/)
 - **73/100 · C** · [amazon-listing-checker](https://github.com/MelMayssonOwen/agent-skills/blob/main/skills/amazon-listing-checker/SKILL.md): Review pasted listing copy for length, repeated terms, risky wording, and keyword coverage using a local Python helper. [Suede](https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/amazon-listing-checker/)
+
+<a id="moonlitnayeem--fairvalid-ai"></a>
+
+## moonlitnayeem/fairvalid-ai
+
+[Repository](https://github.com/moonlitnayeem/fairvalid-ai) · Publisher: [moonlitnayeem](https://github.com/moonlitnayeem) · [Suede listing](https://skills.suedeai.ai/directory/moonlitnayeem/fairvalid-ai/)
+
+- **77/100 · C** · [email-verification](https://github.com/moonlitnayeem/fairvalid-ai/blob/main/skills/email-verification/SKILL.md): Verifies email addresses you supply, reads verification jobs and results, and checks workspace credits through FairValid's hosted MCP server. [Suede](https://skills.suedeai.ai/directory/moonlitnayeem/fairvalid-ai/email-verification/)
+- **77/100 · C** · [fairmatch-leads](https://github.com/moonlitnayeem/fairvalid-ai/blob/main/skills/fairmatch-leads/SKILL.md): Searches FairMatch business leads, quotes a selection and unlocks verified work emails only after you confirm a credit maximum, through FairValid's hosted MCP server. [Suede](https://skills.suedeai.ai/directory/moonlitnayeem/fairvalid-ai/fairmatch-leads/)
 
 <a id="nextlevelbuilder--ui-ux-pro-max-skill"></a>
 

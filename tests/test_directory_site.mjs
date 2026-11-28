@@ -1,3 +1,11 @@
+import './test_maker_lifecycle.mjs';
+import './test_maker_showcase.mjs';
+import './test_maker_projection_v2.mjs';
+import './test_maker_owner_v2.mjs';
+import './test_maker_runtime_v2.mjs';
+import './test_maker_store_v2.mjs';
+import './test_maker_frontend_v2.mjs';
+import './test_maker_build_v2.mjs';
 import './test_agents_model.mjs';
 import './test_agents_site.mjs';
 import './test_agents_ungraded.mjs';
@@ -65,7 +73,32 @@ test("the built site has no old directory URLs and no broken internal links", ()
     const sitemap = fs.readFileSync(path.join(out, "sitemap.xml"), "utf8");
     assert.ok(sitemap.includes(`<loc>${NEW}/</loc>`));
     assert.ok(!sitemap.includes(OLD));
+    const home = fs.readFileSync(path.join(out, 'index.html'), 'utf8');
+    const menu = home.match(/<details class="directory-more">[\s\S]*?<\/details>/)?.[0];
+    assert.ok(menu, 'the standalone directory groups secondary navigation');
+    for (const label of ['Top 100', 'New', 'Topics', 'Stacks', 'Security', 'Saved']) {
+      assert.ok(menu.includes('>' + label), label + ' is reachable from More');
+    }
+    for (const label of ['Skills', 'Featured Skills', 'Agents']) {
+      assert.ok(!menu.includes('>' + label + '<'), label + ' remains in the primary navigation');
+    }
+    const crackedLink = /<a class="cracked-devs-link" href="https:\/\/skills\.suedeai\.ai\/cracked\.html" aria-describedby="(cracked-devs-(?:desktop|mobile)-note)">/g;
+    assert.deepEqual([...home.matchAll(crackedLink)].map(match => match[1]), ['cracked-devs-desktop-note', 'cracked-devs-mobile-note']);
+    for (const id of ['cracked-devs-desktop-note', 'cracked-devs-mobile-note']) {
+      assert.match(home, new RegExp(`id="${id}">Don’t click\\. They’re already insufferable\\.<`));
+    }
+    assert.match(home, /<\/nav>\s*<\/header>\s*<div class="shell cracked-devs-mobile"/);
+    // The directory ships its own legible icon set, not the shared thin-ring 64px icon.
+    assert.doesNotMatch(home, /favicon-64\.png/);
+    for (const icon of ['/favicon.ico', '/assets/favicon/favicon-16.png', '/assets/favicon/favicon-32.png', '/assets/favicon/apple-touch-icon.png']) {
+      assert.ok(home.includes(`href="${icon}"`), `${icon} is linked from the homepage`);
+      assert.ok(fs.existsSync(path.join(out, icon)), `${icon} ships with the site`);
+    }
+    assert.ok(fs.readFileSync(path.join(out, 'favicon.ico')).equals(fs.readFileSync(new URL('../directory/assets/favicon/favicon.ico', import.meta.url))));
+    const sharedHome = fs.readFileSync(new URL('../docs/directory/index.html', import.meta.url), 'utf8');
+    assert.doesNotMatch(sharedHome, /class="cracked-devs-link"/, 'the old host does not get the new CTA');
     const featured = fs.readFileSync(path.join(out, 'featured/index.html'), 'utf8');
+    assert.doesNotMatch(featured, /class="cracked-devs-link"/, 'subpages do not get the homepage CTA');
     assert.ok(sitemap.includes(`<loc>${NEW}/featured/</loc>`));
     assert.ok(featured.includes(`rel="canonical" href="${NEW}/featured/"`));
     assert.doesNotMatch(featured, /noindex/);
@@ -79,8 +112,9 @@ test("the built site has no old directory URLs and no broken internal links", ()
       for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
         const p = path.join(dir, e.name);
         if (e.isDirectory()) { walk(p); continue; }
-        if (!/\.(html|json|xml|txt|js)$/.test(e.name)) continue;
+        if (!/\.(html|json|xml|txt|js|mjs|md|css|svg)$/.test(e.name)) continue;
         const text = fs.readFileSync(p, "utf8");
+        assert.ok(!/\bskills\.sh\b/i.test(text), `${path.relative(out, p)} mentions a removed directory`);
         assert.ok(!text.includes(`${OLD}/directory`), `${path.relative(out, p)} still links to ${OLD}/directory`);
         if (!e.name.endsWith(".html")) continue;
         const rel = path.relative(out, p).split(path.sep).join("/");

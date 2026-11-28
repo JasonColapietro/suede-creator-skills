@@ -122,7 +122,7 @@ export function directoryMembersHtml(members, { esc, start = 0 }) {
     const source = `https://github.com/${member.repo}`;
     const pinned = `${source}/blob/${member.commit}`;
     return `<article class="featured-project directory-member" id="${member.id}" data-directory-membership="member" aria-labelledby="${member.id}-title">
-      <header class="featured-project-heading"><p class="featured-number" aria-hidden="true">${String(start + index + 1).padStart(2, '0')}</p><div><p class="featured-kind">Suede Directory Member</p><h2 id="${member.id}-title">${esc(member.name)}</h2></div><span class="featured-license">${esc(member.license)}</span></header>
+      <header class="featured-project-heading"><p class="featured-number" aria-hidden="true">${String(start + index + 1).padStart(2, '0')}</p><div><p class="featured-kind">Suede Directory Member</p><h2 id="${member.id}-title"><a class="featured-title-link" href="#${member.id}">${esc(member.name)}</a></h2></div><span class="featured-license">${esc(member.license)}</span></header>
       <div class="featured-project-body"><div><h3 class="featured-headline">${esc(member.headline)}</h3><p class="featured-summary">${esc(member.summary)}</p><ul class="featured-work">${member.skills.map((skill) => `<li><a href="${pinned}/${memberSkillPath(member, skill)}"><span>${esc(skill.title)}</span><span aria-hidden="true">↗</span></a><p>${esc(skill.description)}</p></li>`).join('\n')}</ul></div><aside class="featured-setup"><h3>Before you start</h3><p>${esc(member.setup)}</p></aside></div>
       <footer class="featured-project-footer">${(member.links || []).map((link) => `<a href="${esc(link.url)}" rel="noopener noreferrer">${esc(link.label)} ↗</a>`).join('')}<a href="${source}">Explore ${esc(member.name)} on GitHub ↗</a><a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/${member.review}">Read the skill review ↗</a><a href="${pinned}/${member.license_file}">${member.scope === 'SKILL.md' ? 'Source' : 'Plugin'} license ↗</a><a href="${source}/${member.scope === 'SKILL.md' ? 'blob' : 'tree'}/${member.commit}/${member.scope}">Reviewed ${member.scope === 'SKILL.md' ? 'skill' : 'skills'} <code>${member.commit.slice(0, 7)}</code> ↗</a></footer>
     </article>`;
@@ -133,10 +133,12 @@ export const pendingStatusHtml = (esc) => `<span class="featured-status" data-fe
 
 // skillHref(project, item) may resolve a skill's listing (full page or its
 // repository-page row); without one, links use the full-page route.
-export function featuredProjectsHtml(projects, { esc, rel, here, slugify, skillHref }) {
+export function featuredProjectsHtml(projects, { esc, rel, here, slugify, skillHref, projectListingHref }) {
   return projects.map((project, index) => {
     const pending = isPending(project);
     const source = project.repo ? `https://github.com/${project.repo}` : null;
+    const listing = projectListingHref?.(project);
+    const viewLabel = listing ? "View skill" : source ? "View on GitHub ↗" : "View project ↗";
     const route = project.repo ? project.repo.split('/').map(slugify).join('/') : null;
     const items = project.skills || project.capabilities;
     const work = items.map((item) => `<li>${project.skills
@@ -157,7 +159,8 @@ export function featuredProjectsHtml(projects, { esc, rel, here, slugify, skillH
       source ? `<a href="${source}/tree/${project.commit}">${pending ? "Source at" : "Reviewed source"} <code>${project.commit.slice(0, 7)}</code> ↗</a>` : "",
     ].join("");
     return `<article class="featured-project" id="${project.id}"${pending ? ` data-featured-status="${PENDING_STATUS}"` : ""} aria-labelledby="${project.id}-title">
-      <header class="featured-project-heading"><p class="featured-number" aria-hidden="true">${String(index + 1).padStart(2, "0")}</p><div><p class="featured-kind">${esc(project.kind)}</p><h2 id="${project.id}-title">${esc(project.name)}</h2></div>${project.license ? `<span class="featured-license">${esc(project.license)}</span>` : ""}</header>
+      <header class="featured-project-heading"><p class="featured-number" aria-hidden="true">${String(index + 1).padStart(2, "0")}</p><div><p class="featured-kind">${esc(project.kind)}</p><h2 id="${project.id}-title"><a class="featured-title-link" href="#${project.id}">${esc(project.name)}</a></h2></div>${project.license ? `<span class="featured-license">${esc(project.license)}</span>` : ""}</header>
+      <div class="skill-actions"><a class="button" href="${esc(listing || source || project.site)}">${viewLabel}</a>${pending ? "" : ` <a class="button secondary" href="#featured-badge-${project.id}">Get badge</a>`}</div>
       <div class="featured-project-body"><div><h3 class="featured-headline">${esc(project.headline)}</h3><p class="featured-summary">${esc(project.summary)}</p><ul class="featured-work">${work}</ul></div>${install}</div>
       <footer class="featured-project-footer">${footer}</footer>
     </article>`;

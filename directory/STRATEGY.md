@@ -26,7 +26,7 @@ Research ran on October 23, 2026 with web search. The live directory and suedeai
 
 - A published, recomputable 0–99 score (graded-v2) with every component listed. Nobody else publishes a reproducible quality rubric.
 - "Before you install" panels that list scripts, credentials, outside hosts and MCP usage per skill.
-- README badges with rendered-README verification and a ledger.
+- Website and README badges with placement verification and a ledger.
 - Editorial intake reviews pinned to a commit.
 - Publisher credit and license on every listing.
 
@@ -83,7 +83,7 @@ Calendar item 6 (the data report) uses only figures computable from `directory/s
 
 ### What exists
 
-Every listed skill and repository has a listing badge (`badge.svg`) linked to its listing. Skills scoring 80–99 also get numeric and letter quality shields. `promotion.json` runs a feature offer: a verified README badge can earn a featured placement. `verify_badges.py` checks the rendered README at a recorded commit. As of this writing the verification ledger is empty.
+Every listed skill and repository has a listing badge (`badge.svg`) linked to its listing. Skills scoring 80–99 also get numeric and letter quality shields. `promotion.json` runs a feature offer: a verified badge on the official publisher website or in a README can earn a featured placement. `verify_badges.py` checks reviewer-captured website HTML or a rendered README at a recorded commit. As of this writing the verification ledger is empty.
 
 ### The loop
 

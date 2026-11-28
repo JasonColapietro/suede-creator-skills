@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17",
+  "updated": "2026-11-26",
   "page": {
     "about": "Copy for /directory/featured/ and the awesome/featured.md view, rendered by scripts/build-directory.mjs and scripts/build-awesome-directory.mjs. Project entries below are the publishers\u2019 own work: keep their names, repositories, setup facts and review links exactly as reviewed.",
     "title": "Featured Agent Skill Projects | Suede",
@@ -1004,6 +1004,29 @@
         }
       ],
       "setup": "Owner-fix note: some skill metadata needs repair, and bundled brand-monitoring scrapers are unfinished. Live-data services may require accounts or credits. Featured at collection level; individual skills are not security-verified."
+    },
+    {
+      "id": "design-os",
+      "name": "DESIGN:OS CLI",
+      "repo": "jangtrinh/design-os",
+      "kind": "Source-reviewed editorial \u00b7 UI design workflows",
+      "license": "PolyForm Shield 1.0.0 \u00b7 source-available",
+      "headline": "Build the interface. Keep the evidence.",
+      "summary": "Two source workflows connect design setup with a repeatable concept, build, check and handover loop. Review rendered UI at three widths and keep artifact hashes alongside the result.",
+      "review": "directory/reviews/2026-11-19-design-os.md",
+      "commit": "23a21ca27501ae92c37121ae2832ade08d151dd4",
+      "workflow_url": "https://github.com/jangtrinh/design-os/tree/23a21ca27501ae92c37121ae2832ade08d151dd4/skills",
+      "capabilities": [
+        {
+          "title": "design-os: orient the design workflow",
+          "description": "Route design setup and diagnostics from the repository entry skill."
+        },
+        {
+          "title": "design-os-designer: build, check and hand over",
+          "description": "Prepare a dedicated UI evidence folder, run deterministic checks and inspect responsive screenshots."
+        }
+      ],
+      "setup": "Source review covers skills/design-os/SKILL.md and skills/design-os-designer/SKILL.md only. PolyForm Shield includes a noncompete restriction and redistribution notices. Node.js 20+ is required; screenshot checks use an existing Playwright/Chromium setup. The pinned ease-design 0.8.0 package files include only design-os-designer and do not include the design-os router. Use the reviewed source links for the exact scope; package installation was not tested."
     }
   ],
   "members": [

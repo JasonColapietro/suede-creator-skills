@@ -6,7 +6,7 @@
     "meta_description": "Recommended agent skill stacks for ten tasks, from landing pages to code review and agent building, with install commands and a Suede pick for each.",
     "h1": "Recommended stacks by task",
     "intro": "One job, one stack. Each article names the Suede skill that covers the task up front, then recommends the third-party skills to combine for it, with their scores, licenses and the exact install commands. Written by Jason Colapietro from the directory's published data.",
-    "method": "A stack is chosen from the directory's snapshot: skills that match the task, fit together, carry full pages and score well on the Suede Skill Check, with install counts from skills.sh where they exist. The Suede skill named above each article is kept out of the ranking and out of the article body. Stacks are reviewed after each directory refresh.",
+    "method": "A stack is chosen from the directory's snapshot: skills that match the task, fit together, carry full pages and score well on the Suede Skill Check, with install counts from the Vercel Skills CLI where they exist. The Suede skill named above each article is kept out of the ranking and out of the article body. Stacks are reviewed after each directory refresh.",
     "keywords": [
       "agent skill stacks",
       "best skills by task",

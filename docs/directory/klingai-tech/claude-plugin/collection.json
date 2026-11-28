@@ -1,0 +1,333 @@
+{
+  "schema_version": 1,
+  "repository": "klingai-tech/claude-plugin",
+  "listing_url": "https://skills.suedeai.ai/directory/klingai-tech/claude-plugin/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "afc24909345146ddaafdc6653e116078",
+    "dataset_sha256": "ae96a7694b59ee9d68890e5c6901deb0ba7feebd5ef121ef094c0a68abd2907d"
+  },
+  "listed_skill_count": 3,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "klingai-tech/claude-plugin/kling-ai",
+      "name": "kling-ai",
+      "description": "Handle Kling AI / 可灵 requests in Claude Code, including prompt-only planning, missing-asset next steps, generation preparation and approved image/video creation. Route creative work to the dedicated Skills; manage Elements, motion library, uploads, credits, existing tasks and account switching through the remote MCP.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/klingai-tech/claude-plugin/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "5f666eb73567a40db598db54627b99324341ccd2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-25",
+        "assessment_date": "2026-11-26",
+        "skill_md_url": "https://github.com/klingai-tech/claude-plugin/blob/5f666eb73567a40db598db54627b99324341ccd2/skills/kling-ai/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/klingai-tech/claude-plugin/kling-ai/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/klingai-tech/claude-plugin/tree/main/skills/kling-ai",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/klingai-tech/claude-plugin/tree/main/skills/kling-ai",
+        "publisher_setup_url": "https://kling.ai/app/mcp/guide"
+      }
+    },
+    {
+      "id": "klingai-tech/claude-plugin/kling-ai-generate-image",
+      "name": "kling-ai-generate-image",
+      "description": "Write or refine Kling AI image prompts, including prompt-only requests, or generate and edit images through the Kling AI MCP in Claude Code. Use for posters, product photography, portraits, covers, advertising stills, visual concepts, and controlled variants.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/klingai-tech/claude-plugin/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "5f666eb73567a40db598db54627b99324341ccd2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-25",
+        "assessment_date": "2026-11-26",
+        "skill_md_url": "https://github.com/klingai-tech/claude-plugin/blob/5f666eb73567a40db598db54627b99324341ccd2/skills/kling-ai-generate-image/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/klingai-tech/claude-plugin/kling-ai-generate-image/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/klingai-tech/claude-plugin/tree/main/skills/kling-ai-generate-image",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/klingai-tech/claude-plugin/tree/main/skills/kling-ai-generate-image",
+        "publisher_setup_url": "https://kling.ai/app/mcp/guide"
+      }
+    },
+    {
+      "id": "klingai-tech/claude-plugin/kling-ai-generate-video",
+      "name": "kling-ai-generate-video",
+      "description": "Write Kling AI / 可灵 video prompts and storyboards, prepare video settings including HDR for approval, and submit authorized text-to-video, image-to-video, omni reference, keyframe, or motion-control requests in Claude Code.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/klingai-tech/claude-plugin/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "5f666eb73567a40db598db54627b99324341ccd2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-25",
+        "assessment_date": "2026-11-26",
+        "skill_md_url": "https://github.com/klingai-tech/claude-plugin/blob/5f666eb73567a40db598db54627b99324341ccd2/skills/kling-ai-generate-video/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/klingai-tech/claude-plugin/kling-ai-generate-video/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/klingai-tech/claude-plugin/tree/main/skills/kling-ai-generate-video",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/klingai-tech/claude-plugin/tree/main/skills/kling-ai-generate-video",
+        "publisher_setup_url": "https://kling.ai/app/mcp/guide"
+      }
+    }
+  ]
+}

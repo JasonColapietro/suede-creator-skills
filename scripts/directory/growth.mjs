@@ -57,7 +57,7 @@ export function weeklyFeed({ skills, topics, installsFor, installsDate, generate
   return {
     star: 'https://github.com/JasonColapietro/suede-creator-skills',
     about: 'Weekly feed of the Suede Skills Directory for agents and newsletters. Suede is excluded from every list. Quality scores measure published files, not runtime or security.',
-    quality_snapshot: generated, install_snapshot: installsDate || null, install_source: 'https://skills.sh/',
+    quality_snapshot: generated, install_snapshot: installsDate || null, install_source: 'https://github.com/vercel-labs/skills',
     stars_snapshot: g?.date || null, stars_since: g?.since || null,
     rising: [...moving].sort((a, b) => week(b).last - week(a).last || a.id.localeCompare(b.id)).slice(0, 25).map(s => s.id),
     climbing: moving.filter(s => week(s).last >= 1000 && week(s).prev > 0).sort((a, b) => pct(week(b).last, week(b).prev) - pct(week(a).last, week(a).prev) || a.id.localeCompare(b.id)).slice(0, 25).map(s => s.id),
@@ -78,7 +78,7 @@ function faqParts(here, faq, esc, url) {
 
 export function renderGrowth(c) {
   const { root, files, data, page, crumbs, rel, url, esc, fmt, setKeywords, pageDate, publisher, directoryRef,
-    skillPath, listingTarget, reportPanel, qualityBadgeBlock, installSection, factsTable, skillTitle, servicesCta, publisherClaim,
+    skillPath, listingTarget, reportPanel, qualityBadgeBlock, listingActions, installSection, factsTable, skillTitle, servicesCta, publisherClaim,
     installsFor, installsDate, topics, comparisonPlan, newsletter, skillReport } = c;
   const name = s => s.display_name || s.name;
   const link = (here, s) => `<a href="${rel(here, listingTarget(s).replace('https://skills.suedeai.ai/', ''))}">${esc(name(s))}</a>`;
@@ -102,19 +102,21 @@ export function renderGrowth(c) {
     const description = `${name(s)} by ${s.owner}: ${s.score}/100 (${s.grade}). Read the score breakdown, source, license and installation route.`;
     const meta = description.length > 160 ? `${name(s).slice(0, 65)}: ${s.score}/100 (${s.grade}). ${s.repo.slice(0, 45)}. Read the score, license and source report.` : description;
     emit({ here, title, description: meta, heading: name(s), keywords: [`${s.name} skill by ${s.repo}`, `${s.category} skills`, "agent skill assessment"], trail: [[`directory/${s.category}/`, s.category]],
-      h1Html: `<div class="eyebrow">Agent skill &middot; ${esc(s.category)} &middot; ${esc(s.owner)}</div><h1>${esc(name(s))} <span class="h1-sub">agent skill by ${esc(s.owner)}</span></h1>`,
+      h1Html: `<div class="eyebrow">Agent skill &middot; ${esc(s.category)} &middot; ${esc(s.owner)}</div><h1>${esc(name(s))} <span class="h1-sub">agent skill by ${esc(s.owner)}</span></h1>${listingActions}`,
       body: `<p class="lead">${esc(s.description)}</p>
+${qualityBadgeBlock(here, s)}
 <section class="panel"><h2>Source and license</h2>${factsTable([
         ['Publisher', `<a href="https://github.com/${esc(s.owner)}">${esc(s.owner)}</a>`],
         ['Repository', `<a href="${esc(s.folder_url)}">${esc(s.repo)}</a>`],
         ['License', `<a href="${esc(s.license_url)}">${esc(s.license)}</a>`],
         ['Snapshot', esc(data.generated)], ['Last repository commit', esc(s.commit_date)],
         ['Instruction size', `${fmt(s.body_words)} words; ${fmt(s.body_lines)} lines`], ['Bundled files', fmt(s.file_count)],
+        ['Verified third-party security scan report', 'No'],
       ])}<p><a href="${esc(s.skill_md_url)}">Read the publisher’s SKILL.md</a></p></section>
 <section class="panel" id="check"><h2>Suede Skill Check: ${s.score}/100 · ${s.grade}</h2>${reportPanel(here, s)}
 ${table(['Component', 'Points earned', 'Available'], s.score_parts.map(p => [esc(p.label), p.points, p.max]))}
 <p>The published score is capped at 99. It measures the published files, documentation and maintenance signals. Security scan: not scanned. This assessment does not include a runtime test or a full installation-dependency review.</p></section>
-${installSection(here, s)}${qualityBadgeBlock(here, s)}${servicesCta("skill", s.category, here, { compact: true, publisher: publisherClaim(here) })}
+${installSection(here, s)}${servicesCta("skill", s.category, here, { compact: true, publisher: publisherClaim(here) })}
 <section class="panel"><h2>Compare skills for this task</h2><p><a href="${rel(here, `directory/${s.category}/`)}">Browse ${esc(s.category)} skills</a> or <a href="${rel(here, 'directory/compare/')}">compare scores side by side</a>.</p></section>`,
       mainEntity: { '@type': 'SoftwareSourceCode', name: name(s), description: s.description, codeRepository: s.folder_url, license: s.license_url, programmingLanguage: 'Markdown' },
     });
@@ -133,7 +135,7 @@ ${installSection(here, s)}${qualityBadgeBlock(here, s)}${servicesCta("skill", s.
     emit({ here, title: title.length < 20 ? `${title} skills` : title, description: `Compare ${name(a).slice(0, 35)} and ${name(b).slice(0, 35)}: quality scores, licenses, install routes and component evidence from the directory.`, heading, keywords: [`${p.a.id} vs ${p.b.id}`, "compare agent skills", "agent skill quality"],
       trail: [['directory/compare/', 'Compare']],
       body: `<p class="lead">A comparison selected for ${esc(p.topics.map(t => t.name).join(', '))}. Compare the task description and license first, then use the score breakdown to inspect their published files.</p>
-<p>Quality snapshot: ${esc(data.generated)}. Install counts: skills.sh, ${esc(installsDate || 'unavailable')}. This pair was selected from shared topics and recorded installs; it is not a claim about joint search volume.</p>
+<p>Quality snapshot: ${esc(data.generated)}. Install counts: the Vercel Skills CLI, ${esc(installsDate || 'unavailable')}. This pair was selected from shared topics and recorded installs; it is not a claim about joint search volume.</p>
 <section class="panel"><h2>At a glance</h2>${table(['Evidence', `${name(a)} (${a.repo})`, `${name(b)} (${b.repo})`], [
         ['Listing', link(here, a), link(here, b)], ['Task', esc(a.description), esc(b.description)],
         ['Quality score', `${a.score}/100 · ${a.grade}`, `${b.score}/100 · ${b.grade}`],
@@ -172,7 +174,7 @@ ${installSection(here, s)}${qualityBadgeBlock(here, s)}${servicesCta("skill", s.
     ['What share of agent skills earn an A?', `${fmt(grades.A)} of ${fmt(thirdParty.length)} third-party listed skills (${pct(grades.A)}%) score 90 or more and earn an A in the ${data.generated} snapshot. ${fmt(shielded)} (${pct(shielded)}%) score 80 or more, the level that earns the README quality badges.`],
     ['What does the grade measure?', 'The Suede Skill Check reads the published files: SKILL.md structure and frontmatter, description quality, instruction depth, bundled reference files and scripts, a declared license, recent maintenance and curated-list citations. The score runs from 0 to 99. It describes how complete and well documented a skill is, not how it performs at runtime.'],
     ...(gap ? [['Where do skills lose the most points?', `The ${gap.name.toLowerCase()} component accounts for the most unearned points: ${fmt(gap.missing)} skills sit below its maximum, ${fmt(gap.lost)} points in total. Each listing names its own open points by component, and the free skill check lists the largest ones a publisher controls.`]] : []),
-    ['Where do the install counts come from?', `From skills.sh, which publishes install counts for skills added with its CLI. The directory measures no installs of its own. The install snapshot used here was read on ${installsDate || 'the date shown above'}; a skill without a recorded count is shown as not recorded, not as zero.`],
+    ['Where do the install counts come from?', `From the Vercel Skills CLI, which publishes install counts for skills added with its CLI. The directory measures no installs of its own. The install snapshot used here was read on ${installsDate || 'the date shown above'}; a skill without a recorded count is shown as not recorded, not as zero.`],
     ...(openLane ? [['How many agent skills are free and open source?', `${fmt(openLane[1])} of ${fmt(thirdParty.length)} third-party listed skills (${pct(openLane[1])}%) use an open-source or open-content license and name no paid service. Every listed skill is free to download from its public repository.`]] : []),
     ['Why are Suede skills left out of the figures?', 'Suede publishes the directory, so its own skills are excluded from every figure and ranking in this report to keep the comparison about third-party publishers.'],
   ]);
@@ -182,7 +184,7 @@ ${installSection(here, s)}${qualityBadgeBlock(here, s)}${servicesCta("skill", s.
 <p>Quality snapshot: <time datetime="${data.generated}">${data.generated}</time>. Install snapshot: ${esc(installsDate || 'unavailable')}. This is the directory’s listed sample, not a census of all agent skills. Suede’s own skills are excluded from every figure and ranking in this report.</p>
 <section class="panel"><h2>How the grades fall</h2><img src="grades.svg" alt="${esc(Object.entries(grades).map(([g, n]) => `${g}: ${fmt(n)} skills (${pct(n)}%)`).join('; '))}" width="960" height="390" style="width:100%;height:auto">${table(['Grade', 'Skills', 'Share'], Object.entries(grades).map(([g, n]) => [g, fmt(n), `${pct(n)}%`]))}<p><a href="grades.svg" download>Download chart (SVG)</a> · <a href="grades.csv" download>Download grade data (CSV)</a> · <a href="data.json">Report data (JSON)</a></p></section>
 <section class="panel"><h2>Where skills leave points on the table</h2>${table(['Score component', 'Skills below maximum', 'Total unearned points'], components.map(p => [esc(p.name), fmt(p.missing), fmt(p.lost)]))}<p>Unearned rubric points are opportunities to improve the published assessment. They are not evidence that a skill fails at its task. <a href="${rel(here, 'directory/check/')}">Check your own skill</a>.</p></section>
-<section class="panel"><h2>Popularity and quality answer different questions</h2><p>The ten most installed skills and the ten highest-scoring skills share ${overlap} ${overlap === 1 ? 'entry' : 'entries'}. Equal quality scores are ordered by listing ID, so this overlap depends on the stated tie-break. Install counts come from skills.sh; missing counts are not zero.</p><h3>Most installed</h3>${ranking(popular)}<h3>Highest scores</h3>${ranking(top)}</section>
+<section class="panel"><h2>Popularity and quality answer different questions</h2><p>The ten most installed skills and the ten highest-scoring skills share ${overlap} ${overlap === 1 ? 'entry' : 'entries'}. Equal quality scores are ordered by listing ID, so this overlap depends on the stated tie-break. Install counts come from the Vercel Skills CLI; missing counts are not zero.</p><h3>Most installed</h3>${ranking(popular)}<h3>Highest scores</h3>${ranking(top)}</section>
 <section class="panel"><h2>Licenses and service requirements</h2>${table(['Cost and license lane', 'Skills'], counts('lane').map(([k, n]) => [esc(laneLabel(k)), fmt(n)]))}<p>Cost lanes use recorded license and installation evidence. Compact assessments may not include a full service-dependency review; always check the publisher’s terms.</p></section>
 <section class="panel"><h2>The largest categories</h2>${table(['Category', 'Skills'], counts('category').map(([k, n]) => [`<a href="${rel(here, `directory/${k}/`)}">${esc(k.replaceAll('-', ' '))}</a>`, fmt(n)]))}</section>
 <section class="panel"><h2>Read the evidence</h2><p><a href="${rel(here, 'directory/methodology/')}">Published grading rubric</a> · <a href="${rel(here, 'directory/api/')}">Open index and per-skill reports</a> · <a href="${rel(here, 'directory/finder/')}">Find skills inside your agent</a></p><p>Scores measure structure, documentation, bundled files, maintenance and curated-list citations. No third-party code was executed; no runtime or security results are inferred.</p></section>
@@ -194,7 +196,7 @@ ${stateFaq.html}`,
     ['Is the finder free?', 'Yes. The finder is a free skill under the MIT license, and the directory index it searches is a public file with no key, account or rate limit.'],
     ['Does the finder install the skills it finds?', 'No. Discovery is read-only: it returns a shortlist with each skill\u2019s score, license, report and install command for you to inspect. Your agent installs a skill only when you ask it to.'],
     ['Which agents can run the finder?', 'Claude Code, Codex and Cursor, or any agent that reads the Agent Skills format. Install it with the skills CLI and choose your agent when it asks. It needs Node.js 22 or later and HTTPS access to the directory.'],
-    ['Where do the results come from?', 'From the directory\u2019s published search index: every listed skill with its Suede Skill Check score, grade, license, cost lane, topics and report link from the dated snapshot. Install counts, when shown, come from skills.sh. Suede\u2019s own skills are excluded from the rankings.'],
+    ['Where do the results come from?', 'From the directory\u2019s published search index: every listed skill with its Suede Skill Check score, grade, license, cost lane, topics and report link from the dated snapshot. Install counts, when shown, come from the Vercel Skills CLI. Suede\u2019s own skills are excluded from the rankings.'],
     ['What can I ask it?', 'Name the task in plain words, such as React testing or PostgreSQL performance. Add a minimum score, ask for free and open-source skills only, or ask it to compare two or three skills by their score components.'],
   ]);
   emit({ here: finder, title: 'Find Graded Agent Skills from Claude Code or Codex', heading: 'Find graded skills inside your agent', extraLd: [finderFaq.ld],
@@ -217,20 +219,20 @@ ${finderFaq.html}`,
     .sort((a, b) => installsFor(b).weekly.at(-1) - installsFor(a).weekly.at(-1) || a.id.localeCompare(b.id)).slice(0, 5);
   const risingRows = rising.map(s => [link(risingHere, s), `${s.score}/100 · ${s.grade}`, fmt(installsFor(s).weekly.at(-1))]);
   const issue = [`# Rising Skills`, ``, `Install snapshot: ${installsDate}. Quality snapshot: ${data.generated}.`, ``,
-    `The five listed skills with the most recorded installs in the final week of the saved skills.sh history. These are snapshot figures, not a live leaderboard.`, ``,
+    `The five listed skills with the most recorded installs in the final week of the recorded CLI install history. These are snapshot figures, not a live leaderboard.`, ``,
     ...rising.map(s => `- ${name(s)} (${s.repo}): ${s.score}/100, ${s.grade}; ${installsFor(s).weekly.at(-1)} installs in the recorded week. ${listingTarget(s).replace("https://skills.suedeai.ai/directory", "https://suedeai.directory")}`),
     ``, `Explore: https://suedeai.directory/top/`, `Read the report: https://suedeai.directory/state-of-agent-skills/`, ``,
   ].join('\n');
   files.set(`${risingHere}issue.md`, issue);
   const risingFaq = faqSection(risingHere, [
-    ['What does Rising mean on this page?', 'A rising skill is one of the five third-party listed skills with the most installs in the final week of the saved skills.sh install history. It is a weekly adoption figure from a dated snapshot, not a live leaderboard and not growth since your last visit.'],
-    ['Where do the weekly install numbers come from?', 'From skills.sh, which publishes install counts for skills added with its CLI. The directory measures no installs of its own; it saves the published weekly history with the date it was read.'],
+    ['What does Rising mean on this page?', 'A rising skill is one of the five third-party listed skills with the most installs in the final week of the recorded CLI install history. It is a weekly adoption figure from a dated snapshot, not a live leaderboard and not growth since your last visit.'],
+    ['Where do the weekly install numbers come from?', 'From the Vercel Skills CLI, which publishes install counts for skills added with its CLI. The directory measures no installs of its own; it saves the published weekly history with the date it was read.'],
     ['Does a rising skill score higher on quality?', 'Installs and quality scores answer different questions. Installs show adoption; the Suede Skill Check score shows how complete and well documented the published files are. The table shows both so you can weigh them together.'],
     ['Are Suede\u2019s own skills included?', 'No. Suede publishes the directory, so its own skills are left out of Rising Skills and every other ranking.'],
   ]);
   emit({ here: risingHere, title: 'Rising Skills: Five Agent Skills to Explore Next', heading: 'Rising Skills', extraLd: [risingFaq.ld],
-    description: 'Explore five rising agent skills with their quality scores, licenses and sources. Read the latest saved weekly install snapshot from skills.sh.',
-    body: `<p class="lead">Five skills to explore next, with quality scores and source reports alongside recorded adoption.</p><p>Install snapshot: ${esc(installsDate || 'unavailable')}. Quality snapshot: ${esc(data.generated)}. “Rising” means installs in the final recorded week of the saved skills.sh history, not growth since your last visit.</p>
+    description: 'Explore five rising agent skills with their quality scores, licenses and sources. Read the latest saved weekly install snapshot from the Vercel Skills CLI.',
+    body: `<p class="lead">Five skills to explore next, with quality scores and source reports alongside recorded adoption.</p><p>Install snapshot: ${esc(installsDate || 'unavailable')}. Quality snapshot: ${esc(data.generated)}. “Rising” means installs in the final recorded week of the recorded CLI install history, not growth since your last visit.</p>
 <section class="panel"><h2>Top five in the recorded week</h2>${rising.length ? table(['Skill', 'Quality score', 'Weekly installs'], risingRows) : '<p>No weekly install history is available in this snapshot.</p>'}<p><a href="issue.md" download>Download this issue</a> · <a href="${rel(risingHere, 'directory/top/')}#rising">Explore the rising leaderboard</a></p></section>
 <section class="panel"><h2>Before you install a rising skill</h2><ol><li><b>Read what it does.</b> Open the listing and check that its description matches your task.</li><li><b>Check the license.</b> Most listed skills use an open license; some allow non-commercial use only or use the publisher\u2019s own terms.</li><li><b>Read the score report.</b> It shows the points earned for each component, from description quality to recent maintenance.</li><li><b>See what it touches.</b> A full skill page lists the scripts, credentials and outside hosts the skill uses before you install it.</li></ol><p>More ways to find skills: the <a href="${rel(risingHere, 'directory/new/')}">new and updated listings</a>, the <a href="${rel(risingHere, 'directory/state-of-agent-skills/')}">State of Agent Skills report</a> and the <a href="${rel(risingHere, 'directory/finder/')}">finder skill</a> for searching from inside your agent.</p></section>
 <section class="panel"><h2>Follow new skills</h2>${newsletter.signup_url ? `<p><a class="button" href="${esc(newsletter.signup_url)}">Get Rising Skills by email</a></p>` : '<p>Email signup is not open yet. Follow new listings and guides through the RSS feed.</p>'}<p><a href="${rel(risingHere, 'directory/feed.xml')}">Subscribe by RSS</a></p></section>
@@ -265,22 +267,22 @@ function renderBadgesHub({ data, emit, rel, esc, fmt, link, thirdParty, faqSecti
   const below = thirdParty.length - st.eligible;
   const rows = st.repos.slice(0, 25).map(r => [`<a href="${rel(here, `directory/${r.repo.split('/').map(seg => seg.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'skill').join('/')}/`)}">${esc(r.repo)}</a>`, fmt(r.count), `${link(here, r.best)} · ${r.best.score}/100 · ${r.best.grade}`]);
   const badgeFaq = faqSection(here, [
-    ['Do Suede Skill Check badges cost anything?', 'No. Listings, badges and featured placements are free. Copy the snippet from your listing and paste it into your README.'],
+    ['Do Suede Skill Check badges cost anything?', 'No. Listings, badges and featured placements are free. Copy the snippet from your listing and paste it into your website or README.'],
     ['Which skills can show a quality badge?', `Listed skills scoring 80 to 99 on the Suede Skill Check get two quality shields: a numeric score shield and an A or B grade shield. In the ${data.generated} snapshot that is ${fmt(st.eligible)} third-party skills. Every listed skill, at any score, has a general listing badge.`],
-    ['Does the badge update when my score changes?', 'Yes. The badge image is served from your listing, so it shows the score from the latest directory refresh without any change to your README.'],
+    ['Does the badge update when my score changes?', 'Yes. The badge image is served from your listing, so it shows the score from the latest directory refresh without changing the embed.'],
     ['What happens if my score drops below 80?', 'Your listing badge keeps working, and existing badge.svg and score.svg links keep resolving. Skills below 80 serve the general listing badge until the score reaches 80 again.'],
     ['How do I raise my score?', 'Open your listing to see the components with points still open, such as a description of 150 to 600 characters, a when-not-to-use line, an example request, reference files, scripts and recent commits. Update the skill, then request a fresh review.'],
   ]);
-  emit({ here, title: 'Suede Skill Check Badges for Agent Skill READMEs', heading: 'Quality badges for your agent skill', extraLd: [badgeFaq.ld],
+  emit({ here, title: 'Suede Skill Check Badges for Websites and READMEs', heading: 'Quality badges for your agent skill', extraLd: [badgeFaq.ld],
     keywords: ['agent skill badge', 'Claude Code skill badge', 'Suede Skill Check badge', 'README quality badge'],
-    description: `${fmt(st.eligible)} listed agent skills qualify for a Suede Skill Check badge. Show your score in your README and link readers to the full report.`,
-    body: `<p class="lead">Show readers your skill’s Suede Skill Check score right in your README. Each badge links to your listing, with the score breakdown, license, source and install command.</p>
+    description: `${fmt(st.eligible)} listed agent skills qualify for a Suede Skill Check badge. Show your score on your website or in your README and link readers to the full report.`,
+    body: `<p class="lead">Show readers your skill’s Suede Skill Check score on your website or in your README. Each badge links to your listing, with the score breakdown, license, source and install command.</p>
 <section class="panel"><h2>Two shields for skills scoring 80–99</h2><p class="shield-pair"><img src="${rel(here, 'directory/badges/grade-a.svg')}" alt="Suede Skill Check: Grade A" width="160" height="175" loading="lazy"> <img src="${rel(here, 'directory/badges/grade-b.svg')}" alt="Suede Skill Check: Grade B" width="160" height="175" loading="lazy"></p>
 <p>Grade A (90–99) shows a gold shield; grade B (80–89) shows the standard shield. Each skill also gets a numeric score shield. In the ${esc(data.generated)} snapshot, ${fmt(st.eligible)} third-party skills qualify: ${fmt(st.gradeA)} at grade A and ${fmt(st.gradeB)} at grade B, across ${fmt(st.repos.length)} repositories.</p></section>
 <section class="panel" id="get"><h2>Add your badge in three steps</h2><ol>
 <li><b>Find your skill.</b> Search the <a href="${rel(here, 'directory/')}">directory</a> or run the <a href="${rel(here, 'directory/check/')}">free skill check</a> with your repository URL.</li>
 <li><b>Copy the snippet.</b> Every eligible listing has a Badge section with Markdown and HTML for the score shield, the grade shield, or both.</li>
-<li><b>Paste it into your README.</b> The image updates when the directory refreshes, so the badge always shows your current score.</li></ol>
+<li><b>Embed it on your website or in your README.</b> The image updates when the directory refreshes, so the badge always shows your current score.</li></ol>
 <p>Display a linked badge, then <a href="${rel(here, 'directory/submit/')}">request badge verification</a>: eligible verified skills can receive a featured placement while the offer is open.</p></section>
 <section class="panel"><h2>Repositories with the most badge-ready skills</h2><div class="table-wrap"><table class="checks"><thead><tr><th scope="col">Repository</th><th scope="col">Skills scoring 80+</th><th scope="col">Top skill</th></tr></thead><tbody>${rows.map(r => `<tr>${r.map(v => `<td>${v}</td>`).join('')}</tr>`).join('')}</tbody></table></div><p>Suede’s own skills are excluded from this list.</p></section>
 <section class="panel" id="improve"><h2>Raise your score to 80</h2><p>${fmt(below)} listed skills score below 80. Your listing names the components with the most points still open, such as description length, examples, references and recent maintenance. Update your skill, then <a href="${rel(here, 'directory/submit/')}#improve">request a fresh review</a>.</p><p><a href="${rel(here, 'directory/methodology/')}">Read the scoring rubric</a></p></section>

@@ -85,9 +85,16 @@ export function promotionActive(s, record, config, snapshot, now = new Date()) {
   const generated = Date.parse(snapshot.date);
   const readme = record.readme_path;
   if (!Number.isFinite(generated) || !Number.isFinite(verified) || verified > now.getTime() || verified < generated) return false;
-  if (typeof readme !== 'string' || !/(^|\/)README(?:\.(?:md|markdown|rst))?$/i.test(readme) || readme.split('/').some((p) => p === '..' || !p)) return false;
+  if (record.website_url !== undefined) {
+    if (readme !== undefined || record.commit !== undefined || typeof record.website_url !== 'string' || !URL.canParse(record.website_url)) return false;
+    const page = new URL(record.website_url);
+    if (page.protocol !== 'https:' || !page.hostname.includes('.') || page.username || page.password) return false;
+  } else {
+    if (typeof readme !== 'string' || !/(^|\/)README(?:\.(?:md|markdown|rst))?$/i.test(readme) || readme.split('/').some((p) => p === '..' || !p)) return false;
+    if (!/^[a-f0-9]{40}$/.test(record.commit || '')) return false;
+  }
   const expected = badgePair(s).map((b) => b.src);
   return record.repo === s.repo && record.score === s.score && record.target === listingTarget(s) &&
-    /^[a-f0-9]{40}$/.test(record.commit || '') && /^[a-f0-9]{64}$/.test(record.rendered_sha256 || '') &&
+    /^[a-f0-9]{64}$/.test(record.rendered_sha256 || '') &&
     Array.isArray(record.badges) && expected.some((b) => record.badges.includes(b));
 }

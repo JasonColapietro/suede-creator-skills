@@ -67,7 +67,7 @@ Claude Code Skills & Codex Skills: Suede Skills
 
 ### Meta description
 
-Install 76 free open-source Claude Code and Codex skills for SEO, AI search visibility, conversion copy, marketing, and business operations.
+Install 79 free open-source Claude Code and Codex skills for SEO, AI search visibility, conversion copy, marketing, and business operations.
 
 ### Hero
 

@@ -6,7 +6,7 @@
 
 Skills that help an agent build, steer and evaluate other AI systems: prompt and context engineering, MCP servers, evals, subagent workflows, and model training and inference. Each one ships as a SKILL.md folder your agent loads only when the task calls for it.
 
-**608 accepted skills · 71 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**609 accepted skills · 72 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **56–96 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=ai-agents-llm&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -76,6 +76,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 - [resend/resend-skills](#resend--resend-skills)
 - [sanjay3290/ai-skills](#sanjay3290--ai-skills)
 - [serpapi/skills](#serpapi--skills)
+- [skillsforbots/grok-bot-skills](#skillsforbots--grok-bot-skills)
 - [stripe/ai](#stripe--ai)
 - [swarmclawai/swarmclaw](#swarmclawai--swarmclaw)
 - [trailofbits/skills](#trailofbits--skills)
@@ -1078,6 +1079,14 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 [Repository](https://github.com/serpapi/skills) · Publisher: [serpapi](https://github.com/serpapi) · [Suede listing](https://skills.suedeai.ai/directory/serpapi/skills/)
 
 - **63/100 · D** · [agent-usability-test](https://github.com/serpapi/skills/blob/master/skills/agent-usability-test/SKILL.md): Test whether agents can discover and use your tool — not whether agents are capable. [Suede](https://skills.suedeai.ai/directory/serpapi/skills/#agent-usability-test)
+
+<a id="skillsforbots--grok-bot-skills"></a>
+
+## skillsforbots/grok-bot-skills
+
+[Repository](https://github.com/skillsforbots/grok-bot-skills) · Publisher: [skillsforbots](https://github.com/skillsforbots) · [Suede listing](https://skills.suedeai.ai/directory/skillsforbots/grok-bot-skills/)
+
+- **77/100 · C** · [bot-safety-rules-starter](https://github.com/skillsforbots/grok-bot-skills/blob/main/skills/bot-safety-rules-starter/SKILL.md): Give bots standing rules to ask before sending or spending, ignore outside instructions, and hand off work cleanly. [Suede](https://skills.suedeai.ai/directory/skillsforbots/grok-bot-skills/bot-safety-rules-starter/)
 
 <a id="stripe--ai"></a>
 

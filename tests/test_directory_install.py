@@ -51,7 +51,7 @@ class DirectoryInstallTests(unittest.TestCase):
         cls.root = Path(cls.tmp.name)
         for name in ("scripts/build-directory.mjs", "directory/assets/featured.svg", "scripts/directory/installs.mjs", "scripts/directory/applications.mjs", "scripts/directory/pixel-icons.mjs", "directory/categories.json",
                      "directory/notes.json", "directory/promotion.json", "directory/featured-projects.json", "directory/services-cta.json",
-                     "scripts/directory/featured.mjs", "scripts/directory/badges.mjs", "scripts/directory/editorial.mjs", "scripts/directory/metadata.mjs",
+                     "scripts/directory/featured.mjs", "scripts/directory/badges.mjs", "scripts/directory/editorial.mjs", "scripts/directory/editorial-ratings.mjs", "scripts/directory/metadata.mjs",
                      "scripts/directory/check-client.js", "scripts/directory/task-pages.mjs", "scripts/directory/versus.mjs", "directory/task-pages.json", "scripts/directory/topics.mjs", "scripts/directory/facets.mjs", "scripts/directory/listed-since.mjs", "directory/topics.json", "docs/llms.txt"):
             target = cls.root / name
             target.parent.mkdir(parents=True, exist_ok=True)
@@ -101,7 +101,7 @@ class DirectoryInstallTests(unittest.TestCase):
         self.assertIn(f'{self.score}/100 · A', page)
         self.assertIn('Two badges for Suede Example Skills', page)
         self.assertIn('Security scan: not scanned.', page)
-        self.assertIn('Not scanned', page)
+        self.assertIn('<dt>Verified third-party security scan report</dt><dd>No</dd>', page)
         # The feature offer renders its copy from directory/promotion.json.
         offer = json.loads((ROOT / 'directory/promotion.json').read_text())['copy']['offer_long']
         self.assertIn(f'Limited-time feature offer: {offer}', page)
